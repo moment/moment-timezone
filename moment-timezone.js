@@ -16,20 +16,44 @@
         Rules
     ************************************/
 
+    function parseOnRule (_on) {
+        if (_on.match(/^last/)) {
+            return {
+                last: _on.split('last')[1]
+            };
+        }
+    }
+
     function Rule (_name, _from, _to, _type, _in, _on, _at, _save, _letters) {
         this._name    = _name;
-        this._from    = _from;
-        this._to      = _to;
+        this._from    = +_from;
+        this._to      = +_to;
         this._type    = _type;
-        this._in      = _in;
-        this._on      = _on;
+        this._in      = +_in;
+        this._on      = parseOnRule(_on);
         this._at      = _at;
         this._save    = _save;
         this._letters = _letters;
     }
 
     Rule.prototype = {
+        contains : function (mom) {
+            var year = mom.year(),
+                month = mom.month();
+            if (year < this._from || year > this._to) {
+                return false;
+            }
+            if (month < this._in) {
+                return false;
+            }
+            return true;
+        },
 
+        _onDateForYear : function (year) {
+            if (this._on.last) {
+                
+            }
+        }
     };
 
     /************************************
@@ -65,7 +89,6 @@
         for (i = 0; i < rulesArray.length; i++) {
             addRule(rulesArray[i]);
         }
-        console.log(rules);
     }
 
     function addRule (ruleString) {
@@ -74,10 +97,11 @@
     }
 
     module.exports = {
-
+        Rule : Rule,
+        ZoneRule : ZoneRule,
+        Zone : Zone
     };
 
-    var na = require('./data/js/northamerica');
-    addRules(na.rules);
+    addRules(require('./data/js/northamerica').rules);
 
 }).apply(this);

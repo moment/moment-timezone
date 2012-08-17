@@ -1,16 +1,29 @@
 var fs = require('fs'),
     path = require('path');
 
-function addZone(list, zone, name) {
+var map = "jan feb mar apr may jun jul aug sep oct nov dec".split(" ");
+
+function addZone(list, zone) {
     list.push(zone);
 }
 
 
-function addRule(list, rule, name) {
-    if (rule[1] > 1970 || rule[1] == "max") {
-        list[name] = list[name] || [];
-        list[name].push(rule.join(','));
+function formatRule(rule) {
+    var i;
+
+    // convert month names to numbers
+    for (i = 0; i < 12; i++) {
+        if (map[i] === rule[4].toLowerCase()) {
+            rule[4] = i;
+            break;
+        }
     }
+
+    // remove dashes
+    if (rule[3] === '-') {
+        rule[3] = '';
+    }
+    return rule.join(',');
 }
 
 function parseZone(_zone) {
@@ -41,10 +54,7 @@ function parseZone(_zone) {
                         zones.push(arr.join(','));
                         break;
                     case 'Rule':
-                        if (arr[3] === '-') {
-                            arr[3] = '';
-                        }
-                        rules.push(arr.join(','));
+                        rules.push(formatRule(arr));
                         break;
                     case 'Link':
                         zones[arr[1]] = zones[arr[1]] || [];
