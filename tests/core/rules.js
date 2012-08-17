@@ -3,18 +3,39 @@ var TZ = require("../../moment-timezone"),
 
 exports.rules = {
     "setUp" : function (cb) {
-        this.a = new TZ.Rule("US", 1918, 1919, null, 2, "lastSun", "2:00", "1:00", "D");
         cb();
     },
 
-    "contains" : function (test) {
-        test.expect(4);
+    "contains year" : function (test) {
+        test.expect(3);
 
-        test.ok(this.a.contains(moment([1918, 4])), "Rule should contain May 1 1918");
-        test.ok(!this.a.contains(moment([1920, 4])), "Rule should not contain May 1 1920");
+        var exact = TZ.addRule("TEST,2008,2010,,2,e:1,2:00,1:00,D");
 
-        test.ok(this.a.contains(moment([1918, 4])), "Rule should contain May 1 1918");
-        test.ok(!this.a.contains(moment([1918, 1])), "Rule should not contain February 1 1918");
+        test.ok(exact.contains(moment([2010, 2])), "Rule should contain year");
+        test.ok(!exact.contains(moment([2007, 2])), "Rule should not contain year too low");
+        test.ok(!exact.contains(moment([2011, 2])), "Rule should not contain year too high");
+
+        test.done();
+    },
+
+    "contains month" : function (test) {
+        test.expect(2);
+
+        var exact = TZ.addRule("TEST,2008,2010,,2,e:1,2:00,1:00,D");
+
+        test.ok(exact.contains(moment([2010, 2])), "Rule should contain month");
+        test.ok(!exact.contains(moment([2010, 1])), "Rule should not contain if month is too low");
+
+        test.done();
+    },
+
+    "contains date equal" : function (test) {
+        test.expect(2);
+
+        var exact = TZ.addRule("TEST,2008,2010,,2,e:2,2:00,1:00,D");
+
+        test.ok(exact.contains(moment([2010, 2, 2])), "Rule should contain date");
+        test.ok(!exact.contains(moment([2010, 2, 1])), "Rule should not contain if date is too low");
 
         test.done();
     }
