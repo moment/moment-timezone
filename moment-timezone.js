@@ -74,14 +74,23 @@
         },
 
         _dateForYear : function (year) {
-            var a; // placeholder
+            var firstDowOfMonth,
+                b,
+                day = this._dayVal,
+                dow = day % 7,
+                output;
             switch (this._dayRule) {
                 case "l":
-                    // last this._dayVal day of the week for this month
-                    return moment([year, this._month + 1, 0]).day(this._dayVal).date();
+                    // TODO
+                    return this._dayVal;
                 case "f":
-                    // first this._dayVal day of the week for this month
-                    return moment([year, this._month , this._dayVal]).date();
+                    // find first day of month
+                    firstDowOfMonth = moment([year, this._month, 1]).day();
+                    output = this._dayVal + 1 - firstDowOfMonth;
+                    if (this._dayVal % 7 < firstDowOfMonth) {
+                        output += 7;
+                    }
+                    return output;
                 case "e":
                     return this._dayVal;
             }
