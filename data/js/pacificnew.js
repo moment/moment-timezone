@@ -1,5 +1,3 @@
-\\ pacificnewmodule.exports = {};
-module.exports.rules = {};
-module.exports.zones = {
-    "US/Pacific-New": "America/Los_Angeles"
-};
+module.exports = {};
+module.exports.rules = [];
+module.exports.zones = [];

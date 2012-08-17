@@ -2,17 +2,14 @@ var fs = require('fs'),
     path = require('path');
 
 function addZone(list, zone, name) {
-    if (!zone[3] || zone[3] > 1970) {
-        list[name] = list[name] || [];
-        list[name].push(zone);
-    }
+    list.push(zone);
 }
 
 
 function addRule(list, rule, name) {
     if (rule[1] > 1970 || rule[1] == "max") {
         list[name] = list[name] || [];
-        list[name].push(rule);
+        list[name].push(rule.join(','));
     }
 }
 
@@ -27,8 +24,8 @@ function parseZone(_zone) {
         var chunk = '';
         var zone = null;
         var rule = null;
-        var zones = {},
-            rules = {};
+        var zones = [],
+            rules = [];
 
         for (var i = 0; i < lines.length; i++) {
             l = lines[i];
@@ -41,12 +38,13 @@ function parseZone(_zone) {
                 chunk = arr.shift();
                 switch(chunk) {
                     case 'Zone':
-                        zone = arr.shift();
-                        addZone(zones, arr, zone);
+                        zones.push(arr.join(','));
                         break;
                     case 'Rule':
-                        rule = arr.shift();
-                        addRule(rules, arr, rule);
+                        if (arr[3] === '-') {
+                            arr[3] = '';
+                        }
+                        rules.push(arr.join(','));
                         break;
                     case 'Link':
                         zones[arr[1]] = zones[arr[1]] || [];
@@ -60,8 +58,7 @@ function parseZone(_zone) {
                 }
             }
         }
-        var str2 = '\\\\ ' + _zone;
-        str2 += 'module.exports = {};\n';
+        var str2 = 'module.exports = {};\n';
         str2 += 'module.exports.rules = ' + JSON.stringify(rules, null, 4) + ';\n';
         str2 += 'module.exports.zones = ' + JSON.stringify(zones, null, 4) + ';\n';
         var outPath = path.join(__dirname, 'js', _zone + '.js');

@@ -5,127 +5,79 @@
 // github.com/timrwood/moment-timezone
 
 (function () {
-    var moment = this.moment || require('moment'),
 
-        zones = {},
-        aliases = {};
+    var momentTZ,
 
-    function Timezone(data) {
-        this._data = data;
+        rules = [],
+        zoneRules = [],
+        zones = {};
+
+    /************************************
+        Rules
+    ************************************/
+
+    function Rule (_name, _from, _to, _type, _in, _on, _at, _save, _letters) {
+        this._name    = _name;
+        this._from    = _from;
+        this._to      = _to;
+        this._type    = _type;
+        this._in      = _in;
+        this._on      = _on;
+        this._at      = _at;
+        this._save    = _save;
+        this._letters = _letters;
     }
 
+    Rule.prototype = {
 
+    };
 
-    moment.timezone = function (name, data, maps) {
+    /************************************
+        ZoneRules
+    ************************************/
+
+    function ZoneRule (_name, _offset, _rule, _format, _until) {
+        this._name = _name;
+    }
+
+    ZoneRule.prototype = {
+
+    };
+
+    /************************************
+        Zones
+    ************************************/
+
+    function Zone (_name) {
+
+    }
+
+    Zone.prototype = {
+
+    };
+
+    /************************************
+        Global Methods
+    ************************************/
+
+    function addRules (rulesArray) {
         var i;
-        for (i = 0; i < maps.length; i++) {
-            aliases[maps[i]] = name;
+        for (i = 0; i < rulesArray.length; i++) {
+            addRule(rulesArray[i]);
         }
-        zones[name] = new Timezone(data);
-
-        console.log(zones);
-        console.log(aliases);
+        console.log(rules);
     }
 
-    moment.timezone('America/Los_Angeles', {
-        'PST' : {
-            "offset" : -8,
-            "unix" : [
-                9828000,
-                9828000,
-                41364000,
-                72986400,
-                104522400,
-                136058400,
-                167594400,
-                199216800,
-                230752800,
-                262288800,
-                293824800,
-                325447200,
-                356983200,
-                388519200,
-                420055200,
-                451677600,
-                483213600,
-                514749600,
-                546285600,
-                577908000,
-                609444000,
-                640980000,
-                672516000,
-                704138400,
-                735674400,
-                767210400,
-                798746400,
-                830368800,
-                861904800,
-                893440800,
-                924976800,
-                956599200,
-                988135200,
-                1019671200,
-                1051207200,
-                1082829600,
-                1114365600,
-                1145901600,
-                1177437600,
-                1209060000,
-                1240596000,
-                1272132000,
-                1303668000
-            ]
-        },
-        'PDT' : {
-            "offset" : -7,
-            "unix" : [
-                9828000,
-                9828000,
-                41364000,
-                72986400,
-                104522400,
-                136058400,
-                167594400,
-                199216800,
-                230752800,
-                262288800,
-                293824800,
-                325447200,
-                356983200,
-                388519200,
-                420055200,
-                451677600,
-                483213600,
-                514749600,
-                546285600,
-                577908000,
-                609444000,
-                640980000,
-                672516000,
-                704138400,
-                735674400,
-                767210400,
-                798746400,
-                830368800,
-                861904800,
-                893440800,
-                924976800,
-                956599200,
-                988135200,
-                1019671200,
-                1051207200,
-                1082829600,
-                1114365600,
-                1145901600,
-                1177437600,
-                1209060000,
-                1240596000,
-                1272132000,
-                1303668000
-            ]
-        }
-    }, [
-        'America/Sitka',
-        'America/Juneau'
-    ]);
+    function addRule (ruleString) {
+        var p = ruleString.split(',');
+        rules.push(new Rule(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9]) );
+    }
+
+    module.exports = {
+
+    };
+
+    var na = require('./data/js/northamerica');
+    addRules(na.rules);
+
 }).apply(this);
