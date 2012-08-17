@@ -50,8 +50,11 @@
         this._to      = +_to;
         this._type    = _type;
         this._month   = +_in;
-        this._dayRule = _on.split(':')[0];
-        this._dayVal  = +_on.split(':')[1];
+
+        _on = _on.split(':');
+        this._dayRule = _on[0];
+        this._dayVal  = +_on[1];
+
         this._time    = _at;
         this._save    = _save;
         this._letters = _letters;
@@ -75,19 +78,26 @@
 
         _dateForYear : function (year) {
             var firstDowOfMonth,
-                b,
+                lastDowOfMonth,
+                daysInMonth,
                 day = this._dayVal,
                 dow = day % 7,
                 output;
             switch (this._dayRule) {
                 case "l":
                     // TODO
-                    return this._dayVal;
+                    lastDowOfMonth = moment([year, this._month + 1, 0]).day();
+                    daysInMonth = moment([year, this._month, 1]).daysInMonth();
+                    output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
+                    if (dow >= lastDowOfMonth) {
+                        output -= 7;
+                    }
+                    return output;
                 case "f":
                     // find first day of month
                     firstDowOfMonth = moment([year, this._month, 1]).day();
-                    output = this._dayVal + 1 - firstDowOfMonth;
-                    if (this._dayVal % 7 < firstDowOfMonth) {
+                    output = day + 1 - firstDowOfMonth;
+                    if (dow < firstDowOfMonth) {
                         output += 7;
                     }
                     return output;

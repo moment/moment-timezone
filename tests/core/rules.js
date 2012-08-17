@@ -55,7 +55,7 @@ function dateForYearLast (dow, month, test) {
         format = moment([2010, month, target]).format("MMMM D YYYY");
         formatMonth = moment([2010, month, target]).format("MMMM");
 
-        test.equal(rule._dateForYear(2010), target + 9999, "The " + count(i / 7) + ' from last ' + dayOfWeek(i) + " in " + formatMonth + " should be " + format);
+        test.equal(rule._dateForYear(2010), target, "The " + count(i / 7) + ' from last ' + dayOfWeek(i) + " in " + formatMonth + " should be " + format);
     }
 
     test.done();
