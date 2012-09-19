@@ -72,6 +72,10 @@
 			return true;
 		},
 
+		letters : function () {
+			return this._letters;
+		},
+
 		_momentForYear : function (year) {
 			return moment([year, this._month, this._dateForYear(year)]);
 		},
@@ -166,22 +170,34 @@
 		ZoneRules
 	************************************/
 
-	function Zone (_name, _offset, _rule, _format, _until) {
+	function Zone (_name, _offset, _ruleSet, _format, _until) {
 		this._name = _name;
 		this._offset = _offset;
 
-		this._rule = getRuleSet(_rule);
+		this._ruleSet = getRuleSet(_ruleSet);
 
 		this._format = _format;
-		this._until = moment(_until || "999999", "YYYYMMDD");
+		this._until = +_until || 9999;
 	}
 
 	Zone.prototype = {
-
+		contains : function (mom) {
+			if (mom.year() <= this._until) {
+				return true;
+			}
+			return false;
+		}
 	};
 
 	function sortZones (a, b) {
-
+		var diff = moment(a._until) - moment(b._until);
+		if (diff > 0) {
+			return 1;
+		}
+		if (diff < 0) {
+			return -1;
+		}
+		return 0;
 	}
 
 	/************************************
@@ -196,6 +212,16 @@
 	ZoneSet.prototype = {
 		addZone : function (zone) {
 			this._zones.push(zone);
+			this._zones.sort(sortZones);
+		},
+
+		rule : function (mom) {
+			var i, zone;
+			for (i = 0; i < this._zones.length; i++) {
+				if (this._zones[i].contains(mom)) {
+					return this._zones[i]._ruleSet.rule(mom);
+				}
+			}
 		}
 	};
 
