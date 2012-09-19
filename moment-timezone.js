@@ -173,7 +173,7 @@
 		this._rule = getRuleSet(_rule);
 
 		this._format = _format;
-		this._until = moment(_until, "YYYYMMDD");
+		this._until = moment(_until || "999999", "YYYYMMDD");
 	}
 
 	Zone.prototype = {
@@ -265,7 +265,9 @@
 	module.exports = {
 		addRule : addRule,
 		addRules : addRules,
-		getRuleSet : getRuleSet
+		getRuleSet : getRuleSet,
+		addZone : addZone,
+		getZoneSet : getZoneSet
 	};
 
 	// addRules(require('./data/js/northamerica').rules);
