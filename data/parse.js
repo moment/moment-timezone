@@ -68,9 +68,11 @@ function parseZone(_zone) {
                 }
             }
         }
-        var str2 = 'module.exports = {};\n';
-        str2 += 'module.exports.rules = ' + JSON.stringify(rules, null, 4) + ';\n';
-        str2 += 'module.exports.zones = ' + JSON.stringify(zones, null, 4) + ';\n';
+        var str2 = 'module.exports = ';
+        str2 += JSON.stringify({
+            rules : rules,
+            zones : zones
+        }, null, '\t') + ';\n';
         var outPath = path.join(__dirname, 'js', _zone + '.js');
 
         fs.writeFile(outPath, str2, function(err) {
