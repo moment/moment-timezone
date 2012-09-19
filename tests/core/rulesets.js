@@ -7,7 +7,7 @@ exports.rules = {
 	},
 
 	"contains month" : function (test) {
-		test.expect(3);
+		test.expect(6);
 
 		TZ.addRule("RULESET,2000,2008,,2,e:2,2:00,1:00,D");
 		TZ.addRule("RULESET,2000,2008,,6,e:3,2:00,0:00,D");
@@ -18,12 +18,15 @@ exports.rules = {
 		test.equal(ruleset.rule(moment([2007, 1, 2]))._dayVal, 3, "Ruleset should get correct rule on earlier month");
 		test.equal(ruleset.rule(moment([2007, 2, 2]))._dayVal, 2, "Ruleset should get correct rule on exact month");
 		test.equal(ruleset.rule(moment([2007, 3, 2]))._dayVal, 2, "Ruleset should get correct rule on later month");
+		test.equal(ruleset.rule(moment([2007, 5, 3]))._dayVal, 2, "Ruleset should get correct rule on earlier month");
+		test.equal(ruleset.rule(moment([2007, 6, 3]))._dayVal, 3, "Ruleset should get correct rule on exact month");
+		test.equal(ruleset.rule(moment([2007, 7, 3]))._dayVal, 3, "Ruleset should get correct rule on later month");
 
 		test.done();
 	},
 
 	"contains day" : function (test) {
-		test.expect(3);
+		test.expect(6);
 
 		TZ.addRule("RULESET,2000,2008,,2,e:2,2:00,1:00,D");
 		TZ.addRule("RULESET,2000,2008,,6,e:3,2:00,0:00,D");
@@ -34,6 +37,9 @@ exports.rules = {
 		test.equal(ruleset.rule(moment([2007, 2, 1]))._dayVal, 3, "Ruleset should get correct rule on earlier day");
 		test.equal(ruleset.rule(moment([2007, 2, 2]))._dayVal, 2, "Ruleset should get correct rule on exact day");
 		test.equal(ruleset.rule(moment([2007, 2, 3]))._dayVal, 2, "Ruleset should get correct rule on later day");
+		test.equal(ruleset.rule(moment([2007, 6, 2]))._dayVal, 2, "Ruleset should get correct rule on earlier day");
+		test.equal(ruleset.rule(moment([2007, 6, 3]))._dayVal, 3, "Ruleset should get correct rule on exact day");
+		test.equal(ruleset.rule(moment([2007, 6, 4]))._dayVal, 3, "Ruleset should get correct rule on later day");
 
 		test.done();
 	}

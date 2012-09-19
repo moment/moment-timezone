@@ -56,14 +56,17 @@
 		contains : function (mom) {
 			var year = mom.year(),
 				month = mom.month();
+			// if the year is out of range, it did not apply
 			if (year < this._from || year > this._to) {
 				return false;
 			}
-			if (month < this._month || mom.date() < this._dateForYear(year)) {
-				// if it's an earlier month, use the year before
+			// if the moment is earlier than the start date...
+			if (mom < this._momentForYear(year)) {
+				// if the rule applied last year, it applies all of this year too
 				if (year > this._from) {
 					return true;
 				}
+				// the moment is too early for this year
 				return false;
 			}
 			return true;
@@ -82,7 +85,7 @@
 				output;
 			switch (this._dayRule) {
 				case "l":
-					// TODO
+					// find last day of month
 					lastDowOfMonth = moment([year, this._month + 1, 0]).day();
 					daysInMonth = moment([year, this._month, 1]).daysInMonth();
 					output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
@@ -137,7 +140,7 @@
 				end = tmp;
 			}
 
-			if (mom < start || mom > end) {
+			if (mom < start || mom >= end) {
 				return endRule;
 			}
 			return startRule;
@@ -201,14 +204,17 @@
 		}
 
 		var p = ruleString.split(','),
-			rule = new Rule(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9]);
+			name = p[0],
+			rule = new Rule(name, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9]);
 
+		// cache the rule so we don't add it again
 		rules[ruleString] = rule;
 
-		if (!rulesets[p[0]]) {
-			rulesets[p[0]] = new Ruleset(p[0]);
+		// add to the ruleset and create ruleset if it doesn't exist yet
+		if (!rulesets[name]) {
+			rulesets[name] = new Ruleset(name);
 		}
-		rulesets[p[0]].addRule(rule);
+		rulesets[name].addRule(rule);
 
 		return rule;
 	}
