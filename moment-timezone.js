@@ -11,9 +11,9 @@
 		momentTZ,
 
 		rules = {},
-		rulesets = {},
-		zoneRules = [],
-		zones = {};
+		ruleSets = {},
+		zones = {},
+		zoneSets = {};
 
 	/************************************
 		Rules
@@ -109,15 +109,15 @@
 	};
 
 	/************************************
-		Rulesets
+		Rule Sets
 	************************************/
 
-	function Ruleset (_name) {
+	function RuleSet (_name) {
 		this._name = _name;
 		this._rules = [];
 	}
 
-	Ruleset.prototype = {
+	RuleSet.prototype = {
 		addRule : function (rule) {
 			this._rules.push(rule);
 		},
@@ -166,24 +166,37 @@
 		ZoneRules
 	************************************/
 
-	function ZoneRule (_name, _offset, _rule, _format, _until) {
+	function Zone (_name, _offset, _rule, _format, _until) {
 		this._name = _name;
+		this._offset = _offset;
+
+		this._rule = getRuleSet(_rule);
+
+		this._format = _format;
+		this._until = moment(_until, "YYYYMMDD");
 	}
 
-	ZoneRule.prototype = {
+	Zone.prototype = {
 
 	};
+
+	function sortZones (a, b) {
+
+	}
 
 	/************************************
 		Zones
 	************************************/
 
-	function Zone (_name) {
-
+	function ZoneSet (_name) {
+		this._name = _name;
+		this._zones = [];
 	}
 
-	Zone.prototype = {
-
+	ZoneSet.prototype = {
+		addZone : function (zone) {
+			this._zones.push(zone);
+		}
 	};
 
 	/************************************
@@ -210,17 +223,43 @@
 		// cache the rule so we don't add it again
 		rules[ruleString] = rule;
 
-		// add to the ruleset and create ruleset if it doesn't exist yet
-		if (!rulesets[name]) {
-			rulesets[name] = new Ruleset(name);
-		}
-		rulesets[name].addRule(rule);
+		// add to the ruleset
+		getRuleSet(name).addRule(rule);
 
 		return rule;
 	}
 
+	function addZone (zoneString) {
+		// don't duplicate zones
+		if (zones[zoneString]) {
+			return zones[zoneString];
+		}
+
+		var p = zoneString.split(','),
+			name = p[0],
+			zone = new Zone(name, p[1], p[2], p[3], p[4]);
+
+		// cache the zone so we don't add it again
+		zones[zoneString] = zone;
+
+		// add to the zoneset
+		getZoneSet(name).addZone(zone);
+
+		return zone;
+	}
+
 	function getRuleSet (name) {
-		return rulesets[name];
+		if (!ruleSets[name]) {
+			ruleSets[name] = new RuleSet(name);
+		}
+		return ruleSets[name];
+	}
+
+	function getZoneSet (name) {
+		if (!zoneSets[name]) {
+			zoneSets[name] = new ZoneSet(name);
+		}
+		return zoneSets[name];
 	}
 
 	module.exports = {
