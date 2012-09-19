@@ -45,10 +45,10 @@ exports.rules = {
 
 		var zoneset = TZ.getZoneSet('ZONESETA');
 
-		test.equal(zoneset.format(moment([2004, 2, 2])), 'EAT', "ZoneSet should get correct rule on exact month 2004");
-		test.equal(zoneset.format(moment([2004, 1, 2])), 'EBT', "ZoneSet should get correct rule on earlier month 2004");
-		test.equal(zoneset.format(moment([2005, 5, 6])), 'ECT', "ZoneSet should get correct rule on earlier month 2005");
-		test.equal(zoneset.format(moment([2005, 6, 6])), 'EDT', "ZoneSet should get correct rule on exact month 2005");
+		test.equal(zoneset.format(moment([2004, 2, 2])), 'EAT', "ZoneSet should get correct format on exact month 2004");
+		test.equal(zoneset.format(moment([2004, 1, 2])), 'EBT', "ZoneSet should get correct format on earlier month 2004");
+		test.equal(zoneset.format(moment([2005, 5, 6])), 'ECT', "ZoneSet should get correct format on earlier month 2005");
+		test.equal(zoneset.format(moment([2005, 6, 6])), 'EDT', "ZoneSet should get correct format on exact month 2005");
 
 		test.done();
 	},
@@ -58,10 +58,10 @@ exports.rules = {
 
 		var zoneset = TZ.getZoneSet('ZONESETA');
 
-		test.equal(zoneset.format(moment([2004, 2, 2])), 'EAT', "ZoneSet should get correct rule on exact month 2004");
-		test.equal(zoneset.format(moment([2004, 1, 2])), 'EBT', "ZoneSet should get correct rule on earlier month 2004");
-		test.equal(zoneset.format(moment([2005, 5, 6])), 'ECT', "ZoneSet should get correct rule on earlier month 2005");
-		test.equal(zoneset.format(moment([2005, 6, 6])), 'EDT', "ZoneSet should get correct rule on exact month 2005");
+		test.equal(zoneset.offset(moment([2004, 2, 2])), 360, "ZoneSet should get correct offset on exact month 2004");
+		test.equal(zoneset.offset(moment([2004, 1, 2])), 300, "ZoneSet should get correct offset on earlier month 2004");
+		test.equal(zoneset.offset(moment([2005, 5, 6])), 360, "ZoneSet should get correct offset on earlier month 2005");
+		test.equal(zoneset.offset(moment([2005, 6, 6])), 300, "ZoneSet should get correct offset on exact month 2005");
 
 		test.done();
 	}

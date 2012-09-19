@@ -31,11 +31,11 @@
 	 *                 "l" The last on this day of week (while num > 7, skip a week)
 	 *                 "f" The first of this day of week (while num > 7, skip a week)
 	 *                 "e" This exact date of the month
-	 * @param _at      The 24 hour time of day that the switch takes place
-	 * @param _save    The number of hours to save. Usually 1 or 0
-	 * @param _letters The string to replace the ZoneRule with
+	 * @param _at      The number of minutes into the day that the change happens on
+	 * @param _offset  The number of minutes to add to the offset. Usually 60 or 0
+	 * @param _letters The string to replace the Zone format string with
 	 */
-	function Rule (_name, _from, _to, _in, _on, _at, _save, _letters) {
+	function Rule (_name, _from, _to, _in, _on, _at, _offset, _letters) {
 		this._name    = _name;
 		this._from    = +_from;
 		this._to      = +_to;
@@ -45,8 +45,8 @@
 		this._dayRule = _on[0];
 		this._dayVal  = +_on[1];
 
-		this._time    = _at;
-		this._save    = _save;
+		this._time    = +_at;
+		this._offset  = +_offset;
 		this._letters = _letters;
 	}
 
@@ -170,7 +170,7 @@
 
 	function Zone (_name, _offset, _ruleSet, _format, _until) {
 		this._name = _name;
-		this._offset = _offset;
+		this._offset = +_offset;
 
 		this._ruleSet = getRuleSet(_ruleSet);
 
@@ -212,7 +212,7 @@
 	}
 
 	ZoneSet.prototype = {
-		_zoneForMoment : function (mom) {
+		_zone : function (mom) {
 			var i, zone;
 			for (i = 0; i < this._zones.length; i++) {
 				if (this._zones[i].contains(mom)) {
@@ -221,13 +221,13 @@
 			}
 		},
 
+		rule : function (mom) {
+			return this._zone(mom)._ruleSet.rule(mom);
+		},
+
 		add : function (zone) {
 			this._zones.push(zone);
 			this._zones.sort(sortZones);
-		},
-
-		rule : function (mom) {
-			return this._zoneForMoment(mom).ruleSet().rule(mom);
 		},
 
 		name : function () {
@@ -235,9 +235,15 @@
 		},
 
 		format : function (mom) {
-			var zone = this._zoneForMoment(mom),
-				rule = zone.ruleSet().rule(mom);
+			var zone = this._zone(mom),
+				rule = zone._ruleSet.rule(mom);
 			return zone._format.replace("%s", rule.letters());
+		},
+
+		offset : function (mom) {
+			var zone = this._zone(mom),
+				rule = zone._ruleSet.rule(mom);
+			return zone._offset + rule._offset;
 		}
 	};
 
