@@ -25,7 +25,6 @@
 	 * @param _name    The string identifier for the timezone name (eg. US, NYC, Mexico...)
 	 * @param _from    The start year
 	 * @param _to      The end year
-	 * @param _type
 	 * @param _in      The month to start on
 	 * @param _on      The day to start on. A colon separated tuple of a letter and a number
 	 *                 eg. "l:1", "e:20", "f:1"
@@ -36,11 +35,10 @@
 	 * @param _save    The number of hours to save. Usually 1 or 0
 	 * @param _letters The string to replace the ZoneRule with
 	 */
-	function Rule (_name, _from, _to, _type, _in, _on, _at, _save, _letters) {
+	function Rule (_name, _from, _to, _in, _on, _at, _save, _letters) {
 		this._name    = _name;
 		this._from    = +_from;
 		this._to      = +_to;
-		this._type    = _type;
 		this._month   = +_in;
 
 		_on = _on.split(':');
@@ -122,10 +120,6 @@
 	}
 
 	RuleSet.prototype = {
-		addRule : function (rule) {
-			this._rules.push(rule);
-		},
-
 		_pickRule : function (startRule, endRule, mom) {
 			var tmp,
 				start, end,
@@ -150,6 +144,10 @@
 			return startRule;
 		},
 
+		add : function (rule) {
+			this._rules.push(rule);
+		},
+
 		rule : function (mom) {
 			var i, startRule, endRule;
 			for (i = 0; i < this._rules.length; i++) {
@@ -167,7 +165,7 @@
 	};
 
 	/************************************
-		ZoneRules
+		Zone
 	************************************/
 
 	function Zone (_name, _offset, _ruleSet, _format, _until) {
@@ -186,8 +184,16 @@
 				return true;
 			}
 			return false;
+		},
+
+		ruleSet : function () {
+			return this._ruleSet;
 		}
 	};
+
+	/************************************
+		Zone Set
+	************************************/
 
 	function sortZones (a, b) {
 		var diff = moment(a._until) - moment(b._until);
@@ -200,28 +206,38 @@
 		return 0;
 	}
 
-	/************************************
-		Zones
-	************************************/
-
 	function ZoneSet (_name) {
 		this._name = _name;
 		this._zones = [];
 	}
 
 	ZoneSet.prototype = {
-		addZone : function (zone) {
+		_zoneForMoment : function (mom) {
+			var i, zone;
+			for (i = 0; i < this._zones.length; i++) {
+				if (this._zones[i].contains(mom)) {
+					return this._zones[i];
+				}
+			}
+		},
+
+		add : function (zone) {
 			this._zones.push(zone);
 			this._zones.sort(sortZones);
 		},
 
 		rule : function (mom) {
-			var i, zone;
-			for (i = 0; i < this._zones.length; i++) {
-				if (this._zones[i].contains(mom)) {
-					return this._zones[i]._ruleSet.rule(mom);
-				}
-			}
+			return this._zoneForMoment(mom).ruleSet().rule(mom);
+		},
+
+		name : function () {
+			return this._name;
+		},
+
+		format : function (mom) {
+			var zone = this._zoneForMoment(mom),
+				rule = zone.ruleSet().rule(mom);
+			return zone._format.replace("%s", rule.letters());
 		}
 	};
 
@@ -244,13 +260,13 @@
 
 		var p = ruleString.split(','),
 			name = p[0],
-			rule = new Rule(name, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9]);
+			rule = new Rule(name, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8]);
 
 		// cache the rule so we don't add it again
 		rules[ruleString] = rule;
 
 		// add to the ruleset
-		getRuleSet(name).addRule(rule);
+		getRuleSet(name).add(rule);
 
 		return rule;
 	}
@@ -269,7 +285,7 @@
 		zones[zoneString] = zone;
 
 		// add to the zoneset
-		getZoneSet(name).addZone(zone);
+		getZoneSet(name).add(zone);
 
 		return zone;
 	}

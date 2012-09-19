@@ -9,9 +9,9 @@ exports.rules = {
 	"contains month" : function (test) {
 		test.expect(6);
 
-		TZ.addRule("RULESET,2000,2008,,2,e:2,2:00,1:00,D");
-		TZ.addRule("RULESET,2000,2008,,6,e:3,2:00,0:00,D");
-		TZ.addRule("RULESET,2009,2010,,2,e:4,2:00,1:00,D");
+		TZ.addRule("RULESET,2000,2008,2,e:2,2:00,1:00,D");
+		TZ.addRule("RULESET,2000,2008,6,e:3,2:00,0:00,D");
+		TZ.addRule("RULESET,2009,2010,2,e:4,2:00,1:00,D");
 
 		var ruleset = TZ.getRuleSet('RULESET');
 
@@ -28,9 +28,9 @@ exports.rules = {
 	"contains day" : function (test) {
 		test.expect(6);
 
-		TZ.addRule("RULESET,2000,2008,,2,e:2,2:00,1:00,D");
-		TZ.addRule("RULESET,2000,2008,,6,e:3,2:00,0:00,D");
-		TZ.addRule("RULESET,2009,2010,,2,e:4,2:00,1:00,D");
+		TZ.addRule("RULESET,2000,2008,2,e:2,2:00,1:00,D");
+		TZ.addRule("RULESET,2000,2008,6,e:3,2:00,0:00,D");
+		TZ.addRule("RULESET,2009,2010,2,e:4,2:00,1:00,D");
 
 		var ruleset = TZ.getRuleSet('RULESET');
 

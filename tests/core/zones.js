@@ -3,11 +3,11 @@ var TZ = require("../../moment-timezone"),
 
 exports.rules = {
 	"setUp" : function (cb) {
-		TZ.addRule("ZONEA,2000,2008,,2,e:2,2:00,1:00,A");
-		TZ.addRule("ZONEA,2000,2008,,6,e:3,2:00,0:00,B");
+		TZ.addRule("ZONEA,2000,2008,2,e:2,120,60,A");
+		TZ.addRule("ZONEA,2000,2008,6,e:3,120,0,B");
 
-		TZ.addRule("ZONEB,2000,2008,,2,e:5,2:00,1:00,C");
-		TZ.addRule("ZONEB,2000,2008,,6,e:6,2:00,0:00,D");
+		TZ.addRule("ZONEB,2000,2008,2,e:5,120,60,C");
+		TZ.addRule("ZONEB,2000,2008,6,e:6,120,0,D");
 
 		TZ.addZone("ZONESETA,300,ZONEA,E%sT,2004");
 		TZ.addZone("ZONESETA,300,ZONEB,E%sT,2006");
@@ -36,6 +36,32 @@ exports.rules = {
 		test.equal(zoneset.rule(moment([2007, 5, 3])).letters(), 'A', "ZoneSet should get correct rule on earlier month 2007");
 		test.equal(zoneset.rule(moment([2007, 6, 3])).letters(), 'B', "ZoneSet should get correct rule on exact month 2007");
 		test.equal(zoneset.rule(moment([2007, 7, 3])).letters(), 'B', "ZoneSet should get correct rule on later month 2007");
+
+		test.done();
+	},
+
+	"formatting letters" : function (test) {
+		test.expect(4);
+
+		var zoneset = TZ.getZoneSet('ZONESETA');
+
+		test.equal(zoneset.format(moment([2004, 2, 2])), 'EAT', "ZoneSet should get correct rule on exact month 2004");
+		test.equal(zoneset.format(moment([2004, 1, 2])), 'EBT', "ZoneSet should get correct rule on earlier month 2004");
+		test.equal(zoneset.format(moment([2005, 5, 6])), 'ECT', "ZoneSet should get correct rule on earlier month 2005");
+		test.equal(zoneset.format(moment([2005, 6, 6])), 'EDT', "ZoneSet should get correct rule on exact month 2005");
+
+		test.done();
+	},
+
+	"offsets" : function (test) {
+		test.expect(4);
+
+		var zoneset = TZ.getZoneSet('ZONESETA');
+
+		test.equal(zoneset.format(moment([2004, 2, 2])), 'EAT', "ZoneSet should get correct rule on exact month 2004");
+		test.equal(zoneset.format(moment([2004, 1, 2])), 'EBT', "ZoneSet should get correct rule on earlier month 2004");
+		test.equal(zoneset.format(moment([2005, 5, 6])), 'ECT', "ZoneSet should get correct rule on earlier month 2005");
+		test.equal(zoneset.format(moment([2005, 6, 6])), 'EDT', "ZoneSet should get correct rule on exact month 2005");
 
 		test.done();
 	}

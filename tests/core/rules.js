@@ -19,7 +19,7 @@ function dateForYearFirst (dow, month, test) {
 	test.expect(28);
 
 	for (i = 0; i < 28; i++) {
-		rule = TZ.addRule("TEST,2008,2010,," + month +  ",f:" + i + ",2:00,1:00,D");
+		rule = TZ.addRule("TEST,2008,2010," + month +  ",f:" + i + ",2:00,1:00,D");
 		target = i + 1 - dow;
 		if (i % 7 < dow) {
 			target += 7;
@@ -45,7 +45,7 @@ function dateForYearLast (dow, month, test) {
 	test.expect(28);
 
 	for (i = 0; i < 28; i++) {
-		rule = TZ.addRule("TEST,2010,2010,," + month +  ",l:" + i + ",2:00,1:00,D");
+		rule = TZ.addRule("TEST,2010,2010," + month +  ",l:" + i + ",2:00,1:00,D");
 		target = daysInMonth - (dow) + (i % 7);
 		target -= ~~(i / 7) * 7;
 		if (i % 7 > dow) {
@@ -69,7 +69,7 @@ exports.rules = {
 	"contains year" : function (test) {
 		test.expect(3);
 
-		var exact = TZ.addRule("TEST,2008,2010,,2,e:1,2:00,1:00,D");
+		var exact = TZ.addRule("TEST,2008,2010,2,e:1,2:00,1:00,D");
 
 		test.ok(exact.contains(moment([2010, 2])), "Rule should contain year");
 		test.ok(!exact.contains(moment([2007, 2])), "Rule should not contain year too low");
@@ -81,7 +81,7 @@ exports.rules = {
 	"contains month" : function (test) {
 		test.expect(3);
 
-		var exact = TZ.addRule("TEST,2008,2010,,2,e:1,2:00,1:00,D");
+		var exact = TZ.addRule("TEST,2008,2010,2,e:1,2:00,1:00,D");
 
 		test.ok(exact.contains(moment([2010, 2])), "Rule should contain month");
 		test.ok(exact.contains(moment([2010, 1])), "Rule should contain if month too low but rule applied last year");
@@ -93,7 +93,7 @@ exports.rules = {
 	"contains date equal" : function (test) {
 		test.expect(3);
 
-		var exact = TZ.addRule("TEST,2008,2010,,2,e:2,2:00,1:00,D");
+		var exact = TZ.addRule("TEST,2008,2010,2,e:2,2:00,1:00,D");
 
 		test.ok(exact.contains(moment([2010, 2, 2])), "Rule should contain date");
 		test.ok(exact.contains(moment([2010, 2, 1])), "Rule should contain if date too low but rule applied last year");
