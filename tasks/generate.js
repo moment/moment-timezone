@@ -1,4 +1,5 @@
-var path = require('path');
+var path = require('path'),
+    moment = require('moment');
 
 module.exports = function (grunt) {
     // placeholder for an array of timezones
@@ -82,7 +83,25 @@ module.exports = function (grunt) {
 
     function generateZone(zone, cb) {
         var filename = path.join(process.cwd(), "tests/" + zone.toLowerCase() + '.js');
-        grunt.file.write(filename, "noop();");
+        var max = +moment([2013]);
+        var offset = 0;
+        var currentMoment;
+        var output = "";
+
+        // every minute from 1970 to 2012
+        for (var i = 0; i < max; i += 60000) {
+            currentMoment = moment(i);
+            if (offset !== currentMoment.zone()) {
+                offset = currentMoment.zone();
+                output += makeTest(currentMoment);
+            }
+        }
+
+        grunt.file.write(filename, output);
         cb();
+    }
+
+    function makeTest(mom) {
+        return "'" + mom.format() + " should be " + mom.zone() + "',\n";
     }
 };
