@@ -30,5 +30,6 @@ module.exports = {
 		"Etc/GMT+10,-10,-,GMT+10",
 		"Etc/GMT+11,-11,-,GMT+11",
 		"Etc/GMT+12,-12,-,GMT+12"
-	]
+	],
+	"lastZone": "Etc/GMT+12"
 };

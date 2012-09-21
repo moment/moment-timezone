@@ -16,53 +16,53 @@ exports.rules = {
 		cb();
 	},
 
-	"contains month" : function (test) {
-		test.expect(12);
+	// "contains month" : function (test) {
+	// 	test.expect(12);
 
-		var zoneset = TZ.getZoneSet('ZONESETA');
+	// 	var zoneset = TZ.getZoneSet('ZONESETA');
 
-		test.equal(zoneset.rule(moment([2004, 1, 2])).letters(), 'B', "ZoneSet should get correct rule on earlier month 2004");
-		test.equal(zoneset.rule(moment([2004, 2, 2])).letters(), 'A', "ZoneSet should get correct rule on exact month 2004");
-		test.equal(zoneset.rule(moment([2004, 3, 2])).letters(), 'A', "ZoneSet should get correct rule on later month 2004");
+	// 	test.equal(zoneset.rule(moment([2004, 1, 2])).letters(), 'B', "ZoneSet should get correct rule on earlier month 2004");
+	// 	test.equal(zoneset.rule(moment([2004, 2, 2])).letters(), 'A', "ZoneSet should get correct rule on exact month 2004");
+	// 	test.equal(zoneset.rule(moment([2004, 3, 2])).letters(), 'A', "ZoneSet should get correct rule on later month 2004");
 
-		test.equal(zoneset.rule(moment([2005, 5, 6])).letters(), 'C', "ZoneSet should get correct rule on earlier month 2005");
-		test.equal(zoneset.rule(moment([2005, 6, 6])).letters(), 'D', "ZoneSet should get correct rule on exact month 2005");
-		test.equal(zoneset.rule(moment([2005, 7, 6])).letters(), 'D', "ZoneSet should get correct rule on later month 2005");
+	// 	test.equal(zoneset.rule(moment([2005, 5, 6])).letters(), 'C', "ZoneSet should get correct rule on earlier month 2005");
+	// 	test.equal(zoneset.rule(moment([2005, 6, 6])).letters(), 'D', "ZoneSet should get correct rule on exact month 2005");
+	// 	test.equal(zoneset.rule(moment([2005, 7, 6])).letters(), 'D', "ZoneSet should get correct rule on later month 2005");
 
-		test.equal(zoneset.rule(moment([2006, 1, 5])).letters(), 'D', "ZoneSet should get correct rule on earlier month 2006");
-		test.equal(zoneset.rule(moment([2006, 2, 5])).letters(), 'C', "ZoneSet should get correct rule on exact month 2006");
-		test.equal(zoneset.rule(moment([2006, 3, 5])).letters(), 'C', "ZoneSet should get correct rule on later month 2006");
+	// 	test.equal(zoneset.rule(moment([2006, 1, 5])).letters(), 'D', "ZoneSet should get correct rule on earlier month 2006");
+	// 	test.equal(zoneset.rule(moment([2006, 2, 5])).letters(), 'C', "ZoneSet should get correct rule on exact month 2006");
+	// 	test.equal(zoneset.rule(moment([2006, 3, 5])).letters(), 'C', "ZoneSet should get correct rule on later month 2006");
 
-		test.equal(zoneset.rule(moment([2007, 5, 3])).letters(), 'A', "ZoneSet should get correct rule on earlier month 2007");
-		test.equal(zoneset.rule(moment([2007, 6, 3])).letters(), 'B', "ZoneSet should get correct rule on exact month 2007");
-		test.equal(zoneset.rule(moment([2007, 7, 3])).letters(), 'B', "ZoneSet should get correct rule on later month 2007");
+	// 	test.equal(zoneset.rule(moment([2007, 5, 3])).letters(), 'A', "ZoneSet should get correct rule on earlier month 2007");
+	// 	test.equal(zoneset.rule(moment([2007, 6, 3])).letters(), 'B', "ZoneSet should get correct rule on exact month 2007");
+	// 	test.equal(zoneset.rule(moment([2007, 7, 3])).letters(), 'B', "ZoneSet should get correct rule on later month 2007");
 
-		test.done();
-	},
+	// 	test.done();
+	// },
 
-	"formatting letters" : function (test) {
-		test.expect(4);
+	// "formatting letters" : function (test) {
+	// 	test.expect(4);
 
-		var zoneset = TZ.getZoneSet('ZONESETA');
+	// 	var zoneset = TZ.getZoneSet('ZONESETA');
 
-		test.equal(zoneset.format(moment([2004, 2, 2])), 'EAT', "ZoneSet should get correct format on exact month 2004");
-		test.equal(zoneset.format(moment([2004, 1, 2])), 'EBT', "ZoneSet should get correct format on earlier month 2004");
-		test.equal(zoneset.format(moment([2005, 5, 6])), 'ECT', "ZoneSet should get correct format on earlier month 2005");
-		test.equal(zoneset.format(moment([2005, 6, 6])), 'EDT', "ZoneSet should get correct format on exact month 2005");
+	// 	test.equal(zoneset.format(moment([2004, 2, 2])), 'EAT', "ZoneSet should get correct format on exact month 2004");
+	// 	test.equal(zoneset.format(moment([2004, 1, 2])), 'EBT', "ZoneSet should get correct format on earlier month 2004");
+	// 	test.equal(zoneset.format(moment([2005, 5, 6])), 'ECT', "ZoneSet should get correct format on earlier month 2005");
+	// 	test.equal(zoneset.format(moment([2005, 6, 6])), 'EDT', "ZoneSet should get correct format on exact month 2005");
 
-		test.done();
-	},
+	// 	test.done();
+	// },
 
-	"offsets" : function (test) {
-		test.expect(4);
+	// "offsets" : function (test) {
+	// 	test.expect(4);
 
-		var zoneset = TZ.getZoneSet('ZONESETA');
+	// 	var zoneset = TZ.getZoneSet('ZONESETA');
 
-		test.equal(zoneset.offset(moment([2004, 2, 2])), 360, "ZoneSet should get correct offset on exact month 2004");
-		test.equal(zoneset.offset(moment([2004, 1, 2])), 300, "ZoneSet should get correct offset on earlier month 2004");
-		test.equal(zoneset.offset(moment([2005, 5, 6])), 360, "ZoneSet should get correct offset on earlier month 2005");
-		test.equal(zoneset.offset(moment([2005, 6, 6])), 300, "ZoneSet should get correct offset on exact month 2005");
+	// 	test.equal(zoneset.offset(moment([2004, 2, 2])), 360, "ZoneSet should get correct offset on exact month 2004");
+	// 	test.equal(zoneset.offset(moment([2004, 1, 2])), 300, "ZoneSet should get correct offset on earlier month 2004");
+	// 	test.equal(zoneset.offset(moment([2005, 5, 6])), 360, "ZoneSet should get correct offset on earlier month 2005");
+	// 	test.equal(zoneset.offset(moment([2005, 6, 6])), 300, "ZoneSet should get correct offset on exact month 2005");
 
-		test.done();
-	}
+	// 	test.done();
+	// }
 };

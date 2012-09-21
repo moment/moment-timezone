@@ -9,26 +9,35 @@ function count (number) {
 	return ["first", "second", "third", "fourth"][~~number];
 }
 
-function dateForYearFirst (dow, month, test) {
+function dateForYearFirstOneDay (dow, month, test) {
 	var i,
 		rule,
 		target,
 		format,
-		formatMonth;
+		formatMonth,
+		firstDowOfMonth = moment([2010, month, 1]).day();
 
-	test.expect(28);
-
-	for (i = 0; i < 28; i++) {
-		rule = TZ.addRule("TEST,2008,2010," + month +  ",f:" + i + ",2:00,1:00,D");
-		target = i + 1 - dow;
-		if (i % 7 < dow) {
+	for (i = 1; i < 29; i++) {
+		rule = TZ.addRule("TEST,2008,2010," + month +  "," + dow + ":" + i + ",2:00,1:00,D");
+		target = dow + 1 - firstDowOfMonth;
+		while (target < i) {
 			target += 7;
 		}
 
 		format = moment([2010, month, target]).format("MMMM D YYYY");
 		formatMonth = moment([2010, month, target]).format("MMMM");
 
-		test.equal(rule._dateForYear(2010), target, "The " + count(i / 7) + ' ' + dayOfWeek(i) + " in " + formatMonth + " should be " +format);
+		test.equal(rule._dateForYear(2010), target, "The " + dayOfWeek(dow) + " on or after " + formatMonth + " " + i + " should be " + format);
+	}
+}
+
+function dateForYearFirst (month, test) {
+	var i;
+
+	test.expect(28 * 7);
+
+	for (i = 0; i < 7; i++) {
+		dateForYearFirstOneDay(i, month, test);
 	}
 
 	test.done();
@@ -45,7 +54,7 @@ function dateForYearLast (dow, month, test) {
 	test.expect(28);
 
 	for (i = 0; i < 28; i++) {
-		rule = TZ.addRule("TEST,2010,2010," + month +  ",l:" + i + ",2:00,1:00,D");
+		rule = TZ.addRule("TEST,2010,2010," + month +  "," + -i + ",2:00,1:00,D");
 		target = daysInMonth - (dow) + (i % 7);
 		target -= ~~(i / 7) * 7;
 		if (i % 7 > dow) {
@@ -69,7 +78,7 @@ exports.rules = {
 	"contains year" : function (test) {
 		test.expect(3);
 
-		var exact = TZ.addRule("TEST,2008,2010,2,e:1,2:00,1:00,D");
+		var exact = TZ.addRule("TEST,2008,2010,2,1,2:00,1:00,D");
 
 		test.ok(exact.contains(moment([2010, 2])), "Rule should contain year");
 		test.ok(!exact.contains(moment([2007, 2])), "Rule should not contain year too low");
@@ -81,7 +90,7 @@ exports.rules = {
 	"contains month" : function (test) {
 		test.expect(3);
 
-		var exact = TZ.addRule("TEST,2008,2010,2,e:1,2:00,1:00,D");
+		var exact = TZ.addRule("TEST,2008,2010,2,1,2:00,1:00,D");
 
 		test.ok(exact.contains(moment([2010, 2])), "Rule should contain month");
 		test.ok(exact.contains(moment([2010, 1])), "Rule should contain if month too low but rule applied last year");
@@ -93,7 +102,7 @@ exports.rules = {
 	"contains date equal" : function (test) {
 		test.expect(3);
 
-		var exact = TZ.addRule("TEST,2008,2010,2,e:2,2:00,1:00,D");
+		var exact = TZ.addRule("TEST,2008,2010,2,2,2:00,1:00,D");
 
 		test.ok(exact.contains(moment([2010, 2, 2])), "Rule should contain date");
 		test.ok(exact.contains(moment([2010, 2, 1])), "Rule should contain if date too low but rule applied last year");
@@ -103,31 +112,31 @@ exports.rules = {
 	},
 
 	"_dateForYear First (Sunday)" : function (test) {
-		dateForYearFirst(0, 7, test); // in august 2010, the month starts with sunday
+		dateForYearFirst(7, test); // in august 2010, the month starts with sunday
 	},
 
 	"_dateForYear First (Monday)" : function (test) {
-		dateForYearFirst(1, 2, test); // in march 2010, the month starts with monday
+		dateForYearFirst(2, test); // in march 2010, the month starts with monday
 	},
 
 	"_dateForYear First (Tuesday)" : function (test) {
-		dateForYearFirst(2, 5, test); // in june 2010, the month starts with tuesday
+		dateForYearFirst(5, test); // in june 2010, the month starts with tuesday
 	},
 
 	"_dateForYear First (Wednesday)" : function (test) {
-		dateForYearFirst(3, 8, test); // in september 2010, the month starts with wednesday
+		dateForYearFirst(8, test); // in september 2010, the month starts with wednesday
 	},
 
 	"_dateForYear First (Thursday)" : function (test) {
-		dateForYearFirst(4, 6, test); // in july 2010, the month starts with thursday
+		dateForYearFirst(6, test); // in july 2010, the month starts with thursday
 	},
 
 	"_dateForYear First (Friday)" : function (test) {
-		dateForYearFirst(5, 9, test); // in october 2010, the month starts with friday
+		dateForYearFirst(9, test); // in october 2010, the month starts with friday
 	},
 
 	"_dateForYear First (Saturday)" : function (test) {
-		dateForYearFirst(6, 4, test); // in may 2010, the month starts with saturday
+		dateForYearFirst(4, test); // in may 2010, the month starts with saturday
 	},
 
 	/************************************

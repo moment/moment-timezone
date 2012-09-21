@@ -24,8 +24,8 @@
 	 *
 	 * @param _name    The string identifier for the timezone name (eg. US, NYC, Mexico...)
 	 * @param _from    The start year
-	 * @param _to      The end year
-	 * @param _in      The month to start on
+	 * @param _to      The end year (if falsy, will use the start year)
+	 * @param _in      The month to start on (zero indexed)
 	 * @param _on      The day to start on. A colon separated tuple of a letter and a number
 	 *                 eg. "l:1", "e:20", "f:1"
 	 *                 "l" The last on this day of week (while num > 7, skip a week)
@@ -41,9 +41,16 @@
 		this._to      = +_to;
 		this._month   = +_in;
 
-		_on = _on.split(':');
-		this._dayRule = _on[0];
-		this._dayVal  = +_on[1];
+		this._dayVal  = +_on;
+		if (_on.indexOf(':') > -1) {
+			_on = _on.split(':');
+			this._dowVal = +_on[0];
+			this._dayVal = +_on[1];
+			this._dateForYear = Rule.prototype._dateForYearFirst;
+		} else if (this._dayVal < 1) {
+			this._dayVal = -this._dayVal;
+			this._dateForYear = Rule.prototype._dateForYearLast;
+		}
 
 		this._time    = +_at;
 		this._offset  = +_offset;
@@ -78,35 +85,36 @@
 			return moment([year, this._month, this._dateForYear(year)]);
 		},
 
-		_dateForYear : function (year) {
-			var firstDowOfMonth,
-				lastDowOfMonth,
-				daysInMonth,
-				day = this._dayVal,
-				dow = day % 7,
-				output;
-			switch (this._dayRule) {
-				case "l":
-					// find last day of month
-					lastDowOfMonth = moment([year, this._month + 1, 0]).day();
-					daysInMonth = moment([year, this._month, 1]).daysInMonth();
-					output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
-					if (dow >= lastDowOfMonth) {
-						output -= 7;
-					}
-					return output;
-				case "f":
-					// find first day of month
-					firstDowOfMonth = moment([year, this._month, 1]).day();
-					output = day + 1 - firstDowOfMonth;
-					if (dow < firstDowOfMonth) {
-						output += 7;
-					}
-					return output;
-				case "e":
-					return this._dayVal;
+		// this method overwrites _dateForYear if it uses the first day of week method
+		_dateForYearFirst : function (year) {
+			var day = this._dayVal,
+				dow = this._dowVal,
+				firstDayOfWeek = moment([year, this._month, 1]).day(),
+				output = this._dowVal + 1 - firstDayOfWeek;
+
+			while (output < day) {
+				output += 7;
 			}
-			throw "Unexpected Rule._dayRule";
+
+			return output;
+		},
+
+		// this method overwrites _dateForYear if it uses the last day of week method
+		_dateForYearLast : function (year) {
+			var day = this._dayVal,
+				dow = day % 7,
+				lastDowOfMonth = moment([year, this._month + 1, 0]).day(),
+				daysInMonth = moment([year, this._month, 1]).daysInMonth(),
+				output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
+
+			if (dow >= lastDowOfMonth) {
+				output -= 7;
+			}
+			return output;
+		},
+
+		_dateForYear : function (year) {
+			return this._dayVal;
 		}
 	};
 
@@ -317,7 +325,5 @@
 		addZone : addZone,
 		getZoneSet : getZoneSet
 	};
-
-	// addRules(require('./data/js/northamerica').rules);
 
 }).apply(this);
