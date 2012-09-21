@@ -1,5 +1,4 @@
-var moment = require('moment'),
-	fs = require('fs');
+var moment = require('moment');
 
 var daysOfWeek = 'sun mon tue wed thu fri sat'.split(' ');
 
@@ -7,7 +6,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('generate-zones', 'Build the zone files.', function () {
 
 		grunt.file.expandFiles("olson/*").forEach(function(file){
-			parseZone(file);
+			parseZone(file, grunt);
 		});
 	});
 };
@@ -68,13 +67,6 @@ function formatRule (rule, output) {
 	rule[5] = ruleHMToMinutes(rule[5]);
 	rule[6] = ruleHMToMinutes(rule[6]);
 
-	// for (var i = 0; i < rule.length; i++) {
-	// 	rule[i] = rule[i] + "";
-	// 	while (rule[i].length < 15) {
-	// 		rule[i] = rule[i] + ' ';
-	// 	}
-	// }
-
 	return rule.slice(0, 8).join(',');
 }
 
@@ -112,8 +104,8 @@ function parseLine (line, output) {
 	}
 }
 
-function parseZone (zone) {
-	var data = fs.readFileSync(zone, 'ascii'),
+function parseZone (zone, grunt) {
+	var data = grunt.file.read(zone),
 		i,
 		output = {
 			rules : [],
@@ -130,6 +122,7 @@ function parseZone (zone) {
 
 	outData += JSON.stringify(output, null, '\t') + ';\n';
 
-	fs.writeFileSync(outPath, outData);
-	console.log('Wrote ' + outPath);
+	grunt.file.write(outPath, outData);
+
+	grunt.log.writeln('File "' + outPath + '" created. ' + ('(' + grunt.helper('gzip', outData).length + ' bytes gzipped)').green);
 }
