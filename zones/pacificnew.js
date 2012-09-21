@@ -1,5 +1,5 @@
 module.exports = {
-	"rules": [],
-	"zones": [],
+	"rules": {},
+	"zones": {},
 	"lastZone": null
 };

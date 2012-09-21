@@ -13,7 +13,10 @@ module.exports = function (grunt) {
 
 function formatZone (zone, output) {
 	zone[0] = output.lastZone = zone[0] || output.lastZone;
-	return zone.join(',');
+	if (!output.zones[zone[0]]) {
+		output.zones[zone[0]] = [];
+	}
+	output.zones[zone[0]].push(zone.slice(1).join(','));
 }
 
 function ruleHMToMinutes (input) {
@@ -67,7 +70,10 @@ function formatRule (rule, output) {
 	rule[5] = ruleHMToMinutes(rule[5]);
 	rule[6] = ruleHMToMinutes(rule[6]);
 
-	return rule.slice(0, 8).join(',');
+	if (!output.rules[rule[0]]) {
+		output.rules[rule[0]] = [];
+	}
+	output.rules[rule[0]].push(rule.slice(1, 8).join(','));
 }
 
 function parseLine (line, output) {
@@ -92,10 +98,10 @@ function parseLine (line, output) {
 
 	switch (lineType) {
 		case 'Zone':
-			output.zones.push(formatZone(array, output));
+			formatZone(array, output);
 			break;
 		case 'Rule':
-			output.rules.push(formatRule(array, output));
+			formatRule(array, output);
 			break;
 		case 'Link':
 			break;
@@ -108,8 +114,8 @@ function parseZone (zone, grunt) {
 	var data = grunt.file.read(zone),
 		i,
 		output = {
-			rules : [],
-			zones : [],
+			rules : {},
+			zones : {},
 			lastZone : null
 		},
 		lines = data.split('\n'),
