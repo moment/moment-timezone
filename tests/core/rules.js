@@ -1,6 +1,8 @@
 var TZ = require("../../moment-timezone"),
 	moment = require("moment");
 
+var tests = [];
+
 function dayOfWeek (week) {
 	return moment().day(week).format("dddd");
 }
@@ -18,6 +20,7 @@ function dateForYearFirstOneDay (dow, month, test) {
 		firstDowOfMonth = moment([2010, month, 1]).day();
 
 	for (i = 1; i < 29; i++) {
+		tests.push('rule = TZ.addRule("TEST,2008,2010," + month +  "," + dow + ":" + i + ",2:00,1:00,D");');
 		rule = TZ.addRule("TEST,2008,2010," + month +  "," + dow + ":" + i + ",2:00,1:00,D");
 		target = dow + 1 - firstDowOfMonth;
 		while (target < i) {
@@ -27,6 +30,7 @@ function dateForYearFirstOneDay (dow, month, test) {
 		format = moment([2010, month, target]).format("MMMM D YYYY");
 		formatMonth = moment([2010, month, target]).format("MMMM");
 
+		tests.push('test.equal(rule._dateForYear(2010), target, "The " + dayOfWeek(dow) + " on or after " + formatMonth + " " + i + " should be " + format);');
 		test.equal(rule._dateForYear(2010), target, "The " + dayOfWeek(dow) + " on or after " + formatMonth + " " + i + " should be " + format);
 	}
 }
