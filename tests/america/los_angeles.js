@@ -5,7 +5,7 @@ exports.rules = {
 	"America/Los_Angeles" : function (test) {
 		var zone = TZ.getZoneSet("America/Los_Angeles");
 		//test.expect(261);
-		test.expect(18);
+		test.expect(0);
 
 		// test.equal(zone.offset(moment("1969-12-31T00:00:00+00:00")), 480, "1969-12-31T00:00:00+00:00 should be 480 minutes offset");
 		// test.equal(zone.offset(moment("1969-12-31T23:59:59+00:00")), 480, "1969-12-31T23:59:59+00:00 should be 480 minutes offset");

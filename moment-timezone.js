@@ -58,12 +58,11 @@
 	}
 
 	Rule.prototype = {
-		contains : function (year, month, date, minutes) {
-			var beginning = this.start(this._from),
-				middle = moment.utc([year, month, date, 0, minutes]),
-				end = this.start(this._to);
+		contains : function (mom) {
+			var year = Math.max(mom.year(), this._from),
+				beginning = this.start(year);
 
-			if (middle >= beginning && middle <= end) {
+			if (mom >= beginning && year <= this._to) {
 				return true;
 			}
 
@@ -121,54 +120,39 @@
 	}
 
 	RuleSet.prototype = {
-		_pickRule : function (startRule, endRule, mom) {
-			var tmp,
-				start, end,
-				year = mom.year();
-
-			if (!endRule) {
-				return startRule;
-			}
-
-			start = startRule._momentForYear(year).add('minutes', -endRule._offset);
-			end = endRule._momentForYear(year).add('minutes', -startRule._offset);
-
-			if (start > end) {
-				tmp = start;
-				start = end;
-				end = tmp;
-
-				tmp = startRule;
-				startRule = endRule;
-				endRule = tmp;
-			}
-
-			console.log("start  " + start.format());
-			console.log("end    " + end.format());
-			console.log("test   " + mom.format());
-			console.log("mom < start = " + (mom < start));
-			console.log("mom >= end  = " + (mom >= end));
-
-			if (mom < start || mom >= end) {
-				return endRule;
-			}
-			return startRule;
-		},
-
 		add : function (rule) {
 			this._rules.push(rule);
 		},
 
 		// return the newest rule for a moment
 
-		_newestRule : function (rules, mom) {
-
+		newestOf : function (rules, mom) {
+			var i,
+				rule,
+				year = mom.year();
+			for (i = 0; i < rules.length; i++) {
+				if (!rule || rule.start(year) < rules[i].start(year)) {
+					rule = rules[i];
+					//console.log("Sorting", rule.start(mom.year()).format());
+				}
+			}
+			return rule;
 		},
 
-		// Return an array of all the rules that apply this year
+		// Return an array of all the rules that apply this moment
 
-		_rulesForYear : function (year) {
-
+		rules : function (mom) {
+			var i,
+				rule,
+				rules = [];
+			for (i = 0; i < this._rules.length; i++) {
+				rule = this._rules[i];
+				if (rule.contains(mom)) {
+					rules.push(rule);
+					//console.log("Adding", rule.start(mom.year()).format());
+				}
+			}
+			return rules;
 		},
 
 		// 1. Get rules for this year
@@ -186,31 +170,19 @@
 		//    this._newestRule(rules)
 
 		rule : function (mom, offset) {
-			var i,
-				startRule,
-				endRule,
-				rule,
-				utcMom = mom.clone().utc().add("minutes", offset);
+			var utcMoment = mom.clone().utc().add('minutes', offset),
+				rules = this.rules(utcMoment),
+				rule;
 
-			for (i = 0; i < this._rules.length; i++) {
-				rule = this._rules[i];
-				if (rule.contains.apply(rule, utcMom.toArray())) {
-					if (startRule) {
-						endRule = rule;
-					} else {
-						startRule = rule;
-					}
-				}
+			if (rules.length === 0) {
+				//console.log("No rules this year");
+				utcMoment = moment.utc([utcMoment.year(), 0, 1, -1]);
+				rules = this.rules(utcMoment);
 			}
 
-			console.log("");
+			rule = this.newestOf(rules, utcMoment);
 
-			rule = this._pickRule(startRule, endRule, utcMom);
-
-			console.log("testA  " + mom.format());
-			console.log("testB  " + utcMom.format());
-			console.log("offset " + offset);
-			console.log("using  " + rule._momentForYear(mom.year()).format());
+			//console.log("Chose", rule.start(utcMoment.year()).format());
 
 			return rule;
 		}
