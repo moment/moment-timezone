@@ -46,10 +46,10 @@
 			_on = _on.split(':');
 			this._dowVal = +_on[0];
 			this._dayVal = +_on[1];
-			this._dateForYear = Rule.prototype._dateForYearFirst;
+			this.date = Rule.prototype._dateFirst;
 		} else if (this._dayVal < 1) {
 			this._dayVal = -this._dayVal;
-			this._dateForYear = Rule.prototype._dateForYearLast;
+			this.date = Rule.prototype._dateLast;
 		}
 
 		this._time    = +_at;
@@ -58,35 +58,32 @@
 	}
 
 	Rule.prototype = {
-		contains : function (mom) {
-			var year = mom.year(),
-				month = mom.month();
-			// if the year is out of range, it did not apply
-			if (year < this._from || year > this._to) {
-				return false;
+		contains : function (year, month, date, minutes) {
+			var beginning = this.start(this._from),
+				middle = moment.utc([year, month, date, 0, minutes]),
+				end = this.start(this._to);
+
+			if (middle >= beginning && middle <= end) {
+				return true;
 			}
-			// if the moment is earlier than the start date...
-			if (mom < this._momentForYear(year)) {
-				// if the rule applied last year, it applies all of this year too
-				if (year > this._from) {
-					return true;
-				}
-				// the moment is too early for this year
-				return false;
-			}
-			return true;
+
+			return false;
 		},
 
 		letters : function () {
 			return this._letters;
 		},
 
-		_momentForYear : function (year) {
-			return moment([year, this._month, this._dateForYear(year)]);
+		start : function (year) {
+			return moment.utc([year, this._month, this.date(year), 0, this._time]);
 		},
 
-		// this method overwrites _dateForYear if it uses the first day of week method
-		_dateForYearFirst : function (year) {
+		date : function (year) {
+			return this._dayVal;
+		},
+
+		// this method overwrites Rule.date if it uses the first day of week method
+		_dateFirst : function (year) {
 			var day = this._dayVal,
 				dow = this._dowVal,
 				firstDayOfWeek = moment([year, this._month, 1]).day(),
@@ -99,11 +96,11 @@
 			return output;
 		},
 
-		// this method overwrites _dateForYear if it uses the last day of week method
-		_dateForYearLast : function (year) {
+		// this method overwrites Rule.date if it uses the last day of week method
+		_dateLast : function (year) {
 			var day = this._dayVal,
 				dow = day % 7,
-				lastDowOfMonth = moment([year, this._month + 1, 0]).day(),
+				lastDowOfMonth = moment([year, this._month + 1, 1]).day(),
 				daysInMonth = moment([year, this._month, 1]).daysInMonth(),
 				output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
 
@@ -111,10 +108,6 @@
 				output -= 7;
 			}
 			return output;
-		},
-
-		_dateForYear : function (year) {
-			return this._dayVal;
 		}
 	};
 
@@ -137,14 +130,24 @@
 				return startRule;
 			}
 
-			start = startRule._momentForYear(year);
-			end = endRule._momentForYear(year);
+			start = startRule._momentForYear(year).add('minutes', -endRule._offset);
+			end = endRule._momentForYear(year).add('minutes', -startRule._offset);
 
 			if (start > end) {
 				tmp = start;
 				start = end;
 				end = tmp;
+
+				tmp = startRule;
+				startRule = endRule;
+				endRule = tmp;
 			}
+
+			console.log("start  " + start.format());
+			console.log("end    " + end.format());
+			console.log("test   " + mom.format());
+			console.log("mom < start = " + (mom < start));
+			console.log("mom >= end  = " + (mom >= end));
 
 			if (mom < start || mom >= end) {
 				return endRule;
@@ -156,19 +159,60 @@
 			this._rules.push(rule);
 		},
 
-		rule : function (mom) {
-			var i, startRule, endRule;
+		// return the newest rule for a moment
+
+		_newestRule : function (rules, mom) {
+
+		},
+
+		// Return an array of all the rules that apply this year
+
+		_rulesForYear : function (year) {
+
+		},
+
+		// 1. Get rules for this year
+		//    this._rulesForYear(year)
+		//
+		// 2. Eliminate rules that have not taken effect this year
+		//
+		// 3. If we still have 1 or more rules, use the one that took effect later
+		//    this._newestRule(rules)
+		//
+		// 4. Else, get rules for last year
+		//    this._rulesForYear(year - 1)
+		//
+		// 5. Use the rule that takes effect latest
+		//    this._newestRule(rules)
+
+		rule : function (mom, offset) {
+			var i,
+				startRule,
+				endRule,
+				rule,
+				utcMom = mom.clone().utc().add("minutes", offset);
+
 			for (i = 0; i < this._rules.length; i++) {
-				if (this._rules[i].contains(mom)) {
+				rule = this._rules[i];
+				if (rule.contains.apply(rule, utcMom.toArray())) {
 					if (startRule) {
-						endRule = this._rules[i];
+						endRule = rule;
 					} else {
-						startRule = this._rules[i];
+						startRule = rule;
 					}
 				}
 			}
 
-			return this._pickRule(startRule, endRule, mom);
+			console.log("");
+
+			rule = this._pickRule(startRule, endRule, utcMom);
+
+			console.log("testA  " + mom.format());
+			console.log("testB  " + utcMom.format());
+			console.log("offset " + offset);
+			console.log("using  " + rule._momentForYear(mom.year()).format());
+
+			return rule;
 		}
 	};
 
@@ -194,8 +238,8 @@
 			return false;
 		},
 
-		ruleSet : function () {
-			return this._ruleSet;
+		rule : function (mom) {
+			return this._ruleSet.rule(mom, this._offset);
 		}
 	};
 
@@ -230,7 +274,7 @@
 		},
 
 		rule : function (mom) {
-			return this._zone(mom)._ruleSet.rule(mom);
+			return this._zone(mom).rule(mom);
 		},
 
 		add : function (zone) {
@@ -244,14 +288,14 @@
 
 		format : function (mom) {
 			var zone = this._zone(mom),
-				rule = zone._ruleSet.rule(mom);
+				rule = this.rule(mom);
 			return zone._format.replace("%s", rule.letters());
 		},
 
 		offset : function (mom) {
 			var zone = this._zone(mom),
-				rule = zone._ruleSet.rule(mom);
-			return zone._offset + rule._offset;
+				rule = this.rule(mom);
+			return -(zone._offset + rule._offset);
 		}
 	};
 
@@ -273,7 +317,7 @@
 		}
 
 		var p = ruleString.split(','),
-			name = p[0],
+			name = normalizeName(p[0]),
 			rule = new Rule(name, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8]);
 
 		// cache the rule so we don't add it again
@@ -285,6 +329,10 @@
 		return rule;
 	}
 
+	function normalizeName (name) {
+		return name.toLowerCase().replace(/\//g, '_');
+	}
+
 	function addZone (zoneString) {
 		// don't duplicate zones
 		if (zones[zoneString]) {
@@ -292,7 +340,7 @@
 		}
 
 		var p = zoneString.split(','),
-			name = p[0],
+			name = normalizeName(p[0]),
 			zone = new Zone(name, p[1], p[2], p[3], p[4]);
 
 		// cache the zone so we don't add it again
@@ -305,6 +353,7 @@
 	}
 
 	function getRuleSet (name) {
+		name = normalizeName(name);
 		if (!ruleSets[name]) {
 			ruleSets[name] = new RuleSet(name);
 		}
@@ -312,6 +361,7 @@
 	}
 
 	function getZoneSet (name) {
+		name = normalizeName(name);
 		if (!zoneSets[name]) {
 			zoneSets[name] = new ZoneSet(name);
 		}
@@ -325,5 +375,25 @@
 		addZone : addZone,
 		getZoneSet : getZoneSet
 	};
+
+	// add default rule
+	addRule("-,0,9999,0,0,0,0,S");
+
+	(function(){
+		var north_america = require('./zones/northamerica'),
+			name, name2;
+
+		for (name in north_america.rules) {
+			north_america.rules[name].forEach(function(rule){
+				addRule(name + ',' + rule);
+			});
+		}
+
+		for (name2 in north_america.zones) {
+			north_america.zones[name2].forEach(function(zone){
+				addZone(name2 + ',' + zone);
+			});
+		}
+	}());
 
 }).apply(this);

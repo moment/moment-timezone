@@ -86,23 +86,49 @@ module.exports = function (grunt) {
 			max = +moment([2013]),
 			offset = 0,
 			currentMoment,
-			output = "",
+			output = [],
+			tests = [],
 			i;
+
+		output.push('var TZ = require("../../moment-timezone"),');
+		output.push('\tmoment = require("moment");');
+		output.push('\nexports.rules = {');
+
+		output.push('\t"' + zone + '" : function (test) {');
+		output.push('\t\tvar zone = TZ.getZoneSet("' + zone + '");');
 
 		// every minute from 1970 to 2012
 		for (i = 0; i < max; i += 60000) {
 			currentMoment = moment(i);
 			if (offset !== currentMoment.zone()) {
 				offset = currentMoment.zone();
-				output += makeTest(currentMoment);
+				tests.push(makeTest(currentMoment.clone().subtract('d', 1)));
+				tests.push(makeTest(currentMoment.clone().subtract('ms', 1)));
+				tests.push(makeTest(currentMoment));
 			}
 		}
 
-		grunt.file.write(filename, output);
+		output.push('\t\ttest.expect(' + tests.length + ');\n');
+
+		for (i = 0; i < tests.length; i++) {
+			output.push(tests[i]);
+		}
+
+		output.push('\t\ttest.done();');
+		output.push('\t}');
+		output.push('};');
+
+		grunt.file.write(filename, output.join('\n'));
 		cb();
 	}
 
 	function makeTest(mom) {
-		return "'" + mom.format() + " should be " + mom.zone() + "',\n";
+		var utc = mom.clone().utc(),
+			o = '\t\t';
+		o += 'test.equal(zone.offset(moment("' + utc.format() + '")), ';
+		o += mom.zone();
+		o += ', "' + utc.format() + " should be " + mom.zone() + ' minutes offset");';
+
+		return o;
 	}
 };

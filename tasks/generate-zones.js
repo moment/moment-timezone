@@ -16,6 +16,7 @@ function formatZone (zone, output) {
 	if (!output.zones[zone[0]]) {
 		output.zones[zone[0]] = [];
 	}
+	zone[1] = ruleHMToMinutes(zone[1]);
 	output.zones[zone[0]].push(zone.slice(1).join(','));
 }
 
@@ -55,7 +56,7 @@ function formatRule (rule, output) {
 
 	// ignore 'only' as end year
 	if (rule[2] === 'only') {
-		rule[2] = '';
+		rule[2] = rule[1];
 	}
 
 	// set 'max' to 9999
