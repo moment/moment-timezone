@@ -81,6 +81,10 @@
 			return this._letters;
 		},
 
+		offset : function () {
+			return this._offset;
+		},
+
 		start : function (year) {
 			year = Math.min(Math.max(year, this._from), this._to);
 			return moment.utc([year, this._month, this.date(year), 0, this._time]);
@@ -120,6 +124,44 @@
 	};
 
 	/************************************
+		Rule Year
+	************************************/
+
+	function RuleYear (_year, _rule) {
+		this._year = _year;
+		this._rule = _rule;
+	}
+
+	RuleYear.prototype = {
+		start : function () {
+			return this._rule.start(this._year);
+		},
+
+		offset : function () {
+			return this._rule._offset;
+		},
+
+		rule : function () {
+			return this._rule;
+		}
+	};
+
+	// sort rules so that the closest effective date is first
+	function sortRuleYears (a, b) {
+		var sa = a.start(),
+			sb = b.start();
+
+		if (sa > sb) {
+			return -1;
+		} else if (sa < sb) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+
+	/************************************
 		Rule Sets
 	************************************/
 
@@ -133,96 +175,41 @@
 			this._rules.push(rule);
 		},
 
-		// return the newest rule for a moment
-
-		newestOf : function (rules, mom) {
-			var i,
-				rule,
-				tempRule,
-				year = mom.year();
-			for (i = 0; i < rules.length; i++) {
-				tempRule = rules[i];
-				console.log("Checking    ", tempRule.start(mom.year()).format());
-				if (!rule || rule.start(year) < rules[i].start(year)) {
-					rule = tempRule;
-					//console.log("Sorting    ", rule.start(mom.year()).format());
-				}
-			}
-			return rule;
-		},
-
-		// Return an array of all the rules that apply this moment
-
-		_rulesToArray : function (year, array) {
+		// Add all the rules that apply to this year to this array
+		_ruleYears : function (year, array) {
 			var i,
 				rule;
 
 			for (i = 0; i < this._rules.length; i++) {
 				rule = this._rules[i];
 				if (rule.containsYear(year)) {
-					array.push({
-						rule : rule,
-						year : year
-					});
-					// console.log("Adding  ", year, rule.start(year).format());
+					array.push(new RuleYear(year, rule));
 				}
 			}
 		},
 
-		_sortRules : function (a, b) {
-			var sa = a.rule.start(a.year),
-				sb = b.rule.start(b.year);
-
-			if (sa > sb) {
-				return -1;
-			} else if (sa < sb) {
-				return 1;
-			} else {
-				return 0;
-			}
-		},
-
+		// get the rules that apply to this year and last year
 		rules : function (mom) {
 			var i,
 				lastYear = moment.utc([mom.year(), 0, 1, -1]),
 				rules = [];
 
-			this._rulesToArray(mom.year(), rules);
-			this._rulesToArray(mom.year() - 1, rules);
+			this._ruleYears(mom.year(), rules);
+			this._ruleYears(mom.year() - 1, rules);
 
-			rules.sort(this._sortRules);
-
-			for (i = 0; i < rules.length; i++) {
-				// console.log("Sorted  ", rules[i].year, rules[i].rule.start(rules[i].year).format());
-			}
+			rules.sort(sortRuleYears);
 
 			return rules;
 		},
 
-		// 1. Get rules for this year
-		//    this._rulesForYear(year)
+		// 1. Get rules for this and last year
 		//
-		// 2. Eliminate rules that have not taken effect this year
+		// 2. Sort them by effective date (newest first)
 		//
-		// 3. If we still have 1 or more rules, use the one that took effect later
-		//    this._newestRule(rules)
-		//
-		// 4. Else, get rules for last year
-		//    this._rulesForYear(year - 1)
-		//
-		// 5. Use the rule that takes effect latest (currRule)
-		//    this._newestRule(rules)
-		//
-		// 6. Using 1-5, get the rule before the correct rule (prevRule)
-		//
-		// 7. If the moment is before the start of currRule minus the offset of prevRule,
-		//    use prevRule instead
+		// 3. Starting with the newest rule, loop until the target moment is greater than
+		//    or equal to the rule's effective date
 
 		rule : function (mom, offset) {
-			//console.log("");
-
-			//console.log(["Finding rule for", mom.format(), mom.clone().utc().format()].join('\n'));
-
 			var rules = this.rules(mom),
 				rule,
 				last,
@@ -232,20 +219,15 @@
 			for (i = 0; i < rules.length - 1; i++) {
 				last = rules[i + 1];
 				rule = rules[i];
-				cloned = mom.clone().utc().add('m', offset + last.rule._offset);
 
-				//console.log("Checking", rule.rule.start(rule.year).format(), cloned.format(), last.rule._offset);
+				cloned = moment.utc(mom).add('m', offset + last.offset());
 
-				if (cloned >= rule.rule.start(rule.year)) {
-					//console.log("Using   ", rule.rule.start(rule.year).format(), cloned.format());
-					return rule.rule;
+				if (cloned >= rule.start()) {
+					return rule.rule();
 				}
 			}
 
-			rule = rules[rules.length - 1];
-			//console.log("Using fb ", rule.rule.start(rule.year).format(), cloned.format());
-
-			return rule.rule;
+			throw "Rule not found";
 		}
 	};
 
@@ -273,6 +255,14 @@
 
 		rule : function (mom) {
 			return this._ruleSet.rule(mom, this._offset);
+		},
+
+		format : function (mom) {
+			return this._format.replace("%s", this.rule(mom).letters());
+		},
+
+		offset : function (mom) {
+			return this._offset + this.rule(mom).offset();
 		}
 	};
 
@@ -297,17 +287,13 @@
 	}
 
 	ZoneSet.prototype = {
-		_zone : function (mom) {
+		zone : function (mom) {
 			var i, zone;
 			for (i = 0; i < this._zones.length; i++) {
 				if (this._zones[i].contains(mom)) {
 					return this._zones[i];
 				}
 			}
-		},
-
-		rule : function (mom) {
-			return this._zone(mom).rule(mom);
 		},
 
 		add : function (zone) {
@@ -320,15 +306,11 @@
 		},
 
 		format : function (mom) {
-			var zone = this._zone(mom),
-				rule = this.rule(mom);
-			return zone._format.replace("%s", rule.letters());
+			return this.zone(mom).format(mom);
 		},
 
 		offset : function (mom) {
-			var zone = this._zone(mom),
-				rule = this.rule(mom);
-			return -(zone._offset + rule._offset);
+			return -this.zone(mom).offset(mom);
 		}
 	};
 
