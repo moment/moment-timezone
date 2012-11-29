@@ -8,7 +8,7 @@
 
 	var moment = require('moment'),
 
-		momentTZ,
+		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
 
 		rules = {},
 		ruleSets = {},
@@ -318,10 +318,12 @@
 		Global Methods
 	************************************/
 
-	function addRules (rulesArray) {
+	function addRules (rules) {
 		var i;
-		for (i = 0; i < rulesArray.length; i++) {
-			addRule(rulesArray[i]);
+		for (i in rules) {
+			rules[i].forEach(function(rule){
+				addRule(i + ',' + rule);
+			});
 		}
 	}
 
@@ -345,7 +347,16 @@
 	}
 
 	function normalizeName (name) {
-		return name.toLowerCase().replace(/\//g, '_');
+		return (name || '').toLowerCase().replace(/\//g, '_');
+	}
+
+	function addZones (zones) {
+		var i;
+		for (i in zones) {
+			zones[i].forEach(function (zone) {
+				addZone(i + ',' + zone);
+			});
+		}
 	}
 
 	function addZone (zoneString) {
@@ -383,32 +394,23 @@
 		return zoneSets[name];
 	}
 
-	module.exports = {
-		addRule : addRule,
-		addRules : addRules,
+	module.exports = moment.tz = {
+		addRules   : addRules,
+		addRule    : addRule,
 		getRuleSet : getRuleSet,
-		addZone : addZone,
+		addZones   : addZones,
+		addZone    : addZone,
 		getZoneSet : getZoneSet
 	};
 
 	// add default rule
 	addRule("-,0,9999,0,0,0,0,S");
 
-	(function(){
-		var north_america = require('./zones/northamerica'),
-			name, name2;
-
-		for (name in north_america.rules) {
-			north_america.rules[name].forEach(function(rule){
-				addRule(name + ',' + rule);
-			});
-		}
-
-		for (name2 in north_america.zones) {
-			north_america.zones[name2].forEach(function(zone){
-				addZone(name2 + ',' + zone);
-			});
-		}
-	}());
+	// add all rules
+	zoneNames.forEach(function (z) {
+		var zone = require('./zones/' + z);
+		addZones(zone.zones);
+		addRules(zone.rules);
+	});
 
 }).apply(this);
