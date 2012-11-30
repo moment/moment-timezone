@@ -83,9 +83,6 @@ module.exports = function (grunt) {
 
 	function generateZone(zone, cb) {
 		var filename = path.join(process.cwd(), "tests/" + zone.toLowerCase() + '.js'),
-			max = +moment([2013]),
-			offset = 0,
-			currentMoment,
 			output = [],
 			tests = [],
 			i;
@@ -94,32 +91,73 @@ module.exports = function (grunt) {
 		output.push('\tmoment = require("moment");');
 		output.push('\nexports.rules = {');
 
-		output.push('\t"' + zone + '" : function (test) {');
-		output.push('\t\tvar zone = TZ.getZoneSet("' + zone + '");');
-
 		// every minute from 1970 to 2012
-		for (i = 0; i < max; i += 60000) {
+		for (i = 1970; i < 2012; i++) {
+			tests.push(makeTestForYear(i, zone));
+		}
+
+		output.push(tests.join(',\n\n'));
+
+		output.push('};');
+
+		grunt.file.write(filename, output.join('\n'));
+		cb();
+	}
+
+	function makeTestForYear (year, zone) {
+		var max = +moment([year + 1]),
+			offset = 0,
+			currentMoment,
+			output = [],
+			tests = [],
+			formatTests = [],
+			i = +moment([year]);
+
+		for (i; i < max; i += 60000) {
 			currentMoment = moment(i);
 			if (offset !== currentMoment.zone()) {
 				offset = currentMoment.zone();
-				tests.push(makeTest(currentMoment.clone().subtract('d', 1)));
+
 				tests.push(makeTest(currentMoment.clone().subtract('ms', 1)));
 				tests.push(makeTest(currentMoment));
+
+				formatTests.push(makeFormatTest(currentMoment.clone().subtract('ms', 1), zone));
+				formatTests.push(makeFormatTest(currentMoment, zone));
 			}
 		}
 
+		output.push('\t"' + zone + ' ' + year + '" : function (test) {');
+		output.push('\t\tvar zone = TZ.getZoneSet("' + zone + '");');
 		output.push('\t\ttest.expect(' + tests.length + ');\n');
 
 		for (i = 0; i < tests.length; i++) {
 			output.push(tests[i]);
 		}
 
-		output.push('\t\ttest.done();');
-		output.push('\t}');
-		output.push('};');
+		output.push('\n\t\ttest.done();');
+		output.push('\t},\n');
 
-		grunt.file.write(filename, output.join('\n'));
-		cb();
+		output.push('\t"' + zone + ' ' + year + ' format" : function (test) {');
+		output.push('\t\ttest.expect(' + formatTests.length + ');\n');
+
+		for (i = 0; i < formatTests.length; i++) {
+			output.push(formatTests[i]);
+		}
+
+		output.push('\n\t\ttest.done();');
+		output.push('\t}');
+
+		return output.join('\n');
+	}
+
+	function makeFormatTest(mom, zoneName) {
+		var utc = mom.clone().utc(),
+			o = '\t\t';
+		o += 'test.equal(moment("' + utc.format() + '").tz("' + zoneName + '").format("HH:mm"), ';
+		o += '"' + mom.format("HH:mm") + '"';
+		o += ', "' + utc.format() + " should be " + mom.format("HH:mm") + ' in ' + zoneName + '");';
+
+		return o;
 	}
 
 	function makeTest(mom) {

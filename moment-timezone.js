@@ -9,6 +9,7 @@
 	var moment = require('moment'),
 
 		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
+		oldFormat = moment.fn.format,
 
 		rules = {},
 		ruleSets = {},
@@ -393,6 +394,21 @@
 		}
 		return zoneSets[name];
 	}
+
+	// override moment.fn.format
+	moment.fn.format = function () {
+		var actual = this;
+		if (this._z && this._z.offset) {
+			actual = this.clone().utc();
+			actual.add('m', -this._z.offset(this));
+		}
+		return oldFormat.apply(actual, arguments);
+	};
+
+	moment.fn.tz = function (name) {
+		this._z = getZoneSet(name);
+		return this;
+	};
 
 	module.exports = moment.tz = {
 		addRules   : addRules,
