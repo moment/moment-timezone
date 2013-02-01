@@ -397,10 +397,15 @@
 
 	// override moment.fn.format
 	moment.fn.format = function () {
-		var actual = this;
+		var actual = this, self = this;
 		if (this._z && this._z.offset) {
 			actual = this.clone().utc();
 			actual.add('m', -this._z.offset(this));
+
+            // enable z timezone format token
+            arguments[0] = arguments[0].replace(/z/g, function(){
+                return "[" + self._z.format(self) + "]";
+            });
 		}
 		return oldFormat.apply(actual, arguments);
 	};
