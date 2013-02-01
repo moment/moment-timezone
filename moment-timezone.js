@@ -403,9 +403,11 @@
 			actual.add('m', -this._z.offset(this));
 
             // enable z timezone format token
-            arguments[0] = arguments[0].replace(/z/g, function(){
-                return "[" + self._z.format(self) + "]";
-            });
+            if(arguments[0]) {
+                arguments[0] = arguments[0].replace(/z/g, function(){
+                    return "[" + self._z.format(self) + "]";
+                });
+            }
 		}
 		return oldFormat.apply(actual, arguments);
 	};
