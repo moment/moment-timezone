@@ -111,6 +111,25 @@ function parseLine (line, output) {
 	}
 }
 
+var START = [
+    "(function(){",
+    "    function onload (tz) {",
+    ""
+].join('\n');
+
+var END = [
+    "",
+    "    }",
+    "    if (typeof define === \"function\" && define.amd) {",
+    "        define([\"moment-timezone\"], onload);",
+    "    }",
+    "    if (typeof window !== \"undefined\" && window.moment && window.moment.tz) {",
+    "        onload(window.moment.tz);",
+    "    }",
+    "})();",
+    ""
+].join('\n');
+
 function parseZone (zone, grunt) {
 	var data = grunt.file.read(zone),
 		i,
@@ -121,15 +140,17 @@ function parseZone (zone, grunt) {
 		},
 		lines = data.split('\n'),
 		outPath = zone.replace('olson', 'zones') + '.js',
-		outData = 'module.exports = ';
+		outData = "";
 
 	for (i = 0; i < lines.length; i++) {
 		parseLine(lines[i], output);
 	}
 
-	outData += JSON.stringify(output, null, '\t') + ';\n';
+    outData += 'tz.addRules(' + JSON.stringify(output.rules, null, '\t') + ');\n';
 
-	grunt.file.write(outPath, outData);
+	outData += 'tz.addZones(' + JSON.stringify(output.zones, null, '\t') + ');\n';
+
+	grunt.file.write(outPath,  START + outData + END);
 
 	grunt.log.writeln('File "' + outPath + '" created. ' + ('(' + grunt.helper('gzip', outData).length + ' bytes gzipped)').green);
 }

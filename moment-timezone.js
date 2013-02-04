@@ -6,15 +6,25 @@
 
 (function () {
 
-	var moment = require('moment'),
-
+	var moment,
+        // check for nodeJS
+        hasModule = (typeof module !== 'undefined' && module.exports),
 		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
-		oldFormat = moment.fn.format,
+		oldFormat,
 
 		rules = {},
 		ruleSets = {},
 		zones = {},
 		zoneSets = {};
+
+
+    moment = hasModule ? require('moment') : this.moment;
+
+    if (moment === undefined) {
+        throw "Can't find moment";
+    }
+
+    oldFormat = moment.fn.format;
 
 	/************************************
 		Rules
@@ -417,7 +427,7 @@
 		return this;
 	};
 
-	module.exports = moment.tz = {
+	moment.tz = {
 		addRules   : addRules,
 		addRule    : addRule,
 		getRuleSet : getRuleSet,
@@ -429,11 +439,28 @@
 	// add default rule
 	addRule("-,0,9999,0,0,0,0,S");
 
-	// add all rules
-	zoneNames.forEach(function (z) {
-		var zone = require('./zones/' + z);
-		addZones(zone.zones);
-		addRules(zone.rules);
-	});
+    if(hasModule) {
+        // add all rules
+        zoneNames.forEach(function (z) {
+            var zone = require('./zones/' + z);
+            addZones(zone.zones);
+            addRules(zone.rules);
+        });
+    }
+
+    /************************************
+     Exposing Moment Timezone
+     ************************************/
+
+    // CommonJS module is defined
+    if (hasModule) {
+        module.exports = moment.tz;
+    }
+    /*global define:false */
+    if (typeof define === "function" && define.amd) {
+        define("moment", [], function () {
+            return moment.tz;
+        });
+    }
 
 }).apply(this);
