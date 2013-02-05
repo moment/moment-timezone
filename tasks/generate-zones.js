@@ -123,10 +123,10 @@ var END = [
     "    if (typeof define === \"function\" && define.amd) {",
     "        define([\"moment-timezone\"], onload);",
     "    }",
-    "    if (typeof window !== \"undefined\" && window.moment && window.moment.tz) {",
-    "        onload(window.moment.tz);",
+    "    if (this.moment && this.moment.tz) {",
+    "        onload(this.moment.tz);",
     "    }",
-    "})();",
+    "}).call(this);",
     ""
 ].join('\n');
 
