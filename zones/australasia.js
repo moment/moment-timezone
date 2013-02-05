@@ -1,4 +1,5 @@
-module.exports = {
+(function(){
+var data = {
 	"rules": {
 		"Aus": [
 			"1917,1917,0,1,1,60,-",
@@ -444,3 +445,17 @@ module.exports = {
 	},
 	"lastZone": "Pacific/Wallis"
 };
+   function onload (tz) {
+       tz.addRules(data.rules);
+       tz.addZones(data.rules);
+   }
+   if (typeof module !== 'undefined') {
+       module.exports = data;   } else {
+       if (typeof define === "function" && define.amd) {
+           define(["moment-timezone"], onload);
+       }
+       if (this.moment && this.moment.tz) {
+           onload(this.moment.tz);
+       }
+   }
+}).call(this);

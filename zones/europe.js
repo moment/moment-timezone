@@ -1,4 +1,5 @@
-module.exports = {
+(function(){
+var data = {
 	"rules": {
 		"GB-Eire": [
 			"1916,1916,4,21,120,60,BST",
@@ -1270,3 +1271,17 @@ module.exports = {
 	},
 	"lastZone": "Europe/Simferopol"
 };
+   function onload (tz) {
+       tz.addRules(data.rules);
+       tz.addZones(data.rules);
+   }
+   if (typeof module !== 'undefined') {
+       module.exports = data;   } else {
+       if (typeof define === "function" && define.amd) {
+           define(["moment-timezone"], onload);
+       }
+       if (this.moment && this.moment.tz) {
+           onload(this.moment.tz);
+       }
+   }
+}).call(this);

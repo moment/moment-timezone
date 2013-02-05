@@ -1,4 +1,5 @@
-module.exports = {
+(function(){
+var data = {
 	"rules": {
 		"ArgAQ": [
 			"1964,1966,2,1,0,0,-",
@@ -135,3 +136,17 @@ module.exports = {
 	},
 	"lastZone": "Antarctica/McMurdo"
 };
+   function onload (tz) {
+       tz.addRules(data.rules);
+       tz.addZones(data.rules);
+   }
+   if (typeof module !== 'undefined') {
+       module.exports = data;   } else {
+       if (typeof define === "function" && define.amd) {
+           define(["moment-timezone"], onload);
+       }
+       if (this.moment && this.moment.tz) {
+           onload(this.moment.tz);
+       }
+   }
+}).call(this);

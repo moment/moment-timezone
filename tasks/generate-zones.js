@@ -111,21 +111,25 @@ function parseLine (line, output) {
 	}
 }
 
-var START = [
-    "(function(){",
-    "    function onload (tz) {",
-    ""
-].join('\n');
+var START =
+    "(function(){\n";
 
 var END = [
+    "   function onload (tz) {",
+    "       tz.addRules(data.rules);",
+    "       tz.addZones(data.rules);",
+    "   }" +
     "",
-    "    }",
-    "    if (typeof define === \"function\" && define.amd) {",
-    "        define([\"moment-timezone\"], onload);",
-    "    }",
-    "    if (this.moment && this.moment.tz) {",
-    "        onload(this.moment.tz);",
-    "    }",
+    "   if (typeof module !== 'undefined') {",
+    "       module.exports = data;" +
+    "   } else {",
+    "       if (typeof define === \"function\" && define.amd) {",
+    "           define([\"moment-timezone\"], onload);",
+    "       }",
+    "       if (this.moment && this.moment.tz) {",
+    "           onload(this.moment.tz);",
+    "       }",
+    "   }",
     "}).call(this);",
     ""
 ].join('\n');
@@ -140,15 +144,13 @@ function parseZone (zone, grunt) {
 		},
 		lines = data.split('\n'),
 		outPath = zone.replace('olson', 'zones') + '.js',
-		outData = "";
+		outData = "var data = ";
 
 	for (i = 0; i < lines.length; i++) {
 		parseLine(lines[i], output);
 	}
 
-    outData += 'tz.addRules(' + JSON.stringify(output.rules, null, '\t') + ');\n';
-
-	outData += 'tz.addZones(' + JSON.stringify(output.zones, null, '\t') + ');\n';
+    outData += JSON.stringify(output, null, '\t') + ";\n";
 
 	grunt.file.write(outPath,  START + outData + END);
 

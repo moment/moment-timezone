@@ -425,7 +425,7 @@
                     return "[" + sign + leftZeroFill(~~(10 * offset / 6), 4) + "]";
                 });
                 arguments[0] = arguments[0].replace(/Z/g, function(){
-                    var offset = -self._z.offset(self), sign = "+";
+                    var offset = -self._z.offset(self),sign = "+";
                     if (offset < 0) {
                         offset = -offset;
                         sign = "-";

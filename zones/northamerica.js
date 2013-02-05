@@ -1,4 +1,5 @@
-module.exports = {
+(function(){
+var data = {
 	"rules": {
 		"US": [
 			"1918,1919,2,0,120,60,D",
@@ -1260,3 +1261,17 @@ module.exports = {
 	},
 	"lastZone": "America/St_Thomas"
 };
+   function onload (tz) {
+       tz.addRules(data.rules);
+       tz.addZones(data.rules);
+   }
+   if (typeof module !== 'undefined') {
+       module.exports = data;   } else {
+       if (typeof define === "function" && define.amd) {
+           define(["moment-timezone"], onload);
+       }
+       if (this.moment && this.moment.tz) {
+           onload(this.moment.tz);
+       }
+   }
+}).call(this);
