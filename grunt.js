@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         },
         min: {
             js: {
-                src: 'dist/moment-timezone-all.js',
+                src: 'min/moment-timezone-all.js',
                 dest: 'min/moment-timezone-all.min.js'
             }
         },
