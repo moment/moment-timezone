@@ -94,7 +94,7 @@ var data = {
 };
    function onload (tz) {
        tz.addRules(data.rules);
-       tz.addZones(data.rules);
+       tz.addZones(data.zones);
    }
    if (typeof module !== 'undefined') {
        module.exports = data;   } else {

@@ -117,7 +117,7 @@ var START =
 var END = [
     "   function onload (tz) {",
     "       tz.addRules(data.rules);",
-    "       tz.addZones(data.rules);",
+    "       tz.addZones(data.zones);",
     "   }" +
     "",
     "   if (typeof module !== 'undefined') {",
