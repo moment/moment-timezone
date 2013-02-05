@@ -405,22 +405,48 @@
 		return zoneSets[name];
 	}
 
-	// override moment.fn.format
-	moment.fn.format = function () {
-		var actual = this, self = this;
-		if (this._z && this._z.offset) {
-			actual = this.clone().utc();
-			actual.add('m', -this._z.offset(this));
+    // override moment.fn.format
+    moment.fn.format = function () {
+        var actual = this, self = this;
+        if (this._z && this._z.offset) {
+            actual = this.clone().utc();
+            actual.add('m', -this._z.offset(this));
 
-            // enable z timezone format token
+
+
+            // override z,Z,ZZ timezone format tokens
             if(arguments[0]) {
+                arguments[0] = arguments[0].replace(/ZZ/g, function(){
+                    var offset = -self._z.offset(self), sign = "+";
+                    if (offset < 0) {
+                        offset = -offset;
+                        sign = "-";
+                    }
+                    return "[" + sign + leftZeroFill(~~(10 * offset / 6), 4) + "]";
+                });
+                arguments[0] = arguments[0].replace(/Z/g, function(){
+                    var offset = -self._z.offset(self), sign = "+";
+                    if (offset < 0) {
+                        offset = -offset;
+                        sign = "-";
+                    }
+                    return "[" + sign + leftZeroFill(~~(offset / 60), 2) + ":" + leftZeroFill(~~offset % 60, 2) + "]";
+                });
                 arguments[0] = arguments[0].replace(/z/g, function(){
                     return "[" + self._z.format(self) + "]";
                 });
             }
-		}
-		return oldFormat.apply(actual, arguments);
-	};
+        }
+        return oldFormat.apply(actual, arguments);
+    };
+
+    function leftZeroFill(number, targetLength) {
+        var output = number + '';
+        while (output.length < targetLength) {
+            output = '0' + output;
+        }
+        return output;
+    }
 
 	moment.fn.tz = function (name) {
 		this._z = getZoneSet(name);
