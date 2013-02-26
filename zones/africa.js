@@ -1,4 +1,5 @@
-module.exports = {
+(function(){
+var data = {
 	"rules": {
 		"Algeria": [
 			"1916,1916,5,14,1380,60,S",
@@ -463,3 +464,17 @@ module.exports = {
 	},
 	"lastZone": "Africa/Harare"
 };
+   function onload (tz) {
+       tz.addRules(data.rules);
+       tz.addZones(data.zones);
+   }
+   if (typeof module !== 'undefined') {
+       module.exports = data;   } else {
+       if (typeof define === "function" && define.amd) {
+           define(["moment-timezone"], onload);
+       }
+       if (this.moment && this.moment.tz) {
+           onload(this.moment.tz);
+       }
+   }
+}).call(this);

@@ -6,15 +6,25 @@
 
 (function () {
 
-	var moment = require('moment'),
-
+	var moment,
+        // check for nodeJS
+        hasModule = (typeof module !== 'undefined' && module.exports),
 		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
-		oldFormat = moment.fn.format,
+		oldFormat,
 
 		rules = {},
 		ruleSets = {},
 		zones = {},
 		zoneSets = {};
+
+
+    moment = hasModule ? require('moment') : this.moment;
+
+    if (moment === undefined) {
+        throw "Can't find moment";
+    }
+
+    oldFormat = moment.fn.format;
 
 	/************************************
 		Rules
@@ -395,22 +405,55 @@
 		return zoneSets[name];
 	}
 
-	// override moment.fn.format
-	moment.fn.format = function () {
-		var actual = this;
-		if (this._z && this._z.offset) {
-			actual = this.clone().utc();
-			actual.add('m', -this._z.offset(this));
-		}
-		return oldFormat.apply(actual, arguments);
-	};
+    // override moment.fn.format
+    moment.fn.format = function (inputString) {
+        var actual = this,
+        self = this,
+        format = inputString || moment.defaultFormat;
+
+        if (this._z && this._z.offset) {
+            actual = this.clone().utc();
+            actual.add('m', -this._z.offset(this));
+
+            // override z,Z,ZZ timezone format tokens
+            format = format.replace(/ZZ/g, function(){
+                var offset = -self._z.offset(self), sign = "+";
+                if (offset < 0) {
+                    offset = -offset;
+                    sign = "-";
+                }
+                return "[" + sign + leftZeroFill(~~(10 * offset / 6), 4) + "]";
+            });
+            format = format.replace(/Z/g, function(){
+                var offset = -self._z.offset(self),sign = "+";
+                if (offset < 0) {
+                    offset = -offset;
+                    sign = "-";
+                }
+                return "[" + sign + leftZeroFill(~~(offset / 60), 2) + ":" + leftZeroFill(~~offset % 60, 2) + "]";
+            });
+            format = format.replace(/z/g, function(){
+                return "[" + self._z.format(self) + "]";
+            });
+        }
+
+        return oldFormat.call(actual, format);
+    };
+
+    function leftZeroFill(number, targetLength) {
+        var output = number + '';
+        while (output.length < targetLength) {
+            output = '0' + output;
+        }
+        return output;
+    }
 
 	moment.fn.tz = function (name) {
 		this._z = getZoneSet(name);
 		return this;
 	};
 
-	module.exports = moment.tz = {
+	moment.tz = {
 		addRules   : addRules,
 		addRule    : addRule,
 		getRuleSet : getRuleSet,
@@ -422,11 +465,28 @@
 	// add default rule
 	addRule("-,0,9999,0,0,0,0,S");
 
-	// add all rules
-	zoneNames.forEach(function (z) {
-		var zone = require('./zones/' + z);
-		addZones(zone.zones);
-		addRules(zone.rules);
-	});
+    if(hasModule) {
+        // add all rules
+        zoneNames.forEach(function (z) {
+            var zone = require('./zones/' + z);
+            addZones(zone.zones);
+            addRules(zone.rules);
+        });
+    }
+
+    /************************************
+     Exposing Moment Timezone
+     ************************************/
+
+    // CommonJS module is defined
+    if (hasModule) {
+        module.exports = moment.tz;
+    }
+    /*global define:false */
+    if (typeof define === "function" && define.amd) {
+        define("moment", [], function () {
+            return moment.tz;
+        });
+    }
 
 }).apply(this);
