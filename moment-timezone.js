@@ -406,38 +406,38 @@
 	}
 
     // override moment.fn.format
-    moment.fn.format = function () {
-        var actual = this, self = this;
+    moment.fn.format = function (inputString) {
+        var actual = this,
+        self = this,
+        format = inputString || moment.defaultFormat;
+
         if (this._z && this._z.offset) {
             actual = this.clone().utc();
             actual.add('m', -this._z.offset(this));
 
-
-
             // override z,Z,ZZ timezone format tokens
-            if(arguments[0]) {
-                arguments[0] = arguments[0].replace(/ZZ/g, function(){
-                    var offset = -self._z.offset(self), sign = "+";
-                    if (offset < 0) {
-                        offset = -offset;
-                        sign = "-";
-                    }
-                    return "[" + sign + leftZeroFill(~~(10 * offset / 6), 4) + "]";
-                });
-                arguments[0] = arguments[0].replace(/Z/g, function(){
-                    var offset = -self._z.offset(self),sign = "+";
-                    if (offset < 0) {
-                        offset = -offset;
-                        sign = "-";
-                    }
-                    return "[" + sign + leftZeroFill(~~(offset / 60), 2) + ":" + leftZeroFill(~~offset % 60, 2) + "]";
-                });
-                arguments[0] = arguments[0].replace(/z/g, function(){
-                    return "[" + self._z.format(self) + "]";
-                });
-            }
+            format = format.replace(/ZZ/g, function(){
+                var offset = -self._z.offset(self), sign = "+";
+                if (offset < 0) {
+                    offset = -offset;
+                    sign = "-";
+                }
+                return "[" + sign + leftZeroFill(~~(10 * offset / 6), 4) + "]";
+            });
+            format = format.replace(/Z/g, function(){
+                var offset = -self._z.offset(self),sign = "+";
+                if (offset < 0) {
+                    offset = -offset;
+                    sign = "-";
+                }
+                return "[" + sign + leftZeroFill(~~(offset / 60), 2) + ":" + leftZeroFill(~~offset % 60, 2) + "]";
+            });
+            format = format.replace(/z/g, function(){
+                return "[" + self._z.format(self) + "]";
+            });
         }
-        return oldFormat.apply(actual, arguments);
+
+        return oldFormat.call(actual, format);
     };
 
     function leftZeroFill(number, targetLength) {
