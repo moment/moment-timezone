@@ -6,10 +6,9 @@
 
 (function () {
 
-	var moment = require('moment'),
+	var moment = require('./moment'),
 
 		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
-		oldFormat = moment.fn.format,
 
 		rules = {},
 		ruleSets = {},
@@ -221,7 +220,7 @@
 				last = rules[i + 1];
 				rule = rules[i];
 
-				cloned = moment.utc(mom).add('m', offset + last.offset());
+				cloned = moment(mom).utc().add('m', offset + last.offset());
 
 				if (cloned >= rule.start()) {
 					return rule.rule();
@@ -395,22 +394,20 @@
 		return zoneSets[name];
 	}
 
-	// override moment.fn.format
-	moment.fn.format = function () {
-		var actual = this;
-		if (this._z && this._z.offset) {
-			actual = this.clone().utc();
-			actual.add('m', -this._z.offset(this));
+	// overwrite moment.updateOffset
+	moment.updateOffset = function (mom) {
+		if (mom._z) {
+			mom.zone(mom._z.offset(moment(+mom)));
 		}
-		return oldFormat.apply(actual, arguments);
 	};
 
 	moment.fn.tz = function (name) {
 		this._z = getZoneSet(name);
+		moment.updateOffset(this);
 		return this;
 	};
 
-	module.exports = moment.tz = {
+	moment.tz = {
 		addRules   : addRules,
 		addRule    : addRule,
 		getRuleSet : getRuleSet,
@@ -418,6 +415,8 @@
 		addZone    : addZone,
 		getZoneSet : getZoneSet
 	};
+
+	module.exports = moment;
 
 	// add default rule
 	addRule("-,0,9999,0,0,0,0,S");

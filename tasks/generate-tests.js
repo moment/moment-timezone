@@ -1,5 +1,5 @@
 var path = require('path'),
-	moment = require('moment');
+	moment = require('../moment-timezone');
 
 module.exports = function (grunt) {
 	// placeholder for an array of timezones
@@ -87,8 +87,7 @@ module.exports = function (grunt) {
 			tests = [],
 			i;
 
-		output.push('var TZ = require("../../moment-timezone"),');
-		output.push('\tmoment = require("moment");');
+		output.push('var moment = require("../../moment-timezone");');
 		output.push('\nexports.rules = {');
 
 		// every minute from 1970 to 2012
@@ -106,12 +105,12 @@ module.exports = function (grunt) {
 
 	function makeTestForYear (year, zone) {
 		var max = +moment([year + 1]),
-			offset = 0,
-			currentMoment,
 			output = [],
 			tests = [],
 			formatTests = [],
-			i = +moment([year]);
+			i = +moment([year]),
+			currentMoment = moment(i),
+			offset = currentMoment.zone();
 
 		for (i; i < max; i += 60000) {
 			currentMoment = moment(i);
@@ -127,7 +126,7 @@ module.exports = function (grunt) {
 		}
 
 		output.push('\t"' + zone + ' ' + year + '" : function (test) {');
-		output.push('\t\tvar zone = TZ.getZoneSet("' + zone + '");');
+		output.push('\t\tvar zone = moment.tz.getZoneSet("' + zone + '");');
 		output.push('\t\ttest.expect(' + tests.length + ');\n');
 
 		for (i = 0; i < tests.length; i++) {

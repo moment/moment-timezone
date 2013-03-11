@@ -1,4 +1,4 @@
-var moment = require('moment');
+var moment = require('../moment-timezone');
 
 var daysOfWeek = 'sun mon tue wed thu fri sat'.split(' ');
 

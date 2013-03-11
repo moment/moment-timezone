@@ -1,9 +1,8 @@
-var TZ = require("../../moment-timezone"),
-	moment = require("moment");
+var moment = require("../../moment-timezone");
 
 exports.rules = {
 	"America/New_York 1970" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1970-01-01T04:59:59+00:00")), 300, "1970-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -30,7 +29,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1971" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1971-01-01T04:59:59+00:00")), 300, "1971-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -57,7 +56,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1972" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1972-01-01T04:59:59+00:00")), 300, "1972-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -84,7 +83,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1973" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1973-01-01T04:59:59+00:00")), 300, "1973-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -111,7 +110,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1974" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1974-01-01T04:59:59+00:00")), 300, "1974-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -138,7 +137,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1975" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1975-01-01T04:59:59+00:00")), 300, "1975-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -165,7 +164,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1976" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1976-01-01T04:59:59+00:00")), 300, "1976-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -192,7 +191,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1977" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1977-01-01T04:59:59+00:00")), 300, "1977-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -219,7 +218,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1978" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1978-01-01T04:59:59+00:00")), 300, "1978-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -246,7 +245,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1979" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1979-01-01T04:59:59+00:00")), 300, "1979-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -273,7 +272,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1980" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1980-01-01T04:59:59+00:00")), 300, "1980-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -300,7 +299,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1981" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1981-01-01T04:59:59+00:00")), 300, "1981-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -327,7 +326,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1982" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1982-01-01T04:59:59+00:00")), 300, "1982-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -354,7 +353,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1983" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1983-01-01T04:59:59+00:00")), 300, "1983-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -381,7 +380,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1984" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1984-01-01T04:59:59+00:00")), 300, "1984-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -408,7 +407,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1985" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1985-01-01T04:59:59+00:00")), 300, "1985-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -435,7 +434,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1986" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1986-01-01T04:59:59+00:00")), 300, "1986-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -462,7 +461,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1987" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1987-01-01T04:59:59+00:00")), 300, "1987-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -489,7 +488,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1988" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1988-01-01T04:59:59+00:00")), 300, "1988-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -516,7 +515,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1989" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1989-01-01T04:59:59+00:00")), 300, "1989-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -543,7 +542,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1990" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1990-01-01T04:59:59+00:00")), 300, "1990-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -570,7 +569,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1991" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1991-01-01T04:59:59+00:00")), 300, "1991-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -597,7 +596,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1992" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1992-01-01T04:59:59+00:00")), 300, "1992-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -624,7 +623,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1993" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1993-01-01T04:59:59+00:00")), 300, "1993-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -651,7 +650,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1994" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1994-01-01T04:59:59+00:00")), 300, "1994-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -678,7 +677,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1995" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1995-01-01T04:59:59+00:00")), 300, "1995-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -705,7 +704,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1996" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1996-01-01T04:59:59+00:00")), 300, "1996-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -732,7 +731,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1997" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1997-01-01T04:59:59+00:00")), 300, "1997-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -759,7 +758,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1998" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1998-01-01T04:59:59+00:00")), 300, "1998-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -786,7 +785,7 @@ exports.rules = {
 	},
 
 	"America/New_York 1999" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("1999-01-01T04:59:59+00:00")), 300, "1999-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -813,7 +812,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2000" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2000-01-01T04:59:59+00:00")), 300, "2000-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -840,7 +839,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2001" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2001-01-01T04:59:59+00:00")), 300, "2001-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -867,7 +866,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2002" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2002-01-01T04:59:59+00:00")), 300, "2002-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -894,7 +893,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2003" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2003-01-01T04:59:59+00:00")), 300, "2003-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -921,7 +920,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2004" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2004-01-01T04:59:59+00:00")), 300, "2004-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -948,7 +947,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2005" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2005-01-01T04:59:59+00:00")), 300, "2005-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -975,7 +974,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2006" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2006-01-01T04:59:59+00:00")), 300, "2006-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -1002,7 +1001,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2007" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2007-01-01T04:59:59+00:00")), 300, "2007-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -1029,7 +1028,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2008" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2008-01-01T04:59:59+00:00")), 300, "2008-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -1056,7 +1055,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2009" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2009-01-01T04:59:59+00:00")), 300, "2009-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -1083,7 +1082,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2010" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2010-01-01T04:59:59+00:00")), 300, "2010-01-01T04:59:59+00:00 should be 300 minutes offset");
@@ -1110,7 +1109,7 @@ exports.rules = {
 	},
 
 	"America/New_York 2011" : function (test) {
-		var zone = TZ.getZoneSet("America/New_York");
+		var zone = moment.tz.getZoneSet("America/New_York");
 		test.expect(6);
 
 		test.equal(zone.offset(moment("2011-01-01T04:59:59+00:00")), 300, "2011-01-01T04:59:59+00:00 should be 300 minutes offset");
