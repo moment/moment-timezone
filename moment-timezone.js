@@ -8,7 +8,7 @@
 
 	var moment = require('./moment'),
 
-		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
+		zoneNames = "africa antarctica asia australasia europe northamerica pacificnew southamerica".split(' '),
 
 		defaultRule,
 		rules = {},

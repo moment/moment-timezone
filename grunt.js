@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		test: {
-			files: ["tests/**/*.js"]
+			files: ["tests/core/*.js"]
 		},
 		lint: {
 			files: [

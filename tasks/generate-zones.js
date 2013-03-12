@@ -2,17 +2,20 @@ var moment = require('../moment-timezone');
 
 var daysOfWeek = 'sun mon tue wed thu fri sat'.split(' ');
 
+var zones = {};
+
 module.exports = function (grunt) {
 	grunt.registerTask('generate-zones', 'Build the zone files.', function () {
-
 		grunt.file.expandFiles("olson/*").forEach(function(file){
 			parseZone(file, grunt);
 		});
+		exportZones(grunt);
 	});
 };
 
 function formatZone (zone, output) {
 	zone[0] = output.lastZone = zone[0] || output.lastZone;
+	zones[zone[0]] = true;
 	if (!output.zones[zone[0]]) {
 		output.zones[zone[0]] = [];
 	}
@@ -22,8 +25,9 @@ function formatZone (zone, output) {
 
 function ruleHMToMinutes (input) {
 	//return input;
-	var output = input.split(':');
-	return (+output[0] * 60) + (+output[1] || 0);
+	var output = input.split(':'),
+		utc = input.indexOf('u') > -1 ? 'u' : '';
+	return (+output[0] * 60) + (+output[1] || 0) + utc;
 }
 
 function ruleGreaterThan (input) {
@@ -132,4 +136,25 @@ function parseZone (zone, grunt) {
 	grunt.file.write(outPath, outData);
 
 	grunt.log.writeln('File "' + outPath + '" created. ' + ('(' + grunt.helper('gzip', outData).length + ' bytes gzipped)').green);
+}
+
+function exportZones (grunt) {
+	var i,
+		z = [],
+		output = "module.exports = [";
+
+	for (i in zones) {
+		z.push(i);
+	}
+
+	z.sort();
+
+	for (i = 0; i < z.length; i++) {
+		output += '\n\t"' + z[i] + '",';
+	}
+
+	output += "\n];";
+
+	grunt.file.write("./tasks/zone-names.js", output);
+
 }

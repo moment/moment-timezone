@@ -1,5 +1,6 @@
 var path = require('path'),
-	moment = require('../moment-timezone');
+	moment = require('../moment-timezone'),
+	zoneNames = require('./zone-names');
 
 module.exports = function (grunt) {
 	// placeholder for an array of timezones
@@ -16,14 +17,14 @@ module.exports = function (grunt) {
 		getCurrentTimezone(function (zone) {
 			// save the initial timezone so we dont break our computers
 			INITIAL_ZONE = zone;
-			getAllTimezones(function (zones) {
-				// store all the timezones
-				ALL_ZONES = zones;
-				// start running the tests
-				nextTest(function () {
-					// reset the timezone like nothing ever happened
-					resetTimezone();
-				});
+			// getAllTimezones(function (zones) {
+			// });
+			// store all the timezones
+			ALL_ZONES = zoneNames;
+			// start running the tests
+			nextTest(function () {
+				// reset the timezone like nothing ever happened
+				resetTimezone();
 			});
 		});
 	});
@@ -73,7 +74,7 @@ module.exports = function (grunt) {
 	******************************/
 
 	function nextTest(cb) {
-		var zone = ALL_ZONES.pop();
+		var zone = ALL_ZONES.shift();
 		if (zone) {
 			setTimezone(zone, function () {
 				generateZone(zone, function () {
