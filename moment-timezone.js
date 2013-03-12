@@ -10,6 +10,7 @@
 
 		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
 
+		defaultRule,
 		rules = {},
 		ruleSets = {},
 		zones = {},
@@ -227,7 +228,7 @@
 				}
 			}
 
-			throw "Rule not found";
+			return defaultRule;
 		}
 	};
 
@@ -306,11 +307,13 @@
 		},
 
 		format : function (mom) {
-			return this.zone(mom).format(mom);
+			var dup = moment(+mom);
+			return this.zone(dup).format(dup);
 		},
 
 		offset : function (mom) {
-			return -this.zone(mom).offset(mom);
+			var dup = moment(+mom);
+			return -this.zone(dup).offset(dup);
 		}
 	};
 
@@ -397,7 +400,7 @@
 	// overwrite moment.updateOffset
 	moment.updateOffset = function (mom) {
 		if (mom._z) {
-			mom.zone(mom._z.offset(moment(+mom)));
+			mom.zone(mom._z.offset(mom));
 		}
 	};
 
@@ -419,7 +422,7 @@
 	module.exports = moment;
 
 	// add default rule
-	addRule("-,0,9999,0,0,0,0,S");
+	defaultRule = addRule("-,0,9999,0,0,0,0,S");
 
 	// add all rules
 	zoneNames.forEach(function (z) {

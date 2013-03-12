@@ -5,35 +5,39 @@ module.exports = function (grunt) {
 	// placeholder for an array of timezones
 	var ALL_ZONES,
 		INITIAL_ZONE,
-
-		failedZones = [],
-		failedTests = [],
-
-		logTableWidths = [4, 0, 12, 12],
-
-		failedZoneCount = 0,
-		passedZoneCount = 0;
+		done;
 
 	/******************************
 		Grunt task
 	******************************/
 
 	grunt.registerTask('generate-tests', 'Run the unit tests in different timezones.', function () {
-		var done = this.async();
+		done = this.async();
 		getCurrentTimezone(function (zone) {
 			// save the initial timezone so we dont break our computers
 			INITIAL_ZONE = zone;
-
-			ALL_ZONES = [zone];
-
-			// start building the tests
-			nextTest(done);
+			getAllTimezones(function (zones) {
+				// store all the timezones
+				ALL_ZONES = zones;
+				// start running the tests
+				nextTest(function () {
+					// reset the timezone like nothing ever happened
+					resetTimezone();
+				});
+			});
 		});
 	});
 
 	/******************************
 		Timezones
 	******************************/
+
+	function resetTimezone() {
+		setTimezone(INITIAL_ZONE, function () {
+			grunt.log.writeln("Resetting timezone back to " + INITIAL_ZONE);
+			done();
+		});
+	}
 
 	function getCurrentTimezone(cb) {
 		grunt.utils.spawn({
@@ -82,90 +86,16 @@ module.exports = function (grunt) {
 	}
 
 	function generateZone(zone, cb) {
-		var filename = path.join(process.cwd(), "tests/" + zone.toLowerCase() + '.js'),
-			output = [],
-			tests = [],
-			i;
-
-		output.push('var moment = require("../../moment-timezone");');
-		output.push('\nexports.rules = {');
-
-		// every minute from 1970 to 2012
-		for (i = 1970; i < 2012; i++) {
-			tests.push(makeTestForYear(i, zone));
-		}
-
-		output.push(tests.join(',\n\n'));
-
-		output.push('};');
-
-		grunt.file.write(filename, output.join('\n'));
-		cb();
-	}
-
-	function makeTestForYear (year, zone) {
-		var max = +moment([year + 1]),
-			output = [],
-			tests = [],
-			formatTests = [],
-			i = +moment([year]),
-			currentMoment = moment(i),
-			offset = currentMoment.zone();
-
-		for (i; i < max; i += 60000) {
-			currentMoment = moment(i);
-			if (offset !== currentMoment.zone()) {
-				offset = currentMoment.zone();
-
-				tests.push(makeTest(currentMoment.clone().subtract('ms', 1)));
-				tests.push(makeTest(currentMoment));
-
-				formatTests.push(makeFormatTest(currentMoment.clone().subtract('ms', 1), zone));
-				formatTests.push(makeFormatTest(currentMoment, zone));
+		grunt.utils.spawn({
+			cmd: "grunt",
+			args: ["generate-test"]
+		}, function (err, result, code) {
+			if (err) {
+				resetTimezone();
+				throw err;
 			}
-		}
-
-		output.push('\t"' + zone + ' ' + year + '" : function (test) {');
-		output.push('\t\tvar zone = moment.tz.getZoneSet("' + zone + '");');
-		output.push('\t\ttest.expect(' + tests.length + ');\n');
-
-		for (i = 0; i < tests.length; i++) {
-			output.push(tests[i]);
-		}
-
-		output.push('\n\t\ttest.done();');
-		output.push('\t},\n');
-
-		output.push('\t"' + zone + ' ' + year + ' format" : function (test) {');
-		output.push('\t\ttest.expect(' + formatTests.length + ');\n');
-
-		for (i = 0; i < formatTests.length; i++) {
-			output.push(formatTests[i]);
-		}
-
-		output.push('\n\t\ttest.done();');
-		output.push('\t}');
-
-		return output.join('\n');
-	}
-
-	function makeFormatTest(mom, zoneName) {
-		var utc = mom.clone().utc(),
-			o = '\t\t';
-		o += 'test.equal(moment("' + utc.format() + '").tz("' + zoneName + '").format("HH:mm"), ';
-		o += '"' + mom.format("HH:mm") + '"';
-		o += ', "' + utc.format() + " should be " + mom.format("HH:mm") + ' in ' + zoneName + '");';
-
-		return o;
-	}
-
-	function makeTest(mom) {
-		var utc = mom.clone().utc(),
-			o = '\t\t';
-		o += 'test.equal(zone.offset(moment("' + utc.format() + '")), ';
-		o += mom.zone();
-		o += ', "' + utc.format() + " should be " + mom.zone() + ' minutes offset");';
-
-		return o;
+			console.log(result.stdout);
+			cb();
+		});
 	}
 };
