@@ -53,8 +53,12 @@
 			this.date = Rule.prototype._dateLast;
 		}
 
-		this._time    = +_at;
-		this._offset  = +_offset;
+		if (_at.indexOf('u') > -1) {
+			this.utc = true;
+		}
+
+		this._time    = parseInt(_at, 10);
+		this.offset  = +_offset;
 		this._letters = _letters;
 	}
 
@@ -80,10 +84,6 @@
 
 		letters : function () {
 			return this._letters;
-		},
-
-		offset : function () {
-			return this._offset;
 		},
 
 		start : function (year) {
@@ -129,28 +129,15 @@
 	************************************/
 
 	function RuleYear (_year, _rule) {
-		this._year = _year;
-		this._rule = _rule;
+		this.year = _year;
+		this.rule = _rule;
+		this.start = _rule.start(_year);
 	}
-
-	RuleYear.prototype = {
-		start : function () {
-			return this._rule.start(this._year);
-		},
-
-		offset : function () {
-			return this._rule._offset;
-		},
-
-		rule : function () {
-			return this._rule;
-		}
-	};
 
 	// sort rules so that the closest effective date is first
 	function sortRuleYears (a, b) {
-		var sa = a.start(),
-			sb = b.start();
+		var sa = a.start,
+			sb = b.start;
 
 		if (sa > sb) {
 			return -1;
@@ -217,14 +204,28 @@
 				cloned,
 				i;
 
+			// make sure to include the previous rule's offset
 			for (i = 0; i < rules.length - 1; i++) {
-				last = rules[i + 1];
 				rule = rules[i];
+				last = rules[i + 1];
 
-				cloned = moment(mom).utc().add('m', offset + last.offset());
+				rule.start.add('m', -last.rule.offset);
 
-				if (cloned >= rule.start()) {
-					return rule.rule();
+				// if (!rule.rule.utc) {
+				// 	rule.start.add('m', -offset);
+				// }
+				rule.start.add('m', -offset);
+			}
+
+			console.log('');
+
+			for (i = rules.length - 1; i > -1; i--) {
+				console.log(rules[i].start.format());
+			}
+
+			for (i = 0; i < rules.length; i++) {
+				if (mom >= rules[i].start) {
+					return rules[i].rule;
 				}
 			}
 
@@ -263,7 +264,7 @@
 		},
 
 		offset : function (mom) {
-			return this._offset + this.rule(mom).offset();
+			return this._offset + this.rule(mom).offset;
 		}
 	};
 
