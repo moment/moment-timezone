@@ -79,64 +79,64 @@ module.exports = {
 	"zones": {
 		"Antarctica/Casey": [
 			"0,-,zzz,1969",
-			"480,-,WST,2009,Oct,18,2:00",
-			"0",
-			"660,-,CAST,2010,Mar,5,2:00",
-			"0",
-			"480,-,WST,2011,Oct,28,2:00",
-			"660,-,CAST,2012,Feb,21,17:00u",
+			"480,-,WST,2009 9 18 0 120",
+			"0,,",
+			"660,-,CAST,2010 2 5 0 120",
+			"0,,",
+			"480,-,WST,2011 9 28 0 120",
+			"660,-,CAST,2012 1 21 0 1020u",
 			"480,-,WST"
 		],
 		"Antarctica/Davis": [
-			"0,-,zzz,1957,Jan,13",
-			"420,-,DAVT,1964,Nov,",
-			"0,-,zzz,1969,Feb",
-			"420,-,DAVT,2009,Oct,18,2:00",
-			"300,-,DAVT,2010,Mar,10,20:00u",
-			"420,-,DAVT,2011,Oct,28,2:00",
-			"300,-,DAVT,2012,Feb,21,20:00u",
+			"0,-,zzz,1957 0 13",
+			"420,-,DAVT,1964 10 ",
+			"0,-,zzz,1969 1",
+			"420,-,DAVT,2009 9 18 0 120",
+			"300,-,DAVT,2010 2 10 0 1200u",
+			"420,-,DAVT,2011 9 28 0 120",
+			"300,-,DAVT,2012 1 21 0 1200u",
 			"420,-,DAVT"
 		],
 		"Antarctica/Mawson": [
-			"0,-,zzz,1954,Feb,13",
-			"360,-,MAWT,2009,Oct,18,2:00",
-			"0",
+			"0,-,zzz,1954 1 13",
+			"360,-,MAWT,2009 9 18 0 120",
+			"0,,",
 			"300,-,MAWT"
 		],
 		"Antarctica/Macquarie": [
 			"0,-,zzz,1911",
-			"600,-,EST,1916,Oct,1,2:00",
-			"600,1:00,EST,1917,Feb",
+			"600,-,EST,1916 9 1 0 120",
+			"600,1:00,EST,1917 1",
 			"600,AusAQ,EST,1967",
-			"600,ATAQ,EST,2010,Apr,4,3:00",
-			"660,-,MIST,"
+			"600,ATAQ,EST,2010 3 4 0 180",
+			"660,-,MIST"
 		],
 		"Indian/Kerguelen": [
-			"0,-,zzz,1950,",
-			"300,-,TFT,"
+			"0,-,zzz,1950 ",
+			"300,-,TFT"
 		],
 		"Antarctica/DumontDUrville": [
 			"0,-,zzz,1947",
-			"600,-,PMT,1952,Jan,14,",
-			"0,-,zzz,1956,Nov",
-			"600,-,DDUT,"
+			"600,-,PMT,1952 0 14 ",
+			"0,-,zzz,1956 10",
+			"600,-,DDUT"
 		],
 		"Antarctica/Syowa": [
-			"0,-,zzz,1957,Jan,29",
-			"180,-,SYOT,"
+			"0,-,zzz,1957 0 29",
+			"180,-,SYOT"
 		],
 		"Antarctica/Vostok": [
-			"0,-,zzz,1957,Dec,16",
-			"360,-,VOST,"
+			"0,-,zzz,1957 11 16",
+			"360,-,VOST"
 		],
 		"Antarctica/Rothera": [
-			"0,-,zzz,1976,Dec,1",
-			"-180,-,ROTT,"
+			"0,-,zzz,1976 11 1",
+			"-180,-,ROTT"
 		],
 		"Antarctica/Palmer": [
 			"0,-,zzz,1965",
-			"-240,ArgAQ,AR%sT,1969,Oct,5",
-			"-180,ArgAQ,AR%sT,1982,May",
+			"-240,ArgAQ,AR%sT,1969 9 5",
+			"-180,ArgAQ,AR%sT,1982 4",
 			"-240,ChileAQ,CL%sT"
 		],
 		"Antarctica/McMurdo": [

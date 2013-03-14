@@ -13,6 +13,19 @@ module.exports = function (grunt) {
 	});
 };
 
+function zoneUntil (array) {
+	var parts = array.slice(4);
+	if (parts[1]) {
+		parts[1] = moment(parts[1], "MMM").month();
+	}
+	if (parts[3]) {
+		parts[4] = ruleHMToMinutes(parts[3]);
+		parts[3] = 0;
+	}
+	console.log('parts', parts.join(' '));
+	return parts.join(' ');
+}
+
 function formatZone (zone, output) {
 	zone[0] = output.lastZone = zone[0] || output.lastZone;
 	zones[zone[0]] = true;
@@ -20,7 +33,11 @@ function formatZone (zone, output) {
 		output.zones[zone[0]] = [];
 	}
 	zone[1] = ruleHMToMinutes(zone[1]);
+	zone[4] = zoneUntil(zone);
+	zone.splice(zone[4] ? 5 : 4);
 	output.zones[zone[0]].push(zone.slice(1).join(','));
+
+	console.log(zone.join(','));
 }
 
 function ruleHMToMinutes (input) {

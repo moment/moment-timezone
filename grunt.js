@@ -8,8 +8,8 @@ module.exports = function(grunt) {
 				"tests/africa/nairobi.js",
 				"tests/africa/casablanca.js",
 				"tests/africa/ceuta.js",
-				"tests/africa/windhoek.js",
-				"tests/africa/tripoli.js"
+				"tests/africa/windhoek.js"//,
+				//"tests/africa/tripoli.js"
 			]
 		},
 		lint: {

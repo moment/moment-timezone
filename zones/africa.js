@@ -180,32 +180,32 @@ module.exports = {
 	},
 	"zones": {
 		"Africa/Algiers": [
-			"12,-,LMT,1891,Mar,15,0:01",
-			"9,-,PMT,1911,Mar,11,",
-			"0,Algeria,WE%sT,1940,Feb,25,2:00",
-			"60,Algeria,CE%sT,1946,Oct,7",
-			"0,-,WET,1956,Jan,29",
-			"60,-,CET,1963,Apr,14",
-			"0,Algeria,WE%sT,1977,Oct,21",
-			"60,Algeria,CE%sT,1979,Oct,26",
-			"0,Algeria,WE%sT,1981,May",
+			"12,-,LMT,1891 2 15 0 1",
+			"9,-,PMT,1911 2 11 ",
+			"0,Algeria,WE%sT,1940 1 25 0 120",
+			"60,Algeria,CE%sT,1946 9 7",
+			"0,-,WET,1956 0 29",
+			"60,-,CET,1963 3 14",
+			"0,Algeria,WE%sT,1977 9 21",
+			"60,Algeria,CE%sT,1979 9 26",
+			"0,Algeria,WE%sT,1981 4",
 			"60,-,CET"
 		],
 		"Africa/Luanda": [
 			"52,-,LMT,1892",
-			"52,-,AOT,1911,May,26,",
+			"52,-,AOT,1911 4 26 ",
 			"60,-,WAT"
 		],
 		"Africa/Porto-Novo": [
 			"10,-,LMT,1912",
-			"0,-,GMT,1934,Feb,26",
+			"0,-,GMT,1934 1 26",
 			"60,-,WAT"
 		],
 		"Africa/Gaborone": [
 			"103,-,LMT,1885",
-			"90,-,SAST,1903,Mar",
-			"120,-,CAT,1943,Sep,19,2:00",
-			"120,1:00,CAST,1944,Mar,19,2:00",
+			"90,-,SAST,1903 2",
+			"120,-,CAT,1943 8 19 0 120",
+			"120,1:00,CAST,1944 2 19 0 120",
 			"120,-,CAT"
 		],
 		"Africa/Ouagadougou": [
@@ -221,10 +221,10 @@ module.exports = {
 			"60,-,WAT"
 		],
 		"Atlantic/Cape_Verde": [
-			"-26,-,LMT,1907,",
-			"-120,-,CVT,1942,Sep",
-			"-120,1:00,CVST,1945,Oct,15",
-			"-120,-,CVT,1975,Nov,25,2:00",
+			"-26,-,LMT,1907 ",
+			"-120,-,CVT,1942 8",
+			"-120,1:00,CVST,1945 9 15",
+			"-120,-,CVT,1975 10 25 0 120",
 			"-60,-,CVT"
 		],
 		"Africa/Bangui": [
@@ -233,20 +233,20 @@ module.exports = {
 		],
 		"Africa/Ndjamena": [
 			"60,-,LMT,1912",
-			"60,-,WAT,1979,Oct,14",
-			"60,1:00,WAST,1980,Mar,8",
+			"60,-,WAT,1979 9 14",
+			"60,1:00,WAST,1980 2 8",
 			"60,-,WAT"
 		],
 		"Indian/Comoro": [
-			"173,-,LMT,1911,Jul,",
+			"173,-,LMT,1911 6 ",
 			"180,-,EAT"
 		],
 		"Africa/Kinshasa": [
-			"61,-,LMT,1897,Nov,9",
+			"61,-,LMT,1897 10 9",
 			"60,-,WAT"
 		],
 		"Africa/Lubumbashi": [
-			"109,-,LMT,1897,Nov,9",
+			"109,-,LMT,1897 10 9",
 			"120,-,CAT"
 		],
 		"Africa/Brazzaville": [
@@ -258,27 +258,27 @@ module.exports = {
 			"0,-,GMT"
 		],
 		"Africa/Djibouti": [
-			"172,-,LMT,1911,Jul",
+			"172,-,LMT,1911 6",
 			"180,-,EAT"
 		],
 		"Africa/Cairo": [
-			"125,-,LMT,1900,Oct",
+			"125,-,LMT,1900 9",
 			"120,Egypt,EE%sT"
 		],
 		"Africa/Malabo": [
 			"35,-,LMT,1912",
-			"0,-,GMT,1963,Dec,15",
+			"0,-,GMT,1963 11 15",
 			"60,-,WAT"
 		],
 		"Africa/Asmara": [
 			"155,-,LMT,1870",
-			"155,-,AMT,1890,",
-			"155,-,ADMT,1936,May,5,",
+			"155,-,AMT,1890 ",
+			"155,-,ADMT,1936 4 5 ",
 			"180,-,EAT"
 		],
 		"Africa/Addis_Ababa": [
 			"154,-,LMT,1870",
-			"155,-,ADMT,1936,May,5,",
+			"155,-,ADMT,1936 4 5 ",
 			"180,-,EAT"
 		],
 		"Africa/Libreville": [
@@ -287,7 +287,7 @@ module.exports = {
 		],
 		"Africa/Banjul": [
 			"-54,-,LMT,1912",
-			"-54,-,BMT,1935,",
+			"-54,-,BMT,1935 ",
 			"-60,-,WAT,1964",
 			"0,-,GMT"
 		],
@@ -297,164 +297,164 @@ module.exports = {
 		],
 		"Africa/Conakry": [
 			"54,-,LMT,1912",
-			"0,-,GMT,1934,Feb,26",
+			"0,-,GMT,1934 1 26",
 			"-60,-,WAT,1960",
 			"0,-,GMT"
 		],
 		"Africa/Bissau": [
-			"-58,-,LMT,1911,May,26",
+			"-58,-,LMT,1911 4 26",
 			"-60,-,WAT,1975",
 			"0,-,GMT"
 		],
 		"Africa/Nairobi": [
-			"147,-,LMT,1928,Jul",
+			"147,-,LMT,1928 6",
 			"180,-,EAT,1930",
 			"150,-,BEAT,1940",
 			"165,-,BEAUT,1960",
 			"180,-,EAT"
 		],
 		"Africa/Maseru": [
-			"110,-,LMT,1903,Mar",
-			"120,-,SAST,1943,Sep,19,2:00",
-			"120,1:00,SAST,1944,Mar,19,2:00",
+			"110,-,LMT,1903 2",
+			"120,-,SAST,1943 8 19 0 120",
+			"120,1:00,SAST,1944 2 19 0 120",
 			"120,-,SAST"
 		],
 		"Africa/Monrovia": [
 			"43,-,LMT,1882",
-			"43,-,MMT,1919,Mar,",
-			"44,-,LRT,1972,May,",
+			"43,-,MMT,1919 2 ",
+			"44,-,LRT,1972 4 ",
 			"0,-,GMT"
 		],
 		"Africa/Tripoli": [
 			"52,-,LMT,1920",
 			"60,Libya,CE%sT,1959",
 			"120,-,EET,1982",
-			"60,Libya,CE%sT,1990,May,4",
-			"120,-,EET,1996,Sep,30",
-			"60,Libya,CE%sT,1997,Oct,4",
-			"120,-,EET,2012,Nov,10,2:00",
+			"60,Libya,CE%sT,1990 4 4",
+			"120,-,EET,1996 8 30",
+			"60,Libya,CE%sT,1997 9 4",
+			"120,-,EET,2012 10 10 0 120",
 			"60,Libya,CE%sT"
 		],
 		"Indian/Antananarivo": [
-			"190,-,LMT,1911,Jul",
-			"180,-,EAT,1954,Feb,27,23:00s",
-			"180,1:00,EAST,1954,May,29,23:00s",
+			"190,-,LMT,1911 6",
+			"180,-,EAT,1954 1 27 0 1380",
+			"180,1:00,EAST,1954 4 29 0 1380",
 			"180,-,EAT"
 		],
 		"Africa/Blantyre": [
-			"140,-,LMT,1903,Mar",
+			"140,-,LMT,1903 2",
 			"120,-,CAT"
 		],
 		"Africa/Bamako": [
 			"32,-,LMT,1912",
-			"0,-,GMT,1934,Feb,26",
-			"-60,-,WAT,1960,Jun,20",
+			"0,-,GMT,1934 1 26",
+			"-60,-,WAT,1960 5 20",
 			"0,-,GMT"
 		],
 		"Africa/Nouakchott": [
 			"-57,-,LMT,1912",
-			"0,-,GMT,1934,Feb,26",
-			"-60,-,WAT,1960,Nov,28",
+			"0,-,GMT,1934 1 26",
+			"-60,-,WAT,1960 10 28",
 			"0,-,GMT"
 		],
 		"Indian/Mauritius": [
-			"230,-,LMT,1907,",
-			"240,Mauritius,MU%sT,"
+			"230,-,LMT,1907 ",
+			"240,Mauritius,MU%sT"
 		],
 		"Indian/Mayotte": [
-			"180,-,LMT,1911,Jul,",
+			"180,-,LMT,1911 6 ",
 			"180,-,EAT"
 		],
 		"Africa/Casablanca": [
-			"30,-,LMT,1913,Oct,26",
-			"0,Morocco,WE%sT,1984,Mar,16",
+			"30,-,LMT,1913 9 26",
+			"0,Morocco,WE%sT,1984 2 16",
 			"60,-,CET,1986",
 			"0,Morocco,WE%sT"
 		],
 		"Africa/El_Aaiun": [
-			"52,-,LMT,1934,Jan",
-			"-60,-,WAT,1976,Apr,14",
+			"52,-,LMT,1934 0",
+			"-60,-,WAT,1976 3 14",
 			"0,-,WET"
 		],
 		"Africa/Maputo": [
-			"130,-,LMT,1903,Mar",
+			"130,-,LMT,1903 2",
 			"120,-,CAT"
 		],
 		"Africa/Windhoek": [
-			"68,-,LMT,1892,Feb,8",
-			"90,-,SWAT,1903,Mar,",
-			"120,-,SAST,1942,Sep,20,2:00",
-			"120,1:00,SAST,1943,Mar,21,2:00",
-			"120,-,SAST,1990,Mar,21,",
-			"120,-,CAT,1994,Apr,3",
+			"68,-,LMT,1892 1 8",
+			"90,-,SWAT,1903 2 ",
+			"120,-,SAST,1942 8 20 0 120",
+			"120,1:00,SAST,1943 2 21 0 120",
+			"120,-,SAST,1990 2 21 ",
+			"120,-,CAT,1994 3 3",
 			"60,Namibia,WA%sT"
 		],
 		"Africa/Niamey": [
 			"8,-,LMT,1912",
-			"-60,-,WAT,1934,Feb,26",
+			"-60,-,WAT,1934 1 26",
 			"0,-,GMT,1960",
 			"60,-,WAT"
 		],
 		"Africa/Lagos": [
-			"13,-,LMT,1919,Sep",
+			"13,-,LMT,1919 8",
 			"60,-,WAT"
 		],
 		"Indian/Reunion": [
-			"221,-,LMT,1911,Jun,",
-			"240,-,RET,"
+			"221,-,LMT,1911 5 ",
+			"240,-,RET"
 		],
 		"Africa/Kigali": [
-			"120,-,LMT,1935,Jun",
+			"120,-,LMT,1935 5",
 			"120,-,CAT"
 		],
 		"Atlantic/St_Helena": [
-			"22,-,LMT,1890,",
-			"22,-,JMT,1951,",
+			"22,-,LMT,1890 ",
+			"22,-,JMT,1951 ",
 			"0,-,GMT"
 		],
 		"Africa/Sao_Tome": [
 			"26,-,LMT,1884",
-			"36,-,LMT,1912,",
+			"36,-,LMT,1912 ",
 			"0,-,GMT"
 		],
 		"Africa/Dakar": [
 			"-51,-,LMT,1912",
-			"-60,-,WAT,1941,Jun",
+			"-60,-,WAT,1941 5",
 			"0,-,GMT"
 		],
 		"Indian/Mahe": [
-			"221,-,LMT,1906,Jun,",
-			"240,-,SCT,"
+			"221,-,LMT,1906 5 ",
+			"240,-,SCT"
 		],
 		"Africa/Freetown": [
 			"53,-,LMT,1882",
-			"53,-,FMT,1913,Jun,",
+			"53,-,FMT,1913 5 ",
 			"-60,SL,%s,1957",
 			"0,SL,%s"
 		],
 		"Africa/Mogadishu": [
-			"181,-,LMT,1893,Nov",
+			"181,-,LMT,1893 10",
 			"180,-,EAT,1931",
 			"150,-,BEAT,1957",
 			"180,-,EAT"
 		],
 		"Africa/Johannesburg": [
-			"112,-,LMT,1892,Feb,8",
-			"90,-,SAST,1903,Mar",
+			"112,-,LMT,1892 1 8",
+			"90,-,SAST,1903 2",
 			"120,SA,SAST"
 		],
 		"Africa/Khartoum": [
 			"130,-,LMT,1931",
-			"120,Sudan,CA%sT,2000,Jan,15,12:00",
+			"120,Sudan,CA%sT,2000 0 15 0 720",
 			"180,-,EAT"
 		],
 		"Africa/Juba": [
 			"126,-,LMT,1931",
-			"120,Sudan,CA%sT,2000,Jan,15,12:00",
+			"120,Sudan,CA%sT,2000 0 15 0 720",
 			"180,-,EAT"
 		],
 		"Africa/Mbabane": [
-			"124,-,LMT,1903,Mar",
+			"124,-,LMT,1903 2",
 			"120,-,SAST"
 		],
 		"Africa/Dar_es_Salaam": [
@@ -468,23 +468,23 @@ module.exports = {
 			"0,-,GMT"
 		],
 		"Africa/Tunis": [
-			"40,-,LMT,1881,May,12",
-			"9,-,PMT,1911,Mar,11,",
+			"40,-,LMT,1881 4 12",
+			"9,-,PMT,1911 2 11 ",
 			"60,Tunisia,CE%sT"
 		],
 		"Africa/Kampala": [
-			"129,-,LMT,1928,Jul",
+			"129,-,LMT,1928 6",
 			"180,-,EAT,1930",
 			"150,-,BEAT,1948",
 			"165,-,BEAUT,1957",
 			"180,-,EAT"
 		],
 		"Africa/Lusaka": [
-			"113,-,LMT,1903,Mar",
+			"113,-,LMT,1903 2",
 			"120,-,CAT"
 		],
 		"Africa/Harare": [
-			"124,-,LMT,1903,Mar",
+			"124,-,LMT,1903 2",
 			"120,-,CAT"
 		]
 	},

@@ -428,75 +428,75 @@ module.exports = {
 			"270,-,AFT"
 		],
 		"Asia/Yerevan": [
-			"178,-,LMT,1924,May,2",
-			"180,-,YERT,1957,Mar,",
-			"240,RussiaAsia,YER%sT,1991,Mar,31,2:00s",
-			"180,1:00,YERST,1991,Sep,23,",
-			"180,RussiaAsia,AM%sT,1995,Sep,24,2:00s",
+			"178,-,LMT,1924 4 2",
+			"180,-,YERT,1957 2 ",
+			"240,RussiaAsia,YER%sT,1991 2 31 0 120",
+			"180,1:00,YERST,1991 8 23 ",
+			"180,RussiaAsia,AM%sT,1995 8 24 0 120",
 			"240,-,AMT,1997",
-			"240,RussiaAsia,AM%sT,2012,Mar,25,2:00s",
+			"240,RussiaAsia,AM%sT,2012 2 25 0 120",
 			"240,-,AMT"
 		],
 		"Asia/Baku": [
-			"199,-,LMT,1924,May,2",
-			"180,-,BAKT,1957,Mar,",
-			"240,RussiaAsia,BAK%sT,1991,Mar,31,2:00s",
-			"180,1:00,BAKST,1991,Aug,30,",
-			"180,RussiaAsia,AZ%sT,1992,Sep,lastSat,23:00",
-			"240,-,AZT,1996,",
+			"199,-,LMT,1924 4 2",
+			"180,-,BAKT,1957 2 ",
+			"240,RussiaAsia,BAK%sT,1991 2 31 0 120",
+			"180,1:00,BAKST,1991 7 30 ",
+			"180,RussiaAsia,AZ%sT,1992 8 lastSat 0 1380",
+			"240,-,AZT,1996 ",
 			"240,EUAsia,AZ%sT,1997",
 			"240,Azer,AZ%sT"
 		],
 		"Asia/Bahrain": [
-			"202,-,LMT,1920,",
-			"240,-,GST,1972,Jun",
+			"202,-,LMT,1920 ",
+			"240,-,GST,1972 5",
 			"180,-,AST"
 		],
 		"Asia/Dhaka": [
 			"361,-,LMT,1890",
-			"353,-,HMT,1941,Oct,",
-			"390,-,BURT,1942,May,15,",
-			"330,-,IST,1942,Sep",
-			"390,-,BURT,1951,Sep,30",
-			"360,-,DACT,1971,Mar,26,",
+			"353,-,HMT,1941 9 ",
+			"390,-,BURT,1942 4 15 ",
+			"330,-,IST,1942 8",
+			"390,-,BURT,1951 8 30",
+			"360,-,DACT,1971 2 26 ",
 			"360,-,BDT,2009",
 			"360,Dhaka,BD%sT"
 		],
 		"Asia/Thimphu": [
-			"358,-,LMT,1947,Aug,15,",
-			"330,-,IST,1987,Oct",
-			"360,-,BTT,"
+			"358,-,LMT,1947 7 15 ",
+			"330,-,IST,1987 9",
+			"360,-,BTT"
 		],
 		"Indian/Chagos": [
 			"289,-,LMT,1907",
-			"300,-,IOT,1996,",
+			"300,-,IOT,1996 ",
 			"360,-,IOT"
 		],
 		"Asia/Brunei": [
-			"459,-,LMT,1926,Mar,",
+			"459,-,LMT,1926 2 ",
 			"450,-,BNT,1933",
 			"480,-,BNT"
 		],
 		"Asia/Rangoon": [
-			"384,-,LMT,1880,",
-			"384,-,RMT,1920,",
-			"390,-,BURT,1942,May,",
-			"540,-,JST,1945,May,3",
-			"390,-,MMT,"
+			"384,-,LMT,1880 ",
+			"384,-,RMT,1920 ",
+			"390,-,BURT,1942 4 ",
+			"540,-,JST,1945 4 3",
+			"390,-,MMT"
 		],
 		"Asia/Phnom_Penh": [
-			"419,-,LMT,1906,Jun,9",
-			"426,-,SMT,1911,Mar,11,0:01,",
-			"420,-,ICT,1912,May",
-			"480,-,ICT,1931,May",
+			"419,-,LMT,1906 5 9",
+			"426,-,SMT,1911 2 11 0 1",
+			"420,-,ICT,1912 4",
+			"480,-,ICT,1931 4",
 			"420,-,ICT"
 		],
 		"Asia/Harbin": [
-			"506,-,LMT,1928,",
-			"510,-,CHAT,1932,Mar,",
+			"506,-,LMT,1928 ",
+			"510,-,CHAT,1932 2 ",
 			"480,-,CST,1940",
-			"540,-,CHAT,1966,May",
-			"510,-,CHAT,1980,May",
+			"540,-,CHAT,1966 4",
+			"510,-,CHAT,1980 4",
 			"480,PRC,C%sT"
 		],
 		"Asia/Shanghai": [
@@ -505,126 +505,126 @@ module.exports = {
 			"480,PRC,C%sT"
 		],
 		"Asia/Chongqing": [
-			"426,-,LMT,1928,",
-			"420,-,LONT,1980,May,",
+			"426,-,LMT,1928 ",
+			"420,-,LONT,1980 4 ",
 			"480,PRC,C%sT"
 		],
 		"Asia/Urumqi": [
-			"350,-,LMT,1928,",
-			"360,-,URUT,1980,May,",
+			"350,-,LMT,1928 ",
+			"360,-,URUT,1980 4 ",
 			"480,PRC,C%sT"
 		],
 		"Asia/Kashgar": [
-			"303,-,LMT,1928,",
-			"330,-,KAST,1940,",
-			"300,-,KAST,1980,May",
+			"303,-,LMT,1928 ",
+			"330,-,KAST,1940 ",
+			"300,-,KAST,1980 4",
 			"480,PRC,C%sT"
 		],
 		"Asia/Hong_Kong": [
-			"456,-,LMT,1904,Oct,30",
-			"480,HK,HK%sT,1941,Dec,25",
-			"540,-,JST,1945,Sep,15",
+			"456,-,LMT,1904 9 30",
+			"480,HK,HK%sT,1941 11 25",
+			"540,-,JST,1945 8 15",
 			"480,HK,HK%sT"
 		],
 		"Asia/Taipei": [
-			"486,-,LMT,1896,",
+			"486,-,LMT,1896 ",
 			"480,Taiwan,C%sT"
 		],
 		"Asia/Macau": [
 			"454,-,LMT,1912",
-			"480,Macau,MO%sT,1999,Dec,20,",
+			"480,Macau,MO%sT,1999 11 20 ",
 			"480,PRC,C%sT"
 		],
 		"Asia/Nicosia": [
-			"133,-,LMT,1921,Nov,14",
-			"120,Cyprus,EE%sT,1998,Sep",
+			"133,-,LMT,1921 10 14",
+			"120,Cyprus,EE%sT,1998 8",
 			"120,EUAsia,EE%sT"
 		],
 		"Asia/Tbilisi": [
 			"179,-,LMT,1880",
-			"179,-,TBMT,1924,May,2,",
-			"180,-,TBIT,1957,Mar,",
-			"240,RussiaAsia,TBI%sT,1991,Mar,31,2:00s",
-			"180,1:00,TBIST,1991,Apr,9,",
-			"180,RussiaAsia,GE%sT,1992,",
-			"180,E-EurAsia,GE%sT,1994,Sep,lastSun",
-			"240,E-EurAsia,GE%sT,1996,Oct,lastSun",
-			"240,1:00,GEST,1997,Mar,lastSun",
-			"240,E-EurAsia,GE%sT,2004,Jun,27",
-			"180,RussiaAsia,GE%sT,2005,Mar,lastSun,2:00",
+			"179,-,TBMT,1924 4 2 ",
+			"180,-,TBIT,1957 2 ",
+			"240,RussiaAsia,TBI%sT,1991 2 31 0 120",
+			"180,1:00,TBIST,1991 3 9 ",
+			"180,RussiaAsia,GE%sT,1992 ",
+			"180,E-EurAsia,GE%sT,1994 8 lastSun",
+			"240,E-EurAsia,GE%sT,1996 9 lastSun",
+			"240,1:00,GEST,1997 2 lastSun",
+			"240,E-EurAsia,GE%sT,2004 5 27",
+			"180,RussiaAsia,GE%sT,2005 2 lastSun 0 120",
 			"240,-,GET"
 		],
 		"Asia/Dili": [
 			"502,-,LMT,1912",
-			"480,-,TLT,1942,Feb,21,23:00,",
-			"540,-,JST,1945,Sep,23",
-			"540,-,TLT,1976,May,3",
-			"480,-,CIT,2000,Sep,17,00:00",
+			"480,-,TLT,1942 1 21 0 1380",
+			"540,-,JST,1945 8 23",
+			"540,-,TLT,1976 4 3",
+			"480,-,CIT,2000 8 17 0 0",
 			"540,-,TLT"
 		],
 		"Asia/Kolkata": [
-			"353,-,LMT,1880,",
-			"353,-,HMT,1941,Oct,",
-			"390,-,BURT,1942,May,15,",
-			"330,-,IST,1942,Sep",
-			"330,1:00,IST,1945,Oct,15",
+			"353,-,LMT,1880 ",
+			"353,-,HMT,1941 9 ",
+			"390,-,BURT,1942 4 15 ",
+			"330,-,IST,1942 8",
+			"330,1:00,IST,1945 9 15",
 			"330,-,IST"
 		],
 		"Asia/Jakarta": [
-			"427,-,LMT,1867,Aug,10",
-			"427,-,JMT,1923,Dec,31,23:47:12,",
-			"440,-,JAVT,1932,Nov,",
-			"450,-,WIT,1942,Mar,23",
-			"540,-,JST,1945,Sep,23",
-			"450,-,WIT,1948,May",
-			"480,-,WIT,1950,May",
+			"427,-,LMT,1867 7 10",
+			"427,-,JMT,1923 11 31 0 1427",
+			"440,-,JAVT,1932 10 ",
+			"450,-,WIT,1942 2 23",
+			"540,-,JST,1945 8 23",
+			"450,-,WIT,1948 4",
+			"480,-,WIT,1950 4",
 			"450,-,WIT,1964",
 			"420,-,WIT"
 		],
 		"Asia/Pontianak": [
-			"437,-,LMT,1908,May",
-			"437,-,PMT,1932,Nov,",
-			"450,-,WIT,1942,Jan,29",
-			"540,-,JST,1945,Sep,23",
-			"450,-,WIT,1948,May",
-			"480,-,WIT,1950,May",
+			"437,-,LMT,1908 4",
+			"437,-,PMT,1932 10 ",
+			"450,-,WIT,1942 0 29",
+			"540,-,JST,1945 8 23",
+			"450,-,WIT,1948 4",
+			"480,-,WIT,1950 4",
 			"450,-,WIT,1964",
-			"480,-,CIT,1988,Jan,1",
+			"480,-,CIT,1988 0 1",
 			"420,-,WIT"
 		],
 		"Asia/Makassar": [
 			"477,-,LMT,1920",
-			"477,-,MMT,1932,Nov,",
-			"480,-,CIT,1942,Feb,9",
-			"540,-,JST,1945,Sep,23",
+			"477,-,MMT,1932 10 ",
+			"480,-,CIT,1942 1 9",
+			"540,-,JST,1945 8 23",
 			"480,-,CIT"
 		],
 		"Asia/Jayapura": [
-			"562,-,LMT,1932,Nov",
-			"540,-,EIT,1944,Sep,1",
+			"562,-,LMT,1932 10",
+			"540,-,EIT,1944 8 1",
 			"570,-,CST,1964",
 			"540,-,EIT"
 		],
 		"Asia/Tehran": [
 			"205,-,LMT,1916",
-			"205,-,TMT,1946,",
-			"210,-,IRST,1977,Nov",
+			"205,-,TMT,1946 ",
+			"210,-,IRST,1977 10",
 			"240,Iran,IR%sT,1979",
 			"210,Iran,IR%sT"
 		],
 		"Asia/Baghdad": [
 			"177,-,LMT,1890",
-			"177,-,BMT,1918,",
-			"180,-,AST,1982,May",
+			"177,-,BMT,1918 ",
+			"180,-,AST,1982 4",
 			"180,Iraq,A%sT"
 		],
 		"Asia/Jerusalem": [
 			"140,-,LMT,1880",
-			"140,-,JMT,1918,",
+			"140,-,JMT,1918 ",
 			"120,Zion,I%sT"
 		],
 		"Asia/Tokyo": [
-			"558,-,LMT,1887,Dec,31,15:00u",
+			"558,-,LMT,1887 11 31 0 900u",
 			"540,-,JST,1896",
 			"540,-,CJT,1938",
 			"540,Japan,J%sT"
@@ -634,85 +634,85 @@ module.exports = {
 			"120,Jordan,EE%sT"
 		],
 		"Asia/Almaty": [
-			"307,-,LMT,1924,May,2,",
-			"300,-,ALMT,1930,Jun,21,",
+			"307,-,LMT,1924 4 2 ",
+			"300,-,ALMT,1930 5 21 ",
 			"360,RussiaAsia,ALM%sT,1991",
 			"360,-,ALMT,1992",
-			"360,RussiaAsia,ALM%sT,2005,Mar,15",
+			"360,RussiaAsia,ALM%sT,2005 2 15",
 			"360,-,ALMT"
 		],
 		"Asia/Qyzylorda": [
-			"261,-,LMT,1924,May,2",
-			"240,-,KIZT,1930,Jun,21,",
-			"300,-,KIZT,1981,Apr,1",
-			"300,1:00,KIZST,1981,Oct,1",
-			"360,-,KIZT,1982,Apr,1",
+			"261,-,LMT,1924 4 2",
+			"240,-,KIZT,1930 5 21 ",
+			"300,-,KIZT,1981 3 1",
+			"300,1:00,KIZST,1981 9 1",
+			"360,-,KIZT,1982 3 1",
 			"300,RussiaAsia,KIZ%sT,1991",
-			"300,-,KIZT,1991,Dec,16,",
-			"300,-,QYZT,1992,Jan,19,2:00",
-			"360,RussiaAsia,QYZ%sT,2005,Mar,15",
+			"300,-,KIZT,1991 11 16 ",
+			"300,-,QYZT,1992 0 19 0 120",
+			"360,RussiaAsia,QYZ%sT,2005 2 15",
 			"360,-,QYZT"
 		],
 		"Asia/Aqtobe": [
-			"228,-,LMT,1924,May,2",
-			"240,-,AKTT,1930,Jun,21,",
-			"300,-,AKTT,1981,Apr,1",
-			"300,1:00,AKTST,1981,Oct,1",
-			"360,-,AKTT,1982,Apr,1",
+			"228,-,LMT,1924 4 2",
+			"240,-,AKTT,1930 5 21 ",
+			"300,-,AKTT,1981 3 1",
+			"300,1:00,AKTST,1981 9 1",
+			"360,-,AKTT,1982 3 1",
 			"300,RussiaAsia,AKT%sT,1991",
-			"300,-,AKTT,1991,Dec,16,",
-			"300,RussiaAsia,AQT%sT,2005,Mar,15,",
+			"300,-,AKTT,1991 11 16 ",
+			"300,RussiaAsia,AQT%sT,2005 2 15 ",
 			"300,-,AQTT"
 		],
 		"Asia/Aqtau": [
-			"201,-,LMT,1924,May,2",
-			"240,-,FORT,1930,Jun,21,",
+			"201,-,LMT,1924 4 2",
+			"240,-,FORT,1930 5 21 ",
 			"300,-,FORT,1963",
-			"300,-,SHET,1981,Oct,1,",
-			"360,-,SHET,1982,Apr,1",
+			"300,-,SHET,1981 9 1 ",
+			"360,-,SHET,1982 3 1",
 			"300,RussiaAsia,SHE%sT,1991",
-			"300,-,SHET,1991,Dec,16,",
-			"300,RussiaAsia,AQT%sT,1995,Mar,lastSun,2:00,",
-			"240,RussiaAsia,AQT%sT,2005,Mar,15",
+			"300,-,SHET,1991 11 16 ",
+			"300,RussiaAsia,AQT%sT,1995 2 lastSun 0 120",
+			"240,RussiaAsia,AQT%sT,2005 2 15",
 			"300,-,AQTT"
 		],
 		"Asia/Oral": [
-			"205,-,LMT,1924,May,2,",
-			"240,-,URAT,1930,Jun,21,",
-			"300,-,URAT,1981,Apr,1",
-			"300,1:00,URAST,1981,Oct,1",
-			"360,-,URAT,1982,Apr,1",
-			"300,RussiaAsia,URA%sT,1989,Mar,26,2:00",
+			"205,-,LMT,1924 4 2 ",
+			"240,-,URAT,1930 5 21 ",
+			"300,-,URAT,1981 3 1",
+			"300,1:00,URAST,1981 9 1",
+			"360,-,URAT,1982 3 1",
+			"300,RussiaAsia,URA%sT,1989 2 26 0 120",
 			"240,RussiaAsia,URA%sT,1991",
-			"240,-,URAT,1991,Dec,16,",
-			"240,RussiaAsia,ORA%sT,2005,Mar,15,",
+			"240,-,URAT,1991 11 16 ",
+			"240,RussiaAsia,ORA%sT,2005 2 15 ",
 			"300,-,ORAT"
 		],
 		"Asia/Bishkek": [
-			"298,-,LMT,1924,May,2",
-			"300,-,FRUT,1930,Jun,21,",
-			"360,RussiaAsia,FRU%sT,1991,Mar,31,2:00s",
-			"300,1:00,FRUST,1991,Aug,31,2:00,",
-			"300,Kyrgyz,KG%sT,2005,Aug,12,",
+			"298,-,LMT,1924 4 2",
+			"300,-,FRUT,1930 5 21 ",
+			"360,RussiaAsia,FRU%sT,1991 2 31 0 120",
+			"300,1:00,FRUST,1991 7 31 0 120",
+			"300,Kyrgyz,KG%sT,2005 7 12 ",
 			"360,-,KGT"
 		],
 		"Asia/Seoul": [
 			"507,-,LMT,1890",
-			"510,-,KST,1904,Dec",
+			"510,-,KST,1904 11",
 			"540,-,KST,1928",
 			"510,-,KST,1932",
-			"540,-,KST,1954,Mar,21",
-			"480,ROK,K%sT,1961,Aug,10",
-			"510,-,KST,1968,Oct",
+			"540,-,KST,1954 2 21",
+			"480,ROK,K%sT,1961 7 10",
+			"510,-,KST,1968 9",
 			"540,ROK,K%sT"
 		],
 		"Asia/Pyongyang": [
 			"503,-,LMT,1890",
-			"510,-,KST,1904,Dec",
+			"510,-,KST,1904 11",
 			"540,-,KST,1928",
 			"510,-,KST,1932",
-			"540,-,KST,1954,Mar,21",
-			"480,-,KST,1961,Aug,10",
+			"540,-,KST,1954 2 21",
+			"480,-,KST,1961 7 10",
 			"540,-,KST"
 		],
 		"Asia/Kuwait": [
@@ -720,10 +720,10 @@ module.exports = {
 			"180,-,AST"
 		],
 		"Asia/Vientiane": [
-			"410,-,LMT,1906,Jun,9,",
-			"426,-,SMT,1911,Mar,11,0:01,",
-			"420,-,ICT,1912,May",
-			"480,-,ICT,1931,May",
+			"410,-,LMT,1906 5 9 ",
+			"426,-,SMT,1911 2 11 0 1",
+			"420,-,ICT,1912 4",
+			"480,-,ICT,1931 4",
 			"420,-,ICT"
 		],
 		"Asia/Beirut": [
@@ -731,50 +731,50 @@ module.exports = {
 			"120,Lebanon,EE%sT"
 		],
 		"Asia/Kuala_Lumpur": [
-			"406,-,LMT,1901,Jan,1",
-			"415,-,SMT,1905,Jun,1,",
-			"420,-,MALT,1933,Jan,1,",
-			"420,0:20,MALST,1936,Jan,1",
-			"440,-,MALT,1941,Sep,1",
-			"450,-,MALT,1942,Feb,16",
-			"540,-,JST,1945,Sep,12",
-			"450,-,MALT,1982,Jan,1",
-			"480,-,MYT,"
+			"406,-,LMT,1901 0 1",
+			"415,-,SMT,1905 5 1 ",
+			"420,-,MALT,1933 0 1 ",
+			"420,0:20,MALST,1936 0 1",
+			"440,-,MALT,1941 8 1",
+			"450,-,MALT,1942 1 16",
+			"540,-,JST,1945 8 12",
+			"450,-,MALT,1982 0 1",
+			"480,-,MYT"
 		],
 		"Asia/Kuching": [
-			"441,-,LMT,1926,Mar",
-			"450,-,BORT,1933,",
-			"480,NBorneo,BOR%sT,1942,Feb,16",
-			"540,-,JST,1945,Sep,12",
-			"480,-,BORT,1982,Jan,1",
+			"441,-,LMT,1926 2",
+			"450,-,BORT,1933 ",
+			"480,NBorneo,BOR%sT,1942 1 16",
+			"540,-,JST,1945 8 12",
+			"480,-,BORT,1982 0 1",
 			"480,-,MYT"
 		],
 		"Indian/Maldives": [
-			"294,-,LMT,1880,",
-			"294,-,MMT,1960,",
-			"300,-,MVT,"
+			"294,-,LMT,1880 ",
+			"294,-,MMT,1960 ",
+			"300,-,MVT"
 		],
 		"Asia/Hovd": [
-			"366,-,LMT,1905,Aug",
-			"360,-,HOVT,1978,",
+			"366,-,LMT,1905 7",
+			"360,-,HOVT,1978 ",
 			"420,Mongol,HOV%sT"
 		],
 		"Asia/Ulaanbaatar": [
-			"427,-,LMT,1905,Aug",
-			"420,-,ULAT,1978,",
+			"427,-,LMT,1905 7",
+			"420,-,ULAT,1978 ",
 			"480,Mongol,ULA%sT"
 		],
 		"Asia/Choibalsan": [
-			"458,-,LMT,1905,Aug",
+			"458,-,LMT,1905 7",
 			"420,-,ULAT,1978",
-			"480,-,ULAT,1983,Apr",
-			"540,Mongol,CHO%sT,2008,Mar,31,",
+			"480,-,ULAT,1983 3",
+			"540,Mongol,CHO%sT,2008 2 31 ",
 			"480,Mongol,CHO%sT"
 		],
 		"Asia/Kathmandu": [
 			"341,-,LMT,1920",
 			"330,-,IST,1986",
-			"345,-,NPT,"
+			"345,-,NPT"
 		],
 		"Asia/Muscat": [
 			"234,-,LMT,1920",
@@ -782,50 +782,50 @@ module.exports = {
 		],
 		"Asia/Karachi": [
 			"268,-,LMT,1907",
-			"330,-,IST,1942,Sep",
-			"330,1:00,IST,1945,Oct,15",
-			"330,-,IST,1951,Sep,30",
-			"300,-,KART,1971,Mar,26,",
-			"300,Pakistan,PK%sT,"
+			"330,-,IST,1942 8",
+			"330,1:00,IST,1945 9 15",
+			"330,-,IST,1951 8 30",
+			"300,-,KART,1971 2 26 ",
+			"300,Pakistan,PK%sT"
 		],
 		"Asia/Gaza": [
-			"137,-,LMT,1900,Oct",
-			"120,Zion,EET,1948,May,15",
-			"120,EgyptAsia,EE%sT,1967,Jun,5",
+			"137,-,LMT,1900 9",
+			"120,Zion,EET,1948 4 15",
+			"120,EgyptAsia,EE%sT,1967 5 5",
 			"120,Zion,I%sT,1996",
 			"120,Jordan,EE%sT,1999",
-			"120,Palestine,EE%sT,2011,Apr,2,12:01",
-			"120,1:00,EEST,2011,Aug,1",
-			"120,-,EET,2012,Mar,30",
-			"120,1:00,EEST,2012,Sep,21,1:00",
+			"120,Palestine,EE%sT,2011 3 2 0 721",
+			"120,1:00,EEST,2011 7 1",
+			"120,-,EET,2012 2 30",
+			"120,1:00,EEST,2012 8 21 0 60",
 			"120,-,EET"
 		],
 		"Asia/Hebron": [
-			"140,-,LMT,1900,Oct",
-			"120,Zion,EET,1948,May,15",
-			"120,EgyptAsia,EE%sT,1967,Jun,5",
+			"140,-,LMT,1900 9",
+			"120,Zion,EET,1948 4 15",
+			"120,EgyptAsia,EE%sT,1967 5 5",
 			"120,Zion,I%sT,1996",
 			"120,Jordan,EE%sT,1999",
-			"120,Palestine,EE%sT,2008,Aug",
-			"120,1:00,EEST,2008,Sep",
-			"120,Palestine,EE%sT,2011,Apr,1,12:01",
-			"120,1:00,EEST,2011,Aug,1",
-			"120,-,EET,2011,Aug,30",
-			"120,1:00,EEST,2011,Sep,30,3:00",
-			"120,-,EET,2012,Mar,30",
-			"120,1:00,EEST,2012,Sep,21,1:00",
+			"120,Palestine,EE%sT,2008 7",
+			"120,1:00,EEST,2008 8",
+			"120,Palestine,EE%sT,2011 3 1 0 721",
+			"120,1:00,EEST,2011 7 1",
+			"120,-,EET,2011 7 30",
+			"120,1:00,EEST,2011 8 30 0 180",
+			"120,-,EET,2012 2 30",
+			"120,1:00,EEST,2012 8 21 0 60",
 			"120,-,EET"
 		],
 		"Asia/Manila": [
-			"-844,-,LMT,1844,Dec,31",
-			"484,-,LMT,1899,May,11",
-			"480,Phil,PH%sT,1942,May",
-			"540,-,JST,1944,Nov",
+			"-844,-,LMT,1844 11 31",
+			"484,-,LMT,1899 4 11",
+			"480,Phil,PH%sT,1942 4",
+			"540,-,JST,1944 10",
 			"480,Phil,PH%sT"
 		],
 		"Asia/Qatar": [
-			"206,-,LMT,1920,",
-			"240,-,GST,1972,Jun",
+			"206,-,LMT,1920 ",
+			"240,-,GST,1972 5",
 			"180,-,AST"
 		],
 		"Asia/Riyadh": [
@@ -833,50 +833,50 @@ module.exports = {
 			"180,-,AST"
 		],
 		"Asia/Singapore": [
-			"415,-,LMT,1901,Jan,1",
-			"415,-,SMT,1905,Jun,1,",
-			"420,-,MALT,1933,Jan,1,",
-			"420,0:20,MALST,1936,Jan,1",
-			"440,-,MALT,1941,Sep,1",
-			"450,-,MALT,1942,Feb,16",
-			"540,-,JST,1945,Sep,12",
-			"450,-,MALT,1965,Aug,9,",
-			"450,-,SGT,1982,Jan,1,",
+			"415,-,LMT,1901 0 1",
+			"415,-,SMT,1905 5 1 ",
+			"420,-,MALT,1933 0 1 ",
+			"420,0:20,MALST,1936 0 1",
+			"440,-,MALT,1941 8 1",
+			"450,-,MALT,1942 1 16",
+			"540,-,JST,1945 8 12",
+			"450,-,MALT,1965 7 9 ",
+			"450,-,SGT,1982 0 1 ",
 			"480,-,SGT"
 		],
 		"Asia/Colombo": [
 			"319,-,LMT,1880",
-			"319,-,MMT,1906,",
-			"330,-,IST,1942,Jan,5",
-			"330,0:30,IHST,1942,Sep",
-			"330,1:00,IST,1945,Oct,16,2:00",
-			"330,-,IST,1996,May,25,0:00",
-			"390,-,LKT,1996,Oct,26,0:30",
-			"360,-,LKT,2006,Apr,15,0:30",
+			"319,-,MMT,1906 ",
+			"330,-,IST,1942 0 5",
+			"330,0:30,IHST,1942 8",
+			"330,1:00,IST,1945 9 16 0 120",
+			"330,-,IST,1996 4 25 0 0",
+			"390,-,LKT,1996 9 26 0 30",
+			"360,-,LKT,2006 3 15 0 30",
 			"330,-,IST"
 		],
 		"Asia/Damascus": [
-			"145,-,LMT,1920,",
+			"145,-,LMT,1920 ",
 			"120,Syria,EE%sT"
 		],
 		"Asia/Dushanbe": [
-			"275,-,LMT,1924,May,2",
-			"300,-,DUST,1930,Jun,21,",
-			"360,RussiaAsia,DUS%sT,1991,Mar,31,2:00s",
-			"300,1:00,DUSST,1991,Sep,9,2:00s",
-			"300,-,TJT,"
+			"275,-,LMT,1924 4 2",
+			"300,-,DUST,1930 5 21 ",
+			"360,RussiaAsia,DUS%sT,1991 2 31 0 120",
+			"300,1:00,DUSST,1991 8 9 0 120",
+			"300,-,TJT"
 		],
 		"Asia/Bangkok": [
 			"402,-,LMT,1880",
-			"402,-,BMT,1920,Apr,",
+			"402,-,BMT,1920 3 ",
 			"420,-,ICT"
 		],
 		"Asia/Ashgabat": [
-			"233,-,LMT,1924,May,2,",
-			"240,-,ASHT,1930,Jun,21,",
-			"300,RussiaAsia,ASH%sT,1991,Mar,31,2:00",
-			"240,RussiaAsia,ASH%sT,1991,Oct,27,",
-			"240,RussiaAsia,TM%sT,1992,Jan,19,2:00",
+			"233,-,LMT,1924 4 2 ",
+			"240,-,ASHT,1930 5 21 ",
+			"300,RussiaAsia,ASH%sT,1991 2 31 0 120",
+			"240,RussiaAsia,ASH%sT,1991 9 27 ",
+			"240,RussiaAsia,TM%sT,1992 0 19 0 120",
 			"300,-,TMT"
 		],
 		"Asia/Dubai": [
@@ -884,28 +884,28 @@ module.exports = {
 			"240,-,GST"
 		],
 		"Asia/Samarkand": [
-			"267,-,LMT,1924,May,2",
-			"240,-,SAMT,1930,Jun,21,",
-			"300,-,SAMT,1981,Apr,1",
-			"300,1:00,SAMST,1981,Oct,1",
-			"360,-,TAST,1982,Apr,1,",
-			"300,RussiaAsia,SAM%sT,1991,Sep,1,",
+			"267,-,LMT,1924 4 2",
+			"240,-,SAMT,1930 5 21 ",
+			"300,-,SAMT,1981 3 1",
+			"300,1:00,SAMST,1981 9 1",
+			"360,-,TAST,1982 3 1 ",
+			"300,RussiaAsia,SAM%sT,1991 8 1 ",
 			"300,RussiaAsia,UZ%sT,1992",
 			"300,-,UZT"
 		],
 		"Asia/Tashkent": [
-			"277,-,LMT,1924,May,2",
-			"300,-,TAST,1930,Jun,21,",
-			"360,RussiaAsia,TAS%sT,1991,Mar,31,2:00",
-			"300,RussiaAsia,TAS%sT,1991,Sep,1,",
+			"277,-,LMT,1924 4 2",
+			"300,-,TAST,1930 5 21 ",
+			"360,RussiaAsia,TAS%sT,1991 2 31 0 120",
+			"300,RussiaAsia,TAS%sT,1991 8 1 ",
 			"300,RussiaAsia,UZ%sT,1992",
 			"300,-,UZT"
 		],
 		"Asia/Ho_Chi_Minh": [
-			"426,-,LMT,1906,Jun,9",
-			"426,-,SMT,1911,Mar,11,0:01,",
-			"420,-,ICT,1912,May",
-			"480,-,ICT,1931,May",
+			"426,-,LMT,1906 5 9",
+			"426,-,SMT,1911 2 11 0 1",
+			"420,-,ICT,1912 4",
+			"480,-,ICT,1931 4",
 			"420,-,ICT"
 		],
 		"Asia/Aden": [

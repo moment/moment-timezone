@@ -188,18 +188,18 @@ module.exports = {
 	},
 	"zones": {
 		"Australia/Darwin": [
-			"523,-,LMT,1895,Feb",
-			"540,-,CST,1899,May",
+			"523,-,LMT,1895 1",
+			"540,-,CST,1899 4",
 			"570,Aus,CST"
 		],
 		"Australia/Perth": [
-			"463,-,LMT,1895,Dec",
-			"480,Aus,WST,1943,Jul",
+			"463,-,LMT,1895 11",
+			"480,Aus,WST,1943 6",
 			"480,AW,WST"
 		],
 		"Australia/Eucla": [
-			"515,-,LMT,1895,Dec",
-			"525,Aus,CWST,1943,Jul",
+			"515,-,LMT,1895 11",
+			"525,Aus,CWST,1943 6",
 			"525,AW,CWST"
 		],
 		"Australia/Brisbane": [
@@ -210,240 +210,240 @@ module.exports = {
 		"Australia/Lindeman": [
 			"595,-,LMT,1895",
 			"600,Aus,EST,1971",
-			"600,AQ,EST,1992,Jul",
+			"600,AQ,EST,1992 6",
 			"600,Holiday,EST"
 		],
 		"Australia/Adelaide": [
-			"554,-,LMT,1895,Feb",
-			"540,-,CST,1899,May",
+			"554,-,LMT,1895 1",
+			"540,-,CST,1899 4",
 			"570,Aus,CST,1971",
 			"570,AS,CST"
 		],
 		"Australia/Hobart": [
-			"589,-,LMT,1895,Sep",
-			"600,-,EST,1916,Oct,1,2:00",
-			"600,1:00,EST,1917,Feb",
+			"589,-,LMT,1895 8",
+			"600,-,EST,1916 9 1 0 120",
+			"600,1:00,EST,1917 1",
 			"600,Aus,EST,1967",
 			"600,AT,EST"
 		],
 		"Australia/Currie": [
-			"575,-,LMT,1895,Sep",
-			"600,-,EST,1916,Oct,1,2:00",
-			"600,1:00,EST,1917,Feb",
-			"600,Aus,EST,1971,Jul",
+			"575,-,LMT,1895 8",
+			"600,-,EST,1916 9 1 0 120",
+			"600,1:00,EST,1917 1",
+			"600,Aus,EST,1971 6",
 			"600,AT,EST"
 		],
 		"Australia/Melbourne": [
-			"579,-,LMT,1895,Feb",
+			"579,-,LMT,1895 1",
 			"600,Aus,EST,1971",
 			"600,AV,EST"
 		],
 		"Australia/Sydney": [
-			"604,-,LMT,1895,Feb",
+			"604,-,LMT,1895 1",
 			"600,Aus,EST,1971",
 			"600,AN,EST"
 		],
 		"Australia/Broken_Hill": [
-			"565,-,LMT,1895,Feb",
-			"600,-,EST,1896,Aug,23",
-			"540,-,CST,1899,May",
+			"565,-,LMT,1895 1",
+			"600,-,EST,1896 7 23",
+			"540,-,CST,1899 4",
 			"570,Aus,CST,1971",
 			"570,AN,CST,2000",
 			"570,AS,CST"
 		],
 		"Australia/Lord_Howe": [
-			"636,-,LMT,1895,Feb",
-			"600,-,EST,1981,Mar",
+			"636,-,LMT,1895 1",
+			"600,-,EST,1981 2",
 			"630,LH,LHST"
 		],
 		"Indian/Christmas": [
-			"422,-,LMT,1895,Feb",
-			"420,-,CXT,"
+			"422,-,LMT,1895 1",
+			"420,-,CXT"
 		],
 		"Pacific/Rarotonga": [
-			"-561,-,LMT,1901,",
-			"-570,-,CKT,1978,Nov,12,",
+			"-561,-,LMT,1901 ",
+			"-570,-,CKT,1978 10 12 ",
 			"-600,Cook,CK%sT"
 		],
 		"Indian/Cocos": [
 			"387,-,LMT,1900",
-			"390,-,CCT,"
+			"390,-,CCT"
 		],
 		"Pacific/Fiji": [
-			"715,-,LMT,1915,Oct,26,",
-			"720,Fiji,FJ%sT,"
+			"715,-,LMT,1915 9 26 ",
+			"720,Fiji,FJ%sT"
 		],
 		"Pacific/Gambier": [
-			"-421,-,LMT,1912,Oct,",
-			"-540,-,GAMT,"
+			"-421,-,LMT,1912 9 ",
+			"-540,-,GAMT"
 		],
 		"Pacific/Marquesas": [
-			"-522,-,LMT,1912,Oct",
-			"-510,-,MART,"
+			"-522,-,LMT,1912 9",
+			"-510,-,MART"
 		],
 		"Pacific/Tahiti": [
-			"-482,-,LMT,1912,Oct,",
-			"-600,-,TAHT,"
+			"-482,-,LMT,1912 9 ",
+			"-600,-,TAHT"
 		],
 		"Pacific/Guam": [
-			"-819,-,LMT,1844,Dec,31",
-			"579,-,LMT,1901,",
-			"600,-,GST,2000,Dec,23,",
-			"600,-,ChST,"
+			"-819,-,LMT,1844 11 31",
+			"579,-,LMT,1901 ",
+			"600,-,GST,2000 11 23 ",
+			"600,-,ChST"
 		],
 		"Pacific/Tarawa": [
-			"692,-,LMT,1901,",
-			"720,-,GILT,"
+			"692,-,LMT,1901 ",
+			"720,-,GILT"
 		],
 		"Pacific/Enderbury": [
 			"-636,-,LMT,1901",
-			"-720,-,PHOT,1979,Oct,",
+			"-720,-,PHOT,1979 9 ",
 			"-660,-,PHOT,1995",
 			"780,-,PHOT"
 		],
 		"Pacific/Kiritimati": [
 			"-571,-,LMT,1901",
-			"-560,-,LINT,1979,Oct,",
+			"-560,-,LINT,1979 9 ",
 			"-600,-,LINT,1995",
 			"840,-,LINT"
 		],
 		"Pacific/Saipan": [
-			"-823,-,LMT,1844,Dec,31",
+			"-823,-,LMT,1844 11 31",
 			"583,-,LMT,1901",
-			"540,-,MPT,1969,Oct,",
-			"600,-,MPT,2000,Dec,23",
-			"600,-,ChST,"
+			"540,-,MPT,1969 9 ",
+			"600,-,MPT,2000 11 23",
+			"600,-,ChST"
 		],
 		"Pacific/Majuro": [
 			"684,-,LMT,1901",
-			"660,-,MHT,1969,Oct,",
+			"660,-,MHT,1969 9 ",
 			"720,-,MHT"
 		],
 		"Pacific/Kwajalein": [
 			"669,-,LMT,1901",
-			"660,-,MHT,1969,Oct",
-			"-720,-,KWAT,1993,Aug,20,",
+			"660,-,MHT,1969 9",
+			"-720,-,KWAT,1993 7 20 ",
 			"720,-,MHT"
 		],
 		"Pacific/Chuuk": [
 			"607,-,LMT,1901",
-			"600,-,CHUT,"
+			"600,-,CHUT"
 		],
 		"Pacific/Pohnpei": [
-			"632,-,LMT,1901,",
-			"660,-,PONT,"
+			"632,-,LMT,1901 ",
+			"660,-,PONT"
 		],
 		"Pacific/Kosrae": [
 			"651,-,LMT,1901",
-			"660,-,KOST,1969,Oct,",
+			"660,-,KOST,1969 9 ",
 			"720,-,KOST,1999",
 			"660,-,KOST"
 		],
 		"Pacific/Nauru": [
-			"667,-,LMT,1921,Jan,15,",
-			"690,-,NRT,1942,Mar,15,",
-			"540,-,JST,1944,Aug,15",
-			"690,-,NRT,1979,May",
+			"667,-,LMT,1921 0 15 ",
+			"690,-,NRT,1942 2 15 ",
+			"540,-,JST,1944 7 15",
+			"690,-,NRT,1979 4",
 			"720,-,NRT"
 		],
 		"Pacific/Noumea": [
-			"665,-,LMT,1912,Jan,13",
+			"665,-,LMT,1912 0 13",
 			"660,NC,NC%sT"
 		],
 		"Pacific/Auckland": [
-			"699,-,LMT,1868,Nov,2",
-			"690,NZ,NZ%sT,1946,Jan,1",
+			"699,-,LMT,1868 10 2",
+			"690,NZ,NZ%sT,1946 0 1",
 			"720,NZ,NZ%sT"
 		],
 		"Pacific/Chatham": [
-			"733,-,LMT,1957,Jan,1",
+			"733,-,LMT,1957 0 1",
 			"765,Chatham,CHA%sT"
 		],
 		"Pacific/Niue": [
-			"-641,-,LMT,1901,",
-			"-640,-,NUT,1951,",
-			"-630,-,NUT,1978,Oct,1",
+			"-641,-,LMT,1901 ",
+			"-640,-,NUT,1951 ",
+			"-630,-,NUT,1978 9 1",
 			"-660,-,NUT"
 		],
 		"Pacific/Norfolk": [
-			"671,-,LMT,1901,",
-			"672,-,NMT,1951,",
-			"690,-,NFT,"
+			"671,-,LMT,1901 ",
+			"672,-,NMT,1951 ",
+			"690,-,NFT"
 		],
 		"Pacific/Palau": [
-			"537,-,LMT,1901,",
-			"540,-,PWT,"
+			"537,-,LMT,1901 ",
+			"540,-,PWT"
 		],
 		"Pacific/Port_Moresby": [
 			"588,-,LMT,1880",
-			"588,-,PMMT,1895,",
-			"600,-,PGT,"
+			"588,-,PMMT,1895 ",
+			"600,-,PGT"
 		],
 		"Pacific/Pitcairn": [
-			"-440,-,LMT,1901,",
-			"-450,-,PNT,1998,Apr,27,00:00",
-			"-480,-,PST,"
+			"-440,-,LMT,1901 ",
+			"-450,-,PNT,1998 3 27 0 0",
+			"-480,-,PST"
 		],
 		"Pacific/Pago_Pago": [
-			"757,-,LMT,1879,Jul,5",
+			"757,-,LMT,1879 6 5",
 			"-638,-,LMT,1911",
-			"-630,-,SAMT,1950,",
-			"-660,-,NST,1967,Apr,",
-			"-660,-,BST,1983,Nov,30,",
-			"-660,-,SST,"
+			"-630,-,SAMT,1950 ",
+			"-660,-,NST,1967 3 ",
+			"-660,-,BST,1983 10 30 ",
+			"-660,-,SST"
 		],
 		"Pacific/Apia": [
-			"753,-,LMT,1879,Jul,5",
+			"753,-,LMT,1879 6 5",
 			"-634,-,LMT,1911",
-			"-630,-,SAMT,1950,",
-			"-660,-,WST,2010,Sep,26",
-			"-660,1:00,WSDT,2011,Apr,2,4:00",
-			"-660,-,WST,2011,Sep,24,3:00",
-			"-660,1:00,WSDT,2011,Dec,30",
-			"780,1:00,WSDT,2012,Apr,Sun>=1,4:00",
+			"-630,-,SAMT,1950 ",
+			"-660,-,WST,2010 8 26",
+			"-660,1:00,WSDT,2011 3 2 0 240",
+			"-660,-,WST,2011 8 24 0 180",
+			"-660,1:00,WSDT,2011 11 30",
+			"780,1:00,WSDT,2012 3 Sun>=1 0 240",
 			"780,WS,WS%sT"
 		],
 		"Pacific/Guadalcanal": [
-			"639,-,LMT,1912,Oct,",
-			"660,-,SBT,"
+			"639,-,LMT,1912 9 ",
+			"660,-,SBT"
 		],
 		"Pacific/Fakaofo": [
 			"-636,-,LMT,1901",
-			"-660,-,TKT,2011,Dec,30,",
+			"-660,-,TKT,2011 11 30 ",
 			"780,-,TKT"
 		],
 		"Pacific/Tongatapu": [
 			"739,-,LMT,1901",
-			"740,-,TOT,1941,",
+			"740,-,TOT,1941 ",
 			"780,-,TOT,1999",
 			"780,Tonga,TO%sT"
 		],
 		"Pacific/Funafuti": [
 			"716,-,LMT,1901",
-			"720,-,TVT,"
+			"720,-,TVT"
 		],
 		"Pacific/Johnston": [
 			"-600,-,HST"
 		],
 		"Pacific/Midway": [
 			"-611,-,LMT,1901",
-			"-660,-,NST,1956,Jun,3",
-			"-660,1:00,NDT,1956,Sep,2",
-			"-660,-,NST,1967,Apr,",
-			"-660,-,BST,1983,Nov,30,",
-			"-660,-,SST,"
+			"-660,-,NST,1956 5 3",
+			"-660,1:00,NDT,1956 8 2",
+			"-660,-,NST,1967 3 ",
+			"-660,-,BST,1983 10 30 ",
+			"-660,-,SST"
 		],
 		"Pacific/Wake": [
 			"666,-,LMT,1901",
-			"720,-,WAKT,"
+			"720,-,WAKT"
 		],
 		"Pacific/Efate": [
-			"673,-,LMT,1912,Jan,13,",
-			"660,Vanuatu,VU%sT,"
+			"673,-,LMT,1912 0 13 ",
+			"660,Vanuatu,VU%sT"
 		],
 		"Pacific/Wallis": [
 			"735,-,LMT,1901",
-			"720,-,WFT,"
+			"720,-,WFT"
 		]
 	},
 	"lastZone": "Pacific/Wallis"
