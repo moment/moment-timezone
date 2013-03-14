@@ -56,7 +56,7 @@ exports.rules = {
 		test.expect(4);
 
 		moment.tz.addRule("TEST_UTC_AT,2009,2009,2,2,60u,60,D");
-		var zone = moment.tz.addZone("TEST_UTC_AT,60,TEST_UTC_AT,TST")
+		var zone = moment.tz.addZone("TEST_UTC_AT,60,TEST_UTC_AT,TST");
 
 		test.equal(zone.offset(moment.utc([2009, 2, 2, 0, 59])),  60, "A trailing 'u' should use utc offset for the 'at'");
 		test.equal(zone.offset(moment.utc([2009, 2, 2, 0, 60])), 120, "A trailing 'u' should use utc offset for the 'at'");

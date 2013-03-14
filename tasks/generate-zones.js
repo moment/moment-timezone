@@ -34,6 +34,12 @@ function formatZone (zone, output) {
 	zone[1] = ruleHMToMinutes(zone[1]);
 	zone[4] = zoneUntil(zone);
 	zone.splice(zone[4] ? 5 : 4);
+
+	// sometimes comments are sprinkled in with the rules
+	if (!zone[1] && !zone[2] && !zone[3]) {
+		return;
+	}
+
 	output.zones[zone[0]].push(zone.slice(1).join(','));
 }
 
@@ -57,7 +63,7 @@ function ruleHMToMinutes (input) {
 		minutes = +output[0] * 60,
 		minutes2 = parseInt(output[1], 10) || 0;
 
-	if (minutes > 0) {
+	if (minutes >= 0) {
 		minutes += +minutes2;
 	} else {
 		minutes -= minutes2;
