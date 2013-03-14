@@ -57,6 +57,10 @@
 			this.utc = true;
 		}
 
+		if (_at.indexOf('s') > -1) {
+			this.standard = true;
+		}
+
 		this._time    = parseInt(_at, 10);
 		this.offset  = +_offset;
 		this._letters = _letters;
@@ -201,17 +205,20 @@
 				cloned,
 				i;
 
-			//console.log('\n' + mom.clone().utc().format());
+			// console.log('\n' + mom.clone().utc().format());
+			// console.log(mom.clone().utc().add('m', offset).format());
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
 				rule = rules[i];
 
+				if (rule.rule.standard) {
+					lastOffset = offset;
+				}
 				if (!rule.rule.utc) {
 					rule.start.add('m', -lastOffset);
 				}
-
-				//console.log(rule.start.format(), '(' + lastOffset + ')');
+				// console.log(rule.start.format(), '(' + lastOffset + ')');
 				lastOffset = rule.rule.offset + offset;
 			}
 

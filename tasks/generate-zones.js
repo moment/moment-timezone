@@ -37,18 +37,32 @@ function formatZone (zone, output) {
 	output.zones[zone[0]].push(zone.slice(1).join(','));
 }
 
+function ruleHMToMinutesAndSuffix (input) {
+	var output = ruleHMToMinutes(input);
+
+	if (input.indexOf('u') > -1) {
+		return output + 'u';
+	}
+
+	if (input.indexOf('s') > -1) {
+		return output + 's';
+	}
+
+	return output;
+}
+
 function ruleHMToMinutes (input) {
 	//return input;
 	var output = input.split(':'),
 		minutes = +output[0] * 60,
-		utc = input.indexOf('u') > -1 ? 'u' : '';
+		minutes2 = parseInt(output[1], 10) || 0;
 
 	if (minutes > 0) {
-		minutes += +output[1] || 0;
+		minutes += +minutes2;
 	} else {
-		minutes -= +output[1] || 0;
+		minutes -= minutes2;
 	}
-	return minutes + utc;
+	return minutes;
 }
 
 function ruleGreaterThan (input) {
@@ -93,7 +107,7 @@ function formatRule (rule, output) {
 	rule[3] = moment(rule[3], "MMM").month();
 
 	rule[4] = ruleDay(rule[4]);
-	rule[5] = ruleHMToMinutes(rule[5]);
+	rule[5] = ruleHMToMinutesAndSuffix(rule[5]);
 	rule[6] = ruleHMToMinutes(rule[6]);
 
 	if (!output.rules[rule[0]]) {
