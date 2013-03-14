@@ -35,6 +35,7 @@ module.exports = function (grunt) {
 			output = [],
 			tests = [],
 			i,
+			start = moment(),
 			testCount = 0;
 
 		output.push('var moment = require("../../moment-timezone");');
@@ -50,7 +51,7 @@ module.exports = function (grunt) {
 		output.push('};');
 
 		grunt.file.write(filename, output.join('\n'));
-		grunt.log.writeln("Created " + filename);
+		grunt.log.writeln("Created " + filename + " (" + moment().diff(start) + ')');
 		cb();
 	}
 
@@ -60,24 +61,34 @@ module.exports = function (grunt) {
 			tests = [],
 			formatTests = [],
 			i = +moment.utc([year]),
+			j,
+			icount = 1000 * 60 * 60 * 24, // every day
+			jcount = 1000 * 60, // every minute
 			currentMoment = moment(i),
-			offset = currentMoment.zone();
+			offset = currentMoment.zone(),
+			joffset;
 
 		// first day of year
 		tests.push(makeTest(moment.utc([year]), zone));
 		formatTests.push(makeFormatTest(moment.utc([year]), zone));
 
 		// everytime the offset changes
-		for (i; i < max; i += 60000) {
+		for (i; i < max; i += icount) {
 			currentMoment = moment(i);
 			if (offset !== currentMoment.zone()) {
+				// find the minute within these 6 hours that the offset changed
+				for (j = i - icount; j <= i; j += jcount) {
+					currentMoment = moment(j);
+					if (offset !== currentMoment.zone()) {
+						tests.push(makeTest(currentMoment.clone().subtract('s', 1), zone));
+						tests.push(makeTest(currentMoment, zone));
+
+						formatTests.push(makeFormatTest(currentMoment.clone().subtract('s', 1), zone));
+						formatTests.push(makeFormatTest(currentMoment, zone));
+						break;
+					}
+				}
 				offset = currentMoment.zone();
-
-				tests.push(makeTest(currentMoment.clone().subtract('ms', 1), zone));
-				tests.push(makeTest(currentMoment, zone));
-
-				formatTests.push(makeFormatTest(currentMoment.clone().subtract('ms', 1), zone));
-				formatTests.push(makeFormatTest(currentMoment, zone));
 			}
 		}
 
