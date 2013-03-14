@@ -55,7 +55,7 @@ module.exports = {
 			"2010,2010,8,-4,1380,0,-"
 		],
 		"Ghana": [
-			"1936,1942,8,1,0,20,GHST",
+			"1936,1942,8,1,0,-20,GHST",
 			"1936,1942,11,31,0,0,GMT"
 		],
 		"Libya": [
@@ -135,7 +135,7 @@ module.exports = {
 			"1995,9999,3,0:1,120,0,-"
 		],
 		"SL": [
-			"1935,1942,5,1,0,40,SLST",
+			"1935,1942,5,1,0,-40,SLST",
 			"1935,1942,9,1,0,0,WAT",
 			"1957,1962,5,1,0,60,SLST",
 			"1957,1962,8,1,0,0,GMT"
@@ -180,8 +180,8 @@ module.exports = {
 	},
 	"zones": {
 		"Africa/Algiers": [
-			"12,-,LMT,1891 2 15 0 1",
-			"9,-,PMT,1911 2 11 ",
+			"-12,-,LMT,1891 2 15 0 -1",
+			"-9,-,PMT,1911 2 11 ",
 			"0,Algeria,WE%sT,1940 1 25 0 120",
 			"60,Algeria,CE%sT,1946 9 7",
 			"0,-,WET,1956 0 29",
@@ -192,12 +192,12 @@ module.exports = {
 			"60,-,CET"
 		],
 		"Africa/Luanda": [
-			"52,-,LMT,1892",
-			"52,-,AOT,1911 4 26 ",
+			"-52,-,LMT,1892",
+			"-52,-,AOT,1911 4 26 ",
 			"60,-,WAT"
 		],
 		"Africa/Porto-Novo": [
-			"10,-,LMT,1912",
+			"-10,-,LMT,1912",
 			"0,-,GMT,1934 1 26",
 			"60,-,WAT"
 		],
@@ -209,7 +209,7 @@ module.exports = {
 			"120,-,CAT"
 		],
 		"Africa/Ouagadougou": [
-			"6,-,LMT,1912",
+			"-6,-,LMT,1912",
 			"0,-,GMT"
 		],
 		"Africa/Bujumbura": [
@@ -217,11 +217,11 @@ module.exports = {
 			"120,-,CAT"
 		],
 		"Africa/Douala": [
-			"38,-,LMT,1912",
+			"-38,-,LMT,1912",
 			"60,-,WAT"
 		],
 		"Atlantic/Cape_Verde": [
-			"-26,-,LMT,1907 ",
+			"-94,-,LMT,1907 ",
 			"-120,-,CVT,1942 8",
 			"-120,1:00,CVST,1945 9 15",
 			"-120,-,CVT,1975 10 25 0 120",
@@ -254,7 +254,7 @@ module.exports = {
 			"60,-,WAT"
 		],
 		"Africa/Abidjan": [
-			"16,-,LMT,1912",
+			"-16,-,LMT,1912",
 			"0,-,GMT"
 		],
 		"Africa/Djibouti": [
@@ -266,7 +266,7 @@ module.exports = {
 			"120,Egypt,EE%sT"
 		],
 		"Africa/Malabo": [
-			"35,-,LMT,1912",
+			"-35,-,LMT,1912",
 			"0,-,GMT,1963 11 15",
 			"60,-,WAT"
 		],
@@ -282,12 +282,12 @@ module.exports = {
 			"180,-,EAT"
 		],
 		"Africa/Libreville": [
-			"37,-,LMT,1912",
+			"-37,-,LMT,1912",
 			"60,-,WAT"
 		],
 		"Africa/Banjul": [
-			"-54,-,LMT,1912",
-			"-54,-,BMT,1935 ",
+			"-66,-,LMT,1912",
+			"-66,-,BMT,1935 ",
 			"-60,-,WAT,1964",
 			"0,-,GMT"
 		],
@@ -296,13 +296,13 @@ module.exports = {
 			"0,Ghana,%s"
 		],
 		"Africa/Conakry": [
-			"54,-,LMT,1912",
+			"-54,-,LMT,1912",
 			"0,-,GMT,1934 1 26",
 			"-60,-,WAT,1960",
 			"0,-,GMT"
 		],
 		"Africa/Bissau": [
-			"-58,-,LMT,1911 4 26",
+			"-62,-,LMT,1911 4 26",
 			"-60,-,WAT,1975",
 			"0,-,GMT"
 		],
@@ -320,13 +320,13 @@ module.exports = {
 			"120,-,SAST"
 		],
 		"Africa/Monrovia": [
-			"43,-,LMT,1882",
-			"43,-,MMT,1919 2 ",
-			"44,-,LRT,1972 4 ",
+			"-43,-,LMT,1882",
+			"-43,-,MMT,1919 2 ",
+			"-44,-,LRT,1972 4 ",
 			"0,-,GMT"
 		],
 		"Africa/Tripoli": [
-			"52,-,LMT,1920",
+			"-52,-,LMT,1920",
 			"60,Libya,CE%sT,1959",
 			"120,-,EET,1982",
 			"60,Libya,CE%sT,1990 4 4",
@@ -346,13 +346,13 @@ module.exports = {
 			"120,-,CAT"
 		],
 		"Africa/Bamako": [
-			"32,-,LMT,1912",
+			"-32,-,LMT,1912",
 			"0,-,GMT,1934 1 26",
 			"-60,-,WAT,1960 5 20",
 			"0,-,GMT"
 		],
 		"Africa/Nouakchott": [
-			"-57,-,LMT,1912",
+			"-63,-,LMT,1912",
 			"0,-,GMT,1934 1 26",
 			"-60,-,WAT,1960 10 28",
 			"0,-,GMT"
@@ -366,13 +366,13 @@ module.exports = {
 			"180,-,EAT"
 		],
 		"Africa/Casablanca": [
-			"30,-,LMT,1913 9 26",
+			"-30,-,LMT,1913 9 26",
 			"0,Morocco,WE%sT,1984 2 16",
 			"60,-,CET,1986",
 			"0,Morocco,WE%sT"
 		],
 		"Africa/El_Aaiun": [
-			"52,-,LMT,1934 0",
+			"-52,-,LMT,1934 0",
 			"-60,-,WAT,1976 3 14",
 			"0,-,WET"
 		],
@@ -390,13 +390,13 @@ module.exports = {
 			"60,Namibia,WA%sT"
 		],
 		"Africa/Niamey": [
-			"8,-,LMT,1912",
+			"-8,-,LMT,1912",
 			"-60,-,WAT,1934 1 26",
 			"0,-,GMT,1960",
 			"60,-,WAT"
 		],
 		"Africa/Lagos": [
-			"13,-,LMT,1919 8",
+			"-13,-,LMT,1919 8",
 			"60,-,WAT"
 		],
 		"Indian/Reunion": [
@@ -408,17 +408,17 @@ module.exports = {
 			"120,-,CAT"
 		],
 		"Atlantic/St_Helena": [
-			"22,-,LMT,1890 ",
-			"22,-,JMT,1951 ",
+			"-22,-,LMT,1890 ",
+			"-22,-,JMT,1951 ",
 			"0,-,GMT"
 		],
 		"Africa/Sao_Tome": [
-			"26,-,LMT,1884",
-			"36,-,LMT,1912 ",
+			"-26,-,LMT,1884",
+			"-36,-,LMT,1912 ",
 			"0,-,GMT"
 		],
 		"Africa/Dakar": [
-			"-51,-,LMT,1912",
+			"-69,-,LMT,1912",
 			"-60,-,WAT,1941 5",
 			"0,-,GMT"
 		],
@@ -427,8 +427,8 @@ module.exports = {
 			"240,-,SCT"
 		],
 		"Africa/Freetown": [
-			"53,-,LMT,1882",
-			"53,-,FMT,1913 5 ",
+			"-53,-,LMT,1882",
+			"-53,-,FMT,1913 5 ",
 			"-60,SL,%s,1957",
 			"0,SL,%s"
 		],
@@ -464,12 +464,12 @@ module.exports = {
 			"180,-,EAT"
 		],
 		"Africa/Lome": [
-			"4,-,LMT,1893",
+			"-4,-,LMT,1893",
 			"0,-,GMT"
 		],
 		"Africa/Tunis": [
-			"40,-,LMT,1881 4 12",
-			"9,-,PMT,1911 2 11 ",
+			"-40,-,LMT,1881 4 12",
+			"-9,-,PMT,1911 2 11 ",
 			"60,Tunisia,CE%sT"
 		],
 		"Africa/Kampala": [

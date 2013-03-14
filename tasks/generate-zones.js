@@ -22,7 +22,6 @@ function zoneUntil (array) {
 		parts[4] = ruleHMToMinutes(parts[3]);
 		parts[3] = 0;
 	}
-	console.log('parts', parts.join(' '));
 	return parts.join(' ');
 }
 
@@ -36,15 +35,20 @@ function formatZone (zone, output) {
 	zone[4] = zoneUntil(zone);
 	zone.splice(zone[4] ? 5 : 4);
 	output.zones[zone[0]].push(zone.slice(1).join(','));
-
-	console.log(zone.join(','));
 }
 
 function ruleHMToMinutes (input) {
 	//return input;
 	var output = input.split(':'),
+		minutes = +output[0] * 60,
 		utc = input.indexOf('u') > -1 ? 'u' : '';
-	return (+output[0] * 60) + (+output[1] || 0) + utc;
+
+	if (minutes > 0) {
+		minutes += +output[1] || 0;
+	} else {
+		minutes -= +output[1] || 0;
+	}
+	return minutes + utc;
 }
 
 function ruleGreaterThan (input) {

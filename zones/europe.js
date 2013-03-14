@@ -668,16 +668,16 @@ module.exports = {
 	},
 	"zones": {
 		"Europe/London": [
-			"1,-,LMT,1847 11 1 0 0",
+			"-1,-,LMT,1847 11 1 0 0",
 			"0,GB-Eire,%s,1968 9 27",
 			"60,-,BST,1971 9 31 0 120u",
 			"0,GB-Eire,%s,1996",
 			"0,EU,GMT/BST"
 		],
 		"Europe/Dublin": [
-			"25,-,LMT,1880 7 2",
-			"25,-,DMT,1916 4 21 0 120",
-			"25,1:00,IST,1916 9 1 0 120",
+			"-25,-,LMT,1880 7 2",
+			"-25,-,DMT,1916 4 21 0 120",
+			"-25,1:00,IST,1916 9 1 0 120",
 			"0,GB-Eire,%s,1921 11 6 ",
 			"0,GB-Eire,GMT/IST,1940 1 25 0 120",
 			"0,1:00,IST,1946 9 6 0 120",
@@ -708,7 +708,7 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Europe/Andorra": [
-			"6,-,LMT,1901",
+			"-6,-,LMT,1901",
 			"0,-,WET,1946 8 30",
 			"60,-,CET,1985 2 31 0 120",
 			"60,EU,CE%sT"
@@ -738,8 +738,8 @@ module.exports = {
 			"180,-,FET"
 		],
 		"Europe/Brussels": [
-			"17,-,LMT,1880",
-			"17,-,BMT,1892 4 1 0 720",
+			"-17,-,LMT,1880",
+			"-17,-,BMT,1892 4 1 0 720",
 			"0,-,WET,1914 10 8",
 			"60,-,CET,1916 4 1 0 0",
 			"60,C-Eur,CE%sT,1918 10 11 0 660u",
@@ -761,44 +761,44 @@ module.exports = {
 			"120,EU,EE%sT"
 		],
 		"Europe/Prague": [
-			"57,-,LMT,1850",
-			"57,-,PMT,1891 9 ",
+			"-57,-,LMT,1850",
+			"-57,-,PMT,1891 9 ",
 			"60,C-Eur,CE%sT,1944 8 17 0 120",
 			"60,Czech,CE%sT,1979",
 			"60,EU,CE%sT"
 		],
 		"Europe/Copenhagen": [
-			"50,-,LMT,1890",
-			"50,-,CMT,1894 0 1 ",
+			"-50,-,LMT,1890",
+			"-50,-,CMT,1894 0 1 ",
 			"60,Denmark,CE%sT,1942 10 2 0 120",
 			"60,C-Eur,CE%sT,1945 3 2 0 120",
 			"60,Denmark,CE%sT,1980",
 			"60,EU,CE%sT"
 		],
 		"Atlantic/Faroe": [
-			"27,-,LMT,1908 0 11 ",
+			"-27,-,LMT,1908 0 11 ",
 			"0,-,WET,1981",
 			"0,EU,WE%sT"
 		],
 		"America/Danmarkshavn": [
-			"-46,-,LMT,1916 6 28",
+			"-74,-,LMT,1916 6 28",
 			"-180,-,WGT,1980 3 6 0 120",
 			"-180,EU,WG%sT,1996",
 			"0,-,GMT"
 		],
 		"America/Scoresbysund": [
-			"-33,-,LMT,1916 6 28 ",
+			"-87,-,LMT,1916 6 28 ",
 			"-120,-,CGT,1980 3 6 0 120",
 			"-120,C-Eur,CG%sT,1981 2 29",
 			"-60,EU,EG%sT"
 		],
 		"America/Godthab": [
-			"-154,-,LMT,1916 6 28 ",
+			"-206,-,LMT,1916 6 28 ",
 			"-180,-,WGT,1980 3 6 0 120",
 			"-180,EU,WG%sT"
 		],
 		"America/Thule": [
-			"-205,-,LMT,1916 6 28 ",
+			"-275,-,LMT,1916 6 28 ",
 			"-240,Thule,A%sT"
 		],
 		"Europe/Tallinn": [
@@ -823,8 +823,8 @@ module.exports = {
 			"120,EU,EE%sT"
 		],
 		"Europe/Paris": [
-			"9,-,LMT,1891 2 15 0 1",
-			"9,-,PMT,1911 2 11 0 1",
+			"-9,-,LMT,1891 2 15 0 -1",
+			"-9,-,PMT,1911 2 11 0 -1",
 			"0,France,WE%sT,1940 5 14 0 1380",
 			"60,C-Eur,CE%sT,1944 7 25",
 			"0,France,WE%sT,1945 8 16 0 180",
@@ -832,21 +832,21 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Europe/Berlin": [
-			"53,-,LMT,1893 3",
+			"-53,-,LMT,1893 3",
 			"60,C-Eur,CE%sT,1945 4 24 0 120",
 			"60,SovietZone,CE%sT,1946",
 			"60,Germany,CE%sT,1980",
 			"60,EU,CE%sT"
 		],
 		"Europe/Gibraltar": [
-			"21,-,LMT,1880 7 2 0 0",
+			"-21,-,LMT,1880 7 2 0 0",
 			"0,GB-Eire,%s,1957 3 14 0 120",
 			"60,-,CET,1982",
 			"60,EU,CE%sT"
 		],
 		"Europe/Athens": [
 			"94,-,LMT,1895 8 14",
-			"94,-,AMT,1916 6 28 0 1",
+			"94,-,AMT,1916 6 28 0 -1",
 			"120,Greece,EE%sT,1941 3 30",
 			"60,Greece,CE%sT,1944 3 4",
 			"120,Greece,EE%sT,1981",
@@ -863,14 +863,14 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Atlantic/Reykjavik": [
-			"-33,-,LMT,1837",
-			"-33,-,RMT,1908 ",
+			"-87,-,LMT,1837",
+			"-87,-,RMT,1908 ",
 			"-60,Iceland,IS%sT,1968 3 7 0 60",
 			"0,-,GMT"
 		],
 		"Europe/Rome": [
-			"49,-,LMT,1866 8 22",
-			"49,-,RMT,1893 10 1 0 0",
+			"-49,-,LMT,1866 8 22",
+			"-49,-,RMT,1893 10 1 0 0",
 			"60,Italy,CE%sT,1942 10 2 0 120",
 			"60,C-Eur,CE%sT,1944 6",
 			"60,Italy,CE%sT,1980",
@@ -894,7 +894,7 @@ module.exports = {
 			"120,EU,EE%sT"
 		],
 		"Europe/Vaduz": [
-			"38,-,LMT,1894 5",
+			"-38,-,LMT,1894 5",
 			"60,-,CET,1981",
 			"60,EU,CE%sT"
 		],
@@ -916,7 +916,7 @@ module.exports = {
 			"120,EU,EE%sT"
 		],
 		"Europe/Luxembourg": [
-			"24,-,LMT,1904 5",
+			"-24,-,LMT,1904 5",
 			"60,Lux,CE%sT,1918 10 25",
 			"0,Lux,WE%sT,1929 9 6 0 120",
 			"0,Belgium,WE%sT,1940 4 14 0 180",
@@ -925,7 +925,7 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Europe/Malta": [
-			"58,-,LMT,1893 10 2 0 0",
+			"-58,-,LMT,1893 10 2 0 0",
 			"60,Italy,CE%sT,1942 10 2 0 120",
 			"60,C-Eur,CE%sT,1945 3 2 0 120",
 			"60,Italy,CE%sT,1973 2 31",
@@ -947,22 +947,22 @@ module.exports = {
 			"120,EU,EE%sT"
 		],
 		"Europe/Monaco": [
-			"29,-,LMT,1891 2 15",
-			"9,-,PMT,1911 2 11 ",
+			"-29,-,LMT,1891 2 15",
+			"-9,-,PMT,1911 2 11 ",
 			"0,France,WE%sT,1945 8 16 0 180",
 			"60,France,CE%sT,1977",
 			"60,EU,CE%sT"
 		],
 		"Europe/Amsterdam": [
-			"19,-,LMT,1835",
-			"19,Neth,%s,1937 6 1",
-			"20,Neth,NE%sT,1940 4 16 0 0",
+			"-19,-,LMT,1835",
+			"-19,Neth,%s,1937 6 1",
+			"-20,Neth,NE%sT,1940 4 16 0 0",
 			"60,C-Eur,CE%sT,1945 3 2 0 120",
 			"60,Neth,CE%sT,1977",
 			"60,EU,CE%sT"
 		],
 		"Europe/Oslo": [
-			"43,-,LMT,1895 0 1",
+			"-43,-,LMT,1895 0 1",
 			"60,Norway,CE%sT,1940 7 10 0 1380",
 			"60,C-Eur,CE%sT,1945 3 2 0 120",
 			"60,Norway,CE%sT,1980",
@@ -980,8 +980,8 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Europe/Lisbon": [
-			"36,-,LMT,1884",
-			"36,-,LMT,1912 0 1 ",
+			"-36,-,LMT,1884",
+			"-36,-,LMT,1912 0 1 ",
 			"0,Port,WE%sT,1966 3 3 0 120",
 			"60,-,CET,1976 8 26 0 60",
 			"0,Port,WE%sT,1983 8 25 0 60",
@@ -990,8 +990,8 @@ module.exports = {
 			"0,EU,WE%sT"
 		],
 		"Atlantic/Azores": [
-			"-18,-,LMT,1884 ",
-			"-6,-,HMT,1911 4 24 ",
+			"-102,-,LMT,1884 ",
+			"-114,-,HMT,1911 4 24 ",
 			"-120,Port,AZO%sT,1966 3 3 0 120",
 			"-60,Port,AZO%sT,1983 8 25 0 60",
 			"-60,W-Eur,AZO%sT,1992 8 27 0 60",
@@ -999,8 +999,8 @@ module.exports = {
 			"-60,EU,AZO%sT"
 		],
 		"Atlantic/Madeira": [
-			"-53,-,LMT,1884 ",
-			"-53,-,FMT,1911 4 24 ",
+			"-67,-,LMT,1884 ",
+			"-67,-,FMT,1911 4 24 ",
 			"-60,Port,MAD%sT,1966 3 3 0 120",
 			"0,Port,WE%sT,1983 8 25 0 60",
 			"0,EU,WE%sT"
@@ -1190,13 +1190,13 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Europe/Madrid": [
-			"14,-,LMT,1901 0 1 0 0",
+			"-14,-,LMT,1901 0 1 0 0",
 			"0,Spain,WE%sT,1946 8 30",
 			"60,Spain,CE%sT,1979",
 			"60,EU,CE%sT"
 		],
 		"Africa/Ceuta": [
-			"21,-,LMT,1901",
+			"-21,-,LMT,1901",
 			"0,-,WET,1918 4 6 0 1380",
 			"0,1:00,WEST,1918 9 7 0 1380",
 			"0,-,WET,1924",
@@ -1206,7 +1206,7 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Atlantic/Canary": [
-			"-59,-,LMT,1922 2 ",
+			"-61,-,LMT,1922 2 ",
 			"-60,-,CANT,1946 8 30 0 60",
 			"0,-,WET,1980 3 6 0 0",
 			"0,1:00,WEST,1980 8 28 0 0",
@@ -1221,8 +1221,8 @@ module.exports = {
 			"60,EU,CE%sT"
 		],
 		"Europe/Zurich": [
-			"34,-,LMT,1848 8 12",
-			"29,-,BMT,1894 5 ",
+			"-34,-,LMT,1848 8 12",
+			"-29,-,BMT,1894 5 ",
 			"60,Swiss,CE%sT,1981",
 			"60,EU,CE%sT"
 		],
