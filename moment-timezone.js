@@ -16,9 +16,6 @@
 		zones = {},
 		zoneSets = {};
 
-
-	zoneNames = ["africa"];
-
 	/************************************
 		Rules
 	************************************/
@@ -171,8 +168,6 @@
 			var i,
 				rule;
 
-			console.log(year);
-
 			for (i = 0; i < this._rules.length; i++) {
 				rule = this._rules[i];
 				if (rule.containsYear(year)) {
@@ -182,12 +177,11 @@
 		},
 
 		// get the rules that apply to this year and last year
-		rules : function (mom) {
+		rules : function (mom, lastYearRule) {
 			var rules = [];
 
 			this._ruleYears(mom.year(), rules);
-			//this._ruleYears(mom.year() - 1, rules);
-
+			rules.push(new RuleYear(mom.year() - 1, lastYearRule));
 			rules.sort(sortRuleYears);
 
 			return rules;
@@ -200,38 +194,25 @@
 		// 3. Starting with the newest rule, loop until the target moment is greater than
 		//    or equal to the rule's effective date
 
-		rule : function (mom, offset, eoyOffset) {
-			var rules = this.rules(mom),
+		rule : function (mom, offset, lastYearRule) {
+			var rules = this.rules(mom, lastYearRule),
 				rule,
-				lastOffset = eoyOffset,
+				lastOffset = 0,
 				cloned,
 				i;
 
-
-			console.log('    start');
-
-			for (i = rules.length - 1; i > -1; i--) {
-				console.log(rules[i].start.format());
-			}
-
-			console.log('');
+			//console.log('\n' + mom.clone().utc().format());
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
 				rule = rules[i];
 
-				console.log(rule.start.format(), 'last offset', lastOffset);
-
 				if (!rule.rule.utc) {
 					rule.start.add('m', -lastOffset);
 				}
+
+				//console.log(rule.start.format(), '(' + lastOffset + ')');
 				lastOffset = rule.rule.offset + offset;
-			}
-
-			console.log('');
-
-			for (i = rules.length - 1; i > -1; i--) {
-				console.log(rules[i].start.format());
 			}
 
 			for (i = 0; i < rules.length; i++) {
@@ -245,21 +226,25 @@
 
 		// Get the offset at the end of this year
 
-		eoyOffset : function (year) {
+		lastYearRule : function (year) {
 			var i,
 				rule,
+				start,
+				bestRule = defaultRule,
 				largest = 0;
-
-			console.log(year);
 
 			for (i = 0; i < this._rules.length; i++) {
 				rule = this._rules[i];
-				if (rule.containsYear(year) && rule > largest) {
-					rule = largest;
+				if (rule.containsYear(year)) {
+					start = rule.start(year);
+					if (start > largest) {
+						largest = start;
+						bestRule = rule;
+					}
 				}
 			}
 
-			return rule.offset;
+			return bestRule;
 		}
 	};
 
@@ -279,20 +264,20 @@
 	}
 
 	Zone.prototype = {
-		rule : function (mom, eoyOffset) {
-			return this._ruleSet.rule(mom, this._offset, eoyOffset);
+		rule : function (mom, lastYearRule) {
+			return this._ruleSet.rule(mom, this._offset, lastYearRule);
 		},
 
-		format : function (mom, eoyOffset) {
-			return this._format.replace("%s", this.rule(mom, eoyOffset).letters());
+		format : function (mom, lastYearRule) {
+			return this._format.replace("%s", this.rule(mom, lastYearRule).letters());
 		},
 
-		offset : function (mom, eoyOffset) {
-			return this._offset + this.rule(mom, eoyOffset).offset;
+		offset : function (mom, lastYearRule) {
+			return this._offset + this.rule(mom, lastYearRule).offset;
 		},
 
-		eoyOffset : function (year) {
-			return this._offset + this._ruleSet.eoyOffset(year);
+		lastYearRule : function (year) {
+			return this._ruleSet.lastYearRule(year);
 		}
 	};
 
@@ -317,14 +302,15 @@
 					return this._zones[i];
 				}
 			}
+			return this._zones[i - 1];
 		},
 
-		eoyOffset : function (year) {
+		lastYearRule : function (year) {
 			var i,
 				eoy = moment([year]).endOf('year');
 			for (i = 0; i < this._zones.length; i++) {
 				if (eoy < this._zones[i].until) {
-					return this._zones[i].eoyOffset(year);
+					return this._zones[i].lastYearRule(year);
 				}
 			}
 		},
@@ -341,14 +327,14 @@
 
 		format : function (mom) {
 			var dup = moment(+mom),
-				eoyOffset = this.eoyOffset(mom.year() - 1);
-			return this.zone(dup).format(dup, eoyOffset);
+				lastYearRule = this.lastYearRule(mom.year() - 1);
+			return this.zone(dup).format(dup, lastYearRule);
 		},
 
 		offset : function (mom) {
 			var dup = moment(+mom),
-				eoyOffset = this.eoyOffset(mom.year() - 1);
-			return -this.zone(dup).offset(dup, eoyOffset);
+				lastYearRule = this.lastYearRule(mom.year() - 1);
+			return -this.zone(dup).offset(dup, lastYearRule);
 		}
 	};
 
