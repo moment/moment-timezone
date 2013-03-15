@@ -4,13 +4,19 @@ var path = require('path'),
 
 module.exports = function (grunt) {
 	// placeholder for an array of timezones
-	var ALL_ZONES = ["america/los_angeles"];
+	var ALL_ZONES;
 
 	/******************************
 		Grunt task
 	******************************/
 
 	grunt.registerTask('gen-tests', 'Generate unit tests for each timezone.', function () {
+		var i;
+		ALL_ZONES = [];
+		for (i = 0; i < zoneNames.length; i++) {
+			ALL_ZONES.push(zoneNames[i]);
+		}
+		ALL_ZONES = ["America/Los_Angeles"];
 		nextTest(this.async());
 	});
 
@@ -21,7 +27,7 @@ module.exports = function (grunt) {
 	function zdump(name, cb) {
 		grunt.utils.spawn({
 			cmd: "zdump",
-			args: ["-v", "-c", "2020", name]
+			args: ["-v", name]
 		}, function (err, result, code) {
 			cb(result.stdout.split('\n'));
 		});
@@ -44,32 +50,74 @@ module.exports = function (grunt) {
 
 	function generateTest(name, cb) {
 		zdump(name, function (data) {
-			console.log(data);
-			makeTests(name, data);
+			var file = new File(name, data);
+			file.save();
 			cb();
 		});
 	}
 
-	function makeTests (name, data) {
-		var tests = [],
-			test,
-			years = {},
-			year,
-			i;
-
-		for (i = 0; i < data.length; i++) {
-			test = new Test(name, data[i]);
-			if (!years[test.year]) {
-				years[test.year] = new Year(name, test.year);
-			}
-			years[test.year].add(test);
-		}
-
-		for (i in years) {
-			year = years[i];
-			console.log(year.format());
-		}
+	function File (name, data) {
+		this.years = {};
+		this.name = name;
+		this.addTests(data);
 	}
+
+
+	File.prototype = {
+		addTests : function (data) {
+			var test,
+				years = this.years,
+				i;
+
+			// start at 2 so we skip the 1901
+			// end 2 behind data.length to skip 2038
+			for (i = 2; i < data.length - 2; i++) {
+				test = new Test(this.name, data[i]);
+				if (!years[test.year]) {
+					years[test.year] = new Year(this.name, test.year);
+				}
+				years[test.year].add(test);
+			}
+		},
+
+		renderTests : function () {
+			var o = [],
+				years = this.years,
+				i;
+			for (i in years) {
+				//if (+i > 2012) {
+					o.push(years[i].format());
+				//}
+			}
+			return (o.join(',\n\n'));
+		},
+
+		renderRequire : function () {
+			var levels = (this.name.match(/\//g) || []).length,
+				i,
+				o = '';
+
+			for (i = 0; i < levels; i++) {
+				o += '../';
+			}
+			return o;
+		},
+
+		render : function () {
+			var o = '';
+			o += 'var moment = require("' + this.renderRequire() + '../moment-timezone");';
+			o += '\n\nexports["' + this.name + '"] = {\n\n';
+			o += this.renderTests();
+			o += '\n};';
+			return o;
+		},
+
+		save : function () {
+			var filename = path.join(process.cwd(), "tests/" + this.name.toLowerCase() + '.js');
+			grunt.file.write(filename, this.render());
+			grunt.log.writeln("[X] " + filename);
+		}
+	};
 
 	/******************************
 		Year object
@@ -88,8 +136,8 @@ module.exports = function (grunt) {
 
 		format : function () {
 			var o = '', i;
-			o += '\t"' + this.name + ' ' + this.year + '" : function (test) {';
-			o += '\n\t\ttest.expect(' + (this.tests.length * 2) + ');\n';
+			o += '\t"' + this.year + '" : function (t) {';
+			// o += '\n\t\tt.expect(' + (this.tests.length * 2) + ');\n';
 			for (i = 0; i < this.tests.length; i++) {
 				o += '\n\t\t' +  this.tests[i].formatTest();
 			}
@@ -97,11 +145,11 @@ module.exports = function (grunt) {
 			for (i = 0; i < this.tests.length; i++) {
 				o += '\n\t\t' +  this.tests[i].offsetTest();
 			}
-			o += '\n\n\t\ttest.done();';
-			o += '\n\t},\n';
+			o += '\n\n\t\tt.done();';
+			o += '\n\t}';
 			return o;
 		}
-	}
+	};
 
 	/******************************
 		Test object
@@ -120,20 +168,15 @@ module.exports = function (grunt) {
 		this.nameShort = s[13];
 		this.year = s[5];
 		this.offset = this.utc.diff(this.local, 'minutes');
-
-		// console.log(this.year);
-		// console.log(this.local.format());
-		// console.log(name, this.utc.diff(this.local, 'minutes'), this.time);
-		// console.log(this.format());
 	}
 
 	Test.prototype = {
 		formatTest : function () {
 			var o = '',
 				utc = this.utc.format();
-			o += 'test.equal(moment("' + utc + '").tz("' + this.name + '").format("HH:mm:ss"), ';
+			o += 't.equal(moment("' + utc + '").tz("' + this.name + '").format("HH:mm:ss"), ';
 			o += '"' + this.time + '"';
-			o += ', "' + utc + " should be " + this.time + ' in ' + this.name + '");';
+			o += ', "' + utc + " should be " + this.time + ' ' + this.nameShort + '");';
 
 			return o;
 		},
@@ -141,11 +184,11 @@ module.exports = function (grunt) {
 		offsetTest : function () {
 			var o = '',
 				utc = this.utc.format();
-			o += 'test.equal(moment("' + utc + '").tz("' + this.name + '").zone(), ';
+			o += 't.equal(moment("' + utc + '").tz("' + this.name + '").zone(), ';
 			o += this.offset;
-			o += ', "' + utc + " should be " + this.offset + ' minutes offset");';
+			o += ', "' + utc + " should be " + this.offset + ' minutes offset in ' + this.nameShort + '");';
 
 			return o;
 		}
-	}
+	};
 };
