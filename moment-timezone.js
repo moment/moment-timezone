@@ -67,23 +67,8 @@
 	}
 
 	Rule.prototype = {
-		contains : function (mom) {
-			var year = mom.year(),
-				beginning = this.start(year);
-
-			if (mom >= beginning && year <= this._to) {
-				return true;
-			}
-
-			return false;
-		},
-
-		containsYear : function (year) {
-			if (year >= this._from && year <= this._to) {
-				return true;
-			}
-
-			return false;
+		contains : function (year) {
+			return (year >= this._from && year <= this._to);
 		},
 
 		letters : function () {
@@ -132,82 +117,50 @@
 		Rule Year
 	************************************/
 
-	function RuleYear (_year, _rule) {
-		this.year = _year;
-		this.rule = _rule;
-		this.start = _rule.start(_year);
+	function RuleYear (year, rule) {
+		this.rule = rule;
+		this.start = rule.start(year);
 	}
 
-	// sort rules so that the closest effective date is first
 	function sortRuleYears (a, b) {
-		var sa = a.start,
-			sb = b.start;
-
-		if (sa > sb) {
-			return -1;
-		} else if (sa < sb) {
-			return 1;
-		} else {
-			return 0;
-		}
+		return b.start - a.start;
 	}
-
 
 	/************************************
 		Rule Sets
 	************************************/
 
-	function RuleSet (_name) {
-		this._name = _name;
-		this._rules = [];
+	function RuleSet (name) {
+		this.name = name;
+		this.rules = [];
 	}
 
 	RuleSet.prototype = {
 		add : function (rule) {
-			this._rules.push(rule);
+			this.rules.push(rule);
 		},
 
-		// Add all the rules that apply to this year to this array
-		_ruleYears : function (year, array) {
+		ruleYears : function (year, lastYearRule) {
 			var i,
-				rule;
+				rule,
+				rules = [];
 
-			for (i = 0; i < this._rules.length; i++) {
-				rule = this._rules[i];
-				if (rule.containsYear(year)) {
-					array.push(new RuleYear(year, rule));
+			for (i = 0; i < this.rules.length; i++) {
+				rule = this.rules[i];
+				if (rule.contains(year)) {
+					rules.push(new RuleYear(year, rule));
 				}
 			}
-		},
-
-		// get the rules that apply to this year and last year
-		rules : function (mom, lastYearRule) {
-			var rules = [];
-
-			this._ruleYears(mom.year(), rules);
-			rules.push(new RuleYear(mom.year() - 1, lastYearRule));
+			rules.push(new RuleYear(year - 1, lastYearRule));
 			rules.sort(sortRuleYears);
-
 			return rules;
 		},
 
-		// 1. Get rules for this and last year
-		//
-		// 2. Sort them by effective date (newest first)
-		//
-		// 3. Starting with the newest rule, loop until the target moment is greater than
-		//    or equal to the rule's effective date
-
 		rule : function (mom, offset, lastYearRule) {
-			var rules = this.rules(mom, lastYearRule),
-				rule,
+			var rules = this.ruleYears(mom.year(), lastYearRule),
 				lastOffset = 0,
-				cloned,
+				rule,
 				i;
-
-				console.log(lastYearRule);
-			// console.log('\n' + mom.clone().utc().format());
-			// console.log(mom.clone().utc().add('m', offset).format());
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
@@ -219,7 +172,6 @@
 				if (!rule.rule.utc) {
 					rule.start.add('m', -lastOffset);
 				}
-				// console.log(rule.start.format(), '(' + lastOffset + ')');
 				lastOffset = rule.rule.offset + offset;
 			}
 
@@ -239,12 +191,12 @@
 				rule,
 				start,
 				bestRule = defaultRule,
-				largest = 0;
+				largest = -1e30;
 
-			for (i = 0; i < this._rules.length; i++) {
-				rule = this._rules[i];
-				if (rule.containsYear(year)) {
-					start = rule.start(year);
+			for (i = 0; i < this.rules.length; i++) {
+				rule = this.rules[i];
+				if (year >= rule._from) {
+					start = rule.start(Math.min(year, rule._to));
 					if (start > largest) {
 						largest = start;
 						bestRule = rule;
@@ -260,32 +212,25 @@
 		Zone
 	************************************/
 
-	function Zone (_name, _offset, _ruleSet, _format, _until) {
-		this._name = _name;
-		this._offset = +_offset;
-
-		this._ruleSet = getRuleSet(_ruleSet);
-
-		this._format = _format;
-
-		this.until = moment.utc((typeof _until === 'string' ? _until.split(' ') : [9999]));
+	function Zone (name, offset, ruleSet, letters, until) {
+		this.name = name;
+		this.offset = +offset;
+		this.ruleSet = ruleSet;
+		this.letters = letters;
+		this.until = moment.utc((typeof until === 'string' ? until.split(' ') : [9999]));
 	}
 
 	Zone.prototype = {
 		rule : function (mom, lastYearRule) {
-			return this._ruleSet.rule(mom, this._offset, lastYearRule);
-		},
-
-		format : function (mom, lastYearRule) {
-			return this._format.replace("%s", this.rule(mom, lastYearRule).letters());
-		},
-
-		offset : function (mom, lastYearRule) {
-			return this._offset + this.rule(mom, lastYearRule).offset;
+			return this.ruleSet.rule(mom, this.offset, lastYearRule);
 		},
 
 		lastYearRule : function (year) {
-			return this._ruleSet.lastYearRule(year);
+			return this.ruleSet.lastYearRule(year);
+		},
+
+		format : function (mom, rule) {
+			return this.letters.replace("%s", rule.letters);
 		}
 	};
 
@@ -297,52 +242,51 @@
 		return a.until - b.until;
 	}
 
-	function ZoneSet (_name) {
-		this._name = _name;
-		this._zones = [];
+	function ZoneSet (name) {
+		this.name = name;
+		this.zones = [];
 	}
 
 	ZoneSet.prototype = {
 		zone : function (mom) {
 			var i;
-			for (i = 0; i < this._zones.length; i++) {
-				if (mom < this._zones[i].until) {
-					return this._zones[i];
+			for (i = 0; i < this.zones.length; i++) {
+				if (mom < this.zones[i].until) {
+					return this.zones[i];
 				}
 			}
-			return this._zones[i - 1];
+			return this.zones[i - 1];
 		},
 
 		lastYearRule : function (year) {
 			var i,
 				eoy = moment([year]).endOf('year');
-			for (i = 0; i < this._zones.length; i++) {
-				if (eoy < this._zones[i].until) {
-					return this._zones[i].lastYearRule(year);
+			for (i = 0; i < this.zones.length; i++) {
+				if (eoy < this.zones[i].until) {
+					return this.zones[i].lastYearRule(year);
 				}
 			}
 		},
 
 		add : function (zone) {
-			this._zones.push(zone);
-			this._zones.sort(sortZones);
-			zone.zoneSet = this;
-		},
-
-		name : function () {
-			return this._name;
+			this.zones.push(zone);
+			this.zones.sort(sortZones);
 		},
 
 		format : function (mom) {
 			var dup = moment(+mom),
-				lastYearRule = this.lastYearRule(mom.year() - 1);
-			return this.zone(dup).format(dup, lastYearRule);
+				lastYearRule = this.lastYearRule(mom.year() - 1),
+				zone = this.zone(dup),
+				rule = zone.rule(dup, lastYearRule);
+			return zone.format(rule);
 		},
 
 		offset : function (mom) {
 			var dup = moment(+mom),
-				lastYearRule = this.lastYearRule(mom.year() - 1);
-			return -this.zone(dup).offset(dup, lastYearRule);
+				lastYearRule = this.lastYearRule(mom.year() - 1),
+				zone = this.zone(dup),
+				rule = zone.rule(dup, lastYearRule);
+			return -(zone.offset + rule.offset);
 		}
 	};
 
@@ -351,11 +295,12 @@
 	************************************/
 
 	function addRules (rules) {
-		var i;
+		var i, j, rule;
 		for (i in rules) {
-			rules[i].forEach(function(rule){
-				addRule(i + ',' + rule);
-			});
+			rule = rules[i];
+			for (j = 0; j < rule.length; j++) {
+				addRule(i + ',' + rule[j]);
+			}
 		}
 	}
 
@@ -399,7 +344,7 @@
 
 		var p = zoneString.split(','),
 			name = normalizeName(p[0]),
-			zone = new Zone(name, p[1], p[2], p[3], p[4]);
+			zone = new Zone(name, p[1], getRuleSet(p[2]), p[3], p[4]);
 
 		// cache the zone so we don't add it again
 		zones[zoneString] = zone;
