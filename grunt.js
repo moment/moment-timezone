@@ -5,8 +5,9 @@ module.exports = function(grunt) {
 		test: {
 			files: [
 				//"tests/core/*.js",
+				"tests/core/weekday-after.js"
 				//"tests/africa/*.js",
-				"tests/*/*.js"
+				//"tests/*/*.js"
 				//"tests/europe/*.js"
 				//"tests/america/los_angeles.js"
 				//"tests/pacific/chatham.js"

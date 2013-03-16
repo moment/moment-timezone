@@ -14,82 +14,55 @@
 		rules = {},
 		ruleSets = {},
 		zones = {},
-		zoneSets = {};
+		zoneSets = {},
+
+		TIME_RULE_WALL_CLOCK = 0,
+		TIME_RULE_UTC        = 1,
+		TIME_RULE_STANDARD   = 2,
+
+		DAY_RULE_DAY_OF_MONTH   = 7,
+		DAY_RULE_LAST_WEEKDAY   = 8;
 
 	/************************************
 		Rules
 	************************************/
 
-	/*
-	 * Rule
-	 *
-	 * @param _name    The string identifier for the timezone name (eg. US, NYC, Mexico...)
-	 * @param _from    The start year
-	 * @param _to      The end year (if falsy, will use the start year)
-	 * @param _in      The month to start on (zero indexed)
-	 * @param _on      The day to start on. A colon separated tuple of a letter and a number
-	 *                 eg. "l:1", "e:20", "f:1"
-	 *                 "l" The last on this day of week (while num > 7, skip a week)
-	 *                 "f" The first of this day of week (while num > 7, skip a week)
-	 *                 "e" This exact date of the month
-	 * @param _at      The number of minutes into the day that the change happens on
-	 * @param _offset  The number of minutes to add to the offset. Usually 60 or 0
-	 * @param _letters The string to replace the Zone format string with
-	 */
-	function Rule (_name, _from, _to, _in, _on, _at, _offset, _letters) {
-		this._name    = _name;
-		this._from    = +_from;
-		this._to      = +_to;
-		this._month   = +_in;
-
-		this._dayVal  = +_on;
-		if (_on.indexOf(':') > -1) {
-			_on = _on.split(':');
-			this._dowVal = +_on[0];
-			this._dayVal = +_on[1];
-			this.date = Rule.prototype._dateFirst;
-		} else if (this._dayVal < 1) {
-			this._dayVal = -this._dayVal;
-			this.date = Rule.prototype._dateLast;
-		}
-
-		if (_at.indexOf('u') > -1) {
-			this.utc = true;
-		}
-
-		if (_at.indexOf('s') > -1) {
-			this.standard = true;
-		}
-
-		this._time    = parseInt(_at, 10);
-		this.offset  = +_offset;
-		this._letters = _letters;
+	function Rule (name, startYear, endYear, month, day, dayRule, time, timeRule, offset, letters) {
+		this.name      = name;
+		this.startYear = +startYear;
+		this.endYear   = +endYear;
+		this.month     = +month;
+		this.day       = +day;
+		this.dayRule   = +dayRule;
+		this.time      = +time;
+		this.timeRule  = +timeRule;
+		this.offset    = +offset;
+		this.letters   = letters || '';
 	}
 
 	Rule.prototype = {
 		contains : function (year) {
-			return (year >= this._from && year <= this._to);
-		},
-
-		letters : function () {
-			return this._letters;
+			return (year >= this.startYear && year <= this.endYear);
 		},
 
 		start : function (year) {
-			year = Math.min(Math.max(year, this._from), this._to);
-			return moment.utc([year, this._month, this.date(year), 0, this._time]);
+			year = Math.min(Math.max(year, this.startYear), this.endYear);
+			return moment.utc([year, this.month, this.date(year), 0, this.time]);
 		},
 
 		date : function (year) {
-			return this._dayVal;
+			if (this.dayRule === DAY_RULE_DAY_OF_MONTH) {
+				return this.day;
+			} else if (this.dayRule === DAY_RULE_LAST_WEEKDAY) {
+				return this.lastWeekday(year);
+			}
+			return this.weekdayAfter(year);
 		},
 
-		// this method overwrites Rule.date if it uses the first day of week method
-		_dateFirst : function (year) {
-			var day = this._dayVal,
-				dow = this._dowVal,
-				firstDayOfWeek = moment([year, this._month, 1]).day(),
-				output = this._dowVal + 1 - firstDayOfWeek;
+		weekdayAfter : function (year) {
+			var day = this.day,
+				firstDayOfWeek = moment([year, this.month, 1]).day(),
+				output = this.dayRule + 1 - firstDayOfWeek;
 
 			while (output < day) {
 				output += 7;
@@ -98,13 +71,12 @@
 			return output;
 		},
 
-		// this method overwrites Rule.date if it uses the last day of week method
-		_dateLast : function (year) {
-			var day = this._dayVal,
+		lastWeekday : function (year) {
+			var day = this.day,
 				dow = day % 7,
-				lastDowOfMonth = moment([year, this._month + 1, 1]).day(),
-				daysInMonth = moment([year, this._month, 1]).daysInMonth(),
-				output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
+				lastDowOfMonth = moment([year, this.month + 1, 0]).day(),
+				daysInMonth = moment([year, this.month, 1]).daysInMonth(),
+				output = daysInMonth + (dow - lastDowOfMonth) - (~~(day / 7) * 7);
 
 			if (dow >= lastDowOfMonth) {
 				output -= 7;
@@ -166,10 +138,10 @@
 			for (i = rules.length - 1; i > -1; i--) {
 				rule = rules[i];
 
-				if (rule.rule.standard) {
+				if (rule.rule.timeRule === TIME_RULE_STANDARD) {
 					lastOffset = offset;
 				}
-				if (!rule.rule.utc) {
+				if (rule.rule.timeRule !== TIME_RULE_UTC) {
 					rule.start.add('m', -lastOffset);
 				}
 				lastOffset = rule.rule.offset + offset;
@@ -195,8 +167,8 @@
 
 			for (i = 0; i < this.rules.length; i++) {
 				rule = this.rules[i];
-				if (year >= rule._from) {
-					start = rule.start(Math.min(year, rule._to));
+				if (year >= rule.startYear) {
+					start = rule.start(year);
 					if (start > largest) {
 						largest = start;
 						bestRule = rule;
@@ -217,7 +189,7 @@
 		this.offset = +offset;
 		this.ruleSet = ruleSet;
 		this.letters = letters;
-		this.until = moment.utc((typeof until === 'string' ? until.split(' ') : [9999]));
+		this.until = moment.utc((typeof until === 'string' ? until.split('_') : [9999]));
 	}
 
 	Zone.prototype = {
@@ -299,7 +271,7 @@
 		for (i in rules) {
 			rule = rules[i];
 			for (j = 0; j < rule.length; j++) {
-				addRule(i + ',' + rule[j]);
+				addRule(i + '\t' + rule[j]);
 			}
 		}
 	}
@@ -310,9 +282,9 @@
 			return rules[ruleString];
 		}
 
-		var p = ruleString.split(','),
+		var p = ruleString.split(/\s/),
 			name = normalizeName(p[0]),
-			rule = new Rule(name, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8]);
+			rule = new Rule(name, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10]);
 
 		// cache the rule so we don't add it again
 		rules[ruleString] = rule;
@@ -328,11 +300,12 @@
 	}
 
 	function addZones (zones) {
-		var i;
+		var i, j, zone;
 		for (i in zones) {
-			zones[i].forEach(function (zone) {
-				addZone(i + ',' + zone);
-			});
+			zone = zones[i];
+			for (j = 0; j < zone.length; j++) {
+				addZone(i + '\t' + zone[j]);
+			}
 		}
 	}
 
@@ -342,7 +315,7 @@
 			return zones[zoneString];
 		}
 
-		var p = zoneString.split(','),
+		var p = zoneString.split(/\s/),
 			name = normalizeName(p[0]),
 			zone = new Zone(name, p[1], getRuleSet(p[2]), p[3], p[4]);
 
