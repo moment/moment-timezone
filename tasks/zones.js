@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('zones', 'Generate the zone data files based on the olson database.', function () {
 		var files = [];
 
-		grunt.file.expandFiles("olson/*").forEach(function (filename) {
+		grunt.file.expandFiles("olson/northamerica").forEach(function (filename) {
 			var file = new File(filename);
 			files.push(file);
 			file.save();
@@ -60,6 +60,17 @@ module.exports = function (grunt) {
 				lines = grunt.file.read(this.filename).split('\n');
 			for (i = 0; i < lines.length; i++) {
 				this.parseLine(lines[i]);
+			}
+			this.updateZonesUntil();
+		},
+
+		updateZonesUntil : function () {
+			var i, j, zone;
+			for (i in this.zones) {
+				zone = this.zones[i];
+				for (j = 0; j < zone.length; j++) {
+					zone[j].findUntilRule(this.rules);
+				}
 			}
 		},
 
@@ -205,19 +216,80 @@ module.exports = function (grunt) {
 		this.offset = parseMinutes(line[1]);
 		this.ruleset = line[2];
 		this.letters = line[3];
-		this.until = this.parseUntil(line.slice(4));
+		this.parseUntil(line.slice(4));
 	}
 
 	Zone.prototype = {
+		findUntilRule : function (rules) {
+			var name;
+
+			// no need for this if there is no until data
+			if (!this.untilYear) {
+				return;
+			}
+
+			if (this.name !== "America/Phoenix") {
+				return;
+			}
+
+			for (name in rules) {
+				if (name === this.ruleset) {
+					this.findUntilRuleFromSet(rules[name], name);
+				}
+			}
+		},
+
+		findUntilRuleFromSet : function (set, name) {
+			var i,
+				rule,
+				rules = [];
+
+			console.log('\n' + this.name.green, this.untilYear, '\n');
+
+			for (i = 0; i < set.length; i++) {
+				rule = set[i];
+				if (this.untilYear >= rule.startYear) {
+					console.log('[ ]'.green, this.untilYear, '>=', rule.startYear);
+					rules.push(rule);
+				} else {
+					console.log('[X]'.red, this.untilYear, '<', rule.startYear);
+				}
+			}
+
+			rules.sort(function (a, b) {
+				var diff = b.startYear - a.startYear;
+				if (!diff) {
+					return b.month - a.month;
+				}
+				return diff;
+			});
+
+			for (i = 0; i < rules.length; i++) {
+				rule = rules[i];
+				if (this.untilMonth <= rule.month) {
+					console.log('month'.green, this.untilMonth, '<=', rule.month);
+					break;
+				}
+				// otherwise use first rule from last year
+				if (this.untilYear < rule.startYear) {
+					console.log('year '.green, this.untilYear, '<', rule.startYear);
+					break;
+				}
+			}
+			console.log(rule.format());
+		},
+
 		parseUntil : function (input) {
+			this.untilYear = +input[0] || 0;
+			this.untilMonth = 0;
+			this.untilDay = +input[2] || 0;
+			this.untilTime = 0;
 			if (input[1]) {
-				input[1] = moment(input[1], "MMM").month();
+				this.untilMonth = moment(input[1], "MMM").month();
 			}
 			if (input[3]) {
-				input[4] = parseMinutes(input[3]);
-				input[3] = 0;
+				this.untilTime = parseMinutes(input[3]);
 			}
-			return input.join('_').replace(/_$/, '');
 		},
 
 		format : function () {

@@ -156,8 +156,6 @@
 			return defaultRule;
 		},
 
-		// Get the offset at the end of this year
-
 		lastYearRule : function (year) {
 			var i,
 				rule,
@@ -185,11 +183,20 @@
 	************************************/
 
 	function Zone (name, offset, ruleSet, letters, until) {
+		var i;
+
 		this.name = name;
 		this.offset = +offset;
 		this.ruleSet = ruleSet;
 		this.letters = letters;
-		this.until = moment.utc((typeof until === 'string' ? until.split('_') : [9999]));
+		this.untilArray = [9999];
+
+		if (typeof until === 'string') {
+			this.untilArray = until.split('_');
+			for (i = 0; i < this.untilArray.length; i++) {
+				this.untilArray[i] = +this.untilArray[i];
+			}
+		}
 	}
 
 	Zone.prototype = {
@@ -203,6 +210,22 @@
 
 		format : function (mom, rule) {
 			return this.letters.replace("%s", rule.letters);
+		},
+
+		makeUntil : function () {
+			var mom = moment.utc(this.untilArray),
+				offset = this.rule(mom, this.lastYearRule(mom.year() - 1)).offset;
+			this.madeUntil = mom.subtract('m', this.offset + offset);
+		},
+
+		until : function () {
+			// we need to check if the ruleset changed since the last time
+			// we called this function as the rules could be loaded any time
+			if (this.ruleSetLength !== this.ruleSet.rules.length) {
+				this.makeUntil();
+				this.ruleSetLength = this.ruleSet.rules.length;
+			}
+			return this.madeUntil;
 		}
 	};
 
@@ -211,7 +234,7 @@
 	************************************/
 
 	function sortZones (a, b) {
-		return a.until - b.until;
+		return a.until() - b.until();
 	}
 
 	function ZoneSet (name) {
@@ -223,7 +246,11 @@
 		zone : function (mom) {
 			var i;
 			for (i = 0; i < this.zones.length; i++) {
-				if (mom < this.zones[i].until) {
+				console.log('\n');
+				console.log('[]'.grey, mom.clone().utc().format());
+				console.log('[]'.yellow, this.zones[i].until().format());
+				if (mom < this.zones[i].until()) {
+					console.log('[]'.green, this.zones[i].until().format());
 					return this.zones[i];
 				}
 			}
@@ -234,7 +261,7 @@
 			var i,
 				eoy = moment([year]).endOf('year');
 			for (i = 0; i < this.zones.length; i++) {
-				if (eoy < this.zones[i].until) {
+				if (eoy < this.zones[i].until()) {
 					return this.zones[i].lastYearRule(year);
 				}
 			}

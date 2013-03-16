@@ -4,9 +4,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		test: {
 			files: [
-				// "tests/**/*.js"
-				// "tests/america/los_angeles.js"
-				"tests/antarctica/*.js"
+				"tests/**/*.js"
+				// "tests/america/phoenix.js"
+				// "tests/antarctica/*.js"
 			]
 		},
 		lint: {

@@ -180,311 +180,311 @@ module.exports = {
 	},
 	zones : {
 		"Africa/Algiers" : [
-			"12	-	LMT	1891_2_15_0_1",
-			"9	-	PMT	1911_2_11",
-			"0	Algeria	WE%sT	1940_1_25_0_120",
-			"60	Algeria	CE%sT	1946_9_7",
-			"0	-	WET	1956_0_29",
-			"60	-	CET	1963_3_14",
-			"0	Algeria	WE%sT	1977_9_21",
-			"60	Algeria	CE%sT	1979_9_26",
-			"0	Algeria	WE%sT	1981_4",
+			"12	-	LMT",
+			"9	-	PMT",
+			"0	Algeria	WE%sT",
+			"60	Algeria	CE%sT",
+			"0	-	WET",
+			"60	-	CET",
+			"0	Algeria	WE%sT",
+			"60	Algeria	CE%sT",
+			"0	Algeria	WE%sT",
 			"60	-	CET"
 		],
 		"Africa/Luanda" : [
-			"52	-	LMT	1892",
-			"52	-	AOT	1911_4_26",
+			"52	-	LMT",
+			"52	-	AOT",
 			"60	-	WAT"
 		],
 		"Africa/Porto-Novo" : [
-			"10	-	LMT	1912",
-			"0	-	GMT	1934_1_26",
+			"10	-	LMT",
+			"0	-	GMT",
 			"60	-	WAT"
 		],
 		"Africa/Gaborone" : [
-			"103	-	LMT	1885",
-			"90	-	SAST	1903_2",
-			"120	-	CAT	1943_8_19_0_120",
-			"120	1:00	CAST	1944_2_19_0_120",
+			"103	-	LMT",
+			"90	-	SAST",
+			"120	-	CAT",
+			"120	1:00	CAST",
 			"120	-	CAT"
 		],
 		"Africa/Ouagadougou" : [
-			"6	-	LMT	1912",
+			"6	-	LMT",
 			"0	-	GMT"
 		],
 		"Africa/Bujumbura" : [
-			"117	-	LMT	1890",
+			"117	-	LMT",
 			"120	-	CAT"
 		],
 		"Africa/Douala" : [
-			"38	-	LMT	1912",
+			"38	-	LMT",
 			"60	-	WAT"
 		],
 		"Atlantic/Cape_Verde" : [
-			"-94	-	LMT	1907",
-			"-120	-	CVT	1942_8",
-			"-120	1:00	CVST	1945_9_15",
-			"-120	-	CVT	1975_10_25_0_120",
+			"-94	-	LMT",
+			"-120	-	CVT",
+			"-120	1:00	CVST",
+			"-120	-	CVT",
 			"-60	-	CVT"
 		],
 		"Africa/Bangui" : [
-			"74	-	LMT	1912",
+			"74	-	LMT",
 			"60	-	WAT"
 		],
 		"Africa/Ndjamena" : [
-			"60	-	LMT	1912",
-			"60	-	WAT	1979_9_14",
-			"60	1:00	WAST	1980_2_8",
+			"60	-	LMT",
+			"60	-	WAT",
+			"60	1:00	WAST",
 			"60	-	WAT"
 		],
 		"Indian/Comoro" : [
-			"173	-	LMT	1911_6",
+			"173	-	LMT",
 			"180	-	EAT"
 		],
 		"Africa/Kinshasa" : [
-			"61	-	LMT	1897_10_9",
+			"61	-	LMT",
 			"60	-	WAT"
 		],
 		"Africa/Lubumbashi" : [
-			"109	-	LMT	1897_10_9",
+			"109	-	LMT",
 			"120	-	CAT"
 		],
 		"Africa/Brazzaville" : [
-			"61	-	LMT	1912",
+			"61	-	LMT",
 			"60	-	WAT"
 		],
 		"Africa/Abidjan" : [
-			"16	-	LMT	1912",
+			"16	-	LMT",
 			"0	-	GMT"
 		],
 		"Africa/Djibouti" : [
-			"172	-	LMT	1911_6",
+			"172	-	LMT",
 			"180	-	EAT"
 		],
 		"Africa/Cairo" : [
-			"125	-	LMT	1900_9",
+			"125	-	LMT",
 			"120	Egypt	EE%sT"
 		],
 		"Africa/Malabo" : [
-			"35	-	LMT	1912",
-			"0	-	GMT	1963_11_15",
+			"35	-	LMT",
+			"0	-	GMT",
 			"60	-	WAT"
 		],
 		"Africa/Asmara" : [
-			"155	-	LMT	1870",
-			"155	-	AMT	1890",
-			"155	-	ADMT	1936_4_5",
+			"155	-	LMT",
+			"155	-	AMT",
+			"155	-	ADMT",
 			"180	-	EAT"
 		],
 		"Africa/Addis_Ababa" : [
-			"154	-	LMT	1870",
-			"155	-	ADMT	1936_4_5",
+			"154	-	LMT",
+			"155	-	ADMT",
 			"180	-	EAT"
 		],
 		"Africa/Libreville" : [
-			"37	-	LMT	1912",
+			"37	-	LMT",
 			"60	-	WAT"
 		],
 		"Africa/Banjul" : [
-			"-66	-	LMT	1912",
-			"-66	-	BMT	1935",
-			"-60	-	WAT	1964",
+			"-66	-	LMT",
+			"-66	-	BMT",
+			"-60	-	WAT",
 			"0	-	GMT"
 		],
 		"Africa/Accra" : [
-			"0	-	LMT	1918",
+			"0	-	LMT",
 			"0	Ghana	%s"
 		],
 		"Africa/Conakry" : [
-			"54	-	LMT	1912",
-			"0	-	GMT	1934_1_26",
-			"-60	-	WAT	1960",
+			"54	-	LMT",
+			"0	-	GMT",
+			"-60	-	WAT",
 			"0	-	GMT"
 		],
 		"Africa/Bissau" : [
-			"-62	-	LMT	1911_4_26",
-			"-60	-	WAT	1975",
+			"-62	-	LMT",
+			"-60	-	WAT",
 			"0	-	GMT"
 		],
 		"Africa/Nairobi" : [
-			"147	-	LMT	1928_6",
-			"180	-	EAT	1930",
-			"150	-	BEAT	1940",
-			"165	-	BEAUT	1960",
+			"147	-	LMT",
+			"180	-	EAT",
+			"150	-	BEAT",
+			"165	-	BEAUT",
 			"180	-	EAT"
 		],
 		"Africa/Maseru" : [
-			"110	-	LMT	1903_2",
-			"120	-	SAST	1943_8_19_0_120",
-			"120	1:00	SAST	1944_2_19_0_120",
+			"110	-	LMT",
+			"120	-	SAST",
+			"120	1:00	SAST",
 			"120	-	SAST"
 		],
 		"Africa/Monrovia" : [
-			"43	-	LMT	1882",
-			"43	-	MMT	1919_2",
-			"44	-	LRT	1972_4",
+			"43	-	LMT",
+			"43	-	MMT",
+			"44	-	LRT",
 			"0	-	GMT"
 		],
 		"Africa/Tripoli" : [
-			"52	-	LMT	1920",
-			"60	Libya	CE%sT	1959",
-			"120	-	EET	1982",
-			"60	Libya	CE%sT	1990_4_4",
-			"120	-	EET	1996_8_30",
-			"60	Libya	CE%sT	1997_9_4",
-			"120	-	EET	2012_10_10_0_120",
+			"52	-	LMT",
+			"60	Libya	CE%sT",
+			"120	-	EET",
+			"60	Libya	CE%sT",
+			"120	-	EET",
+			"60	Libya	CE%sT",
+			"120	-	EET",
 			"60	Libya	CE%sT"
 		],
 		"Indian/Antananarivo" : [
-			"190	-	LMT	1911_6",
-			"180	-	EAT	1954_1_27_0_1380",
-			"180	1:00	EAST	1954_4_29_0_1380",
+			"190	-	LMT",
+			"180	-	EAT",
+			"180	1:00	EAST",
 			"180	-	EAT"
 		],
 		"Africa/Blantyre" : [
-			"140	-	LMT	1903_2",
+			"140	-	LMT",
 			"120	-	CAT"
 		],
 		"Africa/Bamako" : [
-			"32	-	LMT	1912",
-			"0	-	GMT	1934_1_26",
-			"-60	-	WAT	1960_5_20",
+			"32	-	LMT",
+			"0	-	GMT",
+			"-60	-	WAT",
 			"0	-	GMT"
 		],
 		"Africa/Nouakchott" : [
-			"-63	-	LMT	1912",
-			"0	-	GMT	1934_1_26",
-			"-60	-	WAT	1960_10_28",
+			"-63	-	LMT",
+			"0	-	GMT",
+			"-60	-	WAT",
 			"0	-	GMT"
 		],
 		"Indian/Mauritius" : [
-			"230	-	LMT	1907",
+			"230	-	LMT",
 			"240	Mauritius	MU%sT"
 		],
 		"Indian/Mayotte" : [
-			"180	-	LMT	1911_6",
+			"180	-	LMT",
 			"180	-	EAT"
 		],
 		"Africa/Casablanca" : [
-			"30	-	LMT	1913_9_26",
-			"0	Morocco	WE%sT	1984_2_16",
-			"60	-	CET	1986",
+			"30	-	LMT",
+			"0	Morocco	WE%sT",
+			"60	-	CET",
 			"0	Morocco	WE%sT"
 		],
 		"Africa/El_Aaiun" : [
-			"52	-	LMT	1934_0",
-			"-60	-	WAT	1976_3_14",
+			"52	-	LMT",
+			"-60	-	WAT",
 			"0	-	WET"
 		],
 		"Africa/Maputo" : [
-			"130	-	LMT	1903_2",
+			"130	-	LMT",
 			"120	-	CAT"
 		],
 		"Africa/Windhoek" : [
-			"68	-	LMT	1892_1_8",
-			"90	-	SWAT	1903_2",
-			"120	-	SAST	1942_8_20_0_120",
-			"120	1:00	SAST	1943_2_21_0_120",
-			"120	-	SAST	1990_2_21",
-			"120	-	CAT	1994_3_3",
+			"68	-	LMT",
+			"90	-	SWAT",
+			"120	-	SAST",
+			"120	1:00	SAST",
+			"120	-	SAST",
+			"120	-	CAT",
 			"60	Namibia	WA%sT"
 		],
 		"Africa/Niamey" : [
-			"8	-	LMT	1912",
-			"-60	-	WAT	1934_1_26",
-			"0	-	GMT	1960",
+			"8	-	LMT",
+			"-60	-	WAT",
+			"0	-	GMT",
 			"60	-	WAT"
 		],
 		"Africa/Lagos" : [
-			"13	-	LMT	1919_8",
+			"13	-	LMT",
 			"60	-	WAT"
 		],
 		"Indian/Reunion" : [
-			"221	-	LMT	1911_5",
+			"221	-	LMT",
 			"240	-	RET"
 		],
 		"Africa/Kigali" : [
-			"120	-	LMT	1935_5",
+			"120	-	LMT",
 			"120	-	CAT"
 		],
 		"Atlantic/St_Helena" : [
-			"22	-	LMT	1890",
-			"22	-	JMT	1951",
+			"22	-	LMT",
+			"22	-	JMT",
 			"0	-	GMT"
 		],
 		"Africa/Sao_Tome" : [
-			"26	-	LMT	1884",
-			"36	-	LMT	1912",
+			"26	-	LMT",
+			"36	-	LMT",
 			"0	-	GMT"
 		],
 		"Africa/Dakar" : [
-			"-69	-	LMT	1912",
-			"-60	-	WAT	1941_5",
+			"-69	-	LMT",
+			"-60	-	WAT",
 			"0	-	GMT"
 		],
 		"Indian/Mahe" : [
-			"221	-	LMT	1906_5",
+			"221	-	LMT",
 			"240	-	SCT"
 		],
 		"Africa/Freetown" : [
-			"53	-	LMT	1882",
-			"53	-	FMT	1913_5",
-			"-60	SL	%s	1957",
+			"53	-	LMT",
+			"53	-	FMT",
+			"-60	SL	%s",
 			"0	SL	%s"
 		],
 		"Africa/Mogadishu" : [
-			"181	-	LMT	1893_10",
-			"180	-	EAT	1931",
-			"150	-	BEAT	1957",
+			"181	-	LMT",
+			"180	-	EAT",
+			"150	-	BEAT",
 			"180	-	EAT"
 		],
 		"Africa/Johannesburg" : [
-			"112	-	LMT	1892_1_8",
-			"90	-	SAST	1903_2",
+			"112	-	LMT",
+			"90	-	SAST",
 			"120	SA	SAST"
 		],
 		"Africa/Khartoum" : [
-			"130	-	LMT	1931",
-			"120	Sudan	CA%sT	2000_0_15_0_720",
+			"130	-	LMT",
+			"120	Sudan	CA%sT",
 			"180	-	EAT"
 		],
 		"Africa/Juba" : [
-			"126	-	LMT	1931",
-			"120	Sudan	CA%sT	2000_0_15_0_720",
+			"126	-	LMT",
+			"120	Sudan	CA%sT",
 			"180	-	EAT"
 		],
 		"Africa/Mbabane" : [
-			"124	-	LMT	1903_2",
+			"124	-	LMT",
 			"120	-	SAST"
 		],
 		"Africa/Dar_es_Salaam" : [
-			"157	-	LMT	1931",
-			"180	-	EAT	1948",
-			"165	-	BEAUT	1961",
+			"157	-	LMT",
+			"180	-	EAT",
+			"165	-	BEAUT",
 			"180	-	EAT"
 		],
 		"Africa/Lome" : [
-			"4	-	LMT	1893",
+			"4	-	LMT",
 			"0	-	GMT"
 		],
 		"Africa/Tunis" : [
-			"40	-	LMT	1881_4_12",
-			"9	-	PMT	1911_2_11",
+			"40	-	LMT",
+			"9	-	PMT",
 			"60	Tunisia	CE%sT"
 		],
 		"Africa/Kampala" : [
-			"129	-	LMT	1928_6",
-			"180	-	EAT	1930",
-			"150	-	BEAT	1948",
-			"165	-	BEAUT	1957",
+			"129	-	LMT",
+			"180	-	EAT",
+			"150	-	BEAT",
+			"165	-	BEAUT",
 			"180	-	EAT"
 		],
 		"Africa/Lusaka" : [
-			"113	-	LMT	1903_2",
+			"113	-	LMT",
 			"120	-	CAT"
 		],
 		"Africa/Harare" : [
-			"124	-	LMT	1903_2",
+			"124	-	LMT",
 			"120	-	CAT"
 		]
 	}
