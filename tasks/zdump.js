@@ -10,13 +10,12 @@ module.exports = function (grunt) {
 		Grunt task
 	******************************/
 
-	grunt.registerTask('gen-tests', 'Generate unit tests for each timezone.', function () {
+	grunt.registerTask('zdump', 'Generate unit tests for each timezone based on zdump.', function () {
 		var i;
 		ALL_ZONES = [];
 		for (i = 0; i < zoneNames.length; i++) {
 			ALL_ZONES.push(zoneNames[i]);
 		}
-		ALL_ZONES = ["America/Los_Angeles"];
 		nextTest(this.async());
 	});
 
@@ -56,12 +55,15 @@ module.exports = function (grunt) {
 		});
 	}
 
+	/******************************
+		Files
+	******************************/
+
 	function File (name, data) {
 		this.years = {};
 		this.name = name;
 		this.addTests(data);
 	}
-
 
 	File.prototype = {
 		addTests : function (data) {
@@ -85,9 +87,7 @@ module.exports = function (grunt) {
 				years = this.years,
 				i;
 			for (i in years) {
-				//if (+i > 2012) {
-					o.push(years[i].format());
-				//}
+				o.push(years[i].format());
 			}
 			return (o.join(',\n\n'));
 		},
