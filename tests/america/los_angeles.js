@@ -42,14 +42,14 @@ exports["America/Los_Angeles"] = {
 
 	"1945" : function (t) {
 		t.equal(moment("1945-08-14T22:59:59+00:00").tz("America/Los_Angeles").format("HH:mm:ss"), "15:59:59", "1945-08-14T22:59:59+00:00 should be 15:59:59 PWT");
-		// t.equal(moment("1945-08-14T23:00:00+00:00").tz("America/Los_Angeles").format("HH:mm:ss"), "16:00:00", "1945-08-14T23:00:00+00:00 should be 16:00:00 PPT");
-		// t.equal(moment("1945-09-30T08:59:59+00:00").tz("America/Los_Angeles").format("HH:mm:ss"), "01:59:59", "1945-09-30T08:59:59+00:00 should be 01:59:59 PPT");
-		// t.equal(moment("1945-09-30T09:00:00+00:00").tz("America/Los_Angeles").format("HH:mm:ss"), "01:00:00", "1945-09-30T09:00:00+00:00 should be 01:00:00 PST");
+		t.equal(moment("1945-08-14T23:00:00+00:00").tz("America/Los_Angeles").format("HH:mm:ss"), "16:00:00", "1945-08-14T23:00:00+00:00 should be 16:00:00 PPT");
+		t.equal(moment("1945-09-30T08:59:59+00:00").tz("America/Los_Angeles").format("HH:mm:ss"), "01:59:59", "1945-09-30T08:59:59+00:00 should be 01:59:59 PPT");
+		t.equal(moment("1945-09-30T09:00:00+00:00").tz("America/Los_Angeles").format("HH:mm:ss"), "01:00:00", "1945-09-30T09:00:00+00:00 should be 01:00:00 PST");
 
 		t.equal(moment("1945-08-14T22:59:59+00:00").tz("America/Los_Angeles").zone(), 420, "1945-08-14T22:59:59+00:00 should be 420 minutes offset in PWT");
-		// t.equal(moment("1945-08-14T23:00:00+00:00").tz("America/Los_Angeles").zone(), 420, "1945-08-14T23:00:00+00:00 should be 420 minutes offset in PPT");
-		// t.equal(moment("1945-09-30T08:59:59+00:00").tz("America/Los_Angeles").zone(), 420, "1945-09-30T08:59:59+00:00 should be 420 minutes offset in PPT");
-		// t.equal(moment("1945-09-30T09:00:00+00:00").tz("America/Los_Angeles").zone(), 480, "1945-09-30T09:00:00+00:00 should be 480 minutes offset in PST");
+		t.equal(moment("1945-08-14T23:00:00+00:00").tz("America/Los_Angeles").zone(), 420, "1945-08-14T23:00:00+00:00 should be 420 minutes offset in PPT");
+		t.equal(moment("1945-09-30T08:59:59+00:00").tz("America/Los_Angeles").zone(), 420, "1945-09-30T08:59:59+00:00 should be 420 minutes offset in PPT");
+		t.equal(moment("1945-09-30T09:00:00+00:00").tz("America/Los_Angeles").zone(), 480, "1945-09-30T09:00:00+00:00 should be 480 minutes offset in PST");
 
 		t.done();
 	},

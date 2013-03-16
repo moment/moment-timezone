@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
 	rules : {
 		"EUAsia" : [
 			"1981	9999	2	0	8	60	1	60	S",
@@ -429,9 +429,9 @@ exports = {
 		],
 		"Asia/Yerevan" : [
 			"178	-	LMT	1924_4_2",
-			"180	-	YERT	1957_2_",
+			"180	-	YERT	1957_2",
 			"240	RussiaAsia	YER%sT	1991_2_31_0_120",
-			"180	1:00	YERST	1991_8_23_",
+			"180	1:00	YERST	1991_8_23",
 			"180	RussiaAsia	AM%sT	1995_8_24_0_120",
 			"240	-	AMT	1997",
 			"240	RussiaAsia	AM%sT	2012_2_25_0_120",
@@ -439,48 +439,48 @@ exports = {
 		],
 		"Asia/Baku" : [
 			"199	-	LMT	1924_4_2",
-			"180	-	BAKT	1957_2_",
+			"180	-	BAKT	1957_2",
 			"240	RussiaAsia	BAK%sT	1991_2_31_0_120",
-			"180	1:00	BAKST	1991_7_30_",
+			"180	1:00	BAKST	1991_7_30",
 			"180	RussiaAsia	AZ%sT	1992_8_lastSat_0_1380",
-			"240	-	AZT	1996_",
+			"240	-	AZT	1996",
 			"240	EUAsia	AZ%sT	1997",
 			"240	Azer	AZ%sT"
 		],
 		"Asia/Bahrain" : [
-			"202	-	LMT	1920_",
+			"202	-	LMT	1920",
 			"240	-	GST	1972_5",
 			"180	-	AST"
 		],
 		"Asia/Dhaka" : [
 			"361	-	LMT	1890",
-			"353	-	HMT	1941_9_",
-			"390	-	BURT	1942_4_15_",
+			"353	-	HMT	1941_9",
+			"390	-	BURT	1942_4_15",
 			"330	-	IST	1942_8",
 			"390	-	BURT	1951_8_30",
-			"360	-	DACT	1971_2_26_",
+			"360	-	DACT	1971_2_26",
 			"360	-	BDT	2009",
 			"360	Dhaka	BD%sT"
 		],
 		"Asia/Thimphu" : [
-			"358	-	LMT	1947_7_15_",
+			"358	-	LMT	1947_7_15",
 			"330	-	IST	1987_9",
 			"360	-	BTT"
 		],
 		"Indian/Chagos" : [
 			"289	-	LMT	1907",
-			"300	-	IOT	1996_",
+			"300	-	IOT	1996",
 			"360	-	IOT"
 		],
 		"Asia/Brunei" : [
-			"459	-	LMT	1926_2_",
+			"459	-	LMT	1926_2",
 			"450	-	BNT	1933",
 			"480	-	BNT"
 		],
 		"Asia/Rangoon" : [
-			"384	-	LMT	1880_",
-			"384	-	RMT	1920_",
-			"390	-	BURT	1942_4_",
+			"384	-	LMT	1880",
+			"384	-	RMT	1920",
+			"390	-	BURT	1942_4",
 			"540	-	JST	1945_4_3",
 			"390	-	MMT"
 		],
@@ -492,8 +492,8 @@ exports = {
 			"420	-	ICT"
 		],
 		"Asia/Harbin" : [
-			"506	-	LMT	1928_",
-			"510	-	CHAT	1932_2_",
+			"506	-	LMT	1928",
+			"510	-	CHAT	1932_2",
 			"480	-	CST	1940",
 			"540	-	CHAT	1966_4",
 			"510	-	CHAT	1980_4",
@@ -505,18 +505,18 @@ exports = {
 			"480	PRC	C%sT"
 		],
 		"Asia/Chongqing" : [
-			"426	-	LMT	1928_",
-			"420	-	LONT	1980_4_",
+			"426	-	LMT	1928",
+			"420	-	LONT	1980_4",
 			"480	PRC	C%sT"
 		],
 		"Asia/Urumqi" : [
-			"350	-	LMT	1928_",
-			"360	-	URUT	1980_4_",
+			"350	-	LMT	1928",
+			"360	-	URUT	1980_4",
 			"480	PRC	C%sT"
 		],
 		"Asia/Kashgar" : [
-			"303	-	LMT	1928_",
-			"330	-	KAST	1940_",
+			"303	-	LMT	1928",
+			"330	-	KAST	1940",
 			"300	-	KAST	1980_4",
 			"480	PRC	C%sT"
 		],
@@ -527,12 +527,12 @@ exports = {
 			"480	HK	HK%sT"
 		],
 		"Asia/Taipei" : [
-			"486	-	LMT	1896_",
+			"486	-	LMT	1896",
 			"480	Taiwan	C%sT"
 		],
 		"Asia/Macau" : [
 			"454	-	LMT	1912",
-			"480	Macau	MO%sT	1999_11_20_",
+			"480	Macau	MO%sT	1999_11_20",
 			"480	PRC	C%sT"
 		],
 		"Asia/Nicosia" : [
@@ -542,11 +542,11 @@ exports = {
 		],
 		"Asia/Tbilisi" : [
 			"179	-	LMT	1880",
-			"179	-	TBMT	1924_4_2_",
-			"180	-	TBIT	1957_2_",
+			"179	-	TBMT	1924_4_2",
+			"180	-	TBIT	1957_2",
 			"240	RussiaAsia	TBI%sT	1991_2_31_0_120",
-			"180	1:00	TBIST	1991_3_9_",
-			"180	RussiaAsia	GE%sT	1992_",
+			"180	1:00	TBIST	1991_3_9",
+			"180	RussiaAsia	GE%sT	1992",
 			"180	E-EurAsia	GE%sT	1994_8_lastSun",
 			"240	E-EurAsia	GE%sT	1996_9_lastSun",
 			"240	1:00	GEST	1997_2_lastSun",
@@ -563,9 +563,9 @@ exports = {
 			"540	-	TLT"
 		],
 		"Asia/Kolkata" : [
-			"353	-	LMT	1880_",
-			"353	-	HMT	1941_9_",
-			"390	-	BURT	1942_4_15_",
+			"353	-	LMT	1880",
+			"353	-	HMT	1941_9",
+			"390	-	BURT	1942_4_15",
 			"330	-	IST	1942_8",
 			"330	1:00	IST	1945_9_15",
 			"330	-	IST"
@@ -573,7 +573,7 @@ exports = {
 		"Asia/Jakarta" : [
 			"427	-	LMT	1867_7_10",
 			"427	-	JMT	1923_11_31_0_1427",
-			"440	-	JAVT	1932_10_",
+			"440	-	JAVT	1932_10",
 			"450	-	WIT	1942_2_23",
 			"540	-	JST	1945_8_23",
 			"450	-	WIT	1948_4",
@@ -583,7 +583,7 @@ exports = {
 		],
 		"Asia/Pontianak" : [
 			"437	-	LMT	1908_4",
-			"437	-	PMT	1932_10_",
+			"437	-	PMT	1932_10",
 			"450	-	WIT	1942_0_29",
 			"540	-	JST	1945_8_23",
 			"450	-	WIT	1948_4",
@@ -594,7 +594,7 @@ exports = {
 		],
 		"Asia/Makassar" : [
 			"477	-	LMT	1920",
-			"477	-	MMT	1932_10_",
+			"477	-	MMT	1932_10",
 			"480	-	CIT	1942_1_9",
 			"540	-	JST	1945_8_23",
 			"480	-	CIT"
@@ -607,20 +607,20 @@ exports = {
 		],
 		"Asia/Tehran" : [
 			"205	-	LMT	1916",
-			"205	-	TMT	1946_",
+			"205	-	TMT	1946",
 			"210	-	IRST	1977_10",
 			"240	Iran	IR%sT	1979",
 			"210	Iran	IR%sT"
 		],
 		"Asia/Baghdad" : [
 			"177	-	LMT	1890",
-			"177	-	BMT	1918_",
+			"177	-	BMT	1918",
 			"180	-	AST	1982_4",
 			"180	Iraq	A%sT"
 		],
 		"Asia/Jerusalem" : [
 			"140	-	LMT	1880",
-			"140	-	JMT	1918_",
+			"140	-	JMT	1918",
 			"120	Zion	I%sT"
 		],
 		"Asia/Tokyo" : [
@@ -634,8 +634,8 @@ exports = {
 			"120	Jordan	EE%sT"
 		],
 		"Asia/Almaty" : [
-			"307	-	LMT	1924_4_2_",
-			"300	-	ALMT	1930_5_21_",
+			"307	-	LMT	1924_4_2",
+			"300	-	ALMT	1930_5_21",
 			"360	RussiaAsia	ALM%sT	1991",
 			"360	-	ALMT	1992",
 			"360	RussiaAsia	ALM%sT	2005_2_15",
@@ -643,57 +643,57 @@ exports = {
 		],
 		"Asia/Qyzylorda" : [
 			"261	-	LMT	1924_4_2",
-			"240	-	KIZT	1930_5_21_",
+			"240	-	KIZT	1930_5_21",
 			"300	-	KIZT	1981_3_1",
 			"300	1:00	KIZST	1981_9_1",
 			"360	-	KIZT	1982_3_1",
 			"300	RussiaAsia	KIZ%sT	1991",
-			"300	-	KIZT	1991_11_16_",
+			"300	-	KIZT	1991_11_16",
 			"300	-	QYZT	1992_0_19_0_120",
 			"360	RussiaAsia	QYZ%sT	2005_2_15",
 			"360	-	QYZT"
 		],
 		"Asia/Aqtobe" : [
 			"228	-	LMT	1924_4_2",
-			"240	-	AKTT	1930_5_21_",
+			"240	-	AKTT	1930_5_21",
 			"300	-	AKTT	1981_3_1",
 			"300	1:00	AKTST	1981_9_1",
 			"360	-	AKTT	1982_3_1",
 			"300	RussiaAsia	AKT%sT	1991",
-			"300	-	AKTT	1991_11_16_",
-			"300	RussiaAsia	AQT%sT	2005_2_15_",
+			"300	-	AKTT	1991_11_16",
+			"300	RussiaAsia	AQT%sT	2005_2_15",
 			"300	-	AQTT"
 		],
 		"Asia/Aqtau" : [
 			"201	-	LMT	1924_4_2",
-			"240	-	FORT	1930_5_21_",
+			"240	-	FORT	1930_5_21",
 			"300	-	FORT	1963",
-			"300	-	SHET	1981_9_1_",
+			"300	-	SHET	1981_9_1",
 			"360	-	SHET	1982_3_1",
 			"300	RussiaAsia	SHE%sT	1991",
-			"300	-	SHET	1991_11_16_",
+			"300	-	SHET	1991_11_16",
 			"300	RussiaAsia	AQT%sT	1995_2_lastSun_0_120",
 			"240	RussiaAsia	AQT%sT	2005_2_15",
 			"300	-	AQTT"
 		],
 		"Asia/Oral" : [
-			"205	-	LMT	1924_4_2_",
-			"240	-	URAT	1930_5_21_",
+			"205	-	LMT	1924_4_2",
+			"240	-	URAT	1930_5_21",
 			"300	-	URAT	1981_3_1",
 			"300	1:00	URAST	1981_9_1",
 			"360	-	URAT	1982_3_1",
 			"300	RussiaAsia	URA%sT	1989_2_26_0_120",
 			"240	RussiaAsia	URA%sT	1991",
-			"240	-	URAT	1991_11_16_",
-			"240	RussiaAsia	ORA%sT	2005_2_15_",
+			"240	-	URAT	1991_11_16",
+			"240	RussiaAsia	ORA%sT	2005_2_15",
 			"300	-	ORAT"
 		],
 		"Asia/Bishkek" : [
 			"298	-	LMT	1924_4_2",
-			"300	-	FRUT	1930_5_21_",
+			"300	-	FRUT	1930_5_21",
 			"360	RussiaAsia	FRU%sT	1991_2_31_0_120",
 			"300	1:00	FRUST	1991_7_31_0_120",
-			"300	Kyrgyz	KG%sT	2005_7_12_",
+			"300	Kyrgyz	KG%sT	2005_7_12",
 			"360	-	KGT"
 		],
 		"Asia/Seoul" : [
@@ -720,7 +720,7 @@ exports = {
 			"180	-	AST"
 		],
 		"Asia/Vientiane" : [
-			"410	-	LMT	1906_5_9_",
+			"410	-	LMT	1906_5_9",
 			"426	-	SMT	1911_2_11_0_1",
 			"420	-	ICT	1912_4",
 			"480	-	ICT	1931_4",
@@ -732,8 +732,8 @@ exports = {
 		],
 		"Asia/Kuala_Lumpur" : [
 			"406	-	LMT	1901_0_1",
-			"415	-	SMT	1905_5_1_",
-			"420	-	MALT	1933_0_1_",
+			"415	-	SMT	1905_5_1",
+			"420	-	MALT	1933_0_1",
 			"420	0:20	MALST	1936_0_1",
 			"440	-	MALT	1941_8_1",
 			"450	-	MALT	1942_1_16",
@@ -743,32 +743,32 @@ exports = {
 		],
 		"Asia/Kuching" : [
 			"441	-	LMT	1926_2",
-			"450	-	BORT	1933_",
+			"450	-	BORT	1933",
 			"480	NBorneo	BOR%sT	1942_1_16",
 			"540	-	JST	1945_8_12",
 			"480	-	BORT	1982_0_1",
 			"480	-	MYT"
 		],
 		"Indian/Maldives" : [
-			"294	-	LMT	1880_",
-			"294	-	MMT	1960_",
+			"294	-	LMT	1880",
+			"294	-	MMT	1960",
 			"300	-	MVT"
 		],
 		"Asia/Hovd" : [
 			"366	-	LMT	1905_7",
-			"360	-	HOVT	1978_",
+			"360	-	HOVT	1978",
 			"420	Mongol	HOV%sT"
 		],
 		"Asia/Ulaanbaatar" : [
 			"427	-	LMT	1905_7",
-			"420	-	ULAT	1978_",
+			"420	-	ULAT	1978",
 			"480	Mongol	ULA%sT"
 		],
 		"Asia/Choibalsan" : [
 			"458	-	LMT	1905_7",
 			"420	-	ULAT	1978",
 			"480	-	ULAT	1983_3",
-			"540	Mongol	CHO%sT	2008_2_31_",
+			"540	Mongol	CHO%sT	2008_2_31",
 			"480	Mongol	CHO%sT"
 		],
 		"Asia/Kathmandu" : [
@@ -785,7 +785,7 @@ exports = {
 			"330	-	IST	1942_8",
 			"330	1:00	IST	1945_9_15",
 			"330	-	IST	1951_8_30",
-			"300	-	KART	1971_2_26_",
+			"300	-	KART	1971_2_26",
 			"300	Pakistan	PK%sT"
 		],
 		"Asia/Gaza" : [
@@ -824,7 +824,7 @@ exports = {
 			"480	Phil	PH%sT"
 		],
 		"Asia/Qatar" : [
-			"206	-	LMT	1920_",
+			"206	-	LMT	1920",
 			"240	-	GST	1972_5",
 			"180	-	AST"
 		],
@@ -834,19 +834,19 @@ exports = {
 		],
 		"Asia/Singapore" : [
 			"415	-	LMT	1901_0_1",
-			"415	-	SMT	1905_5_1_",
-			"420	-	MALT	1933_0_1_",
+			"415	-	SMT	1905_5_1",
+			"420	-	MALT	1933_0_1",
 			"420	0:20	MALST	1936_0_1",
 			"440	-	MALT	1941_8_1",
 			"450	-	MALT	1942_1_16",
 			"540	-	JST	1945_8_12",
-			"450	-	MALT	1965_7_9_",
-			"450	-	SGT	1982_0_1_",
+			"450	-	MALT	1965_7_9",
+			"450	-	SGT	1982_0_1",
 			"480	-	SGT"
 		],
 		"Asia/Colombo" : [
 			"319	-	LMT	1880",
-			"319	-	MMT	1906_",
+			"319	-	MMT	1906",
 			"330	-	IST	1942_0_5",
 			"330	0:30	IHST	1942_8",
 			"330	1:00	IST	1945_9_16_0_120",
@@ -856,26 +856,26 @@ exports = {
 			"330	-	IST"
 		],
 		"Asia/Damascus" : [
-			"145	-	LMT	1920_",
+			"145	-	LMT	1920",
 			"120	Syria	EE%sT"
 		],
 		"Asia/Dushanbe" : [
 			"275	-	LMT	1924_4_2",
-			"300	-	DUST	1930_5_21_",
+			"300	-	DUST	1930_5_21",
 			"360	RussiaAsia	DUS%sT	1991_2_31_0_120",
 			"300	1:00	DUSST	1991_8_9_0_120",
 			"300	-	TJT"
 		],
 		"Asia/Bangkok" : [
 			"402	-	LMT	1880",
-			"402	-	BMT	1920_3_",
+			"402	-	BMT	1920_3",
 			"420	-	ICT"
 		],
 		"Asia/Ashgabat" : [
-			"233	-	LMT	1924_4_2_",
-			"240	-	ASHT	1930_5_21_",
+			"233	-	LMT	1924_4_2",
+			"240	-	ASHT	1930_5_21",
 			"300	RussiaAsia	ASH%sT	1991_2_31_0_120",
-			"240	RussiaAsia	ASH%sT	1991_9_27_",
+			"240	RussiaAsia	ASH%sT	1991_9_27",
 			"240	RussiaAsia	TM%sT	1992_0_19_0_120",
 			"300	-	TMT"
 		],
@@ -885,19 +885,19 @@ exports = {
 		],
 		"Asia/Samarkand" : [
 			"267	-	LMT	1924_4_2",
-			"240	-	SAMT	1930_5_21_",
+			"240	-	SAMT	1930_5_21",
 			"300	-	SAMT	1981_3_1",
 			"300	1:00	SAMST	1981_9_1",
-			"360	-	TAST	1982_3_1_",
-			"300	RussiaAsia	SAM%sT	1991_8_1_",
+			"360	-	TAST	1982_3_1",
+			"300	RussiaAsia	SAM%sT	1991_8_1",
 			"300	RussiaAsia	UZ%sT	1992",
 			"300	-	UZT"
 		],
 		"Asia/Tashkent" : [
 			"277	-	LMT	1924_4_2",
-			"300	-	TAST	1930_5_21_",
+			"300	-	TAST	1930_5_21",
 			"360	RussiaAsia	TAS%sT	1991_2_31_0_120",
-			"300	RussiaAsia	TAS%sT	1991_8_1_",
+			"300	RussiaAsia	TAS%sT	1991_8_1",
 			"300	RussiaAsia	UZ%sT	1992",
 			"300	-	UZT"
 		],

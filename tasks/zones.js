@@ -179,7 +179,7 @@ module.exports = function (grunt) {
 		},
 
 		format : function () {
-			var o = 'exports = {\n';
+			var o = 'module.exports = {\n';
 			o += this.formatRules();
 			o += ',\n';
 			o += this.formatZones();
@@ -217,7 +217,7 @@ module.exports = function (grunt) {
 				input[4] = parseMinutes(input[3]);
 				input[3] = 0;
 			}
-			return input.join('_');
+			return input.join('_').replace(/_$/, '');
 		},
 
 		format : function () {

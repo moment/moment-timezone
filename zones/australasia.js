@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
 	rules : {
 		"Aus" : [
 			"1917	1917	0	1	7	1	0	60",
@@ -261,8 +261,8 @@ exports = {
 			"420	-	CXT"
 		],
 		"Pacific/Rarotonga" : [
-			"-639	-	LMT	1901_",
-			"-630	-	CKT	1978_10_12_",
+			"-639	-	LMT	1901",
+			"-630	-	CKT	1978_10_12",
 			"-600	Cook	CK%sT"
 		],
 		"Indian/Cocos" : [
@@ -270,11 +270,11 @@ exports = {
 			"390	-	CCT"
 		],
 		"Pacific/Fiji" : [
-			"715	-	LMT	1915_9_26_",
+			"715	-	LMT	1915_9_26",
 			"720	Fiji	FJ%sT"
 		],
 		"Pacific/Gambier" : [
-			"-539	-	LMT	1912_9_",
+			"-539	-	LMT	1912_9",
 			"-540	-	GAMT"
 		],
 		"Pacific/Marquesas" : [
@@ -282,47 +282,47 @@ exports = {
 			"-570	-	MART"
 		],
 		"Pacific/Tahiti" : [
-			"-598	-	LMT	1912_9_",
+			"-598	-	LMT	1912_9",
 			"-600	-	TAHT"
 		],
 		"Pacific/Guam" : [
 			"-861	-	LMT	1844_11_31",
-			"579	-	LMT	1901_",
-			"600	-	GST	2000_11_23_",
+			"579	-	LMT	1901",
+			"600	-	GST	2000_11_23",
 			"600	-	ChST"
 		],
 		"Pacific/Tarawa" : [
-			"692	-	LMT	1901_",
+			"692	-	LMT	1901",
 			"720	-	GILT"
 		],
 		"Pacific/Enderbury" : [
 			"-684	-	LMT	1901",
-			"-720	-	PHOT	1979_9_",
+			"-720	-	PHOT	1979_9",
 			"-660	-	PHOT	1995",
 			"780	-	PHOT"
 		],
 		"Pacific/Kiritimati" : [
 			"-629	-	LMT	1901",
-			"-640	-	LINT	1979_9_",
+			"-640	-	LINT	1979_9",
 			"-600	-	LINT	1995",
 			"840	-	LINT"
 		],
 		"Pacific/Saipan" : [
 			"-857	-	LMT	1844_11_31",
 			"583	-	LMT	1901",
-			"540	-	MPT	1969_9_",
+			"540	-	MPT	1969_9",
 			"600	-	MPT	2000_11_23",
 			"600	-	ChST"
 		],
 		"Pacific/Majuro" : [
 			"684	-	LMT	1901",
-			"660	-	MHT	1969_9_",
+			"660	-	MHT	1969_9",
 			"720	-	MHT"
 		],
 		"Pacific/Kwajalein" : [
 			"669	-	LMT	1901",
 			"660	-	MHT	1969_9",
-			"-720	-	KWAT	1993_7_20_",
+			"-720	-	KWAT	1993_7_20",
 			"720	-	MHT"
 		],
 		"Pacific/Chuuk" : [
@@ -330,18 +330,18 @@ exports = {
 			"600	-	CHUT"
 		],
 		"Pacific/Pohnpei" : [
-			"632	-	LMT	1901_",
+			"632	-	LMT	1901",
 			"660	-	PONT"
 		],
 		"Pacific/Kosrae" : [
 			"651	-	LMT	1901",
-			"660	-	KOST	1969_9_",
+			"660	-	KOST	1969_9",
 			"720	-	KOST	1999",
 			"660	-	KOST"
 		],
 		"Pacific/Nauru" : [
-			"667	-	LMT	1921_0_15_",
-			"690	-	NRT	1942_2_15_",
+			"667	-	LMT	1921_0_15",
+			"690	-	NRT	1942_2_15",
 			"540	-	JST	1944_7_15",
 			"690	-	NRT	1979_4",
 			"720	-	NRT"
@@ -360,42 +360,42 @@ exports = {
 			"765	Chatham	CHA%sT"
 		],
 		"Pacific/Niue" : [
-			"-679	-	LMT	1901_",
-			"-680	-	NUT	1951_",
+			"-679	-	LMT	1901",
+			"-680	-	NUT	1951",
 			"-690	-	NUT	1978_9_1",
 			"-660	-	NUT"
 		],
 		"Pacific/Norfolk" : [
-			"671	-	LMT	1901_",
-			"672	-	NMT	1951_",
+			"671	-	LMT	1901",
+			"672	-	NMT	1951",
 			"690	-	NFT"
 		],
 		"Pacific/Palau" : [
-			"537	-	LMT	1901_",
+			"537	-	LMT	1901",
 			"540	-	PWT"
 		],
 		"Pacific/Port_Moresby" : [
 			"588	-	LMT	1880",
-			"588	-	PMMT	1895_",
+			"588	-	PMMT	1895",
 			"600	-	PGT"
 		],
 		"Pacific/Pitcairn" : [
-			"-520	-	LMT	1901_",
+			"-520	-	LMT	1901",
 			"-510	-	PNT	1998_3_27_0_0",
 			"-480	-	PST"
 		],
 		"Pacific/Pago_Pago" : [
 			"757	-	LMT	1879_6_5",
 			"-682	-	LMT	1911",
-			"-690	-	SAMT	1950_",
-			"-660	-	NST	1967_3_",
-			"-660	-	BST	1983_10_30_",
+			"-690	-	SAMT	1950",
+			"-660	-	NST	1967_3",
+			"-660	-	BST	1983_10_30",
 			"-660	-	SST"
 		],
 		"Pacific/Apia" : [
 			"753	-	LMT	1879_6_5",
 			"-686	-	LMT	1911",
-			"-690	-	SAMT	1950_",
+			"-690	-	SAMT	1950",
 			"-660	-	WST	2010_8_26",
 			"-660	1:00	WSDT	2011_3_2_0_240",
 			"-660	-	WST	2011_8_24_0_180",
@@ -404,17 +404,17 @@ exports = {
 			"780	WS	WS%sT"
 		],
 		"Pacific/Guadalcanal" : [
-			"639	-	LMT	1912_9_",
+			"639	-	LMT	1912_9",
 			"660	-	SBT"
 		],
 		"Pacific/Fakaofo" : [
 			"-684	-	LMT	1901",
-			"-660	-	TKT	2011_11_30_",
+			"-660	-	TKT	2011_11_30",
 			"780	-	TKT"
 		],
 		"Pacific/Tongatapu" : [
 			"739	-	LMT	1901",
-			"740	-	TOT	1941_",
+			"740	-	TOT	1941",
 			"780	-	TOT	1999",
 			"780	Tonga	TO%sT"
 		],
@@ -429,8 +429,8 @@ exports = {
 			"-709	-	LMT	1901",
 			"-660	-	NST	1956_5_3",
 			"-660	1:00	NDT	1956_8_2",
-			"-660	-	NST	1967_3_",
-			"-660	-	BST	1983_10_30_",
+			"-660	-	NST	1967_3",
+			"-660	-	BST	1983_10_30",
 			"-660	-	SST"
 		],
 		"Pacific/Wake" : [
@@ -438,7 +438,7 @@ exports = {
 			"720	-	WAKT"
 		],
 		"Pacific/Efate" : [
-			"673	-	LMT	1912_0_13_",
+			"673	-	LMT	1912_0_13",
 			"660	Vanuatu	VU%sT"
 		],
 		"Pacific/Wallis" : [

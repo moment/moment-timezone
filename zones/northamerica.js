@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
 	rules : {
 		"US" : [
 			"1918	1919	2	0	8	120	0	60	D",
@@ -606,7 +606,7 @@ exports = {
 			"-599	-	LMT	1900_7_20_0_720",
 			"-600	-	CAT	1942",
 			"-600	US	CAT/CAWT	1945_7_14_0_1380",
-			"-600	US	CAT/CAPT	1946_",
+			"-600	US	CAT/CAPT	1946",
 			"-600	-	CAT	1967_3",
 			"-600	-	AHST	1969",
 			"-600	US	AH%sT	1983_9_30_0_120",
@@ -786,7 +786,7 @@ exports = {
 			"-210	Canada	N%sT"
 		],
 		"America/Goose_Bay" : [
-			"-241	-	LMT	1884_",
+			"-241	-	LMT	1884",
 			"-210	-	NST	1918",
 			"-210	Canada	N%sT	1919",
 			"-210	-	NST	1935_2_30",
@@ -915,20 +915,20 @@ exports = {
 			"-420	-	MST"
 		],
 		"America/Pangnirtung" : [
-			"0	-	zzz	1921_",
+			"0	-	zzz	1921",
 			"-240	NT_YK	A%sT	1995_3_Sun>=1_0_120",
 			"-300	Canada	E%sT	1999_9_31_0_120",
 			"-360	Canada	C%sT	2000_9_29_0_120",
 			"-300	Canada	E%sT"
 		],
 		"America/Iqaluit" : [
-			"0	-	zzz	1942_7_",
+			"0	-	zzz	1942_7",
 			"-300	NT_YK	E%sT	1999_9_31_0_120",
 			"-360	Canada	C%sT	2000_9_29_0_120",
 			"-300	Canada	E%sT"
 		],
 		"America/Resolute" : [
-			"0	-	zzz	1947_7_31_",
+			"0	-	zzz	1947_7_31",
 			"-360	NT_YK	C%sT	2000_9_29_0_120",
 			"-300	-	EST	2001_3_1_0_180",
 			"-360	Canada	C%sT	2006_9_29_0_120",
@@ -936,13 +936,13 @@ exports = {
 			"-360	Canada	C%sT"
 		],
 		"America/Rankin_Inlet" : [
-			"0	-	zzz	1957_",
+			"0	-	zzz	1957",
 			"-360	NT_YK	C%sT	2000_9_29_0_120",
 			"-300	-	EST	2001_3_1_0_180",
 			"-360	Canada	C%sT"
 		],
 		"America/Cambridge_Bay" : [
-			"0	-	zzz	1920_",
+			"0	-	zzz	1920",
 			"-420	NT_YK	M%sT	1999_9_31_0_120",
 			"-360	Canada	C%sT	2000_9_29_0_120",
 			"-300	-	EST	2000_10_5_0_0",
@@ -950,12 +950,12 @@ exports = {
 			"-420	Canada	M%sT"
 		],
 		"America/Yellowknife" : [
-			"0	-	zzz	1935_",
+			"0	-	zzz	1935",
 			"-420	NT_YK	M%sT	1980",
 			"-420	Canada	M%sT"
 		],
 		"America/Inuvik" : [
-			"0	-	zzz	1953_",
+			"0	-	zzz	1953",
 			"-480	NT_YK	P%sT	1979_3_lastSun_0_120",
 			"-420	NT_YK	M%sT	1980",
 			"-420	Canada	M%sT"
@@ -1080,7 +1080,7 @@ exports = {
 			"-480	1:00	PDT	1931_8_30",
 			"-480	-	PST	1942_3_24",
 			"-480	1:00	PWT	1945_7_14_0_1380",
-			"-480	1:00	PPT	1945_10_12_",
+			"-480	1:00	PPT	1945_10_12",
 			"-480	-	PST	1948_3_5",
 			"-480	1:00	PDT	1949_0_14",
 			"-480	-	PST	1954",
@@ -1101,7 +1101,7 @@ exports = {
 			"-480	1:00	PDT	1931_8_30",
 			"-480	-	PST	1942_3_24",
 			"-480	1:00	PWT	1945_7_14_0_1380",
-			"-480	1:00	PPT	1945_10_12_",
+			"-480	1:00	PPT	1945_10_12",
 			"-480	-	PST	1948_3_5",
 			"-480	1:00	PDT	1949_0_14",
 			"-480	-	PST	1954",
@@ -1127,8 +1127,8 @@ exports = {
 			"-300	US	E%sT"
 		],
 		"America/Barbados" : [
-			"-238	-	LMT	1924_",
-			"-238	-	BMT	1932_",
+			"-238	-	LMT	1924",
+			"-238	-	BMT	1932",
 			"-240	Barb	A%sT"
 		],
 		"America/Belize" : [
@@ -1142,13 +1142,13 @@ exports = {
 			"-240	US	A%sT"
 		],
 		"America/Cayman" : [
-			"-325	-	LMT	1890_",
-			"-307	-	KMT	1912_1_",
+			"-325	-	LMT	1890",
+			"-307	-	KMT	1912_1",
 			"-300	-	EST"
 		],
 		"America/Costa_Rica" : [
-			"-336	-	LMT	1890_",
-			"-336	-	SJMT	1921_0_15_",
+			"-336	-	LMT	1890",
+			"-336	-	SJMT	1921_0_15",
 			"-360	CR	C%sT"
 		],
 		"America/Havana" : [
@@ -1169,15 +1169,15 @@ exports = {
 			"-240	-	AST"
 		],
 		"America/El_Salvador" : [
-			"-356	-	LMT	1921_",
+			"-356	-	LMT	1921",
 			"-360	Salv	C%sT"
 		],
 		"America/Grenada" : [
-			"-247	-	LMT	1911_6_",
+			"-247	-	LMT	1911_6",
 			"-240	-	AST"
 		],
 		"America/Guadeloupe" : [
-			"-246	-	LMT	1911_5_8_",
+			"-246	-	LMT	1911_5_8",
 			"-240	-	AST"
 		],
 		"America/Guatemala" : [
@@ -1194,15 +1194,15 @@ exports = {
 			"-360	Hond	C%sT"
 		],
 		"America/Jamaica" : [
-			"-307	-	LMT	1890_",
-			"-307	-	KMT	1912_1_",
+			"-307	-	LMT	1890",
+			"-307	-	KMT	1912_1",
 			"-300	-	EST	1974_3_28_0_120",
 			"-300	US	E%sT	1984",
 			"-300	-	EST"
 		],
 		"America/Martinique" : [
-			"-244	-	LMT	1890_",
-			"-244	-	FFMT	1911_4_",
+			"-244	-	LMT	1890",
+			"-244	-	FFMT	1911_4",
 			"-240	-	AST	1980_3_6",
 			"-240	1:00	ADT	1980_8_28",
 			"-240	-	AST"
@@ -1213,7 +1213,7 @@ exports = {
 		],
 		"America/Managua" : [
 			"-345	-	LMT	1890",
-			"-345	-	MMT	1934_5_23_",
+			"-345	-	MMT	1934_5_23",
 			"-360	-	CST	1973_4",
 			"-300	-	EST	1975_1_16",
 			"-360	Nic	C%sT	1992_0_1_0_240",
@@ -1224,7 +1224,7 @@ exports = {
 		],
 		"America/Panama" : [
 			"-318	-	LMT	1890",
-			"-319	-	CMT	1908_3_22_",
+			"-319	-	CMT	1908_3_22",
 			"-300	-	EST"
 		],
 		"America/Puerto_Rico" : [
@@ -1234,36 +1234,36 @@ exports = {
 			"-240	-	AST"
 		],
 		"America/St_Kitts" : [
-			"-250	-	LMT	1912_2_2_",
+			"-250	-	LMT	1912_2_2",
 			"-240	-	AST"
 		],
 		"America/St_Lucia" : [
-			"-244	-	LMT	1890_",
-			"-244	-	CMT	1912_",
+			"-244	-	LMT	1890",
+			"-244	-	CMT	1912",
 			"-240	-	AST"
 		],
 		"America/Miquelon" : [
-			"-224	-	LMT	1911_4_15_",
+			"-224	-	LMT	1911_4_15",
 			"-240	-	AST	1980_4",
-			"-180	-	PMST	1987_",
+			"-180	-	PMST	1987",
 			"-180	Canada	PM%sT"
 		],
 		"America/St_Vincent" : [
-			"-244	-	LMT	1890_",
-			"-244	-	KMT	1912_",
+			"-244	-	LMT	1890",
+			"-244	-	KMT	1912",
 			"-240	-	AST"
 		],
 		"America/Grand_Turk" : [
 			"-284	-	LMT	1890",
-			"-307	-	KMT	1912_1_",
+			"-307	-	KMT	1912_1",
 			"-300	TC	E%sT"
 		],
 		"America/Tortola" : [
-			"-258	-	LMT	1911_6_",
+			"-258	-	LMT	1911_6",
 			"-240	-	AST"
 		],
 		"America/St_Thomas" : [
-			"-259	-	LMT	1911_6_",
+			"-259	-	LMT	1911_6",
 			"-240	-	AST"
 		]
 	}

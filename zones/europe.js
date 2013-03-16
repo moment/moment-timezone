@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
 	rules : {
 		"GB-Eire" : [
 			"1916	1916	4	21	7	120	2	60	BST",
@@ -678,7 +678,7 @@ exports = {
 			"25	-	LMT	1880_7_2",
 			"25	-	DMT	1916_4_21_0_120",
 			"25	1:00	IST	1916_9_1_0_120",
-			"0	GB-Eire	%s	1921_11_6_",
+			"0	GB-Eire	%s	1921_11_6",
 			"0	GB-Eire	GMT/IST	1940_1_25_0_120",
 			"0	1:00	IST	1946_9_6_0_120",
 			"0	-	GMT	1947_2_16_0_120",
@@ -725,7 +725,7 @@ exports = {
 		],
 		"Europe/Minsk" : [
 			"110	-	LMT	1880",
-			"110	-	MMT	1924_4_2_",
+			"110	-	MMT	1924_4_2",
 			"120	-	EET	1930_5_21",
 			"180	-	MSK	1941_5_28",
 			"60	C-Eur	CE%sT	1944_6_3",
@@ -750,7 +750,7 @@ exports = {
 		],
 		"Europe/Sofia" : [
 			"93	-	LMT	1880",
-			"116	-	IMT	1894_10_30_",
+			"116	-	IMT	1894_10_30",
 			"120	-	EET	1942_10_2_0_180",
 			"60	C-Eur	CE%sT	1945",
 			"60	-	CET	1945_3_2_0_180",
@@ -762,21 +762,21 @@ exports = {
 		],
 		"Europe/Prague" : [
 			"57	-	LMT	1850",
-			"57	-	PMT	1891_9_",
+			"57	-	PMT	1891_9",
 			"60	C-Eur	CE%sT	1944_8_17_0_120",
 			"60	Czech	CE%sT	1979",
 			"60	EU	CE%sT"
 		],
 		"Europe/Copenhagen" : [
 			"50	-	LMT	1890",
-			"50	-	CMT	1894_0_1_",
+			"50	-	CMT	1894_0_1",
 			"60	Denmark	CE%sT	1942_10_2_0_120",
 			"60	C-Eur	CE%sT	1945_3_2_0_120",
 			"60	Denmark	CE%sT	1980",
 			"60	EU	CE%sT"
 		],
 		"Atlantic/Faroe" : [
-			"27	-	LMT	1908_0_11_",
+			"27	-	LMT	1908_0_11",
 			"0	-	WET	1981",
 			"0	EU	WE%sT"
 		],
@@ -787,23 +787,23 @@ exports = {
 			"0	-	GMT"
 		],
 		"America/Scoresbysund" : [
-			"-87	-	LMT	1916_6_28_",
+			"-87	-	LMT	1916_6_28",
 			"-120	-	CGT	1980_3_6_0_120",
 			"-120	C-Eur	CG%sT	1981_2_29",
 			"-60	EU	EG%sT"
 		],
 		"America/Godthab" : [
-			"-206	-	LMT	1916_6_28_",
+			"-206	-	LMT	1916_6_28",
 			"-180	-	WGT	1980_3_6_0_120",
 			"-180	EU	WG%sT"
 		],
 		"America/Thule" : [
-			"-275	-	LMT	1916_6_28_",
+			"-275	-	LMT	1916_6_28",
 			"-240	Thule	A%sT"
 		],
 		"Europe/Tallinn" : [
 			"99	-	LMT	1880",
-			"99	-	TMT	1918_1_",
+			"99	-	TMT	1918_1",
 			"60	C-Eur	CE%sT	1919_6",
 			"99	-	TMT	1921_4",
 			"120	-	EET	1940_7_6",
@@ -818,7 +818,7 @@ exports = {
 		],
 		"Europe/Helsinki" : [
 			"99	-	LMT	1878_4_31",
-			"99	-	HMT	1921_4_",
+			"99	-	HMT	1921_4",
 			"120	Finland	EE%sT	1983",
 			"120	EU	EE%sT"
 		],
@@ -862,7 +862,7 @@ exports = {
 		],
 		"Atlantic/Reykjavik" : [
 			"-87	-	LMT	1837",
-			"-87	-	RMT	1908_",
+			"-87	-	RMT	1908",
 			"-60	Iceland	IS%sT	1968_3_7_0_60",
 			"0	-	GMT"
 		],
@@ -898,8 +898,8 @@ exports = {
 		],
 		"Europe/Vilnius" : [
 			"101	-	LMT	1880",
-			"84	-	WMT	1917_",
-			"95	-	KMT	1919_9_10_",
+			"84	-	WMT	1917",
+			"95	-	KMT	1919_9_10",
 			"60	-	CET	1920_6_12",
 			"120	-	EET	1920_9_9",
 			"60	-	CET	1940_7_3",
@@ -932,8 +932,8 @@ exports = {
 		],
 		"Europe/Chisinau" : [
 			"115	-	LMT	1880",
-			"115	-	CMT	1918_1_15_",
-			"104	-	BMT	1931_6_24_",
+			"115	-	CMT	1918_1_15",
+			"104	-	BMT	1931_6_24",
 			"120	Romania	EE%sT	1940_7_15",
 			"120	1:00	EEST	1941_6_17",
 			"60	C-Eur	CE%sT	1944_7_24",
@@ -946,7 +946,7 @@ exports = {
 		],
 		"Europe/Monaco" : [
 			"29	-	LMT	1891_2_15",
-			"9	-	PMT	1911_2_11_",
+			"9	-	PMT	1911_2_11",
 			"0	France	WE%sT	1945_8_16_0_180",
 			"60	France	CE%sT	1977",
 			"60	EU	CE%sT"
@@ -968,7 +968,7 @@ exports = {
 		],
 		"Europe/Warsaw" : [
 			"84	-	LMT	1880",
-			"84	-	WMT	1915_7_5_",
+			"84	-	WMT	1915_7_5",
 			"60	C-Eur	CE%sT	1918_8_16_0_180",
 			"120	Poland	EE%sT	1922_5",
 			"60	Poland	CE%sT	1940_5_23_0_120",
@@ -979,7 +979,7 @@ exports = {
 		],
 		"Europe/Lisbon" : [
 			"36	-	LMT	1884",
-			"36	-	LMT	1912_0_1_",
+			"36	-	LMT	1912_0_1",
 			"0	Port	WE%sT	1966_3_3_0_120",
 			"60	-	CET	1976_8_26_0_60",
 			"0	Port	WE%sT	1983_8_25_0_60",
@@ -988,8 +988,8 @@ exports = {
 			"0	EU	WE%sT"
 		],
 		"Atlantic/Azores" : [
-			"-102	-	LMT	1884_",
-			"-114	-	HMT	1911_4_24_",
+			"-102	-	LMT	1884",
+			"-114	-	HMT	1911_4_24",
 			"-120	Port	AZO%sT	1966_3_3_0_120",
 			"-60	Port	AZO%sT	1983_8_25_0_60",
 			"-60	W-Eur	AZO%sT	1992_8_27_0_60",
@@ -997,15 +997,15 @@ exports = {
 			"-60	EU	AZO%sT"
 		],
 		"Atlantic/Madeira" : [
-			"-67	-	LMT	1884_",
-			"-67	-	FMT	1911_4_24_",
+			"-67	-	LMT	1884",
+			"-67	-	FMT	1911_4_24",
 			"-60	Port	MAD%sT	1966_3_3_0_120",
 			"0	Port	WE%sT	1983_8_25_0_60",
 			"0	EU	WE%sT"
 		],
 		"Europe/Bucharest" : [
 			"104	-	LMT	1891_9",
-			"104	-	BMT	1931_6_24_",
+			"104	-	BMT	1931_6_24",
 			"120	Romania	EE%sT	1981_2_29_0_120",
 			"120	C-Eur	EE%sT	1991",
 			"120	Romania	EE%sT	1994",
@@ -1022,7 +1022,7 @@ exports = {
 		],
 		"Europe/Moscow" : [
 			"150	-	LMT	1880",
-			"150	-	MMT	1916_6_3_",
+			"150	-	MMT	1916_6_3",
 			"150	Russia	%s	1919_6_1_0_120",
 			"180	Russia	MSK/MSD	1922_9",
 			"120	-	EET	1930_5_21",
@@ -1033,8 +1033,8 @@ exports = {
 		],
 		"Europe/Volgograd" : [
 			"177	-	LMT	1920_0_3",
-			"180	-	TSAT	1925_3_6_",
-			"180	-	STAT	1930_5_21_",
+			"180	-	TSAT	1925_3_6",
+			"180	-	STAT	1930_5_21",
 			"240	-	STAT	1961_10_11",
 			"240	Russia	VOL%sT	1989_2_26_0_120",
 			"180	Russia	VOL%sT	1991_2_31_0_120",
@@ -1056,7 +1056,7 @@ exports = {
 		],
 		"Asia/Yekaterinburg" : [
 			"242	-	LMT	1919_6_15_0_240",
-			"240	-	SVET	1930_5_21_",
+			"240	-	SVET	1930_5_21",
 			"300	Russia	SVE%sT	1991_2_31_0_120",
 			"240	Russia	SVE%sT	1992_0_19_0_120",
 			"300	Russia	YEK%sT	2011_2_27_0_120",
@@ -1064,7 +1064,7 @@ exports = {
 		],
 		"Asia/Omsk" : [
 			"293	-	LMT	1919_10_14",
-			"300	-	OMST	1930_5_21_",
+			"300	-	OMST	1930_5_21",
 			"360	Russia	OMS%sT	1991_2_31_0_120",
 			"300	Russia	OMS%sT	1992_0_19_0_120",
 			"360	Russia	OMS%sT	2011_2_27_0_120",
@@ -1072,16 +1072,16 @@ exports = {
 		],
 		"Asia/Novosibirsk" : [
 			"331	-	LMT	1919_11_14_0_360",
-			"360	-	NOVT	1930_5_21_",
+			"360	-	NOVT	1930_5_21",
 			"420	Russia	NOV%sT	1991_2_31_0_120",
 			"360	Russia	NOV%sT	1992_0_19_0_120",
-			"420	Russia	NOV%sT	1993_4_23_",
+			"420	Russia	NOV%sT	1993_4_23",
 			"360	Russia	NOV%sT	2011_2_27_0_120",
 			"420	-	NOVT"
 		],
 		"Asia/Novokuznetsk" : [
 			"348	-	NMT	1920_0_6",
-			"360	-	KRAT	1930_5_21_",
+			"360	-	KRAT	1930_5_21",
 			"420	Russia	KRA%sT	1991_2_31_0_120",
 			"360	Russia	KRA%sT	1992_0_19_0_120",
 			"420	Russia	KRA%sT	2010_2_28_0_120",
@@ -1090,7 +1090,7 @@ exports = {
 		],
 		"Asia/Krasnoyarsk" : [
 			"371	-	LMT	1920_0_6",
-			"360	-	KRAT	1930_5_21_",
+			"360	-	KRAT	1930_5_21",
 			"420	Russia	KRA%sT	1991_2_31_0_120",
 			"360	Russia	KRA%sT	1992_0_19_0_120",
 			"420	Russia	KRA%sT	2011_2_27_0_120",
@@ -1098,8 +1098,8 @@ exports = {
 		],
 		"Asia/Irkutsk" : [
 			"417	-	LMT	1880",
-			"417	-	IMT	1920_0_25_",
-			"420	-	IRKT	1930_5_21_",
+			"417	-	IMT	1920_0_25",
+			"420	-	IRKT	1930_5_21",
 			"480	Russia	IRK%sT	1991_2_31_0_120",
 			"420	Russia	IRK%sT	1992_0_19_0_120",
 			"480	Russia	IRK%sT	2011_2_27_0_120",
@@ -1107,7 +1107,7 @@ exports = {
 		],
 		"Asia/Yakutsk" : [
 			"518	-	LMT	1919_11_15",
-			"480	-	YAKT	1930_5_21_",
+			"480	-	YAKT	1930_5_21",
 			"540	Russia	YAK%sT	1991_2_31_0_120",
 			"480	Russia	YAK%sT	1992_0_19_0_120",
 			"540	Russia	YAK%sT	2011_2_27_0_120",
@@ -1115,7 +1115,7 @@ exports = {
 		],
 		"Asia/Vladivostok" : [
 			"527	-	LMT	1922_10_15",
-			"540	-	VLAT	1930_5_21_",
+			"540	-	VLAT	1930_5_21",
 			"600	Russia	VLA%sT	1991_2_31_0_120",
 			"540	Russia	VLA%sST	1992_0_19_0_120",
 			"600	Russia	VLA%sT	2011_2_27_0_120",
@@ -1123,7 +1123,7 @@ exports = {
 		],
 		"Asia/Khandyga" : [
 			"542	-	LMT	1919_11_15",
-			"480	-	YAKT	1930_5_21_",
+			"480	-	YAKT	1930_5_21",
 			"540	Russia	YAK%sT	1991_2_31_0_120",
 			"480	Russia	YAK%sT	1992_0_19_0_120",
 			"540	Russia	YAK%sT	2004",
@@ -1143,7 +1143,7 @@ exports = {
 		],
 		"Asia/Magadan" : [
 			"603	-	LMT	1924_4_2",
-			"600	-	MAGT	1930_5_21_",
+			"600	-	MAGT	1930_5_21",
 			"660	Russia	MAG%sT	1991_2_31_0_120",
 			"600	Russia	MAG%sT	1992_0_19_0_120",
 			"660	Russia	MAG%sT	2011_2_27_0_120",
@@ -1151,7 +1151,7 @@ exports = {
 		],
 		"Asia/Ust-Nera" : [
 			"572	-	LMT	1919_11_15",
-			"480	-	YAKT	1930_5_21_",
+			"480	-	YAKT	1930_5_21",
 			"540	Russia	YAKT	1981_3_1",
 			"660	Russia	MAG%sT	1991_2_31_0_120",
 			"600	Russia	MAG%sT	1992_0_19_0_120",
@@ -1161,7 +1161,7 @@ exports = {
 		],
 		"Asia/Kamchatka" : [
 			"634	-	LMT	1922_10_10",
-			"660	-	PETT	1930_5_21_",
+			"660	-	PETT	1930_5_21",
 			"720	Russia	PET%sT	1991_2_31_0_120",
 			"660	Russia	PET%sT	1992_0_19_0_120",
 			"720	Russia	PET%sT	2010_2_28_0_120",
@@ -1170,7 +1170,7 @@ exports = {
 		],
 		"Asia/Anadyr" : [
 			"709	-	LMT	1924_4_2",
-			"720	-	ANAT	1930_5_21_",
+			"720	-	ANAT	1930_5_21",
 			"780	Russia	ANA%sT	1982_3_1_0_0",
 			"720	Russia	ANA%sT	1991_2_31_0_120",
 			"660	Russia	ANA%sT	1992_0_19_0_120",
@@ -1204,7 +1204,7 @@ exports = {
 			"60	EU	CE%sT"
 		],
 		"Atlantic/Canary" : [
-			"-61	-	LMT	1922_2_",
+			"-61	-	LMT	1922_2",
 			"-60	-	CANT	1946_8_30_0_60",
 			"0	-	WET	1980_3_6_0_0",
 			"0	1:00	WEST	1980_8_28_0_0",
@@ -1212,7 +1212,7 @@ exports = {
 		],
 		"Europe/Stockholm" : [
 			"72	-	LMT	1879_0_1",
-			"60	-	SET	1900_0_1_",
+			"60	-	SET	1900_0_1",
 			"60	-	CET	1916_4_14_0_1380",
 			"60	1:00	CEST	1916_9_1_0_60",
 			"60	-	CET	1980",
@@ -1220,15 +1220,15 @@ exports = {
 		],
 		"Europe/Zurich" : [
 			"34	-	LMT	1848_8_12",
-			"29	-	BMT	1894_5_",
+			"29	-	BMT	1894_5",
 			"60	Swiss	CE%sT	1981",
 			"60	EU	CE%sT"
 		],
 		"Europe/Istanbul" : [
 			"115	-	LMT	1880",
-			"116	-	IMT	1910_9_",
+			"116	-	IMT	1910_9",
 			"120	Turkey	EE%sT	1978_9_15",
-			"180	Turkey	TR%sT	1985_3_20_",
+			"180	Turkey	TR%sT	1985_3_20",
 			"120	Turkey	EE%sT	2007",
 			"120	EU	EE%sT	2011_2_27_0_60",
 			"120	-	EET	2011_2_28_0_60",
@@ -1236,7 +1236,7 @@ exports = {
 		],
 		"Europe/Kiev" : [
 			"122	-	LMT	1880",
-			"122	-	KMT	1924_4_2_",
+			"122	-	KMT	1924_4_2",
 			"120	-	EET	1930_5_21",
 			"180	-	MSK	1941_8_20",
 			"60	C-Eur	CE%sT	1943_10_6",
@@ -1261,7 +1261,7 @@ exports = {
 		],
 		"Europe/Zaporozhye" : [
 			"140	-	LMT	1880",
-			"140	-	CUT	1924_4_2_",
+			"140	-	CUT	1924_4_2",
 			"120	-	EET	1930_5_21",
 			"180	-	MSK	1941_7_25",
 			"60	C-Eur	CE%sT	1943_9_25",
@@ -1271,7 +1271,7 @@ exports = {
 		],
 		"Europe/Simferopol" : [
 			"136	-	LMT	1880",
-			"136	-	SMT	1924_4_2_",
+			"136	-	SMT	1924_4_2",
 			"120	-	EET	1930_5_21",
 			"180	-	MSK	1941_10",
 			"60	C-Eur	CE%sT	1944_3_13",

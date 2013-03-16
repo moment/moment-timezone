@@ -4,14 +4,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		test: {
 			files: [
-				//"tests/core/*.js",
-				"tests/core/weekday-after.js",
-				"tests/core/last-weekday.js"
-				//"tests/africa/*.js",
-				//"tests/*/*.js"
-				//"tests/europe/*.js"
-				//"tests/america/los_angeles.js"
-				//"tests/pacific/chatham.js"
+				// "tests/**/*.js"
+				// "tests/america/los_angeles.js"
+				"tests/antarctica/*.js"
 			]
 		},
 		lint: {

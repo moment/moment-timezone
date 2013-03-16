@@ -369,7 +369,7 @@
 	module.exports = moment;
 
 	// add default rule
-	defaultRule = addRule("-,0,9999,0,0,0,0,S");
+	defaultRule = addRule("- 0 9999 0 0 0 0 0 0 S");
 
 	// add all rules
 	zoneNames.forEach(function (z) {

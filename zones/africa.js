@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
 	rules : {
 		"Algeria" : [
 			"1916	1916	5	14	7	1380	2	60	S",
@@ -181,7 +181,7 @@ exports = {
 	zones : {
 		"Africa/Algiers" : [
 			"12	-	LMT	1891_2_15_0_1",
-			"9	-	PMT	1911_2_11_",
+			"9	-	PMT	1911_2_11",
 			"0	Algeria	WE%sT	1940_1_25_0_120",
 			"60	Algeria	CE%sT	1946_9_7",
 			"0	-	WET	1956_0_29",
@@ -193,7 +193,7 @@ exports = {
 		],
 		"Africa/Luanda" : [
 			"52	-	LMT	1892",
-			"52	-	AOT	1911_4_26_",
+			"52	-	AOT	1911_4_26",
 			"60	-	WAT"
 		],
 		"Africa/Porto-Novo" : [
@@ -221,7 +221,7 @@ exports = {
 			"60	-	WAT"
 		],
 		"Atlantic/Cape_Verde" : [
-			"-94	-	LMT	1907_",
+			"-94	-	LMT	1907",
 			"-120	-	CVT	1942_8",
 			"-120	1:00	CVST	1945_9_15",
 			"-120	-	CVT	1975_10_25_0_120",
@@ -238,7 +238,7 @@ exports = {
 			"60	-	WAT"
 		],
 		"Indian/Comoro" : [
-			"173	-	LMT	1911_6_",
+			"173	-	LMT	1911_6",
 			"180	-	EAT"
 		],
 		"Africa/Kinshasa" : [
@@ -272,13 +272,13 @@ exports = {
 		],
 		"Africa/Asmara" : [
 			"155	-	LMT	1870",
-			"155	-	AMT	1890_",
-			"155	-	ADMT	1936_4_5_",
+			"155	-	AMT	1890",
+			"155	-	ADMT	1936_4_5",
 			"180	-	EAT"
 		],
 		"Africa/Addis_Ababa" : [
 			"154	-	LMT	1870",
-			"155	-	ADMT	1936_4_5_",
+			"155	-	ADMT	1936_4_5",
 			"180	-	EAT"
 		],
 		"Africa/Libreville" : [
@@ -287,7 +287,7 @@ exports = {
 		],
 		"Africa/Banjul" : [
 			"-66	-	LMT	1912",
-			"-66	-	BMT	1935_",
+			"-66	-	BMT	1935",
 			"-60	-	WAT	1964",
 			"0	-	GMT"
 		],
@@ -321,8 +321,8 @@ exports = {
 		],
 		"Africa/Monrovia" : [
 			"43	-	LMT	1882",
-			"43	-	MMT	1919_2_",
-			"44	-	LRT	1972_4_",
+			"43	-	MMT	1919_2",
+			"44	-	LRT	1972_4",
 			"0	-	GMT"
 		],
 		"Africa/Tripoli" : [
@@ -358,11 +358,11 @@ exports = {
 			"0	-	GMT"
 		],
 		"Indian/Mauritius" : [
-			"230	-	LMT	1907_",
+			"230	-	LMT	1907",
 			"240	Mauritius	MU%sT"
 		],
 		"Indian/Mayotte" : [
-			"180	-	LMT	1911_6_",
+			"180	-	LMT	1911_6",
 			"180	-	EAT"
 		],
 		"Africa/Casablanca" : [
@@ -382,10 +382,10 @@ exports = {
 		],
 		"Africa/Windhoek" : [
 			"68	-	LMT	1892_1_8",
-			"90	-	SWAT	1903_2_",
+			"90	-	SWAT	1903_2",
 			"120	-	SAST	1942_8_20_0_120",
 			"120	1:00	SAST	1943_2_21_0_120",
-			"120	-	SAST	1990_2_21_",
+			"120	-	SAST	1990_2_21",
 			"120	-	CAT	1994_3_3",
 			"60	Namibia	WA%sT"
 		],
@@ -400,7 +400,7 @@ exports = {
 			"60	-	WAT"
 		],
 		"Indian/Reunion" : [
-			"221	-	LMT	1911_5_",
+			"221	-	LMT	1911_5",
 			"240	-	RET"
 		],
 		"Africa/Kigali" : [
@@ -408,13 +408,13 @@ exports = {
 			"120	-	CAT"
 		],
 		"Atlantic/St_Helena" : [
-			"22	-	LMT	1890_",
-			"22	-	JMT	1951_",
+			"22	-	LMT	1890",
+			"22	-	JMT	1951",
 			"0	-	GMT"
 		],
 		"Africa/Sao_Tome" : [
 			"26	-	LMT	1884",
-			"36	-	LMT	1912_",
+			"36	-	LMT	1912",
 			"0	-	GMT"
 		],
 		"Africa/Dakar" : [
@@ -423,12 +423,12 @@ exports = {
 			"0	-	GMT"
 		],
 		"Indian/Mahe" : [
-			"221	-	LMT	1906_5_",
+			"221	-	LMT	1906_5",
 			"240	-	SCT"
 		],
 		"Africa/Freetown" : [
 			"53	-	LMT	1882",
-			"53	-	FMT	1913_5_",
+			"53	-	FMT	1913_5",
 			"-60	SL	%s	1957",
 			"0	SL	%s"
 		],
@@ -469,7 +469,7 @@ exports = {
 		],
 		"Africa/Tunis" : [
 			"40	-	LMT	1881_4_12",
-			"9	-	PMT	1911_2_11_",
+			"9	-	PMT	1911_2_11",
 			"60	Tunisia	CE%sT"
 		],
 		"Africa/Kampala" : [

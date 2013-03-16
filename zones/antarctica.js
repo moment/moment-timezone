@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
 	rules : {
 		"ArgAQ" : [
 			"1964	1966	2	1	7	0	0	0",
@@ -87,7 +87,7 @@ exports = {
 		],
 		"Antarctica/Davis" : [
 			"0	-	zzz	1957_0_13",
-			"420	-	DAVT	1964_10_",
+			"420	-	DAVT	1964_10",
 			"0	-	zzz	1969_1",
 			"420	-	DAVT	2009_9_18_0_120",
 			"300	-	DAVT	2010_2_10_0_1200",
@@ -109,12 +109,12 @@ exports = {
 			"660	-	MIST"
 		],
 		"Indian/Kerguelen" : [
-			"0	-	zzz	1950_",
+			"0	-	zzz	1950",
 			"300	-	TFT"
 		],
 		"Antarctica/DumontDUrville" : [
 			"0	-	zzz	1947",
-			"600	-	PMT	1952_0_14_",
+			"600	-	PMT	1952_0_14",
 			"0	-	zzz	1956_10",
 			"600	-	DDUT"
 		],
