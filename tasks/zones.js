@@ -33,10 +33,10 @@ function parseMinutes (input) {
 ******************************/
 
 module.exports = function (grunt) {
-	grunt.registerTask('zones', 'Build the zone files.', function () {
+	grunt.registerTask('zones', 'Generate the zone data files based on the olson database.', function () {
 		var files = [];
 
-		grunt.file.expandFiles("olson/antarctica").forEach(function (filename) {
+		grunt.file.expandFiles("olson/*").forEach(function (filename) {
 			var file = new File(filename);
 			files.push(file);
 			file.save();
@@ -137,7 +137,7 @@ module.exports = function (grunt) {
 
 			for (name in this.rules) {
 				rule = this.rules[name];
-				ruleText = '\t\t' + name + ' : [\n';
+				ruleText = '\t\t"' + name + '" : [\n';
 				ruleArray = [];
 				for (i = 0; i < rule.length; i++) {
 					ruleArray.push('\t\t\t"' + rule[i].format() + '"');
@@ -153,16 +153,46 @@ module.exports = function (grunt) {
 		},
 
 		formatZones : function () {
+			var o = "\tzones : {\n",
+				zones = [],
+				zoneText,
+				zoneArray,
+				zone,
+				name,
+				i;
 
+			for (name in this.zones) {
+				zone = this.zones[name];
+				zoneText = '\t\t"' + name + '" : [\n';
+				zoneArray = [];
+				for (i = 0; i < zone.length; i++) {
+					zoneArray.push('\t\t\t"' + zone[i].format() + '"');
+				}
+				zoneText += zoneArray.join(',\n');
+				zoneText += '\n\t\t]';
+				zones.push(zoneText);
+			}
+
+			o += zones.join(',\n');
+			o += '\n\t}';
+			return o;
 		},
 
 		format : function () {
-			console.log(this.formatRules());
+			var o = 'exports = {\n';
+			o += this.formatRules();
+			o += ',\n';
+			o += this.formatZones();
+			o += '\n}';
+			return o;
 		},
 
 		save : function () {
-			this.format();
-			console.log(this.filename);
+			var filename = this.filename.replace('olson', 'zones') + '.js',
+				data = this.format(),
+				gzip = ' (' + grunt.helper('gzip', data).length + 'b)';
+			grunt.file.write(filename, data);
+			grunt.log.writeln('[] '.green + filename + gzip.grey);
 		}
 	};
 

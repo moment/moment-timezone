@@ -115,7 +115,7 @@ module.exports = function (grunt) {
 		save : function () {
 			var filename = path.join(process.cwd(), "tests/" + this.name.toLowerCase() + '.js');
 			grunt.file.write(filename, this.render());
-			grunt.log.writeln("[X] " + filename);
+			grunt.log.writeln("[] ".green + filename);
 		}
 	};
 
