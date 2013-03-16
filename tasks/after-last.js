@@ -42,7 +42,8 @@ function weekdayAfterSingle (dow, month, array) {
 		format = moment([2010, month, target]).format("MMM D");
 		formatMonth = moment([2010, month, i]).format("MMM D YYYY");
 
-		o += '\t\tt.equal(rule.date(2010), ' + target + ', "The ' + dayOfWeek(dow) + ' on or after ' + formatMonth + ' should be ' + format + '");\n';
+		o += '\t\tt.equal(rule.date(2010), ' + target + ', "The ' + dayOfWeek(dow);
+		o += ' on or after ' + formatMonth + ' should be ' + format + '");\n';
 	}
 
 	o += '\n\t\tt.done();';
@@ -62,31 +63,40 @@ function weekdayAfter (month, array) {
 	Last Weekday
 ******************************/
 
-function lastWeekday (dow, month, test) {
-	// var i,
-	// 	rule,
-	// 	target,
-	// 	format,
-	// 	formatMonth,
-	// 	daysInMonth = moment([2010, month]).daysInMonth();
+function lastWeekday (dow, month, array) {
+	var i,
+		o = '',
+		rule,
+		target,
+		format,
+		formatMonth,
+		daysInMonth = moment([2010, month]).daysInMonth();
 
-	// test.expect(28);
+	o += '\t"last weekday (' + moment([2010, month]).format("MMMM YYYY") + ' / ' + dayOfWeek(dow) + ')" : function (t) {\n';
+	o += '\t\tvar rule;\n';
 
-	// for (i = 0; i < 28; i++) {
-	// 	rule = TZ.addRule("TEST,2010,2010," + month +  "," + -i + ",2:00,1:00,D");
-	// 	target = daysInMonth - (dow) + (i % 7);
-	// 	target -= ~~(i / 7) * 7;
-	// 	if (i % 7 > dow) {
-	// 		target -= 7;
-	// 	}
+	for (i = 0; i < 28; i++) {
+		o += '\n\t\trule = moment.tz.addRule("TEST\t2008\t2010\t';
+		o += [month, i].join('\t');
+		o += '\t8\t0\t0\t0");\n';
 
-	// 	format = moment([2010, month, target]).format("MMMM D YYYY");
-	// 	formatMonth = moment([2010, month, target]).format("MMMM");
+		target = daysInMonth - (dow) + (i % 7);
+		target -= ~~(i / 7) * 7;
+		if (i % 7 > dow) {
+			target -= 7;
+		}
 
-	// 	test.equal(rule._dateForYear(2010), target, "The " + count(i / 7) + ' from last ' + dayOfWeek(i) + " in " + formatMonth + " should be " + format);
-	// }
+		format = moment([2010, month, target]).format("MMMM D YYYY");
+		formatMonth = moment([2010, month, target]).format("MMMM");
 
-	// test.done();
+		o += "\t\tt.equal(rule.date(2010), " + target + ', "The ' + count(i / 7) + ' from last ';
+		o += dayOfWeek(i) + " in " + formatMonth + " should be " + format + '");\n';
+	}
+
+	o += '\n\t\tt.done();';
+	o += '\n\t}';
+
+	array.push(o);
 }
 
 

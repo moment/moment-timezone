@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 		test: {
 			files: [
 				//"tests/core/*.js",
-				"tests/core/weekday-after.js"
+				"tests/core/weekday-after.js",
+				"tests/core/last-weekday.js"
 				//"tests/africa/*.js",
 				//"tests/*/*.js"
 				//"tests/europe/*.js"

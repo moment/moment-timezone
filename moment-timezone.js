@@ -74,9 +74,9 @@
 		lastWeekday : function (year) {
 			var day = this.day,
 				dow = day % 7,
-				lastDowOfMonth = moment([year, this.month + 1, 0]).day(),
+				lastDowOfMonth = moment([year, this.month + 1, 1]).day(),
 				daysInMonth = moment([year, this.month, 1]).daysInMonth(),
-				output = daysInMonth + (dow - lastDowOfMonth) - (~~(day / 7) * 7);
+				output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
 
 			if (dow >= lastDowOfMonth) {
 				output -= 7;
