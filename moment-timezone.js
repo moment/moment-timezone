@@ -146,12 +146,12 @@
 				i;
 
 			// console.log('\n\n-------');
-			// console.log(this.name.green);
+			// console.log(this.name.green, mom.clone().utc().format());
 
-			for (i = 0; i < rules.length; i++) {
-				rule = rules[i];
-				// console.log(rule.rule.name, rule.start.format());
-			}
+			// for (i = 0; i < rules.length; i++) {
+			// 	rule = rules[i];
+			// 	console.log(rule.rule.name, rule.start.format());
+			// }
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
@@ -163,12 +163,16 @@
 				if (rule.rule.timeRule !== TIME_RULE_UTC) {
 					rule.start.add('m', -lastOffset);
 				}
-				lastOffset = rule.rule.offset + offset;
+				if (!rule.isLast) {
+					lastOffset = rule.rule.offset + offset;
+				}
 			}
 
 			for (i = 0; i < rules.length; i++) {
 				rule = rules[i];
+				// console.log('[ ]'.yellow, rule.rule.name, rule.start.format());
 				if (mom >= rule.start && !rule.isLast) {
+					// console.log('[X]'.green, rule.rule.name, rule.start.format());
 					return rule.rule;
 				}
 			}
