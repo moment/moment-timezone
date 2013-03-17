@@ -199,12 +199,8 @@
 	}
 
 	Zone.prototype = {
-		rule : function (mom, lastYearRule) {
+		rule : function (mom, lastZone) {
 			return this.ruleSet.rule(mom, this.offset, lastYearRule);
-		},
-
-		lastYearRule : function (year) {
-			return this.ruleSet.lastYearRule(year);
 		},
 
 		format : function (mom, rule) {
@@ -226,28 +222,19 @@
 	}
 
 	ZoneSet.prototype = {
-		zone : function (mom) {
-			var i;
-			for (i = 0; i < this.zones.length; i++) {
-				console.log('\n');
-				console.log('[]'.grey, mom.clone().utc().format());
-				console.log('[]'.yellow, this.zones[i].until.format());
-				if (mom < this.zones[i].until) {
-					console.log('[]'.green, this.zones[i].until.format());
-					return this.zones[i];
-				}
-			}
-			return this.zones[i - 1];
-		},
-
-		lastYearRule : function (year) {
+		zoneAndRule : function (mom) {
 			var i,
-				eoy = moment([year]).endOf('year');
+				zone,
+				lastZone;
 			for (i = 0; i < this.zones.length; i++) {
-				if (eoy < this.zones[i].until) {
-					return this.zones[i].lastYearRule(year);
+				zone = this.zones[i];
+				if (mom < zone.until) {
+					break;
 				}
+				lastZone = zone;
 			}
+
+			return [zone, zone.rule(mom, lastZone)];
 		},
 
 		add : function (zone) {
@@ -256,19 +243,13 @@
 		},
 
 		format : function (mom) {
-			var dup = moment(+mom),
-				lastYearRule = this.lastYearRule(mom.year() - 1),
-				zone = this.zone(dup),
-				rule = zone.rule(dup, lastYearRule);
-			return zone.format(rule);
+			var zoneAndRule = this.zoneAndRule(mom);
+			return zoneAndRule[0].format(zoneAndRule[1]);
 		},
 
 		offset : function (mom) {
-			var dup = moment(+mom),
-				lastYearRule = this.lastYearRule(mom.year() - 1),
-				zone = this.zone(dup),
-				rule = zone.rule(dup, lastYearRule);
-			return -(zone.offset + rule.offset);
+			var zoneAndRule = this.zoneAndRule(mom);
+			return -(zoneAndRule[0].offset + zoneAndRule[1].offset);
 		}
 	};
 
