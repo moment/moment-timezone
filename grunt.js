@@ -4,8 +4,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		test: {
 			files: [
-				"tests/**/*.js"
-				// "tests/america/phoenix.js"
+				// "tests/**/*.js"
+				"tests/america/phoenix.js"
 				// "tests/antarctica/*.js"
 			]
 		},

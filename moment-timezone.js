@@ -182,8 +182,9 @@
 		Zone
 	************************************/
 
-	function Zone (name, offset, ruleSet, letters, until) {
-		var i;
+	function Zone (name, offset, ruleSet, letters, until, untilOffset) {
+		var i,
+			untilArray = typeof until === 'string' ? until.split('_') : [9999];
 
 		this.name = name;
 		this.offset = +offset;
@@ -191,12 +192,10 @@
 		this.letters = letters;
 		this.untilArray = [9999];
 
-		if (typeof until === 'string') {
-			this.untilArray = until.split('_');
-			for (i = 0; i < this.untilArray.length; i++) {
-				this.untilArray[i] = +this.untilArray[i];
-			}
+		for (i = 0; i < untilArray.length; i++) {
+			untilArray[i] = +untilArray[i];
 		}
+		this.until = moment.utc(untilArray).subtract('m', +untilOffset || 0);
 	}
 
 	Zone.prototype = {
@@ -210,22 +209,6 @@
 
 		format : function (mom, rule) {
 			return this.letters.replace("%s", rule.letters);
-		},
-
-		makeUntil : function () {
-			var mom = moment.utc(this.untilArray),
-				offset = this.rule(mom, this.lastYearRule(mom.year() - 1)).offset;
-			this.madeUntil = mom.subtract('m', this.offset + offset);
-		},
-
-		until : function () {
-			// we need to check if the ruleset changed since the last time
-			// we called this function as the rules could be loaded any time
-			if (this.ruleSetLength !== this.ruleSet.rules.length) {
-				this.makeUntil();
-				this.ruleSetLength = this.ruleSet.rules.length;
-			}
-			return this.madeUntil;
 		}
 	};
 
@@ -234,7 +217,7 @@
 	************************************/
 
 	function sortZones (a, b) {
-		return a.until() - b.until();
+		return a.until - b.until;
 	}
 
 	function ZoneSet (name) {
@@ -248,9 +231,9 @@
 			for (i = 0; i < this.zones.length; i++) {
 				console.log('\n');
 				console.log('[]'.grey, mom.clone().utc().format());
-				console.log('[]'.yellow, this.zones[i].until().format());
-				if (mom < this.zones[i].until()) {
-					console.log('[]'.green, this.zones[i].until().format());
+				console.log('[]'.yellow, this.zones[i].until.format());
+				if (mom < this.zones[i].until) {
+					console.log('[]'.green, this.zones[i].until.format());
 					return this.zones[i];
 				}
 			}
@@ -261,7 +244,7 @@
 			var i,
 				eoy = moment([year]).endOf('year');
 			for (i = 0; i < this.zones.length; i++) {
-				if (eoy < this.zones[i].until()) {
+				if (eoy < this.zones[i].until) {
 					return this.zones[i].lastYearRule(year);
 				}
 			}
@@ -344,7 +327,7 @@
 
 		var p = zoneString.split(/\s/),
 			name = normalizeName(p[0]),
-			zone = new Zone(name, p[1], getRuleSet(p[2]), p[3], p[4]);
+			zone = new Zone(name, p[1], getRuleSet(p[2]), p[3], p[4], p[5]);
 
 		// cache the zone so we don't add it again
 		zones[zoneString] = zone;

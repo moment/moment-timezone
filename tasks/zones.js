@@ -235,13 +235,18 @@ module.exports = function (grunt) {
 			for (name in rules) {
 				if (name === this.ruleset) {
 					this.findUntilRuleFromSet(rules[name], name);
+					return;
 				}
 			}
+
+			// for one-off zones, use an empty array
+			this.findUntilRuleFromSet([], name);
 		},
 
 		findUntilRuleFromSet : function (set, name) {
 			var i,
 				rule,
+				ruleOffset = 0,
 				rules = [];
 
 			console.log('\n' + this.name.green, this.untilYear, '\n');
@@ -266,30 +271,61 @@ module.exports = function (grunt) {
 
 			for (i = 0; i < rules.length; i++) {
 				rule = rules[i];
+				ruleOffset = rule.offset;
+				console.log('[ ]'.yellow, rule.format().grey);
 				if (this.untilMonth <= rule.month) {
 					console.log('month'.green, this.untilMonth, '<=', rule.month);
 					break;
 				}
 				// otherwise use first rule from last year
-				if (this.untilYear < rule.startYear) {
-					console.log('year '.green, this.untilYear, '<', rule.startYear);
+				if (this.untilYear > rule.startYear) {
+					console.log('year '.green, this.untilYear, '>', rule.startYear);
 					break;
 				}
 			}
-			console.log(rule.format());
+
+			this.untilOffset = 0;
+			if (this.untilTimeRule === TIME_RULE_STANDARD) {
+				console.log('TIME_RULE_STANDARD '.green, this.offset);
+				this.untilOffset = this.offset;
+			} else if (this.untilTimeRule === TIME_RULE_WALL_CLOCK) {
+				console.log('TIME_RULE_WALL_CLOCK '.green, this.offset, ruleOffset);
+				this.untilOffset = this.offset + ruleOffset;
+			}
+
+			if (rule) {
+				console.log(rule.format());
+			}
+			console.log(this.format());
 		},
 
 		parseUntil : function (input) {
 			this.untilYear = +input[0] || 0;
-			this.untilMonth = 0;
-			this.untilDay = +input[2] || 0;
-			this.untilTime = 0;
 			if (input[1]) {
-				this.untilMonth = moment(input[1], "MMM").month();
+				this.untilMonth = input[1] = moment(input[1], "MMM").month();
 			}
 			if (input[3]) {
-				this.untilTime = parseMinutes(input[3]);
+				this.untilTime = input[4] = parseMinutes(input[3]);
+				input[3] = 0;
 			}
+
+			if (~(input[3] || '').indexOf('u')) {
+				this.untilTimeRule = TIME_RULE_UTC;
+			} else if (~input.indexOf('s')) {
+				this.untilTimeRule = TIME_RULE_STANDARD;
+			} else {
+				this.untilTimeRule = TIME_RULE_WALL_CLOCK;
+			}
+
+			this.until = input.join('_').replace(/_$/, '');
+		},
+
+		formatUntil : function () {
+			var a = [];
+			if (this.untilYear) {
+				a.push(this.untilYear);
+			}
+			return this.untilYear;
 		},
 
 		format : function () {
@@ -300,6 +336,10 @@ module.exports = function (grunt) {
 			];
 			if (this.until) {
 				o.push(this.until);
+
+				// if (this.untilOffset) {
+					o.push(this.untilOffset || 0);
+				// }
 			}
 			return o.join('\t');
 		}
