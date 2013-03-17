@@ -188,261 +188,261 @@ module.exports = {
 	},
 	zones : {
 		"Australia/Darwin" : [
-			"523	-	LMT",
-			"540	-	CST",
+			"523	-	LMT	1895_1	523",
+			"540	-	CST	1899_4	540",
 			"570	Aus	CST"
 		],
 		"Australia/Perth" : [
-			"463	-	LMT",
-			"480	Aus	WST",
+			"463	-	LMT	1895_11	463",
+			"480	Aus	WST	1943_6	540",
 			"480	AW	WST"
 		],
 		"Australia/Eucla" : [
-			"515	-	LMT",
-			"525	Aus	CWST",
+			"515	-	LMT	1895_11	515",
+			"525	Aus	CWST	1943_6	585",
 			"525	AW	CWST"
 		],
 		"Australia/Brisbane" : [
-			"612	-	LMT",
-			"600	Aus	EST",
+			"612	-	LMT	1895	612",
+			"600	Aus	EST	1971	660",
 			"600	AQ	EST"
 		],
 		"Australia/Lindeman" : [
-			"595	-	LMT",
-			"600	Aus	EST",
-			"600	AQ	EST",
+			"595	-	LMT	1895	595",
+			"600	Aus	EST	1971	660",
+			"600	AQ	EST	1992_6	600",
 			"600	Holiday	EST"
 		],
 		"Australia/Adelaide" : [
-			"554	-	LMT",
-			"540	-	CST",
-			"570	Aus	CST",
+			"554	-	LMT	1895_1	554",
+			"540	-	CST	1899_4	540",
+			"570	Aus	CST	1971	630",
 			"570	AS	CST"
 		],
 		"Australia/Hobart" : [
-			"589	-	LMT",
-			"600	-	EST",
-			"600	1:00	EST",
-			"600	Aus	EST",
+			"589	-	LMT	1895_8	589",
+			"600	-	EST	1916_9_1_0_120	600",
+			"600	1:00	EST	1917_1	600",
+			"600	Aus	EST	1967	660",
 			"600	AT	EST"
 		],
 		"Australia/Currie" : [
-			"575	-	LMT",
-			"600	-	EST",
-			"600	1:00	EST",
-			"600	Aus	EST",
+			"575	-	LMT	1895_8	575",
+			"600	-	EST	1916_9_1_0_120	600",
+			"600	1:00	EST	1917_1	600",
+			"600	Aus	EST	1971_6	660",
 			"600	AT	EST"
 		],
 		"Australia/Melbourne" : [
-			"579	-	LMT",
-			"600	Aus	EST",
+			"579	-	LMT	1895_1	579",
+			"600	Aus	EST	1971	660",
 			"600	AV	EST"
 		],
 		"Australia/Sydney" : [
-			"604	-	LMT",
-			"600	Aus	EST",
+			"604	-	LMT	1895_1	604",
+			"600	Aus	EST	1971	660",
 			"600	AN	EST"
 		],
 		"Australia/Broken_Hill" : [
-			"565	-	LMT",
-			"600	-	EST",
-			"540	-	CST",
-			"570	Aus	CST",
-			"570	AN	CST",
+			"565	-	LMT	1895_1	565",
+			"600	-	EST	1896_7_23	600",
+			"540	-	CST	1899_4	540",
+			"570	Aus	CST	1971	630",
+			"570	AN	CST	2000	570",
 			"570	AS	CST"
 		],
 		"Australia/Lord_Howe" : [
-			"636	-	LMT",
-			"600	-	EST",
+			"636	-	LMT	1895_1	636",
+			"600	-	EST	1981_2	600",
 			"630	LH	LHST"
 		],
 		"Indian/Christmas" : [
-			"422	-	LMT",
+			"422	-	LMT	1895_1	422",
 			"420	-	CXT"
 		],
 		"Pacific/Rarotonga" : [
-			"-639	-	LMT",
-			"-630	-	CKT",
+			"-639	-	LMT	1901	-639",
+			"-630	-	CKT	1978_10_12	-630",
 			"-600	Cook	CK%sT"
 		],
 		"Indian/Cocos" : [
-			"387	-	LMT",
+			"387	-	LMT	1900	387",
 			"390	-	CCT"
 		],
 		"Pacific/Fiji" : [
-			"715	-	LMT",
+			"715	-	LMT	1915_9_26	715",
 			"720	Fiji	FJ%sT"
 		],
 		"Pacific/Gambier" : [
-			"-539	-	LMT",
+			"-539	-	LMT	1912_9	-539",
 			"-540	-	GAMT"
 		],
 		"Pacific/Marquesas" : [
-			"-558	-	LMT",
+			"-558	-	LMT	1912_9	-558",
 			"-570	-	MART"
 		],
 		"Pacific/Tahiti" : [
-			"-598	-	LMT",
+			"-598	-	LMT	1912_9	-598",
 			"-600	-	TAHT"
 		],
 		"Pacific/Guam" : [
-			"-861	-	LMT",
-			"579	-	LMT",
-			"600	-	GST",
+			"-861	-	LMT	1844_11_31	-861",
+			"579	-	LMT	1901	579",
+			"600	-	GST	2000_11_23	600",
 			"600	-	ChST"
 		],
 		"Pacific/Tarawa" : [
-			"692	-	LMT",
+			"692	-	LMT	1901	692",
 			"720	-	GILT"
 		],
 		"Pacific/Enderbury" : [
-			"-684	-	LMT",
-			"-720	-	PHOT",
-			"-660	-	PHOT",
+			"-684	-	LMT	1901	-684",
+			"-720	-	PHOT	1979_9	-720",
+			"-660	-	PHOT	1995	-660",
 			"780	-	PHOT"
 		],
 		"Pacific/Kiritimati" : [
-			"-629	-	LMT",
-			"-640	-	LINT",
-			"-600	-	LINT",
+			"-629	-	LMT	1901	-629",
+			"-640	-	LINT	1979_9	-640",
+			"-600	-	LINT	1995	-600",
 			"840	-	LINT"
 		],
 		"Pacific/Saipan" : [
-			"-857	-	LMT",
-			"583	-	LMT",
-			"540	-	MPT",
-			"600	-	MPT",
+			"-857	-	LMT	1844_11_31	-857",
+			"583	-	LMT	1901	583",
+			"540	-	MPT	1969_9	540",
+			"600	-	MPT	2000_11_23	600",
 			"600	-	ChST"
 		],
 		"Pacific/Majuro" : [
-			"684	-	LMT",
-			"660	-	MHT",
+			"684	-	LMT	1901	684",
+			"660	-	MHT	1969_9	660",
 			"720	-	MHT"
 		],
 		"Pacific/Kwajalein" : [
-			"669	-	LMT",
-			"660	-	MHT",
-			"-720	-	KWAT",
+			"669	-	LMT	1901	669",
+			"660	-	MHT	1969_9	660",
+			"-720	-	KWAT	1993_7_20	-720",
 			"720	-	MHT"
 		],
 		"Pacific/Chuuk" : [
-			"607	-	LMT",
+			"607	-	LMT	1901	607",
 			"600	-	CHUT"
 		],
 		"Pacific/Pohnpei" : [
-			"632	-	LMT",
+			"632	-	LMT	1901	632",
 			"660	-	PONT"
 		],
 		"Pacific/Kosrae" : [
-			"651	-	LMT",
-			"660	-	KOST",
-			"720	-	KOST",
+			"651	-	LMT	1901	651",
+			"660	-	KOST	1969_9	660",
+			"720	-	KOST	1999	720",
 			"660	-	KOST"
 		],
 		"Pacific/Nauru" : [
-			"667	-	LMT",
-			"690	-	NRT",
-			"540	-	JST",
-			"690	-	NRT",
+			"667	-	LMT	1921_0_15	667",
+			"690	-	NRT	1942_2_15	690",
+			"540	-	JST	1944_7_15	540",
+			"690	-	NRT	1979_4	690",
 			"720	-	NRT"
 		],
 		"Pacific/Noumea" : [
-			"665	-	LMT",
+			"665	-	LMT	1912_0_13	665",
 			"660	NC	NC%sT"
 		],
 		"Pacific/Auckland" : [
-			"699	-	LMT",
-			"690	NZ	NZ%sT",
+			"699	-	LMT	1868_10_2	699",
+			"690	NZ	NZ%sT	1946_0_1	690",
 			"720	NZ	NZ%sT"
 		],
 		"Pacific/Chatham" : [
-			"733	-	LMT",
+			"733	-	LMT	1957_0_1	733",
 			"765	Chatham	CHA%sT"
 		],
 		"Pacific/Niue" : [
-			"-679	-	LMT",
-			"-680	-	NUT",
-			"-690	-	NUT",
+			"-679	-	LMT	1901	-679",
+			"-680	-	NUT	1951	-680",
+			"-690	-	NUT	1978_9_1	-690",
 			"-660	-	NUT"
 		],
 		"Pacific/Norfolk" : [
-			"671	-	LMT",
-			"672	-	NMT",
+			"671	-	LMT	1901	671",
+			"672	-	NMT	1951	672",
 			"690	-	NFT"
 		],
 		"Pacific/Palau" : [
-			"537	-	LMT",
+			"537	-	LMT	1901	537",
 			"540	-	PWT"
 		],
 		"Pacific/Port_Moresby" : [
-			"588	-	LMT",
-			"588	-	PMMT",
+			"588	-	LMT	1880	588",
+			"588	-	PMMT	1895	588",
 			"600	-	PGT"
 		],
 		"Pacific/Pitcairn" : [
-			"-520	-	LMT",
-			"-510	-	PNT",
+			"-520	-	LMT	1901	-520",
+			"-510	-	PNT	1998_3_27_0_0	-510",
 			"-480	-	PST"
 		],
 		"Pacific/Pago_Pago" : [
-			"757	-	LMT",
-			"-682	-	LMT",
-			"-690	-	SAMT",
-			"-660	-	NST",
-			"-660	-	BST",
+			"757	-	LMT	1879_6_5	757",
+			"-682	-	LMT	1911	-682",
+			"-690	-	SAMT	1950	-690",
+			"-660	-	NST	1967_3	-660",
+			"-660	-	BST	1983_10_30	-660",
 			"-660	-	SST"
 		],
 		"Pacific/Apia" : [
-			"753	-	LMT",
-			"-686	-	LMT",
-			"-690	-	SAMT",
-			"-660	-	WST",
-			"-660	1:00	WSDT",
-			"-660	-	WST",
-			"-660	1:00	WSDT",
-			"780	1:00	WSDT",
+			"753	-	LMT	1879_6_5	753",
+			"-686	-	LMT	1911	-686",
+			"-690	-	SAMT	1950	-690",
+			"-660	-	WST	2010_8_26	-660",
+			"-660	1:00	WSDT	2011_3_2_0_240	-660",
+			"-660	-	WST	2011_8_24_0_180	-660",
+			"-660	1:00	WSDT	2011_11_30	-660",
+			"780	1:00	WSDT	2012_3_Sun>=1_0_240	780",
 			"780	WS	WS%sT"
 		],
 		"Pacific/Guadalcanal" : [
-			"639	-	LMT",
+			"639	-	LMT	1912_9	639",
 			"660	-	SBT"
 		],
 		"Pacific/Fakaofo" : [
-			"-684	-	LMT",
-			"-660	-	TKT",
+			"-684	-	LMT	1901	-684",
+			"-660	-	TKT	2011_11_30	-660",
 			"780	-	TKT"
 		],
 		"Pacific/Tongatapu" : [
-			"739	-	LMT",
-			"740	-	TOT",
-			"780	-	TOT",
+			"739	-	LMT	1901	739",
+			"740	-	TOT	1941	740",
+			"780	-	TOT	1999	780",
 			"780	Tonga	TO%sT"
 		],
 		"Pacific/Funafuti" : [
-			"716	-	LMT",
+			"716	-	LMT	1901	716",
 			"720	-	TVT"
 		],
 		"Pacific/Johnston" : [
 			"-600	-	HST"
 		],
 		"Pacific/Midway" : [
-			"-709	-	LMT",
-			"-660	-	NST",
-			"-660	1:00	NDT",
-			"-660	-	NST",
-			"-660	-	BST",
+			"-709	-	LMT	1901	-709",
+			"-660	-	NST	1956_5_3	-660",
+			"-660	1:00	NDT	1956_8_2	-660",
+			"-660	-	NST	1967_3	-660",
+			"-660	-	BST	1983_10_30	-660",
 			"-660	-	SST"
 		],
 		"Pacific/Wake" : [
-			"666	-	LMT",
+			"666	-	LMT	1901	666",
 			"720	-	WAKT"
 		],
 		"Pacific/Efate" : [
-			"673	-	LMT",
+			"673	-	LMT	1912_0_13	673",
 			"660	Vanuatu	VU%sT"
 		],
 		"Pacific/Wallis" : [
-			"735	-	LMT",
+			"735	-	LMT	1901	735",
 			"720	-	WFT"
 		]
 	}

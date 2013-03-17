@@ -112,9 +112,11 @@
 			this.rules.push(rule);
 		},
 
-		ruleYears : function (year, lastYearRule) {
+		ruleYears : function (mom, lastZone) {
 			var i,
+				year = mom.year(),
 				rule,
+				lastZoneRule,
 				rules = [];
 
 			for (i = 0; i < this.rules.length; i++) {
@@ -123,16 +125,33 @@
 					rules.push(new RuleYear(year, rule));
 				}
 			}
-			rules.push(new RuleYear(year - 1, lastYearRule));
+			rules.push(new RuleYear(year - 1, this.lastYearRule(year - 1)));
+
+			if (lastZone) {
+				// console.log('adding last zone', lastZone.until.format());
+				lastZoneRule = new RuleYear(year - 1, lastZone.lastRule());
+				lastZoneRule.start = lastZone.until.clone().utc();
+				lastZoneRule.isLast = true;
+				rules.push(lastZoneRule);
+			}
+
 			rules.sort(sortRuleYears);
 			return rules;
 		},
 
-		rule : function (mom, offset, lastYearRule) {
-			var rules = this.ruleYears(mom.year(), lastYearRule),
+		rule : function (mom, offset, lastZone) {
+			var rules = this.ruleYears(mom, lastZone),
 				lastOffset = 0,
 				rule,
 				i;
+
+			// console.log('\n\n-------');
+			// console.log(this.name.green);
+
+			for (i = 0; i < rules.length; i++) {
+				rule = rules[i];
+				// console.log(rule.rule.name, rule.start.format());
+			}
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
@@ -148,8 +167,9 @@
 			}
 
 			for (i = 0; i < rules.length; i++) {
-				if (mom >= rules[i].start) {
-					return rules[i].rule;
+				rule = rules[i];
+				if (mom >= rule.start && !rule.isLast) {
+					return rule.rule;
 				}
 			}
 
@@ -200,7 +220,16 @@
 
 	Zone.prototype = {
 		rule : function (mom, lastZone) {
-			return this.ruleSet.rule(mom, this.offset, lastYearRule);
+			return this.ruleSet.rule(mom, this.offset, lastZone);
+		},
+
+		lastRule : function () {
+			if (!this._lastRule) {
+				// console.log('\n\n[ ]'.red, 'generating last rule');
+				this._lastRule = this.rule(this.until);
+				// console.log('[X]'.green, 'generated last rule');
+			}
+			return this._lastRule;
 		},
 
 		format : function (mom, rule) {

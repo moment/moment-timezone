@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('zones', 'Generate the zone data files based on the olson database.', function () {
 		var files = [];
 
-		grunt.file.expandFiles("olson/northamerica").forEach(function (filename) {
+		grunt.file.expandFiles("olson/*").forEach(function (filename) {
 			var file = new File(filename);
 			files.push(file);
 			file.save();
@@ -228,9 +228,9 @@ module.exports = function (grunt) {
 				return;
 			}
 
-			if (this.name !== "America/Phoenix") {
-				return;
-			}
+			// if (this.name !== "America/Phoenix") {
+			// 	return;
+			// }
 
 			for (name in rules) {
 				if (name === this.ruleset) {
@@ -249,15 +249,15 @@ module.exports = function (grunt) {
 				ruleOffset = 0,
 				rules = [];
 
-			console.log('\n' + this.name.green, this.untilYear, '\n');
+			// console.log('\n' + this.name.green, this.untilYear, '\n');
 
 			for (i = 0; i < set.length; i++) {
 				rule = set[i];
 				if (this.untilYear >= rule.startYear) {
-					console.log('[ ]'.green, this.untilYear, '>=', rule.startYear);
+					// console.log('[ ]'.green, this.untilYear, '>=', rule.startYear);
 					rules.push(rule);
 				} else {
-					console.log('[X]'.red, this.untilYear, '<', rule.startYear);
+					// console.log('[X]'.red, this.untilYear, '<', rule.startYear);
 				}
 			}
 
@@ -272,31 +272,31 @@ module.exports = function (grunt) {
 			for (i = 0; i < rules.length; i++) {
 				rule = rules[i];
 				ruleOffset = rule.offset;
-				console.log('[ ]'.yellow, rule.format().grey);
+				// console.log('[ ]'.yellow, rule.format().grey);
 				if (this.untilMonth <= rule.month) {
-					console.log('month'.green, this.untilMonth, '<=', rule.month);
+					// console.log('month'.green, this.untilMonth, '<=', rule.month);
 					break;
 				}
 				// otherwise use first rule from last year
 				if (this.untilYear > rule.startYear) {
-					console.log('year '.green, this.untilYear, '>', rule.startYear);
+					// console.log('year '.green, this.untilYear, '>', rule.startYear);
 					break;
 				}
 			}
 
 			this.untilOffset = 0;
 			if (this.untilTimeRule === TIME_RULE_STANDARD) {
-				console.log('TIME_RULE_STANDARD '.green, this.offset);
+				// console.log('TIME_RULE_STANDARD '.green, this.offset);
 				this.untilOffset = this.offset;
 			} else if (this.untilTimeRule === TIME_RULE_WALL_CLOCK) {
-				console.log('TIME_RULE_WALL_CLOCK '.green, this.offset, ruleOffset);
+				// console.log('TIME_RULE_WALL_CLOCK '.green, this.offset, ruleOffset);
 				this.untilOffset = this.offset + ruleOffset;
 			}
 
-			if (rule) {
-				console.log(rule.format());
-			}
-			console.log(this.format());
+			// if (rule) {
+			// 	console.log(rule.format());
+			// }
+			// console.log(this.format());
 		},
 
 		parseUntil : function (input) {
@@ -337,9 +337,9 @@ module.exports = function (grunt) {
 			if (this.until) {
 				o.push(this.until);
 
-				// if (this.untilOffset) {
+				if (this.untilOffset) {
 					o.push(this.untilOffset || 0);
-				// }
+				}
 			}
 			return o.join('\t');
 		}

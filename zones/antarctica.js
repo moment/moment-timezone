@@ -78,66 +78,66 @@ module.exports = {
 	},
 	zones : {
 		"Antarctica/Casey" : [
-			"0	-	zzz",
-			"480	-	WST",
-			"660	-	CAST",
-			"480	-	WST",
-			"660	-	CAST",
+			"0	-	zzz	1969",
+			"480	-	WST	2009_9_18_0_120	480",
+			"660	-	CAST	2010_2_5_0_120	660",
+			"480	-	WST	2011_9_28_0_120	480",
+			"660	-	CAST	2012_1_21_0_1020	660",
 			"480	-	WST"
 		],
 		"Antarctica/Davis" : [
-			"0	-	zzz",
-			"420	-	DAVT",
-			"0	-	zzz",
-			"420	-	DAVT",
-			"300	-	DAVT",
-			"420	-	DAVT",
-			"300	-	DAVT",
+			"0	-	zzz	1957_0_13",
+			"420	-	DAVT	1964_10	420",
+			"0	-	zzz	1969_1",
+			"420	-	DAVT	2009_9_18_0_120	420",
+			"300	-	DAVT	2010_2_10_0_1200	300",
+			"420	-	DAVT	2011_9_28_0_120	420",
+			"300	-	DAVT	2012_1_21_0_1200	300",
 			"420	-	DAVT"
 		],
 		"Antarctica/Mawson" : [
-			"0	-	zzz",
-			"360	-	MAWT",
+			"0	-	zzz	1954_1_13",
+			"360	-	MAWT	2009_9_18_0_120	360",
 			"300	-	MAWT"
 		],
 		"Antarctica/Macquarie" : [
-			"0	-	zzz",
-			"600	-	EST",
-			"600	1:00	EST",
-			"600	AusAQ	EST",
-			"600	ATAQ	EST",
+			"0	-	zzz	1911",
+			"600	-	EST	1916_9_1_0_120	600",
+			"600	1:00	EST	1917_1	600",
+			"600	AusAQ	EST	1967	660",
+			"600	ATAQ	EST	2010_3_4_0_180	600",
 			"660	-	MIST"
 		],
 		"Indian/Kerguelen" : [
-			"0	-	zzz",
+			"0	-	zzz	1950",
 			"300	-	TFT"
 		],
 		"Antarctica/DumontDUrville" : [
-			"0	-	zzz",
-			"600	-	PMT",
-			"0	-	zzz",
+			"0	-	zzz	1947",
+			"600	-	PMT	1952_0_14	600",
+			"0	-	zzz	1956_10",
 			"600	-	DDUT"
 		],
 		"Antarctica/Syowa" : [
-			"0	-	zzz",
+			"0	-	zzz	1957_0_29",
 			"180	-	SYOT"
 		],
 		"Antarctica/Vostok" : [
-			"0	-	zzz",
+			"0	-	zzz	1957_11_16",
 			"360	-	VOST"
 		],
 		"Antarctica/Rothera" : [
-			"0	-	zzz",
+			"0	-	zzz	1976_11_1",
 			"-180	-	ROTT"
 		],
 		"Antarctica/Palmer" : [
-			"0	-	zzz",
-			"-240	ArgAQ	AR%sT",
-			"-180	ArgAQ	AR%sT",
+			"0	-	zzz	1965",
+			"-240	ArgAQ	AR%sT	1969_9_5	-240",
+			"-180	ArgAQ	AR%sT	1982_4	-180",
 			"-240	ChileAQ	CL%sT"
 		],
 		"Antarctica/McMurdo" : [
-			"0	-	zzz",
+			"0	-	zzz	1956",
 			"720	NZAQ	NZ%sT"
 		]
 	}
