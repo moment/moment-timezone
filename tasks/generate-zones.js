@@ -115,19 +115,19 @@ var START =
     "(function(){\n";
 
 var END = [
-    "   function onload (tz) {",
+    "   function onLoad (tz) {",
     "       tz.addRules(data.rules);",
     "       tz.addZones(data.zones);",
     "   }" +
     "",
-    "   if (typeof module !== 'undefined') {",
-    "       module.exports = data;" +
+    "   if (typeof module !== 'undefined' && module.exports) {",
+    "       module.exports = data;",
     "   } else {",
     "       if (typeof define === \"function\" && define.amd) {",
-    "           define([\"moment-timezone\"], onload);",
+    "           require([\"moment-timezone\"], onLoad);",
     "       }",
     "       if (this.moment && this.moment.tz) {",
-    "           onload(this.moment.tz);",
+    "           onLoad(this.moment.tz);",
     "       }",
     "   }",
     "}).call(this);",
