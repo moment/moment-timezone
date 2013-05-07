@@ -6,7 +6,7 @@ exports["Asia/Kamchatka"] = {
 		t.equal(moment("1922-11-09T13:25:23+00:00").tz("Asia/Kamchatka").format("HH:mm:ss"), "23:59:59", "1922-11-09T13:25:23+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1922-11-09T13:25:24+00:00").tz("Asia/Kamchatka").format("HH:mm:ss"), "00:25:24", "1922-11-09T13:25:24+00:00 should be 00:25:24 PETT");
 
-		t.equal(moment("1922-11-09T13:25:23+00:00").tz("Asia/Kamchatka").zone(), -634, "1922-11-09T13:25:23+00:00 should be -634 minutes offset in LMT");
+		t.equal(moment("1922-11-09T13:25:23+00:00").tz("Asia/Kamchatka").zone(), -38076 / 60, "1922-11-09T13:25:23+00:00 should be -38076 / 60 minutes offset in LMT");
 		t.equal(moment("1922-11-09T13:25:24+00:00").tz("Asia/Kamchatka").zone(), -660, "1922-11-09T13:25:24+00:00 should be -660 minutes offset in PETT");
 
 		t.done();

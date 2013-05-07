@@ -6,7 +6,7 @@ exports["Pacific/Nauru"] = {
 		t.equal(moment("1921-01-14T12:52:19+00:00").tz("Pacific/Nauru").format("HH:mm:ss"), "23:59:59", "1921-01-14T12:52:19+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1921-01-14T12:52:20+00:00").tz("Pacific/Nauru").format("HH:mm:ss"), "00:22:20", "1921-01-14T12:52:20+00:00 should be 00:22:20 NRT");
 
-		t.equal(moment("1921-01-14T12:52:19+00:00").tz("Pacific/Nauru").zone(), -667, "1921-01-14T12:52:19+00:00 should be -667 minutes offset in LMT");
+		t.equal(moment("1921-01-14T12:52:19+00:00").tz("Pacific/Nauru").zone(), -40060 / 60, "1921-01-14T12:52:19+00:00 should be -40060 / 60 minutes offset in LMT");
 		t.equal(moment("1921-01-14T12:52:20+00:00").tz("Pacific/Nauru").zone(), -690, "1921-01-14T12:52:20+00:00 should be -690 minutes offset in NRT");
 
 		t.done();

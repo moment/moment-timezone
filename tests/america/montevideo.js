@@ -6,7 +6,7 @@ exports["America/Montevideo"] = {
 		t.equal(moment("1920-05-01T03:44:43+00:00").tz("America/Montevideo").format("HH:mm:ss"), "23:59:59", "1920-05-01T03:44:43+00:00 should be 23:59:59 MMT");
 		t.equal(moment("1920-05-01T03:44:44+00:00").tz("America/Montevideo").format("HH:mm:ss"), "00:14:44", "1920-05-01T03:44:44+00:00 should be 00:14:44 UYT");
 
-		t.equal(moment("1920-05-01T03:44:43+00:00").tz("America/Montevideo").zone(), 224, "1920-05-01T03:44:43+00:00 should be 224 minutes offset in MMT");
+		t.equal(moment("1920-05-01T03:44:43+00:00").tz("America/Montevideo").zone(), 13484 / 60, "1920-05-01T03:44:43+00:00 should be 13484 / 60 minutes offset in MMT");
 		t.equal(moment("1920-05-01T03:44:44+00:00").tz("America/Montevideo").zone(), 210, "1920-05-01T03:44:44+00:00 should be 210 minutes offset in UYT");
 
 		t.done();

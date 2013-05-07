@@ -6,7 +6,7 @@ exports["America/Curacao"] = {
 		t.equal(moment("1912-02-12T04:35:46+00:00").tz("America/Curacao").format("HH:mm:ss"), "23:59:59", "1912-02-12T04:35:46+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1912-02-12T04:35:47+00:00").tz("America/Curacao").format("HH:mm:ss"), "00:05:47", "1912-02-12T04:35:47+00:00 should be 00:05:47 ANT");
 
-		t.equal(moment("1912-02-12T04:35:46+00:00").tz("America/Curacao").zone(), 275, "1912-02-12T04:35:46+00:00 should be 275 minutes offset in LMT");
+		t.equal(moment("1912-02-12T04:35:46+00:00").tz("America/Curacao").zone(), 16547 / 60, "1912-02-12T04:35:46+00:00 should be 16547 / 60 minutes offset in LMT");
 		t.equal(moment("1912-02-12T04:35:47+00:00").tz("America/Curacao").zone(), 270, "1912-02-12T04:35:47+00:00 should be 270 minutes offset in ANT");
 
 		t.done();

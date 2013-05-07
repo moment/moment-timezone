@@ -6,7 +6,7 @@ exports["Pacific/Efate"] = {
 		t.equal(moment("1912-01-12T12:46:43+00:00").tz("Pacific/Efate").format("HH:mm:ss"), "23:59:59", "1912-01-12T12:46:43+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1912-01-12T12:46:44+00:00").tz("Pacific/Efate").format("HH:mm:ss"), "23:46:44", "1912-01-12T12:46:44+00:00 should be 23:46:44 VUT");
 
-		t.equal(moment("1912-01-12T12:46:43+00:00").tz("Pacific/Efate").zone(), -673, "1912-01-12T12:46:43+00:00 should be -673 minutes offset in LMT");
+		t.equal(moment("1912-01-12T12:46:43+00:00").tz("Pacific/Efate").zone(), -40396 / 60, "1912-01-12T12:46:43+00:00 should be -40396 / 60 minutes offset in LMT");
 		t.equal(moment("1912-01-12T12:46:44+00:00").tz("Pacific/Efate").zone(), -660, "1912-01-12T12:46:44+00:00 should be -660 minutes offset in VUT");
 
 		t.done();

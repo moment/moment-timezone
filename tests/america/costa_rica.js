@@ -6,7 +6,7 @@ exports["America/Costa_Rica"] = {
 		t.equal(moment("1921-01-15T05:36:12+00:00").tz("America/Costa_Rica").format("HH:mm:ss"), "23:59:59", "1921-01-15T05:36:12+00:00 should be 23:59:59 SJMT");
 		t.equal(moment("1921-01-15T05:36:13+00:00").tz("America/Costa_Rica").format("HH:mm:ss"), "23:36:13", "1921-01-15T05:36:13+00:00 should be 23:36:13 CST");
 
-		t.equal(moment("1921-01-15T05:36:12+00:00").tz("America/Costa_Rica").zone(), 336, "1921-01-15T05:36:12+00:00 should be 336 minutes offset in SJMT");
+		t.equal(moment("1921-01-15T05:36:12+00:00").tz("America/Costa_Rica").zone(), 20173 / 60, "1921-01-15T05:36:12+00:00 should be 20173 / 60 minutes offset in SJMT");
 		t.equal(moment("1921-01-15T05:36:13+00:00").tz("America/Costa_Rica").zone(), 360, "1921-01-15T05:36:13+00:00 should be 360 minutes offset in CST");
 
 		t.done();

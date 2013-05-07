@@ -6,7 +6,7 @@ exports["America/Halifax"] = {
 		t.equal(moment("1902-06-15T04:14:23+00:00").tz("America/Halifax").format("HH:mm:ss"), "23:59:59", "1902-06-15T04:14:23+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1902-06-15T04:14:24+00:00").tz("America/Halifax").format("HH:mm:ss"), "00:14:24", "1902-06-15T04:14:24+00:00 should be 00:14:24 AST");
 
-		t.equal(moment("1902-06-15T04:14:23+00:00").tz("America/Halifax").zone(), 254, "1902-06-15T04:14:23+00:00 should be 254 minutes offset in LMT");
+		t.equal(moment("1902-06-15T04:14:23+00:00").tz("America/Halifax").zone(), 15264 / 60, "1902-06-15T04:14:23+00:00 should be 15264 / 60 minutes offset in LMT");
 		t.equal(moment("1902-06-15T04:14:24+00:00").tz("America/Halifax").zone(), 240, "1902-06-15T04:14:24+00:00 should be 240 minutes offset in AST");
 
 		t.done();

@@ -6,7 +6,7 @@ exports["America/Guatemala"] = {
 		t.equal(moment("1918-10-05T06:02:03+00:00").tz("America/Guatemala").format("HH:mm:ss"), "23:59:59", "1918-10-05T06:02:03+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1918-10-05T06:02:04+00:00").tz("America/Guatemala").format("HH:mm:ss"), "00:02:04", "1918-10-05T06:02:04+00:00 should be 00:02:04 CST");
 
-		t.equal(moment("1918-10-05T06:02:03+00:00").tz("America/Guatemala").zone(), 362, "1918-10-05T06:02:03+00:00 should be 362 minutes offset in LMT");
+		t.equal(moment("1918-10-05T06:02:03+00:00").tz("America/Guatemala").zone(), 21724 / 60, "1918-10-05T06:02:03+00:00 should be 21724 / 60 minutes offset in LMT");
 		t.equal(moment("1918-10-05T06:02:04+00:00").tz("America/Guatemala").zone(), 360, "1918-10-05T06:02:04+00:00 should be 360 minutes offset in CST");
 
 		t.done();

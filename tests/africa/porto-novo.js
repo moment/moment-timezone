@@ -6,7 +6,7 @@ exports["Africa/Porto-Novo"] = {
 		t.equal(moment("1911-12-31T23:49:31+00:00").tz("Africa/Porto-Novo").format("HH:mm:ss"), "23:59:59", "1911-12-31T23:49:31+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1911-12-31T23:49:32+00:00").tz("Africa/Porto-Novo").format("HH:mm:ss"), "23:49:32", "1911-12-31T23:49:32+00:00 should be 23:49:32 GMT");
 
-		t.equal(moment("1911-12-31T23:49:31+00:00").tz("Africa/Porto-Novo").zone(), -10, "1911-12-31T23:49:31+00:00 should be -10 minutes offset in LMT");
+		t.equal(moment("1911-12-31T23:49:31+00:00").tz("Africa/Porto-Novo").zone(), -628 / 60, "1911-12-31T23:49:31+00:00 should be -628 / 60 minutes offset in LMT");
 		t.equal(moment("1911-12-31T23:49:32+00:00").tz("Africa/Porto-Novo").zone(), 0, "1911-12-31T23:49:32+00:00 should be 0 minutes offset in GMT");
 
 		t.done();

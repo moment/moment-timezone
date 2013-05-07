@@ -6,7 +6,7 @@ exports["Asia/Jerusalem"] = {
 		t.equal(moment("1917-12-31T21:39:19+00:00").tz("Asia/Jerusalem").format("HH:mm:ss"), "23:59:59", "1917-12-31T21:39:19+00:00 should be 23:59:59 JMT");
 		t.equal(moment("1917-12-31T21:39:20+00:00").tz("Asia/Jerusalem").format("HH:mm:ss"), "23:39:20", "1917-12-31T21:39:20+00:00 should be 23:39:20 IST");
 
-		t.equal(moment("1917-12-31T21:39:19+00:00").tz("Asia/Jerusalem").zone(), -140, "1917-12-31T21:39:19+00:00 should be -140 minutes offset in JMT");
+		t.equal(moment("1917-12-31T21:39:19+00:00").tz("Asia/Jerusalem").zone(), -8440 / 60, "1917-12-31T21:39:19+00:00 should be -8440 / 60 minutes offset in JMT");
 		t.equal(moment("1917-12-31T21:39:20+00:00").tz("Asia/Jerusalem").zone(), -120, "1917-12-31T21:39:20+00:00 should be -120 minutes offset in IST");
 
 		t.done();

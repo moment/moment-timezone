@@ -6,8 +6,8 @@ exports["America/Paramaribo"] = {
 		t.equal(moment("1911-01-01T03:40:39+00:00").tz("America/Paramaribo").format("HH:mm:ss"), "23:59:59", "1911-01-01T03:40:39+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1911-01-01T03:40:40+00:00").tz("America/Paramaribo").format("HH:mm:ss"), "23:59:48", "1911-01-01T03:40:40+00:00 should be 23:59:48 PMT");
 
-		t.equal(moment("1911-01-01T03:40:39+00:00").tz("America/Paramaribo").zone(), 220, "1911-01-01T03:40:39+00:00 should be 220 minutes offset in LMT");
-		t.equal(moment("1911-01-01T03:40:40+00:00").tz("America/Paramaribo").zone(), 220, "1911-01-01T03:40:40+00:00 should be 220 minutes offset in PMT");
+		t.equal(moment("1911-01-01T03:40:39+00:00").tz("America/Paramaribo").zone(), 13240 / 60, "1911-01-01T03:40:39+00:00 should be 13240 / 60 minutes offset in LMT");
+		t.equal(moment("1911-01-01T03:40:40+00:00").tz("America/Paramaribo").zone(), 13252 / 60, "1911-01-01T03:40:40+00:00 should be 13252 / 60 minutes offset in PMT");
 
 		t.done();
 	},
@@ -16,8 +16,8 @@ exports["America/Paramaribo"] = {
 		t.equal(moment("1935-01-01T03:40:51+00:00").tz("America/Paramaribo").format("HH:mm:ss"), "23:59:59", "1935-01-01T03:40:51+00:00 should be 23:59:59 PMT");
 		t.equal(moment("1935-01-01T03:40:52+00:00").tz("America/Paramaribo").format("HH:mm:ss"), "00:00:16", "1935-01-01T03:40:52+00:00 should be 00:00:16 PMT");
 
-		t.equal(moment("1935-01-01T03:40:51+00:00").tz("America/Paramaribo").zone(), 220, "1935-01-01T03:40:51+00:00 should be 220 minutes offset in PMT");
-		t.equal(moment("1935-01-01T03:40:52+00:00").tz("America/Paramaribo").zone(), 220, "1935-01-01T03:40:52+00:00 should be 220 minutes offset in PMT");
+		t.equal(moment("1935-01-01T03:40:51+00:00").tz("America/Paramaribo").zone(), 13252 / 60, "1935-01-01T03:40:51+00:00 should be 13252 / 60 minutes offset in PMT");
+		t.equal(moment("1935-01-01T03:40:52+00:00").tz("America/Paramaribo").zone(), 13236 / 60, "1935-01-01T03:40:52+00:00 should be 13236 / 60 minutes offset in PMT");
 
 		t.done();
 	},
@@ -26,7 +26,7 @@ exports["America/Paramaribo"] = {
 		t.equal(moment("1945-10-01T03:40:35+00:00").tz("America/Paramaribo").format("HH:mm:ss"), "23:59:59", "1945-10-01T03:40:35+00:00 should be 23:59:59 PMT");
 		t.equal(moment("1945-10-01T03:40:36+00:00").tz("America/Paramaribo").format("HH:mm:ss"), "00:10:36", "1945-10-01T03:40:36+00:00 should be 00:10:36 NEGT");
 
-		t.equal(moment("1945-10-01T03:40:35+00:00").tz("America/Paramaribo").zone(), 220, "1945-10-01T03:40:35+00:00 should be 220 minutes offset in PMT");
+		t.equal(moment("1945-10-01T03:40:35+00:00").tz("America/Paramaribo").zone(), 13236 / 60, "1945-10-01T03:40:35+00:00 should be 13236 / 60 minutes offset in PMT");
 		t.equal(moment("1945-10-01T03:40:36+00:00").tz("America/Paramaribo").zone(), 210, "1945-10-01T03:40:36+00:00 should be 210 minutes offset in NEGT");
 
 		t.done();

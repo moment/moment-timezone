@@ -6,7 +6,7 @@ exports["Atlantic/Cape_Verde"] = {
 		t.equal(moment("1907-01-01T01:34:03+00:00").tz("Atlantic/Cape_Verde").format("HH:mm:ss"), "23:59:59", "1907-01-01T01:34:03+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1907-01-01T01:34:04+00:00").tz("Atlantic/Cape_Verde").format("HH:mm:ss"), "23:34:04", "1907-01-01T01:34:04+00:00 should be 23:34:04 CVT");
 
-		t.equal(moment("1907-01-01T01:34:03+00:00").tz("Atlantic/Cape_Verde").zone(), 94, "1907-01-01T01:34:03+00:00 should be 94 minutes offset in LMT");
+		t.equal(moment("1907-01-01T01:34:03+00:00").tz("Atlantic/Cape_Verde").zone(), 5644 / 60, "1907-01-01T01:34:03+00:00 should be 5644 / 60 minutes offset in LMT");
 		t.equal(moment("1907-01-01T01:34:04+00:00").tz("Atlantic/Cape_Verde").zone(), 120, "1907-01-01T01:34:04+00:00 should be 120 minutes offset in CVT");
 
 		t.done();

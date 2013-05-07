@@ -8,9 +8,9 @@ exports["Europe/Dublin"] = {
 		t.equal(moment("1916-10-01T02:25:20+00:00").tz("Europe/Dublin").format("HH:mm:ss"), "02:59:59", "1916-10-01T02:25:20+00:00 should be 02:59:59 IST");
 		t.equal(moment("1916-10-01T02:25:21+00:00").tz("Europe/Dublin").format("HH:mm:ss"), "02:25:21", "1916-10-01T02:25:21+00:00 should be 02:25:21 GMT");
 
-		t.equal(moment("1916-05-21T02:25:20+00:00").tz("Europe/Dublin").zone(), 25, "1916-05-21T02:25:20+00:00 should be 25 minutes offset in DMT");
-		t.equal(moment("1916-05-21T02:25:21+00:00").tz("Europe/Dublin").zone(), -34, "1916-05-21T02:25:21+00:00 should be -34 minutes offset in IST");
-		t.equal(moment("1916-10-01T02:25:20+00:00").tz("Europe/Dublin").zone(), -34, "1916-10-01T02:25:20+00:00 should be -34 minutes offset in IST");
+		t.equal(moment("1916-05-21T02:25:20+00:00").tz("Europe/Dublin").zone(), 1521 / 60, "1916-05-21T02:25:20+00:00 should be 1521 / 60 minutes offset in DMT");
+		t.equal(moment("1916-05-21T02:25:21+00:00").tz("Europe/Dublin").zone(), -2079 / 60, "1916-05-21T02:25:21+00:00 should be -2079 / 60 minutes offset in IST");
+		t.equal(moment("1916-10-01T02:25:20+00:00").tz("Europe/Dublin").zone(), -2079 / 60, "1916-10-01T02:25:20+00:00 should be -2079 / 60 minutes offset in IST");
 		t.equal(moment("1916-10-01T02:25:21+00:00").tz("Europe/Dublin").zone(), 0, "1916-10-01T02:25:21+00:00 should be 0 minutes offset in GMT");
 
 		t.done();

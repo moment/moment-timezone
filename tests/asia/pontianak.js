@@ -6,8 +6,8 @@ exports["Asia/Pontianak"] = {
 		t.equal(moment("1908-04-30T16:42:39+00:00").tz("Asia/Pontianak").format("HH:mm:ss"), "23:59:59", "1908-04-30T16:42:39+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1908-04-30T16:42:40+00:00").tz("Asia/Pontianak").format("HH:mm:ss"), "00:00:00", "1908-04-30T16:42:40+00:00 should be 00:00:00 PMT");
 
-		t.equal(moment("1908-04-30T16:42:39+00:00").tz("Asia/Pontianak").zone(), -437, "1908-04-30T16:42:39+00:00 should be -437 minutes offset in LMT");
-		t.equal(moment("1908-04-30T16:42:40+00:00").tz("Asia/Pontianak").zone(), -437, "1908-04-30T16:42:40+00:00 should be -437 minutes offset in PMT");
+		t.equal(moment("1908-04-30T16:42:39+00:00").tz("Asia/Pontianak").zone(), -26240 / 60, "1908-04-30T16:42:39+00:00 should be -26240 / 60 minutes offset in LMT");
+		t.equal(moment("1908-04-30T16:42:40+00:00").tz("Asia/Pontianak").zone(), -26240 / 60, "1908-04-30T16:42:40+00:00 should be -26240 / 60 minutes offset in PMT");
 
 		t.done();
 	},
@@ -16,7 +16,7 @@ exports["Asia/Pontianak"] = {
 		t.equal(moment("1932-10-31T16:42:39+00:00").tz("Asia/Pontianak").format("HH:mm:ss"), "23:59:59", "1932-10-31T16:42:39+00:00 should be 23:59:59 PMT");
 		t.equal(moment("1932-10-31T16:42:40+00:00").tz("Asia/Pontianak").format("HH:mm:ss"), "00:12:40", "1932-10-31T16:42:40+00:00 should be 00:12:40 WIT");
 
-		t.equal(moment("1932-10-31T16:42:39+00:00").tz("Asia/Pontianak").zone(), -437, "1932-10-31T16:42:39+00:00 should be -437 minutes offset in PMT");
+		t.equal(moment("1932-10-31T16:42:39+00:00").tz("Asia/Pontianak").zone(), -26240 / 60, "1932-10-31T16:42:39+00:00 should be -26240 / 60 minutes offset in PMT");
 		t.equal(moment("1932-10-31T16:42:40+00:00").tz("Asia/Pontianak").zone(), -450, "1932-10-31T16:42:40+00:00 should be -450 minutes offset in WIT");
 
 		t.done();

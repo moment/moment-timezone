@@ -8,10 +8,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1916-09-30T22:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "23:59:59", "1916-09-30T22:40:27+00:00 should be 23:59:59 NST");
 		t.equal(moment("1916-09-30T22:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "23:00:00", "1916-09-30T22:40:28+00:00 should be 23:00:00 AMT");
 
-		t.equal(moment("1916-04-30T23:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1916-04-30T23:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1916-04-30T23:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1916-04-30T23:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1916-09-30T22:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1916-09-30T22:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1916-09-30T22:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1916-09-30T22:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1916-04-30T23:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1916-04-30T23:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1916-04-30T23:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1916-04-30T23:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1916-09-30T22:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1916-09-30T22:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1916-09-30T22:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1916-09-30T22:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -22,10 +22,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1917-09-17T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1917-09-17T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1917-09-17T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1917-09-17T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1917-04-16T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1917-04-16T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1917-04-16T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1917-04-16T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1917-09-17T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1917-09-17T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1917-09-17T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1917-09-17T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1917-04-16T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1917-04-16T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1917-04-16T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1917-04-16T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1917-09-17T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1917-09-17T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1917-09-17T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1917-09-17T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -36,10 +36,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1918-09-30T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1918-09-30T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1918-09-30T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1918-09-30T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1918-04-01T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1918-04-01T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1918-04-01T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1918-04-01T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1918-09-30T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1918-09-30T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1918-09-30T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1918-09-30T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1918-04-01T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1918-04-01T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1918-04-01T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1918-04-01T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1918-09-30T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1918-09-30T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1918-09-30T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1918-09-30T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -50,10 +50,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1919-09-29T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1919-09-29T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1919-09-29T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1919-09-29T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1919-04-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1919-04-07T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1919-04-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1919-04-07T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1919-09-29T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1919-09-29T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1919-09-29T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1919-09-29T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1919-04-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1919-04-07T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1919-04-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1919-04-07T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1919-09-29T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1919-09-29T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1919-09-29T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1919-09-29T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -64,10 +64,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1920-09-27T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1920-09-27T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1920-09-27T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1920-09-27T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1920-04-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1920-04-05T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1920-04-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1920-04-05T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1920-09-27T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1920-09-27T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1920-09-27T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1920-09-27T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1920-04-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1920-04-05T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1920-04-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1920-04-05T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1920-09-27T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1920-09-27T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1920-09-27T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1920-09-27T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -78,10 +78,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1921-09-26T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1921-09-26T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1921-09-26T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1921-09-26T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1921-04-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1921-04-04T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1921-04-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1921-04-04T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1921-09-26T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1921-09-26T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1921-09-26T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1921-09-26T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1921-04-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1921-04-04T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1921-04-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1921-04-04T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1921-09-26T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1921-09-26T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1921-09-26T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1921-09-26T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -92,10 +92,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1922-10-08T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1922-10-08T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1922-10-08T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1922-10-08T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1922-03-26T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1922-03-26T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1922-03-26T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1922-03-26T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1922-10-08T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1922-10-08T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1922-10-08T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1922-10-08T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1922-03-26T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1922-03-26T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1922-03-26T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1922-03-26T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1922-10-08T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1922-10-08T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1922-10-08T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1922-10-08T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -106,10 +106,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1923-10-07T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1923-10-07T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1923-10-07T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1923-10-07T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1923-06-01T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1923-06-01T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1923-06-01T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1923-06-01T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1923-10-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1923-10-07T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1923-10-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1923-10-07T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1923-06-01T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1923-06-01T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1923-06-01T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1923-06-01T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1923-10-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1923-10-07T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1923-10-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1923-10-07T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -120,10 +120,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1924-10-05T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1924-10-05T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1924-10-05T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1924-10-05T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1924-03-30T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1924-03-30T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1924-03-30T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1924-03-30T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1924-10-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1924-10-05T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1924-10-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1924-10-05T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1924-03-30T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1924-03-30T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1924-03-30T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1924-03-30T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1924-10-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1924-10-05T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1924-10-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1924-10-05T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -134,10 +134,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1925-10-04T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1925-10-04T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1925-10-04T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1925-10-04T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1925-06-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1925-06-05T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1925-06-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1925-06-05T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1925-10-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1925-10-04T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1925-10-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1925-10-04T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1925-06-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1925-06-05T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1925-06-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1925-06-05T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1925-10-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1925-10-04T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1925-10-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1925-10-04T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -148,10 +148,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1926-10-03T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1926-10-03T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1926-10-03T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1926-10-03T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1926-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1926-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1926-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1926-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1926-10-03T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1926-10-03T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1926-10-03T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1926-10-03T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1926-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1926-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1926-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1926-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1926-10-03T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1926-10-03T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1926-10-03T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1926-10-03T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -162,10 +162,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1927-10-02T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1927-10-02T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1927-10-02T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1927-10-02T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1927-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1927-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1927-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1927-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1927-10-02T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1927-10-02T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1927-10-02T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1927-10-02T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1927-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1927-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1927-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1927-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1927-10-02T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1927-10-02T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1927-10-02T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1927-10-02T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -176,10 +176,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1928-10-07T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1928-10-07T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1928-10-07T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1928-10-07T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1928-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1928-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1928-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1928-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1928-10-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1928-10-07T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1928-10-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1928-10-07T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1928-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1928-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1928-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1928-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1928-10-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1928-10-07T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1928-10-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1928-10-07T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -190,10 +190,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1929-10-06T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1929-10-06T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1929-10-06T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1929-10-06T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1929-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1929-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1929-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1929-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1929-10-06T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1929-10-06T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1929-10-06T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1929-10-06T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1929-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1929-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1929-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1929-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1929-10-06T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1929-10-06T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1929-10-06T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1929-10-06T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -204,10 +204,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1930-10-05T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1930-10-05T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1930-10-05T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1930-10-05T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1930-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1930-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1930-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1930-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1930-10-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1930-10-05T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1930-10-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1930-10-05T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1930-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1930-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1930-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1930-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1930-10-05T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1930-10-05T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1930-10-05T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1930-10-05T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -218,10 +218,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1931-10-04T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1931-10-04T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1931-10-04T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1931-10-04T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1931-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1931-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1931-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1931-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1931-10-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1931-10-04T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1931-10-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1931-10-04T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1931-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1931-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1931-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1931-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1931-10-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1931-10-04T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1931-10-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1931-10-04T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -232,10 +232,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1932-10-02T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1932-10-02T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1932-10-02T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1932-10-02T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1932-05-22T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1932-05-22T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1932-05-22T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1932-05-22T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1932-10-02T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1932-10-02T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1932-10-02T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1932-10-02T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1932-05-22T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1932-05-22T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1932-05-22T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1932-05-22T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1932-10-02T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1932-10-02T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1932-10-02T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1932-10-02T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -246,10 +246,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1933-10-08T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1933-10-08T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1933-10-08T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1933-10-08T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1933-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1933-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1933-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1933-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1933-10-08T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1933-10-08T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1933-10-08T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1933-10-08T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1933-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1933-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1933-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1933-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1933-10-08T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1933-10-08T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1933-10-08T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1933-10-08T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -260,10 +260,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1934-10-07T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1934-10-07T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1934-10-07T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1934-10-07T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1934-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1934-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1934-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1934-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1934-10-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1934-10-07T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1934-10-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1934-10-07T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1934-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1934-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1934-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1934-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1934-10-07T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1934-10-07T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1934-10-07T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1934-10-07T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -274,10 +274,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1935-10-06T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1935-10-06T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1935-10-06T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1935-10-06T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1935-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1935-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1935-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1935-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1935-10-06T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1935-10-06T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1935-10-06T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1935-10-06T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1935-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1935-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1935-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1935-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1935-10-06T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1935-10-06T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1935-10-06T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1935-10-06T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -288,10 +288,10 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1936-10-04T01:40:27+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1936-10-04T01:40:27+00:00 should be 02:59:59 NST");
 		t.equal(moment("1936-10-04T01:40:28+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1936-10-04T01:40:28+00:00 should be 02:00:00 AMT");
 
-		t.equal(moment("1936-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1936-05-15T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1936-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1936-05-15T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1936-10-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1936-10-04T01:40:27+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1936-10-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -19, "1936-10-04T01:40:28+00:00 should be -19 minutes offset in AMT");
+		t.equal(moment("1936-05-15T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1936-05-15T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1936-05-15T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1936-05-15T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1936-10-04T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1936-10-04T01:40:27+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1936-10-04T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1936-10-04T01:40:28+00:00 should be -1172 / 60 minutes offset in AMT");
 
 		t.done();
 	},
@@ -304,9 +304,9 @@ exports["Europe/Amsterdam"] = {
 		t.equal(moment("1937-10-03T01:39:59+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:59:59", "1937-10-03T01:39:59+00:00 should be 02:59:59 NEST");
 		t.equal(moment("1937-10-03T01:40:00+00:00").tz("Europe/Amsterdam").format("HH:mm:ss"), "02:00:00", "1937-10-03T01:40:00+00:00 should be 02:00:00 NET");
 
-		t.equal(moment("1937-05-22T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -19, "1937-05-22T01:40:27+00:00 should be -19 minutes offset in AMT");
-		t.equal(moment("1937-05-22T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -79, "1937-05-22T01:40:28+00:00 should be -79 minutes offset in NST");
-		t.equal(moment("1937-06-30T22:40:27+00:00").tz("Europe/Amsterdam").zone(), -79, "1937-06-30T22:40:27+00:00 should be -79 minutes offset in NST");
+		t.equal(moment("1937-05-22T01:40:27+00:00").tz("Europe/Amsterdam").zone(), -1172 / 60, "1937-05-22T01:40:27+00:00 should be -1172 / 60 minutes offset in AMT");
+		t.equal(moment("1937-05-22T01:40:28+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1937-05-22T01:40:28+00:00 should be -4772 / 60 minutes offset in NST");
+		t.equal(moment("1937-06-30T22:40:27+00:00").tz("Europe/Amsterdam").zone(), -4772 / 60, "1937-06-30T22:40:27+00:00 should be -4772 / 60 minutes offset in NST");
 		t.equal(moment("1937-06-30T22:40:28+00:00").tz("Europe/Amsterdam").zone(), -80, "1937-06-30T22:40:28+00:00 should be -80 minutes offset in NEST");
 		t.equal(moment("1937-10-03T01:39:59+00:00").tz("Europe/Amsterdam").zone(), -80, "1937-10-03T01:39:59+00:00 should be -80 minutes offset in NEST");
 		t.equal(moment("1937-10-03T01:40:00+00:00").tz("Europe/Amsterdam").zone(), -20, "1937-10-03T01:40:00+00:00 should be -20 minutes offset in NET");

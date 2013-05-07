@@ -6,7 +6,7 @@ exports["America/Argentina/La_Rioja"] = {
 		t.equal(moment("1920-05-01T04:16:47+00:00").tz("America/Argentina/La_Rioja").format("HH:mm:ss"), "23:59:59", "1920-05-01T04:16:47+00:00 should be 23:59:59 CMT");
 		t.equal(moment("1920-05-01T04:16:48+00:00").tz("America/Argentina/La_Rioja").format("HH:mm:ss"), "00:16:48", "1920-05-01T04:16:48+00:00 should be 00:16:48 ART");
 
-		t.equal(moment("1920-05-01T04:16:47+00:00").tz("America/Argentina/La_Rioja").zone(), 256, "1920-05-01T04:16:47+00:00 should be 256 minutes offset in CMT");
+		t.equal(moment("1920-05-01T04:16:47+00:00").tz("America/Argentina/La_Rioja").zone(), 15408 / 60, "1920-05-01T04:16:47+00:00 should be 15408 / 60 minutes offset in CMT");
 		t.equal(moment("1920-05-01T04:16:48+00:00").tz("America/Argentina/La_Rioja").zone(), 240, "1920-05-01T04:16:48+00:00 should be 240 minutes offset in ART");
 
 		t.done();

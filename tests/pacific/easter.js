@@ -6,7 +6,7 @@ exports["Pacific/Easter"] = {
 		t.equal(moment("1932-09-01T07:17:27+00:00").tz("Pacific/Easter").format("HH:mm:ss"), "23:59:59", "1932-09-01T07:17:27+00:00 should be 23:59:59 EMT");
 		t.equal(moment("1932-09-01T07:17:28+00:00").tz("Pacific/Easter").format("HH:mm:ss"), "01:17:28", "1932-09-01T07:17:28+00:00 should be 01:17:28 EASST");
 
-		t.equal(moment("1932-09-01T07:17:27+00:00").tz("Pacific/Easter").zone(), 437, "1932-09-01T07:17:27+00:00 should be 437 minutes offset in EMT");
+		t.equal(moment("1932-09-01T07:17:27+00:00").tz("Pacific/Easter").zone(), 26248 / 60, "1932-09-01T07:17:27+00:00 should be 26248 / 60 minutes offset in EMT");
 		t.equal(moment("1932-09-01T07:17:28+00:00").tz("Pacific/Easter").zone(), 360, "1932-09-01T07:17:28+00:00 should be 360 minutes offset in EASST");
 
 		t.done();

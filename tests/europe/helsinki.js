@@ -6,7 +6,7 @@ exports["Europe/Helsinki"] = {
 		t.equal(moment("1921-04-30T22:20:07+00:00").tz("Europe/Helsinki").format("HH:mm:ss"), "23:59:59", "1921-04-30T22:20:07+00:00 should be 23:59:59 HMT");
 		t.equal(moment("1921-04-30T22:20:08+00:00").tz("Europe/Helsinki").format("HH:mm:ss"), "00:20:08", "1921-04-30T22:20:08+00:00 should be 00:20:08 EET");
 
-		t.equal(moment("1921-04-30T22:20:07+00:00").tz("Europe/Helsinki").zone(), -99, "1921-04-30T22:20:07+00:00 should be -99 minutes offset in HMT");
+		t.equal(moment("1921-04-30T22:20:07+00:00").tz("Europe/Helsinki").zone(), -5992 / 60, "1921-04-30T22:20:07+00:00 should be -5992 / 60 minutes offset in HMT");
 		t.equal(moment("1921-04-30T22:20:08+00:00").tz("Europe/Helsinki").zone(), -120, "1921-04-30T22:20:08+00:00 should be -120 minutes offset in EET");
 
 		t.done();

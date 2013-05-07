@@ -6,7 +6,7 @@ exports["Europe/Athens"] = {
 		t.equal(moment("1916-07-27T22:26:07+00:00").tz("Europe/Athens").format("HH:mm:ss"), "00:00:59", "1916-07-27T22:26:07+00:00 should be 00:00:59 AMT");
 		t.equal(moment("1916-07-27T22:26:08+00:00").tz("Europe/Athens").format("HH:mm:ss"), "00:26:08", "1916-07-27T22:26:08+00:00 should be 00:26:08 EET");
 
-		t.equal(moment("1916-07-27T22:26:07+00:00").tz("Europe/Athens").zone(), -94, "1916-07-27T22:26:07+00:00 should be -94 minutes offset in AMT");
+		t.equal(moment("1916-07-27T22:26:07+00:00").tz("Europe/Athens").zone(), -5692 / 60, "1916-07-27T22:26:07+00:00 should be -5692 / 60 minutes offset in AMT");
 		t.equal(moment("1916-07-27T22:26:08+00:00").tz("Europe/Athens").zone(), -120, "1916-07-27T22:26:08+00:00 should be -120 minutes offset in EET");
 
 		t.done();

@@ -21,15 +21,21 @@ var moment = require('../moment-timezone'),
 // converts time in the HH:mm format to absolute number of minutes
 function parseMinutes (input) {
 	var output = input.split(':'),
-		minutes = +output[0] * 60,
-		minutes2 = parseInt(output[1], 10) || 0;
+		sign = +output[0] < 0 ? -1 : 1,
+		hour = Math.abs(+output[0]),
+		minute = parseInt(output[1], 10) || 0;
 
-	if (minutes >= 0) {
-		minutes += minutes2;
-	} else {
-		minutes -= minutes2;
-	}
-	return minutes;
+	return sign * ((hour * 60) + minute);
+}
+
+function parseSeconds (input) {
+	var output = input.split(':'),
+		sign = +output[0] < 0 ? -1 : 1,
+		hour = Math.abs(+output[0]),
+		minute = parseInt(output[1], 10) || 0,
+		second = parseInt(output[2], 10) || 0;
+
+	return sign * ((hour * 60 * 60) + (minute * 60) + second);
 }
 
 /******************************
@@ -223,17 +229,17 @@ module.exports = function (grunt) {
 
 	function Zone (line) {
 		this.name = line[0];
-		this.offset = parseMinutes(line[1]);
-		this.setRuleset(line[2]);
+		this.offset = parseSeconds(line[1]);
+		this.parseRuleset(line[2]);
 		this.letters = line[3];
 		this.zone = moment.tz.addZone(this.name + " " + this.format());
 		this.parseUntil(line.slice(4));
 	}
 
 	Zone.prototype = {
-		setRuleset : function (ruleset) {
+		parseRuleset : function (ruleset) {
 			if (rIsRuleset.exec(ruleset)) {
-				this.offset += parseMinutes(ruleset);
+				this.offset += parseSeconds(ruleset);
 				this.ruleset = '-';
 			} else {
 				this.ruleset = ruleset;
@@ -248,9 +254,7 @@ module.exports = function (grunt) {
 				return;
 			}
 
-			// if (this.name !== "Antarctica/Macquarie") {
-			// 	return;
-			// }
+			// if (this.name !== "Pacific/Tahiti") return;
 
 			for (name in rules) {
 				if (name === this.ruleset) {
@@ -272,7 +276,7 @@ module.exports = function (grunt) {
 			if (this.untilTimeRule === TIME_RULE_STANDARD) {
 				this.untilOffset = this.offset;
 			} else if (this.untilTimeRule === TIME_RULE_WALL_CLOCK) {
-				this.untilOffset = this.offset + lastRule.offset;
+				this.untilOffset = this.offset + (lastRule.offset * 60);
 			}
 		},
 
@@ -302,7 +306,7 @@ module.exports = function (grunt) {
 			if (input[3]) {
 				this.untilTime = input[4] = parseMinutes(input[3]);
 				input[3] = 0;
-				this.untilMoment.minute(this.untilTime - this.offset);
+				this.untilMoment.second((this.untilTime * 60) - this.offset);
 			}
 
 			this.until = input.join('_').replace(/_$/, '');

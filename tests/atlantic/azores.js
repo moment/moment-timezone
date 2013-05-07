@@ -6,7 +6,7 @@ exports["Atlantic/Azores"] = {
 		t.equal(moment("1911-05-24T01:54:31+00:00").tz("Atlantic/Azores").format("HH:mm:ss"), "23:59:59", "1911-05-24T01:54:31+00:00 should be 23:59:59 HMT");
 		t.equal(moment("1911-05-24T01:54:32+00:00").tz("Atlantic/Azores").format("HH:mm:ss"), "23:54:32", "1911-05-24T01:54:32+00:00 should be 23:54:32 AZOT");
 
-		t.equal(moment("1911-05-24T01:54:31+00:00").tz("Atlantic/Azores").zone(), 114, "1911-05-24T01:54:31+00:00 should be 114 minutes offset in HMT");
+		t.equal(moment("1911-05-24T01:54:31+00:00").tz("Atlantic/Azores").zone(), 6872 / 60, "1911-05-24T01:54:31+00:00 should be 6872 / 60 minutes offset in HMT");
 		t.equal(moment("1911-05-24T01:54:32+00:00").tz("Atlantic/Azores").zone(), 120, "1911-05-24T01:54:32+00:00 should be 120 minutes offset in AZOT");
 
 		t.done();

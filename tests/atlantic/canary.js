@@ -6,7 +6,7 @@ exports["Atlantic/Canary"] = {
 		t.equal(moment("1922-03-01T01:01:35+00:00").tz("Atlantic/Canary").format("HH:mm:ss"), "23:59:59", "1922-03-01T01:01:35+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1922-03-01T01:01:36+00:00").tz("Atlantic/Canary").format("HH:mm:ss"), "00:01:36", "1922-03-01T01:01:36+00:00 should be 00:01:36 CANT");
 
-		t.equal(moment("1922-03-01T01:01:35+00:00").tz("Atlantic/Canary").zone(), 61, "1922-03-01T01:01:35+00:00 should be 61 minutes offset in LMT");
+		t.equal(moment("1922-03-01T01:01:35+00:00").tz("Atlantic/Canary").zone(), 3696 / 60, "1922-03-01T01:01:35+00:00 should be 3696 / 60 minutes offset in LMT");
 		t.equal(moment("1922-03-01T01:01:36+00:00").tz("Atlantic/Canary").zone(), 60, "1922-03-01T01:01:36+00:00 should be 60 minutes offset in CANT");
 
 		t.done();

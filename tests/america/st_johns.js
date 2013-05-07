@@ -8,10 +8,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1917-09-17T04:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "01:59:59", "1917-09-17T04:30:51+00:00 should be 01:59:59 NDT");
 		t.equal(moment("1917-09-17T04:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "01:00:00", "1917-09-17T04:30:52+00:00 should be 01:00:00 NST");
 
-		t.equal(moment("1917-04-08T05:30:51+00:00").tz("America/St_Johns").zone(), 210, "1917-04-08T05:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1917-04-08T05:30:52+00:00").tz("America/St_Johns").zone(), 150, "1917-04-08T05:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1917-09-17T04:30:51+00:00").tz("America/St_Johns").zone(), 150, "1917-09-17T04:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1917-09-17T04:30:52+00:00").tz("America/St_Johns").zone(), 210, "1917-09-17T04:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1917-04-08T05:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1917-04-08T05:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1917-04-08T05:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1917-04-08T05:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1917-09-17T04:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1917-09-17T04:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1917-09-17T04:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1917-09-17T04:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -22,10 +22,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1918-10-27T04:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "01:59:59", "1918-10-27T04:30:51+00:00 should be 01:59:59 NDT");
 		t.equal(moment("1918-10-27T04:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "01:00:00", "1918-10-27T04:30:52+00:00 should be 01:00:00 NST");
 
-		t.equal(moment("1918-04-14T05:30:51+00:00").tz("America/St_Johns").zone(), 210, "1918-04-14T05:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1918-04-14T05:30:52+00:00").tz("America/St_Johns").zone(), 150, "1918-04-14T05:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1918-10-27T04:30:51+00:00").tz("America/St_Johns").zone(), 150, "1918-10-27T04:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1918-10-27T04:30:52+00:00").tz("America/St_Johns").zone(), 210, "1918-10-27T04:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1918-04-14T05:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1918-04-14T05:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1918-04-14T05:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1918-04-14T05:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1918-10-27T04:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1918-10-27T04:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1918-10-27T04:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1918-10-27T04:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -36,10 +36,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1919-08-13T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1919-08-13T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1919-08-13T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1919-08-13T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1919-05-06T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1919-05-06T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1919-05-06T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1919-05-06T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1919-08-13T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1919-08-13T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1919-08-13T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1919-08-13T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1919-05-06T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1919-05-06T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1919-05-06T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1919-05-06T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1919-08-13T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1919-08-13T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1919-08-13T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1919-08-13T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -50,10 +50,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1920-11-01T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1920-11-01T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1920-11-01T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1920-11-01T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1920-05-03T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1920-05-03T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1920-05-03T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1920-05-03T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1920-11-01T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1920-11-01T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1920-11-01T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1920-11-01T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1920-05-03T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1920-05-03T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1920-05-03T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1920-05-03T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1920-11-01T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1920-11-01T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1920-11-01T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1920-11-01T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -64,10 +64,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1921-10-31T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1921-10-31T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1921-10-31T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1921-10-31T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1921-05-02T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1921-05-02T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1921-05-02T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1921-05-02T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1921-10-31T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1921-10-31T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1921-10-31T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1921-10-31T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1921-05-02T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1921-05-02T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1921-05-02T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1921-05-02T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1921-10-31T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1921-10-31T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1921-10-31T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1921-10-31T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -78,10 +78,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1922-10-30T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1922-10-30T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1922-10-30T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1922-10-30T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1922-05-08T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1922-05-08T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1922-05-08T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1922-05-08T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1922-10-30T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1922-10-30T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1922-10-30T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1922-10-30T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1922-05-08T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1922-05-08T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1922-05-08T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1922-05-08T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1922-10-30T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1922-10-30T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1922-10-30T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1922-10-30T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -92,10 +92,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1923-10-29T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1923-10-29T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1923-10-29T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1923-10-29T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1923-05-07T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1923-05-07T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1923-05-07T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1923-05-07T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1923-10-29T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1923-10-29T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1923-10-29T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1923-10-29T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1923-05-07T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1923-05-07T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1923-05-07T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1923-05-07T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1923-10-29T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1923-10-29T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1923-10-29T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1923-10-29T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -106,10 +106,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1924-10-27T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1924-10-27T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1924-10-27T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1924-10-27T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1924-05-05T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1924-05-05T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1924-05-05T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1924-05-05T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1924-10-27T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1924-10-27T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1924-10-27T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1924-10-27T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1924-05-05T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1924-05-05T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1924-05-05T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1924-05-05T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1924-10-27T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1924-10-27T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1924-10-27T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1924-10-27T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -120,10 +120,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1925-10-26T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1925-10-26T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1925-10-26T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1925-10-26T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1925-05-04T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1925-05-04T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1925-05-04T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1925-05-04T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1925-10-26T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1925-10-26T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1925-10-26T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1925-10-26T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1925-05-04T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1925-05-04T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1925-05-04T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1925-05-04T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1925-10-26T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1925-10-26T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1925-10-26T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1925-10-26T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -134,10 +134,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1926-11-01T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1926-11-01T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1926-11-01T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1926-11-01T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1926-05-03T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1926-05-03T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1926-05-03T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1926-05-03T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1926-11-01T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1926-11-01T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1926-11-01T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1926-11-01T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1926-05-03T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1926-05-03T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1926-05-03T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1926-05-03T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1926-11-01T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1926-11-01T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1926-11-01T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1926-11-01T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -148,10 +148,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1927-10-31T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1927-10-31T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1927-10-31T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1927-10-31T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1927-05-02T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1927-05-02T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1927-05-02T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1927-05-02T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1927-10-31T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1927-10-31T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1927-10-31T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1927-10-31T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1927-05-02T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1927-05-02T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1927-05-02T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1927-05-02T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1927-10-31T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1927-10-31T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1927-10-31T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1927-10-31T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -162,10 +162,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1928-10-29T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1928-10-29T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1928-10-29T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1928-10-29T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1928-05-07T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1928-05-07T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1928-05-07T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1928-05-07T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1928-10-29T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1928-10-29T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1928-10-29T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1928-10-29T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1928-05-07T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1928-05-07T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1928-05-07T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1928-05-07T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1928-10-29T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1928-10-29T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1928-10-29T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1928-10-29T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -176,10 +176,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1929-10-28T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1929-10-28T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1929-10-28T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1929-10-28T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1929-05-06T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1929-05-06T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1929-05-06T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1929-05-06T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1929-10-28T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1929-10-28T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1929-10-28T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1929-10-28T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1929-05-06T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1929-05-06T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1929-05-06T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1929-05-06T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1929-10-28T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1929-10-28T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1929-10-28T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1929-10-28T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -190,10 +190,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1930-10-27T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1930-10-27T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1930-10-27T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1930-10-27T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1930-05-05T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1930-05-05T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1930-05-05T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1930-05-05T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1930-10-27T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1930-10-27T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1930-10-27T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1930-10-27T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1930-05-05T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1930-05-05T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1930-05-05T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1930-05-05T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1930-10-27T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1930-10-27T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1930-10-27T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1930-10-27T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -204,10 +204,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1931-10-26T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1931-10-26T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1931-10-26T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1931-10-26T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1931-05-04T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1931-05-04T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1931-05-04T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1931-05-04T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1931-10-26T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1931-10-26T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1931-10-26T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1931-10-26T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1931-05-04T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1931-05-04T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1931-05-04T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1931-05-04T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1931-10-26T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1931-10-26T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1931-10-26T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1931-10-26T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -218,10 +218,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1932-10-31T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1932-10-31T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1932-10-31T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1932-10-31T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1932-05-02T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1932-05-02T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1932-05-02T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1932-05-02T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1932-10-31T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1932-10-31T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1932-10-31T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1932-10-31T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1932-05-02T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1932-05-02T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1932-05-02T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1932-05-02T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1932-10-31T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1932-10-31T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1932-10-31T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1932-10-31T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -232,10 +232,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1933-10-30T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1933-10-30T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1933-10-30T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1933-10-30T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1933-05-08T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1933-05-08T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1933-05-08T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1933-05-08T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1933-10-30T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1933-10-30T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1933-10-30T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1933-10-30T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1933-05-08T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1933-05-08T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1933-05-08T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1933-05-08T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1933-10-30T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1933-10-30T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1933-10-30T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1933-10-30T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -246,10 +246,10 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1934-10-29T01:30:51+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1934-10-29T01:30:51+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1934-10-29T01:30:52+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1934-10-29T01:30:52+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1934-05-07T02:30:51+00:00").tz("America/St_Johns").zone(), 210, "1934-05-07T02:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1934-05-07T02:30:52+00:00").tz("America/St_Johns").zone(), 150, "1934-05-07T02:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1934-10-29T01:30:51+00:00").tz("America/St_Johns").zone(), 150, "1934-10-29T01:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1934-10-29T01:30:52+00:00").tz("America/St_Johns").zone(), 210, "1934-10-29T01:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1934-05-07T02:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1934-05-07T02:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1934-05-07T02:30:52+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1934-05-07T02:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1934-10-29T01:30:51+00:00").tz("America/St_Johns").zone(), 9052 / 60, "1934-10-29T01:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1934-10-29T01:30:52+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1934-10-29T01:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -262,7 +262,7 @@ exports["America/St_Johns"] = {
 		t.equal(moment("1935-10-28T01:29:59+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:59:59", "1935-10-28T01:29:59+00:00 should be 22:59:59 NDT");
 		t.equal(moment("1935-10-28T01:30:00+00:00").tz("America/St_Johns").format("HH:mm:ss"), "22:00:00", "1935-10-28T01:30:00+00:00 should be 22:00:00 NST");
 
-		t.equal(moment("1935-03-30T03:30:51+00:00").tz("America/St_Johns").zone(), 210, "1935-03-30T03:30:51+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1935-03-30T03:30:51+00:00").tz("America/St_Johns").zone(), 12652 / 60, "1935-03-30T03:30:51+00:00 should be 12652 / 60 minutes offset in NST");
 		t.equal(moment("1935-03-30T03:30:52+00:00").tz("America/St_Johns").zone(), 210, "1935-03-30T03:30:52+00:00 should be 210 minutes offset in NST");
 		t.equal(moment("1935-05-06T02:29:59+00:00").tz("America/St_Johns").zone(), 210, "1935-05-06T02:29:59+00:00 should be 210 minutes offset in NST");
 		t.equal(moment("1935-05-06T02:30:00+00:00").tz("America/St_Johns").zone(), 150, "1935-05-06T02:30:00+00:00 should be 150 minutes offset in NDT");

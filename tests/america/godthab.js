@@ -6,7 +6,7 @@ exports["America/Godthab"] = {
 		t.equal(moment("1916-07-28T03:26:55+00:00").tz("America/Godthab").format("HH:mm:ss"), "23:59:59", "1916-07-28T03:26:55+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1916-07-28T03:26:56+00:00").tz("America/Godthab").format("HH:mm:ss"), "00:26:56", "1916-07-28T03:26:56+00:00 should be 00:26:56 WGT");
 
-		t.equal(moment("1916-07-28T03:26:55+00:00").tz("America/Godthab").zone(), 206, "1916-07-28T03:26:55+00:00 should be 206 minutes offset in LMT");
+		t.equal(moment("1916-07-28T03:26:55+00:00").tz("America/Godthab").zone(), 12416 / 60, "1916-07-28T03:26:55+00:00 should be 12416 / 60 minutes offset in LMT");
 		t.equal(moment("1916-07-28T03:26:56+00:00").tz("America/Godthab").zone(), 180, "1916-07-28T03:26:56+00:00 should be 180 minutes offset in WGT");
 
 		t.done();

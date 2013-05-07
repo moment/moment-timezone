@@ -6,8 +6,8 @@ exports["Africa/Banjul"] = {
 		t.equal(moment("1912-01-01T01:06:35+00:00").tz("Africa/Banjul").format("HH:mm:ss"), "23:59:59", "1912-01-01T01:06:35+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1912-01-01T01:06:36+00:00").tz("Africa/Banjul").format("HH:mm:ss"), "00:00:00", "1912-01-01T01:06:36+00:00 should be 00:00:00 BMT");
 
-		t.equal(moment("1912-01-01T01:06:35+00:00").tz("Africa/Banjul").zone(), 66, "1912-01-01T01:06:35+00:00 should be 66 minutes offset in LMT");
-		t.equal(moment("1912-01-01T01:06:36+00:00").tz("Africa/Banjul").zone(), 66, "1912-01-01T01:06:36+00:00 should be 66 minutes offset in BMT");
+		t.equal(moment("1912-01-01T01:06:35+00:00").tz("Africa/Banjul").zone(), 3996 / 60, "1912-01-01T01:06:35+00:00 should be 3996 / 60 minutes offset in LMT");
+		t.equal(moment("1912-01-01T01:06:36+00:00").tz("Africa/Banjul").zone(), 3996 / 60, "1912-01-01T01:06:36+00:00 should be 3996 / 60 minutes offset in BMT");
 
 		t.done();
 	},
@@ -16,7 +16,7 @@ exports["Africa/Banjul"] = {
 		t.equal(moment("1935-01-01T01:06:35+00:00").tz("Africa/Banjul").format("HH:mm:ss"), "23:59:59", "1935-01-01T01:06:35+00:00 should be 23:59:59 BMT");
 		t.equal(moment("1935-01-01T01:06:36+00:00").tz("Africa/Banjul").format("HH:mm:ss"), "00:06:36", "1935-01-01T01:06:36+00:00 should be 00:06:36 WAT");
 
-		t.equal(moment("1935-01-01T01:06:35+00:00").tz("Africa/Banjul").zone(), 66, "1935-01-01T01:06:35+00:00 should be 66 minutes offset in BMT");
+		t.equal(moment("1935-01-01T01:06:35+00:00").tz("Africa/Banjul").zone(), 3996 / 60, "1935-01-01T01:06:35+00:00 should be 3996 / 60 minutes offset in BMT");
 		t.equal(moment("1935-01-01T01:06:36+00:00").tz("Africa/Banjul").zone(), 60, "1935-01-01T01:06:36+00:00 should be 60 minutes offset in WAT");
 
 		t.done();

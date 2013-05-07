@@ -7,7 +7,7 @@ exports["Europe/Chisinau"] = {
 		t.equal(moment("1918-02-14T22:05:00+00:00").tz("Europe/Chisinau").format("HH:mm:ss"), "23:49:24", "1918-02-14T22:05:00+00:00 should be 23:49:24 BMT");
 
 		t.equal(moment("1918-02-14T22:04:59+00:00").tz("Europe/Chisinau").zone(), -115, "1918-02-14T22:04:59+00:00 should be -115 minutes offset in CMT");
-		t.equal(moment("1918-02-14T22:05:00+00:00").tz("Europe/Chisinau").zone(), -104, "1918-02-14T22:05:00+00:00 should be -104 minutes offset in BMT");
+		t.equal(moment("1918-02-14T22:05:00+00:00").tz("Europe/Chisinau").zone(), -6264 / 60, "1918-02-14T22:05:00+00:00 should be -6264 / 60 minutes offset in BMT");
 
 		t.done();
 	},
@@ -16,7 +16,7 @@ exports["Europe/Chisinau"] = {
 		t.equal(moment("1931-07-23T22:15:35+00:00").tz("Europe/Chisinau").format("HH:mm:ss"), "23:59:59", "1931-07-23T22:15:35+00:00 should be 23:59:59 BMT");
 		t.equal(moment("1931-07-23T22:15:36+00:00").tz("Europe/Chisinau").format("HH:mm:ss"), "00:15:36", "1931-07-23T22:15:36+00:00 should be 00:15:36 EET");
 
-		t.equal(moment("1931-07-23T22:15:35+00:00").tz("Europe/Chisinau").zone(), -104, "1931-07-23T22:15:35+00:00 should be -104 minutes offset in BMT");
+		t.equal(moment("1931-07-23T22:15:35+00:00").tz("Europe/Chisinau").zone(), -6264 / 60, "1931-07-23T22:15:35+00:00 should be -6264 / 60 minutes offset in BMT");
 		t.equal(moment("1931-07-23T22:15:36+00:00").tz("Europe/Chisinau").zone(), -120, "1931-07-23T22:15:36+00:00 should be -120 minutes offset in EET");
 
 		t.done();

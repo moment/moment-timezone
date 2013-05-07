@@ -6,7 +6,7 @@ exports["Asia/Rangoon"] = {
 		t.equal(moment("1919-12-31T17:35:19+00:00").tz("Asia/Rangoon").format("HH:mm:ss"), "23:59:59", "1919-12-31T17:35:19+00:00 should be 23:59:59 RMT");
 		t.equal(moment("1919-12-31T17:35:20+00:00").tz("Asia/Rangoon").format("HH:mm:ss"), "00:05:20", "1919-12-31T17:35:20+00:00 should be 00:05:20 BURT");
 
-		t.equal(moment("1919-12-31T17:35:19+00:00").tz("Asia/Rangoon").zone(), -384, "1919-12-31T17:35:19+00:00 should be -384 minutes offset in RMT");
+		t.equal(moment("1919-12-31T17:35:19+00:00").tz("Asia/Rangoon").zone(), -23080 / 60, "1919-12-31T17:35:19+00:00 should be -23080 / 60 minutes offset in RMT");
 		t.equal(moment("1919-12-31T17:35:20+00:00").tz("Asia/Rangoon").zone(), -390, "1919-12-31T17:35:20+00:00 should be -390 minutes offset in BURT");
 
 		t.done();

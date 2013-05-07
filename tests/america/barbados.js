@@ -6,8 +6,8 @@ exports["America/Barbados"] = {
 		t.equal(moment("1924-01-01T03:58:28+00:00").tz("America/Barbados").format("HH:mm:ss"), "23:59:59", "1924-01-01T03:58:28+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1924-01-01T03:58:29+00:00").tz("America/Barbados").format("HH:mm:ss"), "00:00:00", "1924-01-01T03:58:29+00:00 should be 00:00:00 BMT");
 
-		t.equal(moment("1924-01-01T03:58:28+00:00").tz("America/Barbados").zone(), 238, "1924-01-01T03:58:28+00:00 should be 238 minutes offset in LMT");
-		t.equal(moment("1924-01-01T03:58:29+00:00").tz("America/Barbados").zone(), 238, "1924-01-01T03:58:29+00:00 should be 238 minutes offset in BMT");
+		t.equal(moment("1924-01-01T03:58:28+00:00").tz("America/Barbados").zone(), 14309 / 60, "1924-01-01T03:58:28+00:00 should be 14309 / 60 minutes offset in LMT");
+		t.equal(moment("1924-01-01T03:58:29+00:00").tz("America/Barbados").zone(), 14309 / 60, "1924-01-01T03:58:29+00:00 should be 14309 / 60 minutes offset in BMT");
 
 		t.done();
 	},
@@ -16,7 +16,7 @@ exports["America/Barbados"] = {
 		t.equal(moment("1932-01-01T03:58:28+00:00").tz("America/Barbados").format("HH:mm:ss"), "23:59:59", "1932-01-01T03:58:28+00:00 should be 23:59:59 BMT");
 		t.equal(moment("1932-01-01T03:58:29+00:00").tz("America/Barbados").format("HH:mm:ss"), "23:58:29", "1932-01-01T03:58:29+00:00 should be 23:58:29 AST");
 
-		t.equal(moment("1932-01-01T03:58:28+00:00").tz("America/Barbados").zone(), 238, "1932-01-01T03:58:28+00:00 should be 238 minutes offset in BMT");
+		t.equal(moment("1932-01-01T03:58:28+00:00").tz("America/Barbados").zone(), 14309 / 60, "1932-01-01T03:58:28+00:00 should be 14309 / 60 minutes offset in BMT");
 		t.equal(moment("1932-01-01T03:58:29+00:00").tz("America/Barbados").zone(), 240, "1932-01-01T03:58:29+00:00 should be 240 minutes offset in AST");
 
 		t.done();

@@ -6,7 +6,7 @@ exports["Europe/Samara"] = {
 		t.equal(moment("1919-06-30T22:39:23+00:00").tz("Europe/Samara").format("HH:mm:ss"), "01:59:59", "1919-06-30T22:39:23+00:00 should be 01:59:59 LMT");
 		t.equal(moment("1919-06-30T22:39:24+00:00").tz("Europe/Samara").format("HH:mm:ss"), "01:39:24", "1919-06-30T22:39:24+00:00 should be 01:39:24 SAMT");
 
-		t.equal(moment("1919-06-30T22:39:23+00:00").tz("Europe/Samara").zone(), -200, "1919-06-30T22:39:23+00:00 should be -200 minutes offset in LMT");
+		t.equal(moment("1919-06-30T22:39:23+00:00").tz("Europe/Samara").zone(), -12036 / 60, "1919-06-30T22:39:23+00:00 should be -12036 / 60 minutes offset in LMT");
 		t.equal(moment("1919-06-30T22:39:24+00:00").tz("Europe/Samara").zone(), -180, "1919-06-30T22:39:24+00:00 should be -180 minutes offset in SAMT");
 
 		t.done();

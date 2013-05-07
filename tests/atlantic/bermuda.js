@@ -6,7 +6,7 @@ exports["Atlantic/Bermuda"] = {
 		t.equal(moment("1930-01-01T06:19:17+00:00").tz("Atlantic/Bermuda").format("HH:mm:ss"), "01:59:59", "1930-01-01T06:19:17+00:00 should be 01:59:59 LMT");
 		t.equal(moment("1930-01-01T06:19:18+00:00").tz("Atlantic/Bermuda").format("HH:mm:ss"), "02:19:18", "1930-01-01T06:19:18+00:00 should be 02:19:18 AST");
 
-		t.equal(moment("1930-01-01T06:19:17+00:00").tz("Atlantic/Bermuda").zone(), 259, "1930-01-01T06:19:17+00:00 should be 259 minutes offset in LMT");
+		t.equal(moment("1930-01-01T06:19:17+00:00").tz("Atlantic/Bermuda").zone(), 15558 / 60, "1930-01-01T06:19:17+00:00 should be 15558 / 60 minutes offset in LMT");
 		t.equal(moment("1930-01-01T06:19:18+00:00").tz("Atlantic/Bermuda").zone(), 240, "1930-01-01T06:19:18+00:00 should be 240 minutes offset in AST");
 
 		t.done();

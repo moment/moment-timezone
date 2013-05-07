@@ -8,10 +8,10 @@ exports["Europe/Riga"] = {
 		t.equal(moment("1918-09-16T00:23:35+00:00").tz("Europe/Riga").format("HH:mm:ss"), "02:59:59", "1918-09-16T00:23:35+00:00 should be 02:59:59 LST");
 		t.equal(moment("1918-09-16T00:23:36+00:00").tz("Europe/Riga").format("HH:mm:ss"), "02:00:00", "1918-09-16T00:23:36+00:00 should be 02:00:00 RMT");
 
-		t.equal(moment("1918-04-15T00:23:35+00:00").tz("Europe/Riga").zone(), -96, "1918-04-15T00:23:35+00:00 should be -96 minutes offset in RMT");
-		t.equal(moment("1918-04-15T00:23:36+00:00").tz("Europe/Riga").zone(), -156, "1918-04-15T00:23:36+00:00 should be -156 minutes offset in LST");
-		t.equal(moment("1918-09-16T00:23:35+00:00").tz("Europe/Riga").zone(), -156, "1918-09-16T00:23:35+00:00 should be -156 minutes offset in LST");
-		t.equal(moment("1918-09-16T00:23:36+00:00").tz("Europe/Riga").zone(), -96, "1918-09-16T00:23:36+00:00 should be -96 minutes offset in RMT");
+		t.equal(moment("1918-04-15T00:23:35+00:00").tz("Europe/Riga").zone(), -5784 / 60, "1918-04-15T00:23:35+00:00 should be -5784 / 60 minutes offset in RMT");
+		t.equal(moment("1918-04-15T00:23:36+00:00").tz("Europe/Riga").zone(), -9384 / 60, "1918-04-15T00:23:36+00:00 should be -9384 / 60 minutes offset in LST");
+		t.equal(moment("1918-09-16T00:23:35+00:00").tz("Europe/Riga").zone(), -9384 / 60, "1918-09-16T00:23:35+00:00 should be -9384 / 60 minutes offset in LST");
+		t.equal(moment("1918-09-16T00:23:36+00:00").tz("Europe/Riga").zone(), -5784 / 60, "1918-09-16T00:23:36+00:00 should be -5784 / 60 minutes offset in RMT");
 
 		t.done();
 	},
@@ -22,10 +22,10 @@ exports["Europe/Riga"] = {
 		t.equal(moment("1919-05-22T00:23:35+00:00").tz("Europe/Riga").format("HH:mm:ss"), "02:59:59", "1919-05-22T00:23:35+00:00 should be 02:59:59 LST");
 		t.equal(moment("1919-05-22T00:23:36+00:00").tz("Europe/Riga").format("HH:mm:ss"), "02:00:00", "1919-05-22T00:23:36+00:00 should be 02:00:00 RMT");
 
-		t.equal(moment("1919-04-01T00:23:35+00:00").tz("Europe/Riga").zone(), -96, "1919-04-01T00:23:35+00:00 should be -96 minutes offset in RMT");
-		t.equal(moment("1919-04-01T00:23:36+00:00").tz("Europe/Riga").zone(), -156, "1919-04-01T00:23:36+00:00 should be -156 minutes offset in LST");
-		t.equal(moment("1919-05-22T00:23:35+00:00").tz("Europe/Riga").zone(), -156, "1919-05-22T00:23:35+00:00 should be -156 minutes offset in LST");
-		t.equal(moment("1919-05-22T00:23:36+00:00").tz("Europe/Riga").zone(), -96, "1919-05-22T00:23:36+00:00 should be -96 minutes offset in RMT");
+		t.equal(moment("1919-04-01T00:23:35+00:00").tz("Europe/Riga").zone(), -5784 / 60, "1919-04-01T00:23:35+00:00 should be -5784 / 60 minutes offset in RMT");
+		t.equal(moment("1919-04-01T00:23:36+00:00").tz("Europe/Riga").zone(), -9384 / 60, "1919-04-01T00:23:36+00:00 should be -9384 / 60 minutes offset in LST");
+		t.equal(moment("1919-05-22T00:23:35+00:00").tz("Europe/Riga").zone(), -9384 / 60, "1919-05-22T00:23:35+00:00 should be -9384 / 60 minutes offset in LST");
+		t.equal(moment("1919-05-22T00:23:36+00:00").tz("Europe/Riga").zone(), -5784 / 60, "1919-05-22T00:23:36+00:00 should be -5784 / 60 minutes offset in RMT");
 
 		t.done();
 	},
@@ -34,7 +34,7 @@ exports["Europe/Riga"] = {
 		t.equal(moment("1926-05-10T22:23:35+00:00").tz("Europe/Riga").format("HH:mm:ss"), "23:59:59", "1926-05-10T22:23:35+00:00 should be 23:59:59 RMT");
 		t.equal(moment("1926-05-10T22:23:36+00:00").tz("Europe/Riga").format("HH:mm:ss"), "00:23:36", "1926-05-10T22:23:36+00:00 should be 00:23:36 EET");
 
-		t.equal(moment("1926-05-10T22:23:35+00:00").tz("Europe/Riga").zone(), -96, "1926-05-10T22:23:35+00:00 should be -96 minutes offset in RMT");
+		t.equal(moment("1926-05-10T22:23:35+00:00").tz("Europe/Riga").zone(), -5784 / 60, "1926-05-10T22:23:35+00:00 should be -5784 / 60 minutes offset in RMT");
 		t.equal(moment("1926-05-10T22:23:36+00:00").tz("Europe/Riga").zone(), -120, "1926-05-10T22:23:36+00:00 should be -120 minutes offset in EET");
 
 		t.done();

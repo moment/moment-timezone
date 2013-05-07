@@ -6,7 +6,7 @@ exports["America/Miquelon"] = {
 		t.equal(moment("1911-05-15T03:44:39+00:00").tz("America/Miquelon").format("HH:mm:ss"), "23:59:59", "1911-05-15T03:44:39+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1911-05-15T03:44:40+00:00").tz("America/Miquelon").format("HH:mm:ss"), "23:44:40", "1911-05-15T03:44:40+00:00 should be 23:44:40 AST");
 
-		t.equal(moment("1911-05-15T03:44:39+00:00").tz("America/Miquelon").zone(), 224, "1911-05-15T03:44:39+00:00 should be 224 minutes offset in LMT");
+		t.equal(moment("1911-05-15T03:44:39+00:00").tz("America/Miquelon").zone(), 13480 / 60, "1911-05-15T03:44:39+00:00 should be 13480 / 60 minutes offset in LMT");
 		t.equal(moment("1911-05-15T03:44:40+00:00").tz("America/Miquelon").zone(), 240, "1911-05-15T03:44:40+00:00 should be 240 minutes offset in AST");
 
 		t.done();

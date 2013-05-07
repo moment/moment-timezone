@@ -211,14 +211,14 @@
 			untilArray = typeof until === 'string' ? until.split('_') : [9999];
 
 		this.name = name;
-		this.offset = +offset;
+		this.offset = offset / 60;
 		this.ruleSet = ruleSet;
 		this.letters = letters;
 
 		for (i = 0; i < untilArray.length; i++) {
 			untilArray[i] = +untilArray[i];
 		}
-		this.until = moment.utc(untilArray).subtract('m', +untilOffset || 0);
+		this.until = moment.utc(untilArray).subtract('s', +untilOffset || 0);
 	}
 
 	Zone.prototype = {

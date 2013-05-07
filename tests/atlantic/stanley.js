@@ -6,7 +6,7 @@ exports["Atlantic/Stanley"] = {
 		t.equal(moment("1912-03-12T03:51:23+00:00").tz("Atlantic/Stanley").format("HH:mm:ss"), "23:59:59", "1912-03-12T03:51:23+00:00 should be 23:59:59 SMT");
 		t.equal(moment("1912-03-12T03:51:24+00:00").tz("Atlantic/Stanley").format("HH:mm:ss"), "23:51:24", "1912-03-12T03:51:24+00:00 should be 23:51:24 FKT");
 
-		t.equal(moment("1912-03-12T03:51:23+00:00").tz("Atlantic/Stanley").zone(), 231, "1912-03-12T03:51:23+00:00 should be 231 minutes offset in SMT");
+		t.equal(moment("1912-03-12T03:51:23+00:00").tz("Atlantic/Stanley").zone(), 13884 / 60, "1912-03-12T03:51:23+00:00 should be 13884 / 60 minutes offset in SMT");
 		t.equal(moment("1912-03-12T03:51:24+00:00").tz("Atlantic/Stanley").zone(), 240, "1912-03-12T03:51:24+00:00 should be 240 minutes offset in FKT");
 
 		t.done();

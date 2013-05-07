@@ -8,10 +8,10 @@ exports["America/Goose_Bay"] = {
 		t.equal(moment("1918-10-27T04:30:51+00:00").tz("America/Goose_Bay").format("HH:mm:ss"), "01:59:59", "1918-10-27T04:30:51+00:00 should be 01:59:59 NDT");
 		t.equal(moment("1918-10-27T04:30:52+00:00").tz("America/Goose_Bay").format("HH:mm:ss"), "01:00:00", "1918-10-27T04:30:52+00:00 should be 01:00:00 NST");
 
-		t.equal(moment("1918-04-14T05:30:51+00:00").tz("America/Goose_Bay").zone(), 210, "1918-04-14T05:30:51+00:00 should be 210 minutes offset in NST");
-		t.equal(moment("1918-04-14T05:30:52+00:00").tz("America/Goose_Bay").zone(), 150, "1918-04-14T05:30:52+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1918-10-27T04:30:51+00:00").tz("America/Goose_Bay").zone(), 150, "1918-10-27T04:30:51+00:00 should be 150 minutes offset in NDT");
-		t.equal(moment("1918-10-27T04:30:52+00:00").tz("America/Goose_Bay").zone(), 210, "1918-10-27T04:30:52+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1918-04-14T05:30:51+00:00").tz("America/Goose_Bay").zone(), 12652 / 60, "1918-04-14T05:30:51+00:00 should be 12652 / 60 minutes offset in NST");
+		t.equal(moment("1918-04-14T05:30:52+00:00").tz("America/Goose_Bay").zone(), 9052 / 60, "1918-04-14T05:30:52+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1918-10-27T04:30:51+00:00").tz("America/Goose_Bay").zone(), 9052 / 60, "1918-10-27T04:30:51+00:00 should be 9052 / 60 minutes offset in NDT");
+		t.equal(moment("1918-10-27T04:30:52+00:00").tz("America/Goose_Bay").zone(), 12652 / 60, "1918-10-27T04:30:52+00:00 should be 12652 / 60 minutes offset in NST");
 
 		t.done();
 	},
@@ -20,7 +20,7 @@ exports["America/Goose_Bay"] = {
 		t.equal(moment("1935-03-30T03:30:51+00:00").tz("America/Goose_Bay").format("HH:mm:ss"), "23:59:59", "1935-03-30T03:30:51+00:00 should be 23:59:59 NST");
 		t.equal(moment("1935-03-30T03:30:52+00:00").tz("America/Goose_Bay").format("HH:mm:ss"), "00:00:52", "1935-03-30T03:30:52+00:00 should be 00:00:52 NST");
 
-		t.equal(moment("1935-03-30T03:30:51+00:00").tz("America/Goose_Bay").zone(), 210, "1935-03-30T03:30:51+00:00 should be 210 minutes offset in NST");
+		t.equal(moment("1935-03-30T03:30:51+00:00").tz("America/Goose_Bay").zone(), 12652 / 60, "1935-03-30T03:30:51+00:00 should be 12652 / 60 minutes offset in NST");
 		t.equal(moment("1935-03-30T03:30:52+00:00").tz("America/Goose_Bay").zone(), 210, "1935-03-30T03:30:52+00:00 should be 210 minutes offset in NST");
 
 		t.done();

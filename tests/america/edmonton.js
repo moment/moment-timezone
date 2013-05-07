@@ -6,7 +6,7 @@ exports["America/Edmonton"] = {
 		t.equal(moment("1906-09-01T07:33:51+00:00").tz("America/Edmonton").format("HH:mm:ss"), "23:59:59", "1906-09-01T07:33:51+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1906-09-01T07:33:52+00:00").tz("America/Edmonton").format("HH:mm:ss"), "00:33:52", "1906-09-01T07:33:52+00:00 should be 00:33:52 MST");
 
-		t.equal(moment("1906-09-01T07:33:51+00:00").tz("America/Edmonton").zone(), 453, "1906-09-01T07:33:51+00:00 should be 453 minutes offset in LMT");
+		t.equal(moment("1906-09-01T07:33:51+00:00").tz("America/Edmonton").zone(), 27232 / 60, "1906-09-01T07:33:51+00:00 should be 27232 / 60 minutes offset in LMT");
 		t.equal(moment("1906-09-01T07:33:52+00:00").tz("America/Edmonton").zone(), 420, "1906-09-01T07:33:52+00:00 should be 420 minutes offset in MST");
 
 		t.done();

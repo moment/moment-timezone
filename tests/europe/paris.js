@@ -6,7 +6,7 @@ exports["Europe/Paris"] = {
 		t.equal(moment("1911-03-10T23:51:38+00:00").tz("Europe/Paris").format("HH:mm:ss"), "00:00:59", "1911-03-10T23:51:38+00:00 should be 00:00:59 PMT");
 		t.equal(moment("1911-03-10T23:51:39+00:00").tz("Europe/Paris").format("HH:mm:ss"), "23:51:39", "1911-03-10T23:51:39+00:00 should be 23:51:39 WET");
 
-		t.equal(moment("1911-03-10T23:51:38+00:00").tz("Europe/Paris").zone(), -9, "1911-03-10T23:51:38+00:00 should be -9 minutes offset in PMT");
+		t.equal(moment("1911-03-10T23:51:38+00:00").tz("Europe/Paris").zone(), -561 / 60, "1911-03-10T23:51:38+00:00 should be -561 / 60 minutes offset in PMT");
 		t.equal(moment("1911-03-10T23:51:39+00:00").tz("Europe/Paris").zone(), 0, "1911-03-10T23:51:39+00:00 should be 0 minutes offset in WET");
 
 		t.done();

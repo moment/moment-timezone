@@ -6,7 +6,7 @@ exports["America/Asuncion"] = {
 		t.equal(moment("1931-10-10T03:50:39+00:00").tz("America/Asuncion").format("HH:mm:ss"), "23:59:59", "1931-10-10T03:50:39+00:00 should be 23:59:59 AMT");
 		t.equal(moment("1931-10-10T03:50:40+00:00").tz("America/Asuncion").format("HH:mm:ss"), "23:50:40", "1931-10-10T03:50:40+00:00 should be 23:50:40 PYT");
 
-		t.equal(moment("1931-10-10T03:50:39+00:00").tz("America/Asuncion").zone(), 230, "1931-10-10T03:50:39+00:00 should be 230 minutes offset in AMT");
+		t.equal(moment("1931-10-10T03:50:39+00:00").tz("America/Asuncion").zone(), 13840 / 60, "1931-10-10T03:50:39+00:00 should be 13840 / 60 minutes offset in AMT");
 		t.equal(moment("1931-10-10T03:50:40+00:00").tz("America/Asuncion").zone(), 240, "1931-10-10T03:50:40+00:00 should be 240 minutes offset in PYT");
 
 		t.done();

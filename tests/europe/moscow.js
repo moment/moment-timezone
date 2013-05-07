@@ -7,7 +7,7 @@ exports["Europe/Moscow"] = {
 		t.equal(moment("1916-07-02T21:30:00+00:00").tz("Europe/Moscow").format("HH:mm:ss"), "00:00:48", "1916-07-02T21:30:00+00:00 should be 00:00:48 MMT");
 
 		t.equal(moment("1916-07-02T21:29:59+00:00").tz("Europe/Moscow").zone(), -150, "1916-07-02T21:29:59+00:00 should be -150 minutes offset in MMT");
-		t.equal(moment("1916-07-02T21:30:00+00:00").tz("Europe/Moscow").zone(), -150, "1916-07-02T21:30:00+00:00 should be -150 minutes offset in MMT");
+		t.equal(moment("1916-07-02T21:30:00+00:00").tz("Europe/Moscow").zone(), -9048 / 60, "1916-07-02T21:30:00+00:00 should be -9048 / 60 minutes offset in MMT");
 
 		t.done();
 	},
@@ -18,10 +18,10 @@ exports["Europe/Moscow"] = {
 		t.equal(moment("1917-12-27T20:29:11+00:00").tz("Europe/Moscow").format("HH:mm:ss"), "23:59:59", "1917-12-27T20:29:11+00:00 should be 23:59:59 MST");
 		t.equal(moment("1917-12-27T20:29:12+00:00").tz("Europe/Moscow").format("HH:mm:ss"), "23:00:00", "1917-12-27T20:29:12+00:00 should be 23:00:00 MMT");
 
-		t.equal(moment("1917-07-01T20:29:11+00:00").tz("Europe/Moscow").zone(), -150, "1917-07-01T20:29:11+00:00 should be -150 minutes offset in MMT");
-		t.equal(moment("1917-07-01T20:29:12+00:00").tz("Europe/Moscow").zone(), -210, "1917-07-01T20:29:12+00:00 should be -210 minutes offset in MST");
-		t.equal(moment("1917-12-27T20:29:11+00:00").tz("Europe/Moscow").zone(), -210, "1917-12-27T20:29:11+00:00 should be -210 minutes offset in MST");
-		t.equal(moment("1917-12-27T20:29:12+00:00").tz("Europe/Moscow").zone(), -150, "1917-12-27T20:29:12+00:00 should be -150 minutes offset in MMT");
+		t.equal(moment("1917-07-01T20:29:11+00:00").tz("Europe/Moscow").zone(), -9048 / 60, "1917-07-01T20:29:11+00:00 should be -9048 / 60 minutes offset in MMT");
+		t.equal(moment("1917-07-01T20:29:12+00:00").tz("Europe/Moscow").zone(), -12648 / 60, "1917-07-01T20:29:12+00:00 should be -12648 / 60 minutes offset in MST");
+		t.equal(moment("1917-12-27T20:29:11+00:00").tz("Europe/Moscow").zone(), -12648 / 60, "1917-12-27T20:29:11+00:00 should be -12648 / 60 minutes offset in MST");
+		t.equal(moment("1917-12-27T20:29:12+00:00").tz("Europe/Moscow").zone(), -9048 / 60, "1917-12-27T20:29:12+00:00 should be -9048 / 60 minutes offset in MMT");
 
 		t.done();
 	},
@@ -32,10 +32,10 @@ exports["Europe/Moscow"] = {
 		t.equal(moment("1918-09-15T20:29:11+00:00").tz("Europe/Moscow").format("HH:mm:ss"), "00:59:59", "1918-09-15T20:29:11+00:00 should be 00:59:59 MDST");
 		t.equal(moment("1918-09-15T20:29:12+00:00").tz("Europe/Moscow").format("HH:mm:ss"), "00:00:00", "1918-09-15T20:29:12+00:00 should be 00:00:00 MST");
 
-		t.equal(moment("1918-05-31T19:29:11+00:00").tz("Europe/Moscow").zone(), -150, "1918-05-31T19:29:11+00:00 should be -150 minutes offset in MMT");
-		t.equal(moment("1918-05-31T19:29:12+00:00").tz("Europe/Moscow").zone(), -270, "1918-05-31T19:29:12+00:00 should be -270 minutes offset in MDST");
-		t.equal(moment("1918-09-15T20:29:11+00:00").tz("Europe/Moscow").zone(), -270, "1918-09-15T20:29:11+00:00 should be -270 minutes offset in MDST");
-		t.equal(moment("1918-09-15T20:29:12+00:00").tz("Europe/Moscow").zone(), -210, "1918-09-15T20:29:12+00:00 should be -210 minutes offset in MST");
+		t.equal(moment("1918-05-31T19:29:11+00:00").tz("Europe/Moscow").zone(), -9048 / 60, "1918-05-31T19:29:11+00:00 should be -9048 / 60 minutes offset in MMT");
+		t.equal(moment("1918-05-31T19:29:12+00:00").tz("Europe/Moscow").zone(), -16248 / 60, "1918-05-31T19:29:12+00:00 should be -16248 / 60 minutes offset in MDST");
+		t.equal(moment("1918-09-15T20:29:11+00:00").tz("Europe/Moscow").zone(), -16248 / 60, "1918-09-15T20:29:11+00:00 should be -16248 / 60 minutes offset in MDST");
+		t.equal(moment("1918-09-15T20:29:12+00:00").tz("Europe/Moscow").zone(), -12648 / 60, "1918-09-15T20:29:12+00:00 should be -12648 / 60 minutes offset in MST");
 
 		t.done();
 	},
@@ -48,9 +48,9 @@ exports["Europe/Moscow"] = {
 		t.equal(moment("1919-08-15T19:59:59+00:00").tz("Europe/Moscow").format("HH:mm:ss"), "23:59:59", "1919-08-15T19:59:59+00:00 should be 23:59:59 MSD");
 		t.equal(moment("1919-08-15T20:00:00+00:00").tz("Europe/Moscow").format("HH:mm:ss"), "23:00:00", "1919-08-15T20:00:00+00:00 should be 23:00:00 MSK");
 
-		t.equal(moment("1919-05-31T19:29:11+00:00").tz("Europe/Moscow").zone(), -210, "1919-05-31T19:29:11+00:00 should be -210 minutes offset in MST");
-		t.equal(moment("1919-05-31T19:29:12+00:00").tz("Europe/Moscow").zone(), -270, "1919-05-31T19:29:12+00:00 should be -270 minutes offset in MDST");
-		t.equal(moment("1919-06-30T21:29:11+00:00").tz("Europe/Moscow").zone(), -270, "1919-06-30T21:29:11+00:00 should be -270 minutes offset in MDST");
+		t.equal(moment("1919-05-31T19:29:11+00:00").tz("Europe/Moscow").zone(), -12648 / 60, "1919-05-31T19:29:11+00:00 should be -12648 / 60 minutes offset in MST");
+		t.equal(moment("1919-05-31T19:29:12+00:00").tz("Europe/Moscow").zone(), -16248 / 60, "1919-05-31T19:29:12+00:00 should be -16248 / 60 minutes offset in MDST");
+		t.equal(moment("1919-06-30T21:29:11+00:00").tz("Europe/Moscow").zone(), -16248 / 60, "1919-06-30T21:29:11+00:00 should be -16248 / 60 minutes offset in MDST");
 		t.equal(moment("1919-06-30T21:29:12+00:00").tz("Europe/Moscow").zone(), -240, "1919-06-30T21:29:12+00:00 should be -240 minutes offset in MSD");
 		t.equal(moment("1919-08-15T19:59:59+00:00").tz("Europe/Moscow").zone(), -240, "1919-08-15T19:59:59+00:00 should be -240 minutes offset in MSD");
 		t.equal(moment("1919-08-15T20:00:00+00:00").tz("Europe/Moscow").zone(), -180, "1919-08-15T20:00:00+00:00 should be -180 minutes offset in MSK");

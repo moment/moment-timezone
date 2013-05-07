@@ -6,7 +6,7 @@ exports["America/Tijuana"] = {
 		t.equal(moment("1922-01-01T07:59:59+00:00").tz("America/Tijuana").format("HH:mm:ss"), "00:11:55", "1922-01-01T07:59:59+00:00 should be 00:11:55 LMT");
 		t.equal(moment("1922-01-01T08:00:00+00:00").tz("America/Tijuana").format("HH:mm:ss"), "01:00:00", "1922-01-01T08:00:00+00:00 should be 01:00:00 MST");
 
-		t.equal(moment("1922-01-01T07:59:59+00:00").tz("America/Tijuana").zone(), 468, "1922-01-01T07:59:59+00:00 should be 468 minutes offset in LMT");
+		t.equal(moment("1922-01-01T07:59:59+00:00").tz("America/Tijuana").zone(), 28084 / 60, "1922-01-01T07:59:59+00:00 should be 28084 / 60 minutes offset in LMT");
 		t.equal(moment("1922-01-01T08:00:00+00:00").tz("America/Tijuana").zone(), 420, "1922-01-01T08:00:00+00:00 should be 420 minutes offset in MST");
 
 		t.done();

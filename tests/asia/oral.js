@@ -6,7 +6,7 @@ exports["Asia/Oral"] = {
 		t.equal(moment("1924-05-01T20:34:35+00:00").tz("Asia/Oral").format("HH:mm:ss"), "23:59:59", "1924-05-01T20:34:35+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1924-05-01T20:34:36+00:00").tz("Asia/Oral").format("HH:mm:ss"), "00:34:36", "1924-05-01T20:34:36+00:00 should be 00:34:36 URAT");
 
-		t.equal(moment("1924-05-01T20:34:35+00:00").tz("Asia/Oral").zone(), -205, "1924-05-01T20:34:35+00:00 should be -205 minutes offset in LMT");
+		t.equal(moment("1924-05-01T20:34:35+00:00").tz("Asia/Oral").zone(), -12324 / 60, "1924-05-01T20:34:35+00:00 should be -12324 / 60 minutes offset in LMT");
 		t.equal(moment("1924-05-01T20:34:36+00:00").tz("Asia/Oral").zone(), -240, "1924-05-01T20:34:36+00:00 should be -240 minutes offset in URAT");
 
 		t.done();

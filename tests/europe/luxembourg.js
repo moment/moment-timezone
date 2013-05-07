@@ -6,7 +6,7 @@ exports["Europe/Luxembourg"] = {
 		t.equal(moment("1904-05-31T23:35:23+00:00").tz("Europe/Luxembourg").format("HH:mm:ss"), "23:59:59", "1904-05-31T23:35:23+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1904-05-31T23:35:24+00:00").tz("Europe/Luxembourg").format("HH:mm:ss"), "00:35:24", "1904-05-31T23:35:24+00:00 should be 00:35:24 CET");
 
-		t.equal(moment("1904-05-31T23:35:23+00:00").tz("Europe/Luxembourg").zone(), -24, "1904-05-31T23:35:23+00:00 should be -24 minutes offset in LMT");
+		t.equal(moment("1904-05-31T23:35:23+00:00").tz("Europe/Luxembourg").zone(), -1476 / 60, "1904-05-31T23:35:23+00:00 should be -1476 / 60 minutes offset in LMT");
 		t.equal(moment("1904-05-31T23:35:24+00:00").tz("Europe/Luxembourg").zone(), -60, "1904-05-31T23:35:24+00:00 should be -60 minutes offset in CET");
 
 		t.done();

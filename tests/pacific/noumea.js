@@ -6,7 +6,7 @@ exports["Pacific/Noumea"] = {
 		t.equal(moment("1912-01-12T12:54:11+00:00").tz("Pacific/Noumea").format("HH:mm:ss"), "23:59:59", "1912-01-12T12:54:11+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1912-01-12T12:54:12+00:00").tz("Pacific/Noumea").format("HH:mm:ss"), "23:54:12", "1912-01-12T12:54:12+00:00 should be 23:54:12 NCT");
 
-		t.equal(moment("1912-01-12T12:54:11+00:00").tz("Pacific/Noumea").zone(), -665, "1912-01-12T12:54:11+00:00 should be -665 minutes offset in LMT");
+		t.equal(moment("1912-01-12T12:54:11+00:00").tz("Pacific/Noumea").zone(), -39948 / 60, "1912-01-12T12:54:11+00:00 should be -39948 / 60 minutes offset in LMT");
 		t.equal(moment("1912-01-12T12:54:12+00:00").tz("Pacific/Noumea").zone(), -660, "1912-01-12T12:54:12+00:00 should be -660 minutes offset in NCT");
 
 		t.done();

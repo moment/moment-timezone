@@ -6,7 +6,7 @@ exports["Indian/Antananarivo"] = {
 		t.equal(moment("1911-06-30T20:49:55+00:00").tz("Indian/Antananarivo").format("HH:mm:ss"), "23:59:59", "1911-06-30T20:49:55+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1911-06-30T20:49:56+00:00").tz("Indian/Antananarivo").format("HH:mm:ss"), "23:49:56", "1911-06-30T20:49:56+00:00 should be 23:49:56 EAT");
 
-		t.equal(moment("1911-06-30T20:49:55+00:00").tz("Indian/Antananarivo").zone(), -190, "1911-06-30T20:49:55+00:00 should be -190 minutes offset in LMT");
+		t.equal(moment("1911-06-30T20:49:55+00:00").tz("Indian/Antananarivo").zone(), -11404 / 60, "1911-06-30T20:49:55+00:00 should be -11404 / 60 minutes offset in LMT");
 		t.equal(moment("1911-06-30T20:49:56+00:00").tz("Indian/Antananarivo").zone(), -180, "1911-06-30T20:49:56+00:00 should be -180 minutes offset in EAT");
 
 		t.done();

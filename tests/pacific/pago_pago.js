@@ -6,7 +6,7 @@ exports["Pacific/Pago_Pago"] = {
 		t.equal(moment("1911-01-01T11:22:47+00:00").tz("Pacific/Pago_Pago").format("HH:mm:ss"), "23:59:59", "1911-01-01T11:22:47+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1911-01-01T11:22:48+00:00").tz("Pacific/Pago_Pago").format("HH:mm:ss"), "23:52:48", "1911-01-01T11:22:48+00:00 should be 23:52:48 SAMT");
 
-		t.equal(moment("1911-01-01T11:22:47+00:00").tz("Pacific/Pago_Pago").zone(), 682, "1911-01-01T11:22:47+00:00 should be 682 minutes offset in LMT");
+		t.equal(moment("1911-01-01T11:22:47+00:00").tz("Pacific/Pago_Pago").zone(), 40968 / 60, "1911-01-01T11:22:47+00:00 should be 40968 / 60 minutes offset in LMT");
 		t.equal(moment("1911-01-01T11:22:48+00:00").tz("Pacific/Pago_Pago").zone(), 690, "1911-01-01T11:22:48+00:00 should be 690 minutes offset in SAMT");
 
 		t.done();

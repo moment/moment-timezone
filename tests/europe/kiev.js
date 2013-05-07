@@ -6,7 +6,7 @@ exports["Europe/Kiev"] = {
 		t.equal(moment("1924-05-01T21:57:55+00:00").tz("Europe/Kiev").format("HH:mm:ss"), "23:59:59", "1924-05-01T21:57:55+00:00 should be 23:59:59 KMT");
 		t.equal(moment("1924-05-01T21:57:56+00:00").tz("Europe/Kiev").format("HH:mm:ss"), "23:57:56", "1924-05-01T21:57:56+00:00 should be 23:57:56 EET");
 
-		t.equal(moment("1924-05-01T21:57:55+00:00").tz("Europe/Kiev").zone(), -122, "1924-05-01T21:57:55+00:00 should be -122 minutes offset in KMT");
+		t.equal(moment("1924-05-01T21:57:55+00:00").tz("Europe/Kiev").zone(), -7324 / 60, "1924-05-01T21:57:55+00:00 should be -7324 / 60 minutes offset in KMT");
 		t.equal(moment("1924-05-01T21:57:56+00:00").tz("Europe/Kiev").zone(), -120, "1924-05-01T21:57:56+00:00 should be -120 minutes offset in EET");
 
 		t.done();

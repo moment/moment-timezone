@@ -6,7 +6,7 @@ exports["Asia/Krasnoyarsk"] = {
 		t.equal(moment("1920-01-05T17:48:39+00:00").tz("Asia/Krasnoyarsk").format("HH:mm:ss"), "23:59:59", "1920-01-05T17:48:39+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1920-01-05T17:48:40+00:00").tz("Asia/Krasnoyarsk").format("HH:mm:ss"), "23:48:40", "1920-01-05T17:48:40+00:00 should be 23:48:40 KRAT");
 
-		t.equal(moment("1920-01-05T17:48:39+00:00").tz("Asia/Krasnoyarsk").zone(), -371, "1920-01-05T17:48:39+00:00 should be -371 minutes offset in LMT");
+		t.equal(moment("1920-01-05T17:48:39+00:00").tz("Asia/Krasnoyarsk").zone(), -22280 / 60, "1920-01-05T17:48:39+00:00 should be -22280 / 60 minutes offset in LMT");
 		t.equal(moment("1920-01-05T17:48:40+00:00").tz("Asia/Krasnoyarsk").zone(), -360, "1920-01-05T17:48:40+00:00 should be -360 minutes offset in KRAT");
 
 		t.done();

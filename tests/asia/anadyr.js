@@ -6,7 +6,7 @@ exports["Asia/Anadyr"] = {
 		t.equal(moment("1924-05-01T12:10:03+00:00").tz("Asia/Anadyr").format("HH:mm:ss"), "23:59:59", "1924-05-01T12:10:03+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1924-05-01T12:10:04+00:00").tz("Asia/Anadyr").format("HH:mm:ss"), "00:10:04", "1924-05-01T12:10:04+00:00 should be 00:10:04 ANAT");
 
-		t.equal(moment("1924-05-01T12:10:03+00:00").tz("Asia/Anadyr").zone(), -709, "1924-05-01T12:10:03+00:00 should be -709 minutes offset in LMT");
+		t.equal(moment("1924-05-01T12:10:03+00:00").tz("Asia/Anadyr").zone(), -42596 / 60, "1924-05-01T12:10:03+00:00 should be -42596 / 60 minutes offset in LMT");
 		t.equal(moment("1924-05-01T12:10:04+00:00").tz("Asia/Anadyr").zone(), -720, "1924-05-01T12:10:04+00:00 should be -720 minutes offset in ANAT");
 
 		t.done();

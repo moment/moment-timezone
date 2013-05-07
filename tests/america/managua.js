@@ -6,7 +6,7 @@ exports["America/Managua"] = {
 		t.equal(moment("1934-06-23T05:45:11+00:00").tz("America/Managua").format("HH:mm:ss"), "23:59:59", "1934-06-23T05:45:11+00:00 should be 23:59:59 MMT");
 		t.equal(moment("1934-06-23T05:45:12+00:00").tz("America/Managua").format("HH:mm:ss"), "23:45:12", "1934-06-23T05:45:12+00:00 should be 23:45:12 CST");
 
-		t.equal(moment("1934-06-23T05:45:11+00:00").tz("America/Managua").zone(), 345, "1934-06-23T05:45:11+00:00 should be 345 minutes offset in MMT");
+		t.equal(moment("1934-06-23T05:45:11+00:00").tz("America/Managua").zone(), 20712 / 60, "1934-06-23T05:45:11+00:00 should be 20712 / 60 minutes offset in MMT");
 		t.equal(moment("1934-06-23T05:45:12+00:00").tz("America/Managua").zone(), 360, "1934-06-23T05:45:12+00:00 should be 360 minutes offset in CST");
 
 		t.done();

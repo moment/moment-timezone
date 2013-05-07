@@ -159,7 +159,8 @@ module.exports = function (grunt) {
 		var s = line.split(/\s+/),
 			utc = s.slice(2, 6).join(' '),
 			local = s.slice(9, 13).join(' '),
-			format = "MMM D HH:mm:ss YYYY";
+			format = "MMM D HH:mm:ss YYYY",
+			diff;
 
 		this.utc = moment.utc(utc, format);
 		this.local = moment.utc(local, format);
@@ -167,7 +168,14 @@ module.exports = function (grunt) {
 		this.name = name;
 		this.nameShort = s[13];
 		this.year = s[5];
-		this.offset = this.utc.diff(this.local, 'minutes');
+
+		diff = this.utc.diff(this.local, 'minutes', true);
+
+		if (diff === ~~diff) {
+			this.offset = diff;
+		} else {
+			this.offset = Math.round(diff * 60) + ' / 60';
+		}
 	}
 
 	Test.prototype = {

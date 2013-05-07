@@ -6,7 +6,7 @@ exports["Atlantic/Faroe"] = {
 		t.equal(moment("1908-01-11T00:27:03+00:00").tz("Atlantic/Faroe").format("HH:mm:ss"), "23:59:59", "1908-01-11T00:27:03+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1908-01-11T00:27:04+00:00").tz("Atlantic/Faroe").format("HH:mm:ss"), "00:27:04", "1908-01-11T00:27:04+00:00 should be 00:27:04 WET");
 
-		t.equal(moment("1908-01-11T00:27:03+00:00").tz("Atlantic/Faroe").zone(), 27, "1908-01-11T00:27:03+00:00 should be 27 minutes offset in LMT");
+		t.equal(moment("1908-01-11T00:27:03+00:00").tz("Atlantic/Faroe").zone(), 1624 / 60, "1908-01-11T00:27:03+00:00 should be 1624 / 60 minutes offset in LMT");
 		t.equal(moment("1908-01-11T00:27:04+00:00").tz("Atlantic/Faroe").zone(), 0, "1908-01-11T00:27:04+00:00 should be 0 minutes offset in WET");
 
 		t.done();

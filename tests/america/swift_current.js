@@ -6,7 +6,7 @@ exports["America/Swift_Current"] = {
 		t.equal(moment("1905-09-01T07:11:19+00:00").tz("America/Swift_Current").format("HH:mm:ss"), "23:59:59", "1905-09-01T07:11:19+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1905-09-01T07:11:20+00:00").tz("America/Swift_Current").format("HH:mm:ss"), "00:11:20", "1905-09-01T07:11:20+00:00 should be 00:11:20 MST");
 
-		t.equal(moment("1905-09-01T07:11:19+00:00").tz("America/Swift_Current").zone(), 431, "1905-09-01T07:11:19+00:00 should be 431 minutes offset in LMT");
+		t.equal(moment("1905-09-01T07:11:19+00:00").tz("America/Swift_Current").zone(), 25880 / 60, "1905-09-01T07:11:19+00:00 should be 25880 / 60 minutes offset in LMT");
 		t.equal(moment("1905-09-01T07:11:20+00:00").tz("America/Swift_Current").zone(), 420, "1905-09-01T07:11:20+00:00 should be 420 minutes offset in MST");
 
 		t.done();

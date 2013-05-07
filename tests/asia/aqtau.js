@@ -6,7 +6,7 @@ exports["Asia/Aqtau"] = {
 		t.equal(moment("1924-05-01T20:38:55+00:00").tz("Asia/Aqtau").format("HH:mm:ss"), "23:59:59", "1924-05-01T20:38:55+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1924-05-01T20:38:56+00:00").tz("Asia/Aqtau").format("HH:mm:ss"), "00:38:56", "1924-05-01T20:38:56+00:00 should be 00:38:56 FORT");
 
-		t.equal(moment("1924-05-01T20:38:55+00:00").tz("Asia/Aqtau").zone(), -201, "1924-05-01T20:38:55+00:00 should be -201 minutes offset in LMT");
+		t.equal(moment("1924-05-01T20:38:55+00:00").tz("Asia/Aqtau").zone(), -12064 / 60, "1924-05-01T20:38:55+00:00 should be -12064 / 60 minutes offset in LMT");
 		t.equal(moment("1924-05-01T20:38:56+00:00").tz("Asia/Aqtau").zone(), -240, "1924-05-01T20:38:56+00:00 should be -240 minutes offset in FORT");
 
 		t.done();

@@ -6,7 +6,7 @@ exports["America/Nassau"] = {
 		t.equal(moment("1912-03-02T05:09:29+00:00").tz("America/Nassau").format("HH:mm:ss"), "23:59:59", "1912-03-02T05:09:29+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1912-03-02T05:09:30+00:00").tz("America/Nassau").format("HH:mm:ss"), "00:09:30", "1912-03-02T05:09:30+00:00 should be 00:09:30 EST");
 
-		t.equal(moment("1912-03-02T05:09:29+00:00").tz("America/Nassau").zone(), 309, "1912-03-02T05:09:29+00:00 should be 309 minutes offset in LMT");
+		t.equal(moment("1912-03-02T05:09:29+00:00").tz("America/Nassau").zone(), 18570 / 60, "1912-03-02T05:09:29+00:00 should be 18570 / 60 minutes offset in LMT");
 		t.equal(moment("1912-03-02T05:09:30+00:00").tz("America/Nassau").zone(), 300, "1912-03-02T05:09:30+00:00 should be 300 minutes offset in EST");
 
 		t.done();

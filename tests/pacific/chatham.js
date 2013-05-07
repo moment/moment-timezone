@@ -6,7 +6,7 @@ exports["Pacific/Chatham"] = {
 		t.equal(moment("1956-12-31T11:46:11+00:00").tz("Pacific/Chatham").format("HH:mm:ss"), "23:59:59", "1956-12-31T11:46:11+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1956-12-31T11:46:12+00:00").tz("Pacific/Chatham").format("HH:mm:ss"), "00:31:12", "1956-12-31T11:46:12+00:00 should be 00:31:12 CHAST");
 
-		t.equal(moment("1956-12-31T11:46:11+00:00").tz("Pacific/Chatham").zone(), -733, "1956-12-31T11:46:11+00:00 should be -733 minutes offset in LMT");
+		t.equal(moment("1956-12-31T11:46:11+00:00").tz("Pacific/Chatham").zone(), -44028 / 60, "1956-12-31T11:46:11+00:00 should be -44028 / 60 minutes offset in LMT");
 		t.equal(moment("1956-12-31T11:46:12+00:00").tz("Pacific/Chatham").zone(), -765, "1956-12-31T11:46:12+00:00 should be -765 minutes offset in CHAST");
 
 		t.done();

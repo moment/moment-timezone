@@ -6,8 +6,8 @@ exports["Asia/Tehran"] = {
 		t.equal(moment("1915-12-31T20:34:15+00:00").tz("Asia/Tehran").format("HH:mm:ss"), "23:59:59", "1915-12-31T20:34:15+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1915-12-31T20:34:16+00:00").tz("Asia/Tehran").format("HH:mm:ss"), "00:00:00", "1915-12-31T20:34:16+00:00 should be 00:00:00 TMT");
 
-		t.equal(moment("1915-12-31T20:34:15+00:00").tz("Asia/Tehran").zone(), -205, "1915-12-31T20:34:15+00:00 should be -205 minutes offset in LMT");
-		t.equal(moment("1915-12-31T20:34:16+00:00").tz("Asia/Tehran").zone(), -205, "1915-12-31T20:34:16+00:00 should be -205 minutes offset in TMT");
+		t.equal(moment("1915-12-31T20:34:15+00:00").tz("Asia/Tehran").zone(), -12344 / 60, "1915-12-31T20:34:15+00:00 should be -12344 / 60 minutes offset in LMT");
+		t.equal(moment("1915-12-31T20:34:16+00:00").tz("Asia/Tehran").zone(), -12344 / 60, "1915-12-31T20:34:16+00:00 should be -12344 / 60 minutes offset in TMT");
 
 		t.done();
 	},
@@ -16,7 +16,7 @@ exports["Asia/Tehran"] = {
 		t.equal(moment("1945-12-31T20:34:15+00:00").tz("Asia/Tehran").format("HH:mm:ss"), "23:59:59", "1945-12-31T20:34:15+00:00 should be 23:59:59 TMT");
 		t.equal(moment("1945-12-31T20:34:16+00:00").tz("Asia/Tehran").format("HH:mm:ss"), "00:04:16", "1945-12-31T20:34:16+00:00 should be 00:04:16 IRST");
 
-		t.equal(moment("1945-12-31T20:34:15+00:00").tz("Asia/Tehran").zone(), -205, "1945-12-31T20:34:15+00:00 should be -205 minutes offset in TMT");
+		t.equal(moment("1945-12-31T20:34:15+00:00").tz("Asia/Tehran").zone(), -12344 / 60, "1945-12-31T20:34:15+00:00 should be -12344 / 60 minutes offset in TMT");
 		t.equal(moment("1945-12-31T20:34:16+00:00").tz("Asia/Tehran").zone(), -210, "1945-12-31T20:34:16+00:00 should be -210 minutes offset in IRST");
 
 		t.done();

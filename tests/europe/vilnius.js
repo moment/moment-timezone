@@ -7,7 +7,7 @@ exports["Europe/Vilnius"] = {
 		t.equal(moment("1916-12-31T22:36:00+00:00").tz("Europe/Vilnius").format("HH:mm:ss"), "00:11:36", "1916-12-31T22:36:00+00:00 should be 00:11:36 KMT");
 
 		t.equal(moment("1916-12-31T22:35:59+00:00").tz("Europe/Vilnius").zone(), -84, "1916-12-31T22:35:59+00:00 should be -84 minutes offset in WMT");
-		t.equal(moment("1916-12-31T22:36:00+00:00").tz("Europe/Vilnius").zone(), -95, "1916-12-31T22:36:00+00:00 should be -95 minutes offset in KMT");
+		t.equal(moment("1916-12-31T22:36:00+00:00").tz("Europe/Vilnius").zone(), -5736 / 60, "1916-12-31T22:36:00+00:00 should be -5736 / 60 minutes offset in KMT");
 
 		t.done();
 	},
@@ -16,7 +16,7 @@ exports["Europe/Vilnius"] = {
 		t.equal(moment("1919-10-09T22:24:23+00:00").tz("Europe/Vilnius").format("HH:mm:ss"), "23:59:59", "1919-10-09T22:24:23+00:00 should be 23:59:59 KMT");
 		t.equal(moment("1919-10-09T22:24:24+00:00").tz("Europe/Vilnius").format("HH:mm:ss"), "23:24:24", "1919-10-09T22:24:24+00:00 should be 23:24:24 CET");
 
-		t.equal(moment("1919-10-09T22:24:23+00:00").tz("Europe/Vilnius").zone(), -95, "1919-10-09T22:24:23+00:00 should be -95 minutes offset in KMT");
+		t.equal(moment("1919-10-09T22:24:23+00:00").tz("Europe/Vilnius").zone(), -5736 / 60, "1919-10-09T22:24:23+00:00 should be -5736 / 60 minutes offset in KMT");
 		t.equal(moment("1919-10-09T22:24:24+00:00").tz("Europe/Vilnius").zone(), -60, "1919-10-09T22:24:24+00:00 should be -60 minutes offset in CET");
 
 		t.done();

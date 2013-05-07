@@ -6,7 +6,7 @@ exports["Asia/Irkutsk"] = {
 		t.equal(moment("1920-01-24T17:02:39+00:00").tz("Asia/Irkutsk").format("HH:mm:ss"), "23:59:59", "1920-01-24T17:02:39+00:00 should be 23:59:59 IMT");
 		t.equal(moment("1920-01-24T17:02:40+00:00").tz("Asia/Irkutsk").format("HH:mm:ss"), "00:02:40", "1920-01-24T17:02:40+00:00 should be 00:02:40 IRKT");
 
-		t.equal(moment("1920-01-24T17:02:39+00:00").tz("Asia/Irkutsk").zone(), -417, "1920-01-24T17:02:39+00:00 should be -417 minutes offset in IMT");
+		t.equal(moment("1920-01-24T17:02:39+00:00").tz("Asia/Irkutsk").zone(), -25040 / 60, "1920-01-24T17:02:39+00:00 should be -25040 / 60 minutes offset in IMT");
 		t.equal(moment("1920-01-24T17:02:40+00:00").tz("Asia/Irkutsk").zone(), -420, "1920-01-24T17:02:40+00:00 should be -420 minutes offset in IRKT");
 
 		t.done();

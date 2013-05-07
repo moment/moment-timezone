@@ -6,7 +6,7 @@ exports["Atlantic/Reykjavik"] = {
 		t.equal(moment("1908-01-01T01:27:47+00:00").tz("Atlantic/Reykjavik").format("HH:mm:ss"), "23:59:59", "1908-01-01T01:27:47+00:00 should be 23:59:59 RMT");
 		t.equal(moment("1908-01-01T01:27:48+00:00").tz("Atlantic/Reykjavik").format("HH:mm:ss"), "00:27:48", "1908-01-01T01:27:48+00:00 should be 00:27:48 IST");
 
-		t.equal(moment("1908-01-01T01:27:47+00:00").tz("Atlantic/Reykjavik").zone(), 87, "1908-01-01T01:27:47+00:00 should be 87 minutes offset in RMT");
+		t.equal(moment("1908-01-01T01:27:47+00:00").tz("Atlantic/Reykjavik").zone(), 5268 / 60, "1908-01-01T01:27:47+00:00 should be 5268 / 60 minutes offset in RMT");
 		t.equal(moment("1908-01-01T01:27:48+00:00").tz("Atlantic/Reykjavik").zone(), 60, "1908-01-01T01:27:48+00:00 should be 60 minutes offset in IST");
 
 		t.done();

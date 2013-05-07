@@ -6,7 +6,7 @@ exports["America/Havana"] = {
 		t.equal(moment("1925-07-19T17:29:35+00:00").tz("America/Havana").format("HH:mm:ss"), "11:59:59", "1925-07-19T17:29:35+00:00 should be 11:59:59 HMT");
 		t.equal(moment("1925-07-19T17:29:36+00:00").tz("America/Havana").format("HH:mm:ss"), "12:29:36", "1925-07-19T17:29:36+00:00 should be 12:29:36 CST");
 
-		t.equal(moment("1925-07-19T17:29:35+00:00").tz("America/Havana").zone(), 329, "1925-07-19T17:29:35+00:00 should be 329 minutes offset in HMT");
+		t.equal(moment("1925-07-19T17:29:35+00:00").tz("America/Havana").zone(), 19776 / 60, "1925-07-19T17:29:35+00:00 should be 19776 / 60 minutes offset in HMT");
 		t.equal(moment("1925-07-19T17:29:36+00:00").tz("America/Havana").zone(), 300, "1925-07-19T17:29:36+00:00 should be 300 minutes offset in CST");
 
 		t.done();

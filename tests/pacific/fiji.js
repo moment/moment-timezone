@@ -6,7 +6,7 @@ exports["Pacific/Fiji"] = {
 		t.equal(moment("1915-10-25T12:04:15+00:00").tz("Pacific/Fiji").format("HH:mm:ss"), "23:59:59", "1915-10-25T12:04:15+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1915-10-25T12:04:16+00:00").tz("Pacific/Fiji").format("HH:mm:ss"), "00:04:16", "1915-10-25T12:04:16+00:00 should be 00:04:16 FJT");
 
-		t.equal(moment("1915-10-25T12:04:15+00:00").tz("Pacific/Fiji").zone(), -715, "1915-10-25T12:04:15+00:00 should be -715 minutes offset in LMT");
+		t.equal(moment("1915-10-25T12:04:15+00:00").tz("Pacific/Fiji").zone(), -42944 / 60, "1915-10-25T12:04:15+00:00 should be -42944 / 60 minutes offset in LMT");
 		t.equal(moment("1915-10-25T12:04:16+00:00").tz("Pacific/Fiji").zone(), -720, "1915-10-25T12:04:16+00:00 should be -720 minutes offset in FJT");
 
 		t.done();

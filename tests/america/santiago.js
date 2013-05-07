@@ -6,7 +6,7 @@ exports["America/Santiago"] = {
 		t.equal(moment("1910-01-01T04:42:45+00:00").tz("America/Santiago").format("HH:mm:ss"), "23:59:59", "1910-01-01T04:42:45+00:00 should be 23:59:59 SMT");
 		t.equal(moment("1910-01-01T04:42:46+00:00").tz("America/Santiago").format("HH:mm:ss"), "23:42:46", "1910-01-01T04:42:46+00:00 should be 23:42:46 CLT");
 
-		t.equal(moment("1910-01-01T04:42:45+00:00").tz("America/Santiago").zone(), 282, "1910-01-01T04:42:45+00:00 should be 282 minutes offset in SMT");
+		t.equal(moment("1910-01-01T04:42:45+00:00").tz("America/Santiago").zone(), 16966 / 60, "1910-01-01T04:42:45+00:00 should be 16966 / 60 minutes offset in SMT");
 		t.equal(moment("1910-01-01T04:42:46+00:00").tz("America/Santiago").zone(), 300, "1910-01-01T04:42:46+00:00 should be 300 minutes offset in CLT");
 
 		t.done();
@@ -17,7 +17,7 @@ exports["America/Santiago"] = {
 		t.equal(moment("1916-07-01T05:00:00+00:00").tz("America/Santiago").format("HH:mm:ss"), "00:17:14", "1916-07-01T05:00:00+00:00 should be 00:17:14 SMT");
 
 		t.equal(moment("1916-07-01T04:59:59+00:00").tz("America/Santiago").zone(), 300, "1916-07-01T04:59:59+00:00 should be 300 minutes offset in CLT");
-		t.equal(moment("1916-07-01T05:00:00+00:00").tz("America/Santiago").zone(), 282, "1916-07-01T05:00:00+00:00 should be 282 minutes offset in SMT");
+		t.equal(moment("1916-07-01T05:00:00+00:00").tz("America/Santiago").zone(), 16966 / 60, "1916-07-01T05:00:00+00:00 should be 16966 / 60 minutes offset in SMT");
 
 		t.done();
 	},
@@ -26,7 +26,7 @@ exports["America/Santiago"] = {
 		t.equal(moment("1918-09-01T04:42:45+00:00").tz("America/Santiago").format("HH:mm:ss"), "23:59:59", "1918-09-01T04:42:45+00:00 should be 23:59:59 SMT");
 		t.equal(moment("1918-09-01T04:42:46+00:00").tz("America/Santiago").format("HH:mm:ss"), "00:42:46", "1918-09-01T04:42:46+00:00 should be 00:42:46 CLT");
 
-		t.equal(moment("1918-09-01T04:42:45+00:00").tz("America/Santiago").zone(), 282, "1918-09-01T04:42:45+00:00 should be 282 minutes offset in SMT");
+		t.equal(moment("1918-09-01T04:42:45+00:00").tz("America/Santiago").zone(), 16966 / 60, "1918-09-01T04:42:45+00:00 should be 16966 / 60 minutes offset in SMT");
 		t.equal(moment("1918-09-01T04:42:46+00:00").tz("America/Santiago").zone(), 240, "1918-09-01T04:42:46+00:00 should be 240 minutes offset in CLT");
 
 		t.done();
@@ -37,7 +37,7 @@ exports["America/Santiago"] = {
 		t.equal(moment("1919-07-01T04:00:00+00:00").tz("America/Santiago").format("HH:mm:ss"), "23:17:14", "1919-07-01T04:00:00+00:00 should be 23:17:14 SMT");
 
 		t.equal(moment("1919-07-01T03:59:59+00:00").tz("America/Santiago").zone(), 240, "1919-07-01T03:59:59+00:00 should be 240 minutes offset in CLT");
-		t.equal(moment("1919-07-01T04:00:00+00:00").tz("America/Santiago").zone(), 282, "1919-07-01T04:00:00+00:00 should be 282 minutes offset in SMT");
+		t.equal(moment("1919-07-01T04:00:00+00:00").tz("America/Santiago").zone(), 16966 / 60, "1919-07-01T04:00:00+00:00 should be 16966 / 60 minutes offset in SMT");
 
 		t.done();
 	},
@@ -46,7 +46,7 @@ exports["America/Santiago"] = {
 		t.equal(moment("1927-09-01T04:42:45+00:00").tz("America/Santiago").format("HH:mm:ss"), "23:59:59", "1927-09-01T04:42:45+00:00 should be 23:59:59 SMT");
 		t.equal(moment("1927-09-01T04:42:46+00:00").tz("America/Santiago").format("HH:mm:ss"), "00:42:46", "1927-09-01T04:42:46+00:00 should be 00:42:46 CLST");
 
-		t.equal(moment("1927-09-01T04:42:45+00:00").tz("America/Santiago").zone(), 282, "1927-09-01T04:42:45+00:00 should be 282 minutes offset in SMT");
+		t.equal(moment("1927-09-01T04:42:45+00:00").tz("America/Santiago").zone(), 16966 / 60, "1927-09-01T04:42:45+00:00 should be 16966 / 60 minutes offset in SMT");
 		t.equal(moment("1927-09-01T04:42:46+00:00").tz("America/Santiago").zone(), 240, "1927-09-01T04:42:46+00:00 should be 240 minutes offset in CLST");
 
 		t.done();

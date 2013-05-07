@@ -6,8 +6,8 @@ exports["Asia/Makassar"] = {
 		t.equal(moment("1919-12-31T16:02:23+00:00").tz("Asia/Makassar").format("HH:mm:ss"), "23:59:59", "1919-12-31T16:02:23+00:00 should be 23:59:59 LMT");
 		t.equal(moment("1919-12-31T16:02:24+00:00").tz("Asia/Makassar").format("HH:mm:ss"), "00:00:00", "1919-12-31T16:02:24+00:00 should be 00:00:00 MMT");
 
-		t.equal(moment("1919-12-31T16:02:23+00:00").tz("Asia/Makassar").zone(), -477, "1919-12-31T16:02:23+00:00 should be -477 minutes offset in LMT");
-		t.equal(moment("1919-12-31T16:02:24+00:00").tz("Asia/Makassar").zone(), -477, "1919-12-31T16:02:24+00:00 should be -477 minutes offset in MMT");
+		t.equal(moment("1919-12-31T16:02:23+00:00").tz("Asia/Makassar").zone(), -28656 / 60, "1919-12-31T16:02:23+00:00 should be -28656 / 60 minutes offset in LMT");
+		t.equal(moment("1919-12-31T16:02:24+00:00").tz("Asia/Makassar").zone(), -28656 / 60, "1919-12-31T16:02:24+00:00 should be -28656 / 60 minutes offset in MMT");
 
 		t.done();
 	},
@@ -16,7 +16,7 @@ exports["Asia/Makassar"] = {
 		t.equal(moment("1932-10-31T16:02:23+00:00").tz("Asia/Makassar").format("HH:mm:ss"), "23:59:59", "1932-10-31T16:02:23+00:00 should be 23:59:59 MMT");
 		t.equal(moment("1932-10-31T16:02:24+00:00").tz("Asia/Makassar").format("HH:mm:ss"), "00:02:24", "1932-10-31T16:02:24+00:00 should be 00:02:24 CIT");
 
-		t.equal(moment("1932-10-31T16:02:23+00:00").tz("Asia/Makassar").zone(), -477, "1932-10-31T16:02:23+00:00 should be -477 minutes offset in MMT");
+		t.equal(moment("1932-10-31T16:02:23+00:00").tz("Asia/Makassar").zone(), -28656 / 60, "1932-10-31T16:02:23+00:00 should be -28656 / 60 minutes offset in MMT");
 		t.equal(moment("1932-10-31T16:02:24+00:00").tz("Asia/Makassar").zone(), -480, "1932-10-31T16:02:24+00:00 should be -480 minutes offset in CIT");
 
 		t.done();

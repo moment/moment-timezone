@@ -6,7 +6,7 @@ exports["Asia/Kolkata"] = {
 		t.equal(moment("1941-09-30T18:06:39+00:00").tz("Asia/Kolkata").format("HH:mm:ss"), "23:59:59", "1941-09-30T18:06:39+00:00 should be 23:59:59 HMT");
 		t.equal(moment("1941-09-30T18:06:40+00:00").tz("Asia/Kolkata").format("HH:mm:ss"), "00:36:40", "1941-09-30T18:06:40+00:00 should be 00:36:40 BURT");
 
-		t.equal(moment("1941-09-30T18:06:39+00:00").tz("Asia/Kolkata").zone(), -353, "1941-09-30T18:06:39+00:00 should be -353 minutes offset in HMT");
+		t.equal(moment("1941-09-30T18:06:39+00:00").tz("Asia/Kolkata").zone(), -21200 / 60, "1941-09-30T18:06:39+00:00 should be -21200 / 60 minutes offset in HMT");
 		t.equal(moment("1941-09-30T18:06:40+00:00").tz("Asia/Kolkata").zone(), -390, "1941-09-30T18:06:40+00:00 should be -390 minutes offset in BURT");
 
 		t.done();

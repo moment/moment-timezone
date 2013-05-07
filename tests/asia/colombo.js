@@ -6,7 +6,7 @@ exports["Asia/Colombo"] = {
 		t.equal(moment("1905-12-31T18:40:27+00:00").tz("Asia/Colombo").format("HH:mm:ss"), "23:59:59", "1905-12-31T18:40:27+00:00 should be 23:59:59 MMT");
 		t.equal(moment("1905-12-31T18:40:28+00:00").tz("Asia/Colombo").format("HH:mm:ss"), "00:10:28", "1905-12-31T18:40:28+00:00 should be 00:10:28 IST");
 
-		t.equal(moment("1905-12-31T18:40:27+00:00").tz("Asia/Colombo").zone(), -319, "1905-12-31T18:40:27+00:00 should be -319 minutes offset in MMT");
+		t.equal(moment("1905-12-31T18:40:27+00:00").tz("Asia/Colombo").zone(), -19172 / 60, "1905-12-31T18:40:27+00:00 should be -19172 / 60 minutes offset in MMT");
 		t.equal(moment("1905-12-31T18:40:28+00:00").tz("Asia/Colombo").zone(), -330, "1905-12-31T18:40:28+00:00 should be -330 minutes offset in IST");
 
 		t.done();
