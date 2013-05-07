@@ -10,7 +10,9 @@ var moment = require('../moment-timezone'),
 
 	DAYS_OF_WEEK         = 'sun mon tue wed thu fri sat'.split(' '),
 
-	ZONE_FILES           = "africa antarctica asia australasia europe northamerica pacificnew southamerica";
+	ZONE_FILES           = "africa antarctica asia australasia europe northamerica pacificnew southamerica",
+
+	rIsRuleset = /\d+:\d+/;
 
 /******************************
 	Helpers
@@ -202,7 +204,7 @@ module.exports = function (grunt) {
 			o += this.formatRules();
 			o += ',\n';
 			o += this.formatZones();
-			o += '\n}';
+			o += '\n};';
 			return o;
 		},
 
@@ -222,12 +224,22 @@ module.exports = function (grunt) {
 	function Zone (line) {
 		this.name = line[0];
 		this.offset = parseMinutes(line[1]);
-		this.ruleset = line[2];
+		this.setRuleset(line[2]);
 		this.letters = line[3];
 		this.parseUntil(line.slice(4));
 	}
 
 	Zone.prototype = {
+		setRuleset : function (ruleset) {
+			if (rIsRuleset.exec(ruleset)) {
+				this.offset += parseMinutes(ruleset);
+				this.ruleset = '-';
+				console.log(ruleset, this.name);
+			} else {
+				this.ruleset = ruleset;
+			}
+		},
+
 		findUntilRule : function (rules) {
 			var name;
 

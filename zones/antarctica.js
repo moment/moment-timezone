@@ -103,4 +103,4 @@ module.exports = {
 			"720	NZAQ	NZ%sT"
 		]
 	}
-}
+};
