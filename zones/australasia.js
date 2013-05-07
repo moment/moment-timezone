@@ -256,6 +256,16 @@ module.exports = {
 			"600	-	EST	1981_2	600",
 			"630	LH	LHST"
 		],
+		"Antarctica/Macquarie" : [
+			"0	-	zzz	1899_10",
+			"600	-	EST	1916_9_1_0_120	600",
+			"600	1:00	EST	1917_1	600",
+			"600	Aus	EST	1919_3	600",
+			"0	-	zzz	1948_2_25",
+			"600	Aus	EST	1967	660",
+			"600	AT	EST	2010_3_4_0_180	600",
+			"660	-	MIST"
+		],
 		"Indian/Christmas" : [
 			"422	-	LMT	1895_1	422",
 			"420	-	CXT"

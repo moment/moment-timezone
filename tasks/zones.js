@@ -8,7 +8,9 @@ var moment = require('../moment-timezone'),
 	DAY_RULE_DAY_OF_MONTH   = 7,
 	DAY_RULE_LAST_WEEKDAY   = 8,
 
-	DAYS_OF_WEEK         = 'sun mon tue wed thu fri sat'.split(' ');
+	DAYS_OF_WEEK         = 'sun mon tue wed thu fri sat'.split(' '),
+
+	ZONE_FILES           = "africa antarctica asia australasia europe northamerica pacificnew southamerica";
 
 /******************************
 	Helpers
@@ -36,8 +38,14 @@ module.exports = function (grunt) {
 	grunt.registerTask('zones', 'Generate the zone data files based on the olson database.', function () {
 		var files = [];
 
-		grunt.file.expandFiles("olson/*").forEach(function (filename) {
-			var file = new File(filename);
+		grunt.file.expandFiles("tz/*").forEach(function (filename) {
+			var name = filename.split('/')[1],
+				file;
+			if (ZONE_FILES.indexOf(name) === -1) {
+				return;
+			}
+
+			file = new File(filename);
 			files.push(file);
 			file.save();
 		});
@@ -199,7 +207,7 @@ module.exports = function (grunt) {
 		},
 
 		save : function () {
-			var filename = this.filename.replace('olson', 'zones') + '.js',
+			var filename = this.filename.replace('tz', 'zones') + '.js',
 				data = this.format(),
 				gzip = ' (' + grunt.helper('gzip', data).length + 'b)';
 			grunt.file.write(filename, data);

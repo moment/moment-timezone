@@ -587,13 +587,13 @@ exports["Asia/Gaza"] = {
 	},
 
 	"2008" : function (t) {
-		t.equal(moment("2008-03-31T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2008-03-31T21:59:59+00:00 should be 23:59:59 EET");
-		t.equal(moment("2008-03-31T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2008-03-31T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2008-03-27T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2008-03-27T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2008-03-27T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2008-03-27T22:00:00+00:00 should be 01:00:00 EEST");
 		t.equal(moment("2008-08-28T20:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2008-08-28T20:59:59+00:00 should be 23:59:59 EEST");
 		t.equal(moment("2008-08-28T21:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:00:00", "2008-08-28T21:00:00+00:00 should be 23:00:00 EET");
 
-		t.equal(moment("2008-03-31T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2008-03-31T21:59:59+00:00 should be -120 minutes offset in EET");
-		t.equal(moment("2008-03-31T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2008-03-31T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2008-03-27T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2008-03-27T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2008-03-27T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2008-03-27T22:00:00+00:00 should be -180 minutes offset in EEST");
 		t.equal(moment("2008-08-28T20:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2008-08-28T20:59:59+00:00 should be -180 minutes offset in EEST");
 		t.equal(moment("2008-08-28T21:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2008-08-28T21:00:00+00:00 should be -120 minutes offset in EET");
 
@@ -603,13 +603,13 @@ exports["Asia/Gaza"] = {
 	"2009" : function (t) {
 		t.equal(moment("2009-03-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2009-03-26T21:59:59+00:00 should be 23:59:59 EET");
 		t.equal(moment("2009-03-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2009-03-26T22:00:00+00:00 should be 01:00:00 EEST");
-		t.equal(moment("2009-09-03T22:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:59:59", "2009-09-03T22:59:59+00:00 should be 01:59:59 EEST");
-		t.equal(moment("2009-09-03T23:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2009-09-03T23:00:00+00:00 should be 01:00:00 EET");
+		t.equal(moment("2009-09-03T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2009-09-03T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2009-09-03T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2009-09-03T22:00:00+00:00 should be 00:00:00 EET");
 
 		t.equal(moment("2009-03-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2009-03-26T21:59:59+00:00 should be -120 minutes offset in EET");
 		t.equal(moment("2009-03-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2009-03-26T22:00:00+00:00 should be -180 minutes offset in EEST");
-		t.equal(moment("2009-09-03T22:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2009-09-03T22:59:59+00:00 should be -180 minutes offset in EEST");
-		t.equal(moment("2009-09-03T23:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2009-09-03T23:00:00+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2009-09-03T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2009-09-03T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2009-09-03T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2009-09-03T22:00:00+00:00 should be -120 minutes offset in EET");
 
 		t.done();
 	},
@@ -629,13 +629,13 @@ exports["Asia/Gaza"] = {
 	},
 
 	"2011" : function (t) {
-		t.equal(moment("2011-04-02T10:00:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "12:00:59", "2011-04-02T10:00:59+00:00 should be 12:00:59 EET");
-		t.equal(moment("2011-04-02T10:01:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "13:01:00", "2011-04-02T10:01:00+00:00 should be 13:01:00 EEST");
+		t.equal(moment("2011-03-31T22:00:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:59", "2011-03-31T22:00:59+00:00 should be 00:00:59 EET");
+		t.equal(moment("2011-03-31T22:01:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:01:00", "2011-03-31T22:01:00+00:00 should be 01:01:00 EEST");
 		t.equal(moment("2011-07-31T20:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2011-07-31T20:59:59+00:00 should be 23:59:59 EEST");
 		t.equal(moment("2011-07-31T21:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:00:00", "2011-07-31T21:00:00+00:00 should be 23:00:00 EET");
 
-		t.equal(moment("2011-04-02T10:00:59+00:00").tz("Asia/Gaza").zone(), -120, "2011-04-02T10:00:59+00:00 should be -120 minutes offset in EET");
-		t.equal(moment("2011-04-02T10:01:00+00:00").tz("Asia/Gaza").zone(), -180, "2011-04-02T10:01:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2011-03-31T22:00:59+00:00").tz("Asia/Gaza").zone(), -120, "2011-03-31T22:00:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2011-03-31T22:01:00+00:00").tz("Asia/Gaza").zone(), -180, "2011-03-31T22:01:00+00:00 should be -180 minutes offset in EEST");
 		t.equal(moment("2011-07-31T20:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2011-07-31T20:59:59+00:00 should be -180 minutes offset in EEST");
 		t.equal(moment("2011-07-31T21:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2011-07-31T21:00:00+00:00 should be -120 minutes offset in EET");
 
@@ -652,6 +652,356 @@ exports["Asia/Gaza"] = {
 		t.equal(moment("2012-03-29T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2012-03-29T22:00:00+00:00 should be -180 minutes offset in EEST");
 		t.equal(moment("2012-09-20T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2012-09-20T21:59:59+00:00 should be -180 minutes offset in EEST");
 		t.equal(moment("2012-09-20T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2012-09-20T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2013" : function (t) {
+		t.equal(moment("2013-03-28T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2013-03-28T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2013-03-28T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2013-03-28T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2013-09-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2013-09-26T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2013-09-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2013-09-26T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2013-03-28T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2013-03-28T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2013-03-28T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2013-03-28T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2013-09-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2013-09-26T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2013-09-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2013-09-26T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2014" : function (t) {
+		t.equal(moment("2014-03-27T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2014-03-27T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2014-03-27T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2014-03-27T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2014-09-25T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2014-09-25T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2014-09-25T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2014-09-25T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2014-03-27T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2014-03-27T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2014-03-27T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2014-03-27T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2014-09-25T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2014-09-25T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2014-09-25T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2014-09-25T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2015" : function (t) {
+		t.equal(moment("2015-03-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2015-03-26T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2015-03-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2015-03-26T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2015-09-24T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2015-09-24T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2015-09-24T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2015-09-24T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2015-03-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2015-03-26T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2015-03-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2015-03-26T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2015-09-24T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2015-09-24T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2015-09-24T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2015-09-24T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2016" : function (t) {
+		t.equal(moment("2016-03-31T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2016-03-31T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2016-03-31T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2016-03-31T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2016-09-22T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2016-09-22T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2016-09-22T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2016-09-22T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2016-03-31T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2016-03-31T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2016-03-31T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2016-03-31T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2016-09-22T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2016-09-22T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2016-09-22T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2016-09-22T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2017" : function (t) {
+		t.equal(moment("2017-03-30T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2017-03-30T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2017-03-30T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2017-03-30T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2017-09-21T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2017-09-21T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2017-09-21T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2017-09-21T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2017-03-30T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2017-03-30T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2017-03-30T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2017-03-30T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2017-09-21T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2017-09-21T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2017-09-21T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2017-09-21T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2018" : function (t) {
+		t.equal(moment("2018-03-29T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2018-03-29T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2018-03-29T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2018-03-29T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2018-09-20T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2018-09-20T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2018-09-20T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2018-09-20T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2018-03-29T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2018-03-29T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2018-03-29T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2018-03-29T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2018-09-20T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2018-09-20T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2018-09-20T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2018-09-20T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2019" : function (t) {
+		t.equal(moment("2019-03-28T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2019-03-28T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2019-03-28T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2019-03-28T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2019-09-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2019-09-26T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2019-09-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2019-09-26T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2019-03-28T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2019-03-28T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2019-03-28T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2019-03-28T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2019-09-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2019-09-26T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2019-09-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2019-09-26T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2020" : function (t) {
+		t.equal(moment("2020-03-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2020-03-26T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2020-03-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2020-03-26T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2020-09-24T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2020-09-24T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2020-09-24T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2020-09-24T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2020-03-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2020-03-26T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2020-03-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2020-03-26T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2020-09-24T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2020-09-24T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2020-09-24T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2020-09-24T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2021" : function (t) {
+		t.equal(moment("2021-03-25T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2021-03-25T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2021-03-25T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2021-03-25T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2021-09-23T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2021-09-23T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2021-09-23T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2021-09-23T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2021-03-25T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2021-03-25T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2021-03-25T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2021-03-25T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2021-09-23T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2021-09-23T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2021-09-23T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2021-09-23T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2022" : function (t) {
+		t.equal(moment("2022-03-31T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2022-03-31T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2022-03-31T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2022-03-31T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2022-09-22T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2022-09-22T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2022-09-22T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2022-09-22T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2022-03-31T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2022-03-31T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2022-03-31T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2022-03-31T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2022-09-22T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2022-09-22T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2022-09-22T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2022-09-22T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2023" : function (t) {
+		t.equal(moment("2023-03-30T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2023-03-30T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2023-03-30T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2023-03-30T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2023-09-21T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2023-09-21T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2023-09-21T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2023-09-21T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2023-03-30T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2023-03-30T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2023-03-30T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2023-03-30T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2023-09-21T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2023-09-21T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2023-09-21T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2023-09-21T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2024" : function (t) {
+		t.equal(moment("2024-03-28T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2024-03-28T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2024-03-28T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2024-03-28T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2024-09-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2024-09-26T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2024-09-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2024-09-26T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2024-03-28T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2024-03-28T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2024-03-28T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2024-03-28T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2024-09-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2024-09-26T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2024-09-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2024-09-26T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2025" : function (t) {
+		t.equal(moment("2025-03-27T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2025-03-27T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2025-03-27T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2025-03-27T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2025-09-25T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2025-09-25T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2025-09-25T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2025-09-25T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2025-03-27T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2025-03-27T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2025-03-27T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2025-03-27T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2025-09-25T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2025-09-25T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2025-09-25T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2025-09-25T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2026" : function (t) {
+		t.equal(moment("2026-03-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2026-03-26T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2026-03-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2026-03-26T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2026-09-24T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2026-09-24T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2026-09-24T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2026-09-24T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2026-03-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2026-03-26T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2026-03-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2026-03-26T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2026-09-24T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2026-09-24T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2026-09-24T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2026-09-24T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2027" : function (t) {
+		t.equal(moment("2027-03-25T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2027-03-25T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2027-03-25T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2027-03-25T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2027-09-23T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2027-09-23T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2027-09-23T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2027-09-23T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2027-03-25T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2027-03-25T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2027-03-25T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2027-03-25T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2027-09-23T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2027-09-23T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2027-09-23T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2027-09-23T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2028" : function (t) {
+		t.equal(moment("2028-03-30T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2028-03-30T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2028-03-30T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2028-03-30T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2028-09-21T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2028-09-21T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2028-09-21T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2028-09-21T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2028-03-30T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2028-03-30T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2028-03-30T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2028-03-30T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2028-09-21T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2028-09-21T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2028-09-21T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2028-09-21T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2029" : function (t) {
+		t.equal(moment("2029-03-29T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2029-03-29T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2029-03-29T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2029-03-29T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2029-09-20T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2029-09-20T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2029-09-20T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2029-09-20T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2029-03-29T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2029-03-29T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2029-03-29T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2029-03-29T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2029-09-20T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2029-09-20T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2029-09-20T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2029-09-20T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2030" : function (t) {
+		t.equal(moment("2030-03-28T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2030-03-28T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2030-03-28T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2030-03-28T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2030-09-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2030-09-26T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2030-09-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2030-09-26T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2030-03-28T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2030-03-28T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2030-03-28T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2030-03-28T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2030-09-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2030-09-26T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2030-09-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2030-09-26T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2031" : function (t) {
+		t.equal(moment("2031-03-27T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2031-03-27T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2031-03-27T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2031-03-27T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2031-09-25T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2031-09-25T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2031-09-25T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2031-09-25T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2031-03-27T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2031-03-27T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2031-03-27T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2031-03-27T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2031-09-25T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2031-09-25T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2031-09-25T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2031-09-25T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2032" : function (t) {
+		t.equal(moment("2032-03-25T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2032-03-25T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2032-03-25T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2032-03-25T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2032-09-23T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2032-09-23T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2032-09-23T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2032-09-23T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2032-03-25T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2032-03-25T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2032-03-25T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2032-03-25T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2032-09-23T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2032-09-23T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2032-09-23T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2032-09-23T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2033" : function (t) {
+		t.equal(moment("2033-03-31T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2033-03-31T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2033-03-31T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2033-03-31T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2033-09-22T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2033-09-22T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2033-09-22T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2033-09-22T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2033-03-31T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2033-03-31T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2033-03-31T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2033-03-31T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2033-09-22T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2033-09-22T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2033-09-22T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2033-09-22T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2034" : function (t) {
+		t.equal(moment("2034-03-30T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2034-03-30T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2034-03-30T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2034-03-30T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2034-09-21T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2034-09-21T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2034-09-21T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2034-09-21T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2034-03-30T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2034-03-30T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2034-03-30T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2034-03-30T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2034-09-21T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2034-09-21T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2034-09-21T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2034-09-21T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2035" : function (t) {
+		t.equal(moment("2035-03-29T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2035-03-29T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2035-03-29T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2035-03-29T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2035-09-20T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2035-09-20T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2035-09-20T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2035-09-20T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2035-03-29T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2035-03-29T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2035-03-29T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2035-03-29T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2035-09-20T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2035-09-20T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2035-09-20T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2035-09-20T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2036" : function (t) {
+		t.equal(moment("2036-03-27T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2036-03-27T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2036-03-27T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2036-03-27T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2036-09-25T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2036-09-25T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2036-09-25T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2036-09-25T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2036-03-27T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2036-03-27T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2036-03-27T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2036-03-27T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2036-09-25T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2036-09-25T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2036-09-25T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2036-09-25T22:00:00+00:00 should be -120 minutes offset in EET");
+
+		t.done();
+	},
+
+	"2037" : function (t) {
+		t.equal(moment("2037-03-26T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "23:59:59", "2037-03-26T21:59:59+00:00 should be 23:59:59 EET");
+		t.equal(moment("2037-03-26T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "01:00:00", "2037-03-26T22:00:00+00:00 should be 01:00:00 EEST");
+		t.equal(moment("2037-09-24T21:59:59+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:59:59", "2037-09-24T21:59:59+00:00 should be 00:59:59 EEST");
+		t.equal(moment("2037-09-24T22:00:00+00:00").tz("Asia/Gaza").format("HH:mm:ss"), "00:00:00", "2037-09-24T22:00:00+00:00 should be 00:00:00 EET");
+
+		t.equal(moment("2037-03-26T21:59:59+00:00").tz("Asia/Gaza").zone(), -120, "2037-03-26T21:59:59+00:00 should be -120 minutes offset in EET");
+		t.equal(moment("2037-03-26T22:00:00+00:00").tz("Asia/Gaza").zone(), -180, "2037-03-26T22:00:00+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2037-09-24T21:59:59+00:00").tz("Asia/Gaza").zone(), -180, "2037-09-24T21:59:59+00:00 should be -180 minutes offset in EEST");
+		t.equal(moment("2037-09-24T22:00:00+00:00").tz("Asia/Gaza").zone(), -120, "2037-09-24T22:00:00+00:00 should be -120 minutes offset in EET");
 
 		t.done();
 	}

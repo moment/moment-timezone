@@ -1,0 +1,3 @@
+[submodule "tz"]
+	path = tz
+	url = git://github.com/eggert/tz.git

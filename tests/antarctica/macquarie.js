@@ -2,22 +2,6 @@ var moment = require("../../moment-timezone");
 
 exports["Antarctica/Macquarie"] = {
 
-	"1910" : function (t) {
-		t.equal(moment("1910-12-31T23:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "23:59:59", "1910-12-31T23:59:59+00:00 should be 23:59:59 zzz");
-
-		t.equal(moment("1910-12-31T23:59:59+00:00").tz("Antarctica/Macquarie").zone(), 0, "1910-12-31T23:59:59+00:00 should be 0 minutes offset in zzz");
-
-		t.done();
-	},
-
-	"1911" : function (t) {
-		t.equal(moment("1911-01-01T00:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "10:00:00", "1911-01-01T00:00:00+00:00 should be 10:00:00 EST");
-
-		t.equal(moment("1911-01-01T00:00:00+00:00").tz("Antarctica/Macquarie").zone(), -600, "1911-01-01T00:00:00+00:00 should be -600 minutes offset in EST");
-
-		t.done();
-	},
-
 	"1916" : function (t) {
 		t.equal(moment("1916-09-30T15:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:59:59", "1916-09-30T15:59:59+00:00 should be 01:59:59 EST");
 		t.equal(moment("1916-09-30T16:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "03:00:00", "1916-09-30T16:00:00+00:00 should be 03:00:00 EST");
@@ -38,50 +22,22 @@ exports["Antarctica/Macquarie"] = {
 		t.done();
 	},
 
-	"1941" : function (t) {
-		t.equal(moment("1941-12-31T15:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:59:59", "1941-12-31T15:59:59+00:00 should be 01:59:59 EST");
-		t.equal(moment("1941-12-31T16:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "03:00:00", "1941-12-31T16:00:00+00:00 should be 03:00:00 EST");
+	"1919" : function (t) {
+		t.equal(moment("1919-03-31T13:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "23:59:59", "1919-03-31T13:59:59+00:00 should be 23:59:59 EST");
+		t.equal(moment("1919-03-31T14:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "14:00:00", "1919-03-31T14:00:00+00:00 should be 14:00:00 zzz");
 
-		t.equal(moment("1941-12-31T15:59:59+00:00").tz("Antarctica/Macquarie").zone(), -600, "1941-12-31T15:59:59+00:00 should be -600 minutes offset in EST");
-		t.equal(moment("1941-12-31T16:00:00+00:00").tz("Antarctica/Macquarie").zone(), -660, "1941-12-31T16:00:00+00:00 should be -660 minutes offset in EST");
-
-		t.done();
-	},
-
-	"1942" : function (t) {
-		t.equal(moment("1942-03-28T14:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:59:59", "1942-03-28T14:59:59+00:00 should be 01:59:59 EST");
-		t.equal(moment("1942-03-28T15:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:00:00", "1942-03-28T15:00:00+00:00 should be 01:00:00 EST");
-		t.equal(moment("1942-09-26T15:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:59:59", "1942-09-26T15:59:59+00:00 should be 01:59:59 EST");
-		t.equal(moment("1942-09-26T16:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "03:00:00", "1942-09-26T16:00:00+00:00 should be 03:00:00 EST");
-
-		t.equal(moment("1942-03-28T14:59:59+00:00").tz("Antarctica/Macquarie").zone(), -660, "1942-03-28T14:59:59+00:00 should be -660 minutes offset in EST");
-		t.equal(moment("1942-03-28T15:00:00+00:00").tz("Antarctica/Macquarie").zone(), -600, "1942-03-28T15:00:00+00:00 should be -600 minutes offset in EST");
-		t.equal(moment("1942-09-26T15:59:59+00:00").tz("Antarctica/Macquarie").zone(), -600, "1942-09-26T15:59:59+00:00 should be -600 minutes offset in EST");
-		t.equal(moment("1942-09-26T16:00:00+00:00").tz("Antarctica/Macquarie").zone(), -660, "1942-09-26T16:00:00+00:00 should be -660 minutes offset in EST");
+		t.equal(moment("1919-03-31T13:59:59+00:00").tz("Antarctica/Macquarie").zone(), -600, "1919-03-31T13:59:59+00:00 should be -600 minutes offset in EST");
+		t.equal(moment("1919-03-31T14:00:00+00:00").tz("Antarctica/Macquarie").zone(), 0, "1919-03-31T14:00:00+00:00 should be 0 minutes offset in zzz");
 
 		t.done();
 	},
 
-	"1943" : function (t) {
-		t.equal(moment("1943-03-27T14:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:59:59", "1943-03-27T14:59:59+00:00 should be 01:59:59 EST");
-		t.equal(moment("1943-03-27T15:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:00:00", "1943-03-27T15:00:00+00:00 should be 01:00:00 EST");
-		t.equal(moment("1943-10-02T15:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:59:59", "1943-10-02T15:59:59+00:00 should be 01:59:59 EST");
-		t.equal(moment("1943-10-02T16:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "03:00:00", "1943-10-02T16:00:00+00:00 should be 03:00:00 EST");
+	"1948" : function (t) {
+		t.equal(moment("1948-03-24T23:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "23:59:59", "1948-03-24T23:59:59+00:00 should be 23:59:59 zzz");
+		t.equal(moment("1948-03-25T00:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "10:00:00", "1948-03-25T00:00:00+00:00 should be 10:00:00 EST");
 
-		t.equal(moment("1943-03-27T14:59:59+00:00").tz("Antarctica/Macquarie").zone(), -660, "1943-03-27T14:59:59+00:00 should be -660 minutes offset in EST");
-		t.equal(moment("1943-03-27T15:00:00+00:00").tz("Antarctica/Macquarie").zone(), -600, "1943-03-27T15:00:00+00:00 should be -600 minutes offset in EST");
-		t.equal(moment("1943-10-02T15:59:59+00:00").tz("Antarctica/Macquarie").zone(), -600, "1943-10-02T15:59:59+00:00 should be -600 minutes offset in EST");
-		t.equal(moment("1943-10-02T16:00:00+00:00").tz("Antarctica/Macquarie").zone(), -660, "1943-10-02T16:00:00+00:00 should be -660 minutes offset in EST");
-
-		t.done();
-	},
-
-	"1944" : function (t) {
-		t.equal(moment("1944-03-25T14:59:59+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:59:59", "1944-03-25T14:59:59+00:00 should be 01:59:59 EST");
-		t.equal(moment("1944-03-25T15:00:00+00:00").tz("Antarctica/Macquarie").format("HH:mm:ss"), "01:00:00", "1944-03-25T15:00:00+00:00 should be 01:00:00 EST");
-
-		t.equal(moment("1944-03-25T14:59:59+00:00").tz("Antarctica/Macquarie").zone(), -660, "1944-03-25T14:59:59+00:00 should be -660 minutes offset in EST");
-		t.equal(moment("1944-03-25T15:00:00+00:00").tz("Antarctica/Macquarie").zone(), -600, "1944-03-25T15:00:00+00:00 should be -600 minutes offset in EST");
+		t.equal(moment("1948-03-24T23:59:59+00:00").tz("Antarctica/Macquarie").zone(), 0, "1948-03-24T23:59:59+00:00 should be 0 minutes offset in zzz");
+		t.equal(moment("1948-03-25T00:00:00+00:00").tz("Antarctica/Macquarie").zone(), -600, "1948-03-25T00:00:00+00:00 should be -600 minutes offset in EST");
 
 		t.done();
 	},
