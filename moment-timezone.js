@@ -123,6 +123,8 @@
 				rule = this.rules[i];
 				if (rule.contains(year)) {
 					rules.push(new RuleYear(year, rule));
+				} else if (rule.contains(year + 1)) {
+					rules.push(new RuleYear(year + 1, rule));
 				}
 			}
 			rules.push(new RuleYear(year - 1, this.lastYearRule(year - 1)));
@@ -235,7 +237,7 @@
 			return this._lastRule;
 		},
 
-		format : function (mom, rule) {
+		format : function (rule) {
 			return this.letters.replace("%s", rule.letters);
 		}
 	};
