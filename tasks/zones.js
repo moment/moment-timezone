@@ -226,6 +226,7 @@ module.exports = function (grunt) {
 		this.offset = parseMinutes(line[1]);
 		this.setRuleset(line[2]);
 		this.letters = line[3];
+		this.zone = moment.tz.addZone(this.name + " " + this.format());
 		this.parseUntil(line.slice(4));
 	}
 
@@ -234,7 +235,6 @@ module.exports = function (grunt) {
 			if (rIsRuleset.exec(ruleset)) {
 				this.offset += parseMinutes(ruleset);
 				this.ruleset = '-';
-				console.log(ruleset, this.name);
 			} else {
 				this.ruleset = ruleset;
 			}
@@ -248,7 +248,7 @@ module.exports = function (grunt) {
 				return;
 			}
 
-			// if (this.name !== "America/Phoenix") {
+			// if (this.name !== "Antarctica/Macquarie") {
 			// 	return;
 			// }
 
@@ -264,77 +264,45 @@ module.exports = function (grunt) {
 		},
 
 		findUntilRuleFromSet : function (set, name) {
-			var i,
-				rule,
-				ruleOffset = 0,
-				rules = [];
+			var until = this.untilMoment,
+				last = until.clone().subtract(1, 'd'),
+				untilRule = this.zone.rule(until),
+				lastRule = this.zone.rule(last);
 
-			// console.log('\n' + this.name.green, this.untilYear, '\n');
-
-			for (i = 0; i < set.length; i++) {
-				rule = set[i];
-				if (this.untilYear >= rule.startYear) {
-					// console.log('[ ]'.green, this.untilYear, '>=', rule.startYear);
-					rules.push(rule);
-				} else {
-					// console.log('[X]'.red, this.untilYear, '<', rule.startYear);
-				}
-			}
-
-			rules.sort(function (a, b) {
-				var diff = b.startYear - a.startYear;
-				if (!diff) {
-					return b.month - a.month;
-				}
-				return diff;
-			});
-
-			for (i = 0; i < rules.length; i++) {
-				rule = rules[i];
-				ruleOffset = rule.offset;
-				// console.log('[ ]'.yellow, rule.format().grey);
-				if (this.untilMonth <= rule.month) {
-					// console.log('month'.green, this.untilMonth, '<=', rule.month);
-					break;
-				}
-				// otherwise use first rule from last year
-				if (this.untilYear > rule.startYear) {
-					// console.log('year '.green, this.untilYear, '>', rule.startYear);
-					break;
-				}
-			}
-
-			this.untilOffset = 0;
 			if (this.untilTimeRule === TIME_RULE_STANDARD) {
-				// console.log('TIME_RULE_STANDARD '.green, this.offset);
 				this.untilOffset = this.offset;
 			} else if (this.untilTimeRule === TIME_RULE_WALL_CLOCK) {
-				// console.log('TIME_RULE_WALL_CLOCK '.green, this.offset, ruleOffset);
-				this.untilOffset = this.offset + ruleOffset;
+				this.untilOffset = this.offset + lastRule.offset;
 			}
-
-			// if (rule) {
-			// 	console.log(rule.format());
-			// }
-			// console.log(this.format());
 		},
 
 		parseUntil : function (input) {
 			this.untilYear = +input[0] || 0;
-			if (input[1]) {
-				this.untilMonth = input[1] = moment(input[1], "MMM").month();
-			}
-			if (input[3]) {
-				this.untilTime = input[4] = parseMinutes(input[3]);
-				input[3] = 0;
-			}
+
+			this.untilMoment = moment.utc([this.untilYear]);
 
 			if (~(input[3] || '').indexOf('u')) {
 				this.untilTimeRule = TIME_RULE_UTC;
-			} else if (~input.indexOf('s')) {
+			} else if (~(input[3] || '').indexOf('s')) {
 				this.untilTimeRule = TIME_RULE_STANDARD;
 			} else {
 				this.untilTimeRule = TIME_RULE_WALL_CLOCK;
+			}
+
+			if (input[1]) {
+				this.untilMonth = input[1] = moment(input[1], "MMM").month();
+				this.untilMoment.month(this.untilMonth);
+			}
+
+			if (input[2]) {
+				this.untilDay = +input[2];
+				this.untilMoment.date(this.untilDay);
+			}
+
+			if (input[3]) {
+				this.untilTime = input[4] = parseMinutes(input[3]);
+				input[3] = 0;
+				this.untilMoment.minute(this.untilTime - this.offset);
 			}
 
 			this.until = input.join('_').replace(/_$/, '');
@@ -380,6 +348,8 @@ module.exports = function (grunt) {
 		this.parseTime(line[6]);
 
 		this.debugType(line[3]);
+
+		moment.tz.addRule(this.name + " " + this.format());
 	}
 
 	Rule.prototype = {

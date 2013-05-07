@@ -214,7 +214,6 @@
 		this.offset = +offset;
 		this.ruleSet = ruleSet;
 		this.letters = letters;
-		this.untilArray = [9999];
 
 		for (i = 0; i < untilArray.length; i++) {
 			untilArray[i] = +untilArray[i];

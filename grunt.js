@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				// "tests/america/phoenix.js",
 				//"tests/america/los_angeles.js"
 				// "tests/antarctica/*.js"
-				// "tests/antarctica/palmer.js"
+				// "tests/antarctica/macquarie.js"
 			]
 		},
 		lint: {

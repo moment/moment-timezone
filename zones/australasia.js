@@ -194,61 +194,61 @@ module.exports = {
 		],
 		"Australia/Perth" : [
 			"463	-	LMT	1895_11	463",
-			"480	Aus	WST	1943_6	540",
+			"480	Aus	WST	1943_6	480",
 			"480	AW	WST"
 		],
 		"Australia/Eucla" : [
 			"515	-	LMT	1895_11	515",
-			"525	Aus	CWST	1943_6	585",
+			"525	Aus	CWST	1943_6	525",
 			"525	AW	CWST"
 		],
 		"Australia/Brisbane" : [
 			"612	-	LMT	1895	612",
-			"600	Aus	EST	1971	660",
+			"600	Aus	EST	1971	600",
 			"600	AQ	EST"
 		],
 		"Australia/Lindeman" : [
 			"595	-	LMT	1895	595",
-			"600	Aus	EST	1971	660",
+			"600	Aus	EST	1971	600",
 			"600	AQ	EST	1992_6	600",
 			"600	Holiday	EST"
 		],
 		"Australia/Adelaide" : [
 			"554	-	LMT	1895_1	554",
 			"540	-	CST	1899_4	540",
-			"570	Aus	CST	1971	630",
+			"570	Aus	CST	1971	570",
 			"570	AS	CST"
 		],
 		"Australia/Hobart" : [
 			"589	-	LMT	1895_8	589",
 			"600	-	EST	1916_9_1_0_120	600",
 			"660	-	EST	1917_1	660",
-			"600	Aus	EST	1967	660",
+			"600	Aus	EST	1967	600",
 			"600	AT	EST"
 		],
 		"Australia/Currie" : [
 			"575	-	LMT	1895_8	575",
 			"600	-	EST	1916_9_1_0_120	600",
 			"660	-	EST	1917_1	660",
-			"600	Aus	EST	1971_6	660",
+			"600	Aus	EST	1971_6	600",
 			"600	AT	EST"
 		],
 		"Australia/Melbourne" : [
 			"579	-	LMT	1895_1	579",
-			"600	Aus	EST	1971	660",
+			"600	Aus	EST	1971	600",
 			"600	AV	EST"
 		],
 		"Australia/Sydney" : [
 			"604	-	LMT	1895_1	604",
-			"600	Aus	EST	1971	660",
+			"600	Aus	EST	1971	600",
 			"600	AN	EST"
 		],
 		"Australia/Broken_Hill" : [
 			"565	-	LMT	1895_1	565",
 			"600	-	EST	1896_7_23	600",
 			"540	-	CST	1899_4	540",
-			"570	Aus	CST	1971	630",
-			"570	AN	CST	2000	570",
+			"570	Aus	CST	1971	570",
+			"570	AN	CST	2000	630",
 			"570	AS	CST"
 		],
 		"Australia/Lord_Howe" : [
@@ -262,8 +262,8 @@ module.exports = {
 			"660	-	EST	1917_1	660",
 			"600	Aus	EST	1919_3	600",
 			"0	-	zzz	1948_2_25",
-			"600	Aus	EST	1967	660",
-			"600	AT	EST	2010_3_4_0_180	600",
+			"600	Aus	EST	1967	600",
+			"600	AT	EST	2010_3_4_0_180	660",
 			"660	-	MIST"
 		],
 		"Indian/Christmas" : [
@@ -362,7 +362,7 @@ module.exports = {
 		],
 		"Pacific/Auckland" : [
 			"699	-	LMT	1868_10_2	699",
-			"690	NZ	NZ%sT	1946_0_1	690",
+			"690	NZ	NZ%sT	1946_0_1	720",
 			"720	NZ	NZ%sT"
 		],
 		"Pacific/Chatham" : [

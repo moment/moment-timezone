@@ -670,7 +670,7 @@ module.exports = {
 		"Europe/London" : [
 			"1	-	LMT	1847_11_1_0_0	1",
 			"0	GB-Eire	%s	1968_9_27	60",
-			"60	-	BST	1971_9_31_0_120	60",
+			"60	-	BST	1971_9_31_0_120",
 			"0	GB-Eire	%s	1996",
 			"0	EU	GMT/BST"
 		],
@@ -679,13 +679,13 @@ module.exports = {
 			"25	-	DMT	1916_4_21_0_120	25",
 			"85	-	IST	1916_9_1_0_120	85",
 			"0	GB-Eire	%s	1921_11_6",
-			"0	GB-Eire	GMT/IST	1940_1_25_0_120	60",
+			"0	GB-Eire	GMT/IST	1940_1_25_0_120",
 			"60	-	IST	1946_9_6_0_120	60",
 			"0	-	GMT	1947_2_16_0_120",
 			"60	-	IST	1947_10_2_0_120	60",
 			"0	-	GMT	1948_3_18_0_120",
 			"0	GB-Eire	GMT/IST	1968_9_27	60",
-			"60	-	IST	1971_9_31_0_120	60",
+			"60	-	IST	1971_9_31_0_120",
 			"0	GB-Eire	GMT/IST	1996",
 			"0	EU	GMT/IST"
 		],
@@ -704,7 +704,7 @@ module.exports = {
 		"Europe/Tirane" : [
 			"79	-	LMT	1914	79",
 			"60	-	CET	1940_5_16	60",
-			"60	Albania	CE%sT	1984_6	60",
+			"60	Albania	CE%sT	1984_6	120",
 			"60	EU	CE%sT"
 		],
 		"Europe/Andorra" : [
@@ -728,8 +728,8 @@ module.exports = {
 			"110	-	MMT	1924_4_2	110",
 			"120	-	EET	1930_5_21	120",
 			"180	-	MSK	1941_5_28	180",
-			"60	C-Eur	CE%sT	1944_6_3	60",
-			"180	Russia	MSK/MSD	1990	240",
+			"60	C-Eur	CE%sT	1944_6_3	120",
+			"180	Russia	MSK/MSD	1990	180",
 			"180	-	MSK	1991_2_31_0_120	180",
 			"180	-	EEST	1991_8_29_0_120	180",
 			"120	-	EET	1992_2_29_0_0	120",
@@ -742,9 +742,9 @@ module.exports = {
 			"17	-	BMT	1892_4_1_0_720	17",
 			"0	-	WET	1914_10_8",
 			"60	-	CET	1916_4_1_0_0	60",
-			"60	C-Eur	CE%sT	1918_10_11_0_660	60",
+			"60	C-Eur	CE%sT	1918_10_11_0_660",
 			"0	Belgium	WE%sT	1940_4_20_0_120",
-			"60	C-Eur	CE%sT	1944_8_3	60",
+			"60	C-Eur	CE%sT	1944_8_3	120",
 			"60	Belgium	CE%sT	1977	60",
 			"60	EU	CE%sT"
 		],
@@ -755,8 +755,8 @@ module.exports = {
 			"60	C-Eur	CE%sT	1945	60",
 			"60	-	CET	1945_3_2_0_180	60",
 			"120	-	EET	1979_2_31_0_1380	120",
-			"120	Bulg	EE%sT	1982_8_26_0_120	120",
-			"120	C-Eur	EE%sT	1991	180",
+			"120	Bulg	EE%sT	1982_8_26_0_120	180",
+			"120	C-Eur	EE%sT	1991	120",
 			"120	E-Eur	EE%sT	1997	120",
 			"120	EU	EE%sT"
 		],
@@ -764,13 +764,13 @@ module.exports = {
 			"57	-	LMT	1850	57",
 			"57	-	PMT	1891_9	57",
 			"60	C-Eur	CE%sT	1944_8_17_0_120	60",
-			"60	Czech	CE%sT	1979	120",
+			"60	Czech	CE%sT	1979	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Copenhagen" : [
 			"50	-	LMT	1890	50",
 			"50	-	CMT	1894_0_1	50",
-			"60	Denmark	CE%sT	1942_10_2_0_120	120",
+			"60	Denmark	CE%sT	1942_10_2_0_120	60",
 			"60	C-Eur	CE%sT	1945_3_2_0_120	60",
 			"60	Denmark	CE%sT	1980	60",
 			"60	EU	CE%sT"
@@ -783,13 +783,13 @@ module.exports = {
 		"America/Danmarkshavn" : [
 			"-74	-	LMT	1916_6_28	-74",
 			"-180	-	WGT	1980_3_6_0_120	-180",
-			"-180	EU	WG%sT	1996	-120",
+			"-180	EU	WG%sT	1996	-180",
 			"0	-	GMT"
 		],
 		"America/Scoresbysund" : [
 			"-87	-	LMT	1916_6_28	-87",
 			"-120	-	CGT	1980_3_6_0_120	-120",
-			"-120	C-Eur	CG%sT	1981_2_29	-60",
+			"-120	C-Eur	CG%sT	1981_2_29	-120",
 			"-60	EU	EG%sT"
 		],
 		"America/Godthab" : [
@@ -808,11 +808,11 @@ module.exports = {
 			"99	-	TMT	1921_4	99",
 			"120	-	EET	1940_7_6	120",
 			"180	-	MSK	1941_8_15	180",
-			"60	C-Eur	CE%sT	1944_8_22	60",
-			"180	Russia	MSK/MSD	1989_2_26_0_120	240",
+			"60	C-Eur	CE%sT	1944_8_22	120",
+			"180	Russia	MSK/MSD	1989_2_26_0_120	180",
 			"180	-	EEST	1989_8_24_0_120	180",
-			"120	C-Eur	EE%sT	1998_8_22	120",
-			"120	EU	EE%sT	1999_10_1	120",
+			"120	C-Eur	EE%sT	1998_8_22	180",
+			"120	EU	EE%sT	1999_10_1	180",
 			"120	-	EET	2002_1_21	120",
 			"120	EU	EE%sT"
 		],
@@ -825,22 +825,22 @@ module.exports = {
 		"Europe/Paris" : [
 			"9	-	LMT	1891_2_15_0_1	9",
 			"9	-	PMT	1911_2_11_0_1	9",
-			"0	France	WE%sT	1940_5_14_0_1380",
-			"60	C-Eur	CE%sT	1944_7_25	60",
-			"0	France	WE%sT	1945_8_16_0_180",
+			"0	France	WE%sT	1940_5_14_0_1380	60",
+			"60	C-Eur	CE%sT	1944_7_25	120",
+			"0	France	WE%sT	1945_8_16_0_180	120",
 			"60	France	CE%sT	1977	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Berlin" : [
 			"53	-	LMT	1893_3	53",
-			"60	C-Eur	CE%sT	1945_4_24_0_120	60",
+			"60	C-Eur	CE%sT	1945_4_24_0_120	120",
 			"60	SovietZone	CE%sT	1946	60",
-			"60	Germany	CE%sT	1980	120",
+			"60	Germany	CE%sT	1980	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Gibraltar" : [
 			"21	-	LMT	1880_7_2_0_0	21",
-			"0	GB-Eire	%s	1957_3_14_0_120	60",
+			"0	GB-Eire	%s	1957_3_14_0_120",
 			"60	-	CET	1982	60",
 			"60	EU	CE%sT"
 		],
@@ -869,8 +869,8 @@ module.exports = {
 		"Europe/Rome" : [
 			"49	-	LMT	1866_8_22	49",
 			"49	-	RMT	1893_10_1_0_0	49",
-			"60	Italy	CE%sT	1942_10_2_0_120	120",
-			"60	C-Eur	CE%sT	1944_6	60",
+			"60	Italy	CE%sT	1942_10_2_0_120	60",
+			"60	C-Eur	CE%sT	1944_6	120",
 			"60	Italy	CE%sT	1980	60",
 			"60	EU	CE%sT"
 		],
@@ -884,7 +884,7 @@ module.exports = {
 			"120	-	EET	1940_7_5	120",
 			"180	-	MSK	1941_6	180",
 			"60	C-Eur	CE%sT	1944_9_13	60",
-			"180	Russia	MSK/MSD	1989_2_lastSun_0_120	240",
+			"180	Russia	MSK/MSD	1989_2_lastSun_0_120	180",
 			"180	-	EEST	1989_8_lastSun_0_120	180",
 			"120	Latvia	EE%sT	1997_0_21	120",
 			"120	EU	EE%sT	2000_1_29	120",
@@ -904,57 +904,57 @@ module.exports = {
 			"120	-	EET	1920_9_9	120",
 			"60	-	CET	1940_7_3	60",
 			"180	-	MSK	1941_5_24	180",
-			"60	C-Eur	CE%sT	1944_7	60",
-			"180	Russia	MSK/MSD	1991_2_31_0_120	240",
+			"60	C-Eur	CE%sT	1944_7	120",
+			"180	Russia	MSK/MSD	1991_2_31_0_120	180",
 			"180	-	EEST	1991_8_29_0_120	180",
 			"120	C-Eur	EE%sT	1998	120",
-			"120	-	EET	1998_2_29_0_60	120",
-			"60	EU	CE%sT	1999_9_31_0_60	60",
+			"120	-	EET	1998_2_29_0_60",
+			"60	EU	CE%sT	1999_9_31_0_60",
 			"120	-	EET	2003_0_1	120",
 			"120	EU	EE%sT"
 		],
 		"Europe/Luxembourg" : [
 			"24	-	LMT	1904_5	24",
 			"60	Lux	CE%sT	1918_10_25	60",
-			"0	Lux	WE%sT	1929_9_6_0_120	60",
-			"0	Belgium	WE%sT	1940_4_14_0_180",
-			"60	C-Eur	WE%sT	1944_8_18_0_180	60",
+			"0	Lux	WE%sT	1929_9_6_0_120",
+			"0	Belgium	WE%sT	1940_4_14_0_180	60",
+			"60	C-Eur	WE%sT	1944_8_18_0_180	120",
 			"60	Belgium	CE%sT	1977	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Malta" : [
 			"58	-	LMT	1893_10_2_0_0	58",
-			"60	Italy	CE%sT	1942_10_2_0_120	120",
+			"60	Italy	CE%sT	1942_10_2_0_120	60",
 			"60	C-Eur	CE%sT	1945_3_2_0_120	60",
 			"60	Italy	CE%sT	1973_2_31	60",
-			"60	Malta	CE%sT	1981	120",
+			"60	Malta	CE%sT	1981	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Chisinau" : [
 			"115	-	LMT	1880	115",
 			"115	-	CMT	1918_1_15	115",
 			"104	-	BMT	1931_6_24	104",
-			"120	Romania	EE%sT	1940_7_15	180",
+			"120	Romania	EE%sT	1940_7_15	120",
 			"180	-	EEST	1941_6_17	180",
-			"60	C-Eur	CE%sT	1944_7_24	60",
-			"180	Russia	MSK/MSD	1990	240",
+			"60	C-Eur	CE%sT	1944_7_24	120",
+			"180	Russia	MSK/MSD	1990	180",
 			"180	-	MSK	1990_4_6	180",
 			"120	-	EET	1991	120",
-			"120	Russia	EE%sT	1992	180",
+			"120	Russia	EE%sT	1992	120",
 			"120	E-Eur	EE%sT	1997	120",
 			"120	EU	EE%sT"
 		],
 		"Europe/Monaco" : [
 			"29	-	LMT	1891_2_15	29",
 			"9	-	PMT	1911_2_11	9",
-			"0	France	WE%sT	1945_8_16_0_180",
+			"0	France	WE%sT	1945_8_16_0_180	120",
 			"60	France	CE%sT	1977	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Amsterdam" : [
 			"19	-	LMT	1835	19",
-			"19	Neth	%s	1937_6_1	19",
-			"20	Neth	NE%sT	1940_4_16_0_0	80",
+			"19	Neth	%s	1937_6_1	79",
+			"20	Neth	NE%sT	1940_4_16_0_0	20",
 			"60	C-Eur	CE%sT	1945_3_2_0_120	60",
 			"60	Neth	CE%sT	1977	60",
 			"60	EU	CE%sT"
@@ -963,18 +963,18 @@ module.exports = {
 			"43	-	LMT	1895_0_1	43",
 			"60	Norway	CE%sT	1940_7_10_0_1380	60",
 			"60	C-Eur	CE%sT	1945_3_2_0_120	60",
-			"60	Norway	CE%sT	1980	120",
+			"60	Norway	CE%sT	1980	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Warsaw" : [
 			"84	-	LMT	1880	84",
 			"84	-	WMT	1915_7_5	84",
-			"60	C-Eur	CE%sT	1918_8_16_0_180	60",
-			"120	Poland	EE%sT	1922_5	180",
-			"60	Poland	CE%sT	1940_5_23_0_120	120",
-			"60	C-Eur	CE%sT	1944_9	60",
+			"60	C-Eur	CE%sT	1918_8_16_0_180	120",
+			"120	Poland	EE%sT	1922_5	120",
+			"60	Poland	CE%sT	1940_5_23_0_120	60",
+			"60	C-Eur	CE%sT	1944_9	120",
 			"60	Poland	CE%sT	1977	60",
-			"60	W-Eur	CE%sT	1988	120",
+			"60	W-Eur	CE%sT	1988	60",
 			"60	EU	CE%sT"
 		],
 		"Europe/Lisbon" : [
@@ -982,32 +982,32 @@ module.exports = {
 			"36	-	LMT	1912_0_1	36",
 			"0	Port	WE%sT	1966_3_3_0_120",
 			"60	-	CET	1976_8_26_0_60	60",
-			"0	Port	WE%sT	1983_8_25_0_60	60",
-			"0	W-Eur	WE%sT	1992_8_27_0_60	60",
-			"60	EU	CE%sT	1996_2_31_0_60	60",
+			"0	Port	WE%sT	1983_8_25_0_60",
+			"0	W-Eur	WE%sT	1992_8_27_0_60",
+			"60	EU	CE%sT	1996_2_31_0_60",
 			"0	EU	WE%sT"
 		],
 		"Atlantic/Azores" : [
 			"-102	-	LMT	1884	-102",
 			"-114	-	HMT	1911_4_24	-114",
 			"-120	Port	AZO%sT	1966_3_3_0_120	-120",
-			"-60	Port	AZO%sT	1983_8_25_0_60",
-			"-60	W-Eur	AZO%sT	1992_8_27_0_60",
-			"0	EU	WE%sT	1993_2_28_0_60	60",
+			"-60	Port	AZO%sT	1983_8_25_0_60	-60",
+			"-60	W-Eur	AZO%sT	1992_8_27_0_60	-60",
+			"0	EU	WE%sT	1993_2_28_0_60",
 			"-60	EU	AZO%sT"
 		],
 		"Atlantic/Madeira" : [
 			"-67	-	LMT	1884	-67",
 			"-67	-	FMT	1911_4_24	-67",
 			"-60	Port	MAD%sT	1966_3_3_0_120	-60",
-			"0	Port	WE%sT	1983_8_25_0_60	60",
+			"0	Port	WE%sT	1983_8_25_0_60",
 			"0	EU	WE%sT"
 		],
 		"Europe/Bucharest" : [
 			"104	-	LMT	1891_9	104",
 			"104	-	BMT	1931_6_24	104",
 			"120	Romania	EE%sT	1981_2_29_0_120	120",
-			"120	C-Eur	EE%sT	1991	180",
+			"120	C-Eur	EE%sT	1991	120",
 			"120	Romania	EE%sT	1994	120",
 			"120	E-Eur	EE%sT	1997	120",
 			"120	EU	EE%sT"
@@ -1016,17 +1016,17 @@ module.exports = {
 			"82	-	LMT	1893_3	82",
 			"60	C-Eur	CE%sT	1945	60",
 			"120	Poland	CE%sT	1946	120",
-			"180	Russia	MSK/MSD	1991_2_31_0_120	240",
+			"180	Russia	MSK/MSD	1991_2_31_0_120	180",
 			"120	Russia	EE%sT	2011_2_27_0_120	120",
 			"180	-	FET"
 		],
 		"Europe/Moscow" : [
 			"150	-	LMT	1880	150",
 			"150	-	MMT	1916_6_3	150",
-			"150	Russia	%s	1919_6_1_0_120	150",
+			"150	Russia	%s	1919_6_1_0_120	270",
 			"180	Russia	MSK/MSD	1922_9	180",
 			"120	-	EET	1930_5_21	120",
-			"180	Russia	MSK/MSD	1991_2_31_0_120	240",
+			"180	Russia	MSK/MSD	1991_2_31_0_120	180",
 			"120	Russia	EE%sT	1992_0_19_0_120	120",
 			"180	Russia	MSK/MSD	2011_2_27_0_120	180",
 			"240	-	MSK"
@@ -1036,8 +1036,8 @@ module.exports = {
 			"180	-	TSAT	1925_3_6	180",
 			"180	-	STAT	1930_5_21	180",
 			"240	-	STAT	1961_10_11	240",
-			"240	Russia	VOL%sT	1989_2_26_0_120	300",
-			"180	Russia	VOL%sT	1991_2_31_0_120	240",
+			"240	Russia	VOL%sT	1989_2_26_0_120	240",
+			"180	Russia	VOL%sT	1991_2_31_0_120	180",
 			"240	-	VOLT	1992_2_29_0_120	240",
 			"180	Russia	VOL%sT	2011_2_27_0_120	180",
 			"240	-	VOLT"
@@ -1046,9 +1046,9 @@ module.exports = {
 			"200	-	LMT	1919_6_1_0_120	200",
 			"180	-	SAMT	1930_5_21	180",
 			"240	-	SAMT	1935_0_27	240",
-			"240	Russia	KUY%sT	1989_2_26_0_120	300",
-			"180	Russia	KUY%sT	1991_2_31_0_120	240",
-			"120	Russia	KUY%sT	1991_8_29_0_120	180",
+			"240	Russia	KUY%sT	1989_2_26_0_120	240",
+			"180	Russia	KUY%sT	1991_2_31_0_120	180",
+			"120	Russia	KUY%sT	1991_8_29_0_120	120",
 			"180	-	KUYT	1991_9_20_0_180	180",
 			"240	Russia	SAM%sT	2010_2_28_0_120	240",
 			"180	Russia	SAM%sT	2011_2_27_0_120	180",
@@ -1057,7 +1057,7 @@ module.exports = {
 		"Asia/Yekaterinburg" : [
 			"242	-	LMT	1919_6_15_0_240	242",
 			"240	-	SVET	1930_5_21	240",
-			"300	Russia	SVE%sT	1991_2_31_0_120	360",
+			"300	Russia	SVE%sT	1991_2_31_0_120	300",
 			"240	Russia	SVE%sT	1992_0_19_0_120	240",
 			"300	Russia	YEK%sT	2011_2_27_0_120	300",
 			"360	-	YEKT"
@@ -1065,7 +1065,7 @@ module.exports = {
 		"Asia/Omsk" : [
 			"293	-	LMT	1919_10_14	293",
 			"300	-	OMST	1930_5_21	300",
-			"360	Russia	OMS%sT	1991_2_31_0_120	420",
+			"360	Russia	OMS%sT	1991_2_31_0_120	360",
 			"300	Russia	OMS%sT	1992_0_19_0_120	300",
 			"360	Russia	OMS%sT	2011_2_27_0_120	360",
 			"420	-	OMST"
@@ -1073,16 +1073,16 @@ module.exports = {
 		"Asia/Novosibirsk" : [
 			"331	-	LMT	1919_11_14_0_360	331",
 			"360	-	NOVT	1930_5_21	360",
-			"420	Russia	NOV%sT	1991_2_31_0_120	480",
+			"420	Russia	NOV%sT	1991_2_31_0_120	420",
 			"360	Russia	NOV%sT	1992_0_19_0_120	360",
-			"420	Russia	NOV%sT	1993_4_23	420",
+			"420	Russia	NOV%sT	1993_4_23	480",
 			"360	Russia	NOV%sT	2011_2_27_0_120	360",
 			"420	-	NOVT"
 		],
 		"Asia/Novokuznetsk" : [
 			"348	-	NMT	1920_0_6	348",
 			"360	-	KRAT	1930_5_21	360",
-			"420	Russia	KRA%sT	1991_2_31_0_120	480",
+			"420	Russia	KRA%sT	1991_2_31_0_120	420",
 			"360	Russia	KRA%sT	1992_0_19_0_120	360",
 			"420	Russia	KRA%sT	2010_2_28_0_120	420",
 			"360	Russia	NOV%sT	2011_2_27_0_120	360",
@@ -1091,7 +1091,7 @@ module.exports = {
 		"Asia/Krasnoyarsk" : [
 			"371	-	LMT	1920_0_6	371",
 			"360	-	KRAT	1930_5_21	360",
-			"420	Russia	KRA%sT	1991_2_31_0_120	480",
+			"420	Russia	KRA%sT	1991_2_31_0_120	420",
 			"360	Russia	KRA%sT	1992_0_19_0_120	360",
 			"420	Russia	KRA%sT	2011_2_27_0_120	420",
 			"480	-	KRAT"
@@ -1100,7 +1100,7 @@ module.exports = {
 			"417	-	LMT	1880	417",
 			"417	-	IMT	1920_0_25	417",
 			"420	-	IRKT	1930_5_21	420",
-			"480	Russia	IRK%sT	1991_2_31_0_120	540",
+			"480	Russia	IRK%sT	1991_2_31_0_120	480",
 			"420	Russia	IRK%sT	1992_0_19_0_120	420",
 			"480	Russia	IRK%sT	2011_2_27_0_120	480",
 			"540	-	IRKT"
@@ -1108,7 +1108,7 @@ module.exports = {
 		"Asia/Yakutsk" : [
 			"518	-	LMT	1919_11_15	518",
 			"480	-	YAKT	1930_5_21	480",
-			"540	Russia	YAK%sT	1991_2_31_0_120	600",
+			"540	Russia	YAK%sT	1991_2_31_0_120	540",
 			"480	Russia	YAK%sT	1992_0_19_0_120	480",
 			"540	Russia	YAK%sT	2011_2_27_0_120	540",
 			"600	-	YAKT"
@@ -1116,7 +1116,7 @@ module.exports = {
 		"Asia/Vladivostok" : [
 			"527	-	LMT	1922_10_15	527",
 			"540	-	VLAT	1930_5_21	540",
-			"600	Russia	VLA%sT	1991_2_31_0_120	660",
+			"600	Russia	VLA%sT	1991_2_31_0_120	600",
 			"540	Russia	VLA%sST	1992_0_19_0_120	540",
 			"600	Russia	VLA%sT	2011_2_27_0_120	600",
 			"660	-	VLAT"
@@ -1124,7 +1124,7 @@ module.exports = {
 		"Asia/Khandyga" : [
 			"542	-	LMT	1919_11_15	542",
 			"480	-	YAKT	1930_5_21	480",
-			"540	Russia	YAK%sT	1991_2_31_0_120	600",
+			"540	Russia	YAK%sT	1991_2_31_0_120	540",
 			"480	Russia	YAK%sT	1992_0_19_0_120	480",
 			"540	Russia	YAK%sT	2004	540",
 			"600	Russia	VLA%sT	2011_2_27_0_120	600",
@@ -1135,7 +1135,7 @@ module.exports = {
 			"570	-	LMT	1905_7_23	570",
 			"540	-	CJT	1938	540",
 			"540	-	JST	1945_7_25	540",
-			"660	Russia	SAK%sT	1991_2_31_0_120	720",
+			"660	Russia	SAK%sT	1991_2_31_0_120	660",
 			"600	Russia	SAK%sT	1992_0_19_0_120	600",
 			"660	Russia	SAK%sT	1997_2_lastSun_0_120	660",
 			"600	Russia	SAK%sT	2011_2_27_0_120	600",
@@ -1144,7 +1144,7 @@ module.exports = {
 		"Asia/Magadan" : [
 			"603	-	LMT	1924_4_2	603",
 			"600	-	MAGT	1930_5_21	600",
-			"660	Russia	MAG%sT	1991_2_31_0_120	720",
+			"660	Russia	MAG%sT	1991_2_31_0_120	660",
 			"600	Russia	MAG%sT	1992_0_19_0_120	600",
 			"660	Russia	MAG%sT	2011_2_27_0_120	660",
 			"720	-	MAGT"
@@ -1153,7 +1153,7 @@ module.exports = {
 			"572	-	LMT	1919_11_15	572",
 			"480	-	YAKT	1930_5_21	480",
 			"540	Russia	YAKT	1981_3_1	540",
-			"660	Russia	MAG%sT	1991_2_31_0_120	720",
+			"660	Russia	MAG%sT	1991_2_31_0_120	660",
 			"600	Russia	MAG%sT	1992_0_19_0_120	600",
 			"660	Russia	MAG%sT	2011_2_27_0_120	660",
 			"720	-	MAGT	2011_8_13_0_0	720",
@@ -1162,7 +1162,7 @@ module.exports = {
 		"Asia/Kamchatka" : [
 			"634	-	LMT	1922_10_10	634",
 			"660	-	PETT	1930_5_21	660",
-			"720	Russia	PET%sT	1991_2_31_0_120	780",
+			"720	Russia	PET%sT	1991_2_31_0_120	720",
 			"660	Russia	PET%sT	1992_0_19_0_120	660",
 			"720	Russia	PET%sT	2010_2_28_0_120	720",
 			"660	Russia	PET%sT	2011_2_27_0_120	660",
@@ -1172,7 +1172,7 @@ module.exports = {
 			"709	-	LMT	1924_4_2	709",
 			"720	-	ANAT	1930_5_21	720",
 			"780	Russia	ANA%sT	1982_3_1_0_0	780",
-			"720	Russia	ANA%sT	1991_2_31_0_120	780",
+			"720	Russia	ANA%sT	1991_2_31_0_120	720",
 			"660	Russia	ANA%sT	1992_0_19_0_120	660",
 			"720	Russia	ANA%sT	2010_2_28_0_120	720",
 			"660	Russia	ANA%sT	2011_2_27_0_120	660",
@@ -1189,7 +1189,7 @@ module.exports = {
 		],
 		"Europe/Madrid" : [
 			"14	-	LMT	1901_0_1_0_0	14",
-			"0	Spain	WE%sT	1946_8_30",
+			"0	Spain	WE%sT	1946_8_30	120",
 			"60	Spain	CE%sT	1979	60",
 			"60	EU	CE%sT"
 		],
@@ -1198,7 +1198,7 @@ module.exports = {
 			"0	-	WET	1918_4_6_0_1380",
 			"60	-	WEST	1918_9_7_0_1380	60",
 			"0	-	WET	1924",
-			"0	Spain	WE%sT	1929	60",
+			"0	Spain	WE%sT	1929",
 			"0	SpainAfrica	WE%sT	1984_2_16",
 			"60	-	CET	1986	60",
 			"60	EU	CE%sT"
@@ -1227,11 +1227,11 @@ module.exports = {
 		"Europe/Istanbul" : [
 			"115	-	LMT	1880	115",
 			"116	-	IMT	1910_9	116",
-			"120	Turkey	EE%sT	1978_9_15	120",
+			"120	Turkey	EE%sT	1978_9_15	180",
 			"180	Turkey	TR%sT	1985_3_20	180",
 			"120	Turkey	EE%sT	2007	120",
-			"120	EU	EE%sT	2011_2_27_0_60	120",
-			"120	-	EET	2011_2_28_0_60	120",
+			"120	EU	EE%sT	2011_2_27_0_60",
+			"120	-	EET	2011_2_28_0_60",
 			"120	EU	EE%sT"
 		],
 		"Europe/Kiev" : [
@@ -1240,23 +1240,23 @@ module.exports = {
 			"120	-	EET	1930_5_21	120",
 			"180	-	MSK	1941_8_20	180",
 			"60	C-Eur	CE%sT	1943_10_6	60",
-			"180	Russia	MSK/MSD	1990	240",
+			"180	Russia	MSK/MSD	1990	180",
 			"180	-	MSK	1990_6_1_0_120	180",
 			"120	-	EET	1992	120",
-			"120	E-Eur	EE%sT	1995	180",
+			"120	E-Eur	EE%sT	1995	120",
 			"120	EU	EE%sT"
 		],
 		"Europe/Uzhgorod" : [
 			"89	-	LMT	1890_9	89",
 			"60	-	CET	1940	60",
-			"60	C-Eur	CE%sT	1944_9	60",
+			"60	C-Eur	CE%sT	1944_9	120",
 			"120	-	CEST	1944_9_26	120",
 			"60	-	CET	1945_5_29	60",
-			"180	Russia	MSK/MSD	1990	240",
+			"180	Russia	MSK/MSD	1990	180",
 			"180	-	MSK	1990_6_1_0_120	180",
 			"60	-	CET	1991_2_31_0_180	60",
 			"120	-	EET	1992	120",
-			"120	E-Eur	EE%sT	1995	180",
+			"120	E-Eur	EE%sT	1995	120",
 			"120	EU	EE%sT"
 		],
 		"Europe/Zaporozhye" : [
@@ -1265,8 +1265,8 @@ module.exports = {
 			"120	-	EET	1930_5_21	120",
 			"180	-	MSK	1941_7_25	180",
 			"60	C-Eur	CE%sT	1943_9_25	60",
-			"180	Russia	MSK/MSD	1991_2_31_0_120	240",
-			"120	E-Eur	EE%sT	1995	180",
+			"180	Russia	MSK/MSD	1991_2_31_0_120	180",
+			"120	E-Eur	EE%sT	1995	120",
 			"120	EU	EE%sT"
 		],
 		"Europe/Simferopol" : [
@@ -1274,15 +1274,15 @@ module.exports = {
 			"136	-	SMT	1924_4_2	136",
 			"120	-	EET	1930_5_21	120",
 			"180	-	MSK	1941_10	180",
-			"60	C-Eur	CE%sT	1944_3_13	60",
-			"180	Russia	MSK/MSD	1990	240",
+			"60	C-Eur	CE%sT	1944_3_13	120",
+			"180	Russia	MSK/MSD	1990	180",
 			"180	-	MSK	1990_6_1_0_120	180",
 			"120	-	EET	1992	120",
 			"120	E-Eur	EE%sT	1994_4	180",
 			"180	E-Eur	MSK/MSD	1996_2_31_0_180	180",
 			"240	-	MSD	1996_9_27_0_180	240",
 			"180	Russia	MSK/MSD	1997	180",
-			"180	-	MSK	1997_2_lastSun_0_60	180",
+			"180	-	MSK	1997_2_lastSun_0_60",
 			"120	EU	EE%sT"
 		]
 	}

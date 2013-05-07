@@ -436,7 +436,7 @@ module.exports = {
 		"Asia/Yerevan" : [
 			"178	-	LMT	1924_4_2	178",
 			"180	-	YERT	1957_2	180",
-			"240	RussiaAsia	YER%sT	1991_2_31_0_120	300",
+			"240	RussiaAsia	YER%sT	1991_2_31_0_120	240",
 			"240	-	YERST	1991_8_23	240",
 			"180	RussiaAsia	AM%sT	1995_8_24_0_120	180",
 			"240	-	AMT	1997	240",
@@ -446,7 +446,7 @@ module.exports = {
 		"Asia/Baku" : [
 			"199	-	LMT	1924_4_2	199",
 			"180	-	BAKT	1957_2	180",
-			"240	RussiaAsia	BAK%sT	1991_2_31_0_120	300",
+			"240	RussiaAsia	BAK%sT	1991_2_31_0_120	240",
 			"240	-	BAKST	1991_7_30	240",
 			"180	RussiaAsia	AZ%sT	1992_8_lastSat_0_1380	180",
 			"240	-	AZT	1996	240",
@@ -507,7 +507,7 @@ module.exports = {
 		],
 		"Asia/Shanghai" : [
 			"485	-	LMT	1928	485",
-			"480	Shang	C%sT	1949	540",
+			"480	Shang	C%sT	1949	480",
 			"480	PRC	C%sT"
 		],
 		"Asia/Chongqing" : [
@@ -528,7 +528,7 @@ module.exports = {
 		],
 		"Asia/Hong_Kong" : [
 			"456	-	LMT	1904_9_30	456",
-			"480	HK	HK%sT	1941_11_25	540",
+			"480	HK	HK%sT	1941_11_25	480",
 			"540	-	JST	1945_8_15	540",
 			"480	HK	HK%sT"
 		],
@@ -550,13 +550,13 @@ module.exports = {
 			"179	-	LMT	1880	179",
 			"179	-	TBMT	1924_4_2	179",
 			"180	-	TBIT	1957_2	180",
-			"240	RussiaAsia	TBI%sT	1991_2_31_0_120	300",
+			"240	RussiaAsia	TBI%sT	1991_2_31_0_120	240",
 			"240	-	TBIST	1991_3_9	240",
-			"180	RussiaAsia	GE%sT	1992	240",
-			"180	E-EurAsia	GE%sT	1994_8_lastSun	240",
+			"180	RussiaAsia	GE%sT	1992	180",
+			"180	E-EurAsia	GE%sT	1994_8_lastSun	180",
 			"240	E-EurAsia	GE%sT	1996_9_lastSun	240",
 			"300	-	GEST	1997_2_lastSun	300",
-			"240	E-EurAsia	GE%sT	2004_5_27	240",
+			"240	E-EurAsia	GE%sT	2004_5_27	300",
 			"180	RussiaAsia	GE%sT	2005_2_lastSun_0_120	180",
 			"240	-	GET"
 		],
@@ -630,7 +630,7 @@ module.exports = {
 			"120	Zion	I%sT"
 		],
 		"Asia/Tokyo" : [
-			"558	-	LMT	1887_11_31_0_900	558",
+			"558	-	LMT	1887_11_31_0_900",
 			"540	-	JST	1896	540",
 			"540	-	CJT	1938	540",
 			"540	Japan	J%sT"
@@ -642,7 +642,7 @@ module.exports = {
 		"Asia/Almaty" : [
 			"307	-	LMT	1924_4_2	307",
 			"300	-	ALMT	1930_5_21	300",
-			"360	RussiaAsia	ALM%sT	1991	420",
+			"360	RussiaAsia	ALM%sT	1991	360",
 			"360	-	ALMT	1992	360",
 			"360	RussiaAsia	ALM%sT	2005_2_15	360",
 			"360	-	ALMT"
@@ -653,7 +653,7 @@ module.exports = {
 			"300	-	KIZT	1981_3_1	300",
 			"360	-	KIZST	1981_9_1	360",
 			"360	-	KIZT	1982_3_1	360",
-			"300	RussiaAsia	KIZ%sT	1991	360",
+			"300	RussiaAsia	KIZ%sT	1991	300",
 			"300	-	KIZT	1991_11_16	300",
 			"300	-	QYZT	1992_0_19_0_120	300",
 			"360	RussiaAsia	QYZ%sT	2005_2_15	360",
@@ -665,7 +665,7 @@ module.exports = {
 			"300	-	AKTT	1981_3_1	300",
 			"360	-	AKTST	1981_9_1	360",
 			"360	-	AKTT	1982_3_1	360",
-			"300	RussiaAsia	AKT%sT	1991	360",
+			"300	RussiaAsia	AKT%sT	1991	300",
 			"300	-	AKTT	1991_11_16	300",
 			"300	RussiaAsia	AQT%sT	2005_2_15	300",
 			"300	-	AQTT"
@@ -676,7 +676,7 @@ module.exports = {
 			"300	-	FORT	1963	300",
 			"300	-	SHET	1981_9_1	300",
 			"360	-	SHET	1982_3_1	360",
-			"300	RussiaAsia	SHE%sT	1991	360",
+			"300	RussiaAsia	SHE%sT	1991	300",
 			"300	-	SHET	1991_11_16	300",
 			"300	RussiaAsia	AQT%sT	1995_2_lastSun_0_120	300",
 			"240	RussiaAsia	AQT%sT	2005_2_15	240",
@@ -688,8 +688,8 @@ module.exports = {
 			"300	-	URAT	1981_3_1	300",
 			"360	-	URAST	1981_9_1	360",
 			"360	-	URAT	1982_3_1	360",
-			"300	RussiaAsia	URA%sT	1989_2_26_0_120	360",
-			"240	RussiaAsia	URA%sT	1991	300",
+			"300	RussiaAsia	URA%sT	1989_2_26_0_120	300",
+			"240	RussiaAsia	URA%sT	1991	240",
 			"240	-	URAT	1991_11_16	240",
 			"240	RussiaAsia	ORA%sT	2005_2_15	240",
 			"300	-	ORAT"
@@ -697,9 +697,9 @@ module.exports = {
 		"Asia/Bishkek" : [
 			"298	-	LMT	1924_4_2	298",
 			"300	-	FRUT	1930_5_21	300",
-			"360	RussiaAsia	FRU%sT	1991_2_31_0_120	420",
+			"360	RussiaAsia	FRU%sT	1991_2_31_0_120	360",
 			"360	-	FRUST	1991_7_31_0_120	360",
-			"300	Kyrgyz	KG%sT	2005_7_12	300",
+			"300	Kyrgyz	KG%sT	2005_7_12	360",
 			"360	-	KGT"
 		],
 		"Asia/Seoul" : [
@@ -774,7 +774,7 @@ module.exports = {
 			"458	-	LMT	1905_7	458",
 			"420	-	ULAT	1978	420",
 			"480	-	ULAT	1983_3	480",
-			"540	Mongol	CHO%sT	2008_2_31	600",
+			"540	Mongol	CHO%sT	2008_2_31	540",
 			"480	Mongol	CHO%sT"
 		],
 		"Asia/Kathmandu" : [
@@ -797,21 +797,21 @@ module.exports = {
 		"Asia/Gaza" : [
 			"137	-	LMT	1900_9	137",
 			"120	Zion	EET	1948_4_15	120",
-			"120	EgyptAsia	EE%sT	1967_5_5	120",
+			"120	EgyptAsia	EE%sT	1967_5_5	180",
 			"120	Zion	I%sT	1996	120",
 			"120	Jordan	EE%sT	1999	120",
-			"120	Palestine	EE%sT	2008_7_29_0_0	120",
+			"120	Palestine	EE%sT	2008_7_29_0_0	180",
 			"120	-	EET	2008_8	120",
 			"120	Palestine	EE%sT	2010	120",
 			"120	-	EET	2010_2_27_0_1	120",
-			"120	Palestine	EE%sT	2011_7_1	120",
+			"120	Palestine	EE%sT	2011_7_1	180",
 			"120	-	EET	2012	120",
 			"120	Palestine	EE%sT"
 		],
 		"Asia/Hebron" : [
 			"140	-	LMT	1900_9	140",
 			"120	Zion	EET	1948_4_15	120",
-			"120	EgyptAsia	EE%sT	1967_5_5	120",
+			"120	EgyptAsia	EE%sT	1967_5_5	180",
 			"120	Zion	I%sT	1996	120",
 			"120	Jordan	EE%sT	1999	120",
 			"120	Palestine	EE%sT"
@@ -862,7 +862,7 @@ module.exports = {
 		"Asia/Dushanbe" : [
 			"275	-	LMT	1924_4_2	275",
 			"300	-	DUST	1930_5_21	300",
-			"360	RussiaAsia	DUS%sT	1991_2_31_0_120	420",
+			"360	RussiaAsia	DUS%sT	1991_2_31_0_120	360",
 			"360	-	DUSST	1991_8_9_0_120	360",
 			"300	-	TJT"
 		],
@@ -874,8 +874,8 @@ module.exports = {
 		"Asia/Ashgabat" : [
 			"233	-	LMT	1924_4_2	233",
 			"240	-	ASHT	1930_5_21	240",
-			"300	RussiaAsia	ASH%sT	1991_2_31_0_120	360",
-			"240	RussiaAsia	ASH%sT	1991_9_27	300",
+			"300	RussiaAsia	ASH%sT	1991_2_31_0_120	300",
+			"240	RussiaAsia	ASH%sT	1991_9_27	240",
 			"240	RussiaAsia	TM%sT	1992_0_19_0_120	240",
 			"300	-	TMT"
 		],
@@ -890,15 +890,15 @@ module.exports = {
 			"360	-	SAMST	1981_9_1	360",
 			"360	-	TAST	1982_3_1	360",
 			"300	RussiaAsia	SAM%sT	1991_8_1	360",
-			"300	RussiaAsia	UZ%sT	1992	360",
+			"300	RussiaAsia	UZ%sT	1992	300",
 			"300	-	UZT"
 		],
 		"Asia/Tashkent" : [
 			"277	-	LMT	1924_4_2	277",
 			"300	-	TAST	1930_5_21	300",
-			"360	RussiaAsia	TAS%sT	1991_2_31_0_120	420",
+			"360	RussiaAsia	TAS%sT	1991_2_31_0_120	360",
 			"300	RussiaAsia	TAS%sT	1991_8_1	360",
-			"300	RussiaAsia	UZ%sT	1992	360",
+			"300	RussiaAsia	UZ%sT	1992	300",
 			"300	-	UZT"
 		],
 		"Asia/Ho_Chi_Minh" : [

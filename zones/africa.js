@@ -186,7 +186,7 @@ module.exports = {
 			"60	Algeria	CE%sT	1946_9_7	60",
 			"0	-	WET	1956_0_29",
 			"60	-	CET	1963_3_14	60",
-			"0	Algeria	WE%sT	1977_9_21",
+			"0	Algeria	WE%sT	1977_9_21	60",
 			"60	Algeria	CE%sT	1979_9_26	60",
 			"0	Algeria	WE%sT	1981_4",
 			"60	-	CET"
@@ -331,7 +331,7 @@ module.exports = {
 			"120	-	EET	1982	120",
 			"60	Libya	CE%sT	1990_4_4	60",
 			"120	-	EET	1996_8_30	120",
-			"60	Libya	CE%sT	1997_9_4	60",
+			"60	Libya	CE%sT	1997_9_4	120",
 			"120	-	EET	2012_10_10_0_120	120",
 			"60	Libya	CE%sT"
 		],
@@ -445,12 +445,12 @@ module.exports = {
 		],
 		"Africa/Khartoum" : [
 			"130	-	LMT	1931	130",
-			"120	Sudan	CA%sT	2000_0_15_0_720	180",
+			"120	Sudan	CA%sT	2000_0_15_0_720	120",
 			"180	-	EAT"
 		],
 		"Africa/Juba" : [
 			"126	-	LMT	1931	126",
-			"120	Sudan	CA%sT	2000_0_15_0_720	180",
+			"120	Sudan	CA%sT	2000_0_15_0_720	120",
 			"180	-	EAT"
 		],
 		"Africa/Mbabane" : [

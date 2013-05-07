@@ -248,8 +248,8 @@ module.exports = {
 			"-256	-	CMT	1920_4	-256",
 			"-240	-	ART	1930_11	-240",
 			"-240	Arg	AR%sT	1969_9_5	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	Arg	AR%sT"
 		],
 		"America/Argentina/Cordoba" : [
@@ -259,8 +259,8 @@ module.exports = {
 			"-240	Arg	AR%sT	1969_9_5	-240",
 			"-180	Arg	AR%sT	1991_2_3	-120",
 			"-240	-	WART	1991_9_20	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	Arg	AR%sT"
 		],
 		"America/Argentina/Salta" : [
@@ -270,9 +270,9 @@ module.exports = {
 			"-240	Arg	AR%sT	1969_9_5	-240",
 			"-180	Arg	AR%sT	1991_2_3	-120",
 			"-240	-	WART	1991_9_20	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Argentina/Tucuman" : [
@@ -282,8 +282,8 @@ module.exports = {
 			"-240	Arg	AR%sT	1969_9_5	-240",
 			"-180	Arg	AR%sT	1991_2_3	-120",
 			"-240	-	WART	1991_9_20	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	-	ART	2004_5_1	-180",
 			"-240	-	WART	2004_5_13	-240",
 			"-180	Arg	AR%sT"
@@ -295,11 +295,11 @@ module.exports = {
 			"-240	Arg	AR%sT	1969_9_5	-240",
 			"-180	Arg	AR%sT	1991_2_1	-120",
 			"-240	-	WART	1991_4_7	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	-	ART	2004_5_1	-180",
 			"-240	-	WART	2004_5_20	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Argentina/San_Juan" : [
@@ -309,11 +309,11 @@ module.exports = {
 			"-240	Arg	AR%sT	1969_9_5	-240",
 			"-180	Arg	AR%sT	1991_2_1	-120",
 			"-240	-	WART	1991_4_7	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	-	ART	2004_4_31	-180",
 			"-240	-	WART	2004_6_25	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Argentina/Jujuy" : [
@@ -326,9 +326,9 @@ module.exports = {
 			"-180	-	WARST	1991_2_17	-180",
 			"-240	-	WART	1991_9_6	-240",
 			"-120	-	ARST	1992	-120",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Argentina/Catamarca" : [
@@ -338,11 +338,11 @@ module.exports = {
 			"-240	Arg	AR%sT	1969_9_5	-240",
 			"-180	Arg	AR%sT	1991_2_3	-120",
 			"-240	-	WART	1991_9_20	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	-	ART	2004_5_1	-180",
 			"-240	-	WART	2004_5_20	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Argentina/Mendoza" : [
@@ -356,11 +356,11 @@ module.exports = {
 			"-240	-	WART	1991_9_15	-240",
 			"-180	-	WARST	1992_2_1	-180",
 			"-240	-	WART	1992_9_18	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	-	ART	2004_4_23	-180",
 			"-240	-	WART	2004_8_26	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Argentina/San_Luis" : [
@@ -385,11 +385,11 @@ module.exports = {
 			"-256	-	CMT	1920_4	-256",
 			"-240	-	ART	1930_11	-240",
 			"-240	Arg	AR%sT	1969_9_5	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	-	ART	2004_5_1	-180",
 			"-240	-	WART	2004_5_20	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Argentina/Ushuaia" : [
@@ -397,11 +397,11 @@ module.exports = {
 			"-256	-	CMT	1920_4	-256",
 			"-240	-	ART	1930_11	-240",
 			"-240	Arg	AR%sT	1969_9_5	-240",
-			"-180	Arg	AR%sT	1999_9_3	-120",
-			"-240	Arg	AR%sT	2000_2_3	-240",
+			"-180	Arg	AR%sT	1999_9_3	-180",
+			"-240	Arg	AR%sT	2000_2_3	-180",
 			"-180	-	ART	2004_4_30	-180",
 			"-240	-	WART	2004_5_20	-240",
-			"-180	Arg	AR%sT	2008_9_18	-120",
+			"-180	Arg	AR%sT	2008_9_18	-180",
 			"-180	-	ART"
 		],
 		"America/Aruba" : [
@@ -417,71 +417,71 @@ module.exports = {
 		],
 		"America/Noronha" : [
 			"-129	-	LMT	1914	-129",
-			"-120	Brazil	FN%sT	1990_8_17	-60",
+			"-120	Brazil	FN%sT	1990_8_17	-120",
 			"-120	-	FNT	1999_8_30	-120",
 			"-120	Brazil	FN%sT	2000_9_15	-60",
 			"-120	-	FNT	2001_8_13	-120",
-			"-120	Brazil	FN%sT	2002_9_1	-60",
+			"-120	Brazil	FN%sT	2002_9_1	-120",
 			"-120	-	FNT"
 		],
 		"America/Belem" : [
 			"-193	-	LMT	1914	-193",
-			"-180	Brazil	BR%sT	1988_8_12	-120",
+			"-180	Brazil	BR%sT	1988_8_12	-180",
 			"-180	-	BRT"
 		],
 		"America/Santarem" : [
 			"-218	-	LMT	1914	-218",
-			"-240	Brazil	AM%sT	1988_8_12	-180",
+			"-240	Brazil	AM%sT	1988_8_12	-240",
 			"-240	-	AMT	2008_5_24_0_0	-240",
 			"-180	-	BRT"
 		],
 		"America/Fortaleza" : [
 			"-154	-	LMT	1914	-154",
-			"-180	Brazil	BR%sT	1990_8_17	-120",
+			"-180	Brazil	BR%sT	1990_8_17	-180",
 			"-180	-	BRT	1999_8_30	-180",
 			"-180	Brazil	BR%sT	2000_9_22	-120",
 			"-180	-	BRT	2001_8_13	-180",
-			"-180	Brazil	BR%sT	2002_9_1	-120",
+			"-180	Brazil	BR%sT	2002_9_1	-180",
 			"-180	-	BRT"
 		],
 		"America/Recife" : [
 			"-139	-	LMT	1914	-139",
-			"-180	Brazil	BR%sT	1990_8_17	-120",
+			"-180	Brazil	BR%sT	1990_8_17	-180",
 			"-180	-	BRT	1999_8_30	-180",
 			"-180	Brazil	BR%sT	2000_9_15	-120",
 			"-180	-	BRT	2001_8_13	-180",
-			"-180	Brazil	BR%sT	2002_9_1	-120",
+			"-180	Brazil	BR%sT	2002_9_1	-180",
 			"-180	-	BRT"
 		],
 		"America/Araguaina" : [
 			"-192	-	LMT	1914	-192",
-			"-180	Brazil	BR%sT	1990_8_17	-120",
+			"-180	Brazil	BR%sT	1990_8_17	-180",
 			"-180	-	BRT	1995_8_14	-180",
-			"-180	Brazil	BR%sT	2003_8_24	-120",
+			"-180	Brazil	BR%sT	2003_8_24	-180",
 			"-180	-	BRT	2012_9_21	-180",
 			"-180	Brazil	BR%sT"
 		],
 		"America/Maceio" : [
 			"-142	-	LMT	1914	-142",
-			"-180	Brazil	BR%sT	1990_8_17	-120",
+			"-180	Brazil	BR%sT	1990_8_17	-180",
 			"-180	-	BRT	1995_9_13	-180",
-			"-180	Brazil	BR%sT	1996_8_4	-120",
+			"-180	Brazil	BR%sT	1996_8_4	-180",
 			"-180	-	BRT	1999_8_30	-180",
 			"-180	Brazil	BR%sT	2000_9_22	-120",
 			"-180	-	BRT	2001_8_13	-180",
-			"-180	Brazil	BR%sT	2002_9_1	-120",
+			"-180	Brazil	BR%sT	2002_9_1	-180",
 			"-180	-	BRT"
 		],
 		"America/Bahia" : [
 			"-154	-	LMT	1914	-154",
-			"-180	Brazil	BR%sT	2003_8_24	-120",
+			"-180	Brazil	BR%sT	2003_8_24	-180",
 			"-180	-	BRT	2011_9_16	-180",
-			"-180	Brazil	BR%sT	2012_9_21	-120",
+			"-180	Brazil	BR%sT	2012_9_21	-180",
 			"-180	-	BRT"
 		],
 		"America/Sao_Paulo" : [
 			"-186	-	LMT	1914	-186",
-			"-180	Brazil	BR%sT	1963_9_23_0_0	-120",
+			"-180	Brazil	BR%sT	1963_9_23_0_0	-180",
 			"-120	-	BRST	1964	-120",
 			"-180	Brazil	BR%sT"
 		],
@@ -491,40 +491,40 @@ module.exports = {
 		],
 		"America/Cuiaba" : [
 			"-224	-	LMT	1914	-224",
-			"-240	Brazil	AM%sT	2003_8_24	-180",
+			"-240	Brazil	AM%sT	2003_8_24	-240",
 			"-240	-	AMT	2004_9_1	-240",
 			"-240	Brazil	AM%sT"
 		],
 		"America/Porto_Velho" : [
 			"-255	-	LMT	1914	-255",
-			"-240	Brazil	AM%sT	1988_8_12	-180",
+			"-240	Brazil	AM%sT	1988_8_12	-240",
 			"-240	-	AMT"
 		],
 		"America/Boa_Vista" : [
 			"-242	-	LMT	1914	-242",
-			"-240	Brazil	AM%sT	1988_8_12	-180",
+			"-240	Brazil	AM%sT	1988_8_12	-240",
 			"-240	-	AMT	1999_8_30	-240",
 			"-240	Brazil	AM%sT	2000_9_15	-180",
 			"-240	-	AMT"
 		],
 		"America/Manaus" : [
 			"-240	-	LMT	1914	-240",
-			"-240	Brazil	AM%sT	1988_8_12	-180",
+			"-240	Brazil	AM%sT	1988_8_12	-240",
 			"-240	-	AMT	1993_8_28	-240",
-			"-240	Brazil	AM%sT	1994_8_22	-180",
+			"-240	Brazil	AM%sT	1994_8_22	-240",
 			"-240	-	AMT"
 		],
 		"America/Eirunepe" : [
 			"-279	-	LMT	1914	-279",
-			"-300	Brazil	AC%sT	1988_8_12	-240",
+			"-300	Brazil	AC%sT	1988_8_12	-300",
 			"-300	-	ACT	1993_8_28	-300",
-			"-300	Brazil	AC%sT	1994_8_22	-240",
+			"-300	Brazil	AC%sT	1994_8_22	-300",
 			"-300	-	ACT	2008_5_24_0_0	-300",
 			"-240	-	AMT"
 		],
 		"America/Rio_Branco" : [
 			"-271	-	LMT	1914	-271",
-			"-300	Brazil	AC%sT	1988_8_12	-240",
+			"-300	Brazil	AC%sT	1988_8_12	-300",
 			"-300	-	ACT	2008_5_24_0_0	-300",
 			"-240	-	AMT"
 		],
@@ -567,9 +567,9 @@ module.exports = {
 		"Atlantic/Stanley" : [
 			"-231	-	LMT	1890	-231",
 			"-231	-	SMT	1912_2_12	-231",
-			"-240	Falk	FK%sT	1983_4	-180",
-			"-180	Falk	FK%sT	1985_8_15	-120",
-			"-240	Falk	FK%sT	2010_8_5_0_120	-180",
+			"-240	Falk	FK%sT	1983_4	-240",
+			"-180	Falk	FK%sT	1985_8_15	-180",
+			"-240	Falk	FK%sT	2010_8_5_0_120	-240",
 			"-180	-	FKST"
 		],
 		"America/Cayenne" : [
@@ -615,7 +615,7 @@ module.exports = {
 		"America/Montevideo" : [
 			"-224	-	LMT	1898_5_28	-224",
 			"-224	-	MMT	1920_4_1	-224",
-			"-210	Uruguay	UY%sT	1942_11_14	-150",
+			"-210	Uruguay	UY%sT	1942_11_14	-210",
 			"-180	Uruguay	UY%sT"
 		],
 		"America/Caracas" : [
