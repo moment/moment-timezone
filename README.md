@@ -20,7 +20,6 @@ sudo zic tz/asia
 sudo zic tz/australasia
 sudo zic tz/europe
 sudo zic tz/northamerica
-sudo zic tz/pacificnew
 sudo zic tz/southamerica
 
 grunt zdump

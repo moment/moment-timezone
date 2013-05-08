@@ -10,7 +10,7 @@ var moment = require('../moment-timezone'),
 
 	DAYS_OF_WEEK         = 'sun mon tue wed thu fri sat'.split(' '),
 
-	ZONE_FILES           = "africa antarctica asia australasia europe northamerica pacificnew southamerica",
+	ZONE_FILES           = "africa antarctica asia australasia europe northamerica southamerica",
 
 	rIsRuleset = /\d+:\d+/;
 
