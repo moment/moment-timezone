@@ -338,7 +338,7 @@ module.exports = {
 		"Indian/Antananarivo" : [
 			"3:10:4	-	LMT	1911_6	3:10:4",
 			"3	-	EAT	1954_1_27_23	3",
-			"4	-	EAST	1954_4_29_23	4",
+			"4	-	EAST	1954_4_29_23	3",
 			"3	-	EAT"
 		],
 		"Africa/Blantyre" : [

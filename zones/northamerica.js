@@ -859,19 +859,19 @@ module.exports = {
 		"America/Nipigon" : [
 			"-5:53:4	-	LMT	1895	-5:53:4",
 			"-5	Canada	E%sT	1940_8_29	-5",
-			"-4	-	EDT	1942_1_9_2	-4",
+			"-4	-	EDT	1942_1_9_2	-5",
 			"-5	Canada	E%sT"
 		],
 		"America/Rainy_River" : [
 			"-6:18:16	-	LMT	1895	-6:18:16",
 			"-6	Canada	C%sT	1940_8_29	-6",
-			"-5	-	CDT	1942_1_9_2	-5",
+			"-5	-	CDT	1942_1_9_2	-6",
 			"-6	Canada	C%sT"
 		],
 		"America/Atikokan" : [
 			"-6:6:28	-	LMT	1895	-6:6:28",
 			"-6	Canada	C%sT	1940_8_29	-6",
-			"-5	-	CDT	1942_1_9_2	-5",
+			"-5	-	CDT	1942_1_9_2	-6",
 			"-6	Canada	C%sT	1945_8_30_2	-5",
 			"-5	-	EST"
 		],

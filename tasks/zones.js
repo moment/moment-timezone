@@ -260,6 +260,7 @@ module.exports = function (grunt) {
 	function Zone (line) {
 		this.name = line[0];
 		this.offset = parseSeconds(line[1]);
+		this.ruleAsOffset = 0;
 		this.parseRuleset(line[2]);
 		this.letters = line[3];
 		this.zone = moment.tz.addZone(this.name + " " + this.format());
@@ -269,7 +270,7 @@ module.exports = function (grunt) {
 	Zone.prototype = {
 		parseRuleset : function (ruleset) {
 			if (rIsRuleset.exec(ruleset)) {
-				this.offset += parseSeconds(ruleset);
+				this.ruleAsOffset = parseSeconds(ruleset);
 				this.ruleset = '-';
 			} else {
 				this.ruleset = ruleset;
@@ -306,7 +307,7 @@ module.exports = function (grunt) {
 			if (this.untilTimeRule === TIME_RULE_STANDARD) {
 				this.untilOffset = this.offset;
 			} else if (this.untilTimeRule === TIME_RULE_WALL_CLOCK) {
-				this.untilOffset = this.offset + (lastRule.offset * 60);
+				this.untilOffset = this.offset + this.ruleAsOffset + (lastRule.offset * 60);
 			}
 		},
 
@@ -354,7 +355,7 @@ module.exports = function (grunt) {
 					this.untilMoment.second(second);
 				}
 
-				this.untilMoment.subtract(this.offset, 's');
+				this.untilMoment.subtract(this.offset + this.ruleAsOffset, 's');
 			}
 
 			this.until = input.join('_').replace(/_$/, '');
@@ -414,7 +415,7 @@ module.exports = function (grunt) {
 
 		format : function () {
 			var o = [
-				formatSeconds(this.offset),
+				formatSeconds(this.offset + this.ruleAsOffset),
 				this.ruleset,
 				this.letters
 			];

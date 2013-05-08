@@ -863,7 +863,7 @@ module.exports = {
 			"4:35:12	-	LMT	1924_4_2	4:35:12",
 			"5	-	DUST	1930_5_21	5",
 			"6	RussiaAsia	DUS%sT	1991_2_31_2	6",
-			"6	-	DUSST	1991_8_9_2	6",
+			"6	-	DUSST	1991_8_9_2	5",
 			"5	-	TJT"
 		],
 		"Asia/Bangkok" : [
