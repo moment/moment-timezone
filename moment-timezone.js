@@ -150,7 +150,7 @@
 				// console.log('adding last zone', lastZone.until.format());
 				lastZoneRule = new RuleYear(year - 1, lastZone.lastRule());
 				lastZoneRule.start = lastZone.until.clone().utc();
-				lastZoneRule.isLast = true;
+				lastZoneRule.isLast = lastZone.ruleSet !== this;
 				rules.push(lastZoneRule);
 			}
 
