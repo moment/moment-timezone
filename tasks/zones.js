@@ -299,7 +299,7 @@ module.exports = function (grunt) {
 			}
 
 			if (input[2]) {
-				this.untilDay = +input[2];
+				this.untilDay = input[2] = this.date(input[2].toLowerCase(), this.untilYear);
 				this.untilMoment.date(this.untilDay);
 			}
 
@@ -312,12 +312,56 @@ module.exports = function (grunt) {
 			this.until = input.join('_').replace(/_$/, '');
 		},
 
-		formatUntil : function () {
-			var a = [];
-			if (this.untilYear) {
-				a.push(this.untilYear);
+		parseDay : function (input) {
+			var lastWeekdayIndex = DAYS_OF_WEEK.indexOf(input.slice(4, 7)),
+				weekdayAfterIndex = DAYS_OF_WEEK.indexOf(input.slice(0, 3));
+
+			if (~lastWeekdayIndex) {
+				this.dayRule = DAY_RULE_LAST_WEEKDAY;
+				this.day = lastWeekdayIndex;
+			} else if (~weekdayAfterIndex) {
+				this.dayRule = weekdayAfterIndex;
+				this.day = input.slice(5);
+			} else {
+				this.dayRule = DAY_RULE_DAY_OF_MONTH;
+				this.day = input;
 			}
-			return this.untilYear;
+		},
+
+		date : function (input, year) {
+			this.parseDay(input);
+			if (this.dayRule === DAY_RULE_DAY_OF_MONTH) {
+				return this.day;
+			} else if (this.dayRule === DAY_RULE_LAST_WEEKDAY) {
+				return this.lastWeekday(year);
+			}
+			return this.weekdayAfter(year);
+		},
+
+		weekdayAfter : function (year) {
+			var day = this.day,
+				firstDayOfWeek = moment([year, this.untilMonth, 1]).day(),
+				output = this.dayRule + 1 - firstDayOfWeek;
+
+			while (output < day) {
+				output += 7;
+			}
+
+			return output;
+		},
+
+		lastWeekday : function (year) {
+			var day = this.day,
+				dow = day % 7,
+				lastDowOfMonth = moment([year, this.untilMonth + 1, 1]).day(),
+				daysInMonth = moment([year, this.untilMonth, 1]).daysInMonth(),
+				output = daysInMonth + (dow - (lastDowOfMonth - 1)) - (~~(day / 7) * 7);
+
+			if (dow >= lastDowOfMonth) {
+				output -= 7;
+			}
+
+			return output;
 		},
 
 		format : function () {

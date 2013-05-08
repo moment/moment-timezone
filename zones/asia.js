@@ -448,7 +448,7 @@ module.exports = {
 			"10800	-	BAKT	1957_2	10800",
 			"14400	RussiaAsia	BAK%sT	1991_2_31_0_120	14400",
 			"14400	-	BAKST	1991_7_30	14400",
-			"10800	RussiaAsia	AZ%sT	1992_8_lastSat_0_1380	10800",
+			"10800	RussiaAsia	AZ%sT	1992_8_26_0_1380	14400",
 			"14400	-	AZT	1996	14400",
 			"14400	EUAsia	AZ%sT	1997	14400",
 			"14400	Azer	AZ%sT"
@@ -553,11 +553,11 @@ module.exports = {
 			"14400	RussiaAsia	TBI%sT	1991_2_31_0_120	14400",
 			"14400	-	TBIST	1991_3_9	14400",
 			"10800	RussiaAsia	GE%sT	1992	10800",
-			"10800	E-EurAsia	GE%sT	1994_8_lastSun	10800",
-			"14400	E-EurAsia	GE%sT	1996_9_lastSun	14400",
-			"18000	-	GEST	1997_2_lastSun	18000",
+			"10800	E-EurAsia	GE%sT	1994_8_25	14400",
+			"14400	E-EurAsia	GE%sT	1996_9_27	18000",
+			"18000	-	GEST	1997_2_30	18000",
 			"14400	E-EurAsia	GE%sT	2004_5_27	18000",
-			"10800	RussiaAsia	GE%sT	2005_2_lastSun_0_120	10800",
+			"10800	RussiaAsia	GE%sT	2005_2_27_0_120	10800",
 			"14400	-	GET"
 		],
 		"Asia/Dili" : [
@@ -678,7 +678,7 @@ module.exports = {
 			"21600	-	SHET	1982_3_1	21600",
 			"18000	RussiaAsia	SHE%sT	1991	18000",
 			"18000	-	SHET	1991_11_16	18000",
-			"18000	RussiaAsia	AQT%sT	1995_2_lastSun_0_120	18000",
+			"18000	RussiaAsia	AQT%sT	1995_2_26_0_120	18000",
 			"14400	RussiaAsia	AQT%sT	2005_2_15	14400",
 			"18000	-	AQTT"
 		],

@@ -882,14 +882,14 @@ module.exports = {
 		],
 		"America/Regina" : [
 			"-25116	-	LMT	1905_8	-25116",
-			"-25200	Regina	M%sT	1960_3_lastSun_0_120	-25200",
+			"-25200	Regina	M%sT	1960_3_24_0_120	-25200",
 			"-21600	-	CST"
 		],
 		"America/Swift_Current" : [
 			"-25880	-	LMT	1905_8	-25880",
-			"-25200	Canada	M%sT	1946_3_lastSun_0_120	-25200",
+			"-25200	Canada	M%sT	1946_3_28_0_120	-25200",
 			"-25200	Regina	M%sT	1950	-25200",
-			"-25200	Swift	M%sT	1972_3_lastSun_0_120	-25200",
+			"-25200	Swift	M%sT	1972_3_30_0_120	-25200",
 			"-21600	-	CST"
 		],
 		"America/Edmonton" : [
@@ -916,7 +916,7 @@ module.exports = {
 		],
 		"America/Pangnirtung" : [
 			"0	-	zzz	1921",
-			"-14400	NT_YK	A%sT	1995_3_Sun>=1_0_120	-14400",
+			"-14400	NT_YK	A%sT	1995_3_2_0_120	-14400",
 			"-18000	Canada	E%sT	1999_9_31_0_120	-14400",
 			"-21600	Canada	C%sT	2000_9_29_0_120	-18000",
 			"-18000	Canada	E%sT"
@@ -956,7 +956,7 @@ module.exports = {
 		],
 		"America/Inuvik" : [
 			"0	-	zzz	1953",
-			"-28800	NT_YK	P%sT	1979_3_lastSun_0_120	-28800",
+			"-28800	NT_YK	P%sT	1979_3_29_0_120	-28800",
 			"-25200	NT_YK	M%sT	1980	-25200",
 			"-25200	Canada	M%sT"
 		],
@@ -1017,7 +1017,7 @@ module.exports = {
 			"-25200	-	MST	1932_3_1	-25200",
 			"-21600	-	CST	1996	-21600",
 			"-21600	Mexico	C%sT	1998	-21600",
-			"-21600	-	CST	1998_3_Sun>=1_0_180	-21600",
+			"-21600	-	CST	1998_3_5_0_180	-21600",
 			"-25200	Mexico	M%sT	2010	-25200",
 			"-25200	US	M%sT"
 		],
@@ -1030,7 +1030,7 @@ module.exports = {
 			"-25200	-	MST	1932_3_1	-25200",
 			"-21600	-	CST	1996	-21600",
 			"-21600	Mexico	C%sT	1998	-21600",
-			"-21600	-	CST	1998_3_Sun>=1_0_180	-21600",
+			"-21600	-	CST	1998_3_5_0_180	-21600",
 			"-25200	Mexico	M%sT"
 		],
 		"America/Hermosillo" : [
