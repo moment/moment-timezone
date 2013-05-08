@@ -106,6 +106,12 @@
 	}
 
 	function sortRuleYears (a, b) {
+		if (a.isLast) {
+			return -1;
+		}
+		if (b.isLast) {
+			return 1;
+		}
 		return b.start - a.start;
 	}
 
@@ -163,7 +169,7 @@
 
 			// for (i = 0; i < rules.length; i++) {
 			// 	rule = rules[i];
-			// 	console.log(rule.rule.name, rule.start.format());
+			// 	console.log(rule.rule.name, rule.rule.offset, rule.start.format());
 			// }
 
 			// make sure to include the previous rule's offset
@@ -183,9 +189,9 @@
 
 			for (i = 0; i < rules.length; i++) {
 				rule = rules[i];
-				// console.log('[ ]'.yellow, rule.rule.name, rule.start.format());
+				// console.log('[ ]'.yellow, rule.rule.name, rule.rule.offset, rule.start.format());
 				if (mom >= rule.start && !rule.isLast) {
-					// console.log('[X]'.green, rule.rule.name, rule.start.format());
+					// console.log('[X]'.green, rule.rule.name, rule.rule.offset, rule.start.format());
 					return rule.rule;
 				}
 			}
