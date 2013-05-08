@@ -25,8 +25,9 @@
 
 	// converts time in the HH:mm:ss format to absolute number of minutes
 	function parseMinutes (input) {
-		var output = (input + '').split(':'),
-			sign = +output[0] < 0 ? -1 : 1,
+		input = input + '';
+		var output = input.split(':'),
+			sign = ~input.indexOf('-') ? -1 : 1,
 			hour = Math.abs(+output[0]),
 			minute = parseInt(output[1], 10) || 0,
 			second = parseInt(output[2], 10) || 0;

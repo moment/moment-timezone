@@ -21,7 +21,7 @@ var moment = require('../moment-timezone'),
 // converts time in the HH:mm format to absolute number of minutes
 function parseMinutes (input) {
 	var output = input.split(':'),
-		sign = +output[0] < 0 ? -1 : 1,
+		sign = ~input.indexOf('-') ? -1 : 1,
 		hour = Math.abs(+output[0]),
 		minute = parseInt(output[1], 10) || 0;
 
@@ -30,7 +30,7 @@ function parseMinutes (input) {
 
 function parseSeconds (input) {
 	var output = input.split(':'),
-		sign = +output[0] < 0 ? -1 : 1,
+		sign = ~input.indexOf('-') ? -1 : 1,
 		hour = Math.abs(+output[0]),
 		minute = parseInt(output[1], 10) || 0,
 		second = parseInt(output[2], 10) || 0;
@@ -40,7 +40,7 @@ function parseSeconds (input) {
 
 function trimMinutes (input) {
 	var output = input.split(':'),
-		hour = +output[0],
+		hour = output[0],
 		minute = parseInt(output[1], 10) || 0,
 		second = parseInt(output[2], 10) || 0;
 
@@ -62,7 +62,7 @@ function formatSeconds(input) {
 		hours = Math.floor(abs / 3600) % 60;
 
 	if (input < 0) {
-		hours = -hours;
+		hours = '-' + hours;
 	}
 
 	return trimMinutes([hours, minutes, seconds].join(':'));

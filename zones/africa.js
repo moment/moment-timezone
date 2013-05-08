@@ -209,7 +209,7 @@ module.exports = {
 			"2	-	CAT"
 		],
 		"Africa/Ouagadougou" : [
-			"0:6:4	-	LMT	1912	0:6:4",
+			"-0:6:4	-	LMT	1912	-0:6:4",
 			"0	-	GMT"
 		],
 		"Africa/Bujumbura" : [
@@ -254,7 +254,7 @@ module.exports = {
 			"1	-	WAT"
 		],
 		"Africa/Abidjan" : [
-			"0:16:8	-	LMT	1912	0:16:8",
+			"-0:16:8	-	LMT	1912	-0:16:8",
 			"0	-	GMT"
 		],
 		"Africa/Djibouti" : [
@@ -292,11 +292,11 @@ module.exports = {
 			"0	-	GMT"
 		],
 		"Africa/Accra" : [
-			"0:0:52	-	LMT	1918	0:0:52",
+			"-0:0:52	-	LMT	1918	-0:0:52",
 			"0	Ghana	%s"
 		],
 		"Africa/Conakry" : [
-			"0:54:52	-	LMT	1912	0:54:52",
+			"-0:54:52	-	LMT	1912	-0:54:52",
 			"0	-	GMT	1934_1_26",
 			"-1	-	WAT	1960	-1",
 			"0	-	GMT"
@@ -320,9 +320,9 @@ module.exports = {
 			"2	-	SAST"
 		],
 		"Africa/Monrovia" : [
-			"0:43:8	-	LMT	1882	0:43:8",
-			"0:43:8	-	MMT	1919_2	0:43:8",
-			"0:44:30	-	LRT	1972_4	0:44:30",
+			"-0:43:8	-	LMT	1882	-0:43:8",
+			"-0:43:8	-	MMT	1919_2	-0:43:8",
+			"-0:44:30	-	LRT	1972_4	-0:44:30",
 			"0	-	GMT"
 		],
 		"Africa/Tripoli" : [
@@ -346,7 +346,7 @@ module.exports = {
 			"2	-	CAT"
 		],
 		"Africa/Bamako" : [
-			"0:32	-	LMT	1912	0:32",
+			"-0:32	-	LMT	1912	-0:32",
 			"0	-	GMT	1934_1_26",
 			"-1	-	WAT	1960_5_20	-1",
 			"0	-	GMT"
@@ -366,13 +366,13 @@ module.exports = {
 			"3	-	EAT"
 		],
 		"Africa/Casablanca" : [
-			"0:30:20	-	LMT	1913_9_26	0:30:20",
+			"-0:30:20	-	LMT	1913_9_26	-0:30:20",
 			"0	Morocco	WE%sT	1984_2_16",
 			"1	-	CET	1986	1",
 			"0	Morocco	WE%sT"
 		],
 		"Africa/El_Aaiun" : [
-			"0:52:48	-	LMT	1934_0	0:52:48",
+			"-0:52:48	-	LMT	1934_0	-0:52:48",
 			"-1	-	WAT	1976_3_14	-1",
 			"0	-	WET"
 		],
@@ -408,13 +408,13 @@ module.exports = {
 			"2	-	CAT"
 		],
 		"Atlantic/St_Helena" : [
-			"0:22:48	-	LMT	1890	0:22:48",
-			"0:22:48	-	JMT	1951	0:22:48",
+			"-0:22:48	-	LMT	1890	-0:22:48",
+			"-0:22:48	-	JMT	1951	-0:22:48",
 			"0	-	GMT"
 		],
 		"Africa/Sao_Tome" : [
 			"0:26:56	-	LMT	1884	0:26:56",
-			"0:36:32	-	LMT	1912	0:36:32",
+			"-0:36:32	-	LMT	1912	-0:36:32",
 			"0	-	GMT"
 		],
 		"Africa/Dakar" : [
@@ -427,8 +427,8 @@ module.exports = {
 			"4	-	SCT"
 		],
 		"Africa/Freetown" : [
-			"0:53	-	LMT	1882	0:53",
-			"0:53	-	FMT	1913_5	0:53",
+			"-0:53	-	LMT	1882	-0:53",
+			"-0:53	-	FMT	1913_5	-0:53",
 			"-1	SL	%s	1957	-1",
 			"0	SL	%s"
 		],
