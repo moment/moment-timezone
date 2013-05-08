@@ -281,6 +281,8 @@ module.exports = function (grunt) {
 		},
 
 		parseUntil : function (input) {
+			var time, minute, second;
+
 			this.untilYear = +input[0] || 0;
 
 			this.untilMoment = moment.utc([this.untilYear]);
@@ -304,9 +306,25 @@ module.exports = function (grunt) {
 			}
 
 			if (input[3]) {
-				this.untilTime = input[4] = parseMinutes(input[3]);
-				input[3] = 0;
-				this.untilMoment.second((this.untilTime * 60) - this.offset);
+				time = input[3].split(':');
+				input[3] = time[0];
+				this.untilMoment.hour(time[0]);
+
+				minute = parseInt(time[1], 10);
+				second = parseInt(time[2], 10);
+
+				if (minute) {
+					input[4] = minute;
+					this.untilMoment.minute(minute);
+				}
+
+				if (second) {
+					input[4] = input[4] || 0;
+					input[5] = second;
+					this.untilMoment.second(second);
+				}
+
+				this.untilMoment.subtract(this.offset, 's');
 			}
 
 			this.until = input.join('_').replace(/_$/, '');
