@@ -23,6 +23,17 @@
 		DAY_RULE_DAY_OF_MONTH   = 7,
 		DAY_RULE_LAST_WEEKDAY   = 8;
 
+	// converts time in the HH:mm:ss format to absolute number of minutes
+	function parseMinutes (input) {
+		var output = (input + '').split(':'),
+			sign = +output[0] < 0 ? -1 : 1,
+			hour = Math.abs(+output[0]),
+			minute = parseInt(output[1], 10) || 0,
+			second = parseInt(output[2], 10) || 0;
+
+		return sign * ((hour * 60) + (minute) + (second / 60));
+	}
+
 	/************************************
 		Rules
 	************************************/
@@ -34,9 +45,9 @@
 		this.month     = +month;
 		this.day       = +day;
 		this.dayRule   = +dayRule;
-		this.time      = +time;
+		this.time      = parseMinutes(time);
 		this.timeRule  = +timeRule;
-		this.offset    = +offset;
+		this.offset    = parseMinutes(offset);
 		this.letters   = letters || '';
 	}
 
@@ -213,14 +224,14 @@
 			untilArray = typeof until === 'string' ? until.split('_') : [9999];
 
 		this.name = name;
-		this.offset = offset / 60;
+		this.offset = parseMinutes(offset);
 		this.ruleSet = ruleSet;
 		this.letters = letters;
 
 		for (i = 0; i < untilArray.length; i++) {
 			untilArray[i] = +untilArray[i];
 		}
-		this.until = moment.utc(untilArray).subtract('s', +untilOffset || 0);
+		this.until = moment.utc(untilArray).subtract('m', parseMinutes(untilOffset));
 	}
 
 	Zone.prototype = {

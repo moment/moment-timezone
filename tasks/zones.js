@@ -38,6 +38,36 @@ function parseSeconds (input) {
 	return sign * ((hour * 60 * 60) + (minute * 60) + second);
 }
 
+function trimMinutes (input) {
+	var output = input.split(':'),
+		hour = +output[0],
+		minute = parseInt(output[1], 10) || 0,
+		second = parseInt(output[2], 10) || 0;
+
+	if (second) {
+		return [hour, minute, second].join(':');
+	}
+
+	if (minute) {
+		return [hour, minute].join(':');
+	}
+
+	return hour + '';
+}
+
+function formatSeconds(input) {
+	var abs = Math.abs(input),
+		seconds = abs % 60,
+		minutes = Math.floor(abs / 60) % 60,
+		hours = Math.floor(abs / 3600) % 60;
+
+	if (input < 0) {
+		hours = -hours;
+	}
+
+	return trimMinutes([hours, minutes, seconds].join(':'));
+}
+
 /******************************
 	Task
 ******************************/
@@ -384,7 +414,7 @@ module.exports = function (grunt) {
 
 		format : function () {
 			var o = [
-				this.offset,
+				formatSeconds(this.offset),
 				this.ruleset,
 				this.letters
 			];
@@ -392,7 +422,7 @@ module.exports = function (grunt) {
 				o.push(this.until);
 
 				if (this.untilOffset) {
-					o.push(this.untilOffset || 0);
+					o.push(formatSeconds(this.untilOffset));
 				}
 			}
 			return o.join('\t');
@@ -408,7 +438,7 @@ module.exports = function (grunt) {
 		this.startYear = line[1];
 		this.endYear = this.parseEndYear(line[2]);
 		this.month = this.parseMonth(line[4]);
-		this.offset = parseMinutes(line[7]);
+		this.offset = trimMinutes(line[7]);
 		this.letters = line[8] === '-' ? '' : line[8];
 		this.parseDay(line[5].toLowerCase());
 		this.parseTime(line[6]);
@@ -456,7 +486,7 @@ module.exports = function (grunt) {
 			} else {
 				this.timeRule = TIME_RULE_WALL_CLOCK;
 			}
-			this.time = parseMinutes(input);
+			this.time = trimMinutes(input);
 		},
 
 		debugType : function (type) {
