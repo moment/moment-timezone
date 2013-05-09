@@ -106,6 +106,15 @@
 		this.start = rule.start(year);
 	}
 
+	RuleYear.prototype = {
+		equals : function (other) {
+			if (!other || other.rule !== this.rule) {
+				return false;
+			}
+			return Math.abs(other.start - this.start) < 86400000; // 24 * 60 * 60 * 1000
+		}
+	};
+
 	function sortRuleYears (a, b) {
 		if (a.isLast) {
 			return -1;
@@ -163,6 +172,7 @@
 			var rules = this.ruleYears(mom, lastZone),
 				lastOffset = 0,
 				rule,
+				lastRule,
 				i;
 
 			// console.log('\n\n-------');
@@ -175,7 +185,12 @@
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
+				lastRule = rule;
 				rule = rules[i];
+
+				if (rule.equals(lastRule)) {
+					continue;
+				}
 
 				if (rule.rule.timeRule === TIME_RULE_STANDARD) {
 					lastOffset = offset;
