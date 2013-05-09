@@ -10,7 +10,7 @@ var moment = require('../moment-timezone'),
 
 	DAYS_OF_WEEK         = 'sun mon tue wed thu fri sat'.split(' '),
 
-	ZONE_FILES           = "africa antarctica asia australasia europe northamerica southamerica",
+	ZONE_FILES           = "africa antarctica asia australasia europe northamerica southamerica".split(' '),
 
 	rIsRuleset = /\d+:\d+/;
 
@@ -76,15 +76,8 @@ module.exports = function (grunt) {
 	grunt.registerTask('zones', 'Generate the zone data files based on the olson database.', function () {
 		var files = [];
 
-		grunt.file.expandFiles("tz/*").forEach(function (filename) {
-			var name = filename.split('/')[1],
-				file;
-			if (ZONE_FILES.indexOf(name) === -1) {
-				return;
-			}
-
-			file = new File(filename);
-			files.push(file);
+		ZONE_FILES.forEach(function (filename) {
+			var file = new File('tz/' + filename);
 			file.save();
 		});
 	});
@@ -246,10 +239,9 @@ module.exports = function (grunt) {
 
 		save : function () {
 			var filename = this.filename.replace('tz', 'zones') + '.js',
-				data = this.format(),
-				gzip = ' (' + grunt.helper('gzip', data).length + 'b)';
+				data = this.format();
 			grunt.file.write(filename, data);
-			grunt.log.writeln('[] '.green + filename + gzip.grey);
+			grunt.log.writeln('[] '.green + filename);
 		}
 	};
 
