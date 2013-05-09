@@ -1,0 +1,38 @@
+{
+	"name": "moment-timezone",
+	"version": "0.0.0",
+	"description": "Timezone plugin for Moment.js.",
+	"homepage": "http://momentjs.com",
+	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
+	"keywords": [
+		"moment",
+		"date",
+		"time",
+		"timezone",
+		"olson",
+		"tz"
+	],
+	"main": "./moment-timezone.js",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/timrwood/moment-timezone.git"
+	},
+	"bugs": {
+		"url": "https://github.com/timrwood/moment-timezone/issues"
+	},
+	"licenses" : [
+		{
+			"type" : "MIT"
+		}
+	],
+	"devDependencies" : {
+		"grunt"     : "0.4.1",
+		"grunt-contrib-nodeunit"  : "0.1.2"
+	},
+	"scripts": {
+		"test": "grunt nodeunit"
+	}
+}
