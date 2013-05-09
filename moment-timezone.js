@@ -36,7 +36,7 @@
 	}
 
 	function log () {
-		console.log.apply(console, arguments);
+		// console.log.apply(console, arguments);
 	}
 
 	/************************************
@@ -187,12 +187,18 @@
 					continue;
 				}
 
+				if (lastZone && !rule.isLast && rule.start - lastZone.until === lastZone.offset * 60000) {
+					lastOffset += lastZone.offset - offset;
+				}
+
 				if (rule.rule.timeRule === TIME_RULE_STANDARD) {
 					lastOffset = offset;
 				}
+
 				if (rule.rule.timeRule !== TIME_RULE_UTC) {
 					rule.start.add('m', -lastOffset);
 				}
+
 				if (!rule.isLast) {
 					lastOffset = rule.rule.offset + offset;
 				}
@@ -200,13 +206,14 @@
 
 			var format = mom.clone().utc().format();
 
+
 			for (i = 0; i < rules.length; i++) {
 				rule = rules[i];
-				log('[ ]'.yellow, rule.start.format(), format, rule.rule.name, rule.rule.offset, rule.rule.letters);
 				if (mom >= rule.start && !rule.isLast) {
-					log('[X]'.green, rule.start.format(), format, rule.rule.name, rule.rule.offset, rule.rule.letters);
+					log('[X]'.green, rule.start.format(), format, rule.rule.name, rule.isLast, offset, rule.rule.offset, rule.rule.letters);
 					return rule.rule;
 				}
+				log('[ ]'.yellow, rule.start.format(), format, rule.rule.name, rule.isLast, offset, rule.rule.offset, rule.rule.letters);
 			}
 
 			return defaultRule;
@@ -250,7 +257,8 @@
 		for (i = 0; i < untilArray.length; i++) {
 			untilArray[i] = +untilArray[i];
 		}
-		this.until = moment.utc(untilArray).subtract('m', parseMinutes(untilOffset));
+		this.untilSansOffset = moment.utc(untilArray);
+		this.until = this.untilSansOffset.clone().subtract('m', parseMinutes(untilOffset));
 	}
 
 	Zone.prototype = {
