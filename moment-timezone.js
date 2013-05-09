@@ -175,8 +175,15 @@
 			var rules = this.ruleYears(mom, lastZone),
 				lastOffset = 0,
 				rule,
+				lastZoneOffset,
+				lastZoneOffsetAbs,
 				lastRule,
 				i;
+
+			if (lastZone) {
+				lastZoneOffset = lastZone.offset + lastZone.lastRule().offset;
+				lastZoneOffsetAbs = Math.abs(lastZoneOffset) * 90000;
+			}
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
@@ -187,8 +194,8 @@
 					continue;
 				}
 
-				if (lastZone && !rule.isLast && Math.abs(rule.start - lastZone.until) < Math.abs(lastZone.offset * 3600000)) {
-					lastOffset += lastZone.offset - offset;
+				if (lastZone && !rule.isLast && Math.abs(rule.start - lastZone.until) <= lastZoneOffsetAbs) {
+					lastOffset += lastZoneOffset - offset;
 				}
 
 				if (rule.rule.timeRule === TIME_RULE_STANDARD) {
@@ -199,9 +206,7 @@
 					rule.start.add('m', -lastOffset);
 				}
 
-				if (!rule.isLast) {
-					lastOffset = rule.rule.offset + offset;
-				}
+				lastOffset = rule.rule.offset + offset;
 			}
 
 			var format = mom.clone().utc().format();
