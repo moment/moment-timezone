@@ -35,10 +35,6 @@
 		return sign * ((hour * 60) + (minute) + (second / 60));
 	}
 
-	function log () {
-		// console.log.apply(console, arguments);
-	}
-
 	/************************************
 		Rules
 	************************************/
@@ -209,16 +205,11 @@
 				lastOffset = rule.rule.offset + offset;
 			}
 
-			var format = mom.clone().utc().format();
-
-
 			for (i = 0; i < rules.length; i++) {
 				rule = rules[i];
 				if (mom >= rule.start && !rule.isLast) {
-					log('[X]'.green, rule.start.format(), format, rule.rule.name, rule.isLast, offset, rule.rule.offset, rule.rule.letters);
 					return rule.rule;
 				}
-				log('[ ]'.yellow, rule.start.format(), format, rule.rule.name, rule.isLast, offset, rule.rule.offset, rule.rule.letters);
 			}
 
 			return defaultRule;
@@ -262,8 +253,7 @@
 		for (i = 0; i < untilArray.length; i++) {
 			untilArray[i] = +untilArray[i];
 		}
-		this.untilSansOffset = moment.utc(untilArray);
-		this.until = this.untilSansOffset.clone().subtract('m', parseMinutes(untilOffset));
+		this.until = moment.utc(untilArray).subtract('m', parseMinutes(untilOffset));
 	}
 
 	Zone.prototype = {
@@ -273,9 +263,7 @@
 
 		lastRule : function () {
 			if (!this._lastRule) {
-				log('[   ]'.red, 'generating last rule');
 				this._lastRule = this.rule(this.until);
-				log('[ X ]'.green, 'generated last rule');
 			}
 			return this._lastRule;
 		},
@@ -305,14 +293,11 @@
 				lastZone;
 
 			mom = mom.clone().utc();
-			log('\n\n\n  ----'.yellow);
 			for (i = 0; i < this.zones.length; i++) {
 				zone = this.zones[i];
 				if (mom < zone.until) {
-					log('[XX]'.green, zone.until.format(), mom.clone().utc().format());
 					break;
 				}
-				log('[  ]'.yellow, zone.until.format(), mom.clone().utc().format());
 				lastZone = zone;
 			}
 
@@ -331,7 +316,6 @@
 
 		offset : function (mom) {
 			var zoneAndRule = this.zoneAndRule(mom);
-			log('[offsets]'.green, zoneAndRule[0].offset, zoneAndRule[1].offset)
 			return -(zoneAndRule[0].offset + zoneAndRule[1].offset);
 		}
 	};
