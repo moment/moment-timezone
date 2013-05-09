@@ -298,6 +298,8 @@
 			var i,
 				zone,
 				lastZone;
+
+			mom = mom.clone().utc();
 			log('\n\n\n  ----'.yellow);
 			for (i = 0; i < this.zones.length; i++) {
 				zone = this.zones[i];
