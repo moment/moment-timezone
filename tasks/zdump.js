@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 	******************************/
 
 	function zdump(name, cb) {
-		grunt.utils.spawn({
+		grunt.util.spawn({
 			cmd: "zdump",
 			args: ["-v", name]
 		}, function (err, result, code) {
@@ -115,7 +115,7 @@ module.exports = function (grunt) {
 		save : function () {
 			var filename = path.join(process.cwd(), "tests/" + this.name.toLowerCase() + '.js');
 			grunt.file.write(filename, this.render());
-			grunt.log.writeln("[] ".green + filename);
+			grunt.log.writeln("[] ".green + this.name);
 		}
 	};
 
