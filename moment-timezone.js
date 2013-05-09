@@ -35,6 +35,10 @@
 		return sign * ((hour * 60) + (minute) + (second / 60));
 	}
 
+	function log () {
+		console.log.apply(console, arguments);
+	}
+
 	/************************************
 		Rules
 	************************************/
@@ -140,7 +144,7 @@
 		},
 
 		ruleYears : function (mom, lastZone) {
-			var i,
+			var i, j,
 				year = mom.year(),
 				rule,
 				lastZoneRule,
@@ -157,7 +161,6 @@
 			rules.push(new RuleYear(year - 1, this.lastYearRule(year - 1)));
 
 			if (lastZone) {
-				// console.log('adding last zone', lastZone.until.format());
 				lastZoneRule = new RuleYear(year - 1, lastZone.lastRule());
 				lastZoneRule.start = lastZone.until.clone().utc();
 				lastZoneRule.isLast = lastZone.ruleSet !== this;
@@ -174,14 +177,6 @@
 				rule,
 				lastRule,
 				i;
-
-			// console.log('\n\n-------');
-			// console.log(this.name.green, mom.clone().utc().format());
-
-			// for (i = 0; i < rules.length; i++) {
-			// 	rule = rules[i];
-			// 	console.log(rule.rule.name, rule.rule.offset, rule.start.format());
-			// }
 
 			// make sure to include the previous rule's offset
 			for (i = rules.length - 1; i > -1; i--) {
@@ -203,11 +198,13 @@
 				}
 			}
 
+			var format = mom.clone().utc().format();
+
 			for (i = 0; i < rules.length; i++) {
 				rule = rules[i];
-				// console.log('[ ]'.yellow, rule.rule.name, rule.rule.offset, rule.start.format());
+				log('[ ]'.yellow, rule.start.format(), format, rule.rule.name, rule.rule.offset, rule.rule.letters);
 				if (mom >= rule.start && !rule.isLast) {
-					// console.log('[X]'.green, rule.rule.name, rule.rule.offset, rule.start.format());
+					log('[X]'.green, rule.start.format(), format, rule.rule.name, rule.rule.offset, rule.rule.letters);
 					return rule.rule;
 				}
 			}
@@ -263,9 +260,9 @@
 
 		lastRule : function () {
 			if (!this._lastRule) {
-				// console.log('\n\n[ ]'.red, 'generating last rule');
+				log('[   ]'.red, 'generating last rule');
 				this._lastRule = this.rule(this.until);
-				// console.log('[X]'.green, 'generated last rule');
+				log('[ X ]'.green, 'generated last rule');
 			}
 			return this._lastRule;
 		},
@@ -293,11 +290,14 @@
 			var i,
 				zone,
 				lastZone;
+			log('\n\n\n  ----'.yellow);
 			for (i = 0; i < this.zones.length; i++) {
 				zone = this.zones[i];
 				if (mom < zone.until) {
+					log('[XX]'.green, zone.until.format(), mom.clone().utc().format());
 					break;
 				}
+				log('[  ]'.yellow, zone.until.format(), mom.clone().utc().format());
 				lastZone = zone;
 			}
 
@@ -316,6 +316,7 @@
 
 		offset : function (mom) {
 			var zoneAndRule = this.zoneAndRule(mom);
+			log('[offsets]'.green, zoneAndRule[0].offset, zoneAndRule[1].offset)
 			return -(zoneAndRule[0].offset + zoneAndRule[1].offset);
 		}
 	};
