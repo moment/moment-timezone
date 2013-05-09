@@ -187,7 +187,7 @@
 					continue;
 				}
 
-				if (lastZone && !rule.isLast && rule.start - lastZone.until === lastZone.offset * 60000) {
+				if (lastZone && !rule.isLast && Math.abs(rule.start - lastZone.until) < Math.abs(lastZone.offset * 3600000)) {
 					lastOffset += lastZone.offset - offset;
 				}
 
