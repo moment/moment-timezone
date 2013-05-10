@@ -139,6 +139,10 @@ module.exports = function (grunt) {
 			o += '\t"' + this.year + '" : function (t) {';
 			// o += '\n\t\tt.expect(' + (this.tests.length * 2) + ');\n';
 			for (i = 0; i < this.tests.length; i++) {
+				o += '\n\t\t' +  this.tests[i].nameTest();
+			}
+			o += '\n';
+			for (i = 0; i < this.tests.length; i++) {
 				o += '\n\t\t' +  this.tests[i].formatTest();
 			}
 			o += '\n';
@@ -195,6 +199,16 @@ module.exports = function (grunt) {
 			o += 't.equal(moment("' + utc + '").tz("' + this.name + '").zone(), ';
 			o += this.offset;
 			o += ', "' + utc + " should be " + this.offset + ' minutes offset in ' + this.nameShort + '");';
+
+			return o;
+		},
+
+		nameTest : function () {
+			var o = '',
+				utc = this.utc.format();
+			o += 't.equal(moment("' + utc + '").tz("' + this.name + '").zoneName(), "';
+			o += this.nameShort;
+			o += '", "' + utc + " should be " + this.nameShort + '");';
 
 			return o;
 		}
