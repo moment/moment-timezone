@@ -11,6 +11,7 @@
 		zoneNames = "africa antarctica asia australasia europe northamerica southamerica".split(' '),
 
 		oldZoneName = moment.fn.zoneName,
+		oldZoneAbbr = moment.fn.zoneAbbr,
 
 		defaultRule,
 		rules = {},
@@ -422,12 +423,20 @@
 		return this;
 	};
 
+	moment.fn.zoneAbbr = function () {
+		if (this._z) {
+			return this._z.format(this);
+		}
+		return oldZoneAbbr.call(this);
+	};
+
 	moment.fn.zoneName = function () {
 		if (this._z) {
 			return this._z.format(this);
 		}
 		return oldZoneName.call(this);
 	};
+
 
 	moment.tz = {
 		addRules   : addRules,
