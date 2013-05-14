@@ -177,7 +177,7 @@ module.exports = function (grunt) {
 		},
 
 		formatRules : function () {
-			var o = "rules : {\n",
+			var o = "{\n",
 				rules = [],
 				ruleText,
 				ruleArray,
@@ -203,7 +203,7 @@ module.exports = function (grunt) {
 		},
 
 		formatZones : function () {
-			var o = "\tzones : {\n",
+			var o = "{\n",
 				zones = [],
 				zoneText,
 				zoneArray,
@@ -230,18 +230,30 @@ module.exports = function (grunt) {
 
 		format : function () {
 			var o = 'module.exports = {\n';
-			o += this.formatRules();
+			o += '\trules : ' + this.formatRules();
 			o += ',\n';
-			o += this.formatZones();
-			o += '\n};';
+			o += '\tzones : ' + this.formatZones();
+			o += '\n};\n';
 			return o;
 		},
 
+		formatMin : function () {
+			var o = 'function onload(moment){\n';
+			o += '\tmoment.addRules(' + this.formatRules();
+			o += ');\n';
+			o += '\tmoment.addZones(' + this.formatZones();
+			o += ');\n}';
+			o += '\n\nif (typeof define === "function" && define.amd) {';
+			o += '\n\tdefine(["moment"], onload);';
+			o += '\n} else if (typeof window !== "undefined" && window.moment) {';
+			o += '\n\tonload(window.moment);';
+			o += '\n}';
+			return '(function(){\n\t' + o.replace(/\n/g, '\n\t') + '\n}());\n';
+		},
+
 		save : function () {
-			var filename = 'zones/all.js',
-				data = this.format();
-			grunt.file.write(filename, data);
-			grunt.log.writeln('[] '.green + filename);
+			grunt.file.write('zones/all.js', this.format());
+			grunt.file.write('zones/all.browser.js', this.formatMin());
 		}
 	};
 
