@@ -108,7 +108,7 @@ function makefile (filename, array, grunt) {
 	var o = '',
 		file = path.join(process.cwd(), "tests/core/" + filename + '.js');
 
-	o += 'var moment = require("../../moment-timezone");\n\n';
+	o += 'var moment = require("../../index");\n\n';
 	o += 'exports["' + filename + '"] = {\n\n';
 	o += array.join(',\n\n');
 	o += '\n};';

@@ -105,7 +105,7 @@ module.exports = function (grunt) {
 
 		render : function () {
 			var o = '';
-			o += 'var moment = require("' + this.renderRequire() + '../moment-timezone");';
+			o += 'var moment = require("' + this.renderRequire() + '../index");';
 			o += '\n\nexports["' + this.name + '"] = {\n\n';
 			o += this.renderTests();
 			o += '\n};';
@@ -138,10 +138,10 @@ module.exports = function (grunt) {
 			var o = '', i;
 			o += '\t"' + this.year + '" : function (t) {';
 			// o += '\n\t\tt.expect(' + (this.tests.length * 2) + ');\n';
-			for (i = 0; i < this.tests.length; i++) {
-				o += '\n\t\t' +  this.tests[i].nameTest();
-			}
-			o += '\n';
+			// for (i = 0; i < this.tests.length; i++) {
+			// 	o += '\n\t\t' +  this.tests[i].nameTest();
+			// }
+			// o += '\n';
 			for (i = 0; i < this.tests.length; i++) {
 				o += '\n\t\t' +  this.tests[i].formatTest();
 			}

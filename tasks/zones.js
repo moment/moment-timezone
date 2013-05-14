@@ -74,12 +74,13 @@ function formatSeconds(input) {
 
 module.exports = function (grunt) {
 	grunt.registerTask('zones', 'Generate the zone data files based on the olson database.', function () {
-		var files = [];
+		var file = new File();
 
 		ZONE_FILES.forEach(function (filename) {
-			var file = new File('tz/' + filename);
-			file.save();
+			file.load('tz/' + filename);
 		});
+
+		file.save();
 	});
 
 	/******************************
@@ -90,13 +91,12 @@ module.exports = function (grunt) {
 		this.filename = filename;
 		this.rules = {};
 		this.zones = {};
-		this.load();
 	}
 
 	File.prototype = {
-		load : function () {
+		load : function (filename) {
 			var i,
-				lines = grunt.file.read(this.filename).split('\n');
+				lines = grunt.file.read(filename).split('\n');
 			for (i = 0; i < lines.length; i++) {
 				this.parseLine(lines[i]);
 			}
@@ -177,7 +177,7 @@ module.exports = function (grunt) {
 		},
 
 		formatRules : function () {
-			var o = "\trules : {\n",
+			var o = "rules : {\n",
 				rules = [],
 				ruleText,
 				ruleArray,
@@ -238,7 +238,7 @@ module.exports = function (grunt) {
 		},
 
 		save : function () {
-			var filename = this.filename.replace('tz', 'zones') + '.js',
+			var filename = 'zones/all.js',
 				data = this.format();
 			grunt.file.write(filename, data);
 			grunt.log.writeln('[] '.green + filename);
