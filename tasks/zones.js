@@ -239,9 +239,9 @@ module.exports = function (grunt) {
 
 		formatMin : function () {
 			var o = 'function onload(moment){\n';
-			o += '\tmoment.addRules(' + this.formatRules();
+			o += '\tmoment.tz.addRules(' + this.formatRules();
 			o += ');\n';
-			o += '\tmoment.addZones(' + this.formatZones();
+			o += '\tmoment.tz.addZones(' + this.formatZones();
 			o += ');\n}';
 			o += '\n\nif (typeof define === "function" && define.amd) {';
 			o += '\n\tdefine(["moment"], onload);';

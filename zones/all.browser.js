@@ -1,6 +1,6 @@
 (function(){
 	function onload(moment){
-		moment.addRules({
+		moment.tz.addRules({
 			"Algeria" : [
 				"1916	1916	5	14	7	23	2	1	S",
 				"1916	1919	9	1	0	23	2	0",
@@ -2232,7 +2232,7 @@
 				"2007	9999	2	8	0	2	0	0"
 			]
 		});
-		moment.addZones({
+		moment.tz.addZones({
 			"Africa/Algiers" : [
 				"0:12:12	-	LMT	1891_2_15_0_1	0:12:12",
 				"0:9:21	-	PMT	1911_2_11	0:9:21",

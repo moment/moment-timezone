@@ -442,10 +442,10 @@
 			getZoneSet : getZoneSet
 		};
 
-		module.exports = moment;
-
 		// add default rule
 		defaultRule = addRule("- 0 9999 0 0 0 0 0 0");
+
+		return moment;
 	}
 
 	if (typeof define === "function" && define.amd) {
@@ -453,6 +453,6 @@
 	} else if (typeof window !== "undefined" && window.moment) {
 		onload(window.moment);
 	} else if (typeof module !== 'undefined') {
-		onload(require('./moment'));
+		module.exports = onload(require('./moment'));
 	}
 }).apply(this);
