@@ -1,5 +1,5 @@
 var moment = require("./moment-timezone"),
-	data = require('./zones/all');
+	data = require('./moment-timezone.json');
 
 // Load timezone data in Node.JS
 moment.tz.addRules(data.rules);
