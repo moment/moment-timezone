@@ -426,8 +426,10 @@
 		};
 
 		moment.fn.tz = function (name) {
-			this._z = getZoneSet(name);
-			moment.updateOffset(this);
+			this._z = zoneSets[normalizeName(name)];
+			if (this._z) {
+				moment.updateOffset(this);
+			}
 			return this;
 		};
 
