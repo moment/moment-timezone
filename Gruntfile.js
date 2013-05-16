@@ -4,12 +4,16 @@ module.exports = function(grunt) {
 			all : [
 				"tests/**/*.js"
 			]
+		},
+		jshint: {
+			all: 'moment-timezone.js'
 		}
 	});
 
 	grunt.loadTasks("tasks");
 
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
-	grunt.registerTask('default', 'nodeunit');
+	grunt.registerTask('default', ['jshint', 'nodeunit']);
 };
