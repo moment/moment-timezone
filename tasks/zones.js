@@ -28,6 +28,18 @@ function replacer(key, value) {
 	}, {});
 }
 
+function parseLatLong (input) {
+	var sign = input[0] === '+' ? 1 : -1,
+		deg = ~~input.substr(1, 2) * sign,
+		min = ~~input.substr(3, 2),
+		sec = ~~input.substr(5, 2);
+
+	min += sec / 60;
+	deg += min / 60;
+
+	return parseFloat(deg.toFixed(4), 10);
+}
+
 // converts time in the HH:mm format to absolute number of minutes
 function parseMinutes (input) {
 	var output = input.split(':'),
@@ -130,8 +142,8 @@ module.exports = function (grunt) {
 			if (!this.meta[name]) {
 				this.meta[name] = {};
 			}
-			this.meta[name].lat = +latlon[0];
-			this.meta[name].lon = +latlon[1];
+			this.meta[name].lat = parseLatLong(latlon[0]);
+			this.meta[name].lon = parseLatLong(latlon[1]);
 		},
 
 		load : function (filename) {

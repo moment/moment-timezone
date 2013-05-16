@@ -445,9 +445,17 @@
 			return oldZoneAbbr.call(this);
 		};
 
-		moment.tz = {
-			add : add
+		moment.tz = function () {
+			var args = [], i, len = arguments.length - 1;
+			for (i = 0; i < len; i++) {
+				args[i] = arguments[i];
+			}
+			return moment.apply(null, args).tz(arguments[len]);
 		};
+
+		moment.tz.add = add;
+		moment.tz.addRule = addRule;
+		moment.tz.addZone = addZone;
 
 		// add default rule
 		defaultRule = addRule("- 0 9999 0 0 0 0 0 0");
