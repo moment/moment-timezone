@@ -18,6 +18,16 @@ var moment = require('../moment-timezone'),
 	Helpers
 ******************************/
 
+function replacer(key, value) {
+	if (value.constructor !== Object) {
+		return value;
+	}
+	return Object.keys(value).sort().reduce(function(sorted, key) {
+		sorted[key] = value[key];
+		return sorted;
+	}, {});
+}
+
 // converts time in the HH:mm format to absolute number of minutes
 function parseMinutes (input) {
 	var output = input.split(':'),
@@ -74,12 +84,15 @@ function formatSeconds(input) {
 
 module.exports = function (grunt) {
 	grunt.registerTask('zones', 'Generate the zone data files based on the olson database.', function () {
-		var files = [];
+		var file = new File();
 
 		ZONE_FILES.forEach(function (filename) {
-			var file = new File('tz/' + filename);
-			file.save();
+			file.load('tz/' + filename);
 		});
+
+		file.loadZoneTab('tz/zone.tab');
+
+		file.save();
 	});
 
 	/******************************
@@ -90,13 +103,40 @@ module.exports = function (grunt) {
 		this.filename = filename;
 		this.rules = {};
 		this.zones = {};
-		this.load();
+		this.meta = {};
 	}
 
 	File.prototype = {
-		load : function () {
+		loadZoneTab : function (filename) {
 			var i,
-				lines = grunt.file.read(this.filename).split('\n');
+				lines = grunt.file.read(filename).split('\n');
+			for (i = 0; i < lines.length; i++) {
+				this.parseZoneTabLine(lines[i]);
+			}
+		},
+
+		parseZoneTabLine : function (line) {
+			var sanitized = this.sanitizeLine(line),
+				name,
+				latlon;
+			// ignore comment lines
+			if (!sanitized) {
+				return;
+			}
+
+			name = sanitized[2];
+			latlon = sanitized[1].match(/[+-]\d+/g);
+
+			if (!this.meta[name]) {
+				this.meta[name] = {};
+			}
+			this.meta[name].lat = +latlon[0];
+			this.meta[name].lon = +latlon[1];
+		},
+
+		load : function (filename) {
+			var i,
+				lines = grunt.file.read(filename).split('\n');
 			for (i = 0; i < lines.length; i++) {
 				this.parseLine(lines[i]);
 			}
@@ -153,12 +193,20 @@ module.exports = function (grunt) {
 		},
 
 		parseZone : function (line) {
-			var zone = new Zone(line);
+			var zone = new Zone(line),
+				name = line[0];
 
-			if (!this.zones[line[0]]) {
-				this.zones[line[0]] = [];
+			if (!this.zones[name]) {
+				this.zones[name] = [];
 			}
-			this.zones[line[0]].push(zone);
+			if (!this.meta[name]) {
+				this.meta[name] = {};
+			}
+			if (!this.meta[name].rules) {
+				this.meta[name].rules = {};
+			}
+			this.meta[name].rules[zone.ruleset] = true;
+			this.zones[name].push(zone);
 
 			this.lastZone = zone.name;
 		},
@@ -176,72 +224,51 @@ module.exports = function (grunt) {
 
 		},
 
-		formatRules : function () {
-			var o = "\trules : {\n",
-				rules = [],
-				ruleText,
-				ruleArray,
-				rule,
+		formatObject : function (obj) {
+			var o = {},
 				name,
 				i;
 
-			for (name in this.rules) {
-				rule = this.rules[name];
-				ruleText = '\t\t"' + name + '" : [\n';
-				ruleArray = [];
-				for (i = 0; i < rule.length; i++) {
-					ruleArray.push('\t\t\t"' + rule[i].format() + '"');
+			for (name in obj) {
+				o[name] = [];
+				for (i = 0; i < obj[name].length; i++) {
+					o[name].push(obj[name][i].format());
 				}
-				ruleText += ruleArray.join(',\n');
-				ruleText += '\n\t\t]';
-				rules.push(ruleText);
 			}
 
-			o += rules.join(',\n');
-			o += '\n\t}';
-			return o;
-		},
-
-		formatZones : function () {
-			var o = "\tzones : {\n",
-				zones = [],
-				zoneText,
-				zoneArray,
-				zone,
-				name,
-				i;
-
-			for (name in this.zones) {
-				zone = this.zones[name];
-				zoneText = '\t\t"' + name + '" : [\n';
-				zoneArray = [];
-				for (i = 0; i < zone.length; i++) {
-					zoneArray.push('\t\t\t"' + zone[i].format() + '"');
-				}
-				zoneText += zoneArray.join(',\n');
-				zoneText += '\n\t\t]';
-				zones.push(zoneText);
-			}
-
-			o += zones.join(',\n');
-			o += '\n\t}';
 			return o;
 		},
 
 		format : function () {
-			var o = 'module.exports = {\n';
-			o += this.formatRules();
-			o += ',\n';
-			o += this.formatZones();
-			o += '\n};';
-			return o;
+			var o = {
+				meta : this.meta,
+				rules : this.formatObject(this.rules),
+				zones : this.formatObject(this.zones)
+			};
+			return JSON.stringify(o, replacer, '\t').replace(/\\t/g, '\t');
+		},
+
+		trimMeta : function () {
+			var name, zone,
+				rule, ruleset,
+				rules;
+
+			for (name in this.meta) {
+				zone = this.meta[name];
+				ruleset = zone.rules;
+				rules = [];
+				for (rule in ruleset) {
+					if (rule !== '-') {
+						rules.push(rule);
+					}
+				}
+				zone.rules = rules.join(' ');
+			}
 		},
 
 		save : function () {
-			var filename = this.filename.replace('tz', 'zones') + '.js',
-				data = this.format();
-			grunt.file.write(filename, data);
-			grunt.log.writeln('[] '.green + filename);
+			this.trimMeta();
+			grunt.file.write('moment-timezone.json', this.format());
 		}
 	};
 
@@ -418,7 +445,13 @@ module.exports = function (grunt) {
 					o.push(formatSeconds(this.untilOffset));
 				}
 			}
-			return o.join('\t');
+			return o.join(' ');
+		},
+
+		formatMeta : function () {
+			return {
+
+			};
 		}
 	};
 
@@ -505,7 +538,7 @@ module.exports = function (grunt) {
 			if (this.letters) {
 				o.push(this.letters);
 			}
-			return o.join('\t');
+			return o.join(' ');
 		}
 	};
 };

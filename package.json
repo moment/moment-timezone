@@ -33,6 +33,6 @@
 		"grunt-contrib-nodeunit"  : "0.1.2"
 	},
 	"scripts": {
-		"test": "grunt nodeunit"
+		"test": "grunt"
 	}
 }

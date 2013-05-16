@@ -1,4 +1,4 @@
-var moment = require("../../../moment-timezone");
+var moment = require("../../../index");
 
 exports["America/Indiana/Indianapolis"] = {
 
