@@ -5,6 +5,16 @@ module.exports = function(grunt) {
 				"tests/**/*.js"
 			]
 		},
+		uglify : {
+			all: {
+				files: {
+					'min/moment-timezone.min.js' : 'moment-timezone.js'
+				}
+			},
+			options: {
+				report : 'gzip'
+			}
+		},
 		jshint: {
 			all: 'moment-timezone.js'
 		}
@@ -14,6 +24,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('default', ['jshint', 'nodeunit']);
 };
