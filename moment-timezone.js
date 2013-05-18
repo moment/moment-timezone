@@ -14,6 +14,7 @@
 			ruleSets = {},
 			zones = {},
 			zoneSets = {},
+			links = {},
 
 			TIME_RULE_WALL_CLOCK = 0,
 			TIME_RULE_UTC        = 1,
@@ -281,7 +282,8 @@
 		}
 
 		function ZoneSet (name) {
-			this.name = name;
+			this.name = normalizeName(name);
+			this.displayName = name;
 			this.zones = [];
 		}
 
@@ -366,6 +368,13 @@
 			}
 		}
 
+		function addLinks (linksToAdd) {
+			var i;
+			for (i in linksToAdd) {
+				links[normalizeName(i)] = normalizeName(linksToAdd[i]);
+			}
+		}
+
 		function addZone (zoneString) {
 			// don't duplicate zones
 			if (zones[zoneString]) {
@@ -380,7 +389,7 @@
 			zones[zoneString] = zone;
 
 			// add to the zoneset
-			getZoneSet(name).add(zone);
+			getZoneSet(p[0]).add(zone);
 
 			return zone;
 		}
@@ -394,11 +403,14 @@
 		}
 
 		function getZoneSet (name) {
-			name = normalizeName(name);
-			if (!zoneSets[name]) {
-				zoneSets[name] = new ZoneSet(name);
+			var machineName = normalizeName(name);
+			if (links[machineName]) {
+				machineName = links[machineName];
 			}
-			return zoneSets[name];
+			if (!zoneSets[machineName]) {
+				zoneSets[machineName] = new ZoneSet(name);
+			}
+			return zoneSets[machineName];
 		}
 
 		function add (data) {
@@ -410,6 +422,9 @@
 			}
 			if (data.rules) {
 				addRules(data.rules);
+			}
+			if (data.links) {
+				addLinks(data.links);
 			}
 		}
 
@@ -426,11 +441,16 @@
 		};
 
 		moment.fn.tz = function (name) {
-			this._z = zoneSets[normalizeName(name)];
-			if (this._z) {
-				moment.updateOffset(this);
+			if (name) {
+				this._z = getZoneSet(name);
+				if (this._z) {
+					moment.updateOffset(this);
+				}
+				return this;
 			}
-			return this;
+			if (this._z) {
+				return this._z.displayName;
+			}
 		};
 
 		moment.fn.zoneName = function () {

@@ -1,4 +1,28 @@
 {
+	"links": {
+		"America/Kralendijk": "America/Curacao",
+		"America/Lower_Princes": "America/Curacao",
+		"America/Marigot": "America/Guadeloupe",
+		"America/Shiprock": "America/Denver",
+		"America/St_Barthelemy": "America/Guadeloupe",
+		"Antarctica/South_Pole": "Antarctica/McMurdo",
+		"Arctic/Longyearbyen": "Europe/Oslo",
+		"Asia/Istanbul": "Europe/Istanbul",
+		"Europe/Bratislava": "Europe/Prague",
+		"Europe/Busingen": "Europe/Zurich",
+		"Europe/Guernsey": "Europe/London",
+		"Europe/Isle_of_Man": "Europe/London",
+		"Europe/Jersey": "Europe/London",
+		"Europe/Ljubljana": "Europe/Belgrade",
+		"Europe/Mariehamn": "Europe/Helsinki",
+		"Europe/Nicosia": "Asia/Nicosia",
+		"Europe/Podgorica": "Europe/Belgrade",
+		"Europe/San_Marino": "Europe/Rome",
+		"Europe/Sarajevo": "Europe/Belgrade",
+		"Europe/Skopje": "Europe/Belgrade",
+		"Europe/Vatican": "Europe/Rome",
+		"Europe/Zagreb": "Europe/Belgrade"
+	},
 	"meta": {
 		"Africa/Abidjan": {
 			"lat": 5.3167,

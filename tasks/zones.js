@@ -116,6 +116,7 @@ module.exports = function (grunt) {
 		this.rules = {};
 		this.zones = {};
 		this.meta = {};
+		this.links = {};
 	}
 
 	File.prototype = {
@@ -200,7 +201,7 @@ module.exports = function (grunt) {
 			case 'rule':
 				return this.parseRule(sanitized);
 			case 'link':
-				break;
+				return this.parseLink(sanitized);
 			}
 		},
 
@@ -233,7 +234,10 @@ module.exports = function (grunt) {
 		},
 
 		parseLink : function (line) {
+			var link = line[1],
+				zone = line[0];
 
+			this.links[link] = zone;
 		},
 
 		formatObject : function (obj) {
@@ -254,6 +258,7 @@ module.exports = function (grunt) {
 		format : function () {
 			var o = {
 				meta : this.meta,
+				links : this.links,
 				rules : this.formatObject(this.rules),
 				zones : this.formatObject(this.zones)
 			};
