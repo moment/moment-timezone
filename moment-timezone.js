@@ -495,6 +495,6 @@
 	} else if (typeof window !== "undefined" && window.moment) {
 		onload(window.moment);
 	} else if (typeof module !== 'undefined') {
-		module.exports = onload(require('./moment'));
+		module.exports = onload(require('moment'));
 	}
 }).apply(this);
