@@ -443,6 +443,14 @@
 			}
 		};
 
+		function getZoneSets () {
+			var sets = []
+			for (zoneName in zoneSets) {
+				sets.push(zoneSets[zoneName]);
+			}
+			return sets;
+		}
+
 		moment.fn.tz = function (name) {
 			if (name) {
 				this._z = getZoneSet(name);
@@ -481,6 +489,7 @@
 		moment.tz.add = add;
 		moment.tz.addRule = addRule;
 		moment.tz.addZone = addZone;
+		moment.tz.getZoneSets = getZoneSets;
 
 		moment.tz.version = VERSION;
 
