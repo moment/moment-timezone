@@ -444,8 +444,8 @@
 		};
 
 		function getZoneSets () {
-			var sets = []
-			for (zoneName in zoneSets) {
+			var sets = [];
+			for (var zoneName in zoneSets) {
 				sets.push(zoneSets[zoneName]);
 			}
 			return sets;
