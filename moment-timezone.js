@@ -10,7 +10,8 @@
 
 	function onload(moment) {
 		var oldZoneName = moment.fn.zoneName,
-			oldZoneAbbr = moment.fn.zoneAbbr,
+            oldZoneAbbr = moment.fn.zoneAbbr,
+            oldLocal = moment.fn.local,
 
 			defaultRule,
 			rules = {},
@@ -455,6 +456,15 @@
 				return this._z.displayName;
 			}
 		};
+
+        moment.fn.local = function () {
+            var offset, hours;
+            if (this._z) {
+                offset = this.zone() - moment(this.toArray()).zone();
+                return this.add('minutes', offset);
+            }
+            return oldLocal.call(this);
+        };
 
 		moment.fn.zoneName = function () {
 			if (this._z) {
