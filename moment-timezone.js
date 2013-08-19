@@ -475,7 +475,10 @@
 			for (i = 0; i < len; i++) {
 				args[i] = arguments[i];
 			}
-			return moment.apply(null, args).tz(arguments[len]);
+			var m = moment.apply(null, args);
+			var preTzOffset = m.zone();
+			m.tz(arguments[len]);
+			return m.add('minutes', m.zone() - preTzOffset);
 		};
 
 		moment.tz.add = add;
