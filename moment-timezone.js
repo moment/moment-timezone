@@ -9,6 +9,10 @@
 	var VERSION = "0.0.1";
 
 	function onload(moment) {
+		if (moment.tz) {
+			return
+		}
+		
 		var oldZoneName = moment.fn.zoneName,
 			oldZoneAbbr = moment.fn.zoneAbbr,
 
