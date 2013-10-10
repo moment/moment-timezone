@@ -30,4 +30,10 @@ grunt zones
 grunt test
 ```
 
+## changelog
 
+### 0.0.2
+* added bower support
+* support newer versions of moment
+* construction with string and zone respects zone
+* added more links and timezone names in moment-timezone.json

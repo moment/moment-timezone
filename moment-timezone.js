@@ -1,12 +1,12 @@
 // moment-timezone.js
-// version : 0.0.1
+// version : 0.0.2
 // author : Tim Wood
 // license : MIT
 // github.com/timrwood/moment-timezone
 
 (function () {
 
-	var VERSION = "0.0.1";
+	var VERSION = "0.0.2";
 
 	function onload(moment) {
 		var oldZoneName = moment.fn.zoneName,
