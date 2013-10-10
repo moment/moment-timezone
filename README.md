@@ -32,7 +32,7 @@ grunt test
 
 ## changelog
 
-### 0.0.2
+### 0.0.3
 * added bower support
 * support newer versions of moment
 * construction with string and zone respects zone
