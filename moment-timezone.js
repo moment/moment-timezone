@@ -442,6 +442,10 @@
 				mom.zone(offset);
 			}
 		};
+        
+        moment.zoneExists = function (name) {
+            return getZoneSet(name).zones.length > 0;
+        };
 
 		function getZoneSets() {
 			var sets = [],
