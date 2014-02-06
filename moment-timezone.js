@@ -451,15 +451,10 @@
 			var offset;
 			if (mom._z) {
 				offset = mom._z.offset(mom);
-				if (dontAdjustTime) {
-					mom._offset = offset;
-					mom._isUTC = true;
-				} else {
-					if (Math.abs(offset) < 16) {
-						offset = offset / 60;
-					}
-					mom.zone(offset);
+				if (Math.abs(offset) < 16) {
+					offset = offset / 60;
 				}
+				mom.zone(offset, !dontAdjustTime);
 			}
 		};
 
