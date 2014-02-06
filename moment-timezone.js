@@ -447,14 +447,19 @@
 		}
 
 		// overwrite moment.updateOffset
-		moment.updateOffset = function (mom) {
+		moment.updateOffset = function (mom, dontAdjustTime) {
 			var offset;
 			if (mom._z) {
 				offset = mom._z.offset(mom);
-				if (Math.abs(offset) < 16) {
-					offset = offset / 60;
+				if (dontAdjustTime) {
+					mom._offset = offset;
+					mom._isUTC = true;
+				} else {
+					if (Math.abs(offset) < 16) {
+						offset = offset / 60;
+					}
+					mom.zone(offset);
 				}
-				mom.zone(offset);
 			}
 		};
 
