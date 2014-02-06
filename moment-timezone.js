@@ -53,9 +53,6 @@
 			this.timeRule  = +timeRule;
 			this.offset    = parseMinutes(offset);
 			this.letters   = letters || '';
-			this.date = memoize(this.date);
-			this.weekdayAfter = memoize(this.weekdayAfter);
-			this.lastWeekday = memoize(this.lastWeekday);
 		}
 
 		Rule.prototype = {
@@ -138,7 +135,6 @@
 		function RuleSet (name) {
 			this.name = name;
 			this.rules = [];
-			this.lastYearRule = memoize(this.lastYearRule);
 		}
 
 		RuleSet.prototype = {
@@ -256,7 +252,6 @@
 			this.offset = parseMinutes(offset);
 			this.ruleSet = ruleSet;
 			this.letters = letters;
-			this.lastRule = memoize(this.lastRule);
 
 			for (i = 0; i < untilArray.length; i++) {
 				untilArray[i] = +untilArray[i];
@@ -270,7 +265,10 @@
 			},
 
 			lastRule : function () {
-				return this.rule(this.until);
+				if (!this._lastRule) {
+					this._lastRule = this.rule(this.until);
+				}
+				return this._lastRule;
 			},
 
 			format : function (rule) {
@@ -290,9 +288,6 @@
 			this.name = normalizeName(name);
 			this.displayName = name;
 			this.zones = [];
-			this.zoneAndRule = memoize(this.zoneAndRule, function (mom) {
-				return +mom;
-			});
 		}
 
 		ZoneSet.prototype = {
@@ -332,16 +327,6 @@
 		/************************************
 			Global Methods
 		************************************/
-
-		function memoize (fn, keyFn) {
-			var cache = {};
-			return function (first) {
-				var key = keyFn ? keyFn.apply(this, arguments) : first;
-				return key in cache ?
-					cache[key] :
-					(cache[key] = fn.apply(this, arguments));
-			};
-		}
 
 		function addRules (rules) {
 			var i, j, rule;
@@ -447,19 +432,14 @@
 		}
 
 		// overwrite moment.updateOffset
-		moment.updateOffset = function (mom, dontAdjustTime) {
+		moment.updateOffset = function (mom) {
 			var offset;
 			if (mom._z) {
 				offset = mom._z.offset(mom);
-				if (dontAdjustTime) {
-					mom._offset = offset;
-					mom._isUTC = true;
-				} else {
-					if (Math.abs(offset) < 16) {
-						offset = offset / 60;
-					}
-					mom.zone(offset);
+				if (Math.abs(offset) < 16) {
+					offset = offset / 60;
 				}
+				mom.zone(offset);
 			}
 		};
 
