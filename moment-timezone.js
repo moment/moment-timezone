@@ -447,14 +447,14 @@
 		}
 
 		// overwrite moment.updateOffset
-		moment.updateOffset = function (mom, dontAdjustTime) {
+		moment.updateOffset = function (mom, keepTime) {
 			var offset;
 			if (mom._z) {
 				offset = mom._z.offset(mom);
 				if (Math.abs(offset) < 16) {
 					offset = offset / 60;
 				}
-				mom.zone(offset, !dontAdjustTime);
+				mom.zone(offset, keepTime);
 			}
 		};
 
