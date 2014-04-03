@@ -494,6 +494,9 @@
 			return oldZoneAbbr.call(this);
 		};
 
+		// Make sure moment's clone includes the newly added properties
+		moment.momentProperties._z = null;
+
 		moment.tz = function () {
 			var args = [], i, len = arguments.length - 1;
 			for (i = 0; i < len; i++) {
