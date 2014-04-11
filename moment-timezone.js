@@ -26,6 +26,11 @@
 			DAY_RULE_DAY_OF_MONTH   = 7,
 			DAY_RULE_LAST_WEEKDAY   = 8;
 
+		if (moment.tz !== undefined) {
+			// Do not load moment-timezone a second time.
+			return;
+		}
+
 		// converts time in the HH:mm:ss format to absolute number of minutes
 		function parseMinutes (input) {
 			input = input + '';
