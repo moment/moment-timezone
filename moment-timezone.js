@@ -515,6 +515,10 @@
 
 		moment.tz.version = VERSION;
 
+		moment.tz.zoneExists = function (name) {
+			return getZoneSet(name).zones.length > 0;
+		};
+
 		// add default rule
 		defaultRule = addRule("- 0 9999 0 0 0 0 0 0");
 
