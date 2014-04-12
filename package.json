@@ -1,6 +1,6 @@
 {
 	"name": "moment-timezone",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Timezone plugin for Moment.js.",
 	"homepage": "http://momentjs.com",
 	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
