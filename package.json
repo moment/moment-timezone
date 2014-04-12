@@ -1,6 +1,6 @@
 {
 	"name": "moment-timezone",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Timezone plugin for Moment.js.",
 	"homepage": "http://momentjs.com",
 	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
@@ -29,13 +29,13 @@
 		}
 	],
 	"dependencies" : {
-		"moment" : ">= 2.1.0"
+		"moment" : ">= 2.6.0"
 	},
 	"devDependencies" : {
-		"grunt"                  : "0.4.1",
-		"grunt-contrib-nodeunit" : "0.2.0",
-		"grunt-contrib-jshint"   : "0.4.3",
-		"grunt-contrib-uglify"   : "0.2.0"
+		"grunt"                  : "0.4.4",
+		"grunt-contrib-nodeunit" : "0.3.3",
+		"grunt-contrib-jshint"   : "0.10.0",
+		"grunt-contrib-uglify"   : "0.4.0"
 	},
 	"scripts": {
 		"test": "grunt"
