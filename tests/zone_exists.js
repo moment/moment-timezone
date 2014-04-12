@@ -10,4 +10,4 @@ exports["zoneExists"] = {
 		test.equal(moment.tz.zoneExists("America/Imaginary"), false, "America/Imaginary does not exists");
 		test.done();
 	}
-}
+};
