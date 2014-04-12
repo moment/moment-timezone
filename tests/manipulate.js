@@ -37,7 +37,7 @@ exports["manipulate"] = {
       "2014-04-09T00:00:00-07:00",
       "adding 1 month while crossing a DST boundary should not affect time (PST -> PDT).");
     t.equal(
-      moment("2014-03-09T00:00:00-08:00").tz('America/Los_Angeles').month("April").format(),
+      moment("2014-03-09T00:00:00-08:00").tz('America/Los_Angeles').month(3).format(),
       "2014-04-09T00:00:00-07:00",
       "setting month across a DST boundary should not affect time (PST -> PDT).");
 
