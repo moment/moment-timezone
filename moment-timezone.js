@@ -28,7 +28,7 @@
 
 		if (moment.tz !== undefined) {
 			// Do not load moment-timezone a second time.
-			return;
+			return moment;
 		}
 
 		// converts time in the HH:mm:ss format to absolute number of minutes
