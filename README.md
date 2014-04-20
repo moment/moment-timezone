@@ -32,7 +32,10 @@ grunt test
 
 ## changelog
 
-### 0.0.4
+### 0.0.6
+* fix double loading issue introduced in 0.0.5
+
+### 0.0.5
 * [#39](https://github.com/moment/moment-timezone/issues/39) improve performance with memoize
 * [#46](https://github.com/moment/moment-timezone/issues/46) publish only necessary files to npm
 * [#53](https://github.com/moment/moment-timezone/issues/53), [#61](https://github.com/moment/moment-timezone/issues/61), [#70](https://github.com/moment/moment-timezone/issues/70), better handling of timezones around DST
