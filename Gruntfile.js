@@ -2,7 +2,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		nodeunit : {
 			all : [
-				"tests/**/*.js"
+				"tests/**/*.js",
+				"!tests/helpers/**"
 			]
 		},
 		uglify : {
