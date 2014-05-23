@@ -1,9 +1,12 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		nodeunit : {
-			all : [
-				"tests/**/*.js",
-				"!tests/helpers/**"
+			zones : [
+				"tests/zones/**/*.js"
+			],
+			core : [
+				"tests/moment-timezone/*.js",
+				"tests/moment-timezone-utils/*.js"
 			]
 		},
 		uglify : {

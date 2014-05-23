@@ -22,7 +22,7 @@
 			return moment;
 		}
 
-		function toInt(string) {
+		function unpackBase60(string) {
 			var i, charCode,
 				num,
 				out = 0,
@@ -49,7 +49,7 @@
 
 		function arrayToInt (array) {
 			for (var i = 0; i < array.length; i++) {
-				array[i] = toInt(array[i]);
+				array[i] = unpackBase60(array[i]);
 			}
 		}
 
@@ -215,6 +215,7 @@
 		moment.tz.add = add;
 		moment.tz.link = addLinks;
 		moment.tz.zones = getZones;
+		moment.tz.unpackBase60 = unpackBase60;
 
 		moment.tz.version = VERSION;
 
