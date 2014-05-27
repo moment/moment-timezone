@@ -71,10 +71,40 @@
 
 		function intToUntil (array) {
 			for (var i = 0; i < array.length; i++) {
-				array[i] = (array[i - 1] || 0) + (array[i] * 1000);
+				array[i] = (array[i - 1] || 0) + (array[i] * 60000); // minutes to milliseconds
 			}
 
 			array.push(Infinity);
+		}
+
+		function mapIndices (source, indices) {
+			var out = [], i;
+
+			for (i = 0; i < indices.length; i++) {
+				out[i] = source[indices[i]];
+			}
+
+			return out;
+		}
+
+		function unpack (string) {
+			var data = string.split('|'),
+				offsets = data[2].split(' '),
+				indices = data[3].split(''),
+				untils  = data[4].split(' ');
+
+			arrayToInt(offsets);
+			arrayToInt(indices);
+			arrayToInt(untils);
+
+			intToUntil(untils);
+
+			return {
+				name    : data[0],
+				abbrs   : mapIndices(data[1].split(' '), indices),
+				offsets : mapIndices(offsets, indices),
+				untils  : untils
+			};
 		}
 
 		function Zone (data) {
@@ -232,6 +262,7 @@
 		moment.tz.link = addLinks;
 		moment.tz.zones = getZones;
 		moment.tz.unpackBase60 = unpackBase60;
+		moment.tz.unpack = unpack;
 
 		moment.tz.version = VERSION;
 
