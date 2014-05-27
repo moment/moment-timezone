@@ -13,7 +13,7 @@ function compare(test, source, expected) {
 	test.done();
 }
 
-exports['unpack-base-60'] = {
+exports.unpack = {
 	ints : function (test) {
 		compare(test,
 			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X",

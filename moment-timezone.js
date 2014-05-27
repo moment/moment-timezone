@@ -2,7 +2,7 @@
 // version : 0.0.6
 // author : Tim Wood
 // license : MIT
-// github.com/timrwood/moment-timezone
+// github.com/moment/moment-timezone
 
 (function () {
 	"use strict";
