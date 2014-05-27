@@ -22,26 +22,42 @@
 			return moment;
 		}
 
+		function charCodeToInt(charCode) {
+			if (charCode > 96) {
+				return charCode - 87;
+			} else if (charCode > 64) {
+				return charCode - 29;
+			}
+			return charCode - 48;
+		}
+
 		function unpackBase60(string) {
-			var i, charCode,
+			var i = 0,
+				parts = string.split('.'),
+				whole = parts[0],
+				fractional = parts[1] || '',
+				multiplier = 1,
 				num,
 				out = 0,
 				sign = 1;
 
-			for (i = 0; i < string.length; i++) {
-				charCode = string.charCodeAt(i);
-				if (charCode === 45) {
-					sign = -1;
-					continue;
-				}
-				if (charCode > 96) {
-					num = charCode - 87;
-				} else if (charCode > 64) {
-					num = charCode - 29;
-				} else {
-					num = charCode - 48;
-				}
+			// handle negative numbers
+			if (string.charCodeAt(0) === 45) {
+				i = 1;
+				sign = -1;
+			}
+
+			// handle digits before the decimal
+			for (i; i < whole.length; i++) {
+				num = charCodeToInt(whole.charCodeAt(i));
 				out = 60 * out + num;
+			}
+
+			// handle digits after the decimal
+			for (i = 0; i < fractional.length; i++) {
+				multiplier = multiplier / 60;
+				num = charCodeToInt(fractional.charCodeAt(i));
+				out += num * multiplier;
 			}
 
 			return out * sign;
