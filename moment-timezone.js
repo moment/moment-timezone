@@ -107,18 +107,12 @@
 			};
 		}
 
-		function Zone (data) {
-			this.name    = data[0];
-			this.abbrs   = data[1].split(' ');
-			this.offsets = data[2].split(' ');
-			this.indices = data[3].split('');
-			this.untils  = data[4].split(' ');
-
-			arrayToInt(this.offsets);
-			arrayToInt(this.indices);
-			arrayToInt(this.untils);
-
-			intToUntil(this.untils);
+		function Zone (packedString) {
+			var unpacked = unpack(packedString);
+			this.name    = unpacked.name;
+			this.abbrs   = unpacked.abbrs;
+			this.untils  = unpacked.untils;
+			this.offsets = unpacked.offsets;
 		}
 
 		Zone.prototype = {
@@ -129,7 +123,7 @@
 
 				for (i = 0; i < untils.length; i++) {
 					if (target < untils[i]) {
-						return this.indices[i];
+						return i;
 					}
 				}
 			},
@@ -163,7 +157,7 @@
 				name = normalizeName(parts[0]);
 
 			zones[name] = null;
-			zonesData[name] = parts;
+			zonesData[name] = zoneString;
 		}
 
 		function addLinks(data) {

@@ -107,7 +107,7 @@ Zone.prototype.renderUntils = function () {
 		last = change.until;
 		return diff;
 	}).map(function (number) {
-		return Math.round(number / 1000);
+		return Math.round(number / 60000);
 	}).map(toBase60).join(' ');
 };
 
