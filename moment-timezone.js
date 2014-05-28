@@ -133,7 +133,7 @@
 			},
 
 			offset : function (mom) {
-				return this.offsets[this._index(mom)] / 60;
+				return this.offsets[this._index(mom)];
 			}
 		};
 
@@ -241,7 +241,7 @@
 		// Make sure moment's clone includes the newly added properties
 		moment.momentProperties._z = null;
 
-		moment.tz = function () {
+		function tz () {
 			var args = [], i, len = arguments.length - 1;
 			for (i = 0; i < len; i++) {
 				args[i] = arguments[i];
@@ -252,15 +252,20 @@
 			return m.add('minutes', m.zone() - preTzOffset);
 		};
 
-		moment.tz.add = add;
-		moment.tz.link = addLinks;
-		moment.tz.zones = getZones;
-		moment.tz.unpackBase60 = unpackBase60;
-		moment.tz.unpack = unpack;
+		moment.tz = tz;
 
-		moment.tz.version = VERSION;
+		tz.version = VERSION;
 
-		moment.tz.zoneExists = function (name) {
+		tz.add = add;
+		tz.link = addLinks;
+		tz.zones = getZones;
+
+		tz.unpack = unpack;
+		tz.unpackBase60 = unpackBase60;
+
+		tz.Zone = Zone;
+
+		tz.zoneExists = function (name) {
 			return !!getZone(name);
 		};
 
