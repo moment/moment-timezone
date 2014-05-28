@@ -1,9 +1,12 @@
 "use strict";
 
-var BASE60 = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX'.split('');
 
-// Used to attempt to fix floating point rounding errors
-var EPSILON = 0.000001;
+//////////////////
+// Pack Base 60 //
+//////////////////
+
+var BASE60 = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX',
+	EPSILON = 0.000001; // Used to fix floating point rounding errors
 
 function packBase60Fraction(fraction, precision) {
 	var buffer = '.',
@@ -54,6 +57,50 @@ function packBase60(number, precision) {
 	return output || fraction || '0';
 }
 
+//////////
+// Pack //
+//////////
+
+function packUntils(untils) {
+	var out = [],
+		last = 0,
+		i;
+
+	for (i = 0; i < untils.length - 1; i++) {
+		out[i] = packBase60(Math.round((untils[i] - last) / 60000));
+		last = untils[i];
+	}
+
+	return out.join(' ');
+}
+
+function packAbbrsAndOffsets(source) {
+	var index = 0,
+		abbrs = [],
+		offsets = [],
+		indices = [],
+		map = {},
+		i, key;
+
+	for (i = 0; i < source.abbrs.length; i++) {
+		key = source.abbrs[i] + '|' + source.offsets[i];
+		if (map[key] === undefined) {
+			map[key] = index;
+			abbrs[index] = source.abbrs[i];
+			offsets[index] = packBase60(source.offsets[i], 1);
+			index++;
+		}
+		indices[i] = packBase60(map[key], 0);
+	}
+
+	return abbrs.join(' ') + '|' + offsets.join(' ') + '|' + indices.join('');
+}
+
+function pack (source) {
+	return source.name + '|' + packAbbrsAndOffsets(source) + '|' + packUntils(source.untils);
+}
+
 module.exports = {
-	packBase60 : packBase60
+	packBase60 : packBase60,
+	pack       : pack
 };
