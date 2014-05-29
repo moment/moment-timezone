@@ -27,6 +27,22 @@ exports.zone = {
 		test.done();
 	},
 
+	addingMany : function (test) {
+		tz.add([
+			"AddingMany/Test1|QWE RTY|60 30|0101|-30 10 8",
+			"AddingMany/Test2|QWE RTY|60 30|1010|-30 10 8",
+			"AddingMany/Test3|QWE RTY|60 30|0101|-30 10 8"
+		]);
+		tz.add("AddingMany/Test4|QWE RTY|60 30|0101|-30 10 8");
+
+		test.ok(tz.zone("AddingMany/Test1"), "Should be able to add items in an array of strings.");
+		test.ok(tz.zone("AddingMany/Test2"), "Should be able to add items in an array of strings.");
+		test.ok(tz.zone("AddingMany/Test3"), "Should be able to add items in an array of strings.");
+		test.ok(tz.zone("AddingMany/Test4"), "Should be able to add an item in a single string.");
+
+		test.done();
+	},
+
 	caching : function (test) {
 		tz._zones.somezone = undefined;
 
@@ -38,5 +54,40 @@ exports.zone = {
 		test.ok(tz._zones.somezone, "The cache should be updated when adding a zone.");
 
 		test.done();
+	},
+
+	caseInsensitive : function (test) {
+		tz.add("CASE_INSENSITIVE|ASD|60|0|234");
+
+		test.ok(tz.zone('case_insensitive'), "getting zones should not be case sensitive.");
+		test.ok(tz.zone('Case_Insensitive'), "getting zones should not be case sensitive.");
+		test.ok(tz.zone('case/insensitive'), "getting zones should not differentiate between _ and /.");
+
+		tz.add("Case/Insens_Itive2|ASD|60|0|234");
+
+		test.ok(tz.zone('CASE_insens_itive2'), "getting zones should not be case sensitive.");
+		test.ok(tz.zone('case_insens_itive2'), "getting zones should not be case sensitive.");
+		test.ok(tz.zone('Case_Insens_itive2'), "getting zones should not be case sensitive.");
+		test.ok(tz.zone('case/insens/itive2'), "getting zones should not differentiate between _ and /.");
+
+		test.done();
 	}
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
