@@ -2,12 +2,10 @@
 
 var tz = require("../../").tz;
 
-// gE = 1000; 1E = 100; 2k = 140
-var PACKED = "SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k";
-
-exports.zone = {
+exports.add = {
 	adding : function (test) {
-		tz.add(PACKED);
+		// gE = 1000; 1E = 100; 2k = 140
+		tz.add("SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k");
 
 		var zone = tz.zone("SomeZone");
 
@@ -48,7 +46,8 @@ exports.zone = {
 
 		test.equal(tz.zone("SomeZone"), null, "If moment.tz._zones does not have an zone, tz.zone(name) should return null.");
 
-		tz.add(PACKED);
+		// gE = 1000; 1E = 100; 2k = 140
+		tz.add("SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k");
 
 		test.ok(tz.zone("SomeZone"), "Should be able to add and retrieve a zone.");
 		test.ok(tz._zones.somezone, "The cache should be updated when adding a zone.");
@@ -73,21 +72,3 @@ exports.zone = {
 		test.done();
 	}
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
