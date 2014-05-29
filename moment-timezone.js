@@ -10,11 +10,7 @@
 	var VERSION = "0.0.6";
 
 	function onload(moment) {
-		var oldZoneName = moment.fn.zoneName,
-			oldZoneAbbr = moment.fn.zoneAbbr,
-
-			zonesData = {},
-			zones = {},
+		var zones = {},
 			links = {};
 
 		if (moment.tz !== undefined) {
@@ -145,22 +141,22 @@
 			return (name || '').toLowerCase().replace(/\//g, '_');
 		}
 
-		function addZones (zones) {
-			var i;
-			for (i = 0; i < zones.length; i++) {
-				addZone(zones[i]);
+		function add (packed) {
+			var i, zoneString, name;
+
+			if (typeof packed === "string") {
+				packed = [packed];
+			}
+
+			for (i = 0; i < packed.length; i++) {
+				zoneString = packed[i];
+				name = normalizeName(zoneString.split('|')[0]);
+
+				zones[name] = new Zone(zoneString);
 			}
 		}
 
-		function addZone (zoneString) {
-			var parts = zoneString.split('|'),
-				name = normalizeName(parts[0]);
-
-			zones[name] = null;
-			zonesData[name] = zoneString;
-		}
-
-		function addLinks(data) {
+		function link (data) {
 			var i, link;
 			for (i = 0; i < data.length; i++) {
 				link = data[i].split('|');
@@ -169,21 +165,17 @@
 		}
 
 		function getZone (name) {
-			var machineName = normalizeName(name);
-			if (links[machineName]) {
-				machineName = links[machineName];
-			}
-			if (!zones[machineName] && zonesData[machineName]) {
-				zones[machineName] = new Zone(zonesData[machineName]);
-			}
-			return zones[machineName];
-		}
+			name = normalizeName(name);
 
-		function add (data) {
-			if (!data) {
-				return;
+			if (zones[name]) {
+				return zones[name];
 			}
-			addZones(data);
+
+			if (links[name] && zones[links[name]]) {
+				return zones[links[name]];
+			}
+
+			return null;
 		}
 
 		// overwrite moment.updateOffset
@@ -198,20 +190,9 @@
 			}
 		};
 
-		function getZones() {
-			var output = [],
-				zoneName;
+		var fn = moment.fn;
 
-			for (zoneName in zones) {
-				if (zones.hasOwnProperty(zoneName)) {
-					output.push(zones[zoneName]);
-				}
-			}
-
-			return output;
-		}
-
-		moment.fn.tz = function (name) {
+		fn.tz = function (name) {
 			if (name) {
 				this._z = getZone(name);
 				if (this._z) {
@@ -219,24 +200,18 @@
 				}
 				return this;
 			}
-			if (this._z) {
-				return this._z.name;
-			}
+			if (this._z) { return this._z.name; }
 		};
 
-		moment.fn.zoneName = function () {
-			if (this._z) {
-				return this._z.abbr(this);
-			}
-			return oldZoneName.call(this);
-		};
+		function abbrWrap (old) {
+			return function () {
+				if (this._z) { return this._z.abbr(this); }
+				return old.call(this);
+			};
+		}
 
-		moment.fn.zoneAbbr = function () {
-			if (this._z) {
-				return this._z.abbr(this);
-			}
-			return oldZoneAbbr.call(this);
-		};
+		fn.zoneName = abbrWrap(fn.zoneName);
+		fn.zoneAbbr = abbrWrap(fn.zoneAbbr);
 
 		// Make sure moment's clone includes the newly added properties
 		moment.momentProperties._z = null;
@@ -250,15 +225,17 @@
 			var preTzOffset = m.zone();
 			m.tz(arguments[len]);
 			return m.add('minutes', m.zone() - preTzOffset);
-		};
+		}
 
 		moment.tz = tz;
 
 		tz.version = VERSION;
 
+		tz._zones = zones;
+
 		tz.add = add;
-		tz.link = addLinks;
-		tz.zones = getZones;
+		tz.link = link;
+		tz.zone = getZone;
 
 		tz.unpack = unpack;
 		tz.unpackBase60 = unpackBase60;
