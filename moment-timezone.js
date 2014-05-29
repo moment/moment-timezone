@@ -149,17 +149,15 @@
 		}
 
 		function addZone (packed) {
-			var i, zoneString, name;
+			var i, zone;
 
 			if (typeof packed === "string") {
 				packed = [packed];
 			}
 
 			for (i = 0; i < packed.length; i++) {
-				zoneString = packed[i];
-				name = normalizeName(zoneString.split('|')[0]);
-
-				zones[name] = new Zone(zoneString);
+				zone = new Zone(packed[i]);
+				zones[normalizeName(zone.name)] = zone;
 			}
 		}
 
@@ -172,6 +170,18 @@
 			}
 
 			return zones[name] || null;
+		}
+
+		function getNames () {
+			var i, out = [];
+
+			for (i in zones) {
+				if (zones.hasOwnProperty(i) && zones[i]) {
+					out.push(zones[i].name);
+				}
+			}
+
+			return out.sort();
 		}
 
 		function addLink (aliases) {
@@ -209,6 +219,7 @@
 		tz.add          = addZone;
 		tz.link         = addLink;
 		tz.zone         = getZone;
+		tz.names        = getNames;
 		tz.Zone         = Zone;
 		tz.unpack       = unpack;
 		tz.unpackBase60 = unpackBase60;
