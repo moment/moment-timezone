@@ -87,7 +87,7 @@ function packAbbrsAndOffsets(source) {
 		if (map[key] === undefined) {
 			map[key] = index;
 			abbrs[index] = source.abbrs[i];
-			offsets[index] = packBase60(source.offsets[i], 1);
+			offsets[index] = packBase60(Math.round(source.offsets[i] * 60) / 60, 1);
 			index++;
 		}
 		indices[i] = packBase60(map[key], 0);

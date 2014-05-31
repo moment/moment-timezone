@@ -70,7 +70,7 @@
 
 		function intToUntil (array) {
 			for (var i = 0; i < array.length; i++) {
-				array[i] = (array[i - 1] || 0) + (array[i] * 60000); // minutes to milliseconds
+				array[i] = Math.round((array[i - 1] || 0) + (array[i] * 60000)); // minutes to milliseconds
 			}
 
 			array.push(Infinity);
