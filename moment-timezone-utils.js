@@ -67,7 +67,7 @@ function packUntils(untils) {
 		i;
 
 	for (i = 0; i < untils.length - 1; i++) {
-		out[i] = packBase60(Math.round((untils[i] - last) / 60000));
+		out[i] = packBase60(Math.round((untils[i] - last) / 1000) / 60, 1);
 		last = untils[i];
 	}
 

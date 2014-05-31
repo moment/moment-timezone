@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 
 				if (parts.length < 13) { return; }
 
-				offsets.push(Math.round(utc.diff(local, 'seconds', true)));
+				offsets.push(+utc.diff(local, 'minutes', true).toFixed(4));
 				untils.push(+utc);
 				abbrs.push(parts[13]);
 			});
