@@ -1,3 +1,0 @@
-[submodule "data/source"]
-	path = data/source
-	url = git://github.com/eggert/tz.git
