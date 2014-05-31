@@ -1,6 +1,6 @@
 "use strict";
 
-var helpers = require("../../../tests/helpers/helpers");
+var helpers = require("../../helpers/helpers");
 
 exports["Asia/Hong_Kong"] = {
 	"1904" : helpers.makeTestYear("Asia/Hong_Kong", [
