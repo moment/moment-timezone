@@ -4,12 +4,14 @@ var path = require('path'),
 	moment = require('moment');
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-collect', '4. Collect all data from zdump(8) into a single json file.', function () {
-		var files = grunt.file.expand({ filter : 'isFile', cwd : 'temp/zdump' }, '**/*.zdump'),
+	grunt.registerTask('data-collect', '4. Collect all data from zdump(8) into a single json file.', function (version) {
+		version = version || 'latest';
+
+		var files = grunt.file.expand({ filter : 'isFile', cwd : 'temp/zdump/' + version }, '**/*.zdump'),
 			data  = [];
 
 		files.forEach(function (file) {
-			var lines   = grunt.file.read(path.join('temp/zdump', file)).split('\n'),
+			var lines   = grunt.file.read(path.join('temp/zdump/' + version, file)).split('\n'),
 				abbrs   = [],
 				untils  = [],
 				offsets = [];
@@ -35,7 +37,7 @@ module.exports = function (grunt) {
 			});
 		});
 
-		grunt.file.mkdir('data/zdump');
-		grunt.file.write('data/zdump/latest.json', JSON.stringify(data, null, 2));
+		grunt.file.mkdir('temp/collect');
+		grunt.file.write('temp/collect/' + version + '.json', JSON.stringify(data, null, 2));
 	});
 };

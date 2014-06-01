@@ -25,11 +25,13 @@ function dedupe(zone) {
 }
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-dedupe', '5. Remove duplicate entries from data-collect.', function () {
-		var zones = grunt.file.readJSON('data/zdump/latest.json'),
+	grunt.registerTask('data-dedupe', '5. Remove duplicate entries from data-collect.', function (version) {
+		version = version || 'latest';
+
+		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
 			deduped = zones.map(dedupe);
 
 		grunt.file.mkdir('data/unpacked');
-		grunt.file.write('data/unpacked/latest.json', JSON.stringify(deduped, null, 2));
+		grunt.file.write('data/unpacked/' + version + '.json', JSON.stringify(deduped, null, 2));
 	});
 };

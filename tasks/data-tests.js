@@ -44,7 +44,7 @@ function intro (name) {
 
 module.exports = function (grunt) {
 	grunt.registerTask('data-tests', '7. Create unit tests from data-collect.', function () {
-		var zones = grunt.file.readJSON('data/zdump/latest.json');
+		var zones = grunt.file.readJSON('temp/collect/latest.json');
 
 		zones.forEach(function (zone) {
 			var data = intro(zone.name) + tests(zone) + '\n};',
