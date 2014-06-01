@@ -13,7 +13,10 @@ module.exports = function (grunt) {
 			files     = grunt.file.expand({ filter : 'isFile', cwd : 'temp/zic/' + version }, '**/*');
 
 		function next () {
-			if (!files.length) { done(); return; }
+			if (!files.length) {
+				grunt.log.ok('Dumped data for ' + version);
+				return done();
+			}
 
 			var file = files.pop(),
 				src  = path.join(zicBase, file),
@@ -24,6 +27,8 @@ module.exports = function (grunt) {
 
 				grunt.file.mkdir(path.dirname(dest));
 				grunt.file.write(dest + '.zdump', stdout.replace(new RegExp(zicBase + '/', 'g'), ''));
+
+				grunt.verbose.ok('Dumped data for ' + version + ':' + file);
 
 				next();
 			});

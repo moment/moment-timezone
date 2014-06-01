@@ -12,13 +12,14 @@ module.exports = function (grunt) {
 			curl  = path.resolve('temp/curl', version, 'data.tar.gz'),
 			dest  = path.resolve('temp/download', version);
 
-		console.log(version, dest);
-
 		grunt.file.mkdir(path.dirname(curl));
 		grunt.file.mkdir(dest);
 
 		exec('curl ' + src + ' -o ' + curl + ' && cd ' + dest + ' && gzip -dc ' + curl + ' | tar -xf -', function (err) {
 			if (err) { throw err; }
+
+			grunt.log.ok('Downloaded ' + src);
+
 			done();
 		});
 	});

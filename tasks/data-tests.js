@@ -52,9 +52,11 @@ module.exports = function (grunt) {
 
 			grunt.file.mkdir(path.dirname(dest));
 			grunt.file.write(dest, data);
-			grunt.log.ok("Created " + zone.name + " tests.");
+			grunt.verbose.ok("Created " + zone.name + " tests.");
 		});
 
+
+		grunt.log.ok('Created tests');
 	});
 };
 

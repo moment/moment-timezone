@@ -13,5 +13,7 @@ module.exports = function (grunt) {
 
 		grunt.file.mkdir('data/packed');
 		grunt.file.write('data/packed/' + version + '.json', JSON.stringify(packed, null, '\t'));
+
+		grunt.log.ok('Packed data for ' + version);
 	});
 };

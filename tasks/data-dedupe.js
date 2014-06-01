@@ -33,5 +33,7 @@ module.exports = function (grunt) {
 
 		grunt.file.mkdir('data/unpacked');
 		grunt.file.write('data/unpacked/' + version + '.json', JSON.stringify(deduped, null, 2));
+
+		grunt.log.ok('Deduped data for ' + version);
 	});
 };
