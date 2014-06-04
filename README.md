@@ -1,51 +1,25 @@
-moment-timezone
-===============
+# [Moment Timezone](http://momentjs.com/timezone)
 
 [![Build Status](https://travis-ci.org/moment/moment-timezone.png)](https://travis-ci.org/moment/moment-timezone)
 
-Timezone information for moment.js.
+IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
-## After cloning repo
+```js
+var june = moment("2014-06-01T12:00:00Z");
+june.tz('America/Los_Angeles').format('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
 
-```
-git submodule update --init
-```
-
-## Updating timezone info
-
-```
-git submodule update
-
-sudo zic tz/africa
-sudo zic tz/antarctica
-sudo zic tz/asia
-sudo zic tz/australasia
-sudo zic tz/europe
-sudo zic tz/northamerica
-sudo zic tz/southamerica
-
-grunt zdump
-grunt zones
-
-grunt test
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
+dec.tz('Asia/Tokyo').format('ha z');           // 9pm JST
+dec.tz('Australia/Sydney').format('ha z');     // 11pm EST
 ```
 
-## changelog
+#### [Contribute code or compile time zone data](contributing.md)
 
-### 0.0.6
-* fix double loading issue introduced in 0.0.5
+#### [Read the changelog](changelog.md)
 
-### 0.0.5
-* [#39](https://github.com/moment/moment-timezone/issues/39) improve performance with memoize
-* [#46](https://github.com/moment/moment-timezone/issues/46) publish only necessary files to npm
-* [#53](https://github.com/moment/moment-timezone/issues/53), [#61](https://github.com/moment/moment-timezone/issues/61), [#70](https://github.com/moment/moment-timezone/issues/70), better handling of timezones around DST
-* [#41](https://github.com/moment/moment-timezone/issues/41) support browserify
-* [#71](https://github.com/moment/moment-timezone/issues/71) fix cloning zone-d moments
-* [#73](https://github.com/moment/moment-timezone/issues/73) add moment.tz.zoneExists method
-* [#74](https://github.com/moment/moment-timezone/issues/74) prevent double loading
-
-### 0.0.3
-* added bower support
-* support newer versions of moment
-* construction with string and zone respects zone
-* added more links and timezone names in moment-timezone.json
+#### [MIT Licence](LICENSE)
