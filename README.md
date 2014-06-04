@@ -1,6 +1,4 @@
-# [Moment Timezone](http://momentjs.com/timezone)
-
-[![Build Status](https://travis-ci.org/moment/moment-timezone.png)](https://travis-ci.org/moment/moment-timezone)
+# [Moment Timezone](http://momentjs.com/timezone) [![Build Status](https://travis-ci.org/moment/moment-timezone.png)](https://travis-ci.org/moment/moment-timezone)
 
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
