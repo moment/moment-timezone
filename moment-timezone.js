@@ -276,5 +276,7 @@
 		module.exports = onload(require('moment'));
 	} else if (typeof window !== "undefined" && window.moment) {
 		onload(window.moment);
+	} else {
+		onload(moment);
 	}
 }).apply(this);
