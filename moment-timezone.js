@@ -272,7 +272,7 @@
 
 	if (typeof define === "function" && define.amd) {
 		define("moment-timezone", ["moment"], onload);
-	} else if (typeof module !== 'undefined') {
+	} else if (typeof module !== 'undefined' && typeof module.exports !== 'undefined' && typeof require === 'function') {
 		module.exports = onload(require('moment'));
 	} else if (typeof window !== "undefined" && window.moment) {
 		onload(window.moment);
