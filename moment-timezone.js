@@ -139,6 +139,19 @@
 			}
 		},
 
+		parse : function (timestamp) {
+			var target  = +timestamp,
+				offsets = this.offsets,
+				untils  = this.untils,
+				i;
+
+			for (i = 0; i < untils.length; i++) {
+				if (target < untils[i] - (offsets[i] * 60000)) {
+					return offsets[i];
+				}
+			}
+		},
+
 		abbr : function (mom) {
 			return this.abbrs[this._index(mom)];
 		},
@@ -206,19 +219,27 @@
 		}
 	}
 
+	function needsOffset (m) {
+		return !!(m._a && (m._tzm === undefined));
+	}
+
 	/************************************
 		moment.tz namespace
 	************************************/
 
 	function tz () {
-		var args = [], i, len = arguments.length - 1;
-		for (i = 0; i < len; i++) {
-			args[i] = arguments[i];
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone && needsOffset(out)) {
+			out.add('minutes', zone.parse(out));
 		}
-		var m = moment.apply(null, args);
-		var preTzOffset = m.zone();
-		m.tz(arguments[len]);
-		return m.add('minutes', m.zone() - preTzOffset);
+
+		out.tz(name);
+
+		return out;
 	}
 
 	tz.version      = VERSION;
@@ -231,6 +252,7 @@
 	tz.Zone         = Zone;
 	tz.unpack       = unpack;
 	tz.unpackBase60 = unpackBase60;
+	tz.needsOffset  = needsOffset;
 
 	/************************************
 		Interface with Moment.js
