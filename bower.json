@@ -1,7 +1,7 @@
 {
   "name": "moment-timezone",
   "version": "0.0.6",
-  "main": "index.js",
+  "main": "moment-timezone.js",
   "ignore": [
     "**/.*",
     "node_modules",
