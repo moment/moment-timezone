@@ -1,6 +1,6 @@
 "use strict";
 
-var tz = require("../../moment-timezone-utils");
+var tz = require("../../moment-timezone-utils").tz;
 
 function compare(test, source, expected) {
 	test.equal(tz.pack(source), expected, 'should be able to pack data');
