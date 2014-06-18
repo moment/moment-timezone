@@ -206,6 +206,16 @@
 		}
 	}
 
+	function zoneExists (name) {
+		if (!zoneExists.didShowError) {
+			zoneExists.didShowError = true;
+			if (typeof console !== 'undefined' && typeof console.error === 'function') {
+				console.error("moment.tz.zoneExists('" + name + "') has been deprecated in favor of !moment.tz.zone('" + name + "')");
+			}
+		}
+		return !!getZone(name);
+	}
+
 	/************************************
 		moment.tz namespace
 	************************************/
@@ -227,6 +237,7 @@
 	tz.add          = addZone;
 	tz.link         = addLink;
 	tz.zone         = getZone;
+	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
 	tz.names        = getNames;
 	tz.Zone         = Zone;
 	tz.unpack       = unpack;
