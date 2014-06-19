@@ -136,11 +136,69 @@
 	}
 
 	/************************************
+		Create Links
+	************************************/
+
+	function arraysAreEqual(a, b) {
+		var i;
+
+		if (a.length !== b.length) { return false; }
+
+		for (i = 0; i < a.length; i++) {
+			if (a[i] !== b[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	function zonesAreEqual(a, b) {
+		return arraysAreEqual(a.offsets, b.offsets) && arraysAreEqual(a.abbrs, b.abbrs) && arraysAreEqual(a.untils, b.untils);
+	}
+
+	function findAndCreateLinks (input, output, links) {
+		var i, j, a, b, isUnique;
+
+		for (i = 0; i < input.length; i++) {
+			isUnique = true;
+			a = input[i];
+
+			for (j = 0; j < output.length; j++) {
+				b = output[j];
+
+				if (zonesAreEqual(a, b)) {
+					links.push(b.name + '|' + a.name);
+					isUnique = false;
+					continue;
+				}
+			}
+
+			if (isUnique) {
+				output.push(a);
+			}
+		}
+	}
+
+	function createLinks (source) {
+		var zones = [],
+			links = source.links.slice();
+
+		findAndCreateLinks(source.zones, zones, links);
+
+		return {
+			zones   : zones,
+			links   : links,
+			version : source.version
+		};
+	}
+
+	/************************************
 		Exports
 	************************************/
 
-	moment.tz.pack       = pack;
-	moment.tz.packBase60 = packBase60;
+	moment.tz.pack        = pack;
+	moment.tz.packBase60  = packBase60;
+	moment.tz.createLinks = createLinks;
 
 	return moment;
 }));
