@@ -12,7 +12,8 @@ module.exports = function (grunt) {
 			'data-zdump:'    + version,
 			'data-collect:'  + version,
 			'data-dedupe:'   + version,
-			'data-pack:'     + version
+			'data-pack:'     + version,
+			'data-meta:'     + version
 		]);
 
 		if (version === 'latest') {
