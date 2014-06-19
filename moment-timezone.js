@@ -76,12 +76,12 @@
 		}
 	}
 
-	function intToUntil (array) {
-		for (var i = 0; i < array.length; i++) {
+	function intToUntil (array, length) {
+		for (var i = 0; i < length; i++) {
 			array[i] = Math.round((array[i - 1] || 0) + (array[i] * 60000)); // minutes to milliseconds
 		}
 
-		array.push(Infinity);
+		array[length - 1] = Infinity;
 	}
 
 	function mapIndices (source, indices) {
@@ -104,7 +104,7 @@
 		arrayToInt(indices);
 		arrayToInt(untils);
 
-		intToUntil(untils);
+		intToUntil(untils, indices.length);
 
 		return {
 			name    : data[0],
@@ -310,8 +310,16 @@
 		};
 	}
 
+	function resetZoneWrap (old) {
+		return function () {
+			this._z = null;
+			return old.call(this);
+		};
+	}
+
 	fn.zoneName = abbrWrap(fn.zoneName);
 	fn.zoneAbbr = abbrWrap(fn.zoneAbbr);
+	fn.utc      = resetZoneWrap(fn.utc);
 
 	// Cloning a moment should include the _z property.
 	moment.momentProperties._z = null;
