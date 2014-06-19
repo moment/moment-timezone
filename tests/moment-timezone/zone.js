@@ -100,5 +100,33 @@ exports.zone = {
 		}
 
 		test.done();
+	},
+
+	parse : function (test) {
+		var zone = new tz.Zone(PACKED),
+			tests = [
+				[( 999 - 360.5) * 60000, 360.5],
+				[(1000 - 360.5) * 60000, 300],
+
+				[(1099 - 300)   * 60000, 300],
+				[(1100 - 300)   * 60000, 360],
+
+				[(1239 - 360)   * 60000, 360],
+				[(1240 - 360)   * 60000, 300],
+
+				[(1339 - 300)   * 60000, 300],
+				[(1340 - 300)   * 60000, 360.5],
+
+				[(1479 - 360.5) * 60000, 360.5],
+				[(1480 - 360.5) * 60000, 300]
+			], i, source, expected;
+
+		for (i = 0; i < tests.length; i++) {
+			source = tests[i][0];
+			expected = tests[i][1];
+			test.equal(zone.parse(source), expected, "The parse for " + source + " should be " + expected);
+		}
+
+		test.done();
 	}
 };
