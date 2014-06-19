@@ -217,6 +217,9 @@
 		}
 
 		for (i = 0; i < untils.length; i++) {
+			if (untils[i] == null) {
+				continue;
+			}
 			untilYear = new Date(untils[i]).getUTCFullYear();
 			if (untilYear < start) {
 				startI = i + 1;
@@ -231,12 +234,15 @@
 
 	function filterYears (source, start, end) {
 		var slice     = Array.prototype.slice,
-			indices   = findStartAndEndIndex(source.untils, start, end);
+			indices   = findStartAndEndIndex(source.untils, start, end),
+			untils    = slice.apply(source.untils, indices);
+
+		untils[untils.length - 1] = null;
 
 		return {
 			name    : source.name,
 			abbrs   : slice.apply(source.abbrs, indices),
-			untils  : slice.call(source.untils, indices[0], indices[1] - 1),
+			untils  : untils,
 			offsets : slice.apply(source.offsets, indices)
 		};
 	}
