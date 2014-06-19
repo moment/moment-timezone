@@ -197,12 +197,58 @@
 	}
 
 	/************************************
+		Filter Years
+	************************************/
+
+	function findStartAndEndIndex (untils, start, end) {
+		var startI = 0,
+			endI = untils.length + 1,
+			untilYear,
+			i;
+
+		if (!end) {
+			end = start;
+		}
+
+		if (start > end) {
+			i = start;
+			start = end;
+			end = i;
+		}
+
+		for (i = 0; i < untils.length; i++) {
+			untilYear = new Date(untils[i]).getUTCFullYear();
+			if (untilYear < start) {
+				startI = i + 1;
+			}
+			if (untilYear > end) {
+				endI = Math.min(endI, i + 1);
+			}
+		}
+
+		return [startI, endI];
+	}
+
+	function filterYears (source, start, end) {
+		var slice     = Array.prototype.slice,
+			indices   = findStartAndEndIndex(source.untils, start, end);
+
+		return {
+			name    : source.name,
+			abbrs   : slice.apply(source.abbrs, indices),
+			untils  : slice.call(source.untils, indices[0], indices[1] - 1),
+			offsets : slice.apply(source.offsets, indices)
+		};
+	}
+
+	/************************************
 		Exports
 	************************************/
 
 	moment.tz.pack        = pack;
 	moment.tz.packBase60  = packBase60;
 	moment.tz.createLinks = createLinks;
+	moment.tz.filterYears = filterYears;
 
 	return moment;
 }));
