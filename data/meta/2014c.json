@@ -60,154 +60,154 @@
 		"lat": -76.1667,
 		"long": 166.6,
 		"country": "AQ",
-		"comments": "McMurdo,"
+		"comments": "McMurdo, South Pole, Scott (New Zealand time)"
 	},
 	{
 		"name": "Antarctica/Rothera",
 		"lat": -66.4333,
 		"long": -67.8667,
 		"country": "AQ",
-		"comments": "Rothera"
+		"comments": "Rothera Station, Adelaide Island"
 	},
 	{
 		"name": "Antarctica/Palmer",
 		"lat": -63.2,
 		"long": -63.9,
 		"country": "AQ",
-		"comments": "Palmer"
+		"comments": "Palmer Station, Anvers Island"
 	},
 	{
 		"name": "Antarctica/Mawson",
 		"lat": -66.4,
 		"long": 62.8833,
 		"country": "AQ",
-		"comments": "Mawson"
+		"comments": "Mawson Station, Holme Bay"
 	},
 	{
 		"name": "Antarctica/Davis",
 		"lat": -67.4167,
 		"long": 77.9667,
 		"country": "AQ",
-		"comments": "Davis"
+		"comments": "Davis Station, Vestfold Hills"
 	},
 	{
 		"name": "Antarctica/Casey",
 		"lat": -65.7167,
 		"long": 110.5167,
 		"country": "AQ",
-		"comments": "Casey"
+		"comments": "Casey Station, Bailey Peninsula"
 	},
 	{
 		"name": "Antarctica/Vostok",
 		"lat": -77.6,
 		"long": 106.9,
 		"country": "AQ",
-		"comments": "Vostok"
+		"comments": "Vostok Station, Lake Vostok"
 	},
 	{
 		"name": "Antarctica/DumontDUrville",
 		"lat": -65.3333,
 		"long": 140.0167,
 		"country": "AQ",
-		"comments": "Dumont-d'Urville"
+		"comments": "Dumont-d'Urville Station, Terre Adelie"
 	},
 	{
 		"name": "Antarctica/Syowa",
 		"lat": -68.9939,
 		"long": 39.59,
 		"country": "AQ",
-		"comments": "Syowa"
+		"comments": "Syowa Station, E Ongul I"
 	},
 	{
 		"name": "Antarctica/Troll",
 		"lat": -71.9886,
 		"long": 2.535,
 		"country": "AQ",
-		"comments": "Troll"
+		"comments": "Troll Station, Queen Maud Land"
 	},
 	{
 		"name": "America/Argentina/Buenos_Aires",
 		"lat": -33.4,
 		"long": -57.55,
 		"country": "AR",
-		"comments": "Buenos"
+		"comments": "Buenos Aires (BA, CF)"
 	},
 	{
 		"name": "America/Argentina/Cordoba",
 		"lat": -30.6,
 		"long": -63.8167,
 		"country": "AR",
-		"comments": "most"
+		"comments": "most locations (CB, CC, CN, ER, FM, MN, SE, SF)"
 	},
 	{
 		"name": "America/Argentina/Salta",
 		"lat": -23.2167,
 		"long": -64.5833,
 		"country": "AR",
-		"comments": "(SA,"
+		"comments": "(SA, LP, NQ, RN)"
 	},
 	{
 		"name": "America/Argentina/Jujuy",
 		"lat": -23.8167,
 		"long": -64.7,
 		"country": "AR",
-		"comments": "Jujuy"
+		"comments": "Jujuy (JY)"
 	},
 	{
 		"name": "America/Argentina/Tucuman",
 		"lat": -25.1833,
 		"long": -64.7833,
 		"country": "AR",
-		"comments": "Tucuman"
+		"comments": "Tucuman (TM)"
 	},
 	{
 		"name": "America/Argentina/Catamarca",
 		"lat": -27.5333,
 		"long": -64.2167,
 		"country": "AR",
-		"comments": "Catamarca"
+		"comments": "Catamarca (CT), Chubut (CH)"
 	},
 	{
 		"name": "America/Argentina/La_Rioja",
 		"lat": -28.5667,
 		"long": -65.15,
 		"country": "AR",
-		"comments": "La"
+		"comments": "La Rioja (LR)"
 	},
 	{
 		"name": "America/Argentina/San_Juan",
 		"lat": -30.4667,
 		"long": -67.4833,
 		"country": "AR",
-		"comments": "San"
+		"comments": "San Juan (SJ)"
 	},
 	{
 		"name": "America/Argentina/Mendoza",
 		"lat": -31.1167,
 		"long": -67.1833,
 		"country": "AR",
-		"comments": "Mendoza"
+		"comments": "Mendoza (MZ)"
 	},
 	{
 		"name": "America/Argentina/San_Luis",
 		"lat": -32.6833,
 		"long": -65.65,
 		"country": "AR",
-		"comments": "San"
+		"comments": "San Luis (SL)"
 	},
 	{
 		"name": "America/Argentina/Rio_Gallegos",
 		"lat": -50.3667,
 		"long": -68.7833,
 		"country": "AR",
-		"comments": "Santa"
+		"comments": "Santa Cruz (SC)"
 	},
 	{
 		"name": "America/Argentina/Ushuaia",
 		"lat": -53.2,
 		"long": -67.7,
 		"country": "AR",
-		"comments": "Tierra"
+		"comments": "Tierra del Fuego (TF)"
 	},
 	{
 		"name": "Pacific/Pago_Pago",
@@ -228,28 +228,28 @@
 		"lat": -30.45,
 		"long": 159.0833,
 		"country": "AU",
-		"comments": "Lord"
+		"comments": "Lord Howe Island"
 	},
 	{
 		"name": "Antarctica/Macquarie",
 		"lat": -53.5,
 		"long": 158.95,
 		"country": "AU",
-		"comments": "Macquarie"
+		"comments": "Macquarie Island"
 	},
 	{
 		"name": "Australia/Hobart",
 		"lat": -41.1167,
 		"long": 147.3167,
 		"country": "AU",
-		"comments": "Tasmania"
+		"comments": "Tasmania - most locations"
 	},
 	{
 		"name": "Australia/Currie",
 		"lat": -38.0667,
 		"long": 143.8667,
 		"country": "AU",
-		"comments": "Tasmania"
+		"comments": "Tasmania - King Island"
 	},
 	{
 		"name": "Australia/Melbourne",
@@ -263,56 +263,56 @@
 		"lat": -32.1333,
 		"long": 151.2167,
 		"country": "AU",
-		"comments": "New"
+		"comments": "New South Wales - most locations"
 	},
 	{
 		"name": "Australia/Broken_Hill",
 		"lat": -30.05,
 		"long": 141.45,
 		"country": "AU",
-		"comments": "New"
+		"comments": "New South Wales - Yancowinna"
 	},
 	{
 		"name": "Australia/Brisbane",
 		"lat": -26.5333,
 		"long": 153.0333,
 		"country": "AU",
-		"comments": "Queensland"
+		"comments": "Queensland - most locations"
 	},
 	{
 		"name": "Australia/Lindeman",
 		"lat": -19.7333,
 		"long": 149,
 		"country": "AU",
-		"comments": "Queensland"
+		"comments": "Queensland - Holiday Islands"
 	},
 	{
 		"name": "Australia/Adelaide",
 		"lat": -33.0833,
 		"long": 138.5833,
 		"country": "AU",
-		"comments": "South"
+		"comments": "South Australia"
 	},
 	{
 		"name": "Australia/Darwin",
 		"lat": -11.5333,
 		"long": 130.8333,
 		"country": "AU",
-		"comments": "Northern"
+		"comments": "Northern Territory"
 	},
 	{
 		"name": "Australia/Perth",
 		"lat": -30.05,
 		"long": 115.85,
 		"country": "AU",
-		"comments": "Western"
+		"comments": "Western Australia - most locations"
 	},
 	{
 		"name": "Australia/Eucla",
 		"lat": -30.2833,
 		"long": 128.8667,
 		"country": "AU",
-		"comments": "Western"
+		"comments": "Western Australia - Eucla area"
 	},
 	{
 		"name": "America/Aruba",
@@ -438,21 +438,21 @@
 		"lat": -2.15,
 		"long": -31.5833,
 		"country": "BR",
-		"comments": "Atlantic"
+		"comments": "Atlantic islands"
 	},
 	{
 		"name": "America/Belem",
 		"lat": -0.55,
 		"long": -47.5167,
 		"country": "BR",
-		"comments": "Amapa,"
+		"comments": "Amapa, E Para"
 	},
 	{
 		"name": "America/Fortaleza",
 		"lat": -2.2833,
 		"long": -37.5,
 		"country": "BR",
-		"comments": "NE"
+		"comments": "NE Brazil (MA, PI, CE, RN, PB)"
 	},
 	{
 		"name": "America/Recife",
@@ -473,7 +473,7 @@
 		"lat": -8.3333,
 		"long": -34.2833,
 		"country": "BR",
-		"comments": "Alagoas,"
+		"comments": "Alagoas, Sergipe"
 	},
 	{
 		"name": "America/Bahia",
@@ -487,28 +487,28 @@
 		"lat": -22.4667,
 		"long": -45.3833,
 		"country": "BR",
-		"comments": "S"
+		"comments": "S & SE Brazil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 	},
 	{
 		"name": "America/Campo_Grande",
 		"lat": -19.55,
 		"long": -53.3833,
 		"country": "BR",
-		"comments": "Mato"
+		"comments": "Mato Grosso do Sul"
 	},
 	{
 		"name": "America/Cuiaba",
 		"lat": -14.4167,
 		"long": -55.9167,
 		"country": "BR",
-		"comments": "Mato"
+		"comments": "Mato Grosso"
 	},
 	{
 		"name": "America/Santarem",
 		"lat": -1.5667,
 		"long": -53.1333,
 		"country": "BR",
-		"comments": "W"
+		"comments": "W Para"
 	},
 	{
 		"name": "America/Porto_Velho",
@@ -529,14 +529,14 @@
 		"lat": -2.8667,
 		"long": -59.9833,
 		"country": "BR",
-		"comments": "E"
+		"comments": "E Amazonas"
 	},
 	{
 		"name": "America/Eirunepe",
 		"lat": -5.3333,
 		"long": -68.1333,
 		"country": "BR",
-		"comments": "W"
+		"comments": "W Amazonas"
 	},
 	{
 		"name": "America/Rio_Branco",
@@ -585,189 +585,189 @@
 		"lat": 47.5667,
 		"long": -51.2833,
 		"country": "CA",
-		"comments": "Newfoundland"
+		"comments": "Newfoundland Time, including SE Labrador"
 	},
 	{
 		"name": "America/Halifax",
 		"lat": 44.65,
 		"long": -62.4,
 		"country": "CA",
-		"comments": "Atlantic"
+		"comments": "Atlantic Time - Nova Scotia (most places), PEI"
 	},
 	{
 		"name": "America/Glace_Bay",
 		"lat": 46.2,
 		"long": -58.05,
 		"country": "CA",
-		"comments": "Atlantic"
+		"comments": "Atlantic Time - Nova Scotia - places that did not observe DST 1966-1971"
 	},
 	{
 		"name": "America/Moncton",
 		"lat": 46.1,
 		"long": -63.2167,
 		"country": "CA",
-		"comments": "Atlantic"
+		"comments": "Atlantic Time - New Brunswick"
 	},
 	{
 		"name": "America/Goose_Bay",
 		"lat": 53.3333,
 		"long": -59.5833,
 		"country": "CA",
-		"comments": "Atlantic"
+		"comments": "Atlantic Time - Labrador - most locations"
 	},
 	{
 		"name": "America/Blanc-Sablon",
 		"lat": 51.4167,
 		"long": -56.8833,
 		"country": "CA",
-		"comments": "Atlantic"
+		"comments": "Atlantic Standard Time - Quebec - Lower North Shore"
 	},
 	{
 		"name": "America/Toronto",
 		"lat": 43.65,
 		"long": -78.6167,
 		"country": "CA",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Ontario & Quebec - most locations"
 	},
 	{
 		"name": "America/Nipigon",
 		"lat": 49.0167,
 		"long": -87.7333,
 		"country": "CA",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Ontario & Quebec - places that did not observe DST 1967-1973"
 	},
 	{
 		"name": "America/Thunder_Bay",
 		"lat": 48.3833,
 		"long": -88.75,
 		"country": "CA",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Thunder Bay, Ontario"
 	},
 	{
 		"name": "America/Iqaluit",
 		"lat": 63.7333,
 		"long": -67.5333,
 		"country": "CA",
-		"comments": "Eastern"
+		"comments": "Eastern Time - east Nunavut - most locations"
 	},
 	{
 		"name": "America/Pangnirtung",
 		"lat": 66.1333,
 		"long": -64.2667,
 		"country": "CA",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Pangnirtung, Nunavut"
 	},
 	{
 		"name": "America/Resolute",
 		"lat": 74.6956,
 		"long": -93.1708,
 		"country": "CA",
-		"comments": "Central"
+		"comments": "Central Standard Time - Resolute, Nunavut"
 	},
 	{
 		"name": "America/Atikokan",
 		"lat": 48.7586,
 		"long": -90.3783,
 		"country": "CA",
-		"comments": "Eastern"
+		"comments": "Eastern Standard Time - Atikokan, Ontario and Southampton I, Nunavut"
 	},
 	{
 		"name": "America/Rankin_Inlet",
 		"lat": 62.8167,
 		"long": -91.9169,
 		"country": "CA",
-		"comments": "Central"
+		"comments": "Central Time - central Nunavut"
 	},
 	{
 		"name": "America/Winnipeg",
 		"lat": 49.8833,
 		"long": -96.85,
 		"country": "CA",
-		"comments": "Central"
+		"comments": "Central Time - Manitoba & west Ontario"
 	},
 	{
 		"name": "America/Rainy_River",
 		"lat": 48.7167,
 		"long": -93.4333,
 		"country": "CA",
-		"comments": "Central"
+		"comments": "Central Time - Rainy River & Fort Frances, Ontario"
 	},
 	{
 		"name": "America/Regina",
 		"lat": 50.4,
 		"long": -103.35,
 		"country": "CA",
-		"comments": "Central"
+		"comments": "Central Standard Time - Saskatchewan - most locations"
 	},
 	{
 		"name": "America/Swift_Current",
 		"lat": 50.2833,
 		"long": -106.1667,
 		"country": "CA",
-		"comments": "Central"
+		"comments": "Central Standard Time - Saskatchewan - midwest"
 	},
 	{
 		"name": "America/Edmonton",
 		"lat": 53.55,
 		"long": -112.5333,
 		"country": "CA",
-		"comments": "Mountain"
+		"comments": "Mountain Time - Alberta, east British Columbia & west Saskatchewan"
 	},
 	{
 		"name": "America/Cambridge_Bay",
 		"lat": 69.1139,
 		"long": -104.9472,
 		"country": "CA",
-		"comments": "Mountain"
+		"comments": "Mountain Time - west Nunavut"
 	},
 	{
 		"name": "America/Yellowknife",
 		"lat": 62.45,
 		"long": -113.65,
 		"country": "CA",
-		"comments": "Mountain"
+		"comments": "Mountain Time - central Northwest Territories"
 	},
 	{
 		"name": "America/Inuvik",
 		"lat": 68.3497,
 		"long": -132.2833,
 		"country": "CA",
-		"comments": "Mountain"
+		"comments": "Mountain Time - west Northwest Territories"
 	},
 	{
 		"name": "America/Creston",
 		"lat": 49.1,
 		"long": -115.4833,
 		"country": "CA",
-		"comments": "Mountain"
+		"comments": "Mountain Standard Time - Creston, British Columbia"
 	},
 	{
 		"name": "America/Dawson_Creek",
 		"lat": 59.7667,
 		"long": -119.7667,
 		"country": "CA",
-		"comments": "Mountain"
+		"comments": "Mountain Standard Time - Dawson Creek & Fort Saint John, British Columbia"
 	},
 	{
 		"name": "America/Vancouver",
 		"lat": 49.2667,
 		"long": -122.8833,
 		"country": "CA",
-		"comments": "Pacific"
+		"comments": "Pacific Time - west British Columbia"
 	},
 	{
 		"name": "America/Whitehorse",
 		"lat": 60.7167,
 		"long": -134.95,
 		"country": "CA",
-		"comments": "Pacific"
+		"comments": "Pacific Time - south Yukon"
 	},
 	{
 		"name": "America/Dawson",
 		"lat": 64.0667,
 		"long": -138.5833,
 		"country": "CA",
-		"comments": "Pacific"
+		"comments": "Pacific Time - north Yukon"
 	},
 	{
 		"name": "Indian/Cocos",
@@ -781,14 +781,14 @@
 		"lat": -3.7,
 		"long": 15.3,
 		"country": "CD",
-		"comments": "west"
+		"comments": "west Dem. Rep. of Congo"
 	},
 	{
 		"name": "Africa/Lubumbashi",
 		"lat": -10.3333,
 		"long": 27.4667,
 		"country": "CD",
-		"comments": "east"
+		"comments": "east Dem. Rep. of Congo"
 	},
 	{
 		"name": "Africa/Bangui",
@@ -830,14 +830,14 @@
 		"lat": -32.55,
 		"long": -69.3333,
 		"country": "CL",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "Pacific/Easter",
 		"lat": -26.85,
 		"long": -108.5667,
 		"country": "CL",
-		"comments": "Easter"
+		"comments": "Easter Island & Sala y Gomez"
 	},
 	{
 		"name": "Africa/Douala",
@@ -851,35 +851,35 @@
 		"lat": 31.2333,
 		"long": 121.4667,
 		"country": "CN",
-		"comments": "east"
+		"comments": "east China - Beijing, Guangdong, Shanghai, etc."
 	},
 	{
 		"name": "Asia/Harbin",
 		"lat": 45.75,
 		"long": 126.6833,
 		"country": "CN",
-		"comments": "Heilongjiang"
+		"comments": "Heilongjiang (except Mohe), Jilin"
 	},
 	{
 		"name": "Asia/Chongqing",
 		"lat": 29.5667,
 		"long": 106.5833,
 		"country": "CN",
-		"comments": "central"
+		"comments": "central China - Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou, etc."
 	},
 	{
 		"name": "Asia/Urumqi",
 		"lat": 43.8,
 		"long": 87.5833,
 		"country": "CN",
-		"comments": "most"
+		"comments": "most of Tibet & Xinjiang"
 	},
 	{
 		"name": "Asia/Kashgar",
 		"lat": 39.4833,
 		"long": 75.9833,
 		"country": "CN",
-		"comments": "west"
+		"comments": "west Tibet & Xinjiang"
 	},
 	{
 		"name": "America/Bogota",
@@ -942,7 +942,7 @@
 		"lat": 52.5,
 		"long": 13.3667,
 		"country": "DE",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "Europe/Busingen",
@@ -998,7 +998,7 @@
 		"lat": 0.9,
 		"long": -88.4,
 		"country": "EC",
-		"comments": "Galapagos"
+		"comments": "Galapagos Islands"
 	},
 	{
 		"name": "Europe/Tallinn",
@@ -1040,14 +1040,14 @@
 		"lat": 35.8833,
 		"long": -4.6833,
 		"country": "ES",
-		"comments": "Ceuta"
+		"comments": "Ceuta & Melilla"
 	},
 	{
 		"name": "Atlantic/Canary",
 		"lat": 28.1,
 		"long": -14.6,
 		"country": "ES",
-		"comments": "Canary"
+		"comments": "Canary Islands"
 	},
 	{
 		"name": "Africa/Addis_Ababa",
@@ -1082,14 +1082,14 @@
 		"lat": 7.4167,
 		"long": 151.7833,
 		"country": "FM",
-		"comments": "Chuuk"
+		"comments": "Chuuk (Truk) and Yap"
 	},
 	{
 		"name": "Pacific/Pohnpei",
 		"lat": 6.9667,
 		"long": 158.2167,
 		"country": "FM",
-		"comments": "Pohnpei"
+		"comments": "Pohnpei (Ponape)"
 	},
 	{
 		"name": "Pacific/Kosrae",
@@ -1173,28 +1173,28 @@
 		"lat": 64.1833,
 		"long": -50.2667,
 		"country": "GL",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "America/Danmarkshavn",
 		"lat": 76.7667,
 		"long": -17.3333,
 		"country": "GL",
-		"comments": "east"
+		"comments": "east coast, north of Scoresbysund"
 	},
 	{
 		"name": "America/Scoresbysund",
 		"lat": 70.4833,
 		"long": -20.0333,
 		"country": "GL",
-		"comments": "Scoresbysund"
+		"comments": "Scoresbysund / Ittoqqortoormiit"
 	},
 	{
 		"name": "America/Thule",
 		"lat": 76.5667,
 		"long": -67.2167,
 		"country": "GL",
-		"comments": "Thule"
+		"comments": "Thule / Pituffik"
 	},
 	{
 		"name": "Africa/Banjul",
@@ -1306,28 +1306,28 @@
 		"lat": -5.8333,
 		"long": 106.8,
 		"country": "ID",
-		"comments": "Java"
+		"comments": "Java & Sumatra"
 	},
 	{
 		"name": "Asia/Pontianak",
 		"lat": 0.0333,
 		"long": 109.3333,
 		"country": "ID",
-		"comments": "west"
+		"comments": "west & central Borneo"
 	},
 	{
 		"name": "Asia/Makassar",
 		"lat": -4.8833,
 		"long": 119.4,
 		"country": "ID",
-		"comments": "east"
+		"comments": "east & south Borneo, Sulawesi (Celebes), Bali, Nusa Tengarra, west Timor"
 	},
 	{
 		"name": "Asia/Jayapura",
 		"lat": -1.4667,
 		"long": 140.7,
 		"country": "ID",
-		"comments": "west"
+		"comments": "west New Guinea (Irian Jaya) & Malukus (Moluccas)"
 	},
 	{
 		"name": "Europe/Dublin",
@@ -1446,21 +1446,21 @@
 		"lat": 1.4167,
 		"long": 173,
 		"country": "KI",
-		"comments": "Gilbert"
+		"comments": "Gilbert Islands"
 	},
 	{
 		"name": "Pacific/Enderbury",
 		"lat": -2.8667,
 		"long": -170.9167,
 		"country": "KI",
-		"comments": "Phoenix"
+		"comments": "Phoenix Islands"
 	},
 	{
 		"name": "Pacific/Kiritimati",
 		"lat": 1.8667,
 		"long": -156.6667,
 		"country": "KI",
-		"comments": "Line"
+		"comments": "Line Islands"
 	},
 	{
 		"name": "Indian/Comoro",
@@ -1509,35 +1509,35 @@
 		"lat": 43.25,
 		"long": 76.95,
 		"country": "KZ",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "Asia/Qyzylorda",
 		"lat": 44.8,
 		"long": 65.4667,
 		"country": "KZ",
-		"comments": "Qyzylorda"
+		"comments": "Qyzylorda (Kyzylorda, Kzyl-Orda)"
 	},
 	{
 		"name": "Asia/Aqtobe",
 		"lat": 50.2833,
 		"long": 57.1667,
 		"country": "KZ",
-		"comments": "Aqtobe"
+		"comments": "Aqtobe (Aktobe)"
 	},
 	{
 		"name": "Asia/Aqtau",
 		"lat": 44.5167,
 		"long": 50.2667,
 		"country": "KZ",
-		"comments": "Atyrau"
+		"comments": "Atyrau (Atirau, Gur'yev), Mangghystau (Mankistau)"
 	},
 	{
 		"name": "Asia/Oral",
 		"lat": 51.2167,
 		"long": 51.35,
 		"country": "KZ",
-		"comments": "West"
+		"comments": "West Kazakhstan"
 	},
 	{
 		"name": "Asia/Vientiane",
@@ -1663,7 +1663,7 @@
 		"lat": 7.15,
 		"long": 171.2,
 		"country": "MH",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "Pacific/Kwajalein",
@@ -1698,21 +1698,21 @@
 		"lat": 47.9167,
 		"long": 106.8833,
 		"country": "MN",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "Asia/Hovd",
 		"lat": 48.0167,
 		"long": 91.65,
 		"country": "MN",
-		"comments": "Bayan-Olgiy,"
+		"comments": "Bayan-Olgiy, Govi-Altai, Hovd, Uvs, Zavkhan"
 	},
 	{
 		"name": "Asia/Choibalsan",
 		"lat": 48.0667,
 		"long": 114.5,
 		"country": "MN",
-		"comments": "Dornod,"
+		"comments": "Dornod, Sukhbaatar"
 	},
 	{
 		"name": "Asia/Macau",
@@ -1782,98 +1782,98 @@
 		"lat": 19.4,
 		"long": -98.85,
 		"country": "MX",
-		"comments": "Central"
+		"comments": "Central Time - most locations"
 	},
 	{
 		"name": "America/Cancun",
 		"lat": 21.0833,
 		"long": -85.2333,
 		"country": "MX",
-		"comments": "Central"
+		"comments": "Central Time - Quintana Roo"
 	},
 	{
 		"name": "America/Merida",
 		"lat": 20.9667,
 		"long": -88.3833,
 		"country": "MX",
-		"comments": "Central"
+		"comments": "Central Time - Campeche, Yucatan"
 	},
 	{
 		"name": "America/Monterrey",
 		"lat": 25.6667,
 		"long": -99.6833,
 		"country": "MX",
-		"comments": "Mexican"
+		"comments": "Mexican Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas away from US border"
 	},
 	{
 		"name": "America/Matamoros",
 		"lat": 25.8333,
 		"long": -96.5,
 		"country": "MX",
-		"comments": "US"
+		"comments": "US Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas near US border"
 	},
 	{
 		"name": "America/Mazatlan",
 		"lat": 23.2167,
 		"long": -105.5833,
 		"country": "MX",
-		"comments": "Mountain"
+		"comments": "Mountain Time - S Baja, Nayarit, Sinaloa"
 	},
 	{
 		"name": "America/Chihuahua",
 		"lat": 28.6333,
 		"long": -105.9167,
 		"country": "MX",
-		"comments": "Mexican"
+		"comments": "Mexican Mountain Time - Chihuahua away from US border"
 	},
 	{
 		"name": "America/Ojinaga",
 		"lat": 29.5667,
 		"long": -103.5833,
 		"country": "MX",
-		"comments": "US"
+		"comments": "US Mountain Time - Chihuahua near US border"
 	},
 	{
 		"name": "America/Hermosillo",
 		"lat": 29.0667,
 		"long": -109.0333,
 		"country": "MX",
-		"comments": "Mountain"
+		"comments": "Mountain Standard Time - Sonora"
 	},
 	{
 		"name": "America/Tijuana",
 		"lat": 32.5333,
 		"long": -116.9833,
 		"country": "MX",
-		"comments": "US"
+		"comments": "US Pacific Time - Baja California near US border"
 	},
 	{
 		"name": "America/Santa_Isabel",
 		"lat": 30.3,
 		"long": -113.1333,
 		"country": "MX",
-		"comments": "Mexican"
+		"comments": "Mexican Pacific Time - Baja California away from US border"
 	},
 	{
 		"name": "America/Bahia_Banderas",
 		"lat": 20.8,
 		"long": -104.75,
 		"country": "MX",
-		"comments": "Mexican"
+		"comments": "Mexican Central Time - Bahia de Banderas"
 	},
 	{
 		"name": "Asia/Kuala_Lumpur",
 		"lat": 3.1667,
 		"long": 101.7,
 		"country": "MY",
-		"comments": "peninsular"
+		"comments": "peninsular Malaysia"
 	},
 	{
 		"name": "Asia/Kuching",
 		"lat": 1.55,
 		"long": 110.3333,
 		"country": "MY",
-		"comments": "Sabah"
+		"comments": "Sabah & Sarawak"
 	},
 	{
 		"name": "Africa/Maputo",
@@ -1964,14 +1964,14 @@
 		"lat": -35.1333,
 		"long": 174.7667,
 		"country": "NZ",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "Pacific/Chatham",
 		"lat": -42.05,
 		"long": -175.45,
 		"country": "NZ",
-		"comments": "Chatham"
+		"comments": "Chatham Islands"
 	},
 	{
 		"name": "Asia/Muscat",
@@ -1999,21 +1999,21 @@
 		"lat": -16.4667,
 		"long": -148.4333,
 		"country": "PF",
-		"comments": "Society"
+		"comments": "Society Islands"
 	},
 	{
 		"name": "Pacific/Marquesas",
 		"lat": -9,
 		"long": -138.5,
 		"country": "PF",
-		"comments": "Marquesas"
+		"comments": "Marquesas Islands"
 	},
 	{
 		"name": "Pacific/Gambier",
 		"lat": -22.8667,
 		"long": -133.05,
 		"country": "PF",
-		"comments": "Gambier"
+		"comments": "Gambier Islands"
 	},
 	{
 		"name": "Pacific/Port_Moresby",
@@ -2069,14 +2069,14 @@
 		"lat": 31.5,
 		"long": 34.4667,
 		"country": "PS",
-		"comments": "Gaza"
+		"comments": "Gaza Strip"
 	},
 	{
 		"name": "Asia/Hebron",
 		"lat": 31.5333,
 		"long": 35.095,
 		"country": "PS",
-		"comments": "West"
+		"comments": "West Bank"
 	},
 	{
 		"name": "Europe/Lisbon",
@@ -2090,7 +2090,7 @@
 		"lat": 32.6333,
 		"long": -15.1,
 		"country": "PT",
-		"comments": "Madeira"
+		"comments": "Madeira Islands"
 	},
 	{
 		"name": "Atlantic/Azores",
@@ -2146,133 +2146,133 @@
 		"lat": 54.7167,
 		"long": 20.5,
 		"country": "RU",
-		"comments": "Moscow-01"
+		"comments": "Moscow-01 - Kaliningrad"
 	},
 	{
 		"name": "Europe/Moscow",
 		"lat": 55.75,
 		"long": 37.5833,
 		"country": "RU",
-		"comments": "Moscow+00"
+		"comments": "Moscow+00 - west Russia"
 	},
 	{
 		"name": "Europe/Volgograd",
 		"lat": 48.7333,
 		"long": 44.4167,
 		"country": "RU",
-		"comments": "Moscow+00"
+		"comments": "Moscow+00 - Caspian Sea"
 	},
 	{
 		"name": "Europe/Samara",
 		"lat": 53.2,
 		"long": 50.15,
 		"country": "RU",
-		"comments": "Moscow+00"
+		"comments": "Moscow+00 - Samara, Udmurtia"
 	},
 	{
 		"name": "Europe/Simferopol",
 		"lat": 44.95,
 		"long": 34.1,
 		"country": "RU",
-		"comments": "Moscow+00"
+		"comments": "Moscow+00 - Crimea"
 	},
 	{
 		"name": "Asia/Yekaterinburg",
 		"lat": 56.85,
 		"long": 60.6,
 		"country": "RU",
-		"comments": "Moscow+02"
+		"comments": "Moscow+02 - Urals"
 	},
 	{
 		"name": "Asia/Omsk",
 		"lat": 55,
 		"long": 73.4,
 		"country": "RU",
-		"comments": "Moscow+03"
+		"comments": "Moscow+03 - west Siberia"
 	},
 	{
 		"name": "Asia/Novosibirsk",
 		"lat": 55.0333,
 		"long": 82.9167,
 		"country": "RU",
-		"comments": "Moscow+03"
+		"comments": "Moscow+03 - Novosibirsk"
 	},
 	{
 		"name": "Asia/Novokuznetsk",
 		"lat": 53.75,
 		"long": 87.1167,
 		"country": "RU",
-		"comments": "Moscow+03"
+		"comments": "Moscow+03 - Novokuznetsk"
 	},
 	{
 		"name": "Asia/Krasnoyarsk",
 		"lat": 56.0167,
 		"long": 92.8333,
 		"country": "RU",
-		"comments": "Moscow+04"
+		"comments": "Moscow+04 - Yenisei River"
 	},
 	{
 		"name": "Asia/Irkutsk",
 		"lat": 52.2667,
 		"long": 104.3333,
 		"country": "RU",
-		"comments": "Moscow+05"
+		"comments": "Moscow+05 - Lake Baikal"
 	},
 	{
 		"name": "Asia/Yakutsk",
 		"lat": 62,
 		"long": 129.6667,
 		"country": "RU",
-		"comments": "Moscow+06"
+		"comments": "Moscow+06 - Lena River"
 	},
 	{
 		"name": "Asia/Khandyga",
 		"lat": 62.6564,
 		"long": 135.5539,
 		"country": "RU",
-		"comments": "Moscow+06"
+		"comments": "Moscow+06 - Tomponsky, Ust-Maysky"
 	},
 	{
 		"name": "Asia/Vladivostok",
 		"lat": 43.1667,
 		"long": 131.9333,
 		"country": "RU",
-		"comments": "Moscow+07"
+		"comments": "Moscow+07 - Amur River"
 	},
 	{
 		"name": "Asia/Sakhalin",
 		"lat": 46.9667,
 		"long": 142.7,
 		"country": "RU",
-		"comments": "Moscow+07"
+		"comments": "Moscow+07 - Sakhalin Island"
 	},
 	{
 		"name": "Asia/Ust-Nera",
 		"lat": 64.5603,
 		"long": 143.2267,
 		"country": "RU",
-		"comments": "Moscow+07"
+		"comments": "Moscow+07 - Oymyakonsky"
 	},
 	{
 		"name": "Asia/Magadan",
 		"lat": 59.5667,
 		"long": 150.8,
 		"country": "RU",
-		"comments": "Moscow+08"
+		"comments": "Moscow+08 - Magadan"
 	},
 	{
 		"name": "Asia/Kamchatka",
 		"lat": 53.0167,
 		"long": 158.65,
 		"country": "RU",
-		"comments": "Moscow+08"
+		"comments": "Moscow+08 - Kamchatka"
 	},
 	{
 		"name": "Asia/Anadyr",
 		"lat": 64.75,
 		"long": 177.4833,
 		"country": "RU",
-		"comments": "Moscow+08"
+		"comments": "Moscow+08 - Bering Sea"
 	},
 	{
 		"name": "Africa/Kigali",
@@ -2545,7 +2545,7 @@
 		"lat": 50.4333,
 		"long": 30.5167,
 		"country": "UA",
-		"comments": "most"
+		"comments": "most locations"
 	},
 	{
 		"name": "Europe/Uzhgorod",
@@ -2559,7 +2559,7 @@
 		"lat": 47.8333,
 		"long": 35.1667,
 		"country": "UA",
-		"comments": "Zaporozh'ye,"
+		"comments": "Zaporozh'ye, E Lugansk / Zaporizhia, E Luhansk"
 	},
 	{
 		"name": "Africa/Kampala",
@@ -2573,217 +2573,217 @@
 		"lat": 16.75,
 		"long": -168.4833,
 		"country": "UM",
-		"comments": "Johnston"
+		"comments": "Johnston Atoll"
 	},
 	{
 		"name": "Pacific/Midway",
 		"lat": 28.2167,
 		"long": -176.6333,
 		"country": "UM",
-		"comments": "Midway"
+		"comments": "Midway Islands"
 	},
 	{
 		"name": "Pacific/Wake",
 		"lat": 19.2833,
 		"long": 166.6167,
 		"country": "UM",
-		"comments": "Wake"
+		"comments": "Wake Island"
 	},
 	{
 		"name": "America/New_York",
 		"lat": 40.7142,
 		"long": -73.9936,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time"
 	},
 	{
 		"name": "America/Detroit",
 		"lat": 42.3314,
 		"long": -82.9542,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Michigan - most locations"
 	},
 	{
 		"name": "America/Kentucky/Louisville",
 		"lat": 38.2542,
 		"long": -84.2406,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Kentucky - Louisville area"
 	},
 	{
 		"name": "America/Kentucky/Monticello",
 		"lat": 36.8297,
 		"long": -83.1508,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Kentucky - Wayne County"
 	},
 	{
 		"name": "America/Indiana/Indianapolis",
 		"lat": 39.7683,
 		"long": -85.8419,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Indiana - most locations"
 	},
 	{
 		"name": "America/Indiana/Vincennes",
 		"lat": 38.6772,
 		"long": -86.4714,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Indiana - Daviess, Dubois, Knox & Martin Counties"
 	},
 	{
 		"name": "America/Indiana/Winamac",
 		"lat": 41.0514,
 		"long": -85.3969,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Indiana - Pulaski County"
 	},
 	{
 		"name": "America/Indiana/Marengo",
 		"lat": 38.3756,
 		"long": -85.6553,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Indiana - Crawford County"
 	},
 	{
 		"name": "America/Indiana/Petersburg",
 		"lat": 38.4919,
 		"long": -86.7214,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Indiana - Pike County"
 	},
 	{
 		"name": "America/Indiana/Vevay",
 		"lat": 38.7478,
 		"long": -84.9328,
 		"country": "US",
-		"comments": "Eastern"
+		"comments": "Eastern Time - Indiana - Switzerland County"
 	},
 	{
 		"name": "America/Chicago",
 		"lat": 41.85,
 		"long": -86.35,
 		"country": "US",
-		"comments": "Central"
+		"comments": "Central Time"
 	},
 	{
 		"name": "America/Indiana/Tell_City",
 		"lat": 37.9531,
 		"long": -85.2386,
 		"country": "US",
-		"comments": "Central"
+		"comments": "Central Time - Indiana - Perry County"
 	},
 	{
 		"name": "America/Indiana/Knox",
 		"lat": 41.2958,
 		"long": -85.375,
 		"country": "US",
-		"comments": "Central"
+		"comments": "Central Time - Indiana - Starke County"
 	},
 	{
 		"name": "America/Menominee",
 		"lat": 45.1078,
 		"long": -86.3858,
 		"country": "US",
-		"comments": "Central"
+		"comments": "Central Time - Michigan - Dickinson, Gogebic, Iron & Menominee Counties"
 	},
 	{
 		"name": "America/North_Dakota/Center",
 		"lat": 47.1164,
 		"long": -100.7008,
 		"country": "US",
-		"comments": "Central"
+		"comments": "Central Time - North Dakota - Oliver County"
 	},
 	{
 		"name": "America/North_Dakota/New_Salem",
 		"lat": 46.845,
 		"long": -100.5892,
 		"country": "US",
-		"comments": "Central"
+		"comments": "Central Time - North Dakota - Morton County (except Mandan area)"
 	},
 	{
 		"name": "America/North_Dakota/Beulah",
 		"lat": 47.2642,
 		"long": -100.2222,
 		"country": "US",
-		"comments": "Central"
+		"comments": "Central Time - North Dakota - Mercer County"
 	},
 	{
 		"name": "America/Denver",
 		"lat": 39.7392,
 		"long": -103.0158,
 		"country": "US",
-		"comments": "Mountain"
+		"comments": "Mountain Time"
 	},
 	{
 		"name": "America/Boise",
 		"lat": 43.6136,
 		"long": -115.7975,
 		"country": "US",
-		"comments": "Mountain"
+		"comments": "Mountain Time - south Idaho & east Oregon"
 	},
 	{
 		"name": "America/Phoenix",
 		"lat": 33.4483,
 		"long": -111.9267,
 		"country": "US",
-		"comments": "Mountain"
+		"comments": "Mountain Standard Time - Arizona (except Navajo)"
 	},
 	{
 		"name": "America/Los_Angeles",
 		"lat": 34.0522,
 		"long": -117.7572,
 		"country": "US",
-		"comments": "Pacific"
+		"comments": "Pacific Time"
 	},
 	{
 		"name": "America/Anchorage",
 		"lat": 61.2181,
 		"long": -148.0997,
 		"country": "US",
-		"comments": "Alaska"
+		"comments": "Alaska Time"
 	},
 	{
 		"name": "America/Juneau",
 		"lat": 58.3019,
 		"long": -133.5803,
 		"country": "US",
-		"comments": "Alaska"
+		"comments": "Alaska Time - Alaska panhandle"
 	},
 	{
 		"name": "America/Sitka",
 		"lat": 57.1764,
 		"long": -134.6981,
 		"country": "US",
-		"comments": "Alaska"
+		"comments": "Alaska Time - southeast Alaska panhandle"
 	},
 	{
 		"name": "America/Yakutat",
 		"lat": 59.5469,
 		"long": -138.2728,
 		"country": "US",
-		"comments": "Alaska"
+		"comments": "Alaska Time - Alaska panhandle neck"
 	},
 	{
 		"name": "America/Nome",
 		"lat": 64.5011,
 		"long": -164.5936,
 		"country": "US",
-		"comments": "Alaska"
+		"comments": "Alaska Time - west Alaska"
 	},
 	{
 		"name": "America/Adak",
 		"lat": 51.88,
 		"long": -175.3419,
 		"country": "US",
-		"comments": "Aleutian"
+		"comments": "Aleutian Islands"
 	},
 	{
 		"name": "America/Metlakatla",
 		"lat": 55.1269,
 		"long": -130.4236,
 		"country": "US",
-		"comments": "Metlakatla"
+		"comments": "Metlakatla Time - Annette Island"
 	},
 	{
 		"name": "Pacific/Honolulu",
@@ -2804,14 +2804,14 @@
 		"lat": 39.6667,
 		"long": 66.8,
 		"country": "UZ",
-		"comments": "west"
+		"comments": "west Uzbekistan"
 	},
 	{
 		"name": "Asia/Tashkent",
 		"lat": 41.3333,
 		"long": 69.3,
 		"country": "UZ",
-		"comments": "east"
+		"comments": "east Uzbekistan"
 	},
 	{
 		"name": "Europe/Vatican",

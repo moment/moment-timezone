@@ -30,7 +30,7 @@ module.exports = function (grunt) {
 				lat      : parseLatLong(latlong[0], 0),
 				long     : parseLatLong(latlong[1], 1),
 				country  : parts[0],
-				comments : parts[3] || ''
+				comments : parts.slice(3).join(' ')
 			});
 		});
 
