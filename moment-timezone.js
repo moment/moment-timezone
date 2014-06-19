@@ -206,6 +206,12 @@
 		}
 	}
 
+	function loadData (data) {
+		addZone(data.zones);
+		addLink(data.links);
+		tz.dataVersion = data.version;
+	}
+
 	function zoneExists (name) {
 		if (!zoneExists.didShowError) {
 			zoneExists.didShowError = true;
@@ -232,10 +238,12 @@
 	}
 
 	tz.version      = VERSION;
+	tz.dataVersion  = '';
 	tz._zones       = zones;
 	tz._links       = links;
 	tz.add          = addZone;
 	tz.link         = addLink;
+	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
 	tz.names        = getNames;
