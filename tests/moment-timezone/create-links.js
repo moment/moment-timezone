@@ -100,7 +100,7 @@ exports['create-links'] = {
 		var actual = tz.createLinks(ZONES_ADCB),
 			expected = {
 				zones : [ZONE_A, ZONE_D],
-				links : ['Zone/D|Zone/C', 'Zone/A|Zone/B'],
+				links : ['Zone/A|Zone/B', 'Zone/D|Zone/C'],
 				version : '2014adcb'
 			};
 

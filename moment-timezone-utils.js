@@ -192,7 +192,7 @@
 		return {
 			version : source.version,
 			zones   : zones,
-			links   : links
+			links   : links.sort()
 		};
 	}
 
