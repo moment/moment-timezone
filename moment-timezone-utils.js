@@ -181,14 +181,18 @@
 
 	function createLinks (source) {
 		var zones = [],
+			links = [];
+
+		if (source.links) {
 			links = source.links.slice();
+		}
 
 		findAndCreateLinks(source.zones, zones, links);
 
 		return {
+			version : source.version,
 			zones   : zones,
-			links   : links,
-			version : source.version
+			links   : links
 		};
 	}
 
