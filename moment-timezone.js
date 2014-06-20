@@ -324,5 +324,7 @@
 	// Cloning a moment should include the _z property.
 	moment.momentProperties._z = null;
 
+	// INJECT DATA
+
 	return moment;
 }));

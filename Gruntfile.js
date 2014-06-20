@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = function(grunt) {
 	grunt.initConfig({
 		nodeunit : {
@@ -9,19 +11,29 @@ module.exports = function(grunt) {
 				"tests/moment-timezone-utils/*.js"
 			]
 		},
+
+		build : {
+			'moment-timezone-with-data'           : true,
+			'moment-timezone-with-data-2010-2020' : [2010, 2020]
+		},
+
 		uglify : {
 			all: {
 				files: {
-					'min/moment-timezone.min.js' : 'moment-timezone.js'
+					'builds/moment-timezone.min.js'                     : 'moment-timezone.js',
+					'builds/moment-timezone-with-data.min.js'           : 'builds/moment-timezone-with-data.js',
+					'builds/moment-timezone-with-data-2010-2020.min.js' : 'builds/moment-timezone-with-data-2010-2020.js'
 				}
 			},
 			options: {
 				report : 'gzip'
 			}
 		},
+
 		jshint: {
 			all: 'moment-timezone.js'
 		},
+
 		clean: {
 			data: ['temp']
 		}
@@ -33,6 +45,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+
+	grunt.registerTask('release', ['jshint', 'data', 'nodeunit', 'build', 'uglify']);
 
 	grunt.registerTask('default', ['jshint', 'nodeunit']);
 };
