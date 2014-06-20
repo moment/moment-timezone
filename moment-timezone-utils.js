@@ -248,13 +248,41 @@
 	}
 
 	/************************************
+		Filter, Link, and Pack
+	************************************/
+
+	function filterLinkPack (input, start, end) {
+		var i,
+			inputZones = input.zones,
+			outputZones = [],
+			output;
+
+		for (i = 0; i < inputZones.length; i++) {
+			outputZones[i] = filterYears(inputZones[i], start, end);
+		}
+
+		output = createLinks({
+			zones : outputZones,
+			links : input.links.slice(),
+			version : input.version
+		});
+
+		for (i = 0; i < output.zones.length; i++) {
+			output.zones[i] = pack(output.zones[i]);
+		}
+
+		return output;
+	}
+
+	/************************************
 		Exports
 	************************************/
 
-	moment.tz.pack        = pack;
-	moment.tz.packBase60  = packBase60;
-	moment.tz.createLinks = createLinks;
-	moment.tz.filterYears = filterYears;
+	moment.tz.pack           = pack;
+	moment.tz.packBase60     = packBase60;
+	moment.tz.createLinks    = createLinks;
+	moment.tz.filterYears    = filterYears;
+	moment.tz.filterLinkPack = filterLinkPack;
 
 	return moment;
 }));
