@@ -1,12 +1,13 @@
 {
   "name": "moment-timezone",
+  "description" : "Parse and display moments in any timezone.",
   "version": "0.0.6",
   "main": "builds/moment-timezone-with-data-2010-2020.js",
   "ignore": [
     "**/.*",
-    "node_modules",
     "tests",
     "tasks",
+    "data/*/20*.json",
     "contributing.md",
     "Gruntfile.js",
     "index.js",
