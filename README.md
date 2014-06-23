@@ -1,4 +1,6 @@
-# [Moment Timezone](http://momentjs.com/timezone) [![Build Status](https://travis-ci.org/moment/moment-timezone.png)](https://travis-ci.org/moment/moment-timezone)
+# [Moment Timezone](http://momentjs.com/timezone)
+
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
 
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
@@ -20,4 +22,13 @@ dec.tz('Australia/Sydney').format('ha z');     // 11pm EST
 
 #### [Read the changelog](changelog.md)
 
-#### [MIT Licence](LICENSE)
+
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
+
+[npm-url]: https://npmjs.org/package/moment-timezone
+[npm-version-image]: http://img.shields.io/npm/v/moment-timezone.svg?style=flat
+[npm-downloads-image]: http://img.shields.io/npm/dm/moment-timezone.svg?style=flat
+
+[travis-url]: http://travis-ci.org/moment/moment-timezone
+[travis-image]: http://img.shields.io/travis/moment/moment-timezone.svg?style=flat
