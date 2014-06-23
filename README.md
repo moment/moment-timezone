@@ -31,4 +31,4 @@ dec.tz('Australia/Sydney').format('ha z');     // 11pm EST
 [npm-downloads-image]: http://img.shields.io/npm/dm/moment-timezone.svg?style=flat
 
 [travis-url]: http://travis-ci.org/moment/moment-timezone
-[travis-image]: http://img.shields.io/travis/moment/moment-timezone.svg?style=flat
+[travis-image]: http://img.shields.io/travis/moment/moment-timezone/develop.svg?style=flat
