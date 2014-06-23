@@ -26,7 +26,8 @@ module.exports = function(grunt) {
 				}
 			},
 			options: {
-				report : 'gzip'
+				report : 'gzip',
+				preserveComments : 'some'
 			}
 		},
 

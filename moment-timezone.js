@@ -1,8 +1,8 @@
-// moment-timezone.js
-// version : 0.0.6
-// author : Tim Wood
-// license : MIT
-// github.com/moment/moment-timezone
+//! moment-timezone.js
+//! version : 0.1.0
+//! author : Tim Wood
+//! license : MIT
+//! github.com/moment/moment-timezone
 
 (function (root, factory) {
 	"use strict";
@@ -21,7 +21,7 @@
 	// Do not load moment-timezone a second time.
 	if (moment.tz !== undefined) { return moment; }
 
-	var VERSION = "0.0.6",
+	var VERSION = "0.1.0",
 		zones = {},
 		links = {};
 

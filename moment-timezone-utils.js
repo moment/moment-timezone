@@ -1,8 +1,8 @@
-// moment-timezone-utils.js
-// version : 0.0.6
-// author : Tim Wood
-// license : MIT
-// github.com/moment/moment-timezone
+//! moment-timezone-utils.js
+//! version : 0.1.0
+//! author : Tim Wood
+//! license : MIT
+//! github.com/moment/moment-timezone
 
 (function (root, factory) {
 	"use strict";
