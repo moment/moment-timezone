@@ -1,8 +1,8 @@
 {
 	"name": "moment-timezone",
 	"version": "0.0.6",
-	"description": "Timezone plugin for Moment.js.",
-	"homepage": "http://momentjs.com",
+	"description": "Parse and display moments in any timezone.",
+	"homepage": "http://momentjs.com/timezone/",
 	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
 	"keywords": [
 		"moment",
@@ -10,6 +10,8 @@
 		"time",
 		"timezone",
 		"olson",
+		"iana",
+		"zone",
 		"tz"
 	],
 	"main": "./index.js",
@@ -18,16 +20,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/timrwood/moment-timezone.git"
+		"url": "https://github.com/moment/moment-timezone.git"
 	},
 	"bugs": {
-		"url": "https://github.com/timrwood/moment-timezone/issues"
+		"url": "https://github.com/moment/moment-timezone/issues"
 	},
-	"licenses" : [
-		{
-			"type" : "MIT"
-		}
-	],
+	"license" : "MIT",
 	"dependencies" : {
 		"moment" : ">= 2.6.0"
 	},
