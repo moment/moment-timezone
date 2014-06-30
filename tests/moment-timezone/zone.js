@@ -5,7 +5,21 @@ var tz = require("../../").tz;
 // gE = 1000; 1E = 100; 2k = 140
 var PACKED = "SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k";
 
+var moveAmbiguousForward, moveInvalidForward;
+
 exports.zone = {
+	setUp : function (done) {
+		moveAmbiguousForward = tz.moveAmbiguousForward;
+		moveInvalidForward = tz.moveInvalidForward;
+		done();
+	},
+
+	tearDown : function (done) {
+		tz.moveAmbiguousForward = moveAmbiguousForward;
+		tz.moveInvalidForward = moveInvalidForward;
+		done();
+	},
+
 	construct : function (test) {
 		var zone = new tz.Zone(PACKED);
 
@@ -120,6 +134,8 @@ exports.zone = {
 				[(1479 - 360.5) * 60000, 360.5],
 				[(1480 - 360.5) * 60000, 300]
 			], i, source, expected;
+
+		tz.moveInvalidForward = false;
 
 		for (i = 0; i < tests.length; i++) {
 			source = tests[i][0];
