@@ -5,13 +5,33 @@ var moment = require("../../index");
 var Los_Angeles = "America/Los_Angeles|PST PDT PWT PPT|80 70 70 70|010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261q0 1nX0 11B0 1nX0 SgN0 8x10 iy0 5Wp0 1Vb0 3dB0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
 var New_York    = "America/New_York|EST EDT EWT EPT|50 40 40 40|01010101010101010101010101010101010101010101010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261t0 1nX0 11B0 1nX0 11B0 1qL0 1a10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 RB0 8x40 iv0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
 
+var moveAmbiguousForward, moveInvalidForward;
+
 exports.parse = {
 	setUp : function (done) {
 		moment.tz.add([Los_Angeles, New_York]);
+
+		moveAmbiguousForward = moment.tz.moveAmbiguousForward;
+		moveInvalidForward = moment.tz.moveInvalidForward;
 		done();
 	},
 
-	"ambiguous input losing an hour - America/Los_Angeles" : function (t) {
+	tearDown : function (done) {
+		moment.tz.moveAmbiguousForward = moveAmbiguousForward;
+		moment.tz.moveInvalidForward = moveInvalidForward;
+		done();
+	},
+
+	"default states" : function (t) {
+		t.ok(moment.tz.moveInvalidForward,    "Should default to moving invalid input forward");
+		t.ok(!moment.tz.moveAmbiguousForward, "Should default to moving ambiguous input backward");
+
+		t.done();
+	},
+
+	"invalid input - moveInvalidForward = false - Los Angeles" : function (t) {
+		moment.tz.moveInvalidForward = false;
+
 		// the hour from 2am to 3am does not exist on March 11 2011 in America/Los_Angeles
 		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/Los_Angeles"),
 			atStart = moment.tz([2012, 2, 11, 2, 0, 0],   "America/Los_Angeles"),
@@ -19,19 +39,21 @@ exports.parse = {
 			after   = moment.tz([2012, 2, 11, 3, 0, 0],   "America/Los_Angeles");
 
 		t.equal( before.format("HH mm ss Z"), "01 59 59 -08:00", "Before the lost hour, the time should match the input time");
-		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -08:00", "During the lost hour, the time should fall back to the previous time");
-		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -08:00", "During the lost hour, the time should fall back to the previous time");
-		t.equal(  after.format("HH mm ss Z"), "03 00 00 -07:00", "After the lost hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -08:00", "During the lost hour, the time should roll back to the previous time");
+		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -08:00", "During the lost hour, the time should roll back to the previous time");
+		t.equal(  after.format("HH mm ss Z"), "03 00 00 -07:00",  "After the lost hour, the time should match the input time");
 
 		t.equal( before.zone(), 480, "Before the lost hour, the offset should match the non-dst offset");
 		t.equal(atStart.zone(), 480, "During the lost hour, the offset should match the non-dst offset");
 		t.equal(  atEnd.zone(), 480, "During the lost hour, the offset should match the non-dst offset");
-		t.equal(  after.zone(), 420, "After the lost hour, the time should match the dst offset");
+		t.equal(  after.zone(), 420,  "After the lost hour, the offset should match the dst offset");
 
 		t.done();
 	},
 
-	"ambiguous input losing an hour - America/New_York" : function (t) {
+	"invalid input - moveInvalidForward = false - New York" : function (t) {
+		moment.tz.moveInvalidForward = false;
+
 		// the hour from 2am to 3am does not exist on March 11 2011 in America/New_York
 		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/New_York"),
 			atStart = moment.tz([2012, 2, 11, 2, 0, 0], "America/New_York"),
@@ -39,19 +61,65 @@ exports.parse = {
 			after   = moment.tz([2012, 2, 11, 3, 0, 0], "America/New_York");
 
 		t.equal( before.format("HH mm ss Z"), "01 59 59 -05:00", "Before the lost hour, the time should match the input time");
-		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -05:00", "During the lost hour, the time should fall back to the previous time");
-		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -05:00", "During the lost hour, the time should fall back to the previous time");
-		t.equal(  after.format("HH mm ss Z"), "03 00 00 -04:00", "After the lost hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -05:00", "During the lost hour, the time should roll back to the previous time");
+		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -05:00", "During the lost hour, the time should roll back to the previous time");
+		t.equal(  after.format("HH mm ss Z"), "03 00 00 -04:00",  "After the lost hour, the time should match the input time");
 
 		t.equal( before.zone(), 300, "Before the lost hour, the offset should match the non-dst offset");
 		t.equal(atStart.zone(), 300, "During the lost hour, the offset should match the non-dst offset");
 		t.equal(  atEnd.zone(), 300, "During the lost hour, the offset should match the non-dst offset");
-		t.equal(  after.zone(), 240, "After the lost hour, the time should match the dst offset");
+		t.equal(  after.zone(), 240,  "After the lost hour, the offset should match the dst offset");
 
 		t.done();
 	},
 
-	"ambiguous input gaining an hour - America/Los_Angeles" : function (t) {
+	"invalid input - moveInvalidForward = true - Los Angeles" : function (t) {
+		// moment.tz.moveInvalidForward = true; Should default to true
+
+		// the hour from 2am to 3am does not exist on March 11 2011 in America/Los_Angeles
+		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/Los_Angeles"),
+			atStart = moment.tz([2012, 2, 11, 2, 0, 0],   "America/Los_Angeles"),
+			atEnd   = moment.tz([2012, 2, 11, 2, 59, 59], "America/Los_Angeles"),
+			after   = moment.tz([2012, 2, 11, 3, 0, 0],   "America/Los_Angeles");
+
+		t.equal( before.format("HH mm ss Z"), "01 59 59 -08:00", "Before the lost hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "03 00 00 -07:00", "During the lost hour, the time should roll forward to the previous time");
+		t.equal(  atEnd.format("HH mm ss Z"), "03 59 59 -07:00", "During the lost hour, the time should roll forward to the previous time");
+		t.equal(  after.format("HH mm ss Z"), "03 00 00 -07:00",  "After the lost hour, the time should match the input time");
+
+		t.equal( before.zone(), 480, "Before the lost hour, the offset should match the non-dst offset");
+		t.equal(atStart.zone(), 420, "During the lost hour, the offset should match the dst offset");
+		t.equal(  atEnd.zone(), 420, "During the lost hour, the offset should match the dst offset");
+		t.equal(  after.zone(), 420,  "After the lost hour, the offset should match the dst offset");
+
+		t.done();
+	},
+
+	"invalid input - moveInvalidForward = true - New York" : function (t) {
+		// moment.tz.moveInvalidForward = true; Should default to true
+
+		// the hour from 2am to 3am does not exist on March 11 2011 in America/New_York
+		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/New_York"),
+			atStart = moment.tz([2012, 2, 11, 2, 0, 0], "America/New_York"),
+			atEnd   = moment.tz([2012, 2, 11, 2, 59, 59], "America/New_York"),
+			after   = moment.tz([2012, 2, 11, 3, 0, 0], "America/New_York");
+
+		t.equal( before.format("HH mm ss Z"), "01 59 59 -05:00", "Before the lost hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "03 00 00 -04:00", "During the lost hour, the time should roll forward to the previous time");
+		t.equal(  atEnd.format("HH mm ss Z"), "03 59 59 -04:00", "During the lost hour, the time should roll forward to the previous time");
+		t.equal(  after.format("HH mm ss Z"), "03 00 00 -04:00",  "After the lost hour, the time should match the input time");
+
+		t.equal( before.zone(), 300, "Before the lost hour, the offset should match the non-dst offset");
+		t.equal(atStart.zone(), 240, "During the lost hour, the offset should match the dst offset");
+		t.equal(  atEnd.zone(), 240, "During the lost hour, the offset should match the dst offset");
+		t.equal(  after.zone(), 240,  "After the lost hour, the offset should match the dst offset");
+
+		t.done();
+	},
+
+	"ambiguous input - moveAmbiguousForward = false - Los Angeles" : function (t) {
+		// moment.tz.moveAmbiguousForward = false; Should default to false
+
 		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
 		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/Los_Angeles"),
 			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/Los_Angeles"),
@@ -59,19 +127,21 @@ exports.parse = {
 			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/Los_Angeles");
 
 		t.equal( before.format("HH mm ss Z"), "00 59 59 -07:00", "Before the duplicated hour, the time should match the input time");
-		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -07:00", "During the duplicated hour, the time should match the input time");
-		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -07:00", "During the duplicated hour, the time should match the input time");
-		t.equal(  after.format("HH mm ss Z"), "02 00 00 -08:00", "After the duplicated hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -07:00", "During the duplicated hour, the time should match the earlier input time");
+		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -07:00", "During the duplicated hour, the time should match the earlier input time");
+		t.equal(  after.format("HH mm ss Z"), "02 00 00 -08:00",  "After the duplicated hour, the time should match the input time");
 
 		t.equal( before.zone(), 420, "Before the duplicated hour, the offset should match the dst offset");
 		t.equal(atStart.zone(), 420, "During the duplicated hour, the offset should match the dst offset");
 		t.equal(  atEnd.zone(), 420, "During the duplicated hour, the offset should match the dst offset");
-		t.equal(  after.zone(), 480, "After the duplicated hour, the time should match the non-dst offset");
+		t.equal(  after.zone(), 480,  "After the duplicated hour, the offset should match the non-dst offset");
 
 		t.done();
 	},
 
-	"ambiguous input gaining an hour - America/New_York" : function (t) {
+	"ambiguous input - moveAmbiguousForward = false - New York" : function (t) {
+		// moment.tz.moveAmbiguousForward = false; Should default to false
+
 		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
 		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/New_York"),
 			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/New_York"),
@@ -79,14 +149,58 @@ exports.parse = {
 			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/New_York");
 
 		t.equal( before.format("HH mm ss Z"), "00 59 59 -04:00", "Before the duplicated hour, the time should match the input time");
-		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -04:00", "During the duplicated hour, the time should match the input time");
-		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -04:00", "During the duplicated hour, the time should match the input time");
-		t.equal(  after.format("HH mm ss Z"), "02 00 00 -05:00", "After the duplicated hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -04:00", "During the duplicated hour, the time should match the earlier input time");
+		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -04:00", "During the duplicated hour, the time should match the earlier input time");
+		t.equal(  after.format("HH mm ss Z"), "02 00 00 -05:00",  "After the duplicated hour, the time should match the input time");
 
 		t.equal( before.zone(), 240, "Before the duplicated hour, the offset should match the dst offset");
 		t.equal(atStart.zone(), 240, "During the duplicated hour, the offset should match the dst offset");
 		t.equal(  atEnd.zone(), 240, "During the duplicated hour, the offset should match the dst offset");
-		t.equal(  after.zone(), 300, "After the duplicated hour, the time should match the non-dst offset");
+		t.equal(  after.zone(), 300,  "After the duplicated hour, the offset should match the non-dst offset");
+
+		t.done();
+	},
+
+	"ambiguous input - moveAmbiguousForward = true - Los Angeles" : function (t) {
+		moment.tz.moveAmbiguousForward = true;
+
+		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
+		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/Los_Angeles"),
+			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/Los_Angeles"),
+			atEnd   = moment.tz([2012, 10, 4, 1, 59, 59], "America/Los_Angeles"),
+			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/Los_Angeles");
+
+		t.equal( before.format("HH mm ss Z"), "00 59 59 -07:00", "Before the duplicated hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -08:00", "During the duplicated hour, the time should match the later input time");
+		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -08:00", "During the duplicated hour, the time should match the later input time");
+		t.equal(  after.format("HH mm ss Z"), "02 00 00 -08:00",  "After the duplicated hour, the time should match the input time");
+
+		t.equal( before.zone(), 420, "Before the duplicated hour, the offset should match the dst offset");
+		t.equal(atStart.zone(), 480, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(  atEnd.zone(), 480, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(  after.zone(), 480,  "After the duplicated hour, the offset should match the non-dst offset");
+
+		t.done();
+	},
+
+	"ambiguous input - moveAmbiguousForward = true - New York" : function (t) {
+		moment.tz.moveAmbiguousForward = true;
+
+		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
+		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/New_York"),
+			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/New_York"),
+			atEnd   = moment.tz([2012, 10, 4, 1, 59, 59], "America/New_York"),
+			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/New_York");
+
+		t.equal( before.format("HH mm ss Z"), "00 59 59 -04:00", "Before the duplicated hour, the time should match the input time");
+		t.equal(atStart.format("HH mm ss Z"), "01 00 00 -05:00", "During the duplicated hour, the time should match the later input time");
+		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -05:00", "During the duplicated hour, the time should match the later input time");
+		t.equal(  after.format("HH mm ss Z"), "02 00 00 -05:00",  "After the duplicated hour, the time should match the input time");
+
+		t.equal( before.zone(), 240, "Before the duplicated hour, the offset should match the dst offset");
+		t.equal(atStart.zone(), 300, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(  atEnd.zone(), 300, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(  after.zone(), 300,  "After the duplicated hour, the offset should match the non-dst offset");
 
 		t.done();
 	},
@@ -110,5 +224,5 @@ exports.parse = {
 		}
 
 		t.done();
-	},
+	}
 };

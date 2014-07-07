@@ -143,13 +143,26 @@
 			var target  = +timestamp,
 				offsets = this.offsets,
 				untils  = this.untils,
-				i;
+				max     = untils.length - 1,
+				offset, offsetNext, offsetPrev, i;
 
-			for (i = 0; i < untils.length; i++) {
-				if (target < untils[i] - (offsets[i] * 60000)) {
+			for (i = 0; i < max; i++) {
+				offset     = offsets[i];
+				offsetNext = offsets[i + 1];
+				offsetPrev = offsets[i ? i - 1 : i];
+
+				if (offset < offsetNext && tz.moveAmbiguousForward) {
+					offset = offsetNext;
+				} else if (offset > offsetPrev && tz.moveInvalidForward) {
+					offset = offsetPrev;
+				}
+
+				if (target < untils[i] - (offset * 60000)) {
 					return offsets[i];
 				}
 			}
+
+			return offsets[max];
 		},
 
 		abbr : function (mom) {
@@ -272,6 +285,8 @@
 	tz.unpack       = unpack;
 	tz.unpackBase60 = unpackBase60;
 	tz.needsOffset  = needsOffset;
+	tz.moveInvalidForward   = true;
+	tz.moveAmbiguousForward = false;
 
 	/************************************
 		Interface with Moment.js
