@@ -285,6 +285,12 @@
 		return !!(m._a && (m._tzm === undefined));
 	}
 
+	function logError (message) {
+		if (typeof console !== 'undefined' && typeof console.error === 'function') {
+			console.error(message);
+		}
+	}
+
 	/************************************
 		moment.tz namespace
 	************************************/
@@ -345,6 +351,8 @@
 			this._z = getZone(name);
 			if (this._z) {
 				moment.updateOffset(this);
+			} else {
+				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}
 			return this;
 		}

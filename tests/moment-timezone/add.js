@@ -1,6 +1,7 @@
 "use strict";
 
-var tz = require("../../").tz;
+var moment = require("../../"),
+	tz = moment.tz;
 
 exports.add = {
 	adding : function (test) {
@@ -68,6 +69,34 @@ exports.add = {
 		test.ok(tz.zone('case_insens_itive2'), "getting zones should not be case sensitive.");
 		test.ok(tz.zone('Case_Insens_itive2'), "getting zones should not be case sensitive.");
 		test.ok(tz.zone('case/insens/itive2'), "getting zones should not differentiate between _ and /.");
+
+		test.done();
+	},
+
+	missingZone : function (test) {
+		if (typeof console === 'undefined') {
+			test.done();
+			return;
+		}
+
+		var oldError = console.error,
+			errors = '';
+
+		console.error = function (message) {
+			errors += message;
+		};
+
+		moment().tz('Not_A/Loaded_Zone');
+
+		test.equal(errors, "Moment Timezone has no data for Not_A/Loaded_Zone. See http://momentjs.com/timezone/docs/#/data-loading/.");
+
+		errors = '';
+
+		tz('Another/Unloaded_Zone');
+
+		test.equal(errors, "Moment Timezone has no data for Another/Unloaded_Zone. See http://momentjs.com/timezone/docs/#/data-loading/.");
+
+		console.error = oldError;
 
 		test.done();
 	}
