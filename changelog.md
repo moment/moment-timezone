@@ -1,3 +1,9 @@
+### `0.2.0` _2014-07-21_
+* Added the ability to configure whether ambiguous or invalid input is rolled forward or backward. [#101](https://github.com/moment/moment-timezone/pull/101)
+* Added `moment>=2.6.0` as a dependency in `bower.json`. [#107](https://github.com/moment/moment-timezone/issues/107)
+* Fixed getting the name of a zone that was added as a linked zone. [#104](https://github.com/moment/moment-timezone/pull/104)
+* Added an error message when a zone was not loaded. [#106](https://github.com/moment/moment-timezone/issues/106)
+
 ### `0.1.0` _2014-06-23_
 * *Breaking:* Changed data format from Zones+Rules to just Zones. [#82](https://github.com/moment/moment-timezone/pull/82)
 * *Breaking:* Removed `moment.tz.{addRule,addZone,zoneExists,zones}` as they are no longer relevant with the new data format.
