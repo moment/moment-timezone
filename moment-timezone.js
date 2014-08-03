@@ -378,12 +378,14 @@
 	fn.utc      = resetZoneWrap(fn.utc);
 
 	// Cloning a moment should include the _z property.
+	var momentProperties = moment.momentProperties;
 	if (Object.prototype.toString.call(momentProperties) === '[object Array]') {
 		// moment 2.8.1+
-		moment.momentProperties.push('_z');
+		momentProperties.push('_z');
+		momentProperties.push('_a');
 	} else {
 		// moment 2.7.0
-		moment.momentProperties._z = null;
+		momentProperties._z = null;
 	}
 
 	// INJECT DATA
