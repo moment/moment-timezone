@@ -302,7 +302,7 @@
 			out  = moment.utc.apply(null, args);
 
 		if (zone && needsOffset(out)) {
-			out.add('minutes', zone.parse(out));
+			out.add(zone.parse(out), 'minutes');
 		}
 
 		out.tz(name);
