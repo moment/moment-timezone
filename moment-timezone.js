@@ -369,7 +369,7 @@
 	function resetZoneWrap (old) {
 		return function () {
 			this._z = null;
-			return old.call(this);
+			return old.apply(this, arguments);
 		};
 	}
 
