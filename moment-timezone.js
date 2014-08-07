@@ -383,9 +383,12 @@
 		// moment 2.8.1+
 		momentProperties.push('_z');
 		momentProperties.push('_a');
-	} else {
+	} else if(momentProperties) {
 		// moment 2.7.0
 		momentProperties._z = null;
+	} else{
+		// moment < 2.6 - unsupported
+		console.error("moment-timezone.js: Your version of moment is unsupported.  moment-timezone requires moment.js 2.6+ go to http://momentjs.com to get the newest version.");
 	}
 
 	// INJECT DATA
