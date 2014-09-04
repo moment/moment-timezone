@@ -1,3 +1,7 @@
+### `0.2.2` _2014-09-04_
+* Updated data to IANA TZDB `2014g`. [#126](https://github.com/moment/moment-timezone/pull/126)
+* Added a warning when using `moment-timezone` with `moment<2.6.0`.
+
 ### `0.2.1` _2014-08-02_
 * Fixed support for `moment@2.8.1+`.
 
