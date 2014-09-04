@@ -5,12 +5,7 @@ var helpers = require("../../helpers/helpers");
 exports["Pacific/Pago_Pago"] = {
 	"1911" : helpers.makeTestYear("Pacific/Pago_Pago", [
 		["1911-01-01T11:22:47+00:00", "23:59:59", "LMT", 40968 / 60],
-		["1911-01-01T11:22:48+00:00", "23:52:48", "SAMT", 690]
-	]),
-
-	"1950" : helpers.makeTestYear("Pacific/Pago_Pago", [
-		["1950-01-01T11:29:59+00:00", "23:59:59", "SAMT", 690],
-		["1950-01-01T11:30:00+00:00", "00:30:00", "NST", 660]
+		["1911-01-01T11:22:48+00:00", "00:22:48", "NST", 660]
 	]),
 
 	"1967" : helpers.makeTestYear("Pacific/Pago_Pago", [
