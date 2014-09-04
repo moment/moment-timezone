@@ -25,6 +25,14 @@
 		zones = {},
 		links = {};
 
+	// Moment.js version check
+	var momentVersion = moment.version.split('.');
+	var major = +momentVersion[0];
+	var minor = +momentVersion[1];
+	if (major < 2 || (major === 2 && minor < 6)) {
+		logError('Moment Timezone requires Moment.js >= ' + major + '.' + minor + '. You are using Moment.js ' + moment.version + '. See momentjs.com');
+	}
+
 	/************************************
 		Unpacking
 	************************************/
@@ -274,9 +282,7 @@
 	function zoneExists (name) {
 		if (!zoneExists.didShowError) {
 			zoneExists.didShowError = true;
-			if (typeof console !== 'undefined' && typeof console.error === 'function') {
-				console.error("moment.tz.zoneExists('" + name + "') has been deprecated in favor of !moment.tz.zone('" + name + "')");
-			}
+				logError("moment.tz.zoneExists('" + name + "') has been deprecated in favor of !moment.tz.zone('" + name + "')");
 		}
 		return !!getZone(name);
 	}
@@ -383,7 +389,7 @@
 		// moment 2.8.1+
 		momentProperties.push('_z');
 		momentProperties.push('_a');
-	} else {
+	} else if(momentProperties) {
 		// moment 2.7.0
 		momentProperties._z = null;
 	}
