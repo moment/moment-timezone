@@ -109,7 +109,7 @@
 		"lat": -65.3333,
 		"long": 140.0167,
 		"country": "AQ",
-		"comments": "Dumont-d'Urville Station, Terre Adelie"
+		"comments": "Dumont-d'Urville Station, Adelie Land"
 	},
 	{
 		"name": "Antarctica/Syowa",
@@ -662,7 +662,7 @@
 		"lat": 74.6956,
 		"long": -93.1708,
 		"country": "CA",
-		"comments": "Central Standard Time - Resolute, Nunavut"
+		"comments": "Central Time - Resolute, Nunavut"
 	},
 	{
 		"name": "America/Atikokan",
@@ -837,7 +837,7 @@
 		"lat": -26.85,
 		"long": -108.5667,
 		"country": "CL",
-		"comments": "Easter Island & Sala y Gomez"
+		"comments": "Easter Island"
 	},
 	{
 		"name": "Africa/Douala",
@@ -851,35 +851,14 @@
 		"lat": 31.2333,
 		"long": 121.4667,
 		"country": "CN",
-		"comments": "east China - Beijing, Guangdong, Shanghai, etc."
-	},
-	{
-		"name": "Asia/Harbin",
-		"lat": 45.75,
-		"long": 126.6833,
-		"country": "CN",
-		"comments": "Heilongjiang (except Mohe), Jilin"
-	},
-	{
-		"name": "Asia/Chongqing",
-		"lat": 29.5667,
-		"long": 106.5833,
-		"country": "CN",
-		"comments": "central China - Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou, etc."
+		"comments": "Beijing Time"
 	},
 	{
 		"name": "Asia/Urumqi",
 		"lat": 43.8,
 		"long": 87.5833,
 		"country": "CN",
-		"comments": "most of Tibet & Xinjiang"
-	},
-	{
-		"name": "Asia/Kashgar",
-		"lat": 39.4833,
-		"long": 75.9833,
-		"country": "CN",
-		"comments": "west Tibet & Xinjiang"
+		"comments": "Xinjiang Time"
 	},
 	{
 		"name": "America/Bogota",
@@ -2150,10 +2129,17 @@
 	},
 	{
 		"name": "Europe/Moscow",
-		"lat": 55.75,
-		"long": 37.5833,
+		"lat": 55.7558,
+		"long": 37.6178,
 		"country": "RU",
 		"comments": "Moscow+00 - west Russia"
+	},
+	{
+		"name": "Europe/Simferopol",
+		"lat": 44.95,
+		"long": 34.1,
+		"country": "RU",
+		"comments": "Moscow+00 - Crimea"
 	},
 	{
 		"name": "Europe/Volgograd",
@@ -2167,14 +2153,7 @@
 		"lat": 53.2,
 		"long": 50.15,
 		"country": "RU",
-		"comments": "Moscow+00 - Samara, Udmurtia"
-	},
-	{
-		"name": "Europe/Simferopol",
-		"lat": 44.95,
-		"long": 34.1,
-		"country": "RU",
-		"comments": "Moscow+00 - Crimea"
+		"comments": "Moscow+00 (Moscow+01 after 2014-10-26) - Samara, Udmurtia"
 	},
 	{
 		"name": "Asia/Yekaterinburg",
@@ -2202,7 +2181,7 @@
 		"lat": 53.75,
 		"long": 87.1167,
 		"country": "RU",
-		"comments": "Moscow+03 - Novokuznetsk"
+		"comments": "Moscow+03 (Moscow+04 after 2014-10-26) - Kemerovo"
 	},
 	{
 		"name": "Asia/Krasnoyarsk",
@@ -2217,6 +2196,13 @@
 		"long": 104.3333,
 		"country": "RU",
 		"comments": "Moscow+05 - Lake Baikal"
+	},
+	{
+		"name": "Asia/Chita",
+		"lat": 52.05,
+		"long": 113.4667,
+		"country": "RU",
+		"comments": "Moscow+06 (Moscow+05 after 2014-10-26) - Zabaykalsky"
 	},
 	{
 		"name": "Asia/Yakutsk",
@@ -2258,21 +2244,28 @@
 		"lat": 59.5667,
 		"long": 150.8,
 		"country": "RU",
-		"comments": "Moscow+08 - Magadan"
+		"comments": "Moscow+08 (Moscow+07 after 2014-10-26) - Magadan"
+	},
+	{
+		"name": "Asia/Srednekolymsk",
+		"lat": 67.4667,
+		"long": 153.7167,
+		"country": "RU",
+		"comments": "Moscow+08 - E Sakha, N Kuril Is"
 	},
 	{
 		"name": "Asia/Kamchatka",
 		"lat": 53.0167,
 		"long": 158.65,
 		"country": "RU",
-		"comments": "Moscow+08 - Kamchatka"
+		"comments": "Moscow+08 (Moscow+09 after 2014-10-26) - Kamchatka"
 	},
 	{
 		"name": "Asia/Anadyr",
 		"lat": 64.75,
 		"long": 177.4833,
 		"country": "RU",
-		"comments": "Moscow+08 - Bering Sea"
+		"comments": "Moscow+08 (Moscow+09 after 2014-10-26) - Bering Sea"
 	},
 	{
 		"name": "Africa/Kigali",
@@ -2737,6 +2730,13 @@
 		"comments": "Pacific Time"
 	},
 	{
+		"name": "America/Metlakatla",
+		"lat": 55.1269,
+		"long": -130.4236,
+		"country": "US",
+		"comments": "Pacific Standard Time - Annette Island, Alaska"
+	},
+	{
 		"name": "America/Anchorage",
 		"lat": 61.2181,
 		"long": -148.0997,
@@ -2777,13 +2777,6 @@
 		"long": -175.3419,
 		"country": "US",
 		"comments": "Aleutian Islands"
-	},
-	{
-		"name": "America/Metlakatla",
-		"lat": 55.1269,
-		"long": -130.4236,
-		"country": "US",
-		"comments": "Metlakatla Time - Annette Island"
 	},
 	{
 		"name": "Pacific/Honolulu",

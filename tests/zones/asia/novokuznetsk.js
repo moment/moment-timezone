@@ -228,5 +228,10 @@ exports["Asia/Novokuznetsk"] = {
 	"2011" : helpers.makeTestYear("Asia/Novokuznetsk", [
 		["2011-03-26T19:59:59+00:00", "01:59:59", "NOVT", -360],
 		["2011-03-26T20:00:00+00:00", "03:00:00", "NOVT", -420]
+	]),
+
+	"2014" : helpers.makeTestYear("Asia/Novokuznetsk", [
+		["2014-10-25T18:59:59+00:00", "01:59:59", "NOVT", -420],
+		["2014-10-25T19:00:00+00:00", "02:00:00", "KRAT", -420]
 	])
 };
