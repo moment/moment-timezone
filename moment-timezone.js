@@ -23,14 +23,15 @@
 
 	var VERSION = "0.2.1",
 		zones = {},
-		links = {};
+		links = {},
+
+		momentVersion = moment.version.split('.'),
+		major = +momentVersion[0],
+		minor = +momentVersion[1];
 
 	// Moment.js version check
-	var momentVersion = moment.version.split('.');
-	var major = +momentVersion[0];
-	var minor = +momentVersion[1];
 	if (major < 2 || (major === 2 && minor < 6)) {
-		logError('Moment Timezone requires Moment.js >= ' + major + '.' + minor + '. You are using Moment.js ' + moment.version + '. See momentjs.com');
+		logError('Moment Timezone requires Moment.js >= 2.6.0. You are using Moment.js ' + moment.version + '. See momentjs.com');
 	}
 
 	/************************************
@@ -389,7 +390,7 @@
 		// moment 2.8.1+
 		momentProperties.push('_z');
 		momentProperties.push('_a');
-	} else if(momentProperties) {
+	} else if (momentProperties) {
 		// moment 2.7.0
 		momentProperties._z = null;
 	}
