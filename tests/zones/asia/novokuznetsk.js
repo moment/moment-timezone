@@ -3,9 +3,9 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Asia/Novokuznetsk"] = {
-	"1920" : helpers.makeTestYear("Asia/Novokuznetsk", [
-		["1920-01-05T18:11:11+00:00", "23:59:59", "NMT", -20928 / 60],
-		["1920-01-05T18:11:12+00:00", "00:11:12", "KRAT", -360]
+	"1924" : helpers.makeTestYear("Asia/Novokuznetsk", [
+		["1924-04-30T18:11:11+00:00", "23:59:59", "LMT", -20928 / 60],
+		["1924-04-30T18:11:12+00:00", "00:11:12", "KRAT", -360]
 	]),
 
 	"1930" : helpers.makeTestYear("Asia/Novokuznetsk", [
