@@ -396,7 +396,7 @@
 	}
 
 	loadData({
-		"version": "2014g",
+		"version": "2014h",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0|",
 			"Africa/Addis_Ababa|EAT|-30|0|",
