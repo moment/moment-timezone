@@ -343,9 +343,10 @@
 	moment.tz = tz;
 
 	moment.updateOffset = function (mom, keepTime) {
-		var offset;
-		if (mom._z) {
-			offset = mom._z.offset(mom);
+		var offset,
+		    _z = mom._zn ? getZone(mom._zn) : mom._z;
+		if (_z) {
+			offset = _z.offset(mom);
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
@@ -383,6 +384,10 @@
 	fn.zoneName = abbrWrap(fn.zoneName);
 	fn.zoneAbbr = abbrWrap(fn.zoneAbbr);
 	fn.utc      = resetZoneWrap(fn.utc);
+
+	moment.tz.setDefault = function(name) {
+		moment._zn = name;
+	}
 
 	// Cloning a moment should include the _z property.
 	var momentProperties = moment.momentProperties;
