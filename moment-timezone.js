@@ -193,7 +193,9 @@
 	************************************/
 
 	function normalizeName (name) {
-		return (name || '').toLowerCase().replace(/\//g, '_');
+		if (typeof name !== 'string')
+			name = '';
+		return name.toLowerCase().replace(/\//g, '_');
 	}
 
 	function addZone (packed) {
