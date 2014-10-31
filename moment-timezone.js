@@ -391,6 +391,7 @@
 
 	moment.tz.setDefault = function(name) {
 		moment.defaultZone = name ? getZone(name) : null;
+		return moment;
 	};
 
 	// Cloning a moment should include the _z property.
