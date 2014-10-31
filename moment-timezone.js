@@ -342,11 +342,15 @@
 
 	moment.tz = tz;
 
+	moment.defaultZone = null;
+
 	moment.updateOffset = function (mom, keepTime) {
-		var offset,
-		    _z = mom._zn ? getZone(mom._zn) : mom._z;
-		if (_z) {
-			offset = _z.offset(mom);
+		var offset;
+		if (mom._z === undefined) {
+			mom._z = moment.defaultZone;
+		}
+		if (mom._z) {
+			offset = mom._z.offset(mom);
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
@@ -386,7 +390,7 @@
 	fn.utc      = resetZoneWrap(fn.utc);
 
 	moment.tz.setDefault = function(name) {
-		moment._zn = name;
+		moment.defaultZone = name ? getZone(name) : null;
 	}
 
 	// Cloning a moment should include the _z property.
