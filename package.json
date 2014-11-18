@@ -27,7 +27,7 @@
 	},
 	"license" : "MIT",
 	"dependencies" : {
-		"moment" : ">= 2.6.0"
+		"moment": "git://github.com/rollbar/moment"
 	},
 	"devDependencies" : {
 		"grunt"                  : "0.4.4",
