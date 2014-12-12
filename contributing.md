@@ -150,7 +150,62 @@ Pack each zone in `data/unpacked/2014d.json` and save in `data/packed/2014d.json
 "America/Phoenix|MST MDT MWT|70 60 60|01010202010|-261r0 1nX0 11B0 1nX0 SgN0 4Al1 Ap0 1db0 SWqX 1cL0"
 ```
 
-### 7. Build tests for each zone.
+### 7. Exract list of Zones & Countries meta data
+
+```
+grunt data-meta:2014d
+```
+
+This task creates a JSON file containing list of timezones and countries. The extracted meta data can be used to list all timezones, list all countries and filter zones by a country etc.
+The output is saved in data/meta/timezones-list-{version}.json
+
+Sample output:
+
+```
+{
+    "countries": {
+        "AD": {
+            "name": "Andorra",
+            "abbr": "AD",
+            "zones": [
+                "Europe/Andorra"
+            ]
+        },
+        "AE": {
+            "name": "United Arab Emirates",
+            "abbr": "AE",
+            "zones": [
+                "Asia/Dubai"
+            ]
+        },
+        ...
+    },
+    "zones": {
+        "Europe/Andorra": {
+            "name": "Europe/Andorra",
+            "lat": 42.5,
+            "long": 1.5167,
+            "countries": [
+                "AD"
+            ],
+            "comments": ""
+        },
+        "Asia/Dubai": {
+            "name": "Asia/Dubai",
+            "lat": 25.3,
+            "long": 55.3,
+            "countries": [
+                "AE",
+                "OM"
+            ],
+            "comments": ""
+        },
+        ...
+    }
+}
+```
+
+### 8. Build tests for each zone.
 
 ```
 grunt data-tests
