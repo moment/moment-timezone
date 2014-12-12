@@ -13,8 +13,7 @@ module.exports = function (grunt) {
 			'data-collect:'  + version,
 			'data-dedupe:'   + version,
 			'data-pack:'     + version,
-			'data-meta:'     + version,
-			'data-timezones:'+ version
+			'data-meta:'     + version
 		]);
 
 		if (version === 'latest') {
