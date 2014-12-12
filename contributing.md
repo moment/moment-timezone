@@ -157,7 +157,8 @@ grunt data-meta:2014d
 ```
 
 This task creates a JSON file containing list of timezones and countries. The extracted meta data can be used to list all timezones, list all countries and filter zones by a country etc.
-The output is saved in data/meta/timezones-list-{version}.json
+
+The output is saved in `data/meta/timezones-list-{version}.json`
 
 Sample output:
 
