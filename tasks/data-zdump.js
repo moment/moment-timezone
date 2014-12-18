@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 				src  = path.join(zicBase, file),
 				dest = path.join(zdumpBase, file);
 
-			exec('zdump -v ' + src, function (err, stdout) {
+			exec('zdump -v ' + src, { maxBuffer: 20*1024*1024 }, function (err, stdout) {
 				if (err) { throw err; }
 
 				grunt.file.mkdir(path.dirname(dest));
