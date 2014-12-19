@@ -205,7 +205,7 @@ exports.parse = {
 		t.done();
 	},
 
-	"check needsOffset in moment.tz" : function (t) {
+	"check needsOffset in moment.tz (America/Los_Angeles)" : function (t) {
 		var name = "America/Los_Angeles",
 			tests = [
 				[moment.tz([2012, 5, 1], name),                "2012-06-01 00:00:00 -07:00", "[2012, 5, 1]"],
@@ -213,7 +213,8 @@ exports.parse = {
 				[moment.tz("2012-06-01 07:00:00+00:00", name), "2012-06-01 00:00:00 -07:00", "2012-06-01 00:00:00+00:00"],
 				[moment.tz(1338534000000, name),               "2012-06-01 00:00:00 -07:00", "1338534000000"],
 				[moment.tz(new Date(1338534000000), name),     "2012-06-01 00:00:00 -07:00", "new Date(1338534000000)"],
-				[moment.tz({y : 2012, M : 5, d : 1}, name),    "2012-06-01 00:00:00 -07:00", "{y : 2012, M : 5, d : 1}"]
+				[moment.tz({y : 2012, M : 5, d : 1}, name),    "2012-06-01 00:00:00 -07:00", "{y : 2012, M : 5, d : 1}"],
+				[moment.tz(moment.utc([2012, 5, 1, 7]), name), "2012-06-01 00:00:00 -07:00", "moment.utc([2012, 5, 1, 7])"]
 			], i, actual, message, expected;
 
 		for (i = 0; i < tests.length; i++) {
@@ -224,5 +225,28 @@ exports.parse = {
 		}
 
 		t.done();
+	},
+
+	"check needsOffset in moment.tz (America/New_York)" : function (t) {
+		var name = "America/New_York",
+			tests = [
+				[moment.tz([2012, 5, 1], name),                "2012-06-01 00:00:00 -04:00", "[2012, 5, 1]"],
+				[moment.tz("2012-06-01", name),                "2012-06-01 00:00:00 -04:00", "2012-06-01"],
+				[moment.tz("2012-06-01 04:00:00+00:00", name), "2012-06-01 00:00:00 -04:00", "2012-06-01 00:00:00+00:00"],
+				[moment.tz(1338523200000, name),               "2012-06-01 00:00:00 -04:00", "1338534000000"],
+				[moment.tz(new Date(1338523200000), name),     "2012-06-01 00:00:00 -04:00", "new Date(1338534000000)"],
+				[moment.tz({y : 2012, M : 5, d : 1}, name),    "2012-06-01 00:00:00 -04:00", "{y : 2012, M : 5, d : 1}"],
+				[moment.tz(moment.utc([2012, 5, 1, 4]), name), "2012-06-01 00:00:00 -04:00", "moment.utc([2012, 5, 1, 4])"]
+			], i, actual, message, expected;
+
+		for (i = 0; i < tests.length; i++) {
+			actual   = tests[i][0].format('YYYY-MM-DD HH:mm:ss Z');
+			expected = tests[i][1];
+			message  = tests[i][2];
+			t.equal(actual, expected, "Parsing " + message + " in America/New_York should equal " + expected);
+		}
+
+		t.done();
 	}
+
 };

@@ -69,5 +69,12 @@ exports['needs-offset'] = {
 		t.ok(!needsOffset(moment(new Date())),     'Parsing a date object does not need an offset.');
 		t.ok(!needsOffset(moment.utc(new Date())), 'Parsing a date object does not need an offset.');
 		t.done();
+	},
+
+	'Moment' : function (t) {
+		t.ok(!needsOffset( moment([2012]).clone() ),                           'Cloned moments do not need an offset.');
+		t.ok(!needsOffset( moment(1318781876406).clone() ),                    'Cloned moments do not need an offset.');
+		t.ok(!needsOffset( moment.tz([2012], "America/Los_Angeles").clone() ), 'Cloned moments do not need an offset.');
+		t.done();
 	}
 };
