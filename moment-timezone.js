@@ -349,7 +349,11 @@
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
-			mom.zone(offset, keepTime);
+			if (mom.utcOffset !== undefined) {
+				mom.utcOffset(-offset, keepTime);
+			} else {
+				mom.zone(offset, keepTime);
+			}
 		}
 	};
 
