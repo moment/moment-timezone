@@ -1,6 +1,7 @@
 "use strict";
 
 var moment = require("../../index");
+var helpers = require("../helpers/helpers");
 
 var Los_Angeles = "America/Los_Angeles|PST PDT PWT PPT|80 70 70 70|010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261q0 1nX0 11B0 1nX0 SgN0 8x10 iy0 5Wp0 1Vb0 3dB0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
 var New_York    = "America/New_York|EST EDT EWT EPT|50 40 40 40|01010101010101010101010101010101010101010101010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261t0 1nX0 11B0 1nX0 11B0 1qL0 1a10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 RB0 8x40 iv0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
@@ -43,10 +44,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -08:00", "During the lost hour, the time should roll back to the previous time");
 		t.equal(  after.format("HH mm ss Z"), "03 00 00 -07:00",  "After the lost hour, the time should match the input time");
 
-		t.equal( before.zone(), 480, "Before the lost hour, the offset should match the non-dst offset");
-		t.equal(atStart.zone(), 480, "During the lost hour, the offset should match the non-dst offset");
-		t.equal(  atEnd.zone(), 480, "During the lost hour, the offset should match the non-dst offset");
-		t.equal(  after.zone(), 420,  "After the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(before),  -480, "Before the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -480, "During the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -480, "During the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(after),   -420,  "After the lost hour, the offset should match the dst offset");
 
 		t.done();
 	},
@@ -65,10 +66,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -05:00", "During the lost hour, the time should roll back to the previous time");
 		t.equal(  after.format("HH mm ss Z"), "03 00 00 -04:00",  "After the lost hour, the time should match the input time");
 
-		t.equal( before.zone(), 300, "Before the lost hour, the offset should match the non-dst offset");
-		t.equal(atStart.zone(), 300, "During the lost hour, the offset should match the non-dst offset");
-		t.equal(  atEnd.zone(), 300, "During the lost hour, the offset should match the non-dst offset");
-		t.equal(  after.zone(), 240,  "After the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(before),  -300, "Before the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -300, "During the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -300, "During the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(after),   -240,  "After the lost hour, the offset should match the dst offset");
 
 		t.done();
 	},
@@ -87,10 +88,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "03 59 59 -07:00", "During the lost hour, the time should roll forward to the previous time");
 		t.equal(  after.format("HH mm ss Z"), "03 00 00 -07:00",  "After the lost hour, the time should match the input time");
 
-		t.equal( before.zone(), 480, "Before the lost hour, the offset should match the non-dst offset");
-		t.equal(atStart.zone(), 420, "During the lost hour, the offset should match the dst offset");
-		t.equal(  atEnd.zone(), 420, "During the lost hour, the offset should match the dst offset");
-		t.equal(  after.zone(), 420,  "After the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(before),  -480, "Before the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -420, "During the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -420, "During the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(after),   -420,  "After the lost hour, the offset should match the dst offset");
 
 		t.done();
 	},
@@ -109,10 +110,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "03 59 59 -04:00", "During the lost hour, the time should roll forward to the previous time");
 		t.equal(  after.format("HH mm ss Z"), "03 00 00 -04:00",  "After the lost hour, the time should match the input time");
 
-		t.equal( before.zone(), 300, "Before the lost hour, the offset should match the non-dst offset");
-		t.equal(atStart.zone(), 240, "During the lost hour, the offset should match the dst offset");
-		t.equal(  atEnd.zone(), 240, "During the lost hour, the offset should match the dst offset");
-		t.equal(  after.zone(), 240,  "After the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(before),  -300, "Before the lost hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -240, "During the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -240, "During the lost hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(after),   -240,  "After the lost hour, the offset should match the dst offset");
 
 		t.done();
 	},
@@ -131,10 +132,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -07:00", "During the duplicated hour, the time should match the earlier input time");
 		t.equal(  after.format("HH mm ss Z"), "02 00 00 -08:00",  "After the duplicated hour, the time should match the input time");
 
-		t.equal( before.zone(), 420, "Before the duplicated hour, the offset should match the dst offset");
-		t.equal(atStart.zone(), 420, "During the duplicated hour, the offset should match the dst offset");
-		t.equal(  atEnd.zone(), 420, "During the duplicated hour, the offset should match the dst offset");
-		t.equal(  after.zone(), 480,  "After the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(before),  -420, "Before the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -420, "During the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -420, "During the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(after),   -480,  "After the duplicated hour, the offset should match the non-dst offset");
 
 		t.done();
 	},
@@ -153,10 +154,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -04:00", "During the duplicated hour, the time should match the earlier input time");
 		t.equal(  after.format("HH mm ss Z"), "02 00 00 -05:00",  "After the duplicated hour, the time should match the input time");
 
-		t.equal( before.zone(), 240, "Before the duplicated hour, the offset should match the dst offset");
-		t.equal(atStart.zone(), 240, "During the duplicated hour, the offset should match the dst offset");
-		t.equal(  atEnd.zone(), 240, "During the duplicated hour, the offset should match the dst offset");
-		t.equal(  after.zone(), 300,  "After the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(before),  -240, "Before the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -240, "During the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -240, "During the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(after),   -300,  "After the duplicated hour, the offset should match the non-dst offset");
 
 		t.done();
 	},
@@ -175,10 +176,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -08:00", "During the duplicated hour, the time should match the later input time");
 		t.equal(  after.format("HH mm ss Z"), "02 00 00 -08:00",  "After the duplicated hour, the time should match the input time");
 
-		t.equal( before.zone(), 420, "Before the duplicated hour, the offset should match the dst offset");
-		t.equal(atStart.zone(), 480, "During the duplicated hour, the offset should match the non-dst offset");
-		t.equal(  atEnd.zone(), 480, "During the duplicated hour, the offset should match the non-dst offset");
-		t.equal(  after.zone(), 480,  "After the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(before),  -420, "Before the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -480, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -480, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(after),   -480,  "After the duplicated hour, the offset should match the non-dst offset");
 
 		t.done();
 	},
@@ -197,10 +198,10 @@ exports.parse = {
 		t.equal(  atEnd.format("HH mm ss Z"), "01 59 59 -05:00", "During the duplicated hour, the time should match the later input time");
 		t.equal(  after.format("HH mm ss Z"), "02 00 00 -05:00",  "After the duplicated hour, the time should match the input time");
 
-		t.equal( before.zone(), 240, "Before the duplicated hour, the offset should match the dst offset");
-		t.equal(atStart.zone(), 300, "During the duplicated hour, the offset should match the non-dst offset");
-		t.equal(  atEnd.zone(), 300, "During the duplicated hour, the offset should match the non-dst offset");
-		t.equal(  after.zone(), 300,  "After the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(before),  -240, "Before the duplicated hour, the offset should match the dst offset");
+		t.equal(helpers.getUTCOffset(atStart), -300, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(atEnd),   -300, "During the duplicated hour, the offset should match the non-dst offset");
+		t.equal(helpers.getUTCOffset(after),   -300,  "After the duplicated hour, the offset should match the non-dst offset");
 
 		t.done();
 	},

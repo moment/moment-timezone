@@ -2,6 +2,14 @@
 
 var moment = require('../../index');
 
+function getUTCOffset (m) {
+	if (m.utcOffset !== undefined) {
+		return m.utcOffset();
+	} else {
+		return -m.zone();
+	}
+}
+
 function testYear(test, name, expected) {
 	var len = expected.length,
 		i,
@@ -16,7 +24,7 @@ function testYear(test, name, expected) {
 		offset = expected[i][3];
 		m      = moment(date).tz(name);
 		test.equal(m.format("HH:mm:ss"), time, date + ' should be ' + time + ' ' + abbr);
-		test.equal(m.zone(), offset, date + ' should be ' + offset + ' minutes offset in ' + abbr);
+		test.equal(getUTCOffset(m), -offset, date + ' should be ' + offset + ' minutes offset in ' + abbr);
 		test.equal(m.zoneAbbr(), abbr, date + ' should be ' + abbr);
 	}
 
@@ -28,5 +36,7 @@ module.exports = {
 		return function (test) {
 			testYear(test, name, expected);
 		};
-	}
+	},
+
+	getUTCOffset : getUTCOffset
 };
