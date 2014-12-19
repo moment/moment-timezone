@@ -16,7 +16,7 @@ function testYear(test, name, expected) {
 		offset = expected[i][3];
 		m      = moment(date).tz(name);
 		test.equal(m.format("HH:mm:ss"), time, date + ' should be ' + time + ' ' + abbr);
-		test.equal(m.zone(), offset, date + ' should be ' + offset + ' minutes offset in ' + abbr);
+		test.equal(m.utcOffset(), -offset, date + ' should be ' + offset + ' minutes offset in ' + abbr);
 		test.equal(m.zoneAbbr(), abbr, date + ' should be ' + abbr);
 	}
 
