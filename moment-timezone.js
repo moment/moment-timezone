@@ -342,14 +342,23 @@
 
 	moment.tz = tz;
 
+	moment.defaultZone = null;
+
 	moment.updateOffset = function (mom, keepTime) {
 		var offset;
+		if (mom._z === undefined) {
+			mom._z = moment.defaultZone;
+		}
 		if (mom._z) {
 			offset = mom._z.offset(mom);
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
-			mom.zone(offset, keepTime);
+			if (mom.utcOffset !== undefined) {
+				mom.utcOffset(-offset, keepTime);
+			} else {
+				mom.zone(offset, keepTime);
+			}
 		}
 	};
 
@@ -383,6 +392,11 @@
 	fn.zoneName = abbrWrap(fn.zoneName);
 	fn.zoneAbbr = abbrWrap(fn.zoneAbbr);
 	fn.utc      = resetZoneWrap(fn.utc);
+
+	moment.tz.setDefault = function(name) {
+		moment.defaultZone = name ? getZone(name) : null;
+		return moment;
+	};
 
 	// Cloning a moment should include the _z property.
 	var momentProperties = moment.momentProperties;
