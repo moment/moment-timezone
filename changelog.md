@@ -1,9 +1,9 @@
 ### `0.3.0` _2015-01-13_
 
-* Added the ability to set a default timezone for all new moments. []()
-* Added country data to the `meta/*.json` files. []()
-* Fixed a bug when passing a moment with an offset to `moment.tz`. []()
-* Fixed a deprecation in moment core, changing `moment#zone` to `moment#utcOffset`. []()
+* *Breaking:* Added country data to the `meta/*.json` files. Restructured the data to support multiple countries per zone. [#162](https://github.com/moment/moment-timezone/pull/162)
+* Added the ability to set a default timezone for all new moments. [#152](https://github.com/moment/moment-timezone/pull/152)
+* Fixed a bug when passing a moment with an offset to `moment.tz`. [#169](https://github.com/moment/moment-timezone/pull/169)
+* Fixed a deprecation in moment core, changing `moment#zone` to `moment#utcOffset`. [#168](https://github.com/moment/moment-timezone/pull/168)
 
 ### `0.2.5` _2014-11-12_
 * Updated data to IANA TZDB `2014j`. [#151](https://github.com/moment/moment-timezone/pull/151)
