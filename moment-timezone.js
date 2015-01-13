@@ -394,6 +394,9 @@
 	fn.utc      = resetZoneWrap(fn.utc);
 
 	moment.tz.setDefault = function(name) {
+		if (major < 2 || (major === 2 && minor < 9)) {
+			logError('Moment Timezone setDefault() requires Moment.js >= 2.9.0. You are using Moment.js ' + moment.version + '.');
+		}
 		moment.defaultZone = name ? getZone(name) : null;
 		return moment;
 	};
