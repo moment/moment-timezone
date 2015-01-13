@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.2.5
+//! version : 0.3.0
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -21,7 +21,7 @@
 	// Do not load moment-timezone a second time.
 	if (moment.tz !== undefined) { return moment; }
 
-	var VERSION = "0.2.5",
+	var VERSION = "0.3.0",
 		zones = {},
 		links = {},
 
@@ -302,13 +302,13 @@
 		moment.tz namespace
 	************************************/
 
-	function tz () {
+	function tz (input) {
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
 			zone = getZone(name),
 			out  = moment.utc.apply(null, args);
 
-		if (zone && needsOffset(out)) {
+		if (zone && !moment.isMoment(input) && needsOffset(out)) {
 			out.add(zone.parse(out), 'minutes');
 		}
 
@@ -342,14 +342,23 @@
 
 	moment.tz = tz;
 
+	moment.defaultZone = null;
+
 	moment.updateOffset = function (mom, keepTime) {
 		var offset;
+		if (mom._z === undefined) {
+			mom._z = moment.defaultZone;
+		}
 		if (mom._z) {
 			offset = mom._z.offset(mom);
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
-			mom.zone(offset, keepTime);
+			if (mom.utcOffset !== undefined) {
+				mom.utcOffset(-offset, keepTime);
+			} else {
+				mom.zone(offset, keepTime);
+			}
 		}
 	};
 
@@ -383,6 +392,14 @@
 	fn.zoneName = abbrWrap(fn.zoneName);
 	fn.zoneAbbr = abbrWrap(fn.zoneAbbr);
 	fn.utc      = resetZoneWrap(fn.utc);
+
+	moment.tz.setDefault = function(name) {
+		if (major < 2 || (major === 2 && minor < 9)) {
+			logError('Moment Timezone setDefault() requires Moment.js >= 2.9.0. You are using Moment.js ' + moment.version + '.');
+		}
+		moment.defaultZone = name ? getZone(name) : null;
+		return moment;
+	};
 
 	// Cloning a moment should include the _z property.
 	var momentProperties = moment.momentProperties;
