@@ -62,14 +62,28 @@ function parseZones (grunt, version, countries) {
 	return zones;
 }
 
+function filterCountries (allCountries) {
+    var countriesWithZones = {};
+
+    // Filter out the countries which dont have any timezones. eg: 'Bouvet Island', 'Heard Island and McDonald Islands'
+    for(var countryCode in allCountries) {
+        var country = allCountries[countryCode];
+        if(country.zones.length > 0) {
+            countriesWithZones[country.abbr] = country;
+        }
+    }
+    return countriesWithZones;
+}
+
 module.exports = function (grunt) {
 	grunt.registerTask('data-meta', '7. Parse metadata from zone1970.tab', function (version) {
 		version = version || 'latest';
 		var countries = parseCountries(grunt, version);
 		var zones = parseZones(grunt, version, countries);
+		var validCountries = filterCountries(countries);
 
 		var output = {
-			countries: countries,
+			countries: validCountries,
 			zones: zones
 		};
 
