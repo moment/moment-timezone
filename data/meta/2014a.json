@@ -277,11 +277,6 @@
 				"Asia/Thimphu"
 			]
 		},
-		"BV": {
-			"name": "Bouvet Island",
-			"abbr": "BV",
-			"zones": []
-		},
 		"BW": {
 			"name": "Botswana",
 			"abbr": "BW",
@@ -749,11 +744,6 @@
 			"zones": [
 				"Asia/Hong_Kong"
 			]
-		},
-		"HM": {
-			"name": "Heard Island & McDonald Islands",
-			"abbr": "HM",
-			"zones": []
 		},
 		"HN": {
 			"name": "Honduras",
