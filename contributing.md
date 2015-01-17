@@ -12,11 +12,8 @@ npm install -g grunt-cli
 npm install
 ```
 
-Additions to `moment-timezone.js` should have matching tests in
+Additions to `moment-timezone.js` or `moment-timezone-utils.js` should have matching tests in
 `/tests/moment-timezone/`.
-
-Additions to `moment-timezone-utils.js` should have matching tests in
-`/tests/moment-timezone-utils/`.
 
 ## Running tests
 
