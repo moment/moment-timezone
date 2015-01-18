@@ -11,7 +11,11 @@ var DATA = {
 	links : [
 		"SomeZone/Los_Angles|SomeZone/Pacific",
 		"SomeZone/New_York|SomeZone/Eastern"
-	]
+	],
+	countries : [
+		"C1|Country_1|SomeZone/Pacific",
+		"C2|Country_2|SomeZone/Eastern"
+	] 
 };
 
 exports.load = {
@@ -23,6 +27,9 @@ exports.load = {
 
 		test.ok(tz.zone('SomeZone/Los_Angles'), "Should have data loaded from links array");
 		test.ok(tz.zone('SomeZone/New_York'), "Should have data loaded from links array");
+
+		test.ok(tz.country('C1'), "Should have country data loaded from countries array");
+		test.ok(tz.country('C2'), "Should have country data loaded from countries array");
 
 		test.equal(tz.dataVersion, 'test0', "Should set the moment.tz.dataVersion based on the version property");
 

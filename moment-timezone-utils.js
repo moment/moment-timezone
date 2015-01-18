@@ -130,9 +130,24 @@
 		}
 	}
 
+	function validateCountryData (source) {
+		if (!source.name)    { throw new Error("Country data missing name"); }
+		if (!source.abbr)   { throw new Error("Country data missing abbr"); }
+		if (!source.zones || !source.zones.length)  { throw new Error("Country data missing zones"); }
+	}
+
 	function pack (source) {
 		validatePackData(source);
 		return source.name + '|' + packAbbrsAndOffsets(source) + '|' + packUntils(source.untils);
+	}
+
+	function packCountry (source) {
+		validateCountryData(source);
+		var zones = "";
+		for(var i = 0; i < source.zones.length; i++) {
+			zones += (i == 0) ? source.zones[i] : (" " + source.zones[i]);
+		}
+		return source.abbr + '|' + source.name + '|' + zones;
 	}
 
 	/************************************
@@ -255,6 +270,7 @@
 		var i,
 			inputZones = input.zones,
 			outputZones = [],
+			outputCountries = [],
 			output;
 
 		for (i = 0; i < inputZones.length; i++) {
@@ -271,6 +287,11 @@
 			output.zones[i] = pack(output.zones[i]);
 		}
 
+		for (i = 0; i < input.countries.length; i++) {
+			outputCountries[i] = packCountry(input.countries[i]);
+		}
+		output.countries = outputCountries;
+
 		return output;
 	}
 
@@ -280,6 +301,7 @@
 
 	moment.tz.pack           = pack;
 	moment.tz.packBase60     = packBase60;
+	moment.tz.packCountry    = packCountry;
 	moment.tz.createLinks    = createLinks;
 	moment.tz.filterYears    = filterYears;
 	moment.tz.filterLinkPack = filterLinkPack;

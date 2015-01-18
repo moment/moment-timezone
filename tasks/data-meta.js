@@ -76,7 +76,7 @@ function filterCountries (allCountries) {
 }
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-meta', '7. Parse metadata from zone1970.tab', function (version) {
+	grunt.registerTask('data-meta', '6. Parse metadata from zone1970.tab', function (version) {
 		version = version || 'latest';
 		var countries = parseCountries(grunt, version);
 		var zones = parseZones(grunt, version, countries);
@@ -89,6 +89,15 @@ module.exports = function (grunt) {
 
 		grunt.file.mkdir('data/meta');
 		grunt.file.write('data/meta/' + version + '.json', JSON.stringify(output, null, '\t'));
+
+		// Append the 'countries' list to the unpacked json file created from previous task
+		var countryArray = [];
+		for(var countryCode in validCountries) {
+			countryArray.push(validCountries[countryCode]);
+		}
+		var unpacked = grunt.file.readJSON('data/unpacked/' + version + '.json');
+		unpacked.countries = countryArray;
+		grunt.file.write('data/unpacked/' + version + '.json', JSON.stringify(unpacked, null, 2));
 
 		grunt.log.ok('Added metadata for ' + version);
 	});

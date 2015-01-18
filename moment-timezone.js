@@ -24,6 +24,7 @@
 	var VERSION = "0.3.0",
 		zones = {},
 		links = {},
+		countries = {},
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -123,6 +124,16 @@
 		};
 	}
 
+	function unpackCountry (string) {
+		var data = string.split('|');
+
+		return {
+			abbr: data[0],
+			name: data[1],
+			zones: data[2].split(' ')
+		};
+	}
+
 	/************************************
 		Zone object
 	************************************/
@@ -185,8 +196,30 @@
 
 		offset : function (mom) {
 			return this.offsets[this._index(mom)];
+		},
+
+		offsetString: function (mom) {
+			return moment.tz(mom, this.name).format('ZZ');
 		}
 	};
+
+	/************************************
+		Country object
+	************************************/
+
+	function Country (packedString) {
+		if (packedString) {
+			this._set(unpackCountry(packedString));
+		}
+	}
+
+	Country.prototype = {
+		_set : function (unpacked) {
+			this.name    = unpacked.name;
+			this.abbr    = unpacked.abbr;
+			this.zones   = unpacked.zones;
+		}
+	}
 
 	/************************************
 		Global Methods
@@ -211,8 +244,37 @@
 		}
 	}
 
+	function addCountry (packed) {
+		var i, country, unpackedCountry;
+
+		if (typeof packed === "string") {
+			packed = [packed];
+		}
+
+		for (i = 0; i < packed.length; i++) {
+			country = new Country(packed[i]);
+			countries[country.abbr] = country;
+		}
+	}
+
 	function getZone (name) {
 		return zones[normalizeName(name)] || null;
+	}
+
+	function _getCurrentZoneInfo (name) {
+		var now = moment.utc().valueOf();
+		var zone = getZone(name);
+
+		if(!zone) {
+			console.error("No data found for zone " + name);
+			return {};
+		}
+		
+		return {
+			abbr: zone.abbr(now),
+			offset: zone.offset(now),
+			offsetString: zone.offsetString(now)
+		};
 	}
 
 	function getNames () {
@@ -225,6 +287,56 @@
 		}
 
 		return out.sort();
+	}
+
+	function getCountries () {
+		var i, out = [];
+
+		for (i in countries) {
+			if (countries.hasOwnProperty(i) && countries[i]) {
+				out.push(countries[i]);
+			}
+		}
+
+		return out;
+	}
+
+	function getCountry (countryCode) {
+		return countries[countryCode] || null;
+	}
+
+	function getZonesOfCountry (countryCode) {
+		var i, countryZones = [];
+		var country = getCountry(countryCode);
+
+		if (!country) {
+			return null;
+		}
+
+		var zone, zoneInfo, clonedZone;
+		for (i=0; i < country.zones.length; i++) {
+			
+			zone = getZone(country.zones[i]);
+			if(!zone) {
+				console.error("No data found for zone " + country.zones[i]);
+				continue;
+			}
+			// Create a new zone as we don't want to corrupt the global "zones" object.
+			clonedZone = new Zone();
+			clonedZone._set(zone);
+
+			// The zone objects returned here will have following additional properties apart from usual Zone Object properties
+			// currentAbbr: the current abbr of this zone (PST vs PDT etc.)
+			// currentOffset: the offset(in minutes) currently in effect
+			// currentOffsetString: the offset string(+0430, -0700 etc.) in effect
+			zoneInfo = _getCurrentZoneInfo(clonedZone.name);
+			clonedZone.currentAbbr 			= zoneInfo.abbr;
+			clonedZone.currentOffset 		= zoneInfo.offset;
+			clonedZone.currentOffsetString  = zoneInfo.offsetString;
+			countryZones.push(clonedZone);
+		}
+
+		return countryZones;
 	}
 
 	function addLink (aliases) {
@@ -277,6 +389,7 @@
 	function loadData (data) {
 		addZone(data.zones);
 		addLink(data.links);
+		addCountry(data.countries);
 		tz.dataVersion = data.version;
 	}
 
@@ -321,15 +434,21 @@
 	tz.dataVersion  = '';
 	tz._zones       = zones;
 	tz._links       = links;
+	tz._countries 	= countries;
 	tz.add          = addZone;
 	tz.link         = addLink;
+	tz.addCountry 	= addCountry;
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
 	tz.names        = getNames;
+	tz.countries    = getCountries;
+	tz.country 		= getCountry;
+	tz.zonesOfCountry = getZonesOfCountry;
 	tz.Zone         = Zone;
 	tz.unpack       = unpack;
 	tz.unpackBase60 = unpackBase60;
+	tz.unpackCountry= unpackCountry;
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
