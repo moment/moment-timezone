@@ -219,7 +219,7 @@
 			this.abbr    = unpacked.abbr;
 			this.zones   = unpacked.zones;
 		}
-	}
+	};
 
 	/************************************
 		Global Methods
