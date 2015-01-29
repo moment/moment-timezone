@@ -25,7 +25,8 @@
 			"name": "Antigua & Barbuda",
 			"abbr": "AG",
 			"zones": [
-				"America/Port_of_Spain"
+				"America/Port_of_Spain",
+				"America/Antigua"
 			]
 		},
 		"AI": {
@@ -190,7 +191,8 @@
 			"name": "Bahrain",
 			"abbr": "BH",
 			"zones": [
-				"Asia/Qatar"
+				"Asia/Qatar",
+				"Asia/Bahrain"
 			]
 		},
 		"BI": {
@@ -329,7 +331,8 @@
 				"America/Dawson_Creek",
 				"America/Vancouver",
 				"America/Whitehorse",
-				"America/Dawson"
+				"America/Dawson",
+				"America/Montreal"
 			]
 		},
 		"CC": {
@@ -934,14 +937,16 @@
 			"name": "Kuwait",
 			"abbr": "KW",
 			"zones": [
-				"Asia/Riyadh"
+				"Asia/Riyadh",
+				"Asia/Kuwait"
 			]
 		},
 		"KY": {
 			"name": "Cayman Islands",
 			"abbr": "KY",
 			"zones": [
-				"America/Panama"
+				"America/Panama",
+				"America/Cayman"
 			]
 		},
 		"KZ": {
@@ -1123,7 +1128,8 @@
 			"name": "Northern Mariana Islands",
 			"abbr": "MP",
 			"zones": [
-				"Pacific/Guam"
+				"Pacific/Guam",
+				"Pacific/Saipan"
 			]
 		},
 		"MQ": {
@@ -1297,7 +1303,8 @@
 			"name": "Oman",
 			"abbr": "OM",
 			"zones": [
-				"Asia/Dubai"
+				"Asia/Dubai",
+				"Asia/Muscat"
 			]
 		},
 		"PA": {
@@ -1748,7 +1755,8 @@
 			"zones": [
 				"Pacific/Pago_Pago",
 				"Pacific/Wake",
-				"Pacific/Honolulu"
+				"Pacific/Honolulu",
+				"Pacific/Midway"
 			]
 		},
 		"US": {
@@ -1869,7 +1877,8 @@
 			"name": "Yemen",
 			"abbr": "YE",
 			"zones": [
-				"Asia/Riyadh"
+				"Asia/Riyadh",
+				"Asia/Aden"
 			]
 		},
 		"YT": {
@@ -5005,6 +5014,87 @@
 				"ZA",
 				"LS",
 				"SZ"
+			],
+			"comments": ""
+		},
+		"America/Montreal": {
+			"name": "America/Montreal",
+			"countries": [
+				"CA"
+			],
+			"lat": "",
+			"long": "",
+			"comments": ""
+		},
+		"America/Antigua": {
+			"name": "America/Antigua",
+			"lat": 17.05,
+			"long": -60.2,
+			"countries": [
+				"AG"
+			],
+			"comments": ""
+		},
+		"America/Cayman": {
+			"name": "America/Cayman",
+			"lat": 19.3,
+			"long": -80.6167,
+			"countries": [
+				"KY"
+			],
+			"comments": ""
+		},
+		"Asia/Aden": {
+			"name": "Asia/Aden",
+			"lat": 12.75,
+			"long": 45.2,
+			"countries": [
+				"YE"
+			],
+			"comments": ""
+		},
+		"Asia/Bahrain": {
+			"name": "Asia/Bahrain",
+			"lat": 26.3833,
+			"long": 50.5833,
+			"countries": [
+				"BH"
+			],
+			"comments": ""
+		},
+		"Asia/Kuwait": {
+			"name": "Asia/Kuwait",
+			"lat": 29.3333,
+			"long": 47.9833,
+			"countries": [
+				"KW"
+			],
+			"comments": ""
+		},
+		"Asia/Muscat": {
+			"name": "Asia/Muscat",
+			"lat": 23.6,
+			"long": 58.5833,
+			"countries": [
+				"OM"
+			],
+			"comments": ""
+		},
+		"Pacific/Midway": {
+			"name": "Pacific/Midway",
+			"lat": 28.2167,
+			"long": -176.6333,
+			"countries": [
+				"UM"
+			],
+			"comments": "Midway Islands"
+		},
+		"Pacific/Saipan": {
+			"name": "Pacific/Saipan",
+			"lat": 15.2,
+			"long": 145.75,
+			"countries": [
+				"MP"
 			],
 			"comments": ""
 		}

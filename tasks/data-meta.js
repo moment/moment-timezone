@@ -75,16 +75,88 @@ function filterCountries (allCountries) {
     return countriesWithZones;
 }
 
+/* In file 'checktab.awk', there are few zones which are considered special cases(these are zones which exist in one of the continent
+ files, but dont have entry in zone1970.tab, which kind of leaves them as zombies - without any parent country) */
+function handleSpecialZones (grunt, version, zones, countries) {
+	var zoneTab = 'temp/download/' + version + '/zone.tab';
+	var checktab = 'temp/download/' + version + '/checktab.awk';
+	var map = {};
+
+	if(grunt.file.exists(checktab) && grunt.file.exists(zoneTab)) {
+		var zoneData = grunt.file.read(zoneTab);
+
+		// Extract zone-country map from the 'zone.tab' file
+		zoneData.split('\n').map(function (line) {
+			return line.split("#")[0].split(/\s+/); // split on whitespace before a # comment
+		}).filter(function (parts) {
+			return parts.length > 2;
+		}).forEach(function (parts) {
+			var zoneCountry = parts[0];
+			var latlong = parts[1].match(/[+-]\d+/g);
+			var zoneName = parts[2];
+			if(map[zoneName]) {
+				map[zoneName].countries.push(zoneCountry);
+			} else {
+				map[zoneName] = {
+					name        : zoneName,
+					lat         : parseLatLong(latlong[0], 0),
+					long        : parseLatLong(latlong[1], 1),
+					countries 	: [zoneCountry],
+					comments    : parts.slice(3).join(' ')
+				};
+			}
+		});
+
+		// Extract 'special zones' cases from the 'checktab.awk' file. Lines which have `tztab["Some/Zone"] = 1` are the culprits.
+		var checktabData = grunt.file.read(checktab);
+		var re = /tztab\["(.*)"\] = 1/;
+		var specialZones = [];
+		checktabData.split('\n').forEach(function(line) {
+			var text = line.trim();
+			var matches = re.exec(text);
+			if(matches && matches.length > 1) {
+				specialZones.push(matches[1]);
+			}
+		});
+
+		specialZones.forEach(function(zoneName) {
+			if(!zones[zoneName]) {
+				// this is horrible, but cannot be handled in any other way. America/Montreal should be turned into a link by IANA!
+				if(zoneName === "America/Montreal") {
+					zones[zoneName] = {name: "America/Montreal", countries: ["CA"], lat: '', long: '', comments: ''};
+					countries['CA'].zones.push(zoneName);
+				} else {
+					zones[zoneName] = map[zoneName];
+					map[zoneName].countries.forEach(function(countryCode) {
+						if(countries[countryCode].zones.indexOf(zoneName) === -1) {
+							countries[countryCode].zones.push(zoneName);
+						}
+					});
+				}
+			} else {
+				grunt.log.warn(zoneName + ' has an entry in both zone1970.tab and as a special case in checktab.awk!!!');
+			}
+		});
+
+	}
+
+	return {
+		countries: countries,
+		zones: zones
+	};
+}
+
 module.exports = function (grunt) {
 	grunt.registerTask('data-meta', '6. Parse metadata from zone1970.tab', function (version) {
 		version = version || 'latest';
 		var countries = parseCountries(grunt, version);
 		var zones = parseZones(grunt, version, countries);
 		var validCountries = filterCountries(countries);
+		var correctedData = handleSpecialZones(grunt, version, zones, validCountries);
 
 		var output = {
-			countries: validCountries,
-			zones: zones
+			countries: correctedData.countries,
+			zones: correctedData.zones
 		};
 
 		grunt.file.mkdir('data/meta');
@@ -92,8 +164,8 @@ module.exports = function (grunt) {
 
 		// Append the 'countries' list to the unpacked json file created from previous task
 		var countryArray = [];
-		for(var countryCode in validCountries) {
-			countryArray.push(validCountries[countryCode]);
+		for(var countryCode in correctedData.countries) {
+			countryArray.push(correctedData.countries[countryCode]);
 		}
 		var unpacked = grunt.file.readJSON('data/unpacked/' + version + '.json');
 		unpacked.countries = countryArray;

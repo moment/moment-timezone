@@ -25,7 +25,8 @@
 			"name": "Antigua & Barbuda",
 			"abbr": "AG",
 			"zones": [
-				"America/Port_of_Spain"
+				"America/Port_of_Spain",
+				"America/Antigua"
 			]
 		},
 		"AI": {
@@ -190,14 +191,16 @@
 			"name": "Bahrain",
 			"abbr": "BH",
 			"zones": [
-				"Asia/Qatar"
+				"Asia/Qatar",
+				"Asia/Bahrain"
 			]
 		},
 		"BI": {
 			"name": "Burundi",
 			"abbr": "BI",
 			"zones": [
-				"Africa/Maputo"
+				"Africa/Maputo",
+				"Africa/Bujumbura"
 			]
 		},
 		"BJ": {
@@ -282,7 +285,8 @@
 			"name": "Botswana",
 			"abbr": "BW",
 			"zones": [
-				"Africa/Maputo"
+				"Africa/Maputo",
+				"Africa/Gaborone"
 			]
 		},
 		"BY": {
@@ -329,7 +333,8 @@
 				"America/Dawson_Creek",
 				"America/Vancouver",
 				"America/Whitehorse",
-				"America/Dawson"
+				"America/Dawson",
+				"America/Montreal"
 			]
 		},
 		"CC": {
@@ -344,7 +349,8 @@
 			"abbr": "CD",
 			"zones": [
 				"Africa/Maputo",
-				"Africa/Lagos"
+				"Africa/Lagos",
+				"Africa/Lubumbashi"
 			]
 		},
 		"CF": {
@@ -473,7 +479,8 @@
 			"name": "Djibouti",
 			"abbr": "DJ",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Africa/Djibouti"
 			]
 		},
 		"DK": {
@@ -537,7 +544,8 @@
 			"name": "Eritrea",
 			"abbr": "ER",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Africa/Asmara"
 			]
 		},
 		"ES": {
@@ -553,7 +561,8 @@
 			"name": "Ethiopia",
 			"abbr": "ET",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Africa/Addis_Ababa"
 			]
 		},
 		"FI": {
@@ -890,7 +899,8 @@
 			"name": "Cambodia",
 			"abbr": "KH",
 			"zones": [
-				"Asia/Bangkok"
+				"Asia/Bangkok",
+				"Asia/Phnom_Penh"
 			]
 		},
 		"KI": {
@@ -906,7 +916,8 @@
 			"name": "Comoros",
 			"abbr": "KM",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Indian/Comoro"
 			]
 		},
 		"KN": {
@@ -934,14 +945,16 @@
 			"name": "Kuwait",
 			"abbr": "KW",
 			"zones": [
-				"Asia/Riyadh"
+				"Asia/Riyadh",
+				"Asia/Kuwait"
 			]
 		},
 		"KY": {
 			"name": "Cayman Islands",
 			"abbr": "KY",
 			"zones": [
-				"America/Panama"
+				"America/Panama",
+				"America/Cayman"
 			]
 		},
 		"KZ": {
@@ -959,7 +972,8 @@
 			"name": "Laos",
 			"abbr": "LA",
 			"zones": [
-				"Asia/Bangkok"
+				"Asia/Bangkok",
+				"Asia/Vientiane"
 			]
 		},
 		"LB": {
@@ -1001,7 +1015,8 @@
 			"name": "Lesotho",
 			"abbr": "LS",
 			"zones": [
-				"Africa/Johannesburg"
+				"Africa/Johannesburg",
+				"Africa/Maseru"
 			]
 		},
 		"LT": {
@@ -1071,7 +1086,8 @@
 			"name": "Madagascar",
 			"abbr": "MG",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Indian/Antananarivo"
 			]
 		},
 		"MH": {
@@ -1123,7 +1139,8 @@
 			"name": "Northern Mariana Islands",
 			"abbr": "MP",
 			"zones": [
-				"Pacific/Guam"
+				"Pacific/Guam",
+				"Pacific/Saipan"
 			]
 		},
 		"MQ": {
@@ -1172,7 +1189,8 @@
 			"name": "Malawi",
 			"abbr": "MW",
 			"zones": [
-				"Africa/Maputo"
+				"Africa/Maputo",
+				"Africa/Blantyre"
 			]
 		},
 		"MX": {
@@ -1297,7 +1315,8 @@
 			"name": "Oman",
 			"abbr": "OM",
 			"zones": [
-				"Asia/Dubai"
+				"Asia/Dubai",
+				"Asia/Muscat"
 			]
 		},
 		"PA": {
@@ -1462,7 +1481,8 @@
 			"name": "Rwanda",
 			"abbr": "RW",
 			"zones": [
-				"Africa/Maputo"
+				"Africa/Maputo",
+				"Africa/Kigali"
 			]
 		},
 		"SA": {
@@ -1560,7 +1580,8 @@
 			"name": "Somalia",
 			"abbr": "SO",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Africa/Mogadishu"
 			]
 		},
 		"SR": {
@@ -1609,7 +1630,8 @@
 			"name": "Swaziland",
 			"abbr": "SZ",
 			"zones": [
-				"Africa/Johannesburg"
+				"Africa/Johannesburg",
+				"Africa/Mbabane"
 			]
 		},
 		"TC": {
@@ -1722,7 +1744,8 @@
 			"name": "Tanzania",
 			"abbr": "TZ",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Africa/Dar_es_Salaam"
 			]
 		},
 		"UA": {
@@ -1738,7 +1761,8 @@
 			"name": "Uganda",
 			"abbr": "UG",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Africa/Kampala"
 			]
 		},
 		"UM": {
@@ -1747,7 +1771,8 @@
 			"zones": [
 				"Pacific/Pago_Pago",
 				"Pacific/Wake",
-				"Pacific/Honolulu"
+				"Pacific/Honolulu",
+				"Pacific/Midway"
 			]
 		},
 		"US": {
@@ -1839,7 +1864,8 @@
 			"name": "Vietnam",
 			"abbr": "VN",
 			"zones": [
-				"Asia/Bangkok"
+				"Asia/Bangkok",
+				"Asia/Ho_Chi_Minh"
 			]
 		},
 		"VU": {
@@ -1867,14 +1893,16 @@
 			"name": "Yemen",
 			"abbr": "YE",
 			"zones": [
-				"Asia/Riyadh"
+				"Asia/Riyadh",
+				"Asia/Aden"
 			]
 		},
 		"YT": {
 			"name": "Mayotte",
 			"abbr": "YT",
 			"zones": [
-				"Africa/Nairobi"
+				"Africa/Nairobi",
+				"Indian/Mayotte"
 			]
 		},
 		"ZA": {
@@ -1888,14 +1916,16 @@
 			"name": "Zambia",
 			"abbr": "ZM",
 			"zones": [
-				"Africa/Maputo"
+				"Africa/Maputo",
+				"Africa/Lusaka"
 			]
 		},
 		"ZW": {
 			"name": "Zimbabwe",
 			"abbr": "ZW",
 			"zones": [
-				"Africa/Maputo"
+				"Africa/Maputo",
+				"Africa/Harare"
 			]
 		}
 	},
@@ -4985,6 +5015,276 @@
 				"ZA",
 				"LS",
 				"SZ"
+			],
+			"comments": ""
+		},
+		"America/Montreal": {
+			"name": "America/Montreal",
+			"countries": [
+				"CA"
+			],
+			"lat": "",
+			"long": "",
+			"comments": ""
+		},
+		"Africa/Addis_Ababa": {
+			"name": "Africa/Addis_Ababa",
+			"lat": 9.0333,
+			"long": 38.7,
+			"countries": [
+				"ET"
+			],
+			"comments": ""
+		},
+		"Africa/Asmara": {
+			"name": "Africa/Asmara",
+			"lat": 15.3333,
+			"long": 38.8833,
+			"countries": [
+				"ER"
+			],
+			"comments": ""
+		},
+		"Africa/Blantyre": {
+			"name": "Africa/Blantyre",
+			"lat": -14.2167,
+			"long": 35,
+			"countries": [
+				"MW"
+			],
+			"comments": ""
+		},
+		"Africa/Bujumbura": {
+			"name": "Africa/Bujumbura",
+			"lat": -2.6167,
+			"long": 29.3667,
+			"countries": [
+				"BI"
+			],
+			"comments": ""
+		},
+		"Africa/Dar_es_Salaam": {
+			"name": "Africa/Dar_es_Salaam",
+			"lat": -5.2,
+			"long": 39.2833,
+			"countries": [
+				"TZ"
+			],
+			"comments": ""
+		},
+		"Africa/Djibouti": {
+			"name": "Africa/Djibouti",
+			"lat": 11.6,
+			"long": 43.15,
+			"countries": [
+				"DJ"
+			],
+			"comments": ""
+		},
+		"Africa/Gaborone": {
+			"name": "Africa/Gaborone",
+			"lat": -23.35,
+			"long": 25.9167,
+			"countries": [
+				"BW"
+			],
+			"comments": ""
+		},
+		"Africa/Harare": {
+			"name": "Africa/Harare",
+			"lat": -16.1667,
+			"long": 31.05,
+			"countries": [
+				"ZW"
+			],
+			"comments": ""
+		},
+		"Africa/Kampala": {
+			"name": "Africa/Kampala",
+			"lat": 0.3167,
+			"long": 32.4167,
+			"countries": [
+				"UG"
+			],
+			"comments": ""
+		},
+		"Africa/Kigali": {
+			"name": "Africa/Kigali",
+			"lat": -0.05,
+			"long": 30.0667,
+			"countries": [
+				"RW"
+			],
+			"comments": ""
+		},
+		"Africa/Lubumbashi": {
+			"name": "Africa/Lubumbashi",
+			"lat": -10.3333,
+			"long": 27.4667,
+			"countries": [
+				"CD"
+			],
+			"comments": "east Dem. Rep. of Congo"
+		},
+		"Africa/Lusaka": {
+			"name": "Africa/Lusaka",
+			"lat": -14.5833,
+			"long": 28.2833,
+			"countries": [
+				"ZM"
+			],
+			"comments": ""
+		},
+		"Africa/Maseru": {
+			"name": "Africa/Maseru",
+			"lat": -28.5333,
+			"long": 27.5,
+			"countries": [
+				"LS"
+			],
+			"comments": ""
+		},
+		"Africa/Mbabane": {
+			"name": "Africa/Mbabane",
+			"lat": -25.7,
+			"long": 31.1,
+			"countries": [
+				"SZ"
+			],
+			"comments": ""
+		},
+		"Africa/Mogadishu": {
+			"name": "Africa/Mogadishu",
+			"lat": 2.0667,
+			"long": 45.3667,
+			"countries": [
+				"SO"
+			],
+			"comments": ""
+		},
+		"America/Antigua": {
+			"name": "America/Antigua",
+			"lat": 17.05,
+			"long": -60.2,
+			"countries": [
+				"AG"
+			],
+			"comments": ""
+		},
+		"America/Cayman": {
+			"name": "America/Cayman",
+			"lat": 19.3,
+			"long": -80.6167,
+			"countries": [
+				"KY"
+			],
+			"comments": ""
+		},
+		"Asia/Aden": {
+			"name": "Asia/Aden",
+			"lat": 12.75,
+			"long": 45.2,
+			"countries": [
+				"YE"
+			],
+			"comments": ""
+		},
+		"Asia/Bahrain": {
+			"name": "Asia/Bahrain",
+			"lat": 26.3833,
+			"long": 50.5833,
+			"countries": [
+				"BH"
+			],
+			"comments": ""
+		},
+		"Asia/Ho_Chi_Minh": {
+			"name": "Asia/Ho_Chi_Minh",
+			"lat": 10.75,
+			"long": 106.6667,
+			"countries": [
+				"VN"
+			],
+			"comments": ""
+		},
+		"Asia/Kuwait": {
+			"name": "Asia/Kuwait",
+			"lat": 29.3333,
+			"long": 47.9833,
+			"countries": [
+				"KW"
+			],
+			"comments": ""
+		},
+		"Asia/Muscat": {
+			"name": "Asia/Muscat",
+			"lat": 23.6,
+			"long": 58.5833,
+			"countries": [
+				"OM"
+			],
+			"comments": ""
+		},
+		"Asia/Phnom_Penh": {
+			"name": "Asia/Phnom_Penh",
+			"lat": 11.55,
+			"long": 104.9167,
+			"countries": [
+				"KH"
+			],
+			"comments": ""
+		},
+		"Asia/Vientiane": {
+			"name": "Asia/Vientiane",
+			"lat": 17.9667,
+			"long": 102.6,
+			"countries": [
+				"LA"
+			],
+			"comments": ""
+		},
+		"Indian/Antananarivo": {
+			"name": "Indian/Antananarivo",
+			"lat": -17.0833,
+			"long": 47.5167,
+			"countries": [
+				"MG"
+			],
+			"comments": ""
+		},
+		"Indian/Comoro": {
+			"name": "Indian/Comoro",
+			"lat": -10.3167,
+			"long": 43.2667,
+			"countries": [
+				"KM"
+			],
+			"comments": ""
+		},
+		"Indian/Mayotte": {
+			"name": "Indian/Mayotte",
+			"lat": -11.2167,
+			"long": 45.2333,
+			"countries": [
+				"YT"
+			],
+			"comments": ""
+		},
+		"Pacific/Midway": {
+			"name": "Pacific/Midway",
+			"lat": 28.2167,
+			"long": -176.6333,
+			"countries": [
+				"UM"
+			],
+			"comments": "Midway Islands"
+		},
+		"Pacific/Saipan": {
+			"name": "Pacific/Saipan",
+			"lat": 15.2,
+			"long": 145.75,
+			"countries": [
+				"MP"
 			],
 			"comments": ""
 		}
