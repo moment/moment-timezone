@@ -40,7 +40,19 @@ var DATA = {
 			]
 		},
 	],
-	links : ['Some/Zone_C|Some/Zone_D']
+	links : ['Some/Zone_C|Some/Zone_D'],
+	countries : [
+		{
+			name: "Country_1",
+			abbr: "C1",
+			zones: ["Some/Zone_A"]
+		},
+		{
+			name: "Country_2",
+			abbr: "C2",
+			zones: ["Some/Zone_C"]
+		}
+	]
 };
 
 exports['filter-link-pack'] = {
@@ -49,7 +61,8 @@ exports['filter-link-pack'] = {
 			expected = {
 				version : 'test-filter-link-pack',
 				zones   : ['Some/Zone_A|C D E F G H|30 40 50 60 70 80|012345|1d2M0 1io0 1800 1i00 jc0'],
-				links   : ['Some/Zone_A|Some/Zone_B', 'Some/Zone_C|Some/Zone_D' ]
+				links   : ['Some/Zone_A|Some/Zone_B', 'Some/Zone_C|Some/Zone_D' ],
+				countries: ['C1|Country_1|Some/Zone_A', 'C2|Country_2|Some/Zone_C']
 			};
 
 		test.deepEqual(actual, expected, "Should be able to take a unpacked data source, then filter years, create links, and pack data");

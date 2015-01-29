@@ -126,28 +126,7 @@ The output is saved in `data/unpacked/2014d.json`. This is the first file in the
 process that is committed to git. Steps 1-4 are stored in an ignored `temp/`
 directory.
 
-### 6. Pack the data into the compressed format.
-
-```
-grunt data-pack:2014d
-```
-
-Pack each zone in `data/unpacked/2014d.json` and save in `data/packed/2014d.json`.
-
-```
-// unpacked
-{
-    "name"    : "America/Phoenix",
-    "abbrs"   : ["MST", "MDT", "MST", "MDT", "MST", "MWT", "MST", "MWT", "MST", "MDT", "MST"],
-    "untils"  : [-1633273200000, -1615132800000, -1601823600000, -1583683200000, -880210800000, -820519140000, -812653140000, -796845540000, -84380400000, -68659200000, null],
-    "offsets" : [420, 360, 420, 360, 420, 360, 420, 360, 420, 360, 420]
-}
-
-// packed
-"America/Phoenix|MST MDT MWT|70 60 60|01010202010|-261r0 1nX0 11B0 1nX0 SgN0 4Al1 Ap0 1db0 SWqX 1cL0"
-```
-
-### 7. Extract zone & country meta data
+### 6. Extract zone & country meta data
 
 ```
 grunt data-meta:2014d
@@ -201,6 +180,49 @@ Sample output:
         ...
     }
 }
+```
+### 7. Pack the zone and country data into the compressed format.
+
+```
+grunt data-pack:2014d
+```
+
+Pack each zone and country in `data/unpacked/2014d.json` and save in `data/packed/2014d.json`.
+
+```
+// unpacked zone
+{
+    "name"    : "America/Phoenix",
+    "abbrs"   : ["MST", "MDT", "MST", "MDT", "MST", "MWT", "MST", "MWT", "MST", "MDT", "MST"],
+    "untils"  : [-1633273200000, -1615132800000, -1601823600000, -1583683200000, -880210800000, -820519140000, -812653140000, -796845540000, -84380400000, -68659200000, null],
+    "offsets" : [420, 360, 420, 360, 420, 360, 420, 360, 420, 360, 420]
+}
+// packed zone
+"America/Phoenix|MST MDT MWT|70 60 60|01010202010|-261r0 1nX0 11B0 1nX0 SgN0 4Al1 Ap0 1db0 SWqX 1cL0"
+
+// unpacked country
+{
+    "name": "Australia",
+    "abbr": "AU",
+    "zones": [
+        "Australia/Lord_Howe",
+        "Antarctica/Macquarie",
+        "Australia/Hobart",
+        "Australia/Currie",
+        "Australia/Melbourne",
+        "Australia/Sydney",
+        "Australia/Broken_Hill",
+        "Australia/Brisbane",
+        "Australia/Lindeman",
+        "Australia/Adelaide",
+        "Australia/Darwin",
+        "Australia/Perth",
+        "Australia/Eucla"
+    ]
+}
+
+//packed country
+"AU|Australia|Australia/Lord_Howe Antarctica/Macquarie Australia/Hobart Australia/Currie Australia/Melbourne Australia/Sydney Australia/Broken_Hill Australia/Brisbane Australia/Lindeman Australia/Adelaide Australia/Darwin Australia/Perth Australia/Eucla"
 ```
 
 ### 8. Build tests for each zone.

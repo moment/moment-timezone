@@ -24,6 +24,7 @@
 	var VERSION = "0.3.0",
 		zones = {},
 		links = {},
+		countries = {},
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -123,6 +124,16 @@
 		};
 	}
 
+	function unpackCountry (string) {
+		var data = string.split('|');
+
+		return {
+			abbr: data[0],
+			name: data[1],
+			zones: data[2].split(' ')
+		};
+	}
+
 	/************************************
 		Zone object
 	************************************/
@@ -185,8 +196,30 @@
 
 		offset : function (mom) {
 			return this.offsets[this._index(mom)];
+		},
+
+		offsetString: function (mom) {
+			return moment.tz(mom, this.name).format('ZZ');
 		}
 	};
+
+	/************************************
+		Country object
+	************************************/
+
+	function Country (packedString) {
+		if (packedString) {
+			this._set(unpackCountry(packedString));
+		}
+	}
+
+	Country.prototype = {
+		_set : function (unpacked) {
+			this.name    = unpacked.name;
+			this.abbr    = unpacked.abbr;
+			this.zones   = unpacked.zones;
+		}
+	}
 
 	/************************************
 		Global Methods
@@ -211,8 +244,37 @@
 		}
 	}
 
+	function addCountry (packed) {
+		var i, country, unpackedCountry;
+
+		if (typeof packed === "string") {
+			packed = [packed];
+		}
+
+		for (i = 0; i < packed.length; i++) {
+			country = new Country(packed[i]);
+			countries[country.abbr] = country;
+		}
+	}
+
 	function getZone (name) {
 		return zones[normalizeName(name)] || null;
+	}
+
+	function _getCurrentZoneInfo (name) {
+		var now = moment.utc().valueOf();
+		var zone = getZone(name);
+
+		if(!zone) {
+			console.error("No data found for zone " + name);
+			return {};
+		}
+		
+		return {
+			abbr: zone.abbr(now),
+			offset: zone.offset(now),
+			offsetString: zone.offsetString(now)
+		};
 	}
 
 	function getNames () {
@@ -225,6 +287,56 @@
 		}
 
 		return out.sort();
+	}
+
+	function getCountries () {
+		var i, out = [];
+
+		for (i in countries) {
+			if (countries.hasOwnProperty(i) && countries[i]) {
+				out.push(countries[i]);
+			}
+		}
+
+		return out;
+	}
+
+	function getCountry (countryCode) {
+		return countries[countryCode] || null;
+	}
+
+	function getZonesOfCountry (countryCode) {
+		var i, countryZones = [];
+		var country = getCountry(countryCode);
+
+		if (!country) {
+			return null;
+		}
+
+		var zone, zoneInfo, clonedZone;
+		for (i=0; i < country.zones.length; i++) {
+			
+			zone = getZone(country.zones[i]);
+			if(!zone) {
+				console.error("No data found for zone " + country.zones[i]);
+				continue;
+			}
+			// Create a new zone as we don't want to corrupt the global "zones" object.
+			clonedZone = new Zone();
+			clonedZone._set(zone);
+
+			// The zone objects returned here will have following additional properties apart from usual Zone Object properties
+			// currentAbbr: the current abbr of this zone (PST vs PDT etc.)
+			// currentOffset: the offset(in minutes) currently in effect
+			// currentOffsetString: the offset string(+0430, -0700 etc.) in effect
+			zoneInfo = _getCurrentZoneInfo(clonedZone.name);
+			clonedZone.currentAbbr 			= zoneInfo.abbr;
+			clonedZone.currentOffset 		= zoneInfo.offset;
+			clonedZone.currentOffsetString  = zoneInfo.offsetString;
+			countryZones.push(clonedZone);
+		}
+
+		return countryZones;
 	}
 
 	function addLink (aliases) {
@@ -277,6 +389,7 @@
 	function loadData (data) {
 		addZone(data.zones);
 		addLink(data.links);
+		addCountry(data.countries);
 		tz.dataVersion = data.version;
 	}
 
@@ -321,15 +434,21 @@
 	tz.dataVersion  = '';
 	tz._zones       = zones;
 	tz._links       = links;
+	tz._countries 	= countries;
 	tz.add          = addZone;
 	tz.link         = addLink;
+	tz.addCountry 	= addCountry;
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
 	tz.names        = getNames;
+	tz.countries    = getCountries;
+	tz.country 		= getCountry;
+	tz.zonesOfCountry = getZonesOfCountry;
 	tz.Zone         = Zone;
 	tz.unpack       = unpack;
 	tz.unpackBase60 = unpackBase60;
+	tz.unpackCountry= unpackCountry;
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
@@ -556,35 +675,8 @@
 			"Australia/LHI|LHDT LHST|-b0 -au|01010101010101010101010|1C130 1cMu 1cLu 1cMu 1cLu 1fAu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1fAu 1cLu 1cMu 1cLu 1cMu",
 			"Australia/Perth|AWST|-80|0|",
 			"Chile/EasterIsland|EASST EAST|50 60|01010101010101010101010|1C1f0 1fB0 1nX0 G10 1EL0 Op0 1zb0 Rd0 1wn0 Rd0 1wn0 Rd0 1wn0 Rd0 1wn0 Rd0 1zb0 Op0 1zb0 Rd0 1wn0 Rd0",
+			"EST||||",
 			"Eire|GMT IST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
-			"Etc/GMT+1|GMT+1|10|0|",
-			"Etc/GMT+10|GMT+10|a0|0|",
-			"Etc/GMT+11|GMT+11|b0|0|",
-			"Etc/GMT+12|GMT+12|c0|0|",
-			"Etc/GMT+2|GMT+2|20|0|",
-			"Etc/GMT+3|GMT+3|30|0|",
-			"Etc/GMT+4|GMT+4|40|0|",
-			"Etc/GMT+5|GMT+5|50|0|",
-			"Etc/GMT+6|GMT+6|60|0|",
-			"Etc/GMT+7|GMT+7|70|0|",
-			"Etc/GMT+8|GMT+8|80|0|",
-			"Etc/GMT+9|GMT+9|90|0|",
-			"Etc/GMT-1|GMT-1|-10|0|",
-			"Etc/GMT-10|GMT-10|-a0|0|",
-			"Etc/GMT-11|GMT-11|-b0|0|",
-			"Etc/GMT-12|GMT-12|-c0|0|",
-			"Etc/GMT-13|GMT-13|-d0|0|",
-			"Etc/GMT-14|GMT-14|-e0|0|",
-			"Etc/GMT-2|GMT-2|-20|0|",
-			"Etc/GMT-3|GMT-3|-30|0|",
-			"Etc/GMT-4|GMT-4|-40|0|",
-			"Etc/GMT-5|GMT-5|-50|0|",
-			"Etc/GMT-6|GMT-6|-60|0|",
-			"Etc/GMT-7|GMT-7|-70|0|",
-			"Etc/GMT-8|GMT-8|-80|0|",
-			"Etc/GMT-9|GMT-9|-90|0|",
-			"Etc/UCT|UCT|0|0|",
-			"Etc/UTC|UTC|0|0|",
 			"Europe/Belfast|GMT BST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
 			"Europe/Kaliningrad|EET EEST FET|-20 -30 -30|01020|1BWo0 1qM0 WM0 8Hz0",
 			"Europe/Minsk|EET EEST FET MSK|-20 -30 -30 -30|01023|1BWo0 1qM0 WM0 8Hy0",
@@ -592,7 +684,6 @@
 			"Europe/Samara|SAMT SAMST SAMT|-40 -40 -30|0120|1BWm0 1qN0 WM0",
 			"Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|01010101023|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11z0 1nW0",
 			"Europe/Volgograd|MSK MSK|-30 -40|01010|1BWn0 1qM0 WM0 8Hz0",
-			"HST|HST|a0|0|",
 			"Indian/Chagos|IOT|-60|0|",
 			"Indian/Christmas|CXT|-70|0|",
 			"Indian/Cocos|CCT|-6u|0|",
@@ -616,6 +707,7 @@
 			"Pacific/Gambier|GAMT|90|0|",
 			"Pacific/Guadalcanal|SBT|-b0|0|",
 			"Pacific/Guam|ChST|-a0|0|",
+			"Pacific/Honolulu|HST|a0|0|",
 			"Pacific/Kiritimati|LINT|-e0|0|",
 			"Pacific/Kosrae|KOST|-b0|0|",
 			"Pacific/Marquesas|MART|9u|0|",
@@ -651,16 +743,6 @@
 			"Africa/Abidjan|America/Danmarkshavn",
 			"Africa/Abidjan|Atlantic/Reykjavik",
 			"Africa/Abidjan|Atlantic/St_Helena",
-			"Africa/Abidjan|Etc/GMT",
-			"Africa/Abidjan|Etc/GMT+0",
-			"Africa/Abidjan|Etc/GMT-0",
-			"Africa/Abidjan|Etc/GMT0",
-			"Africa/Abidjan|Etc/Greenwich",
-			"Africa/Abidjan|GMT",
-			"Africa/Abidjan|GMT+0",
-			"Africa/Abidjan|GMT-0",
-			"Africa/Abidjan|GMT0",
-			"Africa/Abidjan|Greenwich",
 			"Africa/Abidjan|Iceland",
 			"Africa/Addis_Ababa|Africa/Asmara",
 			"Africa/Addis_Ababa|Africa/Asmera",
@@ -784,7 +866,6 @@
 			"America/Atikokan|America/Coral_Harbour",
 			"America/Atikokan|America/Jamaica",
 			"America/Atikokan|America/Panama",
-			"America/Atikokan|EST",
 			"America/Atikokan|Jamaica",
 			"America/Belem|America/Fortaleza",
 			"America/Belem|America/Maceio",
@@ -838,7 +919,6 @@
 			"America/Creston|America/Dawson_Creek",
 			"America/Creston|America/Hermosillo",
 			"America/Creston|America/Phoenix",
-			"America/Creston|MST",
 			"America/Creston|US/Arizona",
 			"America/Dawson|America/Ensenada",
 			"America/Dawson|America/Los_Angeles",
@@ -972,13 +1052,53 @@
 			"Australia/LHI|Australia/Lord_Howe",
 			"Australia/Perth|Australia/West",
 			"Chile/EasterIsland|Pacific/Easter",
+			"EST|Etc/GMT",
+			"EST|Etc/GMT+0",
+			"EST|Etc/GMT+1",
+			"EST|Etc/GMT+10",
+			"EST|Etc/GMT+11",
+			"EST|Etc/GMT+12",
+			"EST|Etc/GMT+2",
+			"EST|Etc/GMT+3",
+			"EST|Etc/GMT+4",
+			"EST|Etc/GMT+5",
+			"EST|Etc/GMT+6",
+			"EST|Etc/GMT+7",
+			"EST|Etc/GMT+8",
+			"EST|Etc/GMT+9",
+			"EST|Etc/GMT-0",
+			"EST|Etc/GMT-1",
+			"EST|Etc/GMT-10",
+			"EST|Etc/GMT-11",
+			"EST|Etc/GMT-12",
+			"EST|Etc/GMT-13",
+			"EST|Etc/GMT-14",
+			"EST|Etc/GMT-2",
+			"EST|Etc/GMT-3",
+			"EST|Etc/GMT-4",
+			"EST|Etc/GMT-5",
+			"EST|Etc/GMT-6",
+			"EST|Etc/GMT-7",
+			"EST|Etc/GMT-8",
+			"EST|Etc/GMT-9",
+			"EST|Etc/GMT0",
+			"EST|Etc/Greenwich",
+			"EST|Etc/UCT",
+			"EST|Etc/UTC",
+			"EST|Etc/Universal",
+			"EST|Etc/Zulu",
+			"EST|GMT",
+			"EST|GMT+0",
+			"EST|GMT-0",
+			"EST|GMT0",
+			"EST|Greenwich",
+			"EST|HST",
+			"EST|MST",
+			"EST|UCT",
+			"EST|UTC",
+			"EST|Universal",
+			"EST|Zulu",
 			"Eire|Europe/Dublin",
-			"Etc/UCT|UCT",
-			"Etc/UTC|Etc/Universal",
-			"Etc/UTC|Etc/Zulu",
-			"Etc/UTC|UTC",
-			"Etc/UTC|Universal",
-			"Etc/UTC|Zulu",
 			"Europe/Belfast|Europe/Guernsey",
 			"Europe/Belfast|Europe/Isle_of_Man",
 			"Europe/Belfast|Europe/Jersey",
@@ -986,19 +1106,267 @@
 			"Europe/Belfast|GB",
 			"Europe/Belfast|GB-Eire",
 			"Europe/Moscow|W-SU",
-			"HST|Pacific/Honolulu",
-			"HST|Pacific/Johnston",
-			"HST|US/Hawaii",
 			"Kwajalein|Pacific/Kwajalein",
 			"Kwajalein|Pacific/Majuro",
 			"NZ-CHAT|Pacific/Chatham",
 			"Pacific/Chuuk|Pacific/Truk",
 			"Pacific/Chuuk|Pacific/Yap",
 			"Pacific/Guam|Pacific/Saipan",
+			"Pacific/Honolulu|Pacific/Johnston",
+			"Pacific/Honolulu|US/Hawaii",
 			"Pacific/Midway|Pacific/Pago_Pago",
 			"Pacific/Midway|Pacific/Samoa",
 			"Pacific/Midway|US/Samoa",
 			"Pacific/Pohnpei|Pacific/Ponape"
+		],
+		"countries": [
+			"AD|Andorra|Europe/Andorra",
+			"AE|United Arab Emirates|Asia/Dubai",
+			"AF|Afghanistan|Asia/Kabul",
+			"AG|Antigua & Barbuda|America/Port_of_Spain",
+			"AI|Anguilla|America/Port_of_Spain",
+			"AL|Albania|Europe/Tirane",
+			"AM|Armenia|Asia/Yerevan",
+			"AO|Angola|Africa/Lagos",
+			"AQ|Antarctica|Antarctica/Rothera Antarctica/Palmer Antarctica/Mawson Antarctica/Davis Antarctica/Casey Antarctica/Vostok Antarctica/DumontDUrville Antarctica/Syowa Antarctica/Troll Pacific/Auckland",
+			"AR|Argentina|America/Argentina/Buenos_Aires America/Argentina/Cordoba America/Argentina/Salta America/Argentina/Jujuy America/Argentina/Tucuman America/Argentina/Catamarca America/Argentina/La_Rioja America/Argentina/San_Juan America/Argentina/Mendoza America/Argentina/San_Luis America/Argentina/Rio_Gallegos America/Argentina/Ushuaia",
+			"AS|Samoa (American)|Pacific/Pago_Pago",
+			"AT|Austria|Europe/Vienna",
+			"AU|Australia|Australia/Lord_Howe Antarctica/Macquarie Australia/Hobart Australia/Currie Australia/Melbourne Australia/Sydney Australia/Broken_Hill Australia/Brisbane Australia/Lindeman Australia/Adelaide Australia/Darwin Australia/Perth Australia/Eucla",
+			"AW|Aruba|America/Curacao",
+			"AX|Aaland Islands|Europe/Helsinki",
+			"AZ|Azerbaijan|Asia/Baku",
+			"BA|Bosnia & Herzegovina|Europe/Belgrade",
+			"BB|Barbados|America/Barbados",
+			"BD|Bangladesh|Asia/Dhaka",
+			"BE|Belgium|Europe/Brussels",
+			"BF|Burkina Faso|Africa/Abidjan",
+			"BG|Bulgaria|Europe/Sofia",
+			"BH|Bahrain|Asia/Qatar",
+			"BI|Burundi|Africa/Maputo",
+			"BJ|Benin|Africa/Lagos",
+			"BL|St Barthelemy|America/Port_of_Spain",
+			"BM|Bermuda|Atlantic/Bermuda",
+			"BN|Brunei|Asia/Brunei",
+			"BO|Bolivia|America/La_Paz",
+			"BQ|Caribbean Netherlands|America/Curacao",
+			"BR|Brazil|America/Noronha America/Belem America/Fortaleza America/Recife America/Araguaina America/Maceio America/Bahia America/Sao_Paulo America/Campo_Grande America/Cuiaba America/Santarem America/Porto_Velho America/Boa_Vista America/Manaus America/Eirunepe America/Rio_Branco",
+			"BS|Bahamas|America/Nassau",
+			"BT|Bhutan|Asia/Thimphu",
+			"BW|Botswana|Africa/Maputo",
+			"BY|Belarus|Europe/Minsk",
+			"BZ|Belize|America/Belize",
+			"CA|Canada|America/St_Johns America/Halifax America/Glace_Bay America/Moncton America/Goose_Bay America/Blanc-Sablon America/Toronto America/Nipigon America/Thunder_Bay America/Iqaluit America/Pangnirtung America/Resolute America/Atikokan America/Rankin_Inlet America/Winnipeg America/Rainy_River America/Regina America/Swift_Current America/Edmonton America/Cambridge_Bay America/Yellowknife America/Inuvik America/Creston America/Dawson_Creek America/Vancouver America/Whitehorse America/Dawson",
+			"CC|Cocos (Keeling) Islands|Indian/Cocos",
+			"CD|Congo (Dem. Rep.)|Africa/Maputo Africa/Lagos",
+			"CF|Central African Rep.|Africa/Lagos",
+			"CG|Congo (Rep.)|Africa/Lagos",
+			"CH|Switzerland|Europe/Zurich",
+			"CI|Cote d'Ivoire|Africa/Abidjan",
+			"CK|Cook Islands|Pacific/Rarotonga",
+			"CL|Chile|America/Santiago Pacific/Easter",
+			"CM|Cameroon|Africa/Lagos",
+			"CN|China|Asia/Shanghai Asia/Urumqi",
+			"CO|Colombia|America/Bogota",
+			"CR|Costa Rica|America/Costa_Rica",
+			"CU|Cuba|America/Havana",
+			"CV|Cape Verde|Atlantic/Cape_Verde",
+			"CW|Curacao|America/Curacao",
+			"CX|Christmas Island|Indian/Christmas",
+			"CY|Cyprus|Asia/Nicosia",
+			"CZ|Czech Republic|Europe/Prague",
+			"DE|Germany|Europe/Zurich Europe/Berlin",
+			"DJ|Djibouti|Africa/Nairobi",
+			"DK|Denmark|Europe/Copenhagen",
+			"DM|Dominica|America/Port_of_Spain",
+			"DO|Dominican Republic|America/Santo_Domingo",
+			"DZ|Algeria|Africa/Algiers",
+			"EC|Ecuador|America/Guayaquil Pacific/Galapagos",
+			"EE|Estonia|Europe/Tallinn",
+			"EG|Egypt|Africa/Cairo",
+			"EH|Western Sahara|Africa/El_Aaiun",
+			"ER|Eritrea|Africa/Nairobi",
+			"ES|Spain|Europe/Madrid Africa/Ceuta Atlantic/Canary",
+			"ET|Ethiopia|Africa/Nairobi",
+			"FI|Finland|Europe/Helsinki",
+			"FJ|Fiji|Pacific/Fiji",
+			"FK|Falkland Islands|Atlantic/Stanley",
+			"FM|Micronesia|Pacific/Chuuk Pacific/Pohnpei Pacific/Kosrae",
+			"FO|Faroe Islands|Atlantic/Faroe",
+			"FR|France|Europe/Paris",
+			"GA|Gabon|Africa/Lagos",
+			"GB|Britain (UK)|Europe/London",
+			"GD|Grenada|America/Port_of_Spain",
+			"GE|Georgia|Asia/Tbilisi",
+			"GF|French Guiana|America/Cayenne",
+			"GG|Guernsey|Europe/London",
+			"GH|Ghana|Africa/Accra",
+			"GI|Gibraltar|Europe/Gibraltar",
+			"GL|Greenland|America/Godthab America/Danmarkshavn America/Scoresbysund America/Thule",
+			"GM|Gambia|Africa/Abidjan",
+			"GN|Guinea|Africa/Abidjan",
+			"GP|Guadeloupe|America/Port_of_Spain",
+			"GQ|Equatorial Guinea|Africa/Lagos",
+			"GR|Greece|Europe/Athens",
+			"GS|South Georgia & the South Sandwich Islands|Atlantic/South_Georgia",
+			"GT|Guatemala|America/Guatemala",
+			"GU|Guam|Pacific/Guam",
+			"GW|Guinea-Bissau|Africa/Bissau",
+			"GY|Guyana|America/Guyana",
+			"HK|Hong Kong|Asia/Hong_Kong",
+			"HN|Honduras|America/Tegucigalpa",
+			"HR|Croatia|Europe/Belgrade",
+			"HT|Haiti|America/Port-au-Prince",
+			"HU|Hungary|Europe/Budapest",
+			"ID|Indonesia|Asia/Jakarta Asia/Pontianak Asia/Makassar Asia/Jayapura",
+			"IE|Ireland|Europe/Dublin",
+			"IL|Israel|Asia/Jerusalem",
+			"IM|Isle of Man|Europe/London",
+			"IN|India|Asia/Kolkata",
+			"IO|British Indian Ocean Territory|Indian/Chagos",
+			"IQ|Iraq|Asia/Baghdad",
+			"IR|Iran|Asia/Tehran",
+			"IS|Iceland|Atlantic/Reykjavik",
+			"IT|Italy|Europe/Rome",
+			"JE|Jersey|Europe/London",
+			"JM|Jamaica|America/Jamaica",
+			"JO|Jordan|Asia/Amman",
+			"JP|Japan|Asia/Tokyo",
+			"KE|Kenya|Africa/Nairobi",
+			"KG|Kyrgyzstan|Asia/Bishkek",
+			"KH|Cambodia|Asia/Bangkok",
+			"KI|Kiribati|Pacific/Tarawa Pacific/Enderbury Pacific/Kiritimati",
+			"KM|Comoros|Africa/Nairobi",
+			"KN|St Kitts & Nevis|America/Port_of_Spain",
+			"KP|Korea (North)|Asia/Pyongyang",
+			"KR|Korea (South)|Asia/Seoul",
+			"KW|Kuwait|Asia/Riyadh",
+			"KY|Cayman Islands|America/Panama",
+			"KZ|Kazakhstan|Asia/Almaty Asia/Qyzylorda Asia/Aqtobe Asia/Aqtau Asia/Oral",
+			"LA|Laos|Asia/Bangkok",
+			"LB|Lebanon|Asia/Beirut",
+			"LC|St Lucia|America/Port_of_Spain",
+			"LI|Liechtenstein|Europe/Zurich",
+			"LK|Sri Lanka|Asia/Colombo",
+			"LR|Liberia|Africa/Monrovia",
+			"LS|Lesotho|Africa/Johannesburg",
+			"LT|Lithuania|Europe/Vilnius",
+			"LU|Luxembourg|Europe/Luxembourg",
+			"LV|Latvia|Europe/Riga",
+			"LY|Libya|Africa/Tripoli",
+			"MA|Morocco|Africa/Casablanca",
+			"MC|Monaco|Europe/Monaco",
+			"MD|Moldova|Europe/Chisinau",
+			"ME|Montenegro|Europe/Belgrade",
+			"MF|St Martin (French part)|America/Port_of_Spain",
+			"MG|Madagascar|Africa/Nairobi",
+			"MH|Marshall Islands|Pacific/Majuro Pacific/Kwajalein",
+			"MK|Macedonia|Europe/Belgrade",
+			"ML|Mali|Africa/Abidjan",
+			"MM|Myanmar (Burma)|Asia/Rangoon",
+			"MN|Mongolia|Asia/Ulaanbaatar Asia/Hovd Asia/Choibalsan",
+			"MO|Macau|Asia/Macau",
+			"MP|Northern Mariana Islands|Pacific/Guam",
+			"MQ|Martinique|America/Martinique",
+			"MR|Mauritania|Africa/Abidjan",
+			"MS|Montserrat|America/Port_of_Spain",
+			"MT|Malta|Europe/Malta",
+			"MU|Mauritius|Indian/Mauritius",
+			"MV|Maldives|Indian/Maldives",
+			"MW|Malawi|Africa/Maputo",
+			"MX|Mexico|America/Mexico_City America/Cancun America/Merida America/Monterrey America/Matamoros America/Mazatlan America/Chihuahua America/Ojinaga America/Hermosillo America/Tijuana America/Santa_Isabel America/Bahia_Banderas",
+			"MY|Malaysia|Asia/Kuala_Lumpur Asia/Kuching",
+			"MZ|Mozambique|Africa/Maputo",
+			"NA|Namibia|Africa/Windhoek",
+			"NC|New Caledonia|Pacific/Noumea",
+			"NE|Niger|Africa/Lagos",
+			"NF|Norfolk Island|Pacific/Norfolk",
+			"NG|Nigeria|Africa/Lagos",
+			"NI|Nicaragua|America/Managua",
+			"NL|Netherlands|Europe/Amsterdam",
+			"NO|Norway|Europe/Oslo",
+			"NP|Nepal|Asia/Kathmandu",
+			"NR|Nauru|Pacific/Nauru",
+			"NU|Niue|Pacific/Niue",
+			"NZ|New Zealand|Pacific/Auckland Pacific/Chatham",
+			"OM|Oman|Asia/Dubai",
+			"PA|Panama|America/Panama",
+			"PE|Peru|America/Lima",
+			"PF|French Polynesia|Pacific/Tahiti Pacific/Marquesas Pacific/Gambier",
+			"PG|Papua New Guinea|Pacific/Port_Moresby Pacific/Bougainville",
+			"PH|Philippines|Asia/Manila",
+			"PK|Pakistan|Asia/Karachi",
+			"PL|Poland|Europe/Warsaw",
+			"PM|St Pierre & Miquelon|America/Miquelon",
+			"PN|Pitcairn|Pacific/Pitcairn",
+			"PR|Puerto Rico|America/Puerto_Rico",
+			"PS|Palestine|Asia/Gaza Asia/Hebron",
+			"PT|Portugal|Europe/Lisbon Atlantic/Madeira Atlantic/Azores",
+			"PW|Palau|Pacific/Palau",
+			"PY|Paraguay|America/Asuncion",
+			"QA|Qatar|Asia/Qatar",
+			"RE|Reunion|Indian/Reunion",
+			"RO|Romania|Europe/Bucharest",
+			"RS|Serbia|Europe/Belgrade",
+			"RU|Russia|Europe/Kaliningrad Europe/Moscow Europe/Simferopol Europe/Volgograd Europe/Samara Asia/Yekaterinburg Asia/Omsk Asia/Novosibirsk Asia/Novokuznetsk Asia/Krasnoyarsk Asia/Irkutsk Asia/Chita Asia/Yakutsk Asia/Khandyga Asia/Vladivostok Asia/Sakhalin Asia/Ust-Nera Asia/Magadan Asia/Srednekolymsk Asia/Kamchatka Asia/Anadyr",
+			"RW|Rwanda|Africa/Maputo",
+			"SA|Saudi Arabia|Asia/Riyadh",
+			"SB|Solomon Islands|Pacific/Guadalcanal",
+			"SC|Seychelles|Indian/Mahe",
+			"SD|Sudan|Africa/Khartoum",
+			"SE|Sweden|Europe/Stockholm",
+			"SG|Singapore|Asia/Singapore",
+			"SH|St Helena|Africa/Abidjan",
+			"SI|Slovenia|Europe/Belgrade",
+			"SJ|Svalbard & Jan Mayen|Europe/Oslo",
+			"SK|Slovakia|Europe/Prague",
+			"SL|Sierra Leone|Africa/Abidjan",
+			"SM|San Marino|Europe/Rome",
+			"SN|Senegal|Africa/Abidjan",
+			"SO|Somalia|Africa/Nairobi",
+			"SR|Suriname|America/Paramaribo",
+			"SS|South Sudan|Africa/Khartoum",
+			"ST|Sao Tome & Principe|Africa/Abidjan",
+			"SV|El Salvador|America/El_Salvador",
+			"SX|St Maarten (Dutch part)|America/Curacao",
+			"SY|Syria|Asia/Damascus",
+			"SZ|Swaziland|Africa/Johannesburg",
+			"TC|Turks & Caicos Is|America/Grand_Turk",
+			"TD|Chad|Africa/Ndjamena",
+			"TF|French Southern & Antarctic Lands|Indian/Reunion Indian/Kerguelen",
+			"TG|Togo|Africa/Abidjan",
+			"TH|Thailand|Asia/Bangkok",
+			"TJ|Tajikistan|Asia/Dushanbe",
+			"TK|Tokelau|Pacific/Fakaofo",
+			"TL|East Timor|Asia/Dili",
+			"TM|Turkmenistan|Asia/Ashgabat",
+			"TN|Tunisia|Africa/Tunis",
+			"TO|Tonga|Pacific/Tongatapu",
+			"TR|Turkey|Europe/Istanbul",
+			"TT|Trinidad & Tobago|America/Port_of_Spain",
+			"TV|Tuvalu|Pacific/Funafuti",
+			"TW|Taiwan|Asia/Taipei",
+			"TZ|Tanzania|Africa/Nairobi",
+			"UA|Ukraine|Europe/Kiev Europe/Uzhgorod Europe/Zaporozhye",
+			"UG|Uganda|Africa/Nairobi",
+			"UM|US minor outlying islands|Pacific/Pago_Pago Pacific/Wake Pacific/Honolulu",
+			"US|United States|America/New_York America/Detroit America/Kentucky/Louisville America/Kentucky/Monticello America/Indiana/Indianapolis America/Indiana/Vincennes America/Indiana/Winamac America/Indiana/Marengo America/Indiana/Petersburg America/Indiana/Vevay America/Chicago America/Indiana/Tell_City America/Indiana/Knox America/Menominee America/North_Dakota/Center America/North_Dakota/New_Salem America/North_Dakota/Beulah America/Denver America/Boise America/Phoenix America/Los_Angeles America/Metlakatla America/Anchorage America/Juneau America/Sitka America/Yakutat America/Nome America/Adak Pacific/Honolulu",
+			"UY|Uruguay|America/Montevideo",
+			"UZ|Uzbekistan|Asia/Samarkand Asia/Tashkent",
+			"VA|Vatican City|Europe/Rome",
+			"VC|St Vincent|America/Port_of_Spain",
+			"VE|Venezuela|America/Caracas",
+			"VG|Virgin Islands (UK)|America/Port_of_Spain",
+			"VI|Virgin Islands (US)|America/Port_of_Spain",
+			"VN|Vietnam|Asia/Bangkok Asia/Ho_Chi_Minh",
+			"VU|Vanuatu|Pacific/Efate",
+			"WF|Wallis & Futuna|Pacific/Wallis",
+			"WS|Samoa (western)|Pacific/Apia",
+			"YE|Yemen|Asia/Riyadh",
+			"YT|Mayotte|Africa/Nairobi",
+			"ZA|South Africa|Africa/Johannesburg",
+			"ZM|Zambia|Africa/Maputo",
+			"ZW|Zimbabwe|Africa/Maputo"
 		]
 	});
 
