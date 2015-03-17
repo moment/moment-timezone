@@ -1,3 +1,6 @@
+### `0.3.1` _2015-03-16_
+* Updated data to IANA TZDB `2015a`. [#183](https://github.com/moment/moment-timezone/pull/183)
+
 ### `0.3.0` _2015-01-13_
 
 * *Breaking:* Added country data to the `meta/*.json` files. Restructured the data to support multiple countries per zone. [#162](https://github.com/moment/moment-timezone/pull/162)

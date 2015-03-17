@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.3.0
+//! version : 0.3.1
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -21,7 +21,7 @@
 	// Do not load moment-timezone a second time.
 	if (moment.tz !== undefined) { return moment; }
 
-	var VERSION = "0.3.0",
+	var VERSION = "0.3.1",
 		zones = {},
 		links = {},
 
