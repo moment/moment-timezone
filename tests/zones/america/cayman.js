@@ -3,8 +3,8 @@
 var helpers = require("../../helpers/helpers");
 
 exports["America/Cayman"] = {
-	"1912" : helpers.makeTestYear("America/Cayman", [
-		["1912-02-01T05:07:10+00:00", "23:59:59", "KMT", 18431 / 60],
-		["1912-02-01T05:07:11+00:00", "00:07:11", "EST", 300]
+	"1908" : helpers.makeTestYear("America/Cayman", [
+		["1908-04-22T05:19:35+00:00", "23:59:59", "CMT", 19176 / 60],
+		["1908-04-22T05:19:36+00:00", "00:19:36", "EST", 300]
 	])
 };
