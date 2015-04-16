@@ -3,11 +3,6 @@
 var helpers = require("../../helpers/helpers");
 
 exports["America/Santarem"] = {
-	"1914" : helpers.makeTestYear("America/Santarem", [
-		["1914-01-01T03:38:47+00:00", "23:59:59", "LMT", 13128 / 60],
-		["1914-01-01T03:38:48+00:00", "23:38:48", "AMT", 240]
-	]),
-
 	"1931" : helpers.makeTestYear("America/Santarem", [
 		["1931-10-03T14:59:59+00:00", "10:59:59", "AMT", 240],
 		["1931-10-03T15:00:00+00:00", "12:00:00", "AMST", 180]
@@ -116,10 +111,5 @@ exports["America/Santarem"] = {
 	"1988" : helpers.makeTestYear("America/Santarem", [
 		["1988-02-07T02:59:59+00:00", "23:59:59", "AMST", 180],
 		["1988-02-07T03:00:00+00:00", "23:00:00", "AMT", 240]
-	]),
-
-	"2008" : helpers.makeTestYear("America/Santarem", [
-		["2008-06-24T03:59:59+00:00", "23:59:59", "AMT", 240],
-		["2008-06-24T04:00:00+00:00", "01:00:00", "BRT", 180]
 	])
 };

@@ -3,11 +3,6 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Pacific/Noumea"] = {
-	"1912" : helpers.makeTestYear("Pacific/Noumea", [
-		["1912-01-12T12:54:11+00:00", "23:59:59", "LMT", -39948 / 60],
-		["1912-01-12T12:54:12+00:00", "23:54:12", "NCT", -660]
-	]),
-
 	"1977" : helpers.makeTestYear("Pacific/Noumea", [
 		["1977-12-03T12:59:59+00:00", "23:59:59", "NCT", -660],
 		["1977-12-03T13:00:00+00:00", "01:00:00", "NCST", -720]
@@ -28,10 +23,5 @@ exports["Pacific/Noumea"] = {
 	"1996" : helpers.makeTestYear("Pacific/Noumea", [
 		["1996-11-30T14:59:59+00:00", "01:59:59", "NCT", -660],
 		["1996-11-30T15:00:00+00:00", "03:00:00", "NCST", -720]
-	]),
-
-	"1997" : helpers.makeTestYear("Pacific/Noumea", [
-		["1997-03-01T14:59:59+00:00", "02:59:59", "NCST", -720],
-		["1997-03-01T15:00:00+00:00", "02:00:00", "NCT", -660]
 	])
 };
