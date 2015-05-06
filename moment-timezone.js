@@ -24,6 +24,7 @@
 	var VERSION = "0.3.1",
 		zones = {},
 		links = {},
+		zonesByName = {},
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -212,6 +213,9 @@
 	}
 
 	function getZone (name) {
+		if( zonesByName[name] && !zones[name] ){
+			addZone( zonesByName[name] );
+		}
 		return zones[normalizeName(name)] || null;
 	}
 
@@ -275,9 +279,21 @@
 	}
 
 	function loadData (data) {
-		addZone(data.zones);
-		addLink(data.links);
 		tz.dataVersion = data.version;
+		addLink(data.links);
+		var zonesPacked = data.zones, i, zone, zoneParts;
+
+		if (typeof zonesPacked === "string") {
+			zonesPacked = [zonesPacked];
+		}
+
+		for (i = 0; i < zonesPacked.length; i++) {
+			zone = zonesPacked[i];
+			if( zone ){
+				zoneParts = zone.split('|');
+				zonesByName[zoneParts[0]] = zone;
+			}
+		}
 	}
 
 	function zoneExists (name) {
