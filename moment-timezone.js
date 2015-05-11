@@ -129,13 +129,21 @@
 
 	function Zone (packedString) {
 		if (packedString) {
-			this._set(unpack(packedString));
+			this.packed = packedString;
+			this.name = packedString.split('|')[0];
 		}
 	}
 
 	Zone.prototype = {
+		unpack : function () {
+			if (this.packed) {
+				this._set(unpack(this.packed));
+				this.packed = null;
+			}
+			return this;
+		},
+
 		_set : function (unpacked) {
-			this.name    = unpacked.name;
 			this.abbrs   = unpacked.abbrs;
 			this.untils  = unpacked.untils;
 			this.offsets = unpacked.offsets;
@@ -212,7 +220,8 @@
 	}
 
 	function getZone (name) {
-		return zones[normalizeName(name)] || null;
+		var zone = zones[normalizeName(name)];
+		return zone && zone.unpack() || null;
 	}
 
 	function getNames () {
@@ -259,7 +268,11 @@
 
 	function copyZoneWithName (zone, name) {
 		var linkZone = zones[normalizeName(name)] = new Zone();
-		linkZone._set(zone);
+		if (zone.packed) {
+			linkZone.packed = zone.packed;
+		} else {
+			linkZone._set(zone);
+		}
 		linkZone.name = name;
 	}
 
@@ -267,7 +280,7 @@
 		zoneName = normalizeName(zoneName);
 
 		if (zones[zoneName]) {
-			copyZoneWithName(zones[zoneName], linkName);
+			copyZoneWithName(zones[zoneName].unpack(), linkName);
 		} else {
 			links[zoneName] = links[zoneName] || [];
 			links[zoneName].push(linkName);
