@@ -21,7 +21,7 @@ exports.zone = {
 	},
 
 	construct : function (test) {
-		var zone = new tz.Zone(PACKED);
+		var zone = new tz.Zone(PACKED).unpack();
 
 		test.equal(zone.name, "SomeZone", "Should unpack name onto .name property.");
 		test.deepEqual(zone.abbrs, ["TIM", "TAM", "IAM", "TAM", "TIM", "TAM"], "Should unpack abbrs onto .abbrs property.");
@@ -39,7 +39,7 @@ exports.zone = {
 	},
 
 	abbr : function (test) {
-		var zone = new tz.Zone(PACKED),
+		var zone = new tz.Zone(PACKED).unpack(),
 			tests = [
 				[-999 * 60000, "TIM"],
 				[ 999 * 60000, "TIM"],
@@ -65,7 +65,7 @@ exports.zone = {
 	},
 
 	offset : function (test) {
-		var zone = new tz.Zone(PACKED),
+		var zone = new tz.Zone(PACKED).unpack(),
 			tests = [
 				[-999 * 60000, 360.5],
 				[ 999 * 60000, 360.5],
@@ -91,7 +91,7 @@ exports.zone = {
 	},
 
 	_index : function (test) {
-		var zone = new tz.Zone(PACKED),
+		var zone = new tz.Zone(PACKED).unpack(),
 			tests = [
 				[-999 * 60000, 0],
 				[ 999 * 60000, 0],
@@ -117,7 +117,7 @@ exports.zone = {
 	},
 
 	parse : function (test) {
-		var zone = new tz.Zone(PACKED),
+		var zone = new tz.Zone(PACKED).unpack(),
 			tests = [
 				[( 999 - 360.5) * 60000, 360.5],
 				[(1000 - 360.5) * 60000, 300],
