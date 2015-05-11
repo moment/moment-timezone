@@ -24,6 +24,7 @@
 	var VERSION = "0.3.1",
 		zones = {},
 		links = {},
+		names = {},
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -197,30 +198,52 @@
 	}
 
 	function addZone (packed) {
-		var i, zone, zoneName;
+		var i, name, normalized;
 
 		if (typeof packed === "string") {
 			packed = [packed];
 		}
 
 		for (i = 0; i < packed.length; i++) {
-			zone = new Zone(packed[i]);
-			zoneName = normalizeName(zone.name);
-			zones[zoneName] = zone;
-			upgradeLinksToZones(zoneName);
+			name = packed[i].split('|')[0];
+			normalized = normalizeName(name);
+			zones[normalized] = packed[i];
+			names[normalized] = name;
 		}
 	}
 
 	function getZone (name) {
-		return zones[normalizeName(name)] || null;
+		name = normalizeName(name);
+
+		var zone = zones[name];
+		var link;
+		
+		if (zone instanceof Zone) {
+			return zone;
+		}
+
+		if (typeof zone === 'string') {
+			zone = new Zone(zone);
+			zones[name] = zone;
+			return zone;
+		}
+
+		if (links[name] && (link = getZone(links[name]))) {
+			zone = zones[name] = new Zone();
+			zone._set(link);
+			zone.name = names[name];
+			return zone;
+		}
+
+		return null;
 	}
 
 	function getNames () {
 		var i, out = [];
 
-		for (i in zones) {
-			if (zones.hasOwnProperty(i) && zones[i]) {
-				out.push(zones[i].name);
+		for (i in names) {
+			if (names.hasOwnProperty(i) && names[i]) {
+				out.push(names[i]);
 			}
 		}
 
@@ -241,37 +264,10 @@
 		}
 	}
 
-	function upgradeLinksToZones (zoneName) {
-		if (!links[zoneName]) {
-			return;
-		}
-
-		var i,
-			zone = zones[zoneName],
-			linkNames = links[zoneName];
-
-		for (i = 0; i < linkNames.length; i++) {
-			copyZoneWithName(zone, linkNames[i]);
-		}
-
-		links[zoneName] = null;
-	}
-
-	function copyZoneWithName (zone, name) {
-		var linkZone = zones[normalizeName(name)] = new Zone();
-		linkZone._set(zone);
-		linkZone.name = name;
-	}
-
 	function pushLink (zoneName, linkName) {
-		zoneName = normalizeName(zoneName);
-
-		if (zones[zoneName]) {
-			copyZoneWithName(zones[zoneName], linkName);
-		} else {
-			links[zoneName] = links[zoneName] || [];
-			links[zoneName].push(linkName);
-		}
+		var name = normalizeName(linkName);
+		links[name] = zoneName;
+		names[name] = linkName;
 	}
 
 	function loadData (data) {
@@ -321,6 +317,7 @@
 	tz.dataVersion  = '';
 	tz._zones       = zones;
 	tz._links       = links;
+	tz._names       = names;
 	tz.add          = addZone;
 	tz.link         = addLink;
 	tz.load         = loadData;

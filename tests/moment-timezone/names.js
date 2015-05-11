@@ -15,6 +15,7 @@ exports.names = {
 	setUp : function (done) {
 		clearObject(tz._links);
 		clearObject(tz._zones);
+		clearObject(tz._names);
 		done();
 	},
 

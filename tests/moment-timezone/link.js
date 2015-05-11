@@ -3,7 +3,8 @@
 var tz = require("../../").tz;
 
 var tempLinks = {},
-	tempZones = {};
+	tempZones = {},
+	tempNames = {};
 
 function moveProperties (a, b) {
 	var key;
@@ -20,14 +21,17 @@ exports.link = {
 	setUp : function (done) {
 		moveProperties(tz._links, tempLinks);
 		moveProperties(tz._zones, tempZones);
+		moveProperties(tz._names, tempNames);
 		done();
 	},
 
 	tearDown : function (done) {
 		moveProperties(tz._links, {});
 		moveProperties(tz._zones, {});
+		moveProperties(tz._names, {});
 		moveProperties(tempLinks, tz._links);
 		moveProperties(tempZones, tz._zones);
+		moveProperties(tempNames, tz._names);
 		done();
 	},
 
