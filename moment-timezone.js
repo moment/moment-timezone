@@ -281,7 +281,7 @@
 	function loadData (data) {
 		tz.dataVersion = data.version;
 		addLink(data.links);
-		var zonesPacked = data.zones, i, zone, zoneParts;
+		var zonesPacked = data.zones, linksPacked = data.links, i, l, link, zone, zoneParts, linkParts;
 
 		if (typeof zonesPacked === "string") {
 			zonesPacked = [zonesPacked];
@@ -292,6 +292,14 @@
 			if( zone ){
 				zoneParts = zone.split('|');
 				zonesByName[zoneParts[0]] = zone;
+			}
+		}
+
+		if( linksPacked ){
+			for (l = 0; l < linksPacked.length; l++) {
+				link = linksPacked[l];
+				linkParts = link.split('|');
+				zonesByName[linkParts[1]] = zonesByName[linkParts[0]];
 			}
 		}
 	}
