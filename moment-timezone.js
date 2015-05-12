@@ -28,6 +28,7 @@
 		zones = {},
 		links = {},
 		names = {},
+		currentZones = [],
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -193,6 +194,44 @@
 	};
 
 	/************************************
+		Current Timezone
+	************************************/
+
+	var currentYear = new Date().getFullYear();
+	var jan = new Date(currentYear, 0, 1);
+	var jun = new Date(currentYear, 6, 1);
+
+	function filter (items, cb) {
+		var out = [];
+		for (var i = 0; i < items.length; i++) {
+			if (cb(items[i], i, items)) {
+				out.push(items[i]);
+			}
+		}
+		return out;
+	}
+
+	function matchesCurrentYearOffsets (name) {
+		var zone = getZone(name);
+		return (zone.offset(jan) === jan.getTimezoneOffset()) && (zone.offset(jun) === jun.getTimezoneOffset());
+	}
+
+	function rebuildCurrentZones () {
+		var out = getNames();
+		out = filter(out, matchesCurrentYearOffsets);
+		while (out.length) {
+			currentZones.unshift(out.pop());
+		}
+	}
+
+	function currentZone () {
+		if (!currentZones.length) {
+			rebuildCurrentZones();
+		}
+		return currentZones[0];
+	}
+
+	/************************************
 		Global Methods
 	************************************/
 
@@ -328,6 +367,8 @@
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
+	tz.currentZones = currentZones;
+	tz.currentZone  = currentZone;
 	tz.names        = getNames;
 	tz.Zone         = Zone;
 	tz.unpack       = unpack;
