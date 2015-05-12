@@ -242,7 +242,7 @@
 		var i, out = [];
 
 		for (i in names) {
-			if (names.hasOwnProperty(i) && names[i]) {
+			if (names.hasOwnProperty(i) && (zones[i] || zones[links[i]]) && names[i]) {
 				out.push(names[i]);
 			}
 		}
@@ -251,7 +251,7 @@
 	}
 
 	function addLink (aliases) {
-		var i, alias;
+		var i, alias, normal0, normal1;
 
 		if (typeof aliases === "string") {
 			aliases = [aliases];
@@ -259,15 +259,16 @@
 
 		for (i = 0; i < aliases.length; i++) {
 			alias = aliases[i].split('|');
-			pushLink(alias[0], alias[1]);
-			pushLink(alias[1], alias[0]);
-		}
-	}
 
-	function pushLink (zoneName, linkName) {
-		var name = normalizeName(linkName);
-		links[name] = zoneName;
-		names[name] = linkName;
+			normal0 = normalizeName(alias[0]);
+			normal1 = normalizeName(alias[1]);
+
+			links[normal0] = normal1;
+			names[normal0] = alias[0];
+
+			links[normal1] = normal0;
+			names[normal1] = alias[1];
+		}
 	}
 
 	function loadData (data) {
