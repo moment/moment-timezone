@@ -345,9 +345,15 @@
 	moment.defaultZone = null;
 
 	moment.updateOffset = function (mom, keepTime) {
-		var offset;
+		var zone = moment.defaultZone,
+			offset;
+
 		if (mom._z === undefined) {
-			mom._z = moment.defaultZone;
+			if (zone && needsOffset(mom) && !mom._isUTC) {
+				mom._d = moment.utc(mom._a)._d;
+				mom.utc().add(zone.parse(mom), 'minutes');
+			}
+			mom._z = zone;
 		}
 		if (mom._z) {
 			offset = mom._z.offset(mom);
