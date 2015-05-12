@@ -19,7 +19,10 @@
 	"use strict";
 
 	// Do not load moment-timezone a second time.
-	if (moment.tz !== undefined) { return moment; }
+	if (moment.tz !== undefined) {
+		logError('Moment Timezone ' + moment.tz.version + ' was already loaded ' + (moment.tz.dataVersion ? 'with data from ' : 'without any data') + moment.tz.dataVersion);
+		return moment;
+	}
 
 	var VERSION = "0.3.1",
 		zones = {},
