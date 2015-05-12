@@ -132,5 +132,17 @@ exports.link = {
 		test.deepEqual(tz.names(), ["Alias1", "Alias2", "Alias3", "Zone1"], "Should be able to get the names of aliased zones.");
 
 		test.done();
+	},
+
+	zoneAndAliasNotLoaded : function (test) {
+		test.ok(!tz.zone('Zone1'),  "Zones should have been reset.");
+		test.ok(!tz.zone('Alias1'), "Links should have been reset.");
+
+		tz.link("Alias1|Zone1");
+
+		test.ok(!tz.zone('Zone1'),  "Zone should not exist if it wasn't loaded.");
+		test.ok(!tz.zone('Alias1'), "Link should not exist if its zone wasn't loaded.");
+
+		test.done();
 	}
 };

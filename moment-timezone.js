@@ -212,7 +212,7 @@
 		}
 	}
 
-	function getZone (name) {
+	function getZone (name, caller) {
 		name = normalizeName(name);
 
 		var zone = zones[name];
@@ -228,7 +228,8 @@
 			return zone;
 		}
 
-		if (links[name] && (link = getZone(links[name]))) {
+		// Pass getZone to prevent recursion more than 1 level deep
+		if (links[name] && caller !== getZone && (link = getZone(links[name], getZone))) {
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
