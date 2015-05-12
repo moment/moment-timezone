@@ -28,6 +28,7 @@
 		zones = {},
 		links = {},
 		names = {},
+		guesses = [],
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -193,6 +194,34 @@
 	};
 
 	/************************************
+		Current Timezone
+	************************************/
+
+
+	function rebuildCurrentZone () {
+		var currentYear = new Date().getFullYear(),
+			jan = new Date(currentYear, 0, 1),
+			jul = new Date(currentYear, 6, 1),
+			janOffset = jan.getTimezoneOffset(),
+			julOffset = jul.getTimezoneOffset(),
+			zone, i;
+
+		for (i = 0; i < guesses.length; i++) {
+			zone = getZone(guesses[i]);
+			if ((zone.offset(jan) === janOffset) && (zone.offset(jul) === julOffset)) {
+				return zone.name;
+			}
+		}
+	}
+
+	function guess () {
+		if (!tz._guess) {
+			tz._guess = rebuildCurrentZone();
+		}
+		return tz._guess;
+	}
+
+	/************************************
 		Global Methods
 	************************************/
 
@@ -201,17 +230,21 @@
 	}
 
 	function addZone (packed) {
-		var i, name, normalized;
+		var i, name, split, normalized;
 
 		if (typeof packed === "string") {
 			packed = [packed];
 		}
 
 		for (i = 0; i < packed.length; i++) {
-			name = packed[i].split('|')[0];
+			split = packed[i].split('|');
+			name = split[0];
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
+			if (split[5]) {
+				guesses.push(name);
+			}
 		}
 	}
 
@@ -220,7 +253,7 @@
 
 		var zone = zones[name];
 		var link;
-		
+
 		if (zone instanceof Zone) {
 			return zone;
 		}
@@ -328,6 +361,8 @@
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
+	tz._guess       = null;
+	tz.guess        = guess;
 	tz.names        = getNames;
 	tz.Zone         = Zone;
 	tz.unpack       = unpack;

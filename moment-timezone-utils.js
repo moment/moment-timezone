@@ -132,7 +132,7 @@
 
 	function pack (source) {
 		validatePackData(source);
-		return source.name + '|' + packAbbrsAndOffsets(source) + '|' + packUntils(source.untils);
+		return source.name + '|' + packAbbrsAndOffsets(source) + '|' + packUntils(source.untils) + (source.guess ? '|1' : '');
 	}
 
 	/************************************
@@ -157,24 +157,35 @@
 	}
 
 	function findAndCreateLinks (input, output, links) {
-		var i, j, a, b, isUnique;
+		var i, j, a, b, group, foundGroup, groups = [];
 
 		for (i = 0; i < input.length; i++) {
-			isUnique = true;
+			foundGroup = false;
 			a = input[i];
 
-			for (j = 0; j < output.length; j++) {
-				b = output[j];
-
+			for (j = 0; j < groups.length; j++) {
+				group = groups[j];
+				b = group[0];
 				if (zonesAreEqual(a, b)) {
-					links.push(b.name + '|' + a.name);
-					isUnique = false;
-					continue;
+					if (a.guess) {
+						group.unshift(a);
+					} else {
+						group.push(a);
+					}
+					foundGroup = true;
 				}
 			}
 
-			if (isUnique) {
-				output.push(a);
+			if (!foundGroup) {
+				groups.push([a]);
+			}
+		}
+
+		for (i = 0; i < groups.length; i++) {
+			group = groups[i];
+			output.push(group[0]);
+			for (j = 1; j < group.length; j++) {
+				links.push(group[0].name + '|' + group[j].name);
 			}
 		}
 	}
