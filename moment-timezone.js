@@ -29,6 +29,7 @@
 		links = {},
 		names = {},
 		currentZones = [],
+		currentZoneWhitelist = [],
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -197,38 +198,28 @@
 		Current Timezone
 	************************************/
 
-	var currentYear = new Date().getFullYear();
-	var jan = new Date(currentYear, 0, 1);
-	var jun = new Date(currentYear, 6, 1);
 
-	function filter (items, cb) {
-		var out = [];
-		for (var i = 0; i < items.length; i++) {
-			if (cb(items[i], i, items)) {
-				out.push(items[i]);
+	function rebuildCurrentZone () {
+		var currentYear = new Date().getFullYear(),
+			jan = new Date(currentYear, 0, 1),
+			jul = new Date(currentYear, 6, 1),
+			janOffset = jan.getTimezoneOffset(),
+			julOffset = jul.getTimezoneOffset(),
+			zone, i;
+
+		for (i = 0; i < currentZoneWhitelist.length; i++) {
+			zone = getZone(currentZoneWhitelist[i]);
+			if ((zone.offset(jan) === janOffset) && (zone.offset(jul) === julOffset)) {
+				return zone.name;
 			}
-		}
-		return out;
-	}
-
-	function matchesCurrentYearOffsets (name) {
-		var zone = getZone(name);
-		return (zone.offset(jan) === jan.getTimezoneOffset()) && (zone.offset(jun) === jun.getTimezoneOffset());
-	}
-
-	function rebuildCurrentZones () {
-		var out = getNames();
-		out = filter(out, matchesCurrentYearOffsets);
-		while (out.length) {
-			currentZones.unshift(out.pop());
 		}
 	}
 
 	function currentZone () {
-		if (!currentZones.length) {
-			rebuildCurrentZones();
+		if (!tz._currentZone) {
+			tz._currentZone = rebuildCurrentZone();
 		}
-		return currentZones[0];
+		return tz._currentZone;
 	}
 
 	/************************************
@@ -367,7 +358,7 @@
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
-	tz.currentZones = currentZones;
+	tz._currentZone = null;
 	tz.currentZone  = currentZone;
 	tz.names        = getNames;
 	tz.Zone         = Zone;
@@ -376,6 +367,7 @@
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
+	tz.currentZoneWhitelist = currentZoneWhitelist;
 
 	/************************************
 		Interface with Moment.js
@@ -460,6 +452,32 @@
 		// moment 2.7.0
 		momentProperties._z = null;
 	}
+
+	/************************************
+		Current Zone Whitelist
+	************************************/
+
+	(function (whitelist) {
+		var zones, i, country;
+		for (country in whitelist) {
+			if (whitelist.hasOwnProperty(country)) {
+				zones = whitelist[country].split(' ');
+				for (i = 0; i < zones.length; i++) {
+					currentZoneWhitelist.push(country + '_' + zones[i]);
+				}
+			}
+		}
+	}({
+		africa: 'lagos johannesburg windhoek',
+		america: 'adak anchorage santo_domingo santiago campo_grande chicago guatemala denver caracas phoenix los_angeles new_york halifax godthab montevideo noronha st_johns',
+		antarctica: 'troll',
+		asia: 'shanghai krasnoyarsk yekaterinburg omsk beirut baku kolkata ulaanbaatar yakutsk dubai hovd kabul kathmandu rangoon tehran',
+		atlantic: 'azores cape_verde',
+		australia: 'brisbane sydney adelaide darwin eucla lord_howe',
+		etc: 'utc',
+		europe: 'moscow berlin london',
+		pacific: 'easter pitcairn noumea auckland tarawa honolulu pago_pago gambier tongatapu kiritimati chatham apia marquesas norfolk',
+	}));
 
 	// INJECT DATA
 
