@@ -27,6 +27,7 @@
 	var VERSION = "0.3.1",
 		zones = {},
 		links = {},
+		zonesByName = {},
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -215,6 +216,9 @@
 	}
 
 	function getZone (name) {
+		if( zonesByName[name] && !zones[name] ){
+			addZone( zonesByName[name] );
+		}
 		return zones[normalizeName(name)] || null;
 	}
 
@@ -278,9 +282,29 @@
 	}
 
 	function loadData (data) {
-		addZone(data.zones);
-		addLink(data.links);
 		tz.dataVersion = data.version;
+		addLink(data.links);
+		var zonesPacked = data.zones, linksPacked = data.links, i, l, link, zone, zoneParts, linkParts;
+
+		if (typeof zonesPacked === "string") {
+			zonesPacked = [zonesPacked];
+		}
+
+		for (i = 0; i < zonesPacked.length; i++) {
+			zone = zonesPacked[i];
+			if( zone ){
+				zoneParts = zone.split('|');
+				zonesByName[zoneParts[0]] = zone;
+			}
+		}
+
+		if( linksPacked ){
+			for (l = 0; l < linksPacked.length; l++) {
+				link = linksPacked[l];
+				linkParts = link.split('|');
+				zonesByName[linkParts[1]] = zonesByName[linkParts[0]];
+			}
+		}
 	}
 
 	function zoneExists (name) {
