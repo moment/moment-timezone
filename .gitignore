@@ -15,3 +15,8 @@ node_modules
 npm-debug.log
 
 temp
+
+/.idea
+vendor
+components
+composer.lock
