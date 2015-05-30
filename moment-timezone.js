@@ -452,7 +452,7 @@
 	}
 
 	/************************************
-		Current Zone Whitelist
+		Guess Whitelist
 	************************************/
 
 	(function (whitelist) {
@@ -472,7 +472,7 @@
 		asia: 'shanghai krasnoyarsk yekaterinburg omsk beirut baku kolkata ulaanbaatar yakutsk dubai hovd kabul kathmandu rangoon tehran',
 		atlantic: 'azores cape_verde',
 		australia: 'brisbane sydney adelaide darwin eucla lord_howe',
-		etc: 'utc',
+		etc: 'utc gmt+12',
 		europe: 'moscow berlin london',
 		pacific: 'easter pitcairn noumea auckland tarawa honolulu pago_pago gambier tongatapu kiritimati chatham apia marquesas norfolk',
 	}));

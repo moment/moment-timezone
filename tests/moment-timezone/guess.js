@@ -4,19 +4,19 @@ var tz = require("../../").tz;
 
 var getTimezoneOffset = Date.prototype.getTimezoneOffset;
 
-function mockTimezoneOffset (jan, jun) {
+function mockTimezoneOffset (jan, jul) {
 	Date.prototype.getTimezoneOffset = function () {
 		var month = this.getMonth();
 		if (month > 3 && month < 9) {
-			return -jun;
+			return -jul;
 		}
 		return -jan;
 	};
 }
 
-function makeGuessTest (janOffset, junOffset, zone) {
+function makeGuessTest (janOffset, julOffset, zone) {
 	return function (test) {
-		mockTimezoneOffset(janOffset, junOffset);
+		mockTimezoneOffset(janOffset, julOffset);
 		tz._guess = null;
 		test.equal(tz.guess(), zone);
 		test.done();
@@ -93,5 +93,23 @@ exports.guess = {
 	"test january -09:30 july -09:30" : makeGuessTest(-570, -570, "Pacific/Marquesas"),
 	"test january -10:00 july -09:00" : makeGuessTest(-600, -540, "America/Adak"),
 	"test january -10:00 july -10:00" : makeGuessTest(-600, -600, "Pacific/Honolulu"),
-	"test january -11:00 july -11:00" : makeGuessTest(-660, -660, "Pacific/Pago_Pago")
+	"test january -11:00 july -11:00" : makeGuessTest(-660, -660, "Pacific/Pago_Pago"),
+
+	"ensure each zone is represented" : function (test) {
+		var names = tz.names();
+		var year = new Date().getFullYear();
+		var jan = Date.UTC(year, 0, 1);
+		var jul = Date.UTC(year, 6, 1);
+		var zone, janOffset, julOffset;
+
+		for (var i = 0; i < names.length; i++) {
+			zone = tz.zone(names[i]);
+			janOffset = zone.offset(jan);
+			julOffset = zone.offset(jul);
+			mockTimezoneOffset(-janOffset, -julOffset);
+			tz._guess = null;
+			test.ok(tz.guess(), "Should have a guess for " + zone.name + " (jan " + janOffset + " jul " + julOffset + ")");
+		}
+		test.done();
+	}
 };
