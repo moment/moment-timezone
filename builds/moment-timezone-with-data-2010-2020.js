@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.3.1
+//! version : 0.4.0
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -19,11 +19,15 @@
 	"use strict";
 
 	// Do not load moment-timezone a second time.
-	if (moment.tz !== undefined) { return moment; }
+	if (moment.tz !== undefined) {
+		logError('Moment Timezone ' + moment.tz.version + ' was already loaded ' + (moment.tz.dataVersion ? 'with data from ' : 'without any data') + moment.tz.dataVersion);
+		return moment;
+	}
 
-	var VERSION = "0.3.1",
+	var VERSION = "0.4.0",
 		zones = {},
 		links = {},
+		names = {},
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -197,30 +201,53 @@
 	}
 
 	function addZone (packed) {
-		var i, zone, zoneName;
+		var i, name, normalized;
 
 		if (typeof packed === "string") {
 			packed = [packed];
 		}
 
 		for (i = 0; i < packed.length; i++) {
-			zone = new Zone(packed[i]);
-			zoneName = normalizeName(zone.name);
-			zones[zoneName] = zone;
-			upgradeLinksToZones(zoneName);
+			name = packed[i].split('|')[0];
+			normalized = normalizeName(name);
+			zones[normalized] = packed[i];
+			names[normalized] = name;
 		}
 	}
 
-	function getZone (name) {
-		return zones[normalizeName(name)] || null;
+	function getZone (name, caller) {
+		name = normalizeName(name);
+
+		var zone = zones[name];
+		var link;
+		
+		if (zone instanceof Zone) {
+			return zone;
+		}
+
+		if (typeof zone === 'string') {
+			zone = new Zone(zone);
+			zones[name] = zone;
+			return zone;
+		}
+
+		// Pass getZone to prevent recursion more than 1 level deep
+		if (links[name] && caller !== getZone && (link = getZone(links[name], getZone))) {
+			zone = zones[name] = new Zone();
+			zone._set(link);
+			zone.name = names[name];
+			return zone;
+		}
+
+		return null;
 	}
 
 	function getNames () {
 		var i, out = [];
 
-		for (i in zones) {
-			if (zones.hasOwnProperty(i) && zones[i]) {
-				out.push(zones[i].name);
+		for (i in names) {
+			if (names.hasOwnProperty(i) && (zones[i] || zones[links[i]]) && names[i]) {
+				out.push(names[i]);
 			}
 		}
 
@@ -228,7 +255,7 @@
 	}
 
 	function addLink (aliases) {
-		var i, alias;
+		var i, alias, normal0, normal1;
 
 		if (typeof aliases === "string") {
 			aliases = [aliases];
@@ -236,41 +263,15 @@
 
 		for (i = 0; i < aliases.length; i++) {
 			alias = aliases[i].split('|');
-			pushLink(alias[0], alias[1]);
-			pushLink(alias[1], alias[0]);
-		}
-	}
 
-	function upgradeLinksToZones (zoneName) {
-		if (!links[zoneName]) {
-			return;
-		}
+			normal0 = normalizeName(alias[0]);
+			normal1 = normalizeName(alias[1]);
 
-		var i,
-			zone = zones[zoneName],
-			linkNames = links[zoneName];
+			links[normal0] = normal1;
+			names[normal0] = alias[0];
 
-		for (i = 0; i < linkNames.length; i++) {
-			copyZoneWithName(zone, linkNames[i]);
-		}
-
-		links[zoneName] = null;
-	}
-
-	function copyZoneWithName (zone, name) {
-		var linkZone = zones[normalizeName(name)] = new Zone();
-		linkZone._set(zone);
-		linkZone.name = name;
-	}
-
-	function pushLink (zoneName, linkName) {
-		zoneName = normalizeName(zoneName);
-
-		if (zones[zoneName]) {
-			copyZoneWithName(zones[zoneName], linkName);
-		} else {
-			links[zoneName] = links[zoneName] || [];
-			links[zoneName].push(linkName);
+			links[normal1] = normal0;
+			names[normal1] = alias[1];
 		}
 	}
 
@@ -321,6 +322,7 @@
 	tz.dataVersion  = '';
 	tz._zones       = zones;
 	tz._links       = links;
+	tz._names       = names;
 	tz.add          = addZone;
 	tz.link         = addLink;
 	tz.load         = loadData;
@@ -345,9 +347,15 @@
 	moment.defaultZone = null;
 
 	moment.updateOffset = function (mom, keepTime) {
-		var offset;
+		var zone = moment.defaultZone,
+			offset;
+
 		if (mom._z === undefined) {
-			mom._z = moment.defaultZone;
+			if (zone && needsOffset(mom) && !mom._isUTC) {
+				mom._d = moment.utc(mom._a)._d;
+				mom.utc().add(zone.parse(mom), 'minutes');
+			}
+			mom._z = zone;
 		}
 		if (mom._z) {
 			offset = mom._z.offset(mom);
@@ -413,20 +421,20 @@
 	}
 
 	loadData({
-		"version": "2015a",
+		"version": "2015d",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0|",
 			"Africa/Addis_Ababa|EAT|-30|0|",
 			"Africa/Algiers|CET|-10|0|",
 			"Africa/Bangui|WAT|-10|0|",
 			"Africa/Blantyre|CAT|-20|0|",
-			"Africa/Cairo|EET EEST|-20 -30|0101010101010101010101010101010|1Cby0 Fb0 c10 8n0 8Nd0 gL0 e10 mn0 1o10 jz0 gN0 pb0 1qN0 dX0 e10 xz0 1o10 bb0 e10 An0 1o10 5z0 e10 FX0 1o10 2L0 e10 IL0 1C10 Lz0",
+			"Africa/Cairo|EET EEST|-20 -30|010101010|1Cby0 Fb0 c10 8n0 8Nd0 gL0 e10 mn0",
 			"Africa/Casablanca|WET WEST|0 -10|01010101010101010101010101010101010101010|1Cco0 Db0 1zd0 Lz0 1Nf0 wM0 co0 go0 1o00 s00 dA0 vc0 11A0 A00 e00 y00 11A0 uo0 e00 DA0 11A0 rA0 e00 Jc0 WM0 m00 gM0 M00 WM0 jc0 e00 RA0 11A0 dA0 e00 Uo0 11A0 800 gM0 Xc0",
 			"Africa/Ceuta|CET CEST|-10 -20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
 			"Africa/Johannesburg|SAST|-20|0|",
 			"Africa/Tripoli|EET CET CEST|-20 -10 -20|0120|1IlA0 TA0 1o00",
 			"Africa/Windhoek|WAST WAT|-20 -10|01010101010101010101010|1C1c0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 11B0",
-			"America/Adak|HAST HADT|a0 90|01010101010101010101010|1BR00 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
+			"America/Adak|HST HDT|a0 90|01010101010101010101010|1BR00 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Anchorage|AKST AKDT|90 80|01010101010101010101010|1BQX0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Anguilla|AST|40|0|",
 			"America/Araguaina|BRT BRST|30 20|010|1IdD0 Lz0",
@@ -495,17 +503,17 @@
 			"Asia/Brunei|BNT|-80|0|",
 			"Asia/Calcutta|IST|-5u|0|",
 			"Asia/Chita|YAKT YAKST YAKT IRKT|-90 -a0 -a0 -80|01023|1BWh0 1qM0 WM0 8Hz0",
-			"Asia/Choibalsan|CHOT|-80|0|",
+			"Asia/Choibalsan|CHOT CHOST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0",
 			"Asia/Chongqing|CST|-80|0|",
 			"Asia/Dacca|BDT|-60|0|",
 			"Asia/Damascus|EET EEST|-20 -30|01010101010101010101010|1C0m0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0",
 			"Asia/Dili|TLT|-90|0|",
 			"Asia/Dubai|GST|-40|0|",
 			"Asia/Dushanbe|TJT|-50|0|",
-			"Asia/Gaza|EET EEST|-20 -30|01010101010101010101010|1BVW1 SKX 1xd1 MKX 1AN0 1a00 1fA0 1cL0 1cN0 1cL0 1cN0 1cL0 1fB0 19X0 1fB0 19X0 1fB0 19X0 1fB0 1cL0 1cN0 1cL0",
-			"Asia/Hebron|EET EEST|-20 -30|0101010101010101010101010|1BVy0 Tb0 1xd1 MKX bB0 cn0 1cN0 1a00 1fA0 1cL0 1cN0 1cL0 1cN0 1cL0 1fB0 19X0 1fB0 19X0 1fB0 19X0 1fB0 1cL0 1cN0 1cL0",
+			"Asia/Gaza|EET EEST|-20 -30|01010101010101010101010|1BVW1 SKX 1xd1 MKX 1AN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1210 1nz0 14N0 1nz0 1210 1nz0 1210 1nz0 1210 1nz0",
+			"Asia/Hebron|EET EEST|-20 -30|0101010101010101010101010|1BVy0 Tb0 1xd1 MKX bB0 cn0 1cN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1210 1nz0 14N0 1nz0 1210 1nz0 1210 1nz0 1210 1nz0",
 			"Asia/Hong_Kong|HKT|-80|0|",
-			"Asia/Hovd|HOVT|-70|0|",
+			"Asia/Hovd|HOVT HOVST|-70 -80|0101010101010|1O8H0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0",
 			"Asia/Irkutsk|IRKT IRKST IRKT|-80 -90 -90|01020|1BWi0 1qM0 WM0 8Hz0",
 			"Asia/Istanbul|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 Xc0 1qo0 WM0 1qM0 11A0 1o00 1200 1nA0 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
 			"Asia/Jakarta|WIB|-70|0|",
@@ -538,7 +546,7 @@
 			"Asia/Tehran|IRST IRDT|-3u -4u|01010101010101010101010|1BTUu 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0",
 			"Asia/Thimbu|BTT|-60|0|",
 			"Asia/Tokyo|JST|-90|0|",
-			"Asia/Ulaanbaatar|ULAT|-80|0|",
+			"Asia/Ulaanbaatar|ULAT ULAST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0",
 			"Asia/Ust-Nera|MAGT MAGST MAGT VLAT VLAT|-b0 -c0 -c0 -b0 -a0|010234|1BWf0 1qM0 WM0 17V0 7zD0",
 			"Asia/Vladivostok|VLAT VLAST VLAT|-a0 -b0 -b0|01020|1BWg0 1qM0 WM0 8Hz0",
 			"Asia/Yakutsk|YAKT YAKST YAKT|-90 -a0 -a0|01020|1BWh0 1qM0 WM0 8Hz0",
@@ -592,7 +600,6 @@
 			"Europe/Moscow|MSK MSD MSK|-30 -40 -40|01020|1BWn0 1qM0 WM0 8Hz0",
 			"Europe/Samara|SAMT SAMST SAMT|-40 -40 -30|0120|1BWm0 1qN0 WM0",
 			"Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|01010101023|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11z0 1nW0",
-			"Europe/Volgograd|MSK MSK|-30 -40|01010|1BWn0 1qM0 WM0 8Hz0",
 			"HST|HST|a0|0|",
 			"Indian/Chagos|IOT|-60|0|",
 			"Indian/Christmas|CXT|-70|0|",
@@ -985,6 +992,7 @@
 			"Europe/Belfast|Europe/London",
 			"Europe/Belfast|GB",
 			"Europe/Belfast|GB-Eire",
+			"Europe/Moscow|Europe/Volgograd",
 			"Europe/Moscow|W-SU",
 			"HST|Pacific/Honolulu",
 			"HST|Pacific/Johnston",

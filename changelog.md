@@ -1,3 +1,12 @@
+### `0.4.0` _2015-05-30_
+* Updated data to IANA TZDB `2015b`. [#201](https://github.com/moment/moment-timezone/pull/201)
+* Updated data to IANA TZDB `2015c`. [#214](https://github.com/moment/moment-timezone/pull/214)
+* Updated data to IANA TZDB `2015d`. [#214](https://github.com/moment/moment-timezone/pull/214)
+* Updated zone getter to allow lazy unpacking to improve initial page load times. [#216](https://github.com/moment/moment-timezone/pull/216)
+* Added a `package.json` `jspm:main` entry point. [#194](https://github.com/moment/moment-timezone/pull/194)
+* Added `composer.json`. [#222](https://github.com/moment/moment-timezone/pull/222)
+* Added an error message when trying to load moment-timezone twice. [#212](https://github.com/moment/moment-timezone/pull/212)
+
 ### `0.3.1` _2015-03-16_
 * Updated data to IANA TZDB `2015a`. [#183](https://github.com/moment/moment-timezone/pull/183)
 
