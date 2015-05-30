@@ -28,8 +28,7 @@
 		zones = {},
 		links = {},
 		names = {},
-		currentZones = [],
-		currentZoneWhitelist = [],
+		guessWhitelist = [],
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -207,19 +206,19 @@
 			julOffset = jul.getTimezoneOffset(),
 			zone, i;
 
-		for (i = 0; i < currentZoneWhitelist.length; i++) {
-			zone = getZone(currentZoneWhitelist[i]);
+		for (i = 0; i < guessWhitelist.length; i++) {
+			zone = getZone(guessWhitelist[i]);
 			if ((zone.offset(jan) === janOffset) && (zone.offset(jul) === julOffset)) {
 				return zone.name;
 			}
 		}
 	}
 
-	function currentZone () {
-		if (!tz._currentZone) {
-			tz._currentZone = rebuildCurrentZone();
+	function guess () {
+		if (!tz._guess) {
+			tz._guess = rebuildCurrentZone();
 		}
-		return tz._currentZone;
+		return tz._guess;
 	}
 
 	/************************************
@@ -358,8 +357,8 @@
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
-	tz._currentZone = null;
-	tz.currentZone  = currentZone;
+	tz._guess       = null;
+	tz.guess        = guess;
 	tz.names        = getNames;
 	tz.Zone         = Zone;
 	tz.unpack       = unpack;
@@ -367,7 +366,6 @@
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
-	tz.currentZoneWhitelist = currentZoneWhitelist;
 
 	/************************************
 		Interface with Moment.js
@@ -463,7 +461,7 @@
 			if (whitelist.hasOwnProperty(country)) {
 				zones = whitelist[country].split(' ');
 				for (i = 0; i < zones.length; i++) {
-					currentZoneWhitelist.push(country + '_' + zones[i]);
+					guessWhitelist.push(country + '_' + zones[i]);
 				}
 			}
 		}
