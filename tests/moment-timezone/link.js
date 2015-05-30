@@ -3,7 +3,8 @@
 var tz = require("../../").tz;
 
 var tempLinks = {},
-	tempZones = {};
+	tempZones = {},
+	tempNames = {};
 
 function moveProperties (a, b) {
 	var key;
@@ -20,14 +21,17 @@ exports.link = {
 	setUp : function (done) {
 		moveProperties(tz._links, tempLinks);
 		moveProperties(tz._zones, tempZones);
+		moveProperties(tz._names, tempNames);
 		done();
 	},
 
 	tearDown : function (done) {
 		moveProperties(tz._links, {});
 		moveProperties(tz._zones, {});
+		moveProperties(tz._names, {});
 		moveProperties(tempLinks, tz._links);
 		moveProperties(tempZones, tz._zones);
+		moveProperties(tempNames, tz._names);
 		done();
 	},
 
@@ -126,6 +130,18 @@ exports.link = {
 
 		tz.link("Alias3|Zone1");
 		test.deepEqual(tz.names(), ["Alias1", "Alias2", "Alias3", "Zone1"], "Should be able to get the names of aliased zones.");
+
+		test.done();
+	},
+
+	zoneAndAliasNotLoaded : function (test) {
+		test.ok(!tz.zone('Zone1'),  "Zones should have been reset.");
+		test.ok(!tz.zone('Alias1'), "Links should have been reset.");
+
+		tz.link("Alias1|Zone1");
+
+		test.ok(!tz.zone('Zone1'),  "Zone should not exist if it wasn't loaded.");
+		test.ok(!tz.zone('Alias1'), "Link should not exist if its zone wasn't loaded.");
 
 		test.done();
 	}
