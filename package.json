@@ -37,7 +37,15 @@
 		"grunt-contrib-uglify"   : "0.9.1"
 	},
 	"jspm" : {
-		"main": "builds/moment-timezone-with-data"
+		"main": "builds/moment-timezone-with-data",
+		"dependencies": {
+			"moment": "~2.6.0"
+		},
+		"shim": {
+			"moment-timezone": {
+				"deps": ["moment"]
+			}
+		}
 	},
 	"scripts": {
 		"test": "grunt"
