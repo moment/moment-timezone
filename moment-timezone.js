@@ -28,7 +28,7 @@
 		zones = {},
 		links = {},
 		names = {},
-		guessWhitelist = [],
+		guesses = [],
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -206,8 +206,8 @@
 			julOffset = jul.getTimezoneOffset(),
 			zone, i;
 
-		for (i = 0; i < guessWhitelist.length; i++) {
-			zone = getZone(guessWhitelist[i]);
+		for (i = 0; i < guesses.length; i++) {
+			zone = getZone(guesses[i]);
 			if ((zone.offset(jan) === janOffset) && (zone.offset(jul) === julOffset)) {
 				return zone.name;
 			}
@@ -249,7 +249,7 @@
 
 		var zone = zones[name];
 		var link;
-		
+
 		if (zone instanceof Zone) {
 			return zone;
 		}
@@ -304,9 +304,24 @@
 		}
 	}
 
+	function addGuess (names) {
+		var i, length;
+
+		if (typeof names === "string") {
+			names = [names];
+		}
+
+		length = names && names.length;
+
+		for (i = 0; i < length; i++) {
+			guesses.push(names[i]);
+		}
+	}
+
 	function loadData (data) {
 		addZone(data.zones);
 		addLink(data.links);
+		addGuess(data.guesses);
 		tz.dataVersion = data.version;
 	}
 
@@ -450,32 +465,6 @@
 		// moment 2.7.0
 		momentProperties._z = null;
 	}
-
-	/************************************
-		Guess Whitelist
-	************************************/
-
-	(function (whitelist) {
-		var zones, i, country;
-		for (country in whitelist) {
-			if (whitelist.hasOwnProperty(country)) {
-				zones = whitelist[country].split(' ');
-				for (i = 0; i < zones.length; i++) {
-					guessWhitelist.push(country + '_' + zones[i]);
-				}
-			}
-		}
-	}({
-		africa: 'lagos johannesburg windhoek',
-		america: 'adak anchorage santo_domingo santiago campo_grande chicago guatemala denver caracas phoenix los_angeles new_york halifax godthab montevideo noronha st_johns',
-		antarctica: 'troll',
-		asia: 'shanghai krasnoyarsk yekaterinburg omsk beirut baku kolkata ulaanbaatar yakutsk dubai hovd kabul kathmandu rangoon tehran',
-		atlantic: 'azores cape_verde',
-		australia: 'brisbane sydney adelaide darwin eucla lord_howe',
-		etc: 'utc gmt+12',
-		europe: 'moscow berlin london',
-		pacific: 'easter pitcairn noumea auckland tarawa honolulu pago_pago gambier tongatapu kiritimati chatham apia marquesas norfolk',
-	}));
 
 	// INJECT DATA
 
