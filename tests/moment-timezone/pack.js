@@ -28,6 +28,26 @@ exports.pack = {
 		);
 	},
 
+	'single as guess' : function (test) {
+		compare(test,
+			{
+				name : "Some/Zone_Name",
+				abbrs   : ["ABC", "DEF", "ABC", "DEF", "GHI", "DEF"],
+				offsets : [60, 239, 60, 239, 60, 239],
+				untils  : [
+					-4259 * 60000,
+					-4139 * 60000,
+					-3900 * 60000,
+					-3780 * 60000,
+					-3541 * 60000,
+					Infinity
+				],
+				guess : true
+			},
+			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|1"
+		);
+	},
+
 	errors : function (test) {
 		test.throws(function () {
 			tz.pack({
