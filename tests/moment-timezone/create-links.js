@@ -266,5 +266,42 @@ exports['create-links'] = {
 
 		test.deepEqual(actual, expected, "Should retain existing links passed in.");
 		test.done();
+	},
+
+	'dont make a guess a link' : function (test) {
+		var isGuess = {
+				name : "Zone/Is",
+				abbrs   : ["ABC", "DEF", "GHI"],
+				offsets : [10, 20, 30],
+				untils  : [-1000, 100, 200],
+				guess   : true
+			},
+			isntGuess = {
+				name : "Zone/Isnt",
+				abbrs   : ["ABC", "DEF", "GHI"],
+				offsets : [10, 20, 30],
+				untils  : [-1000, 100, 200],
+				guess   : false
+			},
+			isFirst = {
+				zones : [isGuess, isntGuess],
+				links : [],
+				version : '2014guesses'
+			},
+			isntFirst = {
+				zones : [isntGuess, isGuess],
+				links : [],
+				version : '2014guesses'
+			},
+			expected = {
+				zones : [isGuess],
+				links : ["Zone/Is|Zone/Isnt"],
+				version : '2014guesses'
+			};
+
+		test.deepEqual(tz.createLinks(isFirst), expected, "Should not make a guess a link.");
+		test.deepEqual(tz.createLinks(isntFirst), expected, "Should not make a guess a link.");
+
+		test.done();
 	}
 };

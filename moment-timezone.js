@@ -230,17 +230,21 @@
 	}
 
 	function addZone (packed) {
-		var i, name, normalized;
+		var i, name, split, normalized;
 
 		if (typeof packed === "string") {
 			packed = [packed];
 		}
 
 		for (i = 0; i < packed.length; i++) {
-			name = packed[i].split('|')[0];
+			split = packed[i].split('|');
+			name = split[0];
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
+			if (split[5]) {
+				guesses.push(name);
+			}
 		}
 	}
 
@@ -304,24 +308,9 @@
 		}
 	}
 
-	function addGuess (names) {
-		var i, length;
-
-		if (typeof names === "string") {
-			names = [names];
-		}
-
-		length = names && names.length;
-
-		for (i = 0; i < length; i++) {
-			guesses.push(names[i]);
-		}
-	}
-
 	function loadData (data) {
 		addZone(data.zones);
 		addLink(data.links);
-		addGuess(data.guesses);
 		tz.dataVersion = data.version;
 	}
 

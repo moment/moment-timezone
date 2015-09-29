@@ -20,7 +20,8 @@ function dedupe(zone) {
 		name    : zone.name,
 		abbrs   : abbrs,
 		untils  : untils,
-		offsets : offsets
+		offsets : offsets,
+		guess   : zone.guess
 	};
 }
 

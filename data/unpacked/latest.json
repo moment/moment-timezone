@@ -14,7 +14,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Accra",
@@ -167,7 +168,8 @@
         0,
         -20,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Addis_Ababa",
@@ -191,7 +193,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Algiers",
@@ -302,7 +305,8 @@
         -60,
         0,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Asmara",
@@ -326,7 +330,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Asmera",
@@ -350,7 +355,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Bamako",
@@ -365,7 +371,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Bangui",
@@ -380,7 +387,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Banjul",
@@ -395,7 +403,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Bissau",
@@ -413,7 +422,8 @@
         62.3333,
         60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Blantyre",
@@ -428,7 +438,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Brazzaville",
@@ -443,7 +454,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Bujumbura",
@@ -458,7 +470,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Cairo",
@@ -848,7 +861,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Casablanca",
@@ -1163,7 +1177,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Ceuta",
@@ -1550,7 +1565,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Conakry",
@@ -1565,7 +1581,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Dakar",
@@ -1580,7 +1597,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Dar_es_Salaam",
@@ -1604,7 +1622,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Djibouti",
@@ -1628,7 +1647,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Douala",
@@ -1643,7 +1663,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/El_Aaiun",
@@ -1925,7 +1946,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Freetown",
@@ -1940,7 +1962,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Gaborone",
@@ -1955,7 +1978,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Harare",
@@ -1970,7 +1994,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Johannesburg",
@@ -1997,7 +2022,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Africa/Juba",
@@ -2111,7 +2137,8 @@
         -180,
         -120,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Kampala",
@@ -2135,7 +2162,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Khartoum",
@@ -2249,7 +2277,8 @@
         -180,
         -120,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Kigali",
@@ -2264,7 +2293,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Kinshasa",
@@ -2279,7 +2309,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Lagos",
@@ -2294,7 +2325,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Africa/Libreville",
@@ -2309,7 +2341,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Lome",
@@ -2324,7 +2357,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Luanda",
@@ -2339,7 +2373,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Lubumbashi",
@@ -2354,7 +2389,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Lusaka",
@@ -2369,7 +2405,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Malabo",
@@ -2384,7 +2421,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Maputo",
@@ -2399,7 +2437,8 @@
       "offsets": [
         -130.3333,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Maseru",
@@ -2426,7 +2465,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Mbabane",
@@ -2453,7 +2493,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Mogadishu",
@@ -2477,7 +2518,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Monrovia",
@@ -2495,7 +2537,8 @@
         43.1333,
         44.5,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Nairobi",
@@ -2519,7 +2562,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Ndjamena",
@@ -2540,7 +2584,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Niamey",
@@ -2555,7 +2600,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Nouakchott",
@@ -2570,7 +2616,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Ouagadougou",
@@ -2585,7 +2632,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Porto-Novo",
@@ -2600,7 +2648,8 @@
       "offsets": [
         -13.6,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Sao_Tome",
@@ -2615,7 +2664,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Timbuktu",
@@ -2630,7 +2680,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Tripoli",
@@ -2738,7 +2789,8 @@
         -60,
         -120,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Tunis",
@@ -2849,7 +2901,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Africa/Windhoek",
@@ -3137,7 +3190,8 @@
         -120,
         -60,
         -120
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Adak",
@@ -3578,7 +3632,8 @@
         600,
         540,
         600
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Anchorage",
@@ -4019,7 +4074,8 @@
         540,
         480,
         540
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Anguilla",
@@ -4034,7 +4090,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Antigua",
@@ -4049,7 +4106,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Araguaina",
@@ -4214,7 +4272,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Buenos_Aires",
@@ -4406,7 +4465,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Catamarca",
@@ -4598,7 +4658,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/ComodRivadavia",
@@ -4790,7 +4851,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Cordoba",
@@ -4982,7 +5044,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Jujuy",
@@ -5168,7 +5231,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/La_Rioja",
@@ -5363,7 +5427,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Mendoza",
@@ -5555,7 +5620,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Rio_Gallegos",
@@ -5747,7 +5813,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Salta",
@@ -5933,7 +6000,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/San_Juan",
@@ -6128,7 +6196,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/San_Luis",
@@ -6323,7 +6392,8 @@
         180,
         240,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Tucuman",
@@ -6521,7 +6591,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Argentina/Ushuaia",
@@ -6713,7 +6784,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Aruba",
@@ -6731,7 +6803,8 @@
         275.7833,
         270,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Asuncion",
@@ -7127,7 +7200,8 @@
         180,
         240,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Atikokan",
@@ -7157,7 +7231,8 @@
         300,
         300,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Atka",
@@ -7598,7 +7673,8 @@
         600,
         540,
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Bahia",
@@ -7793,7 +7869,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Bahia_Banderas",
@@ -8084,7 +8161,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Barbados",
@@ -8126,7 +8204,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Belem",
@@ -8225,7 +8304,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Belize",
@@ -8402,7 +8482,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Blanc-Sablon",
@@ -8429,7 +8510,8 @@
         180,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Boa_Vista",
@@ -8540,7 +8622,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Bogota",
@@ -8561,7 +8644,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Boise",
@@ -9023,7 +9107,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Buenos_Aires",
@@ -9215,7 +9300,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Cambridge_Bay",
@@ -9596,7 +9682,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Campo_Grande",
@@ -9992,7 +10079,8 @@
         180,
         240,
         180
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Cancun",
@@ -10130,7 +10218,8 @@
         300,
         360,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Caracas",
@@ -10151,7 +10240,8 @@
         270,
         240,
         270
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Catamarca",
@@ -10343,7 +10433,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Cayenne",
@@ -10361,7 +10452,8 @@
         209.3333,
         240,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Cayman",
@@ -10376,7 +10468,8 @@
       "offsets": [
         319.6,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Chicago",
@@ -11093,7 +11186,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Chihuahua",
@@ -11375,7 +11469,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Coral_Harbour",
@@ -11405,7 +11500,8 @@
         300,
         300,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Cordoba",
@@ -11597,7 +11693,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Costa_Rica",
@@ -11636,7 +11733,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Creston",
@@ -11654,7 +11752,8 @@
         420,
         480,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Cuiaba",
@@ -12044,7 +12143,8 @@
         180,
         240,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Curacao",
@@ -12062,7 +12162,8 @@
         275.7833,
         270,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Danmarkshavn",
@@ -12176,7 +12277,8 @@
         120,
         180,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Dawson",
@@ -12566,7 +12668,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Dawson_Creek",
@@ -12749,7 +12852,8 @@
         480,
         420,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Denver",
@@ -13232,7 +13336,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Detroit",
@@ -13661,7 +13766,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Dominica",
@@ -13676,7 +13782,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Edmonton",
@@ -14150,7 +14257,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Eirunepe",
@@ -14261,7 +14369,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/El_Salvador",
@@ -14288,7 +14397,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Ensenada",
@@ -14747,7 +14857,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Fort_Wayne",
@@ -15053,7 +15164,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Fortaleza",
@@ -15182,7 +15294,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Glace_Bay",
@@ -15614,7 +15727,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Godthab",
@@ -15977,7 +16091,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Goose_Bay",
@@ -16598,7 +16713,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Grand_Turk",
@@ -16835,7 +16951,8 @@
         300,
         240,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Grenada",
@@ -16850,7 +16967,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Guadeloupe",
@@ -16865,7 +16983,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Guatemala",
@@ -16904,7 +17023,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Guayaquil",
@@ -16919,7 +17039,8 @@
       "offsets": [
         314,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Guyana",
@@ -16943,7 +17064,8 @@
         225,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Halifax",
@@ -17639,7 +17761,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Havana",
@@ -18116,7 +18239,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Hermosillo",
@@ -18173,7 +18297,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Indianapolis",
@@ -18479,7 +18604,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Knox",
@@ -18950,7 +19076,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Marengo",
@@ -19268,7 +19395,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Petersburg",
@@ -19625,7 +19753,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Tell_City",
@@ -19937,7 +20066,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Vevay",
@@ -20189,7 +20319,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Vincennes",
@@ -20501,7 +20632,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indiana/Winamac",
@@ -20831,7 +20963,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Indianapolis",
@@ -21137,7 +21270,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Inuvik",
@@ -21509,7 +21643,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Iqaluit",
@@ -21884,7 +22019,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Jamaica",
@@ -21959,7 +22095,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Jujuy",
@@ -22145,7 +22282,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Juneau",
@@ -22583,7 +22721,8 @@
         540,
         480,
         540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Kentucky/Louisville",
@@ -23126,7 +23265,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Kentucky/Monticello",
@@ -23579,7 +23719,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Knox_IN",
@@ -24050,7 +24191,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Kralendijk",
@@ -24068,7 +24210,8 @@
         275.7833,
         270,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/La_Paz",
@@ -24086,7 +24229,8 @@
         272.6,
         212.6,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Lima",
@@ -24143,7 +24287,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Los_Angeles",
@@ -24710,7 +24855,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Louisville",
@@ -25253,7 +25399,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Lower_Princes",
@@ -25271,7 +25418,8 @@
         275.7833,
         270,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Maceio",
@@ -25406,7 +25554,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Managua",
@@ -25463,7 +25612,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Manaus",
@@ -25568,7 +25718,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Marigot",
@@ -25583,7 +25734,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Martinique",
@@ -25604,7 +25756,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Matamoros",
@@ -25877,7 +26030,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Mazatlan",
@@ -26168,7 +26322,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Mendoza",
@@ -26360,7 +26515,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Menominee",
@@ -26798,7 +26954,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Merida",
@@ -27071,7 +27228,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Metlakatla",
@@ -27182,7 +27340,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Mexico_City",
@@ -27488,7 +27647,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Miquelon",
@@ -27812,7 +27972,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Moncton",
@@ -28442,7 +28603,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Monterrey",
@@ -28715,7 +28877,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Montevideo",
@@ -29120,7 +29283,8 @@
         120,
         180,
         120
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Montreal",
@@ -29828,7 +29992,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Montserrat",
@@ -29843,7 +30008,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Nassau",
@@ -30302,7 +30468,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/New_York",
@@ -31019,7 +31186,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Nipigon",
@@ -31433,7 +31601,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Nome",
@@ -31874,7 +32043,8 @@
         540,
         480,
         540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Noronha",
@@ -32003,7 +32173,8 @@
         120,
         60,
         120
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/North_Dakota/Beulah",
@@ -32462,7 +32633,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/North_Dakota/Center",
@@ -32921,7 +33093,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/North_Dakota/New_Salem",
@@ -33380,7 +33553,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Ojinaga",
@@ -33662,7 +33836,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Panama",
@@ -33677,7 +33852,8 @@
       "offsets": [
         319.6,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Pangnirtung",
@@ -34055,7 +34231,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Paramaribo",
@@ -34082,7 +34259,8 @@
         210,
         210,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Phoenix",
@@ -34124,7 +34302,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Port-au-Prince",
@@ -34397,7 +34576,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Port_of_Spain",
@@ -34412,7 +34592,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Porto_Acre",
@@ -34517,7 +34698,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Porto_Velho",
@@ -34616,7 +34798,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Puerto_Rico",
@@ -34637,7 +34820,8 @@
         180,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Rainy_River",
@@ -35051,7 +35235,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Rankin_Inlet",
@@ -35420,7 +35605,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Recife",
@@ -35549,7 +35735,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Regina",
@@ -35720,7 +35907,8 @@
         360,
         420,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Resolute",
@@ -36089,7 +36277,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Rio_Branco",
@@ -36194,7 +36383,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Rosario",
@@ -36386,7 +36576,8 @@
         180,
         120,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Santa_Isabel",
@@ -36845,7 +37036,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Santarem",
@@ -36947,7 +37139,8 @@
         180,
         240,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Santiago",
@@ -37304,7 +37497,8 @@
         240,
         180,
         180
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Santo_Domingo",
@@ -37364,7 +37558,8 @@
         240,
         300,
         240
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/Sao_Paulo",
@@ -37760,7 +37955,8 @@
         120,
         180,
         120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Scoresbysund",
@@ -38123,7 +38319,8 @@
         60,
         0,
         60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Shiprock",
@@ -38606,7 +38803,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Sitka",
@@ -39044,7 +39242,8 @@
         540,
         480,
         540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/St_Barthelemy",
@@ -39059,7 +39258,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/St_Johns",
@@ -39785,7 +39985,8 @@
         210,
         150,
         210
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "America/St_Kitts",
@@ -39800,7 +40001,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/St_Lucia",
@@ -39815,7 +40017,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/St_Thomas",
@@ -39830,7 +40033,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/St_Vincent",
@@ -39845,7 +40049,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Swift_Current",
@@ -39926,7 +40131,8 @@
         360,
         420,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Tegucigalpa",
@@ -39959,7 +40165,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Thule",
@@ -40256,7 +40463,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Thunder_Bay",
@@ -40682,7 +40890,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Tijuana",
@@ -41141,7 +41350,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Toronto",
@@ -41849,7 +42059,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Tortola",
@@ -41864,7 +42075,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Vancouver",
@@ -42443,7 +42655,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Virgin",
@@ -42458,7 +42671,8 @@
       "offsets": [
         246.0667,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Whitehorse",
@@ -42848,7 +43062,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Winnipeg",
@@ -43415,7 +43630,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Yakutat",
@@ -43853,7 +44069,8 @@
         540,
         480,
         540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "America/Yellowknife",
@@ -44231,7 +44448,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Casey",
@@ -44258,7 +44476,8 @@
         -480,
         -660,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Davis",
@@ -44291,7 +44510,8 @@
         -420,
         -300,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/DumontDUrville",
@@ -44312,7 +44532,8 @@
         -600,
         0,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Macquarie",
@@ -44594,7 +44815,8 @@
         -600,
         -660,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Mawson",
@@ -44612,7 +44834,8 @@
         0,
         -360,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/McMurdo",
@@ -45086,7 +45309,8 @@
         -780,
         -720,
         -780
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Palmer",
@@ -45338,7 +45562,8 @@
         240,
         180,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Rothera",
@@ -45353,7 +45578,8 @@
       "offsets": [
         0,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/South_Pole",
@@ -45827,7 +46053,8 @@
         -780,
         -720,
         -780
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Syowa",
@@ -45842,7 +46069,8 @@
       "offsets": [
         0,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Antarctica/Troll",
@@ -46055,7 +46283,8 @@
         0,
         -120,
         0
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Antarctica/Vostok",
@@ -46070,7 +46299,8 @@
       "offsets": [
         0,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Arctic/Longyearbyen",
@@ -46502,7 +46732,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Aden",
@@ -46517,7 +46748,8 @@
       "offsets": [
         -186.8667,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Almaty",
@@ -46673,7 +46905,8 @@
         -360,
         -420,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Amman",
@@ -47036,7 +47269,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Anadyr",
@@ -47240,7 +47474,8 @@
         -720,
         -660,
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Aqtau",
@@ -47402,7 +47637,8 @@
         -300,
         -240,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Aqtobe",
@@ -47561,7 +47797,8 @@
         -300,
         -360,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Ashgabat",
@@ -47651,7 +47888,8 @@
         -240,
         -240,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Ashkhabad",
@@ -47741,7 +47979,8 @@
         -240,
         -240,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Baghdad",
@@ -47912,7 +48151,8 @@
         -180,
         -240,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Bahrain",
@@ -47930,7 +48170,8 @@
         -206.1333,
         -240,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Baku",
@@ -48275,7 +48516,8 @@
         -240,
         -300,
         -240
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Bangkok",
@@ -48290,7 +48532,8 @@
       "offsets": [
         -402.0667,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Beirut",
@@ -48722,7 +48965,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Bishkek",
@@ -48890,7 +49134,8 @@
         -300,
         -360,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Brunei",
@@ -48908,7 +49153,8 @@
         -459.6667,
         -450,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Calcutta",
@@ -48932,7 +49178,8 @@
         -330,
         -390,
         -330
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Chita",
@@ -49139,7 +49386,8 @@
         -540,
         -600,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Choibalsan",
@@ -49430,7 +49678,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Chongqing",
@@ -49490,7 +49739,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Chungking",
@@ -49550,7 +49800,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Colombo",
@@ -49583,7 +49834,8 @@
         -390,
         -360,
         -330
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Dacca",
@@ -49616,7 +49868,8 @@
         -360,
         -420,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Damascus",
@@ -50081,7 +50334,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Dhaka",
@@ -50114,7 +50368,8 @@
         -360,
         -420,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Dili",
@@ -50141,7 +50396,8 @@
         -540,
         -480,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Dubai",
@@ -50156,7 +50412,8 @@
       "offsets": [
         -221.2,
         -240
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Dushanbe",
@@ -50240,7 +50497,8 @@
         -360,
         -360,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Gaza",
@@ -50681,7 +50939,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Harbin",
@@ -50741,7 +51000,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Hebron",
@@ -51188,7 +51448,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Ho_Chi_Minh",
@@ -51227,7 +51488,8 @@
         -420,
         -480,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Hong_Kong",
@@ -51446,7 +51708,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Hovd",
@@ -51734,7 +51997,8 @@
         -420,
         -480,
         -420
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Irkutsk",
@@ -51941,7 +52205,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Istanbul",
@@ -52463,7 +52728,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Jakarta",
@@ -52496,7 +52762,8 @@
         -480,
         -450,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Jayapura",
@@ -52517,7 +52784,8 @@
         -540,
         -570,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Jerusalem",
@@ -52955,7 +53223,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Kabul",
@@ -52970,7 +53239,8 @@
       "offsets": [
         -240,
         -270
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Kamchatka",
@@ -53174,7 +53444,8 @@
         -720,
         -660,
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Karachi",
@@ -53219,7 +53490,8 @@
         -300,
         -360,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Kashgar",
@@ -53234,7 +53506,8 @@
       "offsets": [
         -350.3333,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Kathmandu",
@@ -53252,7 +53525,8 @@
         -341.2667,
         -330,
         -345
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Katmandu",
@@ -53270,7 +53544,8 @@
         -341.2667,
         -330,
         -345
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Khandyga",
@@ -53483,7 +53758,8 @@
         -660,
         -600,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Kolkata",
@@ -53507,7 +53783,8 @@
         -330,
         -390,
         -330
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Krasnoyarsk",
@@ -53714,7 +53991,8 @@
         -420,
         -480,
         -420
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Kuala_Lumpur",
@@ -53747,7 +54025,8 @@
         -540,
         -450,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Kuching",
@@ -53816,7 +54095,8 @@
         -540,
         -480,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Kuwait",
@@ -53831,7 +54111,8 @@
       "offsets": [
         -186.8667,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Macao",
@@ -53969,7 +54250,8 @@
         -540,
         -480,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Macau",
@@ -54107,7 +54389,8 @@
         -540,
         -480,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Magadan",
@@ -54314,7 +54597,8 @@
         -660,
         -720,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Makassar",
@@ -54338,7 +54622,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Manila",
@@ -54374,7 +54659,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Muscat",
@@ -54389,7 +54675,8 @@
       "offsets": [
         -221.2,
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Nicosia",
@@ -54782,7 +55069,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Novokuznetsk",
@@ -54989,7 +55277,8 @@
         -360,
         -420,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Novosibirsk",
@@ -55199,7 +55488,8 @@
         -360,
         -420,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Omsk",
@@ -55406,7 +55696,8 @@
         -360,
         -420,
         -360
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Oral",
@@ -55568,7 +55859,8 @@
         -300,
         -240,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Phnom_Penh",
@@ -55583,7 +55875,8 @@
       "offsets": [
         -402.0667,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Pontianak",
@@ -55619,7 +55912,8 @@
         -450,
         -480,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Pyongyang",
@@ -55643,7 +55937,8 @@
         -540,
         -540,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Qatar",
@@ -55661,7 +55956,8 @@
         -206.1333,
         -240,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Qyzylorda",
@@ -55823,7 +56119,8 @@
         -360,
         -420,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Rangoon",
@@ -55844,7 +56141,8 @@
         -390,
         -540,
         -390
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Riyadh",
@@ -55859,7 +56157,8 @@
       "offsets": [
         -186.8667,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Saigon",
@@ -55898,7 +56197,8 @@
         -420,
         -480,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Sakhalin",
@@ -56108,7 +56408,8 @@
         -600,
         -660,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Samarkand",
@@ -56195,7 +56496,8 @@
         -360,
         -360,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Seoul",
@@ -56273,7 +56575,8 @@
         -540,
         -600,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Shanghai",
@@ -56333,7 +56636,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Singapore",
@@ -56369,7 +56673,8 @@
         -450,
         -450,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Srednekolymsk",
@@ -56576,7 +56881,8 @@
         -660,
         -720,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Taipei",
@@ -56708,7 +57014,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Tashkent",
@@ -56795,7 +57102,8 @@
         -360,
         -360,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Tbilisi",
@@ -56960,7 +57268,8 @@
         -240,
         -180,
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Tehran",
@@ -57272,7 +57581,8 @@
         -210,
         -270,
         -210
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Tel_Aviv",
@@ -57710,7 +58020,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Thimbu",
@@ -57728,7 +58039,8 @@
         -358.6,
         -330,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Thimphu",
@@ -57746,7 +58058,8 @@
         -358.6,
         -330,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Tokyo",
@@ -57785,7 +58098,8 @@
         -540,
         -600,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Ujung_Pandang",
@@ -57809,7 +58123,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Ulaanbaatar",
@@ -58097,7 +58412,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Ulan_Bator",
@@ -58385,7 +58701,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Urumqi",
@@ -58400,7 +58717,8 @@
       "offsets": [
         -350.3333,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Ust-Nera",
@@ -58610,7 +58928,8 @@
         -720,
         -660,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Vientiane",
@@ -58625,7 +58944,8 @@
       "offsets": [
         -402.0667,
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Vladivostok",
@@ -58832,7 +59152,8 @@
         -600,
         -660,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Asia/Yakutsk",
@@ -59039,7 +59360,8 @@
         -540,
         -600,
         -540
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Yekaterinburg",
@@ -59249,7 +59571,8 @@
         -300,
         -360,
         -300
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Asia/Yerevan",
@@ -59450,7 +59773,8 @@
         -240,
         -300,
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Azores",
@@ -60122,7 +60446,8 @@
         60,
         0,
         60
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Atlantic/Bermuda",
@@ -60521,7 +60846,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Canary",
@@ -60887,7 +61213,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Cape_Verde",
@@ -60911,7 +61238,8 @@
         60,
         120,
         60
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Atlantic/Faeroe",
@@ -61268,7 +61596,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Faroe",
@@ -61625,7 +61954,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Jan_Mayen",
@@ -62057,7 +62387,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Madeira",
@@ -62729,7 +63060,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Reykjavik",
@@ -62945,7 +63277,8 @@
         0,
         60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/South_Georgia",
@@ -62957,7 +63290,8 @@
       ],
       "offsets": [
         120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/St_Helena",
@@ -62972,7 +63306,8 @@
       "offsets": [
         16.1333,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Atlantic/Stanley",
@@ -63191,7 +63526,8 @@
         180,
         240,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/ACT",
@@ -63626,7 +63962,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Adelaide",
@@ -64061,7 +64398,8 @@
         -630,
         -570,
         -630
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Australia/Brisbane",
@@ -64121,7 +64459,8 @@
         -600,
         -660,
         -600
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Australia/Broken_Hill",
@@ -64556,7 +64895,8 @@
         -630,
         -570,
         -630
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Canberra",
@@ -64991,7 +65331,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Currie",
@@ -65426,7 +65767,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Darwin",
@@ -65462,7 +65804,8 @@
         -570,
         -630,
         -570
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Australia/Eucla",
@@ -65528,7 +65871,8 @@
         -525,
         -585,
         -525
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Australia/Hobart",
@@ -65987,7 +66331,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/LHI",
@@ -66341,7 +66686,8 @@
         -660,
         -630,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Lindeman",
@@ -66413,7 +66759,8 @@
         -600,
         -660,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Lord_Howe",
@@ -66767,7 +67114,8 @@
         -660,
         -630,
         -660
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Australia/Melbourne",
@@ -67202,7 +67550,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/NSW",
@@ -67637,7 +67986,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/North",
@@ -67673,7 +68023,8 @@
         -570,
         -630,
         -570
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Perth",
@@ -67739,7 +68090,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Queensland",
@@ -67799,7 +68151,8 @@
         -600,
         -660,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/South",
@@ -68234,7 +68587,8 @@
         -630,
         -570,
         -630
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Sydney",
@@ -68669,7 +69023,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Australia/Tasmania",
@@ -69128,7 +69483,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Victoria",
@@ -69563,7 +69919,8 @@
         -660,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/West",
@@ -69629,7 +69986,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Australia/Yancowinna",
@@ -70064,7 +70422,8 @@
         -630,
         -570,
         -630
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Brazil/Acre",
@@ -70169,7 +70528,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Brazil/DeNoronha",
@@ -70298,7 +70658,8 @@
         120,
         60,
         120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Brazil/East",
@@ -70694,7 +71055,8 @@
         120,
         180,
         120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Brazil/West",
@@ -70799,7 +71161,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "CET",
@@ -71219,7 +71582,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "CST6CDT",
@@ -71678,7 +72042,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Atlantic",
@@ -72374,7 +72739,8 @@
         240,
         180,
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Central",
@@ -72941,7 +73307,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/East-Saskatchewan",
@@ -73112,7 +73479,8 @@
         360,
         420,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Eastern",
@@ -73820,7 +74188,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Mountain",
@@ -74294,7 +74663,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Newfoundland",
@@ -75020,7 +75390,8 @@
         210,
         150,
         210
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Pacific",
@@ -75599,7 +75970,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Saskatchewan",
@@ -75770,7 +76142,8 @@
         360,
         420,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Canada/Yukon",
@@ -76160,7 +76533,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Chile/Continental",
@@ -76517,7 +76891,8 @@
         240,
         180,
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Chile/EasterIsland",
@@ -76814,7 +77189,8 @@
         360,
         300,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Cuba",
@@ -77291,7 +77667,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "EET",
@@ -77669,7 +78046,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "EST",
@@ -77681,7 +78059,8 @@
       ],
       "offsets": [
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "EST5EDT",
@@ -78140,7 +78519,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Egypt",
@@ -78530,7 +78910,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Eire",
@@ -79220,7 +79601,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+0",
@@ -79232,7 +79614,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+1",
@@ -79244,7 +79627,8 @@
       ],
       "offsets": [
         60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+10",
@@ -79256,7 +79640,8 @@
       ],
       "offsets": [
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+11",
@@ -79268,7 +79653,8 @@
       ],
       "offsets": [
         660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+12",
@@ -79280,7 +79666,8 @@
       ],
       "offsets": [
         720
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Etc/GMT+2",
@@ -79292,7 +79679,8 @@
       ],
       "offsets": [
         120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+3",
@@ -79304,7 +79692,8 @@
       ],
       "offsets": [
         180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+4",
@@ -79316,7 +79705,8 @@
       ],
       "offsets": [
         240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+5",
@@ -79328,7 +79718,8 @@
       ],
       "offsets": [
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+6",
@@ -79340,7 +79731,8 @@
       ],
       "offsets": [
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+7",
@@ -79352,7 +79744,8 @@
       ],
       "offsets": [
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+8",
@@ -79364,7 +79757,8 @@
       ],
       "offsets": [
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT+9",
@@ -79376,7 +79770,8 @@
       ],
       "offsets": [
         540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-0",
@@ -79388,7 +79783,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-1",
@@ -79400,7 +79796,8 @@
       ],
       "offsets": [
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-10",
@@ -79412,7 +79809,8 @@
       ],
       "offsets": [
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-11",
@@ -79424,7 +79822,8 @@
       ],
       "offsets": [
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-12",
@@ -79436,7 +79835,8 @@
       ],
       "offsets": [
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-13",
@@ -79448,7 +79848,8 @@
       ],
       "offsets": [
         -780
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-14",
@@ -79460,7 +79861,8 @@
       ],
       "offsets": [
         -840
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-2",
@@ -79472,7 +79874,8 @@
       ],
       "offsets": [
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-3",
@@ -79484,7 +79887,8 @@
       ],
       "offsets": [
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-4",
@@ -79496,7 +79900,8 @@
       ],
       "offsets": [
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-5",
@@ -79508,7 +79913,8 @@
       ],
       "offsets": [
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-6",
@@ -79520,7 +79926,8 @@
       ],
       "offsets": [
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-7",
@@ -79532,7 +79939,8 @@
       ],
       "offsets": [
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-8",
@@ -79544,7 +79952,8 @@
       ],
       "offsets": [
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT-9",
@@ -79556,7 +79965,8 @@
       ],
       "offsets": [
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT",
@@ -79568,7 +79978,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/GMT0",
@@ -79580,7 +79991,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/Greenwich",
@@ -79592,7 +80004,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/UCT",
@@ -79604,7 +80017,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/UTC",
@@ -79616,7 +80030,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Etc/Universal",
@@ -79628,7 +80043,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Etc/Zulu",
@@ -79640,7 +80056,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Amsterdam",
@@ -80189,7 +80606,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Andorra",
@@ -80522,7 +80940,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Athens",
@@ -80945,7 +81364,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Belfast",
@@ -81677,7 +82097,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Belgrade",
@@ -82043,7 +82464,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Berlin",
@@ -82481,7 +82903,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Europe/Bratislava",
@@ -82913,7 +83336,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Brussels",
@@ -83474,7 +83898,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Bucharest",
@@ -83891,7 +84316,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Budapest",
@@ -84353,7 +84779,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Busingen",
@@ -84719,7 +85146,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Chisinau",
@@ -85145,7 +85573,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Copenhagen",
@@ -85553,7 +85982,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Dublin",
@@ -86243,7 +86673,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Gibraltar",
@@ -86846,7 +87277,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Guernsey",
@@ -87578,7 +88010,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Helsinki",
@@ -87941,7 +88374,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Isle_of_Man",
@@ -88673,7 +89107,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Istanbul",
@@ -89195,7 +89630,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Jersey",
@@ -89927,7 +90363,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Kaliningrad",
@@ -90173,7 +90610,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Kiev",
@@ -90545,7 +90983,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Lisbon",
@@ -91220,7 +91659,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Ljubljana",
@@ -91586,7 +92026,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/London",
@@ -92318,7 +92759,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Europe/Luxembourg",
@@ -92879,7 +93321,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Madrid",
@@ -93380,7 +93823,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Malta",
@@ -93896,7 +94340,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Mariehamn",
@@ -94259,7 +94704,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Minsk",
@@ -94475,7 +94921,8 @@
         -120,
         -180,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Monaco",
@@ -95039,7 +95486,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Moscow",
@@ -95282,7 +95730,8 @@
         -180,
         -240,
         -180
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Europe/Nicosia",
@@ -95675,7 +96124,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Oslo",
@@ -96107,7 +96557,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Paris",
@@ -96668,7 +97119,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Podgorica",
@@ -97034,7 +97486,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Prague",
@@ -97466,7 +97919,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Riga",
@@ -97853,7 +98307,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Rome",
@@ -98369,7 +98824,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Samara",
@@ -98576,7 +99032,8 @@
         -240,
         -180,
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/San_Marino",
@@ -99092,7 +99549,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Sarajevo",
@@ -99458,7 +99916,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Simferopol",
@@ -99692,7 +100151,8 @@
         -120,
         -240,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Skopje",
@@ -100058,7 +100518,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Sofia",
@@ -100442,7 +100903,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Stockholm",
@@ -100808,7 +101270,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Tallinn",
@@ -101186,7 +101649,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Tirane",
@@ -101597,7 +102061,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Tiraspol",
@@ -102023,7 +102488,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Uzhgorod",
@@ -102392,7 +102858,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Vaduz",
@@ -102758,7 +103225,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Vatican",
@@ -103274,7 +103742,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Vienna",
@@ -103700,7 +104169,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Vilnius",
@@ -104069,7 +104539,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Volgograd",
@@ -104276,7 +104747,8 @@
         -180,
         -240,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Warsaw",
@@ -104780,7 +105252,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Zagreb",
@@ -105146,7 +105619,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Zaporozhye",
@@ -105521,7 +105995,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Europe/Zurich",
@@ -105887,7 +106362,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "GB-Eire",
@@ -106619,7 +107095,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "GB",
@@ -107351,7 +107828,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "GMT+0",
@@ -107363,7 +107841,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "GMT-0",
@@ -107375,7 +107854,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "GMT",
@@ -107387,7 +107867,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "GMT0",
@@ -107399,7 +107880,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Greenwich",
@@ -107411,7 +107893,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "HST",
@@ -107423,7 +107906,8 @@
       ],
       "offsets": [
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Hongkong",
@@ -107642,7 +108126,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Iceland",
@@ -107858,7 +108343,8 @@
         0,
         60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Antananarivo",
@@ -107882,7 +108368,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Chagos",
@@ -107900,7 +108387,8 @@
         -289.6667,
         -300,
         -360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Christmas",
@@ -107912,7 +108400,8 @@
       ],
       "offsets": [
         -420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Cocos",
@@ -107924,7 +108413,8 @@
       ],
       "offsets": [
         -390
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Comoro",
@@ -107948,7 +108438,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Kerguelen",
@@ -107963,7 +108454,8 @@
       "offsets": [
         0,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Mahe",
@@ -107978,7 +108470,8 @@
       "offsets": [
         -221.8,
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Maldives",
@@ -107993,7 +108486,8 @@
       "offsets": [
         -294,
         -300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Mauritius",
@@ -108020,7 +108514,8 @@
         -240,
         -300,
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Mayotte",
@@ -108044,7 +108539,8 @@
         -150,
         -165,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Indian/Reunion",
@@ -108059,7 +108555,8 @@
       "offsets": [
         -221.8667,
         -240
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Iran",
@@ -108371,7 +108868,8 @@
         -210,
         -270,
         -210
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Israel",
@@ -108809,7 +109307,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Jamaica",
@@ -108884,7 +109383,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Japan",
@@ -108923,7 +109423,8 @@
         -540,
         -600,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Kwajalein",
@@ -108941,7 +109442,8 @@
         -660,
         720,
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Libya",
@@ -109049,7 +109551,8 @@
         -60,
         -120,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "MET",
@@ -109469,7 +109972,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "MST",
@@ -109481,7 +109985,8 @@
       ],
       "offsets": [
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "MST7MDT",
@@ -109940,7 +110445,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Mexico/BajaNorte",
@@ -110399,7 +110905,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Mexico/BajaSur",
@@ -110690,7 +111197,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Mexico/General",
@@ -110996,7 +111504,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "NZ-CHAT",
@@ -111392,7 +111901,8 @@
         -825,
         -765,
         -825
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "NZ",
@@ -111866,7 +112376,8 @@
         -780,
         -720,
         -780
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Navajo",
@@ -112349,7 +112860,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "PRC",
@@ -112409,7 +112921,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "PST8PDT",
@@ -112868,7 +113381,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Apia",
@@ -113054,7 +113568,8 @@
         -840,
         -780,
         -840
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Auckland",
@@ -113528,7 +114043,8 @@
         -780,
         -720,
         -780
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Bougainville",
@@ -113549,7 +114065,8 @@
         -540,
         -600,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Chatham",
@@ -113945,7 +114462,8 @@
         -825,
         -765,
         -825
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Chuuk",
@@ -113957,7 +114475,8 @@
       ],
       "offsets": [
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Easter",
@@ -114254,7 +114773,8 @@
         360,
         300,
         300
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Efate",
@@ -114329,7 +114849,8 @@
         -660,
         -720,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Enderbury",
@@ -114347,7 +114868,8 @@
         720,
         660,
         -780
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Fakaofo",
@@ -114362,7 +114884,8 @@
       "offsets": [
         660,
         -780
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Fiji",
@@ -114560,7 +115083,8 @@
         -780,
         -720,
         -780
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Funafuti",
@@ -114572,7 +115096,8 @@
       ],
       "offsets": [
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Galapagos",
@@ -114590,7 +115115,8 @@
         358.4,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Gambier",
@@ -114605,7 +115131,8 @@
       "offsets": [
         539.8,
         540
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Guadalcanal",
@@ -114620,7 +115147,8 @@
       "offsets": [
         -639.8,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Guam",
@@ -114635,7 +115163,8 @@
       "offsets": [
         -600,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Honolulu",
@@ -114662,7 +115191,8 @@
         570,
         630,
         600
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Johnston",
@@ -114689,7 +115219,8 @@
         570,
         630,
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Kiritimati",
@@ -114707,7 +115238,8 @@
         640,
         600,
         -840
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Kosrae",
@@ -114725,7 +115257,8 @@
         -660,
         -720,
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Kwajalein",
@@ -114743,7 +115276,8 @@
         -660,
         720,
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Majuro",
@@ -114758,7 +115292,8 @@
       "offsets": [
         -660,
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Marquesas",
@@ -114773,7 +115308,8 @@
       "offsets": [
         558,
         570
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Midway",
@@ -114794,7 +115330,8 @@
         660,
         660,
         660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Nauru",
@@ -114818,7 +115355,8 @@
         -540,
         -690,
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Niue",
@@ -114836,7 +115374,8 @@
         680,
         690,
         660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Norfolk",
@@ -114851,7 +115390,8 @@
       "offsets": [
         -672,
         -690
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Noumea",
@@ -114884,7 +115424,8 @@
         -660,
         -720,
         -660
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Pago_Pago",
@@ -114905,7 +115446,8 @@
         660,
         660,
         660
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Palau",
@@ -114917,7 +115459,8 @@
       ],
       "offsets": [
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Pitcairn",
@@ -114932,7 +115475,8 @@
       "offsets": [
         510,
         480
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Pohnpei",
@@ -114944,7 +115488,8 @@
       ],
       "offsets": [
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Ponape",
@@ -114956,7 +115501,8 @@
       ],
       "offsets": [
         -660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Port_Moresby",
@@ -114968,7 +115514,8 @@
       ],
       "offsets": [
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Rarotonga",
@@ -115058,7 +115605,8 @@
         600,
         570,
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Saipan",
@@ -115073,7 +115621,8 @@
       "offsets": [
         -600,
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Samoa",
@@ -115094,7 +115643,8 @@
         660,
         660,
         660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Tahiti",
@@ -115109,7 +115659,8 @@
       "offsets": [
         598.2667,
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Tarawa",
@@ -115121,7 +115672,8 @@
       ],
       "offsets": [
         -720
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Tongatapu",
@@ -115154,7 +115706,8 @@
         -780,
         -840,
         -780
-      ]
+      ],
+      "guess": true
     },
     {
       "name": "Pacific/Truk",
@@ -115166,7 +115719,8 @@
       ],
       "offsets": [
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Wake",
@@ -115178,7 +115732,8 @@
       ],
       "offsets": [
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Wallis",
@@ -115190,7 +115745,8 @@
       ],
       "offsets": [
         -720
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Pacific/Yap",
@@ -115202,7 +115758,8 @@
       ],
       "offsets": [
         -600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Poland",
@@ -115706,7 +116263,8 @@
         -60,
         -120,
         -60
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Portugal",
@@ -116381,7 +116939,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "ROC",
@@ -116513,7 +117072,8 @@
         -480,
         -540,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "ROK",
@@ -116591,7 +117151,8 @@
         -540,
         -600,
         -540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Singapore",
@@ -116627,7 +117188,8 @@
         -450,
         -450,
         -480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Turkey",
@@ -117149,7 +117711,8 @@
         -120,
         -180,
         -120
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "UCT",
@@ -117161,7 +117724,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Alaska",
@@ -117602,7 +118166,8 @@
         540,
         480,
         540
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Aleutian",
@@ -118043,7 +118608,8 @@
         600,
         540,
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Arizona",
@@ -118085,7 +118651,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Central",
@@ -118802,7 +119369,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/East-Indiana",
@@ -119108,7 +119676,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Eastern",
@@ -119825,7 +120394,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Hawaii",
@@ -119852,7 +120422,8 @@
         570,
         630,
         600
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Indiana-Starke",
@@ -120323,7 +120894,8 @@
         360,
         300,
         360
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Michigan",
@@ -120752,7 +121324,8 @@
         300,
         240,
         300
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Mountain",
@@ -121235,7 +121808,8 @@
         420,
         360,
         420
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Pacific-New",
@@ -121802,7 +122376,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Pacific",
@@ -122369,7 +122944,8 @@
         480,
         420,
         480
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "US/Samoa",
@@ -122390,7 +122966,8 @@
         660,
         660,
         660
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "UTC",
@@ -122402,7 +122979,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Universal",
@@ -122414,7 +122992,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "W-SU",
@@ -122657,7 +123236,8 @@
         -180,
         -240,
         -180
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "WET",
@@ -123035,7 +123615,8 @@
         0,
         -60,
         0
-      ]
+      ],
+      "guess": false
     },
     {
       "name": "Zulu",
@@ -123047,7 +123628,8 @@
       ],
       "offsets": [
         0
-      ]
+      ],
+      "guess": false
     }
   ],
   "links": []
