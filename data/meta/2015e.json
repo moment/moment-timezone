@@ -2541,7 +2541,7 @@
 			"countries": [
 				"CA"
 			],
-			"comments": "Atlantic Time - Nova Scotia (peninsula), PEI"
+			"comments": "Atlantic Time - Nova Scotia (most places), PEI"
 		},
 		"America/Glace_Bay": {
 			"name": "America/Glace_Bay",
@@ -2550,7 +2550,7 @@
 			"countries": [
 				"CA"
 			],
-			"comments": "Atlantic Time - Nova Scotia (Cape Breton)"
+			"comments": "Atlantic Time - Nova Scotia - places that did not observe DST 1966-1971"
 		},
 		"America/Moncton": {
 			"name": "America/Moncton",
