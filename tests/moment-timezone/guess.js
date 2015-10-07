@@ -4,13 +4,9 @@ var tz = require("../../").tz;
 
 var getTimezoneOffset = Date.prototype.getTimezoneOffset;
 
-function mockTimezoneOffset (jan, jul) {
+function mockTimezoneOffset (zone) {
 	Date.prototype.getTimezoneOffset = function () {
-		var month = this.getMonth();
-		if (month > 3 && month < 9) {
-			return -jul;
-		}
-		return -jan;
+		return zone.offset(+this);
 	};
 }
 
@@ -21,15 +17,12 @@ exports.guess = {
 	},
 
 	"different offsets should guess different timezones" : function (test) {
-		mockTimezoneOffset(0, 60);
-		tz._guess = null;
-		var london = tz.guess();
-		mockTimezoneOffset(-300, -240);
-		tz._guess = null;
-		var newYork = tz.guess();
-		mockTimezoneOffset(-480, -420);
-		tz._guess = null;
-		var losAngeles = tz.guess();
+		mockTimezoneOffset(tz.zone('Europe/London'));
+		var london = tz.guess(true);
+		mockTimezoneOffset(tz.zone('America/New_York'));
+		var newYork = tz.guess(true);
+		mockTimezoneOffset(tz.zone('America/Los_Angeles'));
+		var losAngeles = tz.guess(true);
 
 		test.ok(london);
 		test.ok(newYork);
@@ -41,18 +34,12 @@ exports.guess = {
 
 	"ensure each zone is represented" : function (test) {
 		var names = tz.names();
-		var year = new Date().getFullYear();
-		var jan = Date.UTC(year, 0, 1);
-		var jul = Date.UTC(year, 6, 1);
-		var zone, janOffset, julOffset;
+		var zone, i;
 
-		for (var i = 0; i < names.length; i++) {
+		for (i = 0; i < names.length; i++) {
 			zone = tz.zone(names[i]);
-			janOffset = zone.offset(jan);
-			julOffset = zone.offset(jul);
-			mockTimezoneOffset(-janOffset, -julOffset);
-			tz._guess = null;
-			test.ok(tz.guess(), "Should have a guess for " + zone.name + " (jan " + janOffset + " jul " + julOffset + ")");
+			mockTimezoneOffset(zone);
+			test.ok(tz.guess(true), "Should have a guess for " + zone.name + ")");
 		}
 		test.done();
 	}
