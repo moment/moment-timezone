@@ -125,7 +125,8 @@
 			name    : data[0],
 			abbrs   : mapIndices(data[1].split(' '), indices),
 			offsets : mapIndices(offsets, indices),
-			untils  : untils
+			untils  : untils,
+			guess   : data[5] | 0
 		};
 	}
 
@@ -145,6 +146,7 @@
 			this.abbrs   = unpacked.abbrs;
 			this.untils  = unpacked.untils;
 			this.offsets = unpacked.offsets;
+			this.guess   = unpacked.guess;
 		},
 
 		_index : function (timestamp) {
@@ -207,6 +209,18 @@
 		return zone.offset(this.at) === this.offset;
 	};
 
+	function ZoneScore(zone, offsetCount) {
+		this.zone = zone;
+		this.scorePerMatch = 1 / offsetCount;
+		this.score = zone.guess * this.scorePerMatch * 0.5;
+	}
+
+	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
+		if (offsetAt.matches(this.zone)) {
+			this.score += this.scorePerMatch;
+		}
+	};
+
 	function findChange(low, high) {
 		var mid, diff;
 
@@ -241,20 +255,29 @@
 		return offsets;
 	}
 
+	function sortZoneScores (a, b) {
+		return b.score - a.score;
+	}
+
 	function rebuildGuess () {
 		var offsets = userOffsets(),
-			zone, i, j, matched;
+			offsetsLength = offsets.length,
+			zoneScores = [],
+			zoneScore, i, j;
 
 		for (i = 0; i < guesses.length; i++) {
-			zone = getZone(guesses[i]);
-			matched = true;
-			for (j = 0; j < offsets.length; j++) {
-				matched = matched && offsets[j].matches(zone);
+			zoneScore = new ZoneScore(getZone(guesses[i]), offsetsLength);
+			for (j = 0; j < offsetsLength; j++) {
+				zoneScore.scoreOffsetAt(offsets[j]);
 			}
-			if (matched) {
-				return zone.name;
+			if (zoneScore.score > 0) {
+				zoneScores.push(zoneScore);
 			}
 		}
+
+		zoneScores.sort(sortZoneScores);
+
+		return zoneScores.length > 0 ? zoneScores[0].zone.name : undefined;
 	}
 
 	function guess (ignoreCache) {
