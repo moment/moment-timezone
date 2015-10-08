@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.4.0
+//! version : 0.4.1
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,7 +24,7 @@
 		return moment;
 	}
 
-	var VERSION = "0.4.0",
+	var VERSION = "0.4.1",
 		zones = {},
 		links = {},
 		names = {},
@@ -220,7 +220,7 @@
 
 		var zone = zones[name];
 		var link;
-		
+
 		if (zone instanceof Zone) {
 			return zone;
 		}
@@ -421,7 +421,7 @@
 	}
 
 	loadData({
-		"version": "2015d",
+		"version": "2015g",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0|",
 			"Africa/Addis_Ababa|EAT|-30|0|",
@@ -429,7 +429,7 @@
 			"Africa/Bangui|WAT|-10|0|",
 			"Africa/Blantyre|CAT|-20|0|",
 			"Africa/Cairo|EET EEST|-20 -30|010101010|1Cby0 Fb0 c10 8n0 8Nd0 gL0 e10 mn0",
-			"Africa/Casablanca|WET WEST|0 -10|01010101010101010101010101010101010101010|1Cco0 Db0 1zd0 Lz0 1Nf0 wM0 co0 go0 1o00 s00 dA0 vc0 11A0 A00 e00 y00 11A0 uo0 e00 DA0 11A0 rA0 e00 Jc0 WM0 m00 gM0 M00 WM0 jc0 e00 RA0 11A0 dA0 e00 Uo0 11A0 800 gM0 Xc0",
+			"Africa/Casablanca|WET WEST|0 -10|01010101010101010101010101010101010101010|1Cco0 Db0 1zd0 Lz0 1Nf0 wM0 co0 go0 1o00 s00 dA0 vc0 11A0 A00 e00 y00 11A0 uM0 e00 Dc0 11A0 s00 e00 IM0 WM0 mo0 gM0 LA0 WM0 jA0 e00 Rc0 11A0 e00 e00 U00 11A0 8o0 e00 11A0",
 			"Africa/Ceuta|CET CEST|-10 -20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
 			"Africa/Johannesburg|SAST|-20|0|",
 			"Africa/Tripoli|EET CET CEST|-20 -10 -20|0120|1IlA0 TA0 1o00",
@@ -452,12 +452,14 @@
 			"America/Cancun|CST CDT EST|60 50 50|010101010102|1C1k0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 Dd0",
 			"America/Caracas|VET|4u|0|",
 			"America/Cayenne|GFT|30|0|",
+			"America/Cayman|EST EDT|50 40|01010101010|1Qtj0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Chicago|CST CDT|60 50|01010101010101010101010|1BQU0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Chihuahua|MST MDT|70 60|01010101010101010101010|1C1l0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0",
 			"America/Creston|MST|70|0|",
 			"America/Dawson|PST PDT|80 70|01010101010101010101010|1BQW0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Detroit|EST EDT|50 40|01010101010101010101010|1BQT0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Eirunepe|AMT ACT|40 50|01|1KLE0",
+			"America/Fort_Nelson|PST PDT MST|80 70 70|010101010102|1BQW0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0",
 			"America/Glace_Bay|AST ADT|40 30|01010101010101010101010|1BQS0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Godthab|WGT WGST|30 20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
 			"America/Goose_Bay|AST ADT|40 30|01010101010101010101010|1BQQ1 1zb0 Op0 1zcX Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
@@ -470,7 +472,7 @@
 			"America/Merida|CST CDT|60 50|01010101010101010101010|1C1k0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0",
 			"America/Metlakatla|PST|80|0|",
 			"America/Miquelon|PMST PMDT|30 20|01010101010101010101010|1BQR0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
-			"America/Montevideo|UYST UYT|20 30|01010101010101010101010|1BQQ0 1ld0 14n0 1ld0 14n0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 14n0 1ld0 14n0 1ld0 14n0 1o10 11z0 1o10 11z0 1o10",
+			"America/Montevideo|UYST UYT|20 30|010101010101|1BQQ0 1ld0 14n0 1ld0 14n0 1o10 11z0 1o10 11z0 1o10 11z0",
 			"America/Noronha|FNT|20|0|",
 			"America/North_Dakota/Beulah|MST MDT CST CDT|70 60 60 50|01232323232323232323232|1BQV0 1zb0 Oo0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0",
 			"America/Paramaribo|SRT|30|0|",
@@ -515,7 +517,7 @@
 			"Asia/Hong_Kong|HKT|-80|0|",
 			"Asia/Hovd|HOVT HOVST|-70 -80|0101010101010|1O8H0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0",
 			"Asia/Irkutsk|IRKT IRKST IRKT|-80 -90 -90|01020|1BWi0 1qM0 WM0 8Hz0",
-			"Asia/Istanbul|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 Xc0 1qo0 WM0 1qM0 11A0 1o00 1200 1nA0 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
+			"Asia/Istanbul|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 Xc0 1qo0 WM0 1qM0 11A0 1o00 1200 1nA0 11A0 1tA0 U00 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
 			"Asia/Jakarta|WIB|-70|0|",
 			"Asia/Jayapura|WIT|-90|0|",
 			"Asia/Jerusalem|IST IDT|-20 -30|01010101010101010101010|1BVA0 17X0 1kp0 1dz0 1c10 1aL0 1eN0 1oL0 10N0 1oL0 10N0 1oL0 10N0 1rz0 W10 1rz0 W10 1rz0 10N0 1oL0 10N0 1oL0",
@@ -535,11 +537,12 @@
 			"Asia/Novosibirsk|NOVT NOVST NOVT|-60 -70 -70|01020|1BWk0 1qM0 WM0 8Hz0",
 			"Asia/Omsk|OMST OMSST OMST|-60 -70 -70|01020|1BWk0 1qM0 WM0 8Hz0",
 			"Asia/Oral|ORAT|-50|0|",
-			"Asia/Pyongyang|KST|-90|0|",
+			"Asia/Pyongyang|KST KST|-90 -8u|01|1P4D0",
 			"Asia/Qyzylorda|QYZT|-60|0|",
 			"Asia/Rangoon|MMT|-6u|0|",
 			"Asia/Sakhalin|SAKT SAKST SAKT|-a0 -b0 -b0|01020|1BWg0 1qM0 WM0 8Hz0",
 			"Asia/Samarkand|UZT|-50|0|",
+			"Asia/Seoul|KST|-90|0|",
 			"Asia/Singapore|SGT|-80|0|",
 			"Asia/Srednekolymsk|MAGT MAGST MAGT SRET|-b0 -c0 -c0 -b0|01023|1BWf0 1qM0 WM0 8Hz0",
 			"Asia/Tbilisi|GET|-40|0|",
@@ -595,6 +598,7 @@
 			"Etc/UCT|UCT|0|0|",
 			"Etc/UTC|UTC|0|0|",
 			"Europe/Belfast|GMT BST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
+			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1BWo0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00",
 			"Europe/Kaliningrad|EET EEST FET|-20 -30 -30|01020|1BWo0 1qM0 WM0 8Hz0",
 			"Europe/Minsk|EET EEST FET MSK|-20 -30 -30 -30|01023|1BWo0 1qM0 WM0 8Hy0",
 			"Europe/Moscow|MSK MSD MSK|-30 -40 -40|01020|1BWn0 1qM0 WM0 8Hz0",
@@ -618,7 +622,7 @@
 			"Pacific/Efate|VUT|-b0|0|",
 			"Pacific/Enderbury|PHOT|-d0|0|",
 			"Pacific/Fakaofo|TKT TKT|b0 -d0|01|1Gfn0",
-			"Pacific/Fiji|FJST FJT|-d0 -c0|01010101010101010101010|1BWe0 1o00 Rc0 1wo0 Ao0 1Nc0 Ao0 1Q00 xz0 1SN0 uM0 1SM0 xA0 1SM0 uM0 1SM0 uM0 1SM0 uM0 1SM0 uM0 1SM0",
+			"Pacific/Fiji|FJST FJT|-d0 -c0|01010101010101010101010|1BWe0 1o00 Rc0 1wo0 Ao0 1Nc0 Ao0 1Q00 xz0 1SN0 uM0 1SM0 uM0 1VA0 s00 1VA0 uM0 1SM0 uM0 1SM0 uM0 1SM0",
 			"Pacific/Funafuti|TVT|-c0|0|",
 			"Pacific/Galapagos|GALT|60|0|",
 			"Pacific/Gambier|GAMT|90|0|",
@@ -630,7 +634,7 @@
 			"Pacific/Midway|SST|b0|0|",
 			"Pacific/Nauru|NRT|-c0|0|",
 			"Pacific/Niue|NUT|b0|0|",
-			"Pacific/Norfolk|NFT|-bu|0|",
+			"Pacific/Norfolk|NFT NFT|-bu -b0|01|1PoCu",
 			"Pacific/Noumea|NCT|-b0|0|",
 			"Pacific/Palau|PWT|-90|0|",
 			"Pacific/Pohnpei|PONT|-b0|0|",
@@ -788,7 +792,6 @@
 			"America/Argentina/Buenos_Aires|America/Jujuy",
 			"America/Argentina/Buenos_Aires|America/Mendoza",
 			"America/Argentina/Buenos_Aires|America/Rosario",
-			"America/Atikokan|America/Cayman",
 			"America/Atikokan|America/Coral_Harbour",
 			"America/Atikokan|America/Jamaica",
 			"America/Atikokan|America/Panama",
@@ -936,7 +939,6 @@
 			"Asia/Nicosia|EET",
 			"Asia/Nicosia|Europe/Athens",
 			"Asia/Nicosia|Europe/Bucharest",
-			"Asia/Nicosia|Europe/Chisinau",
 			"Asia/Nicosia|Europe/Helsinki",
 			"Asia/Nicosia|Europe/Kiev",
 			"Asia/Nicosia|Europe/Mariehamn",
@@ -944,13 +946,11 @@
 			"Asia/Nicosia|Europe/Riga",
 			"Asia/Nicosia|Europe/Sofia",
 			"Asia/Nicosia|Europe/Tallinn",
-			"Asia/Nicosia|Europe/Tiraspol",
 			"Asia/Nicosia|Europe/Uzhgorod",
 			"Asia/Nicosia|Europe/Vilnius",
 			"Asia/Nicosia|Europe/Zaporozhye",
-			"Asia/Pyongyang|Asia/Seoul",
-			"Asia/Pyongyang|ROK",
 			"Asia/Samarkand|Asia/Tashkent",
+			"Asia/Seoul|ROK",
 			"Asia/Singapore|Singapore",
 			"Asia/Tehran|Iran",
 			"Asia/Thimbu|Asia/Thimphu",
@@ -992,6 +992,7 @@
 			"Europe/Belfast|Europe/London",
 			"Europe/Belfast|GB",
 			"Europe/Belfast|GB-Eire",
+			"Europe/Chisinau|Europe/Tiraspol",
 			"Europe/Moscow|Europe/Volgograd",
 			"Europe/Moscow|W-SU",
 			"HST|Pacific/Honolulu",

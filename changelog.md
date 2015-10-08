@@ -1,3 +1,11 @@
+### `0.4.1` _2015-10-07_
+* Updated data to IANA TZDB `2015e`. [#253](https://github.com/moment/moment-timezone/pull/253)
+* Updated data to IANA TZDB `2015f`. [#253](https://github.com/moment/moment-timezone/pull/253)
+* Updated data to IANA TZDB `2015g`. [#255](https://github.com/moment/moment-timezone/pull/255)
+* Added jspm dependencies for moment. [#234](https://github.com/moment/moment-timezone/pull/234)
+* Included builds directory in npm. [#237](https://github.com/moment/moment-timezone/pull/237)
+* Removed version field from bower.json. [#230](https://github.com/moment/moment-timezone/pull/230)
+
 ### `0.4.0` _2015-05-30_
 * Updated data to IANA TZDB `2015b`. [#201](https://github.com/moment/moment-timezone/pull/201)
 * Updated data to IANA TZDB `2015c`. [#214](https://github.com/moment/moment-timezone/pull/214)
