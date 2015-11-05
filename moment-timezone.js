@@ -29,6 +29,7 @@
 		links = {},
 		names = {},
 		guesses = [],
+		cachedGuess,
 
 		momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
@@ -197,28 +198,70 @@
 		Current Timezone
 	************************************/
 
+	function OffsetAt(at) {
+		this.at = +at;
+		this.offset = at.getTimezoneOffset();
+	}
 
-	function rebuildCurrentZone () {
-		var currentYear = new Date().getFullYear(),
-			jan = new Date(currentYear, 0, 1),
-			jul = new Date(currentYear, 6, 1),
-			janOffset = jan.getTimezoneOffset(),
-			julOffset = jul.getTimezoneOffset(),
-			zone, i;
+	OffsetAt.prototype.matches = function (zone) {
+		return zone.offset(this.at) === this.offset;
+	};
+
+	function findChange(low, high) {
+		var mid, diff;
+
+		while ((diff = ((high.at - low.at) / 12e4 | 0) * 6e4)) {
+			mid = new OffsetAt(new Date(low.at + diff));
+			if (mid.offset === low.offset) {
+				low = mid;
+			} else {
+				high = mid;
+			}
+		}
+
+		return low;
+	}
+
+	function userOffsets() {
+		var startYear = new Date().getFullYear() - 2,
+			last = new OffsetAt(new Date(startYear, 0, 1)),
+			offsets = [last],
+			change, next, i;
+
+		for (i = 1; i < 48; i++) {
+			next = new OffsetAt(new Date(startYear, i, 1));
+			if (next.offset !== last.offset) {
+				change = findChange(last, next);
+				offsets.push(change);
+				offsets.push(new OffsetAt(new Date(change.at + 6e4)));
+			}
+			last = next;
+		}
+
+		return offsets;
+	}
+
+	function rebuildGuess () {
+		var offsets = userOffsets(),
+			zone, i, j, matched;
 
 		for (i = 0; i < guesses.length; i++) {
 			zone = getZone(guesses[i]);
-			if ((zone.offset(jan) === janOffset) && (zone.offset(jul) === julOffset)) {
+			matched = true;
+			for (j = 0; j < offsets.length; j++) {
+				matched = matched && offsets[j].matches(zone);
+			}
+			if (matched) {
 				return zone.name;
 			}
 		}
 	}
 
-	function guess () {
-		if (!tz._guess) {
-			tz._guess = rebuildCurrentZone();
+	function guess (ignoreCache) {
+		if (!cachedGuess || ignoreCache) {
+			cachedGuess = rebuildGuess();
 		}
-		return tz._guess;
+		return cachedGuess;
 	}
 
 	/************************************
@@ -242,9 +285,7 @@
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
-			if (split[5]) {
-				guesses.push(name);
-			}
+			guesses.push(name);
 		}
 	}
 
@@ -361,7 +402,6 @@
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
-	tz._guess       = null;
 	tz.guess        = guess;
 	tz.names        = getNames;
 	tz.Zone         = Zone;
