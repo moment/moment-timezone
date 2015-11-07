@@ -205,20 +205,17 @@
 		this.offset = at.getTimezoneOffset();
 	}
 
-	OffsetAt.prototype.matches = function (zone) {
-		return zone.offset(this.at) === this.offset;
+	OffsetAt.prototype.difference = function (zone) {
+		return Math.abs(zone.offset(this.at) - this.offset);
 	};
 
-	function ZoneScore(zone, offsetCount) {
+	function ZoneScore(zone) {
 		this.zone = zone;
-		this.scorePerMatch = 1 / offsetCount;
-		this.score = zone.guess * this.scorePerMatch * 0.5;
+		this.offsetScore = 0;
 	}
 
 	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
-		if (offsetAt.matches(this.zone)) {
-			this.score += this.scorePerMatch;
-		}
+		this.offsetScore += offsetAt.difference(this.zone);
 	};
 
 	function findChange(low, high) {
@@ -252,11 +249,19 @@
 			last = next;
 		}
 
+		for (i = 0; i < 4; i++) {
+			offsets.push(new OffsetAt(new Date(startYear + i, 0, 1)));
+			offsets.push(new OffsetAt(new Date(startYear + i, 6, 1)));
+		}
+
 		return offsets;
 	}
 
 	function sortZoneScores (a, b) {
-		return b.score - a.score;
+		if (a.offsetScore !== b.offsetScore) {
+			return a.offsetScore - b.offsetScore;
+		}
+		return b.zone.guess - a.zone.guess;
 	}
 
 	function rebuildGuess () {
@@ -270,9 +275,7 @@
 			for (j = 0; j < offsetsLength; j++) {
 				zoneScore.scoreOffsetAt(offsets[j]);
 			}
-			if (zoneScore.score > 0) {
-				zoneScores.push(zoneScore);
-			}
+			zoneScores.push(zoneScore);
 		}
 
 		zoneScores.sort(sortZoneScores);

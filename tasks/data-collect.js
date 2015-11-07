@@ -16,7 +16,8 @@ module.exports = function (grunt) {
 				name    = file.replace(/\.zdump$/, ''),
 				abbrs   = [],
 				untils  = [],
-				offsets = [];
+				offsets = [],
+				guess   = 0;
 
 			lines.forEach(function (line) {
 				var parts  = line.split(/\s+/),
@@ -31,12 +32,20 @@ module.exports = function (grunt) {
 				abbrs.push(parts[13]);
 			});
 
+			if (guesses.uniqueInOffset.indexOf(name) > -1) {
+				guess |= 1;
+			}
+
+			if (guesses.uniqueInOffsetAndAbbr.indexOf(name) > -1) {
+				guess |= 2;
+			}
+
 			data.push({
 				name    : name,
 				abbrs   : abbrs,
 				untils  : untils,
 				offsets : offsets,
-				guess   : guesses.indexOf(name) > -1
+				guess   : guess
 			});
 		});
 
