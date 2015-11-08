@@ -2,7 +2,7 @@
 
 var path = require('path'),
 	moment = require('moment'),
-	guesses = require('./guesses.json');
+	populations = require('./population.json');
 
 module.exports = function (grunt) {
 	grunt.registerTask('data-collect', '4. Collect all data from zdump(8) into a single json file.', function (version) {
@@ -16,8 +16,7 @@ module.exports = function (grunt) {
 				name    = file.replace(/\.zdump$/, ''),
 				abbrs   = [],
 				untils  = [],
-				offsets = [],
-				guess   = 0;
+				offsets = [];
 
 			lines.forEach(function (line) {
 				var parts  = line.split(/\s+/),
@@ -32,20 +31,12 @@ module.exports = function (grunt) {
 				abbrs.push(parts[13]);
 			});
 
-			if (guesses.uniqueInOffset.indexOf(name) > -1) {
-				guess |= 1;
-			}
-
-			if (guesses.uniqueInOffsetAndAbbr.indexOf(name) > -1) {
-				guess |= 2;
-			}
-
 			data.push({
-				name    : name,
-				abbrs   : abbrs,
-				untils  : untils,
-				offsets : offsets,
-				guess   : guess
+				name       : name,
+				abbrs      : abbrs,
+				untils     : untils,
+				offsets    : offsets,
+				population : populations[name] | 0
 			});
 		});
 

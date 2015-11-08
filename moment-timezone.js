@@ -122,11 +122,11 @@
 		intToUntil(untils, indices.length);
 
 		return {
-			name    : data[0],
-			abbrs   : mapIndices(data[1].split(' '), indices),
-			offsets : mapIndices(offsets, indices),
-			untils  : untils,
-			guess   : data[5] | 0
+			name       : data[0],
+			abbrs      : mapIndices(data[1].split(' '), indices),
+			offsets    : mapIndices(offsets, indices),
+			untils     : untils,
+			population : data[5] | 0
 		};
 	}
 
@@ -142,11 +142,11 @@
 
 	Zone.prototype = {
 		_set : function (unpacked) {
-			this.name    = unpacked.name;
-			this.abbrs   = unpacked.abbrs;
-			this.untils  = unpacked.untils;
-			this.offsets = unpacked.offsets;
-			this.guess   = unpacked.guess;
+			this.name       = unpacked.name;
+			this.abbrs      = unpacked.abbrs;
+			this.untils     = unpacked.untils;
+			this.offsets    = unpacked.offsets;
+			this.population = unpacked.population;
 		},
 
 		_index : function (timestamp) {
@@ -201,21 +201,33 @@
 	************************************/
 
 	function OffsetAt(at) {
+		var timeString = at.toTimeString();
+		var abbr = timeString.match(/\(.+\)/);
+		if (abbr && abbr[0]) {
+			// 17:56:31 GMT-0600 (CST)
+			// 17:56:31 GMT-0600 (Central Standard Time)
+			abbr = abbr[0].match(/[A-Z]/g).join('');
+		} else {
+			// 17:56:31 CST
+			abbr = timeString.match(/[A-Z]{3,5}/g)[0];
+		}
+
 		this.at = +at;
+		this.abbr = abbr;
 		this.offset = at.getTimezoneOffset();
 	}
-
-	OffsetAt.prototype.difference = function (zone) {
-		return Math.abs(zone.offset(this.at) - this.offset);
-	};
 
 	function ZoneScore(zone) {
 		this.zone = zone;
 		this.offsetScore = 0;
+		this.abbrScore = 0;
 	}
 
 	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
-		this.offsetScore += offsetAt.difference(this.zone);
+		this.offsetScore += Math.abs(this.zone.offset(offsetAt.at) - offsetAt.offset);
+		if (this.zone.abbr(offsetAt.at).match(/[A-Z]/g).join('') !== offsetAt.abbr) {
+			this.abbrScore++;
+		}
 	};
 
 	function findChange(low, high) {
@@ -261,7 +273,10 @@
 		if (a.offsetScore !== b.offsetScore) {
 			return a.offsetScore - b.offsetScore;
 		}
-		return b.zone.guess - a.zone.guess;
+		if (a.abbrScore !== b.abbrScore) {
+			return a.abbrScore - b.abbrScore;
+		}
+		return b.zone.population - a.zone.population;
 	}
 
 	function rebuildGuess () {
