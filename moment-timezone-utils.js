@@ -267,10 +267,11 @@
 		untils[untils.length - 1] = null;
 
 		return {
-			name    : source.name,
-			abbrs   : slice.apply(source.abbrs, indices),
-			untils  : untils,
-			offsets : slice.apply(source.offsets, indices)
+			name       : source.name,
+			abbrs      : slice.apply(source.abbrs, indices),
+			untils     : untils,
+			offsets    : slice.apply(source.offsets, indices),
+			population : source.population
 		};
 	}
 
