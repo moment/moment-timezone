@@ -212,6 +212,10 @@
 			abbr = timeString.match(/[A-Z]{3,5}/g)[0];
 		}
 
+		if (abbr === 'GMT') {
+			abbr = undefined;
+		}
+
 		this.at = +at;
 		this.abbr = abbr;
 		this.offset = at.getTimezoneOffset();

@@ -67,8 +67,8 @@ function dataToOffsetAndAbbr (zoneData) {
 
 function population (data, grouped) {
 	var current = dataToOffsetAndAbbr(data);
-	var isMostPopulatedInOffset = true;
-	var isMostPopulatedInAbbr = true;
+	var isMostPopulatedInOffset = current.population > 0;
+	var isMostPopulatedInAbbr = current.population > 0;
 	grouped.forEach(function (other) {
 		if (current.population > other.population || current.name === other.name) {
 			return;
