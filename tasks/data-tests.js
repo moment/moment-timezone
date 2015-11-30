@@ -83,7 +83,7 @@ function population (data, grouped) {
 	if (!isMostPopulatedInAbbr && !isMostPopulatedInOffset) {
 		return '';
 	}
-	return '\t"guess" : helpers.makeTestGuess("' + data.name + '", { offset: ' + isMostPopulatedInOffset + ', abbr: ' + isMostPopulatedInAbbr + '}),\n\n';
+	return '\t"guess" : helpers.makeTestGuess("' + data.name + '", { offset: ' + isMostPopulatedInOffset + ', abbr: ' + isMostPopulatedInAbbr + ' }),\n\n';
 }
 
 module.exports = function (grunt) {

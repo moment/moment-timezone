@@ -3,7 +3,7 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Atlantic/Azores"] = {
-	"guess" : helpers.makeTestGuess("Atlantic/Azores", { offset: true, abbr: true}),
+	"guess" : helpers.makeTestGuess("Atlantic/Azores", { offset: true, abbr: true }),
 
 	"1912" : helpers.makeTestYear("Atlantic/Azores", [
 		["1912-01-01T01:54:31+00:00", "23:59:59", "HMT", 6872 / 60],
