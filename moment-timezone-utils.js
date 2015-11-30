@@ -124,7 +124,7 @@
 		if (number < 1000) {
 			return '|' + number;
 		}
-		var exponent = Math.floor(Math.log10(number)) - 1;
+		var exponent = String(number | 0).length - 2;
 		var precision = Math.round(number / Math.pow(10, exponent));
 		return '|' + precision + 'e' + exponent;
 	}
