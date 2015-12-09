@@ -39,7 +39,7 @@
 	"jspm" : {
 		"main": "builds/moment-timezone-with-data",
 		"dependencies": {
-			"moment": ">= 2.9.0"
+			"moment": "^2.9.0"
 		},
 		"shim": {
 			"moment-timezone": {
