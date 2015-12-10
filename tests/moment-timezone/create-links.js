@@ -268,39 +268,39 @@ exports['create-links'] = {
 		test.done();
 	},
 
-	'dont make a guess a link' : function (test) {
-		var isGuess = {
-				name : "Zone/Is",
-				abbrs   : ["ABC", "DEF", "GHI"],
-				offsets : [10, 20, 30],
-				untils  : [-1000, 100, 200],
-				guess   : true
+	'make the zone with the smaller population a link' : function (test) {
+		var large = {
+				name       : "Zone/Large",
+				abbrs      : ["ABC", "DEF", "GHI"],
+				offsets    : [10, 20, 30],
+				untils     : [-1000, 100, 200],
+				population : 100
 			},
-			isntGuess = {
-				name : "Zone/Isnt",
-				abbrs   : ["ABC", "DEF", "GHI"],
-				offsets : [10, 20, 30],
-				untils  : [-1000, 100, 200],
-				guess   : false
+			small = {
+				name       : "Zone/Small",
+				abbrs      : ["ABC", "DEF", "GHI"],
+				offsets    : [10, 20, 30],
+				untils     : [-1000, 100, 200],
+				population : 20
 			},
-			isFirst = {
-				zones : [isGuess, isntGuess],
+			largeFirst = {
+				zones : [large, small],
 				links : [],
-				version : '2014guesses'
+				version : '2014populations'
 			},
-			isntFirst = {
-				zones : [isntGuess, isGuess],
+			smallFirst = {
+				zones : [small, large],
 				links : [],
-				version : '2014guesses'
+				version : '2014populations'
 			},
 			expected = {
-				zones : [isGuess],
-				links : ["Zone/Is|Zone/Isnt"],
-				version : '2014guesses'
+				zones : [large],
+				links : ["Zone/Large|Zone/Small"],
+				version : '2014populations'
 			};
 
-		test.deepEqual(tz.createLinks(isFirst), expected, "Should not make a guess a link.");
-		test.deepEqual(tz.createLinks(isntFirst), expected, "Should not make a guess a link.");
+		test.deepEqual(tz.createLinks(largeFirst), expected, "Make smaller population a link.");
+		test.deepEqual(tz.createLinks(smallFirst), expected, "Make smaller population a link.");
 
 		test.done();
 	}

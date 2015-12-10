@@ -3,16 +3,21 @@
 var tz = require("../../").tz;
 
 var getTimezoneOffset = Date.prototype.getTimezoneOffset;
+var toTimeString = Date.prototype.toTimeString;
 
-function mockTimezoneOffset (zone) {
+function mockTimezoneOffset (zone, format) {
 	Date.prototype.getTimezoneOffset = function () {
 		return zone.offset(+this);
+	};
+	Date.prototype.toTimeString = function () {
+		return tz(+this, zone.name).format(format || 'HH:mm:ss [GMT]ZZ');
 	};
 }
 
 exports.guess = {
 	tearDown : function (done) {
 		Date.prototype.getTimezoneOffset = getTimezoneOffset;
+		Date.prototype.toTimeString = toTimeString;
 		done();
 	},
 

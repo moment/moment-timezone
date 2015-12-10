@@ -15,7 +15,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 4800000
     },
     {
       "name": "Africa/Accra",
@@ -169,7 +169,7 @@
         -20,
         0
       ],
-      "guess": false
+      "population": 4145000
     },
     {
       "name": "Africa/Addis_Ababa",
@@ -194,7 +194,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Algiers",
@@ -306,7 +306,7 @@
         0,
         -60
       ],
-      "guess": false
+      "population": 2590000
     },
     {
       "name": "Africa/Asmara",
@@ -331,7 +331,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Asmera",
@@ -356,7 +356,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Bamako",
@@ -372,7 +372,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Bangui",
@@ -388,7 +388,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Banjul",
@@ -404,7 +404,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Bissau",
@@ -423,7 +423,7 @@
         60,
         0
       ],
-      "guess": false
+      "population": 387909
     },
     {
       "name": "Africa/Blantyre",
@@ -439,7 +439,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Brazzaville",
@@ -455,7 +455,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Bujumbura",
@@ -471,7 +471,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Cairo",
@@ -862,7 +862,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 15071000
     },
     {
       "name": "Africa/Casablanca",
@@ -1172,7 +1172,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 3211000
     },
     {
       "name": "Africa/Ceuta",
@@ -1560,7 +1560,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 84963
     },
     {
       "name": "Africa/Conakry",
@@ -1576,7 +1576,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Dakar",
@@ -1592,7 +1592,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Dar_es_Salaam",
@@ -1617,7 +1617,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Djibouti",
@@ -1642,7 +1642,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Douala",
@@ -1658,7 +1658,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/El_Aaiun",
@@ -1935,7 +1935,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 196331
     },
     {
       "name": "Africa/Freetown",
@@ -1951,7 +1951,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Gaborone",
@@ -1967,7 +1967,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Harare",
@@ -1983,7 +1983,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Johannesburg",
@@ -2011,7 +2011,7 @@
         -180,
         -120
       ],
-      "guess": true
+      "population": 8432000
     },
     {
       "name": "Africa/Juba",
@@ -2126,7 +2126,7 @@
         -120,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Kampala",
@@ -2151,7 +2151,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Khartoum",
@@ -2266,7 +2266,7 @@
         -120,
         -180
       ],
-      "guess": false
+      "population": 5125000
     },
     {
       "name": "Africa/Kigali",
@@ -2282,7 +2282,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Kinshasa",
@@ -2298,7 +2298,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Lagos",
@@ -2314,7 +2314,7 @@
         -13.6,
         -60
       ],
-      "guess": true
+      "population": 17060307
     },
     {
       "name": "Africa/Libreville",
@@ -2330,7 +2330,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Lome",
@@ -2346,7 +2346,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Luanda",
@@ -2362,7 +2362,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Lubumbashi",
@@ -2378,7 +2378,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Lusaka",
@@ -2394,7 +2394,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Malabo",
@@ -2410,7 +2410,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Maputo",
@@ -2426,7 +2426,7 @@
         -130.3333,
         -120
       ],
-      "guess": false
+      "population": 2615000
     },
     {
       "name": "Africa/Maseru",
@@ -2454,7 +2454,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Mbabane",
@@ -2482,7 +2482,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Mogadishu",
@@ -2507,7 +2507,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Monrovia",
@@ -2526,7 +2526,7 @@
         44.5,
         0
       ],
-      "guess": false
+      "population": 1100000
     },
     {
       "name": "Africa/Nairobi",
@@ -2551,7 +2551,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 4738000
     },
     {
       "name": "Africa/Ndjamena",
@@ -2573,7 +2573,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1260000
     },
     {
       "name": "Africa/Niamey",
@@ -2589,7 +2589,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Nouakchott",
@@ -2605,7 +2605,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Ouagadougou",
@@ -2621,7 +2621,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Porto-Novo",
@@ -2637,7 +2637,7 @@
         -13.6,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Sao_Tome",
@@ -2653,7 +2653,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Timbuktu",
@@ -2669,7 +2669,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Africa/Tripoli",
@@ -2778,7 +2778,7 @@
         -120,
         -120
       ],
-      "guess": false
+      "population": 1110000
     },
     {
       "name": "Africa/Tunis",
@@ -2890,7 +2890,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1990000
     },
     {
       "name": "Africa/Windhoek",
@@ -3179,7 +3179,7 @@
         -60,
         -120
       ],
-      "guess": true
+      "population": 322500
     },
     {
       "name": "America/Adak",
@@ -3621,7 +3621,7 @@
         540,
         600
       ],
-      "guess": true
+      "population": 326
     },
     {
       "name": "America/Anchorage",
@@ -4063,7 +4063,7 @@
         480,
         540
       ],
-      "guess": true
+      "population": 300950
     },
     {
       "name": "America/Anguilla",
@@ -4079,7 +4079,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Antigua",
@@ -4095,7 +4095,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Araguaina",
@@ -4261,7 +4261,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 142925
     },
     {
       "name": "America/Argentina/Buenos_Aires",
@@ -4454,7 +4454,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Catamarca",
@@ -4647,7 +4647,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/ComodRivadavia",
@@ -4840,7 +4840,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Cordoba",
@@ -5033,7 +5033,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Jujuy",
@@ -5220,7 +5220,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/La_Rioja",
@@ -5416,7 +5416,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Mendoza",
@@ -5609,7 +5609,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Rio_Gallegos",
@@ -5802,7 +5802,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Salta",
@@ -5989,7 +5989,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/San_Juan",
@@ -6185,7 +6185,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/San_Luis",
@@ -6381,7 +6381,7 @@
         240,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Tucuman",
@@ -6580,7 +6580,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Argentina/Ushuaia",
@@ -6773,7 +6773,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Aruba",
@@ -6792,7 +6792,7 @@
         270,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Asuncion",
@@ -7189,7 +7189,7 @@
         240,
         180
       ],
-      "guess": false
+      "population": 2827000
     },
     {
       "name": "America/Atikokan",
@@ -7220,7 +7220,7 @@
         300,
         300
       ],
-      "guess": false
+      "population": 2787
     },
     {
       "name": "America/Atka",
@@ -7662,7 +7662,7 @@
         540,
         600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Bahia",
@@ -7858,7 +7858,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 2675000
     },
     {
       "name": "America/Bahia_Banderas",
@@ -8150,7 +8150,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 83739
     },
     {
       "name": "America/Barbados",
@@ -8193,7 +8193,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 284644
     },
     {
       "name": "America/Belem",
@@ -8293,7 +8293,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 1979000
     },
     {
       "name": "America/Belize",
@@ -8471,7 +8471,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 57169
     },
     {
       "name": "America/Blanc-Sablon",
@@ -8499,7 +8499,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 1118
     },
     {
       "name": "America/Boa_Vista",
@@ -8611,7 +8611,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 6233
     },
     {
       "name": "America/Bogota",
@@ -8633,7 +8633,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 8991000
     },
     {
       "name": "America/Boise",
@@ -9096,7 +9096,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 214237
     },
     {
       "name": "America/Buenos_Aires",
@@ -9289,7 +9289,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Cambridge_Bay",
@@ -9671,7 +9671,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 1477
     },
     {
       "name": "America/Campo_Grande",
@@ -10068,7 +10068,7 @@
         240,
         180
       ],
-      "guess": true
+      "population": 774202
     },
     {
       "name": "America/Cancun",
@@ -10207,7 +10207,7 @@
         360,
         300
       ],
-      "guess": false
+      "population": 628306
     },
     {
       "name": "America/Caracas",
@@ -10229,7 +10229,7 @@
         240,
         270
       ],
-      "guess": true
+      "population": 2861000
     },
     {
       "name": "America/Catamarca",
@@ -10422,7 +10422,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Cayenne",
@@ -10441,7 +10441,7 @@
         240,
         180
       ],
-      "guess": false
+      "population": 58004
     },
     {
       "name": "America/Cayman",
@@ -10589,7 +10589,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 58435
     },
     {
       "name": "America/Chicago",
@@ -11307,7 +11307,7 @@
         300,
         360
       ],
-      "guess": true
+      "population": 9156000
     },
     {
       "name": "America/Chihuahua",
@@ -11590,7 +11590,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 809232
     },
     {
       "name": "America/Coral_Harbour",
@@ -11621,7 +11621,7 @@
         300,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Cordoba",
@@ -11814,7 +11814,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Costa_Rica",
@@ -11854,7 +11854,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 1170000
     },
     {
       "name": "America/Creston",
@@ -11873,7 +11873,7 @@
         480,
         420
       ],
-      "guess": false
+      "population": 5306
     },
     {
       "name": "America/Cuiaba",
@@ -12264,7 +12264,7 @@
         240,
         180
       ],
-      "guess": false
+      "population": 542861
     },
     {
       "name": "America/Curacao",
@@ -12283,7 +12283,7 @@
         270,
         240
       ],
-      "guess": false
+      "population": 153500
     },
     {
       "name": "America/Danmarkshavn",
@@ -12398,7 +12398,7 @@
         180,
         0
       ],
-      "guess": false
+      "population": 8
     },
     {
       "name": "America/Dawson",
@@ -12789,7 +12789,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 1319
     },
     {
       "name": "America/Dawson_Creek",
@@ -12973,7 +12973,7 @@
         420,
         420
       ],
-      "guess": false
+      "population": 11583
     },
     {
       "name": "America/Denver",
@@ -13457,7 +13457,7 @@
         360,
         420
       ],
-      "guess": true
+      "population": 2559000
     },
     {
       "name": "America/Detroit",
@@ -13887,7 +13887,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 3672000
     },
     {
       "name": "America/Dominica",
@@ -13903,7 +13903,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Edmonton",
@@ -14378,7 +14378,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 1040000
     },
     {
       "name": "America/Eirunepe",
@@ -14490,7 +14490,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 30901
     },
     {
       "name": "America/El_Salvador",
@@ -14518,7 +14518,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 1100000
     },
     {
       "name": "America/Ensenada",
@@ -14978,7 +14978,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Fort_Nelson",
@@ -15417,7 +15417,7 @@
         480,
         420
       ],
-      "guess": false
+      "population": 3902
     },
     {
       "name": "America/Fort_Wayne",
@@ -15724,7 +15724,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Fortaleza",
@@ -15854,7 +15854,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 3401000
     },
     {
       "name": "America/Glace_Bay",
@@ -16287,7 +16287,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 19076
     },
     {
       "name": "America/Godthab",
@@ -16651,7 +16651,7 @@
         120,
         180
       ],
-      "guess": true
+      "population": 16583
     },
     {
       "name": "America/Goose_Bay",
@@ -17273,7 +17273,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 7552
     },
     {
       "name": "America/Grand_Turk",
@@ -17511,7 +17511,7 @@
         240,
         240
       ],
-      "guess": false
+      "population": 3720
     },
     {
       "name": "America/Grenada",
@@ -17527,7 +17527,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Guadeloupe",
@@ -17543,7 +17543,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Guatemala",
@@ -17583,7 +17583,7 @@
         300,
         360
       ],
-      "guess": true
+      "population": 1289000
     },
     {
       "name": "America/Guayaquil",
@@ -17599,7 +17599,7 @@
         314,
         300
       ],
-      "guess": false
+      "population": 2700000
     },
     {
       "name": "America/Guyana",
@@ -17624,7 +17624,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 799613
     },
     {
       "name": "America/Halifax",
@@ -18321,7 +18321,7 @@
         180,
         240
       ],
-      "guess": true
+      "population": 390095
     },
     {
       "name": "America/Havana",
@@ -18799,7 +18799,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 2130000
     },
     {
       "name": "America/Hermosillo",
@@ -18857,7 +18857,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 641791
     },
     {
       "name": "America/Indiana/Indianapolis",
@@ -19164,7 +19164,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indiana/Knox",
@@ -19636,7 +19636,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indiana/Marengo",
@@ -19955,7 +19955,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indiana/Petersburg",
@@ -20313,7 +20313,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indiana/Tell_City",
@@ -20626,7 +20626,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indiana/Vevay",
@@ -20879,7 +20879,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indiana/Vincennes",
@@ -21192,7 +21192,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indiana/Winamac",
@@ -21523,7 +21523,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Indianapolis",
@@ -21830,7 +21830,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Inuvik",
@@ -22203,7 +22203,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 3463
     },
     {
       "name": "America/Iqaluit",
@@ -22579,7 +22579,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 6699
     },
     {
       "name": "America/Jamaica",
@@ -22655,7 +22655,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 937700
     },
     {
       "name": "America/Jujuy",
@@ -22842,7 +22842,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Juneau",
@@ -23281,7 +23281,7 @@
         480,
         540
       ],
-      "guess": false
+      "population": 32660
     },
     {
       "name": "America/Kentucky/Louisville",
@@ -23825,7 +23825,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Kentucky/Monticello",
@@ -24279,7 +24279,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Knox_IN",
@@ -24751,7 +24751,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Kralendijk",
@@ -24770,7 +24770,7 @@
         270,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/La_Paz",
@@ -24789,7 +24789,7 @@
         212.6,
         240
       ],
-      "guess": false
+      "population": 1907000
     },
     {
       "name": "America/Lima",
@@ -24847,7 +24847,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 10750000
     },
     {
       "name": "America/Los_Angeles",
@@ -25415,7 +25415,7 @@
         420,
         480
       ],
-      "guess": true
+      "population": 15058000
     },
     {
       "name": "America/Louisville",
@@ -25959,7 +25959,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Lower_Princes",
@@ -25978,7 +25978,7 @@
         270,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Maceio",
@@ -26114,7 +26114,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 932078
     },
     {
       "name": "America/Managua",
@@ -26172,7 +26172,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 2223000
     },
     {
       "name": "America/Manaus",
@@ -26278,7 +26278,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 1893000
     },
     {
       "name": "America/Marigot",
@@ -26294,7 +26294,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Martinique",
@@ -26316,7 +26316,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 386486
     },
     {
       "name": "America/Matamoros",
@@ -26590,7 +26590,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 449815
     },
     {
       "name": "America/Mazatlan",
@@ -26882,7 +26882,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 438434
     },
     {
       "name": "America/Mendoza",
@@ -27075,7 +27075,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Menominee",
@@ -27514,7 +27514,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 8494
     },
     {
       "name": "America/Merida",
@@ -27788,7 +27788,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 1111000
     },
     {
       "name": "America/Metlakatla",
@@ -27900,7 +27900,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 1375
     },
     {
       "name": "America/Mexico_City",
@@ -28207,7 +28207,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 20063000
     },
     {
       "name": "America/Miquelon",
@@ -28532,7 +28532,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 6080
     },
     {
       "name": "America/Moncton",
@@ -29163,7 +29163,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 64128
     },
     {
       "name": "America/Monterrey",
@@ -29437,7 +29437,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 4083000
     },
     {
       "name": "America/Montevideo",
@@ -29708,7 +29708,7 @@
         120,
         180
       ],
-      "guess": true
+      "population": 1700000
     },
     {
       "name": "America/Montreal",
@@ -30417,7 +30417,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Montserrat",
@@ -30433,7 +30433,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Nassau",
@@ -30893,7 +30893,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 244400
     },
     {
       "name": "America/New_York",
@@ -31611,7 +31611,7 @@
         240,
         300
       ],
-      "guess": true
+      "population": 20630000
     },
     {
       "name": "America/Nipigon",
@@ -32026,7 +32026,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 1631
     },
     {
       "name": "America/Nome",
@@ -32468,7 +32468,7 @@
         480,
         540
       ],
-      "guess": false
+      "population": 3797
     },
     {
       "name": "America/Noronha",
@@ -32598,7 +32598,7 @@
         60,
         120
       ],
-      "guess": true
+      "population": 3012
     },
     {
       "name": "America/North_Dakota/Beulah",
@@ -33058,7 +33058,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/North_Dakota/Center",
@@ -33518,7 +33518,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/North_Dakota/New_Salem",
@@ -33978,7 +33978,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Ojinaga",
@@ -34261,7 +34261,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 22744
     },
     {
       "name": "America/Panama",
@@ -34277,7 +34277,7 @@
         319.6,
         300
       ],
-      "guess": false
+      "population": 1498000
     },
     {
       "name": "America/Pangnirtung",
@@ -34656,7 +34656,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 1425
     },
     {
       "name": "America/Paramaribo",
@@ -34684,7 +34684,7 @@
         210,
         180
       ],
-      "guess": false
+      "population": 243556
     },
     {
       "name": "America/Phoenix",
@@ -34727,7 +34727,7 @@
         360,
         420
       ],
-      "guess": true
+      "population": 4194000
     },
     {
       "name": "America/Port-au-Prince",
@@ -35001,7 +35001,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 2332000
     },
     {
       "name": "America/Port_of_Spain",
@@ -35017,7 +35017,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 43396
     },
     {
       "name": "America/Porto_Acre",
@@ -35123,7 +35123,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Porto_Velho",
@@ -35223,7 +35223,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 369259
     },
     {
       "name": "America/Puerto_Rico",
@@ -35245,7 +35245,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 2350126
     },
     {
       "name": "America/Rainy_River",
@@ -35660,7 +35660,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 842
     },
     {
       "name": "America/Rankin_Inlet",
@@ -36030,7 +36030,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 2577
     },
     {
       "name": "America/Recife",
@@ -36160,7 +36160,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 3347000
     },
     {
       "name": "America/Regina",
@@ -36332,7 +36332,7 @@
         420,
         360
       ],
-      "guess": false
+      "population": 193100
     },
     {
       "name": "America/Resolute",
@@ -36702,7 +36702,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 229
     },
     {
       "name": "America/Rio_Branco",
@@ -36808,7 +36808,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 308545
     },
     {
       "name": "America/Rosario",
@@ -37001,7 +37001,7 @@
         120,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Santa_Isabel",
@@ -37461,7 +37461,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 23389
     },
     {
       "name": "America/Santarem",
@@ -37564,7 +37564,7 @@
         240,
         180
       ],
-      "guess": false
+      "population": 205711
     },
     {
       "name": "America/Santiago",
@@ -37922,7 +37922,7 @@
         180,
         180
       ],
-      "guess": true
+      "population": 6225000
     },
     {
       "name": "America/Santo_Domingo",
@@ -37983,7 +37983,7 @@
         300,
         240
       ],
-      "guess": true
+      "population": 2925000
     },
     {
       "name": "America/Sao_Paulo",
@@ -38380,7 +38380,7 @@
         180,
         120
       ],
-      "guess": false
+      "population": 20365000
     },
     {
       "name": "America/Scoresbysund",
@@ -38744,7 +38744,7 @@
         0,
         60
       ],
-      "guess": false
+      "population": 452
     },
     {
       "name": "America/Shiprock",
@@ -39228,7 +39228,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Sitka",
@@ -39667,7 +39667,7 @@
         480,
         540
       ],
-      "guess": false
+      "population": 9020
     },
     {
       "name": "America/St_Barthelemy",
@@ -39683,7 +39683,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/St_Johns",
@@ -40410,7 +40410,7 @@
         150,
         210
       ],
-      "guess": true
+      "population": 106172
     },
     {
       "name": "America/St_Kitts",
@@ -40426,7 +40426,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/St_Lucia",
@@ -40442,7 +40442,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/St_Thomas",
@@ -40458,7 +40458,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/St_Vincent",
@@ -40474,7 +40474,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Swift_Current",
@@ -40556,7 +40556,7 @@
         420,
         360
       ],
-      "guess": false
+      "population": 15503
     },
     {
       "name": "America/Tegucigalpa",
@@ -40590,7 +40590,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 1120000
     },
     {
       "name": "America/Thule",
@@ -40888,7 +40888,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 656
     },
     {
       "name": "America/Thunder_Bay",
@@ -41315,7 +41315,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 109140
     },
     {
       "name": "America/Tijuana",
@@ -41775,7 +41775,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 1968000
     },
     {
       "name": "America/Toronto",
@@ -42484,7 +42484,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 6456000
     },
     {
       "name": "America/Tortola",
@@ -42500,7 +42500,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Vancouver",
@@ -43080,7 +43080,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 2313000
     },
     {
       "name": "America/Virgin",
@@ -43096,7 +43096,7 @@
         246.0667,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "America/Whitehorse",
@@ -43487,7 +43487,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 23276
     },
     {
       "name": "America/Winnipeg",
@@ -44055,7 +44055,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 663615
     },
     {
       "name": "America/Yakutat",
@@ -44494,7 +44494,7 @@
         480,
         540
       ],
-      "guess": false
+      "population": 642
     },
     {
       "name": "America/Yellowknife",
@@ -44873,7 +44873,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 19234
     },
     {
       "name": "Antarctica/Casey",
@@ -44901,7 +44901,7 @@
         -660,
         -480
       ],
-      "guess": false
+      "population": 10
     },
     {
       "name": "Antarctica/Davis",
@@ -44935,7 +44935,7 @@
         -300,
         -420
       ],
-      "guess": false
+      "population": 70
     },
     {
       "name": "Antarctica/DumontDUrville",
@@ -44957,7 +44957,7 @@
         0,
         -600
       ],
-      "guess": false
+      "population": 80
     },
     {
       "name": "Antarctica/Macquarie",
@@ -45240,7 +45240,7 @@
         -660,
         -660
       ],
-      "guess": false
+      "population": 1
     },
     {
       "name": "Antarctica/Mawson",
@@ -45259,7 +45259,7 @@
         -360,
         -300
       ],
-      "guess": false
+      "population": 60
     },
     {
       "name": "Antarctica/McMurdo",
@@ -45734,7 +45734,7 @@
         -720,
         -780
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Antarctica/Palmer",
@@ -45987,7 +45987,7 @@
         180,
         180
       ],
-      "guess": false
+      "population": 40
     },
     {
       "name": "Antarctica/Rothera",
@@ -46003,7 +46003,7 @@
         0,
         180
       ],
-      "guess": false
+      "population": 130
     },
     {
       "name": "Antarctica/South_Pole",
@@ -46478,7 +46478,7 @@
         -720,
         -780
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Antarctica/Syowa",
@@ -46494,7 +46494,7 @@
         0,
         -180
       ],
-      "guess": false
+      "population": 20
     },
     {
       "name": "Antarctica/Troll",
@@ -46708,7 +46708,7 @@
         -120,
         0
       ],
-      "guess": true
+      "population": 40
     },
     {
       "name": "Antarctica/Vostok",
@@ -46724,7 +46724,7 @@
         0,
         -360
       ],
-      "guess": false
+      "population": 25
     },
     {
       "name": "Arctic/Longyearbyen",
@@ -47157,7 +47157,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Aden",
@@ -47173,7 +47173,7 @@
         -186.8667,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Almaty",
@@ -47330,7 +47330,7 @@
         -420,
         -360
       ],
-      "guess": false
+      "population": 1500000
     },
     {
       "name": "Asia/Amman",
@@ -47694,7 +47694,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 2468000
     },
     {
       "name": "Asia/Anadyr",
@@ -47899,7 +47899,7 @@
         -660,
         -720
       ],
-      "guess": false
+      "population": 13045
     },
     {
       "name": "Asia/Aqtau",
@@ -48062,7 +48062,7 @@
         -240,
         -300
       ],
-      "guess": false
+      "population": 152227
     },
     {
       "name": "Asia/Aqtobe",
@@ -48222,7 +48222,7 @@
         -360,
         -300
       ],
-      "guess": false
+      "population": 273599
     },
     {
       "name": "Asia/Ashgabat",
@@ -48313,7 +48313,7 @@
         -240,
         -300
       ],
-      "guess": false
+      "population": 407000
     },
     {
       "name": "Asia/Ashkhabad",
@@ -48404,7 +48404,7 @@
         -240,
         -300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Baghdad",
@@ -48576,7 +48576,7 @@
         -240,
         -180
       ],
-      "guess": false
+      "population": 6625000
     },
     {
       "name": "Asia/Bahrain",
@@ -48595,7 +48595,7 @@
         -240,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Baku",
@@ -48941,7 +48941,7 @@
         -300,
         -240
       ],
-      "guess": true
+      "population": 2661000
     },
     {
       "name": "Asia/Bangkok",
@@ -48957,7 +48957,7 @@
         -402.0667,
         -420
       ],
-      "guess": false
+      "population": 14998000
     },
     {
       "name": "Asia/Beirut",
@@ -49390,7 +49390,7 @@
         -180,
         -120
       ],
-      "guess": true
+      "population": 2200000
     },
     {
       "name": "Asia/Bishkek",
@@ -49559,7 +49559,7 @@
         -360,
         -360
       ],
-      "guess": false
+      "population": 870663
     },
     {
       "name": "Asia/Brunei",
@@ -49578,7 +49578,7 @@
         -450,
         -480
       ],
-      "guess": false
+      "population": 417784
     },
     {
       "name": "Asia/Calcutta",
@@ -49603,7 +49603,7 @@
         -390,
         -330
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Chita",
@@ -49811,7 +49811,7 @@
         -600,
         -480
       ],
-      "guess": false
+      "population": 329391
     },
     {
       "name": "Asia/Choibalsan",
@@ -50103,7 +50103,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 38150
     },
     {
       "name": "Asia/Chongqing",
@@ -50164,7 +50164,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Chungking",
@@ -50225,7 +50225,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Colombo",
@@ -50259,7 +50259,7 @@
         -360,
         -330
       ],
-      "guess": false
+      "population": 2180000
     },
     {
       "name": "Asia/Dacca",
@@ -50293,7 +50293,7 @@
         -420,
         -360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Damascus",
@@ -50759,7 +50759,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 2560000
     },
     {
       "name": "Asia/Dhaka",
@@ -50793,7 +50793,7 @@
         -420,
         -360
       ],
-      "guess": false
+      "population": 15669000
     },
     {
       "name": "Asia/Dili",
@@ -50821,7 +50821,7 @@
         -480,
         -540
       ],
-      "guess": false
+      "population": 193563
     },
     {
       "name": "Asia/Dubai",
@@ -50837,7 +50837,7 @@
         -221.2,
         -240
       ],
-      "guess": true
+      "population": 3933000
     },
     {
       "name": "Asia/Dushanbe",
@@ -50922,7 +50922,7 @@
         -360,
         -300
       ],
-      "guess": false
+      "population": 756143
     },
     {
       "name": "Asia/Gaza",
@@ -51364,7 +51364,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 1816000
     },
     {
       "name": "Asia/Harbin",
@@ -51425,7 +51425,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Hebron",
@@ -51873,7 +51873,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 250000
     },
     {
       "name": "Asia/Ho_Chi_Minh",
@@ -51913,7 +51913,7 @@
         -480,
         -420
       ],
-      "guess": false
+      "population": 8957000
     },
     {
       "name": "Asia/Hong_Kong",
@@ -52133,7 +52133,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 7275000
     },
     {
       "name": "Asia/Hovd",
@@ -52422,7 +52422,7 @@
         -480,
         -420
       ],
-      "guess": true
+      "population": 81479
     },
     {
       "name": "Asia/Irkutsk",
@@ -52630,7 +52630,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 601993
     },
     {
       "name": "Asia/Istanbul",
@@ -53153,7 +53153,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Jakarta",
@@ -53187,7 +53187,7 @@
         -450,
         -420
       ],
-      "guess": false
+      "population": 30539000
     },
     {
       "name": "Asia/Jayapura",
@@ -53209,7 +53209,7 @@
         -570,
         -540
       ],
-      "guess": false
+      "population": 256705
     },
     {
       "name": "Asia/Jerusalem",
@@ -53648,7 +53648,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 809112
     },
     {
       "name": "Asia/Kabul",
@@ -53664,7 +53664,7 @@
         -240,
         -270
       ],
-      "guess": true
+      "population": 4635000
     },
     {
       "name": "Asia/Kamchatka",
@@ -53869,7 +53869,7 @@
         -660,
         -720
       ],
-      "guess": false
+      "population": 179526
     },
     {
       "name": "Asia/Karachi",
@@ -53915,7 +53915,7 @@
         -360,
         -300
       ],
-      "guess": false
+      "population": 23500000
     },
     {
       "name": "Asia/Kashgar",
@@ -53931,7 +53931,7 @@
         -350.3333,
         -360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Kathmandu",
@@ -53950,7 +53950,7 @@
         -330,
         -345
       ],
-      "guess": true
+      "population": 1180000
     },
     {
       "name": "Asia/Katmandu",
@@ -53969,7 +53969,7 @@
         -330,
         -345
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Khandyga",
@@ -54183,7 +54183,7 @@
         -600,
         -540
       ],
-      "guess": false
+      "population": 6638
     },
     {
       "name": "Asia/Kolkata",
@@ -54208,7 +54208,7 @@
         -390,
         -330
       ],
-      "guess": true
+      "population": 14667000
     },
     {
       "name": "Asia/Krasnoyarsk",
@@ -54416,7 +54416,7 @@
         -480,
         -420
       ],
-      "guess": true
+      "population": 1007000
     },
     {
       "name": "Asia/Kuala_Lumpur",
@@ -54450,7 +54450,7 @@
         -450,
         -480
       ],
-      "guess": false
+      "population": 7088000
     },
     {
       "name": "Asia/Kuching",
@@ -54520,7 +54520,7 @@
         -480,
         -480
       ],
-      "guess": false
+      "population": 134317
     },
     {
       "name": "Asia/Kuwait",
@@ -54536,7 +54536,7 @@
         -186.8667,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Macao",
@@ -54675,7 +54675,7 @@
         -480,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Macau",
@@ -54814,7 +54814,7 @@
         -480,
         -480
       ],
-      "guess": false
+      "population": 566375
     },
     {
       "name": "Asia/Magadan",
@@ -55022,7 +55022,7 @@
         -720,
         -600
       ],
-      "guess": false
+      "population": 95263
     },
     {
       "name": "Asia/Makassar",
@@ -55047,7 +55047,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 1484000
     },
     {
       "name": "Asia/Manila",
@@ -55084,7 +55084,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 24123000
     },
     {
       "name": "Asia/Muscat",
@@ -55100,7 +55100,7 @@
         -221.2,
         -240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Nicosia",
@@ -55494,7 +55494,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 321816
     },
     {
       "name": "Asia/Novokuznetsk",
@@ -55702,7 +55702,7 @@
         -420,
         -420
       ],
-      "guess": false
+      "population": 549383
     },
     {
       "name": "Asia/Novosibirsk",
@@ -55913,7 +55913,7 @@
         -420,
         -360
       ],
-      "guess": false
+      "population": 1486000
     },
     {
       "name": "Asia/Omsk",
@@ -56121,7 +56121,7 @@
         -420,
         -360
       ],
-      "guess": true
+      "population": 1154000
     },
     {
       "name": "Asia/Oral",
@@ -56284,7 +56284,7 @@
         -240,
         -300
       ],
-      "guess": false
+      "population": 271900
     },
     {
       "name": "Asia/Phnom_Penh",
@@ -56300,7 +56300,7 @@
         -402.0667,
         -420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Pontianak",
@@ -56337,7 +56337,7 @@
         -480,
         -420
       ],
-      "guess": false
+      "population": 234021
     },
     {
       "name": "Asia/Pyongyang",
@@ -56365,7 +56365,7 @@
         -540,
         -510
       ],
-      "guess": false
+      "population": 2850000
     },
     {
       "name": "Asia/Qatar",
@@ -56384,7 +56384,7 @@
         -240,
         -180
       ],
-      "guess": false
+      "population": 956460
     },
     {
       "name": "Asia/Qyzylorda",
@@ -56547,7 +56547,7 @@
         -420,
         -360
       ],
-      "guess": false
+      "population": 727990
     },
     {
       "name": "Asia/Rangoon",
@@ -56569,7 +56569,7 @@
         -540,
         -390
       ],
-      "guess": true
+      "population": 4800000
     },
     {
       "name": "Asia/Riyadh",
@@ -56585,7 +56585,7 @@
         -186.8667,
         -180
       ],
-      "guess": false
+      "population": 5666000
     },
     {
       "name": "Asia/Saigon",
@@ -56625,7 +56625,7 @@
         -480,
         -420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Sakhalin",
@@ -56836,7 +56836,7 @@
         -660,
         -600
       ],
-      "guess": false
+      "population": 580000
     },
     {
       "name": "Asia/Samarkand",
@@ -56924,7 +56924,7 @@
         -360,
         -300
       ],
-      "guess": false
+      "population": 361339
     },
     {
       "name": "Asia/Seoul",
@@ -57003,7 +57003,7 @@
         -600,
         -540
       ],
-      "guess": false
+      "population": 23480000
     },
     {
       "name": "Asia/Shanghai",
@@ -57064,7 +57064,7 @@
         -540,
         -480
       ],
-      "guess": true
+      "population": 23416000
     },
     {
       "name": "Asia/Singapore",
@@ -57101,7 +57101,7 @@
         -450,
         -480
       ],
-      "guess": false
+      "population": 5624000
     },
     {
       "name": "Asia/Srednekolymsk",
@@ -57309,7 +57309,7 @@
         -720,
         -660
       ],
-      "guess": false
+      "population": 3525
     },
     {
       "name": "Asia/Taipei",
@@ -57442,7 +57442,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 7438000
     },
     {
       "name": "Asia/Tashkent",
@@ -57530,7 +57530,7 @@
         -360,
         -300
       ],
-      "guess": false
+      "population": 2250000
     },
     {
       "name": "Asia/Tbilisi",
@@ -57696,7 +57696,7 @@
         -180,
         -240
       ],
-      "guess": false
+      "population": 1125000
     },
     {
       "name": "Asia/Tehran",
@@ -58009,7 +58009,7 @@
         -270,
         -210
       ],
-      "guess": true
+      "population": 13532000
     },
     {
       "name": "Asia/Tel_Aviv",
@@ -58448,7 +58448,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Thimbu",
@@ -58467,7 +58467,7 @@
         -330,
         -360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Thimphu",
@@ -58486,7 +58486,7 @@
         -330,
         -360
       ],
-      "guess": false
+      "population": 79185
     },
     {
       "name": "Asia/Tokyo",
@@ -58526,7 +58526,7 @@
         -600,
         -540
       ],
-      "guess": false
+      "population": 37843000
     },
     {
       "name": "Asia/Ujung_Pandang",
@@ -58551,7 +58551,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Ulaanbaatar",
@@ -58840,7 +58840,7 @@
         -540,
         -480
       ],
-      "guess": true
+      "population": 1237000
     },
     {
       "name": "Asia/Ulan_Bator",
@@ -59129,7 +59129,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Urumqi",
@@ -59145,7 +59145,7 @@
         -350.3333,
         -360
       ],
-      "guess": false
+      "population": 3184000
     },
     {
       "name": "Asia/Ust-Nera",
@@ -59356,7 +59356,7 @@
         -660,
         -600
       ],
-      "guess": false
+      "population": 6463
     },
     {
       "name": "Asia/Vientiane",
@@ -59372,7 +59372,7 @@
         -402.0667,
         -420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Asia/Vladivostok",
@@ -59580,7 +59580,7 @@
         -660,
         -600
       ],
-      "guess": false
+      "population": 598927
     },
     {
       "name": "Asia/Yakutsk",
@@ -59788,7 +59788,7 @@
         -600,
         -540
       ],
-      "guess": true
+      "population": 282419
     },
     {
       "name": "Asia/Yekaterinburg",
@@ -59999,7 +59999,7 @@
         -360,
         -300
       ],
-      "guess": true
+      "population": 1361000
     },
     {
       "name": "Asia/Yerevan",
@@ -60201,7 +60201,7 @@
         -300,
         -240
       ],
-      "guess": false
+      "population": 1274000
     },
     {
       "name": "Atlantic/Azores",
@@ -60874,7 +60874,7 @@
         0,
         60
       ],
-      "guess": true
+      "population": 245746
     },
     {
       "name": "Atlantic/Bermuda",
@@ -61274,7 +61274,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 65024
     },
     {
       "name": "Atlantic/Canary",
@@ -61641,7 +61641,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 538000
     },
     {
       "name": "Atlantic/Cape_Verde",
@@ -61666,7 +61666,7 @@
         120,
         60
       ],
-      "guess": true
+      "population": 498897
     },
     {
       "name": "Atlantic/Faeroe",
@@ -62024,7 +62024,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Atlantic/Faroe",
@@ -62382,7 +62382,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 49469
     },
     {
       "name": "Atlantic/Jan_Mayen",
@@ -62815,7 +62815,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Atlantic/Madeira",
@@ -63488,7 +63488,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 267785
     },
     {
       "name": "Atlantic/Reykjavik",
@@ -63705,7 +63705,7 @@
         60,
         0
       ],
-      "guess": false
+      "population": 119289
     },
     {
       "name": "Atlantic/South_Georgia",
@@ -63718,7 +63718,7 @@
       "offsets": [
         120
       ],
-      "guess": false
+      "population": 30
     },
     {
       "name": "Atlantic/St_Helena",
@@ -63734,7 +63734,7 @@
         16.1333,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Atlantic/Stanley",
@@ -63954,7 +63954,7 @@
         240,
         180
       ],
-      "guess": false
+      "population": 2121
     },
     {
       "name": "Australia/ACT",
@@ -64390,7 +64390,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/Adelaide",
@@ -64826,7 +64826,7 @@
         -570,
         -630
       ],
-      "guess": true
+      "population": 1140000
     },
     {
       "name": "Australia/Brisbane",
@@ -64887,7 +64887,7 @@
         -660,
         -600
       ],
-      "guess": true
+      "population": 1999000
     },
     {
       "name": "Australia/Broken_Hill",
@@ -65323,7 +65323,7 @@
         -570,
         -630
       ],
-      "guess": false
+      "population": 18430
     },
     {
       "name": "Australia/Canberra",
@@ -65759,7 +65759,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/Currie",
@@ -66195,7 +66195,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 746
     },
     {
       "name": "Australia/Darwin",
@@ -66232,7 +66232,7 @@
         -630,
         -570
       ],
-      "guess": true
+      "population": 116215
     },
     {
       "name": "Australia/Eucla",
@@ -66299,7 +66299,7 @@
         -585,
         -525
       ],
-      "guess": true
+      "population": 368
     },
     {
       "name": "Australia/Hobart",
@@ -66759,7 +66759,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 205557
     },
     {
       "name": "Australia/LHI",
@@ -67114,7 +67114,7 @@
         -630,
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/Lindeman",
@@ -67187,7 +67187,7 @@
         -660,
         -600
       ],
-      "guess": false
+      "population": 10
     },
     {
       "name": "Australia/Lord_Howe",
@@ -67542,7 +67542,7 @@
         -630,
         -660
       ],
-      "guess": true
+      "population": 347
     },
     {
       "name": "Australia/Melbourne",
@@ -67978,7 +67978,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 3906000
     },
     {
       "name": "Australia/NSW",
@@ -68414,7 +68414,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/North",
@@ -68451,7 +68451,7 @@
         -630,
         -570
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/Perth",
@@ -68518,7 +68518,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 1751000
     },
     {
       "name": "Australia/Queensland",
@@ -68579,7 +68579,7 @@
         -660,
         -600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/South",
@@ -69015,7 +69015,7 @@
         -570,
         -630
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/Sydney",
@@ -69451,7 +69451,7 @@
         -600,
         -660
       ],
-      "guess": true
+      "population": 4036000
     },
     {
       "name": "Australia/Tasmania",
@@ -69911,7 +69911,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/Victoria",
@@ -70347,7 +70347,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/West",
@@ -70414,7 +70414,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Australia/Yancowinna",
@@ -70850,7 +70850,7 @@
         -570,
         -630
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Brazil/Acre",
@@ -70956,7 +70956,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Brazil/DeNoronha",
@@ -71086,7 +71086,7 @@
         60,
         120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Brazil/East",
@@ -71483,7 +71483,7 @@
         180,
         120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Brazil/West",
@@ -71589,7 +71589,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "CET",
@@ -72010,7 +72010,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "CST6CDT",
@@ -72470,7 +72470,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Atlantic",
@@ -73167,7 +73167,7 @@
         180,
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Central",
@@ -73735,7 +73735,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/East-Saskatchewan",
@@ -73907,7 +73907,7 @@
         420,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Eastern",
@@ -74616,7 +74616,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Mountain",
@@ -75091,7 +75091,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Newfoundland",
@@ -75818,7 +75818,7 @@
         150,
         210
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Pacific",
@@ -76398,7 +76398,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Saskatchewan",
@@ -76570,7 +76570,7 @@
         420,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Canada/Yukon",
@@ -76961,7 +76961,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Chile/Continental",
@@ -77319,7 +77319,7 @@
         180,
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Chile/EasterIsland",
@@ -77617,7 +77617,7 @@
         300,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Cuba",
@@ -78095,7 +78095,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "EET",
@@ -78474,7 +78474,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "EST",
@@ -78487,7 +78487,7 @@
       "offsets": [
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "EST5EDT",
@@ -78947,7 +78947,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Egypt",
@@ -79338,7 +79338,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Eire",
@@ -80029,7 +80029,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+0",
@@ -80042,7 +80042,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+1",
@@ -80055,7 +80055,7 @@
       "offsets": [
         60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+10",
@@ -80068,7 +80068,7 @@
       "offsets": [
         600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+11",
@@ -80081,7 +80081,7 @@
       "offsets": [
         660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+12",
@@ -80094,7 +80094,7 @@
       "offsets": [
         720
       ],
-      "guess": true
+      "population": 0
     },
     {
       "name": "Etc/GMT+2",
@@ -80107,7 +80107,7 @@
       "offsets": [
         120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+3",
@@ -80120,7 +80120,7 @@
       "offsets": [
         180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+4",
@@ -80133,7 +80133,7 @@
       "offsets": [
         240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+5",
@@ -80146,7 +80146,7 @@
       "offsets": [
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+6",
@@ -80159,7 +80159,7 @@
       "offsets": [
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+7",
@@ -80172,7 +80172,7 @@
       "offsets": [
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+8",
@@ -80185,7 +80185,7 @@
       "offsets": [
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT+9",
@@ -80198,7 +80198,7 @@
       "offsets": [
         540
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-0",
@@ -80211,7 +80211,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-1",
@@ -80224,7 +80224,7 @@
       "offsets": [
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-10",
@@ -80237,7 +80237,7 @@
       "offsets": [
         -600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-11",
@@ -80250,7 +80250,7 @@
       "offsets": [
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-12",
@@ -80263,7 +80263,7 @@
       "offsets": [
         -720
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-13",
@@ -80276,7 +80276,7 @@
       "offsets": [
         -780
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-14",
@@ -80289,7 +80289,7 @@
       "offsets": [
         -840
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-2",
@@ -80302,7 +80302,7 @@
       "offsets": [
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-3",
@@ -80315,7 +80315,7 @@
       "offsets": [
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-4",
@@ -80328,7 +80328,7 @@
       "offsets": [
         -240
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-5",
@@ -80341,7 +80341,7 @@
       "offsets": [
         -300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-6",
@@ -80354,7 +80354,7 @@
       "offsets": [
         -360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-7",
@@ -80367,7 +80367,7 @@
       "offsets": [
         -420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-8",
@@ -80380,7 +80380,7 @@
       "offsets": [
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT-9",
@@ -80393,7 +80393,7 @@
       "offsets": [
         -540
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT",
@@ -80406,7 +80406,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/GMT0",
@@ -80419,7 +80419,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/Greenwich",
@@ -80432,7 +80432,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/UCT",
@@ -80445,7 +80445,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/UTC",
@@ -80458,7 +80458,7 @@
       "offsets": [
         0
       ],
-      "guess": true
+      "population": 0
     },
     {
       "name": "Etc/Universal",
@@ -80471,7 +80471,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Etc/Zulu",
@@ -80484,7 +80484,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Amsterdam",
@@ -81034,7 +81034,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1624000
     },
     {
       "name": "Europe/Andorra",
@@ -81368,7 +81368,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 79218
     },
     {
       "name": "Europe/Athens",
@@ -81792,7 +81792,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 3484000
     },
     {
       "name": "Europe/Belfast",
@@ -82525,7 +82525,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Belgrade",
@@ -82892,7 +82892,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1180000
     },
     {
       "name": "Europe/Berlin",
@@ -83331,7 +83331,7 @@
         -120,
         -60
       ],
-      "guess": true
+      "population": 4069000
     },
     {
       "name": "Europe/Bratislava",
@@ -83764,7 +83764,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Brussels",
@@ -84326,7 +84326,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 2089000
     },
     {
       "name": "Europe/Bucharest",
@@ -84744,7 +84744,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 1860000
     },
     {
       "name": "Europe/Budapest",
@@ -85207,7 +85207,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1710000
     },
     {
       "name": "Europe/Busingen",
@@ -85574,7 +85574,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Chisinau",
@@ -86001,7 +86001,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 669694
     },
     {
       "name": "Europe/Copenhagen",
@@ -86410,7 +86410,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1248000
     },
     {
       "name": "Europe/Dublin",
@@ -87101,7 +87101,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 1160000
     },
     {
       "name": "Europe/Gibraltar",
@@ -87705,7 +87705,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 30001
     },
     {
       "name": "Europe/Guernsey",
@@ -88438,7 +88438,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Helsinki",
@@ -88802,7 +88802,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 1208000
     },
     {
       "name": "Europe/Isle_of_Man",
@@ -89535,7 +89535,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Istanbul",
@@ -90058,7 +90058,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 13287000
     },
     {
       "name": "Europe/Jersey",
@@ -90791,7 +90791,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Kaliningrad",
@@ -91038,7 +91038,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 437456
     },
     {
       "name": "Europe/Kiev",
@@ -91411,7 +91411,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 3375000
     },
     {
       "name": "Europe/Lisbon",
@@ -92087,7 +92087,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 2666000
     },
     {
       "name": "Europe/Ljubljana",
@@ -92454,7 +92454,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/London",
@@ -93187,7 +93187,7 @@
         -60,
         0
       ],
-      "guess": true
+      "population": 10236000
     },
     {
       "name": "Europe/Luxembourg",
@@ -93749,7 +93749,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 543202
     },
     {
       "name": "Europe/Madrid",
@@ -94251,7 +94251,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 6171000
     },
     {
       "name": "Europe/Malta",
@@ -94768,7 +94768,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 423282
     },
     {
       "name": "Europe/Mariehamn",
@@ -95132,7 +95132,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Minsk",
@@ -95349,7 +95349,7 @@
         -180,
         -180
       ],
-      "guess": false
+      "population": 1910000
     },
     {
       "name": "Europe/Monaco",
@@ -95914,7 +95914,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 37831
     },
     {
       "name": "Europe/Moscow",
@@ -96158,7 +96158,7 @@
         -240,
         -180
       ],
-      "guess": true
+      "population": 16170000
     },
     {
       "name": "Europe/Nicosia",
@@ -96552,7 +96552,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Oslo",
@@ -96985,7 +96985,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 618683
     },
     {
       "name": "Europe/Paris",
@@ -97547,7 +97547,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 10858000
     },
     {
       "name": "Europe/Podgorica",
@@ -97914,7 +97914,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Prague",
@@ -98347,7 +98347,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1310000
     },
     {
       "name": "Europe/Riga",
@@ -98735,7 +98735,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 643615
     },
     {
       "name": "Europe/Rome",
@@ -99252,7 +99252,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 3906000
     },
     {
       "name": "Europe/Samara",
@@ -99460,7 +99460,7 @@
         -180,
         -240
       ],
-      "guess": false
+      "population": 1162000
     },
     {
       "name": "Europe/San_Marino",
@@ -99977,7 +99977,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Sarajevo",
@@ -100344,7 +100344,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Simferopol",
@@ -100579,7 +100579,7 @@
         -240,
         -180
       ],
-      "guess": false
+      "population": 331936
     },
     {
       "name": "Europe/Skopje",
@@ -100946,7 +100946,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Sofia",
@@ -101331,7 +101331,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 1195000
     },
     {
       "name": "Europe/Stockholm",
@@ -101698,7 +101698,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1484000
     },
     {
       "name": "Europe/Tallinn",
@@ -102077,7 +102077,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 407947
     },
     {
       "name": "Europe/Tirane",
@@ -102489,7 +102489,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 418495
     },
     {
       "name": "Europe/Tiraspol",
@@ -102916,7 +102916,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Uzhgorod",
@@ -103286,7 +103286,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 114789
     },
     {
       "name": "Europe/Vaduz",
@@ -103653,7 +103653,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Vatican",
@@ -104170,7 +104170,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Vienna",
@@ -104597,7 +104597,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1763000
     },
     {
       "name": "Europe/Vilnius",
@@ -104967,7 +104967,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 535216
     },
     {
       "name": "Europe/Volgograd",
@@ -105175,7 +105175,7 @@
         -240,
         -180
       ],
-      "guess": false
+      "population": 1019000
     },
     {
       "name": "Europe/Warsaw",
@@ -105680,7 +105680,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 1720000
     },
     {
       "name": "Europe/Zagreb",
@@ -106047,7 +106047,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Europe/Zaporozhye",
@@ -106423,7 +106423,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 766736
     },
     {
       "name": "Europe/Zurich",
@@ -106790,7 +106790,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 378884
     },
     {
       "name": "GB-Eire",
@@ -107523,7 +107523,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "GB",
@@ -108256,7 +108256,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "GMT+0",
@@ -108269,7 +108269,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "GMT-0",
@@ -108282,7 +108282,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "GMT",
@@ -108295,7 +108295,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "GMT0",
@@ -108308,7 +108308,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Greenwich",
@@ -108321,7 +108321,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "HST",
@@ -108334,7 +108334,7 @@
       "offsets": [
         600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Hongkong",
@@ -108554,7 +108554,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Iceland",
@@ -108771,7 +108771,7 @@
         60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Indian/Antananarivo",
@@ -108796,7 +108796,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Indian/Chagos",
@@ -108815,7 +108815,7 @@
         -300,
         -360
       ],
-      "guess": false
+      "population": 3000
     },
     {
       "name": "Indian/Christmas",
@@ -108828,7 +108828,7 @@
       "offsets": [
         -420
       ],
-      "guess": false
+      "population": 2072
     },
     {
       "name": "Indian/Cocos",
@@ -108841,7 +108841,7 @@
       "offsets": [
         -390
       ],
-      "guess": false
+      "population": 596
     },
     {
       "name": "Indian/Comoro",
@@ -108866,7 +108866,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Indian/Kerguelen",
@@ -108882,7 +108882,7 @@
         0,
         -300
       ],
-      "guess": false
+      "population": 130
     },
     {
       "name": "Indian/Mahe",
@@ -108898,7 +108898,7 @@
         -221.8,
         -240
       ],
-      "guess": false
+      "population": 78539
     },
     {
       "name": "Indian/Maldives",
@@ -108914,7 +108914,7 @@
         -294,
         -300
       ],
-      "guess": false
+      "population": 345023
     },
     {
       "name": "Indian/Mauritius",
@@ -108942,7 +108942,7 @@
         -300,
         -240
       ],
-      "guess": false
+      "population": 148001
     },
     {
       "name": "Indian/Mayotte",
@@ -108967,7 +108967,7 @@
         -165,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Indian/Reunion",
@@ -108983,7 +108983,7 @@
         -221.8667,
         -240
       ],
-      "guess": false
+      "population": 843617
     },
     {
       "name": "Iran",
@@ -109296,7 +109296,7 @@
         -270,
         -210
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Israel",
@@ -109735,7 +109735,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Jamaica",
@@ -109811,7 +109811,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Japan",
@@ -109851,7 +109851,7 @@
         -600,
         -540
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Kwajalein",
@@ -109870,7 +109870,7 @@
         720,
         -720
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Libya",
@@ -109979,7 +109979,7 @@
         -120,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "MET",
@@ -110400,7 +110400,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "MST",
@@ -110413,7 +110413,7 @@
       "offsets": [
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "MST7MDT",
@@ -110873,7 +110873,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Mexico/BajaNorte",
@@ -111333,7 +111333,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Mexico/BajaSur",
@@ -111625,7 +111625,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Mexico/General",
@@ -111932,7 +111932,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "NZ-CHAT",
@@ -112329,7 +112329,7 @@
         -765,
         -825
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "NZ",
@@ -112804,7 +112804,7 @@
         -720,
         -780
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Navajo",
@@ -113288,7 +113288,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "PRC",
@@ -113349,7 +113349,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "PST8PDT",
@@ -113809,7 +113809,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Pacific/Apia",
@@ -113996,7 +113996,7 @@
         -780,
         -840
       ],
-      "guess": true
+      "population": 36735
     },
     {
       "name": "Pacific/Auckland",
@@ -114471,7 +114471,7 @@
         -720,
         -780
       ],
-      "guess": true
+      "population": 1356000
     },
     {
       "name": "Pacific/Bougainville",
@@ -114493,7 +114493,7 @@
         -600,
         -660
       ],
-      "guess": false
+      "population": 175160
     },
     {
       "name": "Pacific/Chatham",
@@ -114890,7 +114890,7 @@
         -765,
         -825
       ],
-      "guess": true
+      "population": 600
     },
     {
       "name": "Pacific/Chuuk",
@@ -114903,7 +114903,7 @@
       "offsets": [
         -600
       ],
-      "guess": false
+      "population": 48654
     },
     {
       "name": "Pacific/Easter",
@@ -115201,7 +115201,7 @@
         300,
         300
       ],
-      "guess": true
+      "population": 3000
     },
     {
       "name": "Pacific/Efate",
@@ -115277,7 +115277,7 @@
         -720,
         -660
       ],
-      "guess": false
+      "population": 65829
     },
     {
       "name": "Pacific/Enderbury",
@@ -115296,7 +115296,7 @@
         660,
         -780
       ],
-      "guess": false
+      "population": 1
     },
     {
       "name": "Pacific/Fakaofo",
@@ -115312,7 +115312,7 @@
         660,
         -780
       ],
-      "guess": false
+      "population": 483
     },
     {
       "name": "Pacific/Fiji",
@@ -115514,7 +115514,7 @@
         -780,
         -720
       ],
-      "guess": false
+      "population": 881065
     },
     {
       "name": "Pacific/Funafuti",
@@ -115527,7 +115527,7 @@
       "offsets": [
         -720
       ],
-      "guess": false
+      "population": 4492
     },
     {
       "name": "Pacific/Galapagos",
@@ -115546,7 +115546,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 25000
     },
     {
       "name": "Pacific/Gambier",
@@ -115562,7 +115562,7 @@
         539.8,
         540
       ],
-      "guess": true
+      "population": 125
     },
     {
       "name": "Pacific/Guadalcanal",
@@ -115578,7 +115578,7 @@
         -639.8,
         -660
       ],
-      "guess": false
+      "population": 109382
     },
     {
       "name": "Pacific/Guam",
@@ -115594,7 +115594,7 @@
         -600,
         -600
       ],
-      "guess": false
+      "population": 165124
     },
     {
       "name": "Pacific/Honolulu",
@@ -115622,7 +115622,7 @@
         630,
         600
       ],
-      "guess": true
+      "population": 374658
     },
     {
       "name": "Pacific/Johnston",
@@ -115650,7 +115650,7 @@
         630,
         600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Pacific/Kiritimati",
@@ -115669,7 +115669,7 @@
         600,
         -840
       ],
-      "guess": true
+      "population": 5115
     },
     {
       "name": "Pacific/Kosrae",
@@ -115688,7 +115688,7 @@
         -720,
         -660
       ],
-      "guess": false
+      "population": 6616
     },
     {
       "name": "Pacific/Kwajalein",
@@ -115707,7 +115707,7 @@
         720,
         -720
       ],
-      "guess": false
+      "population": 13500
     },
     {
       "name": "Pacific/Majuro",
@@ -115723,7 +115723,7 @@
         -660,
         -720
       ],
-      "guess": false
+      "population": 27797
     },
     {
       "name": "Pacific/Marquesas",
@@ -115739,7 +115739,7 @@
         558,
         570
       ],
-      "guess": true
+      "population": 8632
     },
     {
       "name": "Pacific/Midway",
@@ -115761,7 +115761,7 @@
         660,
         660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Pacific/Nauru",
@@ -115786,7 +115786,7 @@
         -690,
         -720
       ],
-      "guess": false
+      "population": 10084
     },
     {
       "name": "Pacific/Niue",
@@ -115805,7 +115805,7 @@
         690,
         660
       ],
-      "guess": false
+      "population": 1190
     },
     {
       "name": "Pacific/Norfolk",
@@ -115830,7 +115830,7 @@
         -690,
         -660
       ],
-      "guess": true
+      "population": 246139
     },
     {
       "name": "Pacific/Noumea",
@@ -115864,7 +115864,7 @@
         -720,
         -660
       ],
-      "guess": true
+      "population": 97579
     },
     {
       "name": "Pacific/Pago_Pago",
@@ -115886,7 +115886,7 @@
         660,
         660
       ],
-      "guess": true
+      "population": 3656
     },
     {
       "name": "Pacific/Palau",
@@ -115899,7 +115899,7 @@
       "offsets": [
         -540
       ],
-      "guess": false
+      "population": 20918
     },
     {
       "name": "Pacific/Pitcairn",
@@ -115915,7 +115915,7 @@
         510,
         480
       ],
-      "guess": true
+      "population": 56
     },
     {
       "name": "Pacific/Pohnpei",
@@ -115928,7 +115928,7 @@
       "offsets": [
         -660
       ],
-      "guess": false
+      "population": 34000
     },
     {
       "name": "Pacific/Ponape",
@@ -115941,7 +115941,7 @@
       "offsets": [
         -660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Pacific/Port_Moresby",
@@ -115954,7 +115954,7 @@
       "offsets": [
         -600
       ],
-      "guess": false
+      "population": 254158
     },
     {
       "name": "Pacific/Rarotonga",
@@ -116045,7 +116045,7 @@
         570,
         600
       ],
-      "guess": false
+      "population": 13095
     },
     {
       "name": "Pacific/Saipan",
@@ -116061,7 +116061,7 @@
         -600,
         -600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Pacific/Samoa",
@@ -116083,7 +116083,7 @@
         660,
         660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Pacific/Tahiti",
@@ -116099,7 +116099,7 @@
         598.2667,
         600
       ],
-      "guess": false
+      "population": 178133
     },
     {
       "name": "Pacific/Tarawa",
@@ -116112,7 +116112,7 @@
       "offsets": [
         -720
       ],
-      "guess": true
+      "population": 28802
     },
     {
       "name": "Pacific/Tongatapu",
@@ -116146,7 +116146,7 @@
         -840,
         -780
       ],
-      "guess": true
+      "population": 75416
     },
     {
       "name": "Pacific/Truk",
@@ -116159,7 +116159,7 @@
       "offsets": [
         -600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Pacific/Wake",
@@ -116172,7 +116172,7 @@
       "offsets": [
         -720
       ],
-      "guess": false
+      "population": 15500
     },
     {
       "name": "Pacific/Wallis",
@@ -116185,7 +116185,7 @@
       "offsets": [
         -720
       ],
-      "guess": false
+      "population": 94
     },
     {
       "name": "Pacific/Yap",
@@ -116198,7 +116198,7 @@
       "offsets": [
         -600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Poland",
@@ -116703,7 +116703,7 @@
         -120,
         -60
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Portugal",
@@ -117379,7 +117379,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "ROC",
@@ -117512,7 +117512,7 @@
         -540,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "ROK",
@@ -117591,7 +117591,7 @@
         -600,
         -540
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Singapore",
@@ -117628,7 +117628,7 @@
         -450,
         -480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Turkey",
@@ -118151,7 +118151,7 @@
         -180,
         -120
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "UCT",
@@ -118164,7 +118164,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Alaska",
@@ -118606,7 +118606,7 @@
         480,
         540
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Aleutian",
@@ -119048,7 +119048,7 @@
         540,
         600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Arizona",
@@ -119091,7 +119091,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Central",
@@ -119809,7 +119809,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/East-Indiana",
@@ -120116,7 +120116,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Eastern",
@@ -120834,7 +120834,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Hawaii",
@@ -120862,7 +120862,7 @@
         630,
         600
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Indiana-Starke",
@@ -121334,7 +121334,7 @@
         300,
         360
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Michigan",
@@ -121764,7 +121764,7 @@
         240,
         300
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Mountain",
@@ -122248,7 +122248,7 @@
         360,
         420
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Pacific-New",
@@ -122816,7 +122816,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Pacific",
@@ -123384,7 +123384,7 @@
         420,
         480
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "US/Samoa",
@@ -123406,7 +123406,7 @@
         660,
         660
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "UTC",
@@ -123419,7 +123419,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Universal",
@@ -123432,7 +123432,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "W-SU",
@@ -123676,7 +123676,7 @@
         -240,
         -180
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "WET",
@@ -124055,7 +124055,7 @@
         -60,
         0
       ],
-      "guess": false
+      "population": 0
     },
     {
       "name": "Zulu",
@@ -124068,7 +124068,7 @@
       "offsets": [
         0
       ],
-      "guess": false
+      "population": 0
     }
   ],
   "links": []

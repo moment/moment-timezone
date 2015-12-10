@@ -3,6 +3,8 @@
 var helpers = require("../../helpers/helpers");
 
 exports["America/Fort_Nelson"] = {
+	"guess" : helpers.makeTestGuess("America/Fort_Nelson", { offset: false, abbr: true }),
+
 	"1918" : helpers.makeTestYear("America/Fort_Nelson", [
 		["1918-04-14T09:59:59+00:00", "01:59:59", "PST", 480],
 		["1918-04-14T10:00:00+00:00", "03:00:00", "PDT", 420],

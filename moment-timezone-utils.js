@@ -117,6 +117,18 @@
 		return abbrs.join(' ') + '|' + offsets.join(' ') + '|' + indices.join('');
 	}
 
+	function packPopulation (number) {
+		if (!number) {
+			return '';
+		}
+		if (number < 1000) {
+			return '|' + number;
+		}
+		var exponent = String(number | 0).length - 2;
+		var precision = Math.round(number / Math.pow(10, exponent));
+		return '|' + precision + 'e' + exponent;
+	}
+
 	function validatePackData (source) {
 		if (!source.name)    { throw new Error("Missing name"); }
 		if (!source.abbrs)   { throw new Error("Missing abbrs"); }
@@ -132,7 +144,11 @@
 
 	function pack (source) {
 		validatePackData(source);
-		return source.name + '|' + packAbbrsAndOffsets(source) + '|' + packUntils(source.untils) + (source.guess ? '|1' : '');
+		return [
+			source.name,
+			packAbbrsAndOffsets(source),
+			packUntils(source.untils) + packPopulation(source.population)
+		].join('|');
 	}
 
 	/************************************
@@ -167,7 +183,7 @@
 				group = groups[j];
 				b = group[0];
 				if (zonesAreEqual(a, b)) {
-					if (a.guess) {
+					if (a.population > b.population) {
 						group.unshift(a);
 					} else {
 						group.push(a);
@@ -251,10 +267,11 @@
 		untils[untils.length - 1] = null;
 
 		return {
-			name    : source.name,
-			abbrs   : slice.apply(source.abbrs, indices),
-			untils  : untils,
-			offsets : slice.apply(source.offsets, indices)
+			name       : source.name,
+			abbrs      : slice.apply(source.abbrs, indices),
+			untils     : untils,
+			offsets    : slice.apply(source.offsets, indices),
+			population : source.population
 		};
 	}
 

@@ -1,7 +1,8 @@
 "use strict";
 
 var path = require('path'),
-	moment = require('moment');
+	moment = require('moment'),
+	tz = require('../').tz;
 
 function changeTest (zone, i) {
 	var until         = moment.utc(zone.untils[i]),
@@ -9,7 +10,7 @@ function changeTest (zone, i) {
 		secondsOffset = Math.round(minutesOffset * 60),
 		abbr          = zone.abbrs[i],
 		dateTime      = until.format(),
-		hours         = until.clone().subtract('seconds', secondsOffset).format('HH:mm:ss');
+		hours         = until.clone().subtract(secondsOffset, 'seconds').format('HH:mm:ss');
 
 	if (secondsOffset % 60) {
 		minutesOffset = secondsOffset + ' / 60';
@@ -42,12 +43,57 @@ function intro (name) {
 	return '"use strict";\n\nvar helpers = require("' + helpers + '");\n\nexports["' + name + '"] = {\n';
 }
 
+function formatForMonth (name, month, format) {
+	return tz([2015, month, 1], name).format(format);
+}
+
+function untilForMonth (name, month) {
+	var zone = tz.zone(name),
+		index = zone._index(new Date(2015, month, 1)),
+		until = zone.untils[Math.min(zone.untils.length - 1, index)];
+	return tz(until === Infinity ? [2015, month, 1] : until, name).format('YYYY-MM-DD HH:mm');
+}
+
+function dataToOffsetAndAbbr (zoneData) {
+	var name = zoneData.name;
+	return {
+		name: name,
+		population: zoneData.population,
+		offsets: formatForMonth(name, 0, 'Z') + ' ' + formatForMonth(name, 6, 'Z'),
+		untils: untilForMonth(name, 0) + ' ' + untilForMonth(name, 6),
+		abbrs: formatForMonth(name, 0, 'z') + ' ' + formatForMonth(name, 6, 'z')
+	};
+}
+
+function population (data, grouped) {
+	var current = dataToOffsetAndAbbr(data);
+	var isMostPopulatedInOffset = current.population > 0;
+	var isMostPopulatedInAbbr = current.population > 0;
+	grouped.forEach(function (other) {
+		if (current.population > other.population || current.name === other.name) {
+			return;
+		}
+		if (other.offsets === current.offsets) {
+			isMostPopulatedInOffset = false;
+			if (other.abbrs === current.abbrs) {
+				isMostPopulatedInAbbr = false;
+			}
+		}
+	});
+	if (!isMostPopulatedInAbbr && !isMostPopulatedInOffset) {
+		return '';
+	}
+	return '\t"guess" : helpers.makeTestGuess("' + data.name + '", { offset: ' + isMostPopulatedInOffset + ', abbr: ' + isMostPopulatedInAbbr + ' }),\n\n';
+}
+
 module.exports = function (grunt) {
 	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', function () {
-		var zones = grunt.file.readJSON('temp/collect/latest.json');
+		tz.load(grunt.file.readJSON('data/packed/latest.json'));
+		var zones = grunt.file.readJSON('temp/collect/latest.json'),
+			grouped = zones.map(dataToOffsetAndAbbr);
 
 		zones.forEach(function (zone) {
-			var data = intro(zone.name) + tests(zone) + '\n};',
+			var data = intro(zone.name) + population(zone, grouped) + tests(zone) + '\n};',
 				dest = path.join('tests/zones', zone.name.toLowerCase() + '.js');
 
 			grunt.file.mkdir(path.dirname(dest));
@@ -67,6 +113,8 @@ module.exports = function (grunt) {
 // var helpers = require("../../helpers/helpers");
 //
 // exports["America/Los_Angeles"] = {
+// 	"guess" : helpers.makeTestGuess("America/Los_Angeles", { offset: true, abbr: true }),
+//
 // 	"1918" : helpers.makeTestYear("America/Los_Angeles", [
 // 		["1918-03-31T09:59:59+00:00", "01:59:59", "PST", 480],
 // 		["1918-03-31T10:00:00+00:00", "03:00:00", "PDT", 420],
