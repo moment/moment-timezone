@@ -28,7 +28,7 @@
 		zones = {},
 		links = {},
 		names = {},
-		guesses = [],
+		guesses = {},
 		cachedGuess,
 
 		momentVersion = moment.version.split('.'),
@@ -283,9 +283,44 @@
 		return b.zone.population - a.zone.population;
 	}
 
+	function addToGuesses (name, offsets) {
+		var i, offset;
+		arrayToInt(offsets);
+		for (i = 0; i < offsets.length; i++) {
+			offset = offsets[i];
+			guesses[offset] = guesses[offset] || {};
+			guesses[offset][name] = true;
+		}
+	}
+
+	function guessesForUserOffsets (offsets) {
+		var offsetsLength = offsets.length,
+			filteredGuesses = {},
+			out = [],
+			i, j, guessesOffset;
+
+		for (i = 0; i < offsetsLength; i++) {
+			guessesOffset = guesses[offsets[i].offset] || {};
+			for (j in guessesOffset) {
+				if (guessesOffset.hasOwnProperty(j)) {
+					filteredGuesses[j] = true;
+				}
+			}
+		}
+
+		for (i in filteredGuesses) {
+			if (filteredGuesses.hasOwnProperty(i)) {
+				out.push(names[i]);
+			}
+		}
+
+		return out;
+	}
+
 	function rebuildGuess () {
 		var offsets = userOffsets(),
 			offsetsLength = offsets.length,
+			guesses = guessesForUserOffsets(offsets),
 			zoneScores = [],
 			zoneScore, i, j;
 
@@ -330,7 +365,9 @@
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
-			guesses.push(name);
+			if (split[5]) {
+				addToGuesses(normalized, split[2].split(' '));
+			}
 		}
 	}
 
