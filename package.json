@@ -38,9 +38,6 @@
 	},
 	"jspm" : {
 		"main": "builds/moment-timezone-with-data",
-		"dependencies": {
-			"moment": "~2.6.0"
-		},
 		"shim": {
 			"moment-timezone": {
 				"deps": ["moment"]
