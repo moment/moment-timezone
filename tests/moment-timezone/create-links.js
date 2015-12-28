@@ -266,5 +266,42 @@ exports['create-links'] = {
 
 		test.deepEqual(actual, expected, "Should retain existing links passed in.");
 		test.done();
+	},
+
+	'make the zone with the smaller population a link' : function (test) {
+		var large = {
+				name       : "Zone/Large",
+				abbrs      : ["ABC", "DEF", "GHI"],
+				offsets    : [10, 20, 30],
+				untils     : [-1000, 100, 200],
+				population : 100
+			},
+			small = {
+				name       : "Zone/Small",
+				abbrs      : ["ABC", "DEF", "GHI"],
+				offsets    : [10, 20, 30],
+				untils     : [-1000, 100, 200],
+				population : 20
+			},
+			largeFirst = {
+				zones : [large, small],
+				links : [],
+				version : '2014populations'
+			},
+			smallFirst = {
+				zones : [small, large],
+				links : [],
+				version : '2014populations'
+			},
+			expected = {
+				zones : [large],
+				links : ["Zone/Large|Zone/Small"],
+				version : '2014populations'
+			};
+
+		test.deepEqual(tz.createLinks(largeFirst), expected, "Make smaller population a link.");
+		test.deepEqual(tz.createLinks(smallFirst), expected, "Make smaller population a link.");
+
+		test.done();
 	}
 };

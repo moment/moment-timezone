@@ -117,6 +117,18 @@
 		return abbrs.join(' ') + '|' + offsets.join(' ') + '|' + indices.join('');
 	}
 
+	function packPopulation (number) {
+		if (!number) {
+			return '';
+		}
+		if (number < 1000) {
+			return '|' + number;
+		}
+		var exponent = String(number | 0).length - 2;
+		var precision = Math.round(number / Math.pow(10, exponent));
+		return '|' + precision + 'e' + exponent;
+	}
+
 	function validatePackData (source) {
 		if (!source.name)    { throw new Error("Missing name"); }
 		if (!source.abbrs)   { throw new Error("Missing abbrs"); }
@@ -132,7 +144,11 @@
 
 	function pack (source) {
 		validatePackData(source);
-		return source.name + '|' + packAbbrsAndOffsets(source) + '|' + packUntils(source.untils);
+		return [
+			source.name,
+			packAbbrsAndOffsets(source),
+			packUntils(source.untils) + packPopulation(source.population)
+		].join('|');
 	}
 
 	/************************************
@@ -157,24 +173,35 @@
 	}
 
 	function findAndCreateLinks (input, output, links) {
-		var i, j, a, b, isUnique;
+		var i, j, a, b, group, foundGroup, groups = [];
 
 		for (i = 0; i < input.length; i++) {
-			isUnique = true;
+			foundGroup = false;
 			a = input[i];
 
-			for (j = 0; j < output.length; j++) {
-				b = output[j];
-
+			for (j = 0; j < groups.length; j++) {
+				group = groups[j];
+				b = group[0];
 				if (zonesAreEqual(a, b)) {
-					links.push(b.name + '|' + a.name);
-					isUnique = false;
-					continue;
+					if (a.population > b.population) {
+						group.unshift(a);
+					} else {
+						group.push(a);
+					}
+					foundGroup = true;
 				}
 			}
 
-			if (isUnique) {
-				output.push(a);
+			if (!foundGroup) {
+				groups.push([a]);
+			}
+		}
+
+		for (i = 0; i < groups.length; i++) {
+			group = groups[i];
+			output.push(group[0]);
+			for (j = 1; j < group.length; j++) {
+				links.push(group[0].name + '|' + group[j].name);
 			}
 		}
 	}
@@ -240,10 +267,11 @@
 		untils[untils.length - 1] = null;
 
 		return {
-			name    : source.name,
-			abbrs   : slice.apply(source.abbrs, indices),
-			untils  : untils,
-			offsets : slice.apply(source.offsets, indices)
+			name       : source.name,
+			abbrs      : slice.apply(source.abbrs, indices),
+			untils     : untils,
+			offsets    : slice.apply(source.offsets, indices),
+			population : source.population
 		};
 	}
 

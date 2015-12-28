@@ -17,10 +17,11 @@ function dedupe(zone) {
 	}
 
 	return {
-		name    : zone.name,
-		abbrs   : abbrs,
-		untils  : untils,
-		offsets : offsets
+		name       : zone.name,
+		abbrs      : abbrs,
+		untils     : untils,
+		offsets    : offsets,
+		population : zone.population
 	};
 }
 

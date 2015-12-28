@@ -38,7 +38,8 @@ exports['filter-years'] = {
 					Date.UTC(2002, 0, 1),
 					Date.UTC(2005, 0, 1),
 					null
-				]
+				],
+				population: undefined
 			};
 
 		test.deepEqual(actual, expected, "Should be able to filter out years outside the 1970-2038 range");
@@ -61,7 +62,8 @@ exports['filter-years'] = {
 					Date.UTC(2002, 0, 1),
 					Date.UTC(2005, 0, 1),
 					null
-				]
+				],
+				population: undefined
 			};
 
 		test.deepEqual(actual, expected, "Should be able to filter out years outside the 2000-2038 range");
@@ -82,7 +84,8 @@ exports['filter-years'] = {
 					Date.UTC(2002, 0, 1),
 					Date.UTC(2005, 0, 1),
 					null
-				]
+				],
+				population: undefined
 			};
 
 		test.deepEqual(actual, expected, "Should be able to filter out years outside the 2001-2038 range");
@@ -103,7 +106,8 @@ exports['filter-years'] = {
 					Date.UTC(2001, 6, 15),
 					Date.UTC(2001, 8, 1),
 					null
-				]
+				],
+				population: undefined
 			};
 
 		test.deepEqual(actual, expected, "Should be able to filter out years outside the 2000-2001 range");
@@ -124,7 +128,8 @@ exports['filter-years'] = {
 					Date.UTC(2001, 6, 15),
 					Date.UTC(2001, 8, 1),
 					null
-				]
+				],
+				population: undefined
 			};
 
 		test.deepEqual(actual, expected, "Should be able to handle the years passed in as end, start instead of start, end");
@@ -142,7 +147,8 @@ exports['filter-years'] = {
 					Date.UTC(2000, 0, 1),
 					Date.UTC(2000, 6, 15),
 					null
-				]
+				],
+				population: undefined
 			};
 
 		test.deepEqual(actual, expected, "Should be able to use the same start and end year if only one year was passed in");
@@ -163,7 +169,8 @@ exports['filter-years'] = {
 					Date.UTC(2002, 0, 1),
 					Date.UTC(2005, 0, 1),
 					null
-				]
+				],
+				population: undefined
 			};
 
 		test.deepEqual(actual, expected, "Should be able to filter out years outside the 2000-2005 range");
