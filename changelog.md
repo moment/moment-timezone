@@ -1,3 +1,8 @@
+### `0.5.0` _2015_12_28_
+* Added support for guessing the user's timezone via `moment.tz.guess()`. [#285](https://github.com/moment/moment-timezone/pull/285)
+* Fixed UMD export issue when there was an html element with `id=exports`. [#275](https://github.com/moment/moment-timezone/pull/275)
+* Removed jspm specific dependencies from `package.json`. [#284](https://github.com/moment/moment-timezone/pull/284)
+
 ### `0.4.1` _2015-10-07_
 * Updated data to IANA TZDB `2015e`. [#253](https://github.com/moment/moment-timezone/pull/253)
 * Updated data to IANA TZDB `2015f`. [#253](https://github.com/moment/moment-timezone/pull/253)
