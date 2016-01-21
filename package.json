@@ -26,7 +26,7 @@
 		"url": "https://github.com/moment/moment-timezone/issues"
 	},
 	"license" : "MIT",
-	"dependencies" : {
+	"peerDependencies" : {
 		"moment" : ">= 2.6.0"
 	},
 	"devDependencies" : {
@@ -34,7 +34,8 @@
 		"grunt-contrib-clean"    : "0.6.0",
 		"grunt-contrib-nodeunit" : "0.4.1",
 		"grunt-contrib-jshint"   : "0.11.2",
-		"grunt-contrib-uglify"   : "0.9.1"
+		"grunt-contrib-uglify"   : "0.9.1",
+		"moment" : ">= 2.6.0"
 	},
 	"jspm" : {
 		"main": "builds/moment-timezone-with-data",
