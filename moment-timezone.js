@@ -202,13 +202,14 @@
 
 	function OffsetAt(at) {
 		var timeString = at.toTimeString();
-		var abbr = timeString.match(/\(.+\)/);
+		var abbr = timeString.match(/\([a-z ]+\)/i);
 		if (abbr && abbr[0]) {
 			// 17:56:31 GMT-0600 (CST)
 			// 17:56:31 GMT-0600 (Central Standard Time)
 			abbr = abbr[0].match(/[A-Z]/g).join('');
 		} else {
 			// 17:56:31 CST
+			// 17:56:31 GMT+0800 (台北標準時間)
 			abbr = timeString.match(/[A-Z]{3,5}/g)[0];
 		}
 
