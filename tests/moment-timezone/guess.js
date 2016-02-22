@@ -37,6 +37,22 @@ exports.guess = {
 		test.done();
 	},
 
+	"handles uncommon Date#toTimeString formats" : function (test) {
+		test.doesNotThrow(function () {
+			mockTimezoneOffset(tz.zone('Europe/London'), 'HH:mm:ss (123)');
+			tz.guess(true);
+		});
+		test.doesNotThrow(function () {
+			mockTimezoneOffset(tz.zone('Europe/London'), 'HH:mm:ss');
+			tz.guess(true);
+		});
+		test.doesNotThrow(function () {
+			mockTimezoneOffset(tz.zone('Europe/London'), 'HH:mm:ss (台北標準時間)');
+			tz.guess(true);
+		});
+		test.done();
+	},
+
 	"ensure each zone is represented" : function (test) {
 		var names = tz.names();
 		var zone, i;
