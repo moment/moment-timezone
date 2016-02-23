@@ -4,6 +4,7 @@ var tz = require("../../").tz;
 
 var getTimezoneOffset = Date.prototype.getTimezoneOffset;
 var toTimeString = Date.prototype.toTimeString;
+var oldIntl = global.Intl;
 
 function mockTimezoneOffset (zone, format) {
 	Date.prototype.getTimezoneOffset = function () {
@@ -14,10 +15,30 @@ function mockTimezoneOffset (zone, format) {
 	};
 }
 
+function mockIntlTimeZone (name) {
+	global.Intl = {
+		DateTimeFormat: function () {
+			return {
+				resolvedOptions: function () {
+					return {
+						timeZone: name
+					};
+				}
+			};
+		}
+	};
+}
+
 exports.guess = {
+	setUp : function (done) {
+		global.Intl = undefined;
+		done();
+	},
+
 	tearDown : function (done) {
 		Date.prototype.getTimezoneOffset = getTimezoneOffset;
 		Date.prototype.toTimeString = toTimeString;
+		global.Intl = oldIntl;
 		done();
 	},
 
@@ -34,6 +55,20 @@ exports.guess = {
 		test.ok(losAngeles);
 		test.notEqual(london, newYork);
 		test.notEqual(london, losAngeles);
+		test.done();
+	},
+
+	"When Intl is available, it is used" : function (test) {
+		mockIntlTimeZone('Europe/London');
+		test.equal(tz.guess(true), 'Europe/London');
+
+		mockIntlTimeZone('America/New_York');
+		test.equal(tz.guess(true), 'America/New_York');
+
+		mockIntlTimeZone('America/Some_Missing_Zone');
+		mockTimezoneOffset(tz.zone('America/Los_Angeles'));
+		test.equal(tz.guess(true), 'America/Los_Angeles');
+
 		test.done();
 	},
 

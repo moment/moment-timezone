@@ -3,6 +3,7 @@
 var moment = require('../../index');
 var getTimezoneOffset = Date.prototype.getTimezoneOffset;
 var toTimeString = Date.prototype.toTimeString;
+var oldIntl = global.Intl;
 
 function getUTCOffset (m) {
 	if (m.utcOffset !== undefined) {
@@ -47,6 +48,8 @@ function mockToTimeString(name, format) {
 }
 
 function testGuess(test, name, mostPopulatedFor) {
+	global.Intl = undefined;
+
 	if (mostPopulatedFor.offset) {
 		mockTimezoneOffset(name);
 		mockToTimeString(name);
@@ -61,6 +64,7 @@ function testGuess(test, name, mostPopulatedFor) {
 
 	Date.prototype.getTimezoneOffset = getTimezoneOffset;
 	Date.prototype.toTimeString = toTimeString;
+	global.Intl = oldIntl;
 	test.done();
 }
 
