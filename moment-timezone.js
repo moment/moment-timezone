@@ -319,6 +319,15 @@
 	}
 
 	function rebuildGuess () {
+
+		// use Intl API when available and returning valid time zone
+		if (typeof Intl === 'object' && isFunction(Intl.DateTimeFormat)) {
+			var zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+			if (zone && (zone.indexOf("/") > -1 || zone === 'UTC')) {
+				return zone;
+			}
+		}
+
 		var offsets = userOffsets(),
 			offsetsLength = offsets.length,
 			guesses = guessesForUserOffsets(offsets),
@@ -343,6 +352,10 @@
 			cachedGuess = rebuildGuess();
 		}
 		return cachedGuess;
+	}
+
+	function isFunction(input) {
+		return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
 	}
 
 	/************************************
