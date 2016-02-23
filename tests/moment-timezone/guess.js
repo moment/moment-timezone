@@ -4,7 +4,8 @@ var tz = require("../../").tz;
 
 var getTimezoneOffset = Date.prototype.getTimezoneOffset;
 var toTimeString = Date.prototype.toTimeString;
-var oldIntl = global.Intl;
+var parent = (typeof window !== 'undefined' && window) || (typeof global !== 'undefined' && global);
+var oldIntl = parent.Intl;
 
 function mockTimezoneOffset (zone, format) {
 	Date.prototype.getTimezoneOffset = function () {
@@ -16,7 +17,7 @@ function mockTimezoneOffset (zone, format) {
 }
 
 function mockIntlTimeZone (name) {
-	global.Intl = {
+	parent.Intl = {
 		DateTimeFormat: function () {
 			return {
 				resolvedOptions: function () {
@@ -31,14 +32,14 @@ function mockIntlTimeZone (name) {
 
 exports.guess = {
 	setUp : function (done) {
-		global.Intl = undefined;
+		parent.Intl = undefined;
 		done();
 	},
 
 	tearDown : function (done) {
 		Date.prototype.getTimezoneOffset = getTimezoneOffset;
 		Date.prototype.toTimeString = toTimeString;
-		global.Intl = oldIntl;
+		parent.Intl = oldIntl;
 		done();
 	},
 
