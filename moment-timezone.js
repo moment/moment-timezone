@@ -321,15 +321,15 @@
 	function rebuildGuess () {
 
 		// use Intl API when available and returning valid time zone
-		if (typeof Intl === 'object' && isFunction(Intl.DateTimeFormat)) {
-			var zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			if (typeof zone === 'string') {
-				if (names[normalizeName(zone)]) {
-					return zone;
-				} else {
-					logError("Moment Timezone found " + zone + " from the Intl api, but did not have that data loaded.");
-				}
+		try {
+			var intlName = Intl.DateTimeFormat().resolvedOptions().timeZone;
+			var name = names[normalizeName(intlName)];
+			if (name) {
+				return name;
 			}
+			logError("Moment Timezone found " + intlName + " from the Intl api, but did not have that data loaded.");
+		} catch (e) {
+			// Intl unavailable, fall back to manual guessing.
 		}
 
 		var offsets = userOffsets(),
