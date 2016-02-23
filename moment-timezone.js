@@ -323,8 +323,12 @@
 		// use Intl API when available and returning valid time zone
 		if (typeof Intl === 'object' && isFunction(Intl.DateTimeFormat)) {
 			var zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			if (zone && (zone.indexOf("/") > -1 || zone === 'UTC')) {
-				return zone;
+			if (typeof zone === 'string') {
+				if (names[normalizeName(zone)]) {
+					return zone;
+				} else {
+					logError("Moment Timezone found " + zone + " from the Intl api, but did not have that data loaded.");
+				}
 			}
 		}
 
