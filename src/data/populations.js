@@ -1,4 +1,4 @@
-{
+export default {
 	"Africa/Abidjan"            :  4800000,
 	"Africa/Accra"              :  4145000,
 	"Africa/Algiers"            :  2590000,
