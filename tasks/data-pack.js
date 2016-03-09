@@ -1,21 +1,17 @@
-"use strict";
+import createLinks from '../src/pack/create-links';
+import pack from '../src/pack/pack';
 
-var tz = require('../moment-timezone-utils').tz;
+export default grunt => {
+	const { readJSON, mkdir, write } = grunt.file;
 
-module.exports = function (grunt) {
-	grunt.registerTask('data-pack', '6. Pack data from data-dedupe.', function (version) {
-		version = version || 'latest';
+	grunt.registerTask('data-pack', '6. Pack data from data-dedupe.', (version = 'latest') => {
+		const output = createLinks(readJSON('data/unpacked/' + version + '.json'));
 
-		var unpacked = grunt.file.readJSON('data/unpacked/' + version + '.json'),
-			output = tz.createLinks(unpacked);
+		output.zones = output.zones.map(pack);
 
-		output.zones = output.zones.map(function (unpacked) {
-			return tz.pack(unpacked);
-		});
+		mkdir('data/packed');
+		write(`data/packed/${version}.json`, JSON.stringify(output, null, '\t'));
 
-		grunt.file.mkdir('data/packed');
-		grunt.file.write('data/packed/' + version + '.json', JSON.stringify(output, null, '\t'));
-
-		grunt.log.ok('Packed data for ' + version);
+		grunt.log.ok(`Packed data for ${version}`);
 	});
 };
