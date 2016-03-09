@@ -1,20 +1,9 @@
-"use strict";
-
-module.exports = function (grunt) {
-	grunt.registerTask('data', 'Build timezone data.', function (version) {
-		version = version || 'latest';
-
+export default grunt => {
+	grunt.registerTask('data', 'Build timezone data.', (version = 'latest') => {
 		grunt.task.run('clean:data');
 
-		grunt.task.run([
-			'data-download:' + version,
-			'data-zic:'      + version,
-			'data-zdump:'    + version,
-			'data-collect:'  + version,
-			'data-dedupe:'   + version,
-			'data-pack:'     + version,
-			'data-meta:'     + version
-		]);
+		const dataTasks = 'download zic zdump collect dedupe pack meta'.split(' ');
+		grunt.task.run(dataTasks.map(task => `data-${ task }:${ version }`));
 
 		if (version === 'latest') {
 			grunt.task.run('data-tests');
