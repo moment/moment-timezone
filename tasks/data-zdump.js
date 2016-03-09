@@ -1,16 +1,14 @@
-"use strict";
+import path from 'path';
+import { exec } from 'child_process';
 
-var path = require('path'),
-	exec = require('child_process').exec;
+export default grunt => {
+	const { mkdir, write, expand } = grunt.file;
 
-module.exports = function (grunt) {
-	grunt.registerTask('data-zdump', '3. Dump data with zdump(8).', function (version) {
-		version = version || 'latest';
-
-		var done      = this.async(),
-			zicBase   = path.resolve('temp/zic', version),
-			zdumpBase = path.resolve('temp/zdump', version),
-			files     = grunt.file.expand({ filter : 'isFile', cwd : 'temp/zic/' + version }, '**/*');
+	grunt.registerTask('data-zdump', '3. Dump data with zdump(8).', function (version = 'latest') {
+		const done = this.async();
+		const zicBase   = path.resolve('temp/zic', version);
+		const zdumpBase = path.resolve('temp/zdump', version);
+		const files     = expand({ filter : 'isFile', cwd : 'temp/zic/' + version }, '**/*');
 
 		function next () {
 			if (!files.length) {
@@ -18,17 +16,17 @@ module.exports = function (grunt) {
 				return done();
 			}
 
-			var file = files.pop(),
-				src  = path.join(zicBase, file),
-				dest = path.join(zdumpBase, file);
+			const file = files.pop();
+			const src  = path.join(zicBase, file);
+			const dest = path.join(zdumpBase, file);
 
-			exec('zdump -v ' + src, { maxBuffer: 20*1024*1024 }, function (err, stdout) {
+			exec('zdump -v ' + src, { maxBuffer: 20 * 1024 * 1024 }, (err, stdout) => {
 				if (err) { throw err; }
 
-				grunt.file.mkdir(path.dirname(dest));
-				grunt.file.write(dest + '.zdump', stdout.replace(new RegExp(zicBase + '/', 'g'), ''));
+				mkdir(path.dirname(dest));
+				write(dest + '.zdump', stdout.replace(new RegExp(zicBase + '/', 'g'), ''));
 
-				grunt.verbose.ok('Dumped data for ' + version + ':' + file);
+				grunt.verbose.ok(`Dumped data for ${ version }:${ file }`);
 
 				next();
 			});
