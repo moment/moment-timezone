@@ -1,16 +1,14 @@
-"use strict";
+import moment from "../../";
+import helpers from "../helpers/helpers";
 
-var moment = require("../../");
-var helpers = require("../helpers/helpers");
-
-exports.utc = {
-	utc : function (test) {
+export const utc = {
+	utc(test) {
 		moment.tz.add([
 			"TestUTC/Pacific|PST|80|0|",
 			"TestUTC/Eastern|EST|50|0|"
 		]);
 
-		var m = moment("2014-07-10 12:00:00+00:00"),
+		const m = moment("2014-07-10 12:00:00+00:00"),
 			localFormat = m.format(),
 			localOffset = helpers.getUTCOffset(m);
 
