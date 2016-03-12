@@ -1,15 +1,13 @@
-"use strict";
+import moment from"../../index";
+import helpers from "../helpers/helpers";
 
-var moment = require("../../index");
-var helpers = require("../helpers/helpers");
+const Los_Angeles = "America/Los_Angeles|PST PDT PWT PPT|80 70 70 70|010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261q0 1nX0 11B0 1nX0 SgN0 8x10 iy0 5Wp0 1Vb0 3dB0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
+const New_York    = "America/New_York|EST EDT EWT EPT|50 40 40 40|01010101010101010101010101010101010101010101010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261t0 1nX0 11B0 1nX0 11B0 1qL0 1a10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 RB0 8x40 iv0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
 
-var Los_Angeles = "America/Los_Angeles|PST PDT PWT PPT|80 70 70 70|010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261q0 1nX0 11B0 1nX0 SgN0 8x10 iy0 5Wp0 1Vb0 3dB0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
-var New_York    = "America/New_York|EST EDT EWT EPT|50 40 40 40|01010101010101010101010101010101010101010101010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261t0 1nX0 11B0 1nX0 11B0 1qL0 1a10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 RB0 8x40 iv0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0";
+let moveAmbiguousForward, moveInvalidForward;
 
-var moveAmbiguousForward, moveInvalidForward;
-
-exports.parse = {
-	setUp : function (done) {
+export const parse = {
+	setUp(done) {
 		moment.tz.add([Los_Angeles, New_York]);
 
 		moveAmbiguousForward = moment.tz.moveAmbiguousForward;
@@ -17,25 +15,25 @@ exports.parse = {
 		done();
 	},
 
-	tearDown : function (done) {
+	tearDown(done) {
 		moment.tz.moveAmbiguousForward = moveAmbiguousForward;
 		moment.tz.moveInvalidForward = moveInvalidForward;
 		moment.tz.setDefault(null);
 		done();
 	},
 
-	"default states" : function (t) {
+	["default states"](t) {
 		t.ok(moment.tz.moveInvalidForward,    "Should default to moving invalid input forward");
 		t.ok(!moment.tz.moveAmbiguousForward, "Should default to moving ambiguous input backward");
 
 		t.done();
 	},
 
-	"invalid input - moveInvalidForward = false - Los Angeles" : function (t) {
+	["invalid input - moveInvalidForward = false - Los Angeles"](t) {
 		moment.tz.moveInvalidForward = false;
 
 		// the hour from 2am to 3am does not exist on March 11 2011 in America/Los_Angeles
-		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/Los_Angeles"),
+		const before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/Los_Angeles"),
 			atStart = moment.tz([2012, 2, 11, 2, 0, 0],   "America/Los_Angeles"),
 			atEnd   = moment.tz([2012, 2, 11, 2, 59, 59], "America/Los_Angeles"),
 			after   = moment.tz([2012, 2, 11, 3, 0, 0],   "America/Los_Angeles");
@@ -53,11 +51,11 @@ exports.parse = {
 		t.done();
 	},
 
-	"invalid input - moveInvalidForward = false - New York" : function (t) {
+	["invalid input - moveInvalidForward = false - New York"](t) {
 		moment.tz.moveInvalidForward = false;
 
 		// the hour from 2am to 3am does not exist on March 11 2011 in America/New_York
-		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/New_York"),
+		const before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/New_York"),
 			atStart = moment.tz([2012, 2, 11, 2, 0, 0], "America/New_York"),
 			atEnd   = moment.tz([2012, 2, 11, 2, 59, 59], "America/New_York"),
 			after   = moment.tz([2012, 2, 11, 3, 0, 0], "America/New_York");
@@ -75,11 +73,11 @@ exports.parse = {
 		t.done();
 	},
 
-	"invalid input - moveInvalidForward = true - Los Angeles" : function (t) {
+	["invalid input - moveInvalidForward = true - Los Angeles"](t) {
 		// moment.tz.moveInvalidForward = true; Should default to true
 
 		// the hour from 2am to 3am does not exist on March 11 2011 in America/Los_Angeles
-		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/Los_Angeles"),
+		const before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/Los_Angeles"),
 			atStart = moment.tz([2012, 2, 11, 2, 0, 0],   "America/Los_Angeles"),
 			atEnd   = moment.tz([2012, 2, 11, 2, 59, 59], "America/Los_Angeles"),
 			after   = moment.tz([2012, 2, 11, 3, 0, 0],   "America/Los_Angeles");
@@ -97,11 +95,11 @@ exports.parse = {
 		t.done();
 	},
 
-	"invalid input - moveInvalidForward = true - New York" : function (t) {
+	["invalid input - moveInvalidForward = true - New York"](t) {
 		// moment.tz.moveInvalidForward = true; Should default to true
 
 		// the hour from 2am to 3am does not exist on March 11 2011 in America/New_York
-		var before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/New_York"),
+		const before  = moment.tz([2012, 2, 11, 1, 59, 59], "America/New_York"),
 			atStart = moment.tz([2012, 2, 11, 2, 0, 0], "America/New_York"),
 			atEnd   = moment.tz([2012, 2, 11, 2, 59, 59], "America/New_York"),
 			after   = moment.tz([2012, 2, 11, 3, 0, 0], "America/New_York");
@@ -119,11 +117,11 @@ exports.parse = {
 		t.done();
 	},
 
-	"ambiguous input - moveAmbiguousForward = false - Los Angeles" : function (t) {
+	["ambiguous input - moveAmbiguousForward = false - Los Angeles"](t) {
 		// moment.tz.moveAmbiguousForward = false; Should default to false
 
 		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
-		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/Los_Angeles"),
+		const before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/Los_Angeles"),
 			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/Los_Angeles"),
 			atEnd   = moment.tz([2012, 10, 4, 1, 59, 59], "America/Los_Angeles"),
 			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/Los_Angeles");
@@ -141,11 +139,11 @@ exports.parse = {
 		t.done();
 	},
 
-	"ambiguous input - moveAmbiguousForward = false - New York" : function (t) {
+	["ambiguous input - moveAmbiguousForward = false - New York"](t) {
 		// moment.tz.moveAmbiguousForward = false; Should default to false
 
 		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
-		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/New_York"),
+		const before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/New_York"),
 			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/New_York"),
 			atEnd   = moment.tz([2012, 10, 4, 1, 59, 59], "America/New_York"),
 			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/New_York");
@@ -163,11 +161,11 @@ exports.parse = {
 		t.done();
 	},
 
-	"ambiguous input - moveAmbiguousForward = true - Los Angeles" : function (t) {
+	["ambiguous input - moveAmbiguousForward = true - Los Angeles"](t) {
 		moment.tz.moveAmbiguousForward = true;
 
 		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
-		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/Los_Angeles"),
+		const before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/Los_Angeles"),
 			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/Los_Angeles"),
 			atEnd   = moment.tz([2012, 10, 4, 1, 59, 59], "America/Los_Angeles"),
 			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/Los_Angeles");
@@ -185,11 +183,11 @@ exports.parse = {
 		t.done();
 	},
 
-	"ambiguous input - moveAmbiguousForward = true - New York" : function (t) {
+	["ambiguous input - moveAmbiguousForward = true - New York"](t) {
 		moment.tz.moveAmbiguousForward = true;
 
 		// the hour from 1am to 2am happens twice on Nov 4 2011 in America/Los_Angeles
-		var before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/New_York"),
+		const before  = moment.tz([2012, 10, 4, 0, 59, 59], "America/New_York"),
 			atStart = moment.tz([2012, 10, 4, 1, 0, 0], "America/New_York"),
 			atEnd   = moment.tz([2012, 10, 4, 1, 59, 59], "America/New_York"),
 			after   = moment.tz([2012, 10, 4, 2, 0, 0], "America/New_York");
@@ -207,8 +205,8 @@ exports.parse = {
 		t.done();
 	},
 
-	"check needsOffset in moment.tz (America/Los_Angeles)" : function (t) {
-		var name = "America/Los_Angeles",
+	["check needsOffset in moment.tz (America/Los_Angeles)"](t) {
+		let name = "America/Los_Angeles",
 			tests = [
 				[moment.tz([2012, 5, 1], name),                "2012-06-01 00:00:00 -07:00", "[2012, 5, 1]"],
 				[moment.tz("2012-06-01", name),                "2012-06-01 00:00:00 -07:00", "2012-06-01"],
@@ -223,14 +221,14 @@ exports.parse = {
 			actual   = tests[i][0].format('YYYY-MM-DD HH:mm:ss Z');
 			expected = tests[i][1];
 			message  = tests[i][2];
-			t.equal(actual, expected, "Parsing " + message + " in America/Los_Angeles should equal " + expected);
+			t.equal(actual, expected, `Parsing ${message} in America/Los_Angeles should equal ${expected}`);
 		}
 
 		t.done();
 	},
 
-	"check needsOffset in moment.tz (America/New_York)" : function (t) {
-		var name = "America/New_York",
+	["check needsOffset in moment.tz (America/New_York)"](t) {
+		let name = "America/New_York",
 			tests = [
 				[moment.tz([2012, 5, 1], name),                "2012-06-01 00:00:00 -04:00", "[2012, 5, 1]"],
 				[moment.tz("2012-06-01", name),                "2012-06-01 00:00:00 -04:00", "2012-06-01"],
@@ -245,16 +243,16 @@ exports.parse = {
 			actual   = tests[i][0].format('YYYY-MM-DD HH:mm:ss Z');
 			expected = tests[i][1];
 			message  = tests[i][2];
-			t.equal(actual, expected, "Parsing " + message + " in America/New_York should equal " + expected);
+			t.equal(actual, expected, `Parsing ${message} in America/New_York should equal ${expected}`);
 		}
 
 		t.done();
 	},
 
-	"parse in default zone" : function (t) {
+	["parse in default zone"](t) {
 		moment.tz.setDefault("America/New_York");
 
-		var tests = [
+		let tests = [
 				[moment([2012, 5, 1]),                "2012-06-01 00:00:00 -04:00", "[2012, 5, 1]"],
 				[moment("2012-06-01"),                "2012-06-01 00:00:00 -04:00", "2012-06-01"],
 				[moment("2012-06-01 04:00:00+00:00"), "2012-06-01 00:00:00 -04:00", "2012-06-01 00:00:00+00:00"],
@@ -267,7 +265,7 @@ exports.parse = {
 			actual   = tests[i][0].format('YYYY-MM-DD HH:mm:ss Z');
 			expected = tests[i][1];
 			message  = tests[i][2];
-			t.equal(actual, expected, "Parsing " + message + " in America/New_York should equal " + expected);
+			t.equal(actual, expected, `Parsing ${message} in America/New_York should equal ${expected}`);
 		}
 
 		t.done();
