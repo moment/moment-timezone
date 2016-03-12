@@ -1,5 +1,7 @@
 "use strict";
 
+require("babel-register");
+
 module.exports = function(grunt) {
 	grunt.initConfig({
 		nodeunit : {

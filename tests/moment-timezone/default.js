@@ -1,9 +1,7 @@
-"use strict";
+import moment from "../../";
 
-var moment = require("../../");
-
-exports.default = {
-	defaultZone : function (t) {
+export default {
+	defaultZone(t) {
 		t.equal(
 			moment.defaultZone,
 			null,
@@ -21,9 +19,9 @@ exports.default = {
 		);
 		t.done();
 	},
-	normal: function (t) {
+	normal(t) {
 		moment.tz.setDefault('America/New_York');
-		var m = moment();
+		const m = moment();
 		t.equal(
 			m._z.name,
 			'America/New_York',
@@ -31,7 +29,7 @@ exports.default = {
 		);
 
 		moment.tz.setDefault();
-		var m2 = moment();
+		const m2 = moment();
 		moment.tz.setDefault('America/New_York');
 		m2.millisecond(0);
 		t.equal(
@@ -42,7 +40,7 @@ exports.default = {
 		moment.tz.setDefault();
 		t.done();
 	},
-	utc : function (t) {
+	utc(t) {
 		moment.tz.setDefault('America/New_York');
 		t.equal(
 			moment.utc().format('ZZ'),
@@ -55,7 +53,7 @@ exports.default = {
 			'using UTC mode should not affect normal moment creation'
 		);
 
-		var utc_moment = moment.utc(),
+		const utc_moment = moment.utc(),
 		    normal_moment = moment(),
 		    normal_moment_offset = normal_moment.format('ZZ');
 		moment.tz.setDefault();
