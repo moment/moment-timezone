@@ -1,48 +1,42 @@
-"use strict";
+import path from 'path';
+import moment from 'moment';
+import populations from '../src/data/populations';
 
-var path = require('path'),
-	moment = require('moment'),
-	populations = require('./population.json');
+export default grunt => {
+	const { expand, read, mkdir, write } = grunt.file;
 
-module.exports = function (grunt) {
-	grunt.registerTask('data-collect', '4. Collect all data from zdump(8) into a single json file.', function (version) {
-		version = version || 'latest';
+	grunt.registerTask('data-collect', '4. Collect all data from zdump(8) into a single json file.', (version = 'latest') => {
+		const data = [];
+		const cwd = `temp/zdump/${version}`;
 
-		var files = grunt.file.expand({ filter : 'isFile', cwd : 'temp/zdump/' + version }, '**/*.zdump'),
-			data  = [];
+		expand({ filter: 'isFile', cwd }, '**/*.zdump').forEach(file => {
+			const name = file.replace(/\.zdump$/, '');
+			const abbrs = [];
+			const untils = [];
+			const offsets = [];
+			const population = populations[name] | 0;
 
-		files.forEach(function (file) {
-			var lines   = grunt.file.read(path.join('temp/zdump/' + version, file)).split('\n'),
-				name    = file.replace(/\.zdump$/, ''),
-				abbrs   = [],
-				untils  = [],
-				offsets = [];
+			read(path.join(cwd, file)).split('\n').forEach(line => {
+				const parts  = line.split(/\s+/);
+				const format = "MMM D HH:mm:ss YYYY";
+				const utc    = moment.utc(parts.slice(2, 6).join(' '), format);
+				const local  = moment.utc(parts.slice(9, 13).join(' '), format);
 
-			lines.forEach(function (line) {
-				var parts  = line.split(/\s+/),
-					format = "MMM D HH:mm:ss YYYY",
-					utc    = moment.utc(parts.slice(2, 6).join(' '), format),
-					local  = moment.utc(parts.slice(9, 13).join(' '), format);
-
-				if (parts.length < 13) { return; }
+				if (parts.length < 13) {
+					return;
+				}
 
 				offsets.push(+utc.diff(local, 'minutes', true).toFixed(4));
 				untils.push(+utc);
 				abbrs.push(parts[13]);
 			});
 
-			data.push({
-				name       : name,
-				abbrs      : abbrs,
-				untils     : untils,
-				offsets    : offsets,
-				population : populations[name] | 0
-			});
+			data.push({ name, abbrs, untils, offsets, population });
 		});
 
-		grunt.file.mkdir('temp/collect');
-		grunt.file.write('temp/collect/' + version + '.json', JSON.stringify(data, null, 2));
+		mkdir('temp/collect');
+		write(`temp/collect/${ version }.json`, JSON.stringify(data, null, 2));
 
-		grunt.log.ok('Collected data for ' + version);
+		grunt.log.ok(`Collected data for ${ version }`);
 	});
 };

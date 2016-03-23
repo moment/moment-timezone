@@ -1,75 +1,72 @@
-"use strict";
-
-var path = require('path'),
-	moment = require('moment'),
-	tz = require('../').tz;
+import path from 'path';
+import moment from '../index';
 
 function changeTest (zone, i) {
-	var until         = moment.utc(zone.untils[i]),
-		minutesOffset = zone.offsets[i],
-		secondsOffset = Math.round(minutesOffset * 60),
-		abbr          = zone.abbrs[i],
-		dateTime      = until.format(),
-		hours         = until.clone().subtract(secondsOffset, 'seconds').format('HH:mm:ss');
+	const until         = moment.utc(zone.untils[i]);
+	let minutesOffset   = zone.offsets[i];
+	const secondsOffset = Math.round(minutesOffset * 60);
+	const abbr          = zone.abbrs[i];
+	const dateTime      = until.format();
+	const hours         = until.clone().subtract(secondsOffset, 'seconds').format('HH:mm:ss');
 
 	if (secondsOffset % 60) {
 		minutesOffset = secondsOffset + ' / 60';
 	}
 
-	return '["' + dateTime + '", "' + hours + '", "' + abbr + '", ' + minutesOffset + ']';
+	return `["${ dateTime }", "${ hours }", "${ abbr }", ${ minutesOffset }]`;
 }
 
 function yearTest (year, changes, name) {
-	return '\t"' + year + '" : helpers.makeTestYear("' + name + '", [\n\t\t' + changes.join(',\n\t\t') + '\n\t])';
+	return `\t"${ year }" : helpers.makeTestYear("${ name }", [\n\t\t${ changes.join(',\n\t\t') }\n\t])`;
 }
 
 function tests (zone) {
-	var years = {};
+	const years = {};
 
-	zone.untils.forEach(function (until, i) {
+	zone.untils.forEach((until, i) => {
 		if (i < 2 || i >= zone.untils.length - 2) { return; }
-		var year = moment.utc(until).year();
+		const year = moment.utc(until).year();
 		years[year] = years[year] || [];
 		years[year].push(changeTest(zone, i));
 	});
 
-	return Object.keys(years).map(function (year) {
+	return Object.keys(years).map(year => {
 		return yearTest(year, years[year], zone.name);
 	}).join(',\n\n');
 }
 
 function intro (name) {
-	var helpers = path.relative(path.dirname('zones/' + name), 'helpers/helpers');
-	return '"use strict";\n\nvar helpers = require("' + helpers + '");\n\nexports["' + name + '"] = {\n';
+	const helpers = path.relative(path.dirname(`zones/${ name }`), 'helpers/helpers');
+	return `"use strict";\n\nvar helpers = require("${ helpers }");\n\nexports["${ name }"] = {\n`;
 }
 
 function formatForMonth (name, month, format) {
-	return tz([2015, month, 1], name).format(format);
+	return moment.tz([2015, month, 1], name).format(format);
 }
 
 function untilForMonth (name, month) {
-	var zone = tz.zone(name),
-		index = zone._index(new Date(2015, month, 1)),
-		until = zone.untils[Math.min(zone.untils.length - 1, index)];
-	return tz(until === Infinity ? [2015, month, 1] : until, name).format('YYYY-MM-DD HH:mm');
+	const zone = moment.tz.zone(name);
+	const index = zone._index(new Date(2015, month, 1));
+	const until = zone.untils[Math.min(zone.untils.length - 1, index)];
+	return moment.tz(until === Infinity ? [2015, month, 1] : until, name).format('YYYY-MM-DD HH:mm');
 }
 
 function dataToOffsetAndAbbr (zoneData) {
-	var name = zoneData.name;
+	const { name, population } = zoneData;
 	return {
-		name: name,
-		population: zoneData.population,
-		offsets: formatForMonth(name, 0, 'Z') + ' ' + formatForMonth(name, 6, 'Z'),
-		untils: untilForMonth(name, 0) + ' ' + untilForMonth(name, 6),
-		abbrs: formatForMonth(name, 0, 'z') + ' ' + formatForMonth(name, 6, 'z')
+		name,
+		population,
+		offsets: `${formatForMonth(name, 0, 'Z')} ${formatForMonth(name, 6, 'Z')}`,
+		untils: `${untilForMonth(name, 0)} ${untilForMonth(name, 6)}`,
+		abbrs: `${formatForMonth(name, 0, 'z')} ${formatForMonth(name, 6, 'z')}`
 	};
 }
 
 function population (data, grouped) {
-	var current = dataToOffsetAndAbbr(data);
-	var isMostPopulatedInOffset = current.population > 0;
-	var isMostPopulatedInAbbr = current.population > 0;
-	grouped.forEach(function (other) {
+	const current = dataToOffsetAndAbbr(data);
+	let isMostPopulatedInOffset = current.population > 0;
+	let isMostPopulatedInAbbr = current.population > 0;
+	grouped.forEach(other => {
 		if (current.population > other.population || current.name === other.name) {
 			return;
 		}
@@ -83,24 +80,24 @@ function population (data, grouped) {
 	if (!isMostPopulatedInAbbr && !isMostPopulatedInOffset) {
 		return '';
 	}
-	return '\t"guess" : helpers.makeTestGuess("' + data.name + '", { offset: ' + isMostPopulatedInOffset + ', abbr: ' + isMostPopulatedInAbbr + ' }),\n\n';
+	return `\t"guess" : helpers.makeTestGuess("${ data.name }", { offset: ${ isMostPopulatedInOffset }, abbr: ${ isMostPopulatedInAbbr } }),\n\n`;
 }
 
-module.exports = function (grunt) {
-	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', function () {
-		tz.load(grunt.file.readJSON('data/packed/latest.json'));
-		var zones = grunt.file.readJSON('temp/collect/latest.json'),
-			grouped = zones.map(dataToOffsetAndAbbr);
+export default grunt => {
+	const { readJSON, mkdir, write } = grunt.file;
 
-		zones.forEach(function (zone) {
-			var data = intro(zone.name) + population(zone, grouped) + tests(zone) + '\n};',
-				dest = path.join('tests/zones', zone.name.toLowerCase() + '.js');
+	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', _ => {
+		const zones = readJSON('temp/collect/latest.json');
+		const grouped = zones.map(dataToOffsetAndAbbr);
 
-			grunt.file.mkdir(path.dirname(dest));
-			grunt.file.write(dest, data);
-			grunt.verbose.ok("Created " + zone.name + " tests.");
+		zones.forEach(zone => {
+			const data = intro(zone.name) + population(zone, grouped) + tests(zone) + '\n};';
+			const dest = path.join('tests/zones', `${ zone.name.toLowerCase() }.js`);
+
+			mkdir(path.dirname(dest));
+			write(dest, data);
+			grunt.verbose.ok(`Created ${ zone.name } tests.`);
 		});
-
 
 		grunt.log.ok('Created tests');
 	});

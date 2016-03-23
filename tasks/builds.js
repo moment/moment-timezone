@@ -1,14 +1,13 @@
-"use strict";
+import filterLinkPack from '../src/pack/filter-link-pack';
+import latestData from '../src/data/latest.js';
 
-var tz = require('../moment-timezone-utils').tz;
+export default grunt => {
+	const { read, write } = grunt.file;
 
-module.exports = function (grunt) {
-	grunt.registerMultiTask('build', 'Build minified versions with data included.', function () {
-		var dest   = 'builds/' + this.target + '.js',
-			data   = require('../data/unpacked/latest.json'),
-			source = grunt.file.read('moment-timezone.js'),
-			start  = 0,
-			end    = 9999;
+	grunt.registerMultiTask('build', 'Build minified versions with data included.', _ => {
+		let start = 0;
+		let end = 9999;
+		let data = latestData;
 
 		if (this.data && this.data[0]) {
 			start = this.data[0];
@@ -18,13 +17,11 @@ module.exports = function (grunt) {
 			end = this.data[1];
 		}
 
-		data = tz.filterLinkPack(data, start, end);
+		data = filterLinkPack(data, start, end);
 		data = JSON.stringify(data, null, '\t');
 		data = data.split('\n').join('\n\t');
-		data = 'loadData(' + data + ');\n';
+		data = `loadData(${ data });\n`;
 
-		source = source.replace('// INJECT DATA', data);
-
-		grunt.file.write(dest, source);
+		write(`builds/${ this.target }.js`, read('moment-timezone.js').replace('// INJECT DATA', data));
 	});
 };

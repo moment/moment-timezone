@@ -30,7 +30,8 @@
 		"moment" : ">= 2.6.0"
 	},
 	"devDependencies" : {
-		"ava"                    : "0.12.0",
+		"ava"                    : "0.13.0",
+		"babel-cli"              : "^6.0.0",
 		"grunt"                  : "0.4.5",
 		"grunt-contrib-clean"    : "0.6.0",
 		"grunt-contrib-nodeunit" : "0.4.1",
@@ -46,8 +47,9 @@
 		}
 	},
 	"scripts": {
-		"ava": "ava --require babel-register",
+		"ava": "ava temp/test/**/*.js",
+		"babel": "babel src -d temp/src && babel test -d temp/test",
 		"grunt": "grunt",
-		"test": "npm run ava && npm run grunt"
+		"test": "npm run babel && npm run grunt && npm run ava"
 	}
 }
