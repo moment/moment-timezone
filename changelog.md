@@ -1,3 +1,6 @@
+### `0.5.2` _2016-03-15_
+* Updated data to IANA TZDB `2016b`. [#315](https://github.com/moment/moment-timezone/pull/315)
+
 ### `0.5.1` _2016-03-01_
 * Updated data to IANA TZDB `2016a`. [#299](https://github.com/moment/moment-timezone/pull/299)
 * Fixed bug when `Date#toTimeString` did not return a known format. [#302](https://github.com/moment/moment-timezone/pull/302)  [#303](https://github.com/moment/moment-timezone/pull/303)
