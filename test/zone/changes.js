@@ -554,10 +554,7 @@ testChange('America/Paramaribo', '2016-01-01T00:00:00+00:00', '21:00:00', 'SRT',
 
 testChange('America/Phoenix', '2016-01-01T00:00:00+00:00', '17:00:00', 'MST', 420);
 
-testChange('America/Port-au-Prince', '2016-03-13T06:59:00+00:00', '01:59:00', 'EST', 300);
-testChange('America/Port-au-Prince', '2016-03-13T07:00:00+00:00', '03:00:00', 'EDT', 240);
-testChange('America/Port-au-Prince', '2016-11-06T05:59:00+00:00', '01:59:00', 'EDT', 240);
-testChange('America/Port-au-Prince', '2016-11-06T06:00:00+00:00', '01:00:00', 'EST', 300);
+testChange('America/Port-au-Prince', '2016-01-01T00:00:00+00:00', '19:00:00', 'EST', 300);
 
 testChange('America/Port_of_Spain', '2016-01-01T00:00:00+00:00', '20:00:00', 'AST', 240);
 
@@ -597,7 +594,10 @@ testChange('America/Santa_Isabel', '2016-11-06T09:00:00+00:00', '01:00:00', 'PST
 
 testChange('America/Santarem', '2016-01-01T00:00:00+00:00', '21:00:00', 'BRT', 180);
 
-testChange('America/Santiago', '2016-01-01T00:00:00+00:00', '21:00:00', 'CLT', 180);
+testChange('America/Santiago', '2016-05-15T02:59:00+00:00', '23:59:00', 'CLST', 180);
+testChange('America/Santiago', '2016-05-15T03:00:00+00:00', '23:00:00', 'CLT', 240);
+testChange('America/Santiago', '2016-08-14T03:59:00+00:00', '23:59:00', 'CLT', 240);
+testChange('America/Santiago', '2016-08-14T04:00:00+00:00', '01:00:00', 'CLST', 180);
 
 testChange('America/Santo_Domingo', '2016-01-01T00:00:00+00:00', '20:00:00', 'AST', 240);
 
@@ -704,7 +704,10 @@ testChange('Antarctica/McMurdo', '2016-04-02T14:00:00+00:00', '02:00:00', 'NZST'
 testChange('Antarctica/McMurdo', '2016-09-24T13:59:00+00:00', '01:59:00', 'NZST', -720);
 testChange('Antarctica/McMurdo', '2016-09-24T14:00:00+00:00', '03:00:00', 'NZDT', -780);
 
-testChange('Antarctica/Palmer', '2016-01-01T00:00:00+00:00', '21:00:00', 'CLT', 180);
+testChange('Antarctica/Palmer', '2016-05-15T02:59:00+00:00', '23:59:00', 'CLST', 180);
+testChange('Antarctica/Palmer', '2016-05-15T03:00:00+00:00', '23:00:00', 'CLT', 240);
+testChange('Antarctica/Palmer', '2016-08-14T03:59:00+00:00', '23:59:00', 'CLT', 240);
+testChange('Antarctica/Palmer', '2016-08-14T04:00:00+00:00', '01:00:00', 'CLST', 180);
 
 testChange('Antarctica/Rothera', '2016-01-01T00:00:00+00:00', '21:00:00', 'ROTT', 180);
 
@@ -750,12 +753,12 @@ testChange('Asia/Baghdad', '2016-01-01T00:00:00+00:00', '03:00:00', 'AST', -180)
 
 testChange('Asia/Bahrain', '2016-01-01T00:00:00+00:00', '03:00:00', 'AST', -180);
 
-testChange('Asia/Baku', '2016-03-26T23:59:00+00:00', '03:59:00', 'AZT', -240);
-testChange('Asia/Baku', '2016-03-27T00:00:00+00:00', '05:00:00', 'AZST', -300);
-testChange('Asia/Baku', '2016-10-29T23:59:00+00:00', '04:59:00', 'AZST', -300);
-testChange('Asia/Baku', '2016-10-30T00:00:00+00:00', '04:00:00', 'AZT', -240);
+testChange('Asia/Baku', '2016-01-01T00:00:00+00:00', '04:00:00', 'AZT', -240);
 
 testChange('Asia/Bangkok', '2016-01-01T00:00:00+00:00', '07:00:00', 'ICT', -420);
+
+testChange('Asia/Barnaul', '2016-03-26T19:59:00+00:00', '01:59:00', '+06', -360);
+testChange('Asia/Barnaul', '2016-03-26T20:00:00+00:00', '03:00:00', '+07', -420);
 
 testChange('Asia/Beirut', '2016-03-26T21:59:00+00:00', '23:59:00', 'EET', -120);
 testChange('Asia/Beirut', '2016-03-26T22:00:00+00:00', '01:00:00', 'EEST', -180);
@@ -797,15 +800,15 @@ testChange('Asia/Dubai', '2016-01-01T00:00:00+00:00', '04:00:00', 'GST', -240);
 
 testChange('Asia/Dushanbe', '2016-01-01T00:00:00+00:00', '05:00:00', 'TJT', -300);
 
-testChange('Asia/Gaza', '2016-03-25T21:59:00+00:00', '23:59:00', 'EET', -120);
-testChange('Asia/Gaza', '2016-03-25T22:00:00+00:00', '01:00:00', 'EEST', -180);
+testChange('Asia/Gaza', '2016-03-25T22:59:00+00:00', '00:59:00', 'EET', -120);
+testChange('Asia/Gaza', '2016-03-25T23:00:00+00:00', '02:00:00', 'EEST', -180);
 testChange('Asia/Gaza', '2016-10-20T20:59:00+00:00', '23:59:00', 'EEST', -180);
 testChange('Asia/Gaza', '2016-10-20T21:00:00+00:00', '23:00:00', 'EET', -120);
 
 testChange('Asia/Harbin', '2016-01-01T00:00:00+00:00', '08:00:00', 'CST', -480);
 
-testChange('Asia/Hebron', '2016-03-25T21:59:00+00:00', '23:59:00', 'EET', -120);
-testChange('Asia/Hebron', '2016-03-25T22:00:00+00:00', '01:00:00', 'EEST', -180);
+testChange('Asia/Hebron', '2016-03-25T22:59:00+00:00', '00:59:00', 'EET', -120);
+testChange('Asia/Hebron', '2016-03-25T23:00:00+00:00', '02:00:00', 'EEST', -180);
 testChange('Asia/Hebron', '2016-10-20T20:59:00+00:00', '23:59:00', 'EEST', -180);
 testChange('Asia/Hebron', '2016-10-20T21:00:00+00:00', '23:00:00', 'EET', -120);
 
@@ -899,7 +902,8 @@ testChange('Asia/Riyadh', '2016-01-01T00:00:00+00:00', '03:00:00', 'AST', -180);
 
 testChange('Asia/Saigon', '2016-01-01T00:00:00+00:00', '07:00:00', 'ICT', -420);
 
-testChange('Asia/Sakhalin', '2016-01-01T00:00:00+00:00', '10:00:00', 'SAKT', -600);
+testChange('Asia/Sakhalin', '2016-03-26T15:59:00+00:00', '01:59:00', 'SAKT', -600);
+testChange('Asia/Sakhalin', '2016-03-26T16:00:00+00:00', '03:00:00', 'SAKT', -660);
 
 testChange('Asia/Samarkand', '2016-01-01T00:00:00+00:00', '05:00:00', 'UZT', -300);
 
@@ -1155,9 +1159,15 @@ testChange('Canada/Yukon', '2016-03-13T10:00:00+00:00', '03:00:00', 'PDT', 420);
 testChange('Canada/Yukon', '2016-11-06T08:59:00+00:00', '01:59:00', 'PDT', 420);
 testChange('Canada/Yukon', '2016-11-06T09:00:00+00:00', '01:00:00', 'PST', 480);
 
-testChange('Chile/Continental', '2016-01-01T00:00:00+00:00', '21:00:00', 'CLT', 180);
+testChange('Chile/Continental', '2016-05-15T02:59:00+00:00', '23:59:00', 'CLST', 180);
+testChange('Chile/Continental', '2016-05-15T03:00:00+00:00', '23:00:00', 'CLT', 240);
+testChange('Chile/Continental', '2016-08-14T03:59:00+00:00', '23:59:00', 'CLT', 240);
+testChange('Chile/Continental', '2016-08-14T04:00:00+00:00', '01:00:00', 'CLST', 180);
 
-testChange('Chile/EasterIsland', '2016-01-01T00:00:00+00:00', '19:00:00', 'EAST', 300);
+testChange('Chile/EasterIsland', '2016-05-15T02:59:00+00:00', '21:59:00', 'EASST', 300);
+testChange('Chile/EasterIsland', '2016-05-15T03:00:00+00:00', '21:00:00', 'EAST', 360);
+testChange('Chile/EasterIsland', '2016-08-14T03:59:00+00:00', '21:59:00', 'EAST', 360);
+testChange('Chile/EasterIsland', '2016-08-14T04:00:00+00:00', '23:00:00', 'EASST', 300);
 
 testChange('Cuba', '2016-03-13T04:59:00+00:00', '23:59:00', 'CST', 300);
 testChange('Cuba', '2016-03-13T05:00:00+00:00', '01:00:00', 'CDT', 240);
@@ -1262,6 +1272,9 @@ testChange('Europe/Andorra', '2016-03-27T00:59:00+00:00', '01:59:00', 'CET', -60
 testChange('Europe/Andorra', '2016-03-27T01:00:00+00:00', '03:00:00', 'CEST', -120);
 testChange('Europe/Andorra', '2016-10-30T00:59:00+00:00', '02:59:00', 'CEST', -120);
 testChange('Europe/Andorra', '2016-10-30T01:00:00+00:00', '02:00:00', 'CET', -60);
+
+testChange('Europe/Astrakhan', '2016-03-26T22:59:00+00:00', '01:59:00', '+03', -180);
+testChange('Europe/Astrakhan', '2016-03-26T23:00:00+00:00', '03:00:00', '+04', -240);
 
 testChange('Europe/Athens', '2016-03-27T00:59:00+00:00', '02:59:00', 'EET', -120);
 testChange('Europe/Athens', '2016-03-27T01:00:00+00:00', '04:00:00', 'EEST', -180);
@@ -1483,6 +1496,9 @@ testChange('Europe/Tiraspol', '2016-03-27T00:00:00+00:00', '03:00:00', 'EEST', -
 testChange('Europe/Tiraspol', '2016-10-29T23:59:00+00:00', '02:59:00', 'EEST', -180);
 testChange('Europe/Tiraspol', '2016-10-30T00:00:00+00:00', '02:00:00', 'EET', -120);
 
+testChange('Europe/Ulyanovsk', '2016-03-26T22:59:00+00:00', '01:59:00', '+03', -180);
+testChange('Europe/Ulyanovsk', '2016-03-26T23:00:00+00:00', '03:00:00', '+04', -240);
+
 testChange('Europe/Uzhgorod', '2016-03-27T00:59:00+00:00', '02:59:00', 'EET', -120);
 testChange('Europe/Uzhgorod', '2016-03-27T01:00:00+00:00', '04:00:00', 'EEST', -180);
 testChange('Europe/Uzhgorod', '2016-10-30T00:59:00+00:00', '03:59:00', 'EEST', -180);
@@ -1664,7 +1680,10 @@ testChange('Pacific/Chatham', '2016-09-24T14:00:00+00:00', '03:45:00', 'CHADT', 
 
 testChange('Pacific/Chuuk', '2016-01-01T00:00:00+00:00', '10:00:00', 'CHUT', -600);
 
-testChange('Pacific/Easter', '2016-01-01T00:00:00+00:00', '19:00:00', 'EAST', 300);
+testChange('Pacific/Easter', '2016-05-15T02:59:00+00:00', '21:59:00', 'EASST', 300);
+testChange('Pacific/Easter', '2016-05-15T03:00:00+00:00', '21:00:00', 'EAST', 360);
+testChange('Pacific/Easter', '2016-08-14T03:59:00+00:00', '21:59:00', 'EAST', 360);
+testChange('Pacific/Easter', '2016-08-14T04:00:00+00:00', '23:00:00', 'EASST', 300);
 
 testChange('Pacific/Efate', '2016-01-01T00:00:00+00:00', '11:00:00', 'VUT', -660);
 

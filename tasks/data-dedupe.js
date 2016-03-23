@@ -36,6 +36,20 @@ export default grunt => {
 			output.version = findVersion(read('temp/download/latest/Makefile'));
 		}
 
+		mkdir('temp/unpacked');
+		write(`temp/unpacked/${ version }.json`, JSON.stringify(output, null, 2));
+
+		grunt.log.ok(`Deduped data for ${ version }`);
+	});
+
+	grunt.registerTask('data-dedupe-legacy', '5. Remove duplicate entries from data-collect. (legacy)', (version = 'latest') => {
+		const zones = readJSON(`temp/collect/${ version }.json`).map(dedupe);
+		const output = { version, zones, links: [] };
+
+		if (version === 'latest') {
+			output.version = findVersion(read('temp/download/latest/Makefile'));
+		}
+
 		mkdir('data/unpacked');
 		write(`data/unpacked/${ version }.json`, JSON.stringify(output, null, 2));
 
