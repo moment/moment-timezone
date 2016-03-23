@@ -1,5 +1,3 @@
-"use strict";
-
 function dedupe(zone) {
 	const { name, population } = zone;
 	const abbrs   = [];
