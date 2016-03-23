@@ -1,5 +1,5 @@
 import path from 'path';
-import moment from '../src/moment-timezone';
+import moment from '../index';
 
 function changeTest (zone, i) {
 	const until         = moment.utc(zone.untils[i]);
