@@ -7,6 +7,7 @@ export default grunt => {
 
 		if (version === 'latest') {
 			grunt.task.run('data-tests');
+			grunt.task.run('data-tests-legacy');
 		}
 	});
 };

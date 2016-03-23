@@ -85,6 +85,7 @@ export default class Database {
 			if (link) {
 				zone = _zones[name] = new Zone();
 				zone._set(link);
+				zone.population = 0;
 				zone.name = _names[name];
 				return zone;
 			}

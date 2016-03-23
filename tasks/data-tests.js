@@ -1,128 +1,87 @@
-import path from 'path';
-import moment from '../index';
+import moment from 'moment';
+import data from '../src/data/latest';
+import Database from '../src/database/database';
 
-function changeTest (zone, i) {
-	const until         = moment.utc(zone.untils[i]);
-	let minutesOffset   = zone.offsets[i];
-	const secondsOffset = Math.round(minutesOffset * 60);
-	const abbr          = zone.abbrs[i];
-	const dateTime      = until.format();
-	const hours         = until.clone().subtract(secondsOffset, 'seconds').format('HH:mm:ss');
+const CHANGE_HEADER = `import { testChange } from '../helpers/zones';\n\n`;
+const GUESS_HEADER = `import { testGuessForOffset, testGuessForAbbr } from '../helpers/zones';\n\n`;
 
-	if (secondsOffset % 60) {
-		minutesOffset = secondsOffset + ' / 60';
-	}
+function changeTest(zone, until) {
+	const offset   = zone.offset(until);
+	const instance = moment.utc(until);
+	const abbr     = zone.abbr(until);
+	const dateTime = instance.format();
+	const hours    = instance.clone().subtract(offset, 'minutes').format('HH:mm:ss');
 
-	return `["${ dateTime }", "${ hours }", "${ abbr }", ${ minutesOffset }]`;
+	return `testChange('${ zone.name }', '${ dateTime }', '${ hours }', '${ abbr }', ${ offset });`;
 }
 
-function yearTest (year, changes, name) {
-	return `\t"${ year }" : helpers.makeTestYear("${ name }", [\n\t\t${ changes.join(',\n\t\t') }\n\t])`;
-}
+function changeTests (zones) {
+	const tests = [];
+	const thisYear = moment().year();
 
-function tests (zone) {
-	const years = {};
+	zones.forEach(zone => {
+		const thisYearUntils = [];
 
-	zone.untils.forEach((until, i) => {
-		if (i < 2 || i >= zone.untils.length - 2) { return; }
-		const year = moment.utc(until).year();
-		years[year] = years[year] || [];
-		years[year].push(changeTest(zone, i));
+		zone.untils.filter(until => moment.utc(until).year() === thisYear).forEach(until => {
+			thisYearUntils.push(until - 6e4);
+			thisYearUntils.push(until);
+		});
+
+		if (!thisYearUntils.length) {
+			thisYearUntils.push(Date.UTC(thisYear, 0, 1));
+		}
+
+		thisYearUntils.forEach(until => tests.push(changeTest(zone, until)));
+		tests.push('');
 	});
 
-	return Object.keys(years).map(year => {
-		return yearTest(year, years[year], zone.name);
-	}).join(',\n\n');
+	return tests.join('\n') + '\n';
 }
 
-function intro (name) {
-	const helpers = path.relative(path.dirname(`zones/${ name }`), 'helpers/helpers');
-	return `"use strict";\n\nvar helpers = require("${ helpers }");\n\nexports["${ name }"] = {\n`;
-}
+function guessTests (zones) {
+	const forAbbr = {};
+	const forOffset = {};
+	const thisYear = moment().year();
 
-function formatForMonth (name, month, format) {
-	return moment.tz([2015, month, 1], name).format(format);
-}
-
-function untilForMonth (name, month) {
-	const zone = moment.tz.zone(name);
-	const index = zone._index(new Date(2015, month, 1));
-	const until = zone.untils[Math.min(zone.untils.length - 1, index)];
-	return moment.tz(until === Infinity ? [2015, month, 1] : until, name).format('YYYY-MM-DD HH:mm');
-}
-
-function dataToOffsetAndAbbr (zoneData) {
-	const { name, population } = zoneData;
-	return {
-		name,
-		population,
-		offsets: `${formatForMonth(name, 0, 'Z')} ${formatForMonth(name, 6, 'Z')}`,
-		untils: `${untilForMonth(name, 0)} ${untilForMonth(name, 6)}`,
-		abbrs: `${formatForMonth(name, 0, 'z')} ${formatForMonth(name, 6, 'z')}`
-	};
-}
-
-function population (data, grouped) {
-	const current = dataToOffsetAndAbbr(data);
-	let isMostPopulatedInOffset = current.population > 0;
-	let isMostPopulatedInAbbr = current.population > 0;
-	grouped.forEach(other => {
-		if (current.population > other.population || current.name === other.name) {
+	zones.forEach(zone => {
+		if (!zone.population) {
 			return;
 		}
-		if (other.offsets === current.offsets) {
-			isMostPopulatedInOffset = false;
-			if (other.abbrs === current.abbrs) {
-				isMostPopulatedInAbbr = false;
-			}
+
+		const jan = Date.UTC(thisYear, 0, 1);
+		const jun = Date.UTC(thisYear, 6, 1);
+		const abbr = `${ zone.abbr(jan) }-${ zone.abbr(jun) }`;
+		const offset = `${ zone.offset(jan) }-${ zone.offset(jun) }`;
+
+		if (!forAbbr[abbr] || forAbbr[abbr].population < zone.population) {
+			forAbbr[abbr] = zone;
+		}
+
+		if (!forOffset[offset] || forOffset[offset].population < zone.population) {
+			forOffset[offset] = zone;
 		}
 	});
-	if (!isMostPopulatedInAbbr && !isMostPopulatedInOffset) {
-		return '';
-	}
-	return `\t"guess" : helpers.makeTestGuess("${ data.name }", { offset: ${ isMostPopulatedInOffset }, abbr: ${ isMostPopulatedInAbbr } }),\n\n`;
+
+	return Object.keys(forOffset).map(key => forOffset[key].name).sort().map(name => {
+		return `testGuessForOffset('${ name }');`;
+	}).join('\n') + '\n\n' + Object.keys(forAbbr).map(key => forAbbr[key].name).sort().map(name => {
+		return `testGuessForAbbr('${ name }');`;
+	}).join('\n') + '\n';
+}
+
+function buildZones () {
+	const db = new Database();
+	db.put(data);
+	return db.getNames().map(name => db.getZone(name));
 }
 
 export default grunt => {
-	const { readJSON, mkdir, write } = grunt.file;
+	const { write } = grunt.file;
 
 	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', _ => {
-		const zones = readJSON('temp/collect/latest.json');
-		const grouped = zones.map(dataToOffsetAndAbbr);
+		const zones = buildZones();
 
-		zones.forEach(zone => {
-			const data = intro(zone.name) + population(zone, grouped) + tests(zone) + '\n};';
-			const dest = path.join('tests/zones', `${ zone.name.toLowerCase() }.js`);
-
-			mkdir(path.dirname(dest));
-			write(dest, data);
-			grunt.verbose.ok(`Created ${ zone.name } tests.`);
-		});
-
-		grunt.log.ok('Created tests');
+		write('test/zone/changes.js', CHANGE_HEADER + changeTests(zones));
+		write('test/zone/guesses.js', GUESS_HEADER + guessTests(zones));
 	});
 };
-
-// Tests should look something like this.
-//
-// "use strict";
-//
-// var helpers = require("../../helpers/helpers");
-//
-// exports["America/Los_Angeles"] = {
-// 	"guess" : helpers.makeTestGuess("America/Los_Angeles", { offset: true, abbr: true }),
-//
-// 	"1918" : helpers.makeTestYear("America/Los_Angeles", [
-// 		["1918-03-31T09:59:59+00:00", "01:59:59", "PST", 480],
-// 		["1918-03-31T10:00:00+00:00", "03:00:00", "PDT", 420],
-// 		["1918-10-27T08:59:59+00:00", "01:59:59", "PDT", 420],
-// 		["1918-10-27T09:00:00+00:00", "01:00:00", "PST", 480]
-// 	]),
-//
-// 	"1919" : helpers.makeTestYear("America/Los_Angeles", [
-// 		["1919-03-30T09:59:59+00:00", "01:59:59", "PST", 480],
-// 		["1919-03-30T10:00:00+00:00", "03:00:00", "PDT", 420],
-// 		["1919-10-26T08:59:59+00:00", "01:59:59", "PDT", 420],
-// 		["1919-10-26T09:00:00+00:00", "01:00:00", "PST", 480]
-// 	])
-// };
