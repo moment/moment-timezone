@@ -6,6 +6,7 @@ import registerDataDownloadTask from './data-download';
 import registerDataMetaTask from './data-meta';
 import registerDataPackTask from './data-pack';
 import registerDataTestsTask from './data-tests';
+import registerDataTestsLegacyTask from './data-tests-legacy';
 import registerDataZicTask from './data-zic';
 import registerDataZdumpTask from './data-zdump';
 
@@ -62,6 +63,7 @@ export default grunt => {
 	registerDataMetaTask(grunt);
 	registerDataPackTask(grunt);
 	registerDataTestsTask(grunt);
+	registerDataTestsLegacyTask(grunt);
 	registerDataZicTask(grunt);
 	registerDataZdumpTask(grunt);
 

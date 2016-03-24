@@ -1,7 +1,7 @@
 import moment from 'moment';
 import attach from './moment/attach';
-import data from './data/latest';
+import packed from './data/packed';
 
-attach(moment).load(data);
+attach(moment).load(packed);
 
 export default moment;

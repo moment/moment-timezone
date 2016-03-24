@@ -1,5 +1,3 @@
-"use strict";
-
 function parseLatLong (input, isLong) {
 	const sign = input[0] === '+' ? 1 : -1;
 	let deg = ~~input.substr(1, 2 + isLong) * sign;
@@ -59,18 +57,29 @@ function filterCountries (allCountries) {
 	const countriesWithZones = {};
 
 	// Filter out the countries which dont have any timezones. eg: 'Bouvet Island', 'Heard Island and McDonald Islands'
-	for (let countryCode in allCountries) {
+	Object.keys(allCountries).forEach(countryCode => {
 		let country = allCountries[countryCode];
 		if (country.zones.length > 0) {
 			countriesWithZones[country.abbr] = country;
 		}
-	}
+	});
 
 	return countriesWithZones;
 }
 
 export default grunt => {
 	grunt.registerTask('data-meta', '7. Parse metadata from zone1970.tab', (version = 'latest') => {
+		const allCountries = parseCountries(grunt, version);
+		const zones = parseZones(grunt, version, allCountries);
+		const countries = filterCountries(allCountries);
+		const data = JSON.stringify({ countries, zones }, null, '\t');
+
+		grunt.file.write(`src/data/meta.json`, data);
+
+		grunt.log.ok('Added metadata for ' + version);
+	});
+
+	grunt.registerTask('data-meta-legacy', '7. Parse metadata from zone1970.tab (legacy)', (version = 'latest') => {
 		const allCountries = parseCountries(grunt, version);
 		const zones = parseZones(grunt, version, allCountries);
 		const countries = filterCountries(allCountries);
