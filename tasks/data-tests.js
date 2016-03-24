@@ -1,5 +1,4 @@
 import moment from 'moment';
-import data from '../src/data/latest';
 import Database from '../src/database/database';
 
 const CHANGE_HEADER = `import { testChange } from '../helpers/zones';\n\n`;
@@ -69,14 +68,14 @@ function guessTests (zones) {
 	}).join('\n') + '\n';
 }
 
-function buildZones () {
-	const db = new Database();
-	db.put(data);
-	return db.getNames().map(name => db.getZone(name));
-}
-
 export default grunt => {
-	const { write } = grunt.file;
+	const { write, readJSON } = grunt.file;
+
+	function buildZones () {
+		const db = new Database();
+		db.put(readJSON('src/data/packed.json'));
+		return db.getNames().map(name => db.getZone(name));
+	}
 
 	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', _ => {
 		const zones = buildZones();

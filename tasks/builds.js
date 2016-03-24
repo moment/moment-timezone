@@ -1,13 +1,12 @@
 import filterLinkPack from '../src/pack/filter-link-pack';
-import latestData from '../src/data/latest.js';
 
 export default grunt => {
-	const { read, write } = grunt.file;
+	const { read, write, readJSON } = grunt.file;
 
 	grunt.registerMultiTask('build', 'Build minified versions with data included.', _ => {
 		let start = 0;
 		let end = 9999;
-		let data = latestData;
+		let data = readJSON('src/data/packed.json');
 
 		if (this.data && this.data[0]) {
 			start = this.data[0];

@@ -9,9 +9,9 @@ export default grunt => {
 		const output20102020 = JSON.stringify(filterLinkPack(unpacked, 2010, 2020), null, '\t');
 
 		if (version === 'latest') {
-			write(`src/data/latest.js`, `export default ${ output };\n`);
-			write(`src/data/latest-2010-2020.js`, `export default ${ output20102020 };\n`);
-			write(`src/data/latest.json`, output);
+			write(`src/data/packed.js`, `export default ${ output };\n`);
+			write(`src/data/packed-2010-2020.js`, `export default ${ output20102020 };\n`);
+			write(`src/data/packed.json`, output);
 		} else {
 			mkdir('src/data/archive');
 			write(`src/data/archive/${version}.json`, output);
