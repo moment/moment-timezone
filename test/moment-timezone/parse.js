@@ -1,6 +1,6 @@
 import test from 'ava';
 import moment from '../../src/moment-timezone';
-import packed from '../../src/data/latest';
+import packed from '../../src/data/packed';
 
 const { moveAmbiguousForward, moveInvalidForward } = moment.tz;
 
