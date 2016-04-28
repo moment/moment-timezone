@@ -80,7 +80,8 @@ function population (data, grouped) {
 			}
 		}
 	});
-	if (!isMostPopulatedInAbbr && !isMostPopulatedInOffset) {
+
+	if (!/[A-Z]/.test(current.abbrs) || (!isMostPopulatedInAbbr && !isMostPopulatedInOffset)) {
 		return '';
 	}
 	return '\t"guess" : helpers.makeTestGuess("' + data.name + '", { offset: ' + isMostPopulatedInOffset + ', abbr: ' + isMostPopulatedInAbbr + ' }),\n\n';
