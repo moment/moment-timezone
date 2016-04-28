@@ -17,7 +17,7 @@ exports.manipulate = {
 	add : function (t) {
 		t.equal(
 			moment('2012-10-28 00:00:00+01:00').tz('Europe/London').add(1, 'days').format(),
-			'2012-10-29T00:00:00+00:00',
+			'2012-10-29T00:00:00Z',
 			"adding 1 day while crossing a DST boundary should not affect time (BST -> GMT)."
 		);
 		t.equal(
