@@ -9,7 +9,7 @@ function changeTest (zone, i) {
 		minutesOffset = zone.offsets[i],
 		secondsOffset = Math.round(minutesOffset * 60),
 		abbr          = zone.abbrs[i],
-		dateTime      = until.format(),
+		dateTime      = until.format('YYYY-MM-DDTHH:mm:ssZ'),
 		hours         = until.clone().subtract(secondsOffset, 'seconds').format('HH:mm:ss');
 
 	if (secondsOffset % 60) {
@@ -80,7 +80,8 @@ function population (data, grouped) {
 			}
 		}
 	});
-	if (!isMostPopulatedInAbbr && !isMostPopulatedInOffset) {
+
+	if (!/[A-Z]/.test(current.abbrs) || (!isMostPopulatedInAbbr && !isMostPopulatedInOffset)) {
 		return '';
 	}
 	return '\t"guess" : helpers.makeTestGuess("' + data.name + '", { offset: ' + isMostPopulatedInOffset + ', abbr: ' + isMostPopulatedInAbbr + ' }),\n\n';

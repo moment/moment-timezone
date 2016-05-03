@@ -232,7 +232,7 @@
 
 	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
 		this.offsetScore += Math.abs(this.zone.offset(offsetAt.at) - offsetAt.offset);
-		if (this.zone.abbr(offsetAt.at).match(/[A-Z]/g).join('') !== offsetAt.abbr) {
+		if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, '') !== offsetAt.abbr) {
 			this.abbrScore++;
 		}
 	};
