@@ -325,11 +325,13 @@
 		// use Intl API when available and returning valid time zone
 		try {
 			var intlName = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			var name = names[normalizeName(intlName)];
-			if (name) {
-				return name;
+			if (intlName){
+				var name = names[normalizeName(intlName)];
+				if (name) {
+					return name;
+				}
+				logError("Moment Timezone found " + intlName + " from the Intl api, but did not have that data loaded.");
 			}
-			logError("Moment Timezone found " + intlName + " from the Intl api, but did not have that data loaded.");
 		} catch (e) {
 			// Intl unavailable, fall back to manual guessing.
 		}

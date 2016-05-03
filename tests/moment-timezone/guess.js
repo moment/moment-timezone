@@ -89,6 +89,22 @@ exports.guess = {
 		test.done();
 	},
 
+	"When Intl is available, but timeZone is undefined, should return a guess without logging an error" : function (test) {
+		var oldError = console.error;
+		var errors = '';
+		console.error = function (message) {
+			errors += message;
+		};
+		
+		mockIntlTimeZone(undefined);
+		mockTimezoneOffset(tz.zone('Europe/London'));
+		test.equal(tz.guess(true), 'Europe/London');
+		test.equal(errors, '');
+
+		console.error = oldError;
+		test.done();
+	},
+
 	"ensure each zone is represented" : function (test) {
 		var names = tz.names();
 		var zone, i;
