@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.3
+//! version : 0.5.4
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,7 +24,7 @@
 		return moment;
 	}
 
-	var VERSION = "0.5.3",
+	var VERSION = "0.5.4",
 		zones = {},
 		links = {},
 		names = {},
@@ -232,7 +232,7 @@
 
 	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
 		this.offsetScore += Math.abs(this.zone.offset(offsetAt.at) - offsetAt.offset);
-		if (this.zone.abbr(offsetAt.at).match(/[A-Z]/g).join('') !== offsetAt.abbr) {
+		if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, '') !== offsetAt.abbr) {
 			this.abbrScore++;
 		}
 	};
@@ -325,11 +325,13 @@
 		// use Intl API when available and returning valid time zone
 		try {
 			var intlName = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			var name = names[normalizeName(intlName)];
-			if (name) {
-				return name;
+			if (intlName){
+				var name = names[normalizeName(intlName)];
+				if (name) {
+					return name;
+				}
+				logError("Moment Timezone found " + intlName + " from the Intl api, but did not have that data loaded.");
 			}
-			logError("Moment Timezone found " + intlName + " from the Intl api, but did not have that data loaded.");
 		} catch (e) {
 			// Intl unavailable, fall back to manual guessing.
 		}
@@ -594,7 +596,7 @@
 	}
 
 	loadData({
-		"version": "2016c",
+		"version": "2016d",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Khartoum|EAT|-30|0||51e5",
@@ -623,7 +625,7 @@
 			"America/Denver|MST MDT|70 60|01010101010101010101010|1BQV0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|26e5",
 			"America/Campo_Grande|AMST AMT|30 40|01010101010101010101010|1BIr0 1zd0 On0 1zd0 Rb0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1C10 Lz0 1C10 Lz0 1C10|77e4",
 			"America/Cancun|CST CDT EST|60 50 50|010101010102|1C1k0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 Dd0|63e4",
-			"America/Caracas|VET|4u|0||29e5",
+			"America/Caracas|VET VET|4u 40|01|1QMT0|29e5",
 			"America/Cayenne|GFT|30|0||58e3",
 			"America/Chicago|CST CDT|60 50|01010101010101010101010|1BQU0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|92e5",
 			"America/Chihuahua|MST MDT|70 60|01010101010101010101010|1C1l0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0|81e4",
@@ -664,10 +666,10 @@
 			"Antarctica/Troll|UTC CEST|0 -20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|40",
 			"Antarctica/Vostok|VOST|-60|0||25",
 			"Asia/Baghdad|AST|-30|0||66e5",
-			"Asia/Almaty|ALMT|-60|0||15e5",
+			"Asia/Almaty|+06|-60|0||15e5",
 			"Asia/Amman|EET EEST|-20 -30|010101010101010101010|1BVy0 1qM0 11A0 1o00 11A0 4bX0 Dd0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0|25e5",
 			"Asia/Anadyr|ANAT ANAST ANAT|-c0 -c0 -b0|0120|1BWe0 1qN0 WM0|13e3",
-			"Asia/Aqtobe|AQTT|-50|0||27e4",
+			"Asia/Aqtobe|+05|-50|0||27e4",
 			"Asia/Ashgabat|TMT|-50|0||41e4",
 			"Asia/Baku|AZT AZST|-40 -50|0101010101010|1BWo0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00|27e5",
 			"Asia/Bangkok|ICT|-70|0||15e6",
@@ -701,16 +703,14 @@
 			"Asia/Khandyga|VLAT VLAST VLAT YAKT YAKT|-a0 -b0 -b0 -a0 -90|010234|1BWg0 1qM0 WM0 17V0 7zD0|66e2",
 			"Asia/Krasnoyarsk|KRAT KRAST KRAT|-70 -80 -80|01020|1BWj0 1qM0 WM0 8Hz0|10e5",
 			"Asia/Kuala_Lumpur|MYT|-80|0||71e5",
-			"Asia/Magadan|MAGT MAGST MAGT MAGT|-b0 -c0 -c0 -a0|01023|1BWf0 1qM0 WM0 8Hz0|95e3",
+			"Asia/Magadan|MAGT MAGST MAGT MAGT|-b0 -c0 -c0 -a0|010230|1BWf0 1qM0 WM0 8Hz0 3Cq0|95e3",
 			"Asia/Makassar|WITA|-80|0||15e5",
 			"Asia/Manila|PHT|-80|0||24e6",
 			"Europe/Athens|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|35e5",
 			"Asia/Novokuznetsk|KRAT NOVST NOVT NOVT|-70 -70 -60 -70|01230|1BWj0 1qN0 WM0 8Hz0|55e4",
 			"Asia/Novosibirsk|NOVT NOVST NOVT|-60 -70 -70|01020|1BWk0 1qM0 WM0 8Hz0|15e5",
 			"Asia/Omsk|OMST OMSST OMST|-60 -70 -70|01020|1BWk0 1qM0 WM0 8Hz0|12e5",
-			"Asia/Oral|ORAT|-50|0||27e4",
 			"Asia/Pyongyang|KST KST|-90 -8u|01|1P4D0|29e5",
-			"Asia/Qyzylorda|QYZT|-60|0||73e4",
 			"Asia/Rangoon|MMT|-6u|0||48e5",
 			"Asia/Sakhalin|SAKT SAKST SAKT|-a0 -b0 -b0|010202|1BWg0 1qM0 WM0 8Hz0 3rd0|58e4",
 			"Asia/Tashkent|UZT|-50|0||23e5",
@@ -721,6 +721,7 @@
 			"Asia/Tehran|IRST IRDT|-3u -4u|01010101010101010101010|1BTUu 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0|14e6",
 			"Asia/Thimphu|BTT|-60|0||79e3",
 			"Asia/Tokyo|JST|-90|0||38e6",
+			"Asia/Tomsk|+06 +07|-60 -70|010101|1BWk0 1qM0 WM0 8Hz0 3Qp0|10e5",
 			"Asia/Ulaanbaatar|ULAT ULAST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|12e5",
 			"Asia/Ust-Nera|MAGT MAGST MAGT VLAT VLAT|-b0 -c0 -c0 -b0 -a0|010234|1BWf0 1qM0 WM0 17V0 7zD0|65e2",
 			"Asia/Vladivostok|VLAT VLAST VLAT|-a0 -b0 -b0|01020|1BWg0 1qM0 WM0 8Hz0|60e4",
@@ -773,6 +774,7 @@
 			"Europe/London|GMT BST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|10e6",
 			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1BWo0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|67e4",
 			"Europe/Kaliningrad|EET EEST FET|-20 -30 -30|01020|1BWo0 1qM0 WM0 8Hz0|44e4",
+			"Europe/Kirov|+03 +04|-30 -40|01010|1BWn0 1qM0 WM0 8Hz0|48e4",
 			"Europe/Minsk|EET EEST FET MSK|-20 -30 -30 -30|01023|1BWo0 1qM0 WM0 8Hy0|19e5",
 			"Europe/Moscow|MSK MSD MSK|-30 -40 -40|01020|1BWn0 1qM0 WM0 8Hz0|16e6",
 			"Europe/Samara|SAMT SAMST SAMT|-40 -40 -30|0120|1BWm0 1qN0 WM0|12e5",
@@ -1040,7 +1042,9 @@
 			"America/Santo_Domingo|America/Virgin",
 			"America/Sao_Paulo|Brazil/East",
 			"America/St_Johns|Canada/Newfoundland",
+			"Asia/Almaty|Asia/Qyzylorda",
 			"Asia/Aqtobe|Asia/Aqtau",
+			"Asia/Aqtobe|Asia/Oral",
 			"Asia/Ashgabat|Asia/Ashkhabad",
 			"Asia/Baghdad|Asia/Aden",
 			"Asia/Baghdad|Asia/Bahrain",
