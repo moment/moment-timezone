@@ -21,6 +21,12 @@ exports['needs-offset'] = {
 		t.ok(needsOffset(moment.utc("Mar 4 2010", "MMM D YYYY")), 'Parsing a string and format needs an offset.');
 		t.done();
 	},
+	
+	'String + Timestamp Format': function(t) {
+		t.ok(!needsOffset(moment.utc("1267660800000", "x")), 'Parsing a string with timestamp format "x" does not need an offset.');
+		t.ok(!needsOffset(moment.utc("1267660800", "X")),    'Parsing a string with timestamp format "X" does not need an offset.');
+		t.done();
+	},
 
 	'String + Format + Offset' : function (t) {
 		t.ok(!needsOffset(moment("Mar 4 2010 +1000", "MMM D YYYY Z")),       'Parsing a string and format and offset does not need an offset.');
@@ -34,6 +40,14 @@ exports['needs-offset'] = {
 		var formats = ["YYYY-MM-DD", "MMM D YYYY"];
 		t.ok(needsOffset(moment("Mar 4 2010", formats)),     'Parsing a string and formats needs an offset.');
 		t.ok(needsOffset(moment.utc("Mar 4 2010", formats)), 'Parsing a string and formats needs an offset.');
+		t.done();
+	},
+	
+	'String + Timestamp Formats': function(t) {
+		var formats = ["x", "X", "MMM D YYYY"];
+		t.ok(!needsOffset(moment.utc("1267660800000", formats)), 'Parsing a string with timestamp format "x" does not need an offset.');
+		t.ok(!needsOffset(moment.utc("1267660800", formats)),    'Parsing a string with timestamp format "X" does not need an offset.');
+		t.ok(needsOffset(moment("Mar 4 2010", formats)),         'Parsing a string and formats needs an offset.');
 		t.done();
 	},
 

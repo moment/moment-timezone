@@ -250,6 +250,28 @@ exports.parse = {
 
 		t.done();
 	},
+	
+	"check needsOffset in moment.tz with timestamp formats" : function (t) {
+		var tests = [
+				["1338534000000",  "x", "America/New_York",    1338534000000, "2012-06-01T03:00:00-04:00"],
+				["1338534000.000", "X", "America/New_York",    1338534000000, "2012-06-01T03:00:00-04:00"],
+				["1338534000000",  "x", "America/Los_Angeles", 1338534000000, "2012-06-01T00:00:00-07:00"],
+				["1338534000.000", "X", "America/Los_Angeles", 1338534000000, "2012-06-01T00:00:00-07:00"]
+			], i, parsed, input, format, timezone, expectedValue, expectedFormat, actualValue, actualFormat;
+
+		for (i = 0; i < tests.length; i++) {
+			input    = tests[i][0];
+			format = tests[i][1];
+			timezone = tests[i][2];
+			expectedValue = tests[i][3];
+			expectedFormat = tests[i][4];
+			parsed = moment.tz(input, format, true, timezone);
+			t.equal(parsed.valueOf(), expectedValue, "Parsing " + input + " with format " + format + " should have value " + expectedValue);
+			t.equal(parsed.format(), expectedFormat, "Parsing " + input + " with format " + format + " should equal " + expectedFormat);
+		}
+
+		t.done();
+	},
 
 	"parse in default zone" : function (t) {
 		moment.tz.setDefault("America/New_York");
