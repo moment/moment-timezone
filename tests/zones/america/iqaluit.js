@@ -4,7 +4,7 @@ var helpers = require("../../helpers/helpers");
 
 exports["America/Iqaluit"] = {
 	"1942" : helpers.makeTestYear("America/Iqaluit", [
-		["1942-07-31T23:59:59+00:00", "23:59:59", "zzz", 0],
+		["1942-07-31T23:59:59+00:00", "23:59:59", "-00", 0],
 		["1942-08-01T00:00:00+00:00", "20:00:00", "EWT", 240]
 	]),
 
