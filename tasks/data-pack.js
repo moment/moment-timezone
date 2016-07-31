@@ -3,7 +3,7 @@
 var tz = require('../moment-timezone-utils').tz;
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-pack', '6. Pack data from data-dedupe.', function (version) {
+	grunt.registerTask('data-pack', '8. Pack data from data-dedupe.', function (version) {
 		version = version || 'latest';
 
 		var unpacked = grunt.file.readJSON('data/unpacked/' + version + '.json'),
