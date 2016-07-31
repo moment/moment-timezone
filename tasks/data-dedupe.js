@@ -35,10 +35,10 @@ function findVersion (source) {
 }
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-dedupe', '5. Remove duplicate entries from data-collect.', function (version) {
+	grunt.registerTask('data-dedupe', '7. Remove duplicate entries from data-country.', function (version) {
 		version = version || 'latest';
 
-		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
+		var zones = grunt.file.readJSON('temp/country/' + version + '.json'),
 			output = {
 				version : version,
 				zones : zones.map(dedupe),
