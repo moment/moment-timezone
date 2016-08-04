@@ -3,11 +3,11 @@
 var tz = require('../moment-timezone-utils').tz;
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-pack', '8. Pack data from data-dedupe.', function (version) {
+	grunt.registerTask('data-pack', '8. Pack data from data-country.', function (version) {
 		version = version || 'latest';
 
 		var unpacked = grunt.file.readJSON('data/unpacked/' + version + '.json'),
-			output = tz.createLinks(unpacked);
+			output = tz.createLinksAndCountries(unpacked);
 
 		output.zones = output.zones.map(function (unpacked) {
 			return tz.pack(unpacked);

@@ -126,7 +126,11 @@
 		}
 		var exponent = String(number | 0).length - 2;
 		var precision = Math.round(number / Math.pow(10, exponent));
-		return '|' + precision + 'e' + exponent;
+		return precision + 'e' + exponent;
+	}
+
+	function packCountry (countries) {
+		return countries.join(' ');
 	}
 
 	function validatePackData (source) {
@@ -134,6 +138,7 @@
 		if (!source.abbrs)   { throw new Error("Missing abbrs"); }
 		if (!source.untils)  { throw new Error("Missing untils"); }
 		if (!source.offsets) { throw new Error("Missing offsets"); }
+		if (!source.countries)    { throw new Error("Missing countries"); }
 		if (
 			source.offsets.length !== source.untils.length ||
 			source.offsets.length !== source.abbrs.length
@@ -147,7 +152,9 @@
 		return [
 			source.name,
 			packAbbrsAndOffsets(source),
-			packUntils(source.untils) + packPopulation(source.population)
+			packUntils(source.untils),
+			packPopulation(source.population),
+			packCountry(source.countries)
 		].join('|');
 	}
 
@@ -206,20 +213,119 @@
 		}
 	}
 
-	function createLinks (source) {
+	function packCountries (input, output) {
+		var country;
+		for (var x in input) {
+			country = input[x];
+			output.push(country.abbr + '|' + country.name + '|' + country.zones.join(' '));
+		}
+	}
+
+
+	function createLinksAndCountries (source) {
 		var zones = [],
-			links = [];
+			links = [],
+			countries = [];
 
 		if (source.links) {
 			links = source.links.slice();
 		}
 
 		findAndCreateLinks(source.zones, zones, links);
+		packCountries(source.countries, countries);
 
 		return {
 			version : source.version,
 			zones   : zones,
-			links   : links.sort()
+			links   : links.sort(),
+			countries : countries.sort()
+		};
+	}
+
+	/************************************
+	 Countries List
+	 ************************************/
+
+	function addCountriestoZones (source, meta) {
+		var zones = [];
+
+		for (var zone in source.zones) {
+			var output,
+				data = source.zones[zone],
+				name = data.name,
+				country = [],
+				location_array = name.split("/"),
+				location = location_array[location_array.length - 1],
+				location_space = location.replace("_"," ");
+
+			if (typeof meta.zones[name] != "undefined") {
+				for (var meta_country in meta.zones[name].countries) {
+					country.push(meta.zones[name].countries[meta_country]);
+				}
+			}
+			for (var x in meta.zones) {
+				var meta_zones = meta.zones[x];
+				if (meta_zones.name.search(location) != -1) {
+					for (var meta_zones_countries in meta_zones.countries) {
+						if (country.indexOf(meta_zones.countries[meta_zones_countries]) == -1) {
+							country.push(meta_zones.countries[meta_zones_countries]);
+						}
+					}
+				}
+			}
+			for (var x in meta.countries) {
+				var meta_countries = meta.countries[x];
+				if ((meta_countries.name.search(location) != -1) || (meta_countries.name.search(location_space) != -1)) {
+					if (country.indexOf(meta_countries.abbr) == -1) {
+						country.push(meta_countries.abbr);
+					}
+				}
+			}
+
+			output = {
+				name : name,
+				abbrs: data.abbrs,
+				untils: data.untils,
+				offsets: data.offsets,
+				population: data.population,
+				countries: country
+			};
+			zones.push(output);
+		}
+
+		return {
+			version : source.version,
+			zones   : zones,
+			links   : source.links
+		};
+	}
+
+	function createCountriesList (source, meta) {
+		var countries = {};
+
+		for (var zone in source.zones) {
+			var data = source.zones[zone],
+				output;
+
+			for (var x in data.countries) {
+				var country_abbr = data.countries[x];
+				if (typeof countries[country_abbr] == "undefined") {
+					output = {
+						name : meta.countries[country_abbr].name,
+						abbr: country_abbr,
+						zones: []
+					};
+					countries[country_abbr] = output;
+				}
+				countries[country_abbr].zones.push(data.name);
+			}
+		}
+		
+		return {
+			version : source.version,
+			zones   : source.zones,
+			links   : source.links,
+			countries: countries
 		};
 	}
 
@@ -308,7 +414,9 @@
 
 	moment.tz.pack           = pack;
 	moment.tz.packBase60     = packBase60;
-	moment.tz.createLinks    = createLinks;
+	moment.tz.createLinksAndCountries    = createLinksAndCountries;
+	moment.tz.addCountriestoZones = addCountriestoZones;
+	moment.tz.createCountriesList = createCountriesList;
 	moment.tz.filterYears    = filterYears;
 	moment.tz.filterLinkPack = filterLinkPack;
 

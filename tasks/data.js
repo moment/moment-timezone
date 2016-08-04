@@ -12,8 +12,8 @@ module.exports = function (grunt) {
 			'data-zdump:'    + version,
 			'data-collect:'  + version,
 			'data-meta:'     + version,
-			'data-country:'  + version,
 			'data-dedupe:'   + version,
+			'data-country:'  + version,
 			'data-pack:'     + version
 		]);
 

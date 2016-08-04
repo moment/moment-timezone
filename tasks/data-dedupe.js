@@ -35,22 +35,23 @@ function findVersion (source) {
 }
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-dedupe', '7. Remove duplicate entries from data-country.', function (version) {
+	grunt.registerTask('data-dedupe', '6. Remove duplicate entries from data-country.', function (version) {
 		version = version || 'latest';
 
-		var zones = grunt.file.readJSON('temp/country/' + version + '.json'),
+		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
 			output = {
 				version : version,
 				zones : zones.map(dedupe),
-				links : []
+				links : [],
+				countries: []
 			};
 
 		if (version === 'latest') {
 			output.version = findVersion(grunt.file.read('temp/download/latest/Makefile'));
 		}
 
-		grunt.file.mkdir('data/unpacked');
-		grunt.file.write('data/unpacked/' + version + '.json', JSON.stringify(output, null, 2));
+		grunt.file.mkdir('temp/unpacked');
+		grunt.file.write('temp/unpacked/' + version + '.json', JSON.stringify(output, null, 2));
 
 		grunt.log.ok('Deduped data for ' + version);
 	});
