@@ -28,6 +28,7 @@
 		zones = {},
 		links = {},
 		names = {},
+		countries = {},
 		guesses = {},
 		cachedGuess,
 
@@ -113,7 +114,8 @@
 		var data = string.split('|'),
 			offsets = data[2].split(' '),
 			indices = data[3].split(''),
-			untils  = data[4].split(' ');
+			untils  = data[4].split(' '),
+			countries  = data[6].split(' ');
 
 		arrayToInt(offsets);
 		arrayToInt(indices);
@@ -126,7 +128,8 @@
 			abbrs      : mapIndices(data[1].split(' '), indices),
 			offsets    : mapIndices(offsets, indices),
 			untils     : untils,
-			population : data[5] | 0
+			population : data[5] | 0,
+			countries  : countries
 		};
 	}
 
@@ -147,6 +150,7 @@
 			this.untils     = unpacked.untils;
 			this.offsets    = unpacked.offsets;
 			this.population = unpacked.population;
+			this.countries  = unpacked.countries;
 		},
 
 		_index : function (timestamp) {
@@ -383,7 +387,7 @@
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
-			if (split[5]) {
+			if (split[6]) {
 				addToGuesses(normalized, split[2].split(' '));
 			}
 		}
@@ -449,9 +453,24 @@
 		}
 	}
 
+	function addCountry (data) {
+		var i, name, split;
+
+		if (typeof data === "string") {
+			data = [data];
+		}
+
+		for (i = 0; i < data.length; i++) {
+			split = data[i].split('|');
+			name = split[0];
+			countries[name] = data[i];
+		}
+	}
+
 	function loadData (data) {
 		addZone(data.zones);
 		addLink(data.links);
+		addCountry(data.countries);
 		tz.dataVersion = data.version;
 	}
 
@@ -481,15 +500,18 @@
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
 			zone = getZone(name),
-			out  = moment.utc.apply(null, args);
+			out  = moment.utc.apply(null, args),
+			regex = new RegExp("^[A-Za-z]{2}$");
 
-		if (zone && !moment.isMoment(input) && needsOffset(out)) {
-			out.add(zone.parse(out), 'minutes');
+		if (regex.test(name) === true) {
+			// for country abbr
+		} else {
+			if (zone && !moment.isMoment(input) && needsOffset(out)) {
+				out.add(zone.parse(out), 'minutes');
+			}
+			out.tz(name);
+			return out;
 		}
-
-		out.tz(name);
-
-		return out;
 	}
 
 	tz.version      = VERSION;
