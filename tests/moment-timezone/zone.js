@@ -1,6 +1,6 @@
 "use strict";
 
-var tz = require("../../index").tz;
+var tz = require("../../").tz;
 
 // gE = 1000; 1E = 100; 2k = 140
 var PACKED = "SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k";

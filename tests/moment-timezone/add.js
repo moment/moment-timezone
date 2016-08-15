@@ -1,6 +1,6 @@
 "use strict";
 
-var moment = require("../../index"),
+var moment = require("../../"),
 	tz = moment.tz;
 
 exports.add = {

@@ -1,6 +1,6 @@
 "use strict";
 
-var moment = require("../../index");
+var moment = require("../../");
 
 exports.default = {
 	defaultZone : function (t) {

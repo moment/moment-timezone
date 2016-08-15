@@ -1,6 +1,6 @@
 "use strict";
 
-var tz = require("../../index").tz;
+var tz = require("../../").tz;
 
 function clearObject (obj) {
 	var key;

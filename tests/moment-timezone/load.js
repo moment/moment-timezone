@@ -1,6 +1,6 @@
 "use strict";
 
-var tz = require("../../index").tz;
+var tz = require("../../").tz;
 
 var DATA = {
 	version : 'test0',
