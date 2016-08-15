@@ -1,6 +1,6 @@
 "use strict";
 
-var moment = require("../../");
+var moment = require("../../index");
 var helpers = require("../helpers/helpers");
 
 exports.utc = {

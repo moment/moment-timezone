@@ -1,6 +1,6 @@
 "use strict";
 
-var tz = require("../../").tz;
+var tz = require("../../index").tz;
 
 function compare(test, source, expected) {
 	var actual = tz.unpack(source);

@@ -1,6 +1,6 @@
 "use strict";
 
-var tz = require("../../").tz;
+var tz = require("../../index").tz;
 
 var EPSILON = 1e-30;
 

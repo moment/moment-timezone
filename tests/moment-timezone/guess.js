@@ -1,6 +1,6 @@
 "use strict";
 
-var tz = require("../../").tz;
+var tz = require("../../index").tz;
 
 var getTimezoneOffset = Date.prototype.getTimezoneOffset;
 var toTimeString = Date.prototype.toTimeString;

@@ -377,7 +377,8 @@
 			abbrs      : slice.apply(source.abbrs, indices),
 			untils     : untils,
 			offsets    : slice.apply(source.offsets, indices),
-			population : source.population
+			population : source.population,
+			countries  : source.countries
 		};
 	}
 
@@ -395,10 +396,11 @@
 			outputZones[i] = filterYears(inputZones[i], start, end);
 		}
 
-		output = createLinks({
+		output = createLinksAndCountries({
 			zones : outputZones,
 			links : input.links.slice(),
-			version : input.version
+			version : input.version,
+			countries : input.countries
 		});
 
 		for (i = 0; i < output.zones.length; i++) {

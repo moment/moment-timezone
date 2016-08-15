@@ -115,7 +115,11 @@
 			offsets = data[2].split(' '),
 			indices = data[3].split(''),
 			untils  = data[4].split(' '),
+			countries = [];
+
+		if (typeof data[6] != "undefined") {
 			countries  = data[6].split(' ');
+		}
 
 		arrayToInt(offsets);
 		arrayToInt(indices);
@@ -519,6 +523,7 @@
 	tz._zones       = zones;
 	tz._links       = links;
 	tz._names       = names;
+	tz._countries   = countries;
 	tz.add          = addZone;
 	tz.link         = addLink;
 	tz.load         = loadData;
