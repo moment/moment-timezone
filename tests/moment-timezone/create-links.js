@@ -73,11 +73,12 @@ var ZONES_ABCDE = {
 
 exports['create-links'] = {
 	abc : function (test) {
-		var actual = tz.createLinks(ZONES_ABC),
+		var actual = tz.createLinksAndCountries(ZONES_ABC),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/A|Zone/B'],
-				version : '2014abc'
+				version : '2014abc',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should be able to create a link between two identical zones.");
@@ -85,11 +86,12 @@ exports['create-links'] = {
 	},
 
 	acd : function (test) {
-		var actual = tz.createLinks(ZONES_ACD),
+		var actual = tz.createLinksAndCountries(ZONES_ACD),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/C|Zone/D'],
-				version : '2014acd'
+				version : '2014acd',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should be able to create a link between two identical zones.");
@@ -97,11 +99,12 @@ exports['create-links'] = {
 	},
 
 	adcb : function (test) {
-		var actual = tz.createLinks(ZONES_ADCB),
+		var actual = tz.createLinksAndCountries(ZONES_ADCB),
 			expected = {
 				zones : [ZONE_A, ZONE_D],
 				links : ['Zone/A|Zone/B', 'Zone/D|Zone/C'],
-				version : '2014adcb'
+				version : '2014adcb',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should be able to create a link between two identical zones.");
@@ -109,11 +112,12 @@ exports['create-links'] = {
 	},
 
 	abcd : function (test) {
-		var actual = tz.createLinks(ZONES_ABCD),
+		var actual = tz.createLinksAndCountries(ZONES_ABCD),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/A|Zone/B', 'Zone/C|Zone/D'],
-				version : '2014abcd'
+				version : '2014abcd',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should be able to create a link between two identical zones.");
@@ -121,11 +125,12 @@ exports['create-links'] = {
 	},
 
 	abcde : function (test) {
-		var actual = tz.createLinks(ZONES_ABCDE),
+		var actual = tz.createLinksAndCountries(ZONES_ABCDE),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/A|Zone/B', 'Zone/C|Zone/D', 'Zone/C|Zone/E'],
-				version : '2014abcde'
+				version : '2014abcde',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should be able to create a link between two identical zones.");
@@ -151,7 +156,7 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinks(AB),
+		var actual = tz.createLinksAndCountries(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
@@ -181,11 +186,12 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinks(AB),
+		var actual = tz.createLinksAndCountries(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
-				version : '2014ab'
+				version : '2014ab',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should not create a link if the untils are different.");
@@ -211,11 +217,12 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinks(AB),
+		var actual = tz.createLinksAndCountries(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
-				version : '2014ab'
+				version : '2014ab',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should not create a link if the abbrs are different.");
@@ -241,11 +248,12 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinks(AB),
+		var actual = tz.createLinksAndCountries(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
-				version : '2014ab'
+				version : '2014ab',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should not create a link if the lengths of any of the arrays are different.");
@@ -253,7 +261,7 @@ exports['create-links'] = {
 	},
 
 	'retain existing links' : function (test) {
-		var actual = tz.createLinks({
+		var actual = tz.createLinksAndCountries({
 				zones : [ZONE_A, ZONE_B, ZONE_C],
 				links : ["Test/A|Test/B", "Test/A|Test/C"],
 				version : '2014abcretain'
@@ -261,7 +269,8 @@ exports['create-links'] = {
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ["Test/A|Test/B", "Test/A|Test/C", "Zone/A|Zone/B"],
-				version : '2014abcretain'
+				version : '2014abcretain',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should retain existing links passed in.");
@@ -296,11 +305,12 @@ exports['create-links'] = {
 			expected = {
 				zones : [large],
 				links : ["Zone/Large|Zone/Small"],
-				version : '2014populations'
+				version : '2014populations',
+				countries: []
 			};
 
-		test.deepEqual(tz.createLinks(largeFirst), expected, "Make smaller population a link.");
-		test.deepEqual(tz.createLinks(smallFirst), expected, "Make smaller population a link.");
+		test.deepEqual(tz.createLinksAndCountries(largeFirst), expected, "Make smaller population a link.");
+		test.deepEqual(tz.createLinksAndCountries(smallFirst), expected, "Make smaller population a link.");
 
 		test.done();
 	}
