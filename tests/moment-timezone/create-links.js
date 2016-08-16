@@ -160,7 +160,8 @@ exports['create-links'] = {
 			expected = {
 				zones : [A, B],
 				links : [],
-				version : '2014ab'
+				version : '2014ab',
+				countries: []
 			};
 
 		test.deepEqual(actual, expected, "Should not create a link if the offsets are different.");

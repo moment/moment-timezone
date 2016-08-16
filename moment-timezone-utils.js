@@ -122,7 +122,7 @@
 			return '';
 		}
 		if (number < 1000) {
-			return '|' + number;
+			return number;
 		}
 		var exponent = String(number | 0).length - 2;
 		var precision = Math.round(number / Math.pow(10, exponent));
@@ -130,6 +130,9 @@
 	}
 
 	function packCountry (countries) {
+		if (typeof countries == "undefined") {
+			return '';
+		}
 		return countries.join(' ');
 	}
 
@@ -138,7 +141,6 @@
 		if (!source.abbrs)   { throw new Error("Missing abbrs"); }
 		if (!source.untils)  { throw new Error("Missing untils"); }
 		if (!source.offsets) { throw new Error("Missing offsets"); }
-		if (!source.countries)    { throw new Error("Missing countries"); }
 		if (
 			source.offsets.length !== source.untils.length ||
 			source.offsets.length !== source.abbrs.length

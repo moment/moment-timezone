@@ -460,6 +460,10 @@
 	function addCountry (data) {
 		var i, name, split;
 
+		if (typeof data == "undefined") {
+			return;
+		}
+
 		if (typeof data === "string") {
 			data = [data];
 		}
