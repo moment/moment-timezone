@@ -137,6 +137,33 @@
 		};
 	}
 
+	function unpackCountry (string) {
+		var data = string.split('|'),
+			offsets = data[2].split(' '),
+			indices = data[3].split(''),
+			untils  = data[4].split(' '),
+			countries = [];
+
+		if (typeof data[6] != "undefined") {
+			countries  = data[6].split(' ');
+		}
+
+		arrayToInt(offsets);
+		arrayToInt(indices);
+		arrayToInt(untils);
+
+		intToUntil(untils, indices.length);
+
+		return {
+			name       : data[0],
+			abbrs      : mapIndices(data[1].split(' '), indices),
+			offsets    : mapIndices(offsets, indices),
+			untils     : untils,
+			population : data[5] | 0,
+			countries  : countries
+		};
+	}
+
 	/************************************
 		Zone object
 	************************************/
@@ -203,6 +230,27 @@
 			return this.offsets[this._index(mom)];
 		}
 	};
+
+
+	/************************************
+	 Country object
+	 ************************************/
+
+
+	function Country (packedString) {
+		if (packedString) {
+			this._set(unpackCountry(packedString));
+		}
+	}
+
+	Country.prototype = {
+		_set : function (unpacked) {
+			this.name       = unpacked.name;
+			this.abbr       = unpacked.abbr;
+			this.zones     	= unpacked.zones;
+		}
+	};
+
 
 	/************************************
 		Current Timezone
@@ -397,6 +445,26 @@
 		}
 	}
 
+	function getZoneOrCountry (name) {
+		var countries = [],
+			output = [];
+
+		name = normalizeName(name);
+
+		if (name.match(/^[A-Za-z]{2}$/) && (typeof names[name] == "undefined")) {
+			countries = getCountry(name);
+			for (var x in countries) {
+				countries[x] = normalizeName(countries[x]);
+				output.push(getZone(countries[x]));
+			}
+			return output;
+
+		} else {
+			output.push(getZone(name));
+			return output;
+		}
+	}
+
 	function getZone (name, caller) {
 		name = normalizeName(name);
 
@@ -419,6 +487,22 @@
 			zone._set(link);
 			zone.name = names[name];
 			return zone;
+		}
+
+		return null;
+	}
+
+	function getCountry (name) {
+		var country = countries[name];
+
+		if (country instanceof Country) {
+			return country;
+		}
+
+		if (typeof country === 'string') {
+			country = new Country(country);
+			country[name] = country;
+			return country;
 		}
 
 		return null;
@@ -505,6 +589,32 @@
 	************************************/
 
 	function tz (input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1), //Taking all elements of argument except the last one and putting it into array args
+			name = arguments[arguments.length - 1], //Assigning last element of arguments to name
+			zone = getZoneOrCountry(name),
+			out = []; // zone is set to zone string or array of zones if country.
+
+		for (var x in zone) {
+
+			out[x]  = moment.utc.apply(null, args); //out is moment.utc with args
+
+			if (zone[x] && !moment.isMoment(input) && needsOffset(out[x])) { 		//check if zone exists, input is not a moment yet and if needs offset //if time zone needs offset, add it
+				out[x].add(zone[x].parse(out[x]), 'minutes');	//add offset minutes to zone
+			}
+
+			out[x].tz(name);
+		}
+
+		if (out.length == 1) {
+			for (var y in out) {
+				return out[y];
+			}
+		} else {
+			return out;
+		}
+	}
+
+	/*function tz (input) {
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
 			zone = getZone(name),
@@ -517,25 +627,8 @@
 		out.tz(name);
 
 		return out;
-	}
-
-	/*function tz (input) {
-		var args = Array.prototype.slice.call(arguments, 0, -1),
-			name = arguments[arguments.length - 1],
-			zone = getZone(name),
-			out  = moment.utc.apply(null, args),
-			regex = new RegExp("^[A-Za-z]{2}$");
-
-		if (regex.test(name) === true) {
-			// for country abbr
-		} else {
-			if (zone && !moment.isMoment(input) && needsOffset(out)) {
-				out.add(zone.parse(out), 'minutes');
-			}
-			out.tz(name);
-			return out;
-		}
 	}*/
+
 
 	tz.version      = VERSION;
 	tz.dataVersion  = '';
@@ -547,11 +640,13 @@
 	tz.link         = addLink;
 	tz.load         = loadData;
 	tz.zone         = getZone;
+	tz.country		= getCountry;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
 	tz.guess        = guess;
 	tz.names        = getNames;
 	tz.Zone         = Zone;
-	tz.unpack       = unpack;
+	tz.unpack   	= unpack;
+	tz.unpackCountry= unpackCountry;
 	tz.unpackBase60 = unpackBase60;
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
