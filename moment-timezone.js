@@ -138,29 +138,12 @@
 	}
 
 	function unpackCountry (string) {
-		var data = string.split('|'),
-			offsets = data[2].split(' '),
-			indices = data[3].split(''),
-			untils  = data[4].split(' '),
-			countries = [];
-
-		if (typeof data[6] != "undefined") {
-			countries  = data[6].split(' ');
-		}
-
-		arrayToInt(offsets);
-		arrayToInt(indices);
-		arrayToInt(untils);
-
-		intToUntil(untils, indices.length);
+		var data = string.split('|');
 
 		return {
-			name       : data[0],
-			abbrs      : mapIndices(data[1].split(' '), indices),
-			offsets    : mapIndices(offsets, indices),
-			untils     : untils,
-			population : data[5] | 0,
-			countries  : countries
+			name     : data[1],
+			abbr     : data[0],
+			zones    : data[2].split(' ')
 		};
 	}
 
@@ -427,7 +410,7 @@
 	}
 
 	function addZone (packed) {
-		var i, name, split, normalized;
+		var i, name, split, normalized, zone_countries, country;
 
 		if (typeof packed === "string") {
 			packed = [packed];
@@ -439,8 +422,20 @@
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
-			if (split[6]) {
+			if (split[5]) {
 				addToGuesses(normalized, split[2].split(' '));
+			}
+			if (split[6]) {
+				zone_countries = split[6].split(' ');
+				for (var x in zone_countries) {
+					if (typeof countries[zone_countries[x]] != "undefined") {
+						country = unpackCountry(countries[zone_countries[x]]);
+						if (country.zones.indexOf(name) == "-1") {
+							country.zones.push(name);
+							countries[zone_countries[x]] = country.abbr + '|' + country.name + '|' + country.zones.join(' ');
+						}
+					}
+				}
 			}
 		}
 	}
@@ -560,9 +555,9 @@
 	}
 
 	function loadData (data) {
+		addCountry(data.countries);
 		addZone(data.zones);
 		addLink(data.links);
-		addCountry(data.countries);
 		tz.dataVersion = data.version;
 	}
 
@@ -592,17 +587,19 @@
 		var args = Array.prototype.slice.call(arguments, 0, -1), //Taking all elements of argument except the last one and putting it into array args
 			name = arguments[arguments.length - 1], //Assigning last element of arguments to name
 			zone = getZoneOrCountry(name),
+			temp,
 			out = []; // zone is set to zone string or array of zones if country.
 
 		for (var x in zone) {
+			temp = moment.utc.apply(null, args); //out is moment.utc with args
 
-			out[x]  = moment.utc.apply(null, args); //out is moment.utc with args
-
-			if (zone[x] && !moment.isMoment(input) && needsOffset(out[x])) { 		//check if zone exists, input is not a moment yet and if needs offset //if time zone needs offset, add it
-				out[x].add(zone[x].parse(out[x]), 'minutes');	//add offset minutes to zone
+			if (zone[x] && !moment.isMoment(input) && needsOffset(temp)) { 		//check if zone exists, input is not a moment yet and if needs offset //if time zone needs offset, add it
+				temp.add(zone[x].parse(temp), 'minutes');	//add offset minutes to zone
 			}
 
-			out[x].tz(name);
+			temp.tz(name);
+
+			out.push(temp);
 		}
 
 		if (out.length == 1) {

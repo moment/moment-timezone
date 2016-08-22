@@ -48,6 +48,27 @@ exports.pack = {
 		);
 	},
 
+	'single with country' : function (test) {
+		compare(test,
+			{
+				name : "Some/Zone_Name",
+				abbrs   : ["ABC", "DEF", "ABC", "DEF", "GHI", "DEF"],
+				offsets : [60, 239, 60, 239, 60, 239],
+				untils  : [
+					-4259 * 60000,
+					-4139 * 60000,
+					-3900 * 60000,
+					-3780 * 60000,
+					-3541 * 60000,
+					Infinity
+				],
+				population : 1234567,
+				countries  : ["VU", "KI"]
+			},
+			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|12e5|VU KI"
+		);
+	},
+
 	'single with population under 1000' : function (test) {
 		compare(test,
 			{

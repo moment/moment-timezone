@@ -214,12 +214,17 @@
 			}
 		}
 	}
+	
+	function packCountryString (country) {
+		return country.abbr + '|' + country.name + '|' + country.zones.join(' ');
+	}
+	
 
 	function packCountries (input, output) {
 		var country;
 		for (var x in input) {
 			country = input[x];
-			output.push(country.abbr + '|' + country.name + '|' + country.zones.join(' '));
+			output.push(packCountryString(country));
 		}
 	}
 
@@ -417,6 +422,7 @@
 	************************************/
 
 	moment.tz.pack           = pack;
+	moment.tz.packCountryString  = packCountryString;
 	moment.tz.packBase60     = packBase60;
 	moment.tz.createLinksAndCountries    = createLinksAndCountries;
 	moment.tz.addCountriestoZones = addCountriestoZones;

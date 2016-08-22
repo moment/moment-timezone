@@ -37,7 +37,8 @@ var DATA = {
 				Date.UTC(2002, 0, 1),
 				Date.UTC(2005, 0, 1),
 				null
-			]
+			],
+			countries : []
 		},
 	],
 	links : ['Some/Zone_C|Some/Zone_D']

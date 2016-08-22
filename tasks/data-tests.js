@@ -92,7 +92,7 @@ module.exports = function (grunt) {
 		tz.load(grunt.file.readJSON('data/packed/latest.json'));
 		var zones = grunt.file.readJSON('temp/collect/latest.json'),
 			grouped = zones.map(dataToOffsetAndAbbr);
-		
+
 		zones.forEach(function (zone) {
 			var data = intro(zone.name) + population(zone, grouped) + tests(zone) + '\n};',
 				dest = path.join('tests/zones', zone.name.toLowerCase() + '.js');
@@ -101,7 +101,6 @@ module.exports = function (grunt) {
 			grunt.file.write(dest, data);
 			grunt.verbose.ok("Created " + zone.name + " tests.");
 		});
-
 
 		grunt.log.ok('Created tests');
 	});
