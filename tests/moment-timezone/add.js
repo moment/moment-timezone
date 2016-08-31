@@ -48,7 +48,7 @@ exports.add = {
 		test.deepEqual(zone.countries, ["SO", "TZ", "UG"], "Should unpack countries onto .contries property.");
 
 		for (var x in zone.countries) {
-			country = tz.unpackCountry(tz._countries[zone.countries[x]]);
+			country = tz.unpackCountry(tz._countries[zone.countries[x].toLowerCase()]);
 			if (country.zones.indexOf(zone.name) == -1) {
 				test.ok(false, "FAILED to add country " + zone.countries[x] + " to " + zone.name);
 			} else {
@@ -82,7 +82,7 @@ exports.add = {
 		test.deepEqual(zone.population, '75e3', "Should unpack population onto .population property.");
 
 		for (var x in zone.countries) {
-			country = tz.unpackCountry(tz._countries[zone.countries[x]]);
+			country = tz.unpackCountry(tz._countries[zone.countries[x].toLowerCase()]);
 			if (country.zones.indexOf(zone.name) == -1) {
 				test.ok(false, "FAILED to add country " + zone.countries[x] + " to " + zone.name);
 			} else {

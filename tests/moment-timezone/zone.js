@@ -3,7 +3,7 @@
 var tz = require("../../").tz;
 
 // gE = 1000; 1E = 100; 2k = 140
-var PACKED = "SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k";
+var PACKED = "SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k|0|UZ VA VC";
 
 var moveAmbiguousForward, moveInvalidForward;
 
@@ -34,7 +34,8 @@ exports.zone = {
 			1480 * 60000,
 			Infinity
 		], "Should unpack untils onto .untils property.");
-
+		test.deepEqual(zone.population, "0", "Should unpack population into .population property.");
+		test.deepEqual(zone.countries, ["UZ", "VA", "VC"], "Should unpack countries onto .countries property.");
 		test.done();
 	},
 

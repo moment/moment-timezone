@@ -428,6 +428,7 @@
 			if (split[6]) {
 				zone_countries = split[6].split(' ');
 				for (var x in zone_countries) {
+					zone_countries[x] = normalizeName(zone_countries[x]);
 					if (typeof countries[zone_countries[x]] != "undefined") {
 						country = unpackCountry(countries[zone_countries[x]]);
 						if (country.zones.indexOf(name) == "-1") {
@@ -447,16 +448,16 @@
 		name = normalizeName(name);
 
 		if (name.match(/^[A-Za-z]{2}$/) && (typeof names[name] == "undefined")) {
-			countries = getCountry(name);
+			countries = getCountryZones(name);
 			for (var x in countries) {
 				countries[x] = normalizeName(countries[x]);
 				output.push(getZone(countries[x]));
 			}
-			return output;
+			return {"type": "Country", "data" : output};
 
 		} else {
 			output.push(getZone(name));
-			return output;
+			return {"type": "Zone", "data" : output};
 		}
 	}
 
@@ -487,16 +488,24 @@
 		return null;
 	}
 
-	function getCountry (name) {
-		var country = countries[name];
+	function getCountryZones (name) {
+		var country = getCountry(name);
+		if (typeof country != "undefined"){
+			return country.zones;
+		}
+		return null;
+	}
 
+	function getCountry (name) {
+		name = normalizeName(name);
+		var country = countries[name];
 		if (country instanceof Country) {
 			return country;
 		}
 
 		if (typeof country === 'string') {
 			country = new Country(country);
-			country[name] = country;
+			countries[name] = country;
 			return country;
 		}
 
@@ -549,7 +558,7 @@
 
 		for (i = 0; i < data.length; i++) {
 			split = data[i].split('|');
-			name = split[0];
+			name = normalizeName(split[0]);
 			countries[name] = data[i];
 		}
 	}
@@ -584,25 +593,32 @@
 	************************************/
 
 	function tz (input) {
-		var args = Array.prototype.slice.call(arguments, 0, -1), //Taking all elements of argument except the last one and putting it into array args
-			name = arguments[arguments.length - 1], //Assigning last element of arguments to name
-			zone = getZoneOrCountry(name),
+		var args = Array.prototype.slice.call(arguments, 0, -1), 
+			name = arguments[arguments.length - 1],
+			zoneOrCountry = getZoneOrCountry(name),
+			type = zoneOrCountry.type,
+			zone = zoneOrCountry.data,
 			temp,
-			out = []; // zone is set to zone string or array of zones if country.
+			out = [];
+
+
 
 		for (var x in zone) {
-			temp = moment.utc.apply(null, args); //out is moment.utc with args
+			temp = moment.utc.apply(null, args);
 
-			if (zone[x] && !moment.isMoment(input) && needsOffset(temp)) { 		//check if zone exists, input is not a moment yet and if needs offset //if time zone needs offset, add it
-				temp.add(zone[x].parse(temp), 'minutes');	//add offset minutes to zone
+			if (zone[x] && !moment.isMoment(input) && needsOffset(temp)) {
+				temp.add(zone[x].parse(temp), 'minutes');
 			}
 
-			temp.tz(name);
+			if (zone[x] === null) {
+				temp.tz(name);
+			} else {
+				temp.tz(zone[x].name);
+			}
 
 			out.push(temp);
 		}
-
-		if (out.length == 1) {
+		if (out.length == 1 && type == "Zone") {
 			for (var y in out) {
 				return out[y];
 			}
@@ -734,6 +750,5 @@
 	}
 
 	// INJECT DATA
-
 	return moment;
 }));
