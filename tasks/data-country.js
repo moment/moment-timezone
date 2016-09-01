@@ -11,6 +11,7 @@ module.exports = function (grunt) {
             output1,
             output2;
 
+        zonesdata = tz.createLinks(zonesdata);
         output1 = tz.addCountriestoZones (zonesdata, meta);
         output2 = tz.createCountriesList (output1, meta);
 

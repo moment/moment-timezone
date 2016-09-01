@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 		version = version || 'latest';
 
 		var unpacked = grunt.file.readJSON('data/unpacked/' + version + '.json'),
-			output = tz.createLinksAndCountries(unpacked);
+			output = tz.packCountries(unpacked);
 
 		output.zones = output.zones.map(function (unpacked) {
 			return tz.pack(unpacked);

@@ -73,7 +73,7 @@ var ZONES_ABCDE = {
 
 exports['create-links'] = {
 	abc : function (test) {
-		var actual = tz.createLinksAndCountries(ZONES_ABC),
+		var actual = tz.createLinks(ZONES_ABC),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/A|Zone/B'],
@@ -86,7 +86,7 @@ exports['create-links'] = {
 	},
 
 	acd : function (test) {
-		var actual = tz.createLinksAndCountries(ZONES_ACD),
+		var actual = tz.createLinks(ZONES_ACD),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/C|Zone/D'],
@@ -99,7 +99,7 @@ exports['create-links'] = {
 	},
 
 	adcb : function (test) {
-		var actual = tz.createLinksAndCountries(ZONES_ADCB),
+		var actual = tz.createLinks(ZONES_ADCB),
 			expected = {
 				zones : [ZONE_A, ZONE_D],
 				links : ['Zone/A|Zone/B', 'Zone/D|Zone/C'],
@@ -112,7 +112,7 @@ exports['create-links'] = {
 	},
 
 	abcd : function (test) {
-		var actual = tz.createLinksAndCountries(ZONES_ABCD),
+		var actual = tz.createLinks(ZONES_ABCD),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/A|Zone/B', 'Zone/C|Zone/D'],
@@ -125,7 +125,7 @@ exports['create-links'] = {
 	},
 
 	abcde : function (test) {
-		var actual = tz.createLinksAndCountries(ZONES_ABCDE),
+		var actual = tz.createLinks(ZONES_ABCDE),
 			expected = {
 				zones : [ZONE_A, ZONE_C],
 				links : ['Zone/A|Zone/B', 'Zone/C|Zone/D', 'Zone/C|Zone/E'],
@@ -156,7 +156,7 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinksAndCountries(AB),
+		var actual = tz.createLinks(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
@@ -187,7 +187,7 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinksAndCountries(AB),
+		var actual = tz.createLinks(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
@@ -218,7 +218,7 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinksAndCountries(AB),
+		var actual = tz.createLinks(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
@@ -249,7 +249,7 @@ exports['create-links'] = {
 				version : '2014ab'
 			};
 
-		var actual = tz.createLinksAndCountries(AB),
+		var actual = tz.createLinks(AB),
 			expected = {
 				zones : [A, B],
 				links : [],
@@ -262,7 +262,7 @@ exports['create-links'] = {
 	},
 
 	'retain existing links' : function (test) {
-		var actual = tz.createLinksAndCountries({
+		var actual = tz.createLinks({
 				zones : [ZONE_A, ZONE_B, ZONE_C],
 				links : ["Test/A|Test/B", "Test/A|Test/C"],
 				version : '2014abcretain'
@@ -310,8 +310,8 @@ exports['create-links'] = {
 				countries: []
 			};
 
-		test.deepEqual(tz.createLinksAndCountries(largeFirst), expected, "Make smaller population a link.");
-		test.deepEqual(tz.createLinksAndCountries(smallFirst), expected, "Make smaller population a link.");
+		test.deepEqual(tz.createLinks(largeFirst), expected, "Make smaller population a link.");
+		test.deepEqual(tz.createLinks(smallFirst), expected, "Make smaller population a link.");
 
 		test.done();
 	}

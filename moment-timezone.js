@@ -430,11 +430,13 @@
 				for (var x in zone_countries) {
 					zone_countries[x] = normalizeName(zone_countries[x]);
 					if (typeof countries[zone_countries[x]] != "undefined") {
-						country = unpackCountry(countries[zone_countries[x]]);
+						country = getCountry(zone_countries[x]);
 						if (country.zones.indexOf(name) == "-1") {
 							country.zones.push(name);
-							countries[zone_countries[x]] = country.abbr + '|' + country.name + '|' + country.zones.join(' ');
+							countries[zone_countries[x]] = country;
 						}
+					} else {
+						logError("Country " + zone_countries[x] + " does not exist.");
 					}
 				}
 			}
@@ -545,8 +547,8 @@
 		}
 	}
 
-	function addCountry (data) {
-		var i, name, split;
+	function addCountry (data, notCheckZones) {
+		var i, j, name, split, zones, zoneName, zone;
 
 		if (typeof data == "undefined") {
 			return;
@@ -559,15 +561,81 @@
 		for (i = 0; i < data.length; i++) {
 			split = data[i].split('|');
 			name = normalizeName(split[0]);
+			if (!notCheckZones) {
+				zones = split[2].split(' ');
+				for (j in zones) {
+					zoneName = normalizeName(zones[j]);
+					zone = getZone(zoneName);
+					if (zone.countries.indexOf(name) == -1) {
+						zone.countries.push(name);
+						zones[zoneName] = zone;
+					}
+				}
+			}
 			countries[name] = data[i];
 		}
 	}
 
+	function checkAllCountriesInZones () {
+
+	}
+
 	function loadData (data) {
-		addCountry(data.countries);
+		addCountry(data.countries, true);
 		addZone(data.zones);
 		addLink(data.links);
+		checkAllCountriesInZones();
 		tz.dataVersion = data.version;
+	}
+
+	function addZonetoCountry (zoneToAdd, countryToAddTo) {
+		zoneToAdd = normalizeName(zoneToAdd);
+		countryToAddTo = normalizeName(countryToAddTo);
+		var	country = getCountry(countryToAddTo),
+			zone = getZone(zoneToAdd);
+
+		if (zone !== null && country !== null) {
+			if (country.zones.indexOf(zoneToAdd) == -1) {
+				country.zones.push(zoneToAdd);
+				countries[countryToAddTo] = country;
+			}
+			if (zone.countries.indexOf(countryToAddTo) == -1) {
+				zone.countries.push(countryToAddTo);
+				zones[zoneToAdd] = zone;
+			}
+		} else if (zone === null && country === null) {
+			logError("The zone (" + zoneToAdd + ") and country (" + countryToAddTo + ") do not exist yet, please add zone and country first.");
+		} else if (zone === null) {
+			logError("The zone (" + zoneToAdd + ") does not exist yet, please add zone first.");
+		} else if (country === null) {
+			logError("The country (" + countryToAddTo + ") does not exist yet, please add country first.");
+		}
+	}
+
+	function removeZonefromCountry (zoneToRemove, countryToRemoveFrom) {
+		zoneToRemove = normalizeName(zoneToRemove);
+		countryToRemoveFrom = normalizeName(countryToRemoveFrom);
+		var	country = getCountry(countryToRemoveFrom),
+			zone = getZone(zoneToRemove);
+
+		if (zone !== null && country !== null) {
+			var zoneIndex = country.zones.indexOf(zoneToRemove);
+			if (zoneIndex > -1) {
+				country.zones.splice(zoneIndex, 1);
+				countries[countryToRemoveFrom] = country;
+			}
+			var countryIndex = zone.countries.indexOf(countryToRemoveFrom);
+			if (countryIndex > -1) {
+				zone.countries.splice(countryIndex, 1);
+				zones[zoneToRemove] = zone;
+			}
+		} else if (zone === null && country === null) {
+			logError("The zone (" + zoneToRemove + ") and country (" + countryToRemoveFrom + ") do not exist.");
+		} else if (zone === null) {
+			logError("The zone (" + zoneToRemove + ") does not exist.");
+		} else if (country === null) {
+			logError("The country (" + countryToRemoveFrom + ") does not exist.");
+		}
 	}
 
 	function zoneExists (name) {
@@ -626,44 +694,31 @@
 			return out;
 		}
 	}
-
-	/*function tz (input) {
-		var args = Array.prototype.slice.call(arguments, 0, -1),
-			name = arguments[arguments.length - 1],
-			zone = getZone(name),
-			out  = moment.utc.apply(null, args);
-
-		if (zone && !moment.isMoment(input) && needsOffset(out)) {
-			out.add(zone.parse(out), 'minutes');
-		}
-
-		out.tz(name);
-
-		return out;
-	}*/
-
-
-	tz.version      = VERSION;
-	tz.dataVersion  = '';
-	tz._zones       = zones;
-	tz._links       = links;
-	tz._names       = names;
-	tz._countries   = countries;
-	tz.add          = addZone;
-	tz.link         = addLink;
-	tz.load         = loadData;
-	tz.zone         = getZone;
-	tz.country		= getCountry;
-	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
-	tz.guess        = guess;
-	tz.names        = getNames;
-	tz.Zone         = Zone;
-	tz.unpack   	= unpack;
-	tz.unpackCountry= unpackCountry;
-	tz.unpackBase60 = unpackBase60;
-	tz.needsOffset  = needsOffset;
-	tz.moveInvalidForward   = true;
-	tz.moveAmbiguousForward = false;
+	
+	tz.version      			= VERSION;
+	tz.dataVersion  			= '';
+	tz._zones       			= zones;
+	tz._links       			= links;
+	tz._names       			= names;
+	tz._countries   			= countries;
+	tz.add          			= addZone;
+	tz.link         			= addLink;
+	tz.addCountry				= addCountry;
+	tz.addZonetoCountry 		= addZonetoCountry;
+	tz.removeZonefromCountry 	= removeZonefromCountry;
+	tz.load         			= loadData;
+	tz.zone         			= getZone;
+	tz.country					= getCountry;
+	tz.zoneExists   			= zoneExists; // deprecated in 0.1.0
+	tz.guess        			= guess;
+	tz.names        			= getNames;
+	tz.Zone         			= Zone;
+	tz.unpack   				= unpack;
+	tz.unpackCountry			= unpackCountry;
+	tz.unpackBase60 			= unpackBase60;
+	tz.needsOffset  			= needsOffset;
+	tz.moveInvalidForward   	= true;
+	tz.moveAmbiguousForward 	= false;
 
 	/************************************
 		Interface with Moment.js

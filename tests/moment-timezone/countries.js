@@ -53,6 +53,89 @@ exports.countries = {
         t.equal( RU, moment.tz._countries["ru"], "Checking RU timezones");
 
         t.done();
-    }
+    },
 
+    "add country functionality" : function (t) {
+
+        var country = "XX|Test_Country|SomeZone";
+
+        moment.tz.addCountry(country);
+
+        var test  = moment.tz.country("XX");
+        var test_zone  = moment.tz.zone("SomeZone");
+
+        t.deepEqual(test, { name: 'Test_Country', abbr: 'XX', zones: [ 'SomeZone' ] } , "New country not added");
+        t.deepEqual(test_zone, { name: 'SomeZone', abbrs: [ 'TIM', 'TAM', 'IAM', 'TAM', 'TIM', 'TAM' ],
+            untils: [ 60000000, 66000000, 74400000, 80400000, 88800000, Infinity ],
+            offsets: [ 360.5, 300, 360, 300, 360.5, 300 ],
+            population: 0,
+            countries: [ 'xx' ] } ,
+            "New country not added to relavent zones");
+
+        t.done();
+    },
+    
+    "add zone to country functionality" : function (t) {
+
+        var country = "XY|Test_Country|AddingMany/Test1";
+        moment.tz.addCountry(country);
+        moment.tz.addZonetoCountry("SomeZone", "XY");
+        var test_country  = moment.tz.country("XY");
+        var test_zone  = moment.tz.zone("SomeZone");
+        t.deepEqual(test_country, { name: 'Test_Country', abbr: 'XY', zones: [ 'AddingMany/Test1', 'somezone' ] } , "Cannot add country to zone");
+        t.deepEqual(test_zone, { name: 'SomeZone',
+            abbrs: [ 'TIM', 'TAM', 'IAM', 'TAM', 'TIM', 'TAM' ],
+            untils: [ 60000000, 66000000, 74400000, 80400000, 88800000, Infinity ],
+            offsets: [ 360.5, 300, 360, 300, 360.5, 300 ],
+            population: 0,
+            countries: [ 'xx', 'xy' ] } ,
+            "Cannot add country to zone");
+
+        // check does not accept duplicates
+
+        moment.tz.addZonetoCountry("SomeZone", "XY");
+        test_country  = moment.tz.country("XY");
+        test_zone  = moment.tz.zone("SomeZone");
+        t.deepEqual(test_country, { name: 'Test_Country', abbr: 'XY', zones: [ 'AddingMany/Test1', 'somezone' ] } , "Cannot add country to zone, suspected duplicate zone issue");
+        t.deepEqual(test_zone, { name: 'SomeZone',
+            abbrs: [ 'TIM', 'TAM', 'IAM', 'TAM', 'TIM', 'TAM' ],
+            untils: [ 60000000, 66000000, 74400000, 80400000, 88800000, Infinity ],
+            offsets: [ 360.5, 300, 360, 300, 360.5, 300 ],
+            population: 0,
+            countries: [ 'xx', 'xy' ] } ,
+            "Cannot add country to zone, suspected duplicate country issue");
+
+        t.done();
+    },
+    
+    "remove zone from country functionality" : function (t) {
+
+        moment.tz.removeZonefromCountry("SomeZone", "XY");
+        var test_country  = moment.tz.country("XY");
+        var test_zone  = moment.tz.zone("SomeZone");
+        t.deepEqual(test_country, { name: 'Test_Country', abbr: 'XY', zones: [ 'AddingMany/Test1' ] } , "Cannot remove country from zone");
+        t.deepEqual(test_zone, { name: 'SomeZone',
+            abbrs: [ 'TIM', 'TAM', 'IAM', 'TAM', 'TIM', 'TAM' ],
+            untils: [ 60000000, 66000000, 74400000, 80400000, 88800000, Infinity ],
+            offsets: [ 360.5, 300, 360, 300, 360.5, 300 ],
+            population: 0,
+            countries: [ 'xx' ] } ,
+            "Cannot remove country from zone");
+
+        // check does not accept duplicates
+
+        moment.tz.removeZonefromCountry("SomeZone", "XY");
+        test_country  = moment.tz.country("XY");
+        test_zone  = moment.tz.zone("SomeZone");
+        t.deepEqual(test_country, { name: 'Test_Country', abbr: 'XY', zones: [ 'AddingMany/Test1' ] } , "Cannot remove country from zone");
+        t.deepEqual(test_zone, { name: 'SomeZone',
+            abbrs: [ 'TIM', 'TAM', 'IAM', 'TAM', 'TIM', 'TAM' ],
+            untils: [ 60000000, 66000000, 74400000, 80400000, 88800000, Infinity ],
+            offsets: [ 360.5, 300, 360, 300, 360.5, 300 ],
+            population: 0,
+            countries: [ 'xx' ] } ,
+            "Cannot remove country from zone");
+
+        t.done();
+    }
 };

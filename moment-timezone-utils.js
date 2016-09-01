@@ -220,16 +220,20 @@
 	}
 	
 
-	function packCountries (input, output) {
-		var country;
-		for (var x in input) {
-			country = input[x];
-			output.push(packCountryString(country));
+	function packCountries (input) {
+		var output = []
+		for (var x in input.countries) {
+			output.push(packCountryString(input.countries[x]));
 		}
+		return {
+			version : input.version,
+			zones   : input.zones,
+			links   : input.links,
+			countries : output.sort()
+		};
 	}
 
-
-	function createLinksAndCountries (source) {
+	function createLinks (source) {
 		var zones = [],
 			links = [],
 			countries = [];
@@ -239,7 +243,6 @@
 		}
 
 		findAndCreateLinks(source.zones, zones, links);
-		packCountries(source.countries, countries);
 
 		return {
 			version : source.version,
@@ -308,7 +311,8 @@
 	}
 
 	function createCountriesList (source, meta) {
-		var countries = {};
+		var countries = {},
+			zones = source.zones;
 
 		for (var zone in source.zones) {
 			var data = source.zones[zone],
@@ -327,10 +331,49 @@
 				countries[country_abbr].zones.push(data.name);
 			}
 		}
-		
+
+		//Adding link data to country
+
+		for (var linkdata in source.links) {
+			var link = source.links[linkdata].split("|"),
+				name = link[1],
+				location_array = name.split("/"),
+				location = location_array[location_array.length - 1],
+				location_space = location.replace("_"," ");
+
+			if (typeof meta.zones[name] != "undefined") {
+				for (var meta_country in meta.zones[name].countries) {
+					countries[meta.zones[name].countries[meta_country]].zones.push(name);
+				}
+			}
+
+			///WORK FROM HERE
+
+			for (var x in meta.zones) {
+				var meta_zones = meta.zones[x];
+				if (meta_zones.name.search(location) != -1) {
+					for (var meta_zones_countries in meta_zones.countries) {
+						if (countries[meta_zones.countries[meta_zones_countries]].zones.indexOf(name) == -1) {
+							countries[meta_zones.countries[meta_zones_countries]].zones.push(name);
+						}
+					}
+				}
+			}
+			for (var x in meta.countries) {
+				var meta_countries = meta.countries[x];
+				if ((meta_countries.name.search(location) != -1) || (meta_countries.name.search(location_space) != -1)) {
+					if (countries[meta_countries.abbr].zones.indexOf(name) == -1) {
+						countries[meta_countries.abbr].zones.push(name);
+					}
+				}
+			}
+
+
+		}
+
 		return {
 			version : source.version,
-			zones   : source.zones,
+			zones   : zones,
 			links   : source.links,
 			countries: countries
 		};
@@ -403,7 +446,7 @@
 			outputZones[i] = filterYears(inputZones[i], start, end);
 		}
 
-		output = createLinksAndCountries({
+		output = createLinks({
 			zones : outputZones,
 			links : input.links.slice(),
 			version : input.version,
@@ -424,7 +467,8 @@
 	moment.tz.pack           = pack;
 	moment.tz.packCountryString  = packCountryString;
 	moment.tz.packBase60     = packBase60;
-	moment.tz.createLinksAndCountries    = createLinksAndCountries;
+	moment.tz.createLinks    = createLinks;
+	moment.tz.packCountries    = packCountries;
 	moment.tz.addCountriestoZones = addCountriestoZones;
 	moment.tz.createCountriesList = createCountriesList;
 	moment.tz.filterYears    = filterYears;
