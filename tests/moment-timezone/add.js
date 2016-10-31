@@ -26,6 +26,7 @@ exports.add = {
 		test.done();
 	},
 
+<<<<<<< HEAD
 	addingWithCountry : function (test) {
 		// gE = 1000; 1E = 100; 2k = 140
 		tz.add("SomeZoneWithCountry|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k||SO TZ UG");
@@ -100,6 +101,15 @@ exports.add = {
 			"AddingMany/Test3|QWE RTY|60 30|0101|-30 10 8|75e3|SO TZ UG"
 		]);
 		tz.add("AddingMany/Test4|QWE RTY|60 30|0101|-30 10 8|75e3|SO TZ UG");
+=======
+	addingMany : function (test) {
+		tz.add([
+			"AddingMany/Test1|QWE RTY|60 30|0101|-30 10 8",
+			"AddingMany/Test2|QWE RTY|60 30|1010|-30 10 8",
+			"AddingMany/Test3|QWE RTY|60 30|0101|-30 10 8"
+		]);
+		tz.add("AddingMany/Test4|QWE RTY|60 30|0101|-30 10 8");
+>>>>>>> origin/Country-Functionality
 
 		test.ok(tz.zone("AddingMany/Test1"), "Should be able to add items in an array of strings.");
 		test.ok(tz.zone("AddingMany/Test2"), "Should be able to add items in an array of strings.");

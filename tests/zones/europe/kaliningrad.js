@@ -271,11 +271,19 @@ exports["Europe/Kaliningrad"] = {
 
 	"2011" : helpers.makeTestYear("Europe/Kaliningrad", [
 		["2011-03-26T23:59:59+00:00", "01:59:59", "EET", -120],
+<<<<<<< HEAD
 		["2011-03-27T00:00:00+00:00", "03:00:00", "FET", -180]
 	]),
 
 	"2014" : helpers.makeTestYear("Europe/Kaliningrad", [
 		["2014-10-25T22:59:59+00:00", "01:59:59", "FET", -180],
+=======
+		["2011-03-27T00:00:00+00:00", "03:00:00", "+03", -180]
+	]),
+
+	"2014" : helpers.makeTestYear("Europe/Kaliningrad", [
+		["2014-10-25T22:59:59+00:00", "01:59:59", "+03", -180],
+>>>>>>> origin/Country-Functionality
 		["2014-10-25T23:00:00+00:00", "01:00:00", "EET", -120]
 	])
 };

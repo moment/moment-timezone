@@ -1,6 +1,10 @@
 {
 	"name": "moment-timezone",
+<<<<<<< HEAD
 	"version": "0.5.5",
+=======
+	"version": "0.5.7",
+>>>>>>> origin/Country-Functionality
 	"description": "Parse and display moments in any timezone.",
 	"homepage": "http://momentjs.com/timezone/",
 	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",

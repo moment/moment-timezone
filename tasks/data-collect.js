@@ -5,10 +5,18 @@ var path = require('path'),
 	populations = require('./population.json');
 
 module.exports = function (grunt) {
+<<<<<<< HEAD
 	grunt.registerTask('data-collect', '4. Collect all data from zdump(8) into a single json file.', function (version) {
 		version = version || 'latest';
 
 		var files = grunt.file.expand({ filter : 'isFile', cwd : 'temp/zdump/' + version }, '**/*.zdump'),
+=======
+	grunt.registerTask('data-collect', '5. Collect all data from zdump(8) into a single json file.', function (version) {
+		version = version || 'latest';
+
+		var files = grunt.file.expand({ filter : 'isFile', cwd : 'temp/zdump/' + version }, '**/*.zdump'),
+			meta 	= grunt.file.readJSON('data/meta/' + version + '.json'),
+>>>>>>> origin/Country-Functionality
 			data  = [];
 
 		files.forEach(function (file) {
@@ -16,7 +24,12 @@ module.exports = function (grunt) {
 				name    = file.replace(/\.zdump$/, ''),
 				abbrs   = [],
 				untils  = [],
+<<<<<<< HEAD
 				offsets = [];
+=======
+				offsets = [],
+				countries = [];
+>>>>>>> origin/Country-Functionality
 
 			lines.forEach(function (line) {
 				var parts  = line.split(/\s+/),
@@ -31,12 +44,22 @@ module.exports = function (grunt) {
 				abbrs.push(parts[13]);
 			});
 
+<<<<<<< HEAD
+=======
+			if (meta.zones[name]) {countries = meta.zones[name].countries;}
+
+>>>>>>> origin/Country-Functionality
 			data.push({
 				name       : name,
 				abbrs      : abbrs,
 				untils     : untils,
 				offsets    : offsets,
+<<<<<<< HEAD
 				population : populations[name] | 0
+=======
+				population : populations[name] | 0,
+				countries  : countries
+>>>>>>> origin/Country-Functionality
 			});
 		});
 

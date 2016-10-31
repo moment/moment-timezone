@@ -1,5 +1,9 @@
 //! moment-timezone.js
+<<<<<<< HEAD
 //! version : 0.5.5
+=======
+//! version : 0.5.7
+>>>>>>> origin/Country-Functionality
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,7 +28,11 @@
 		return moment;
 	}
 
+<<<<<<< HEAD
 	var VERSION = "0.5.5",
+=======
+	var VERSION = "0.5.7",
+>>>>>>> origin/Country-Functionality
 		zones = {},
 		links = {},
 		names = {},
@@ -596,7 +604,11 @@
 	}
 
 	loadData({
+<<<<<<< HEAD
 		"version": "2016f",
+=======
+		"version": "2016h",
+>>>>>>> origin/Country-Functionality
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Khartoum|EAT|-30|0||51e5",
@@ -655,6 +667,7 @@
 			"America/Sao_Paulo|BRST BRT|20 30|01010101010101010101010|1BIq0 1zd0 On0 1zd0 Rb0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1C10 Lz0 1C10 Lz0 1C10|20e6",
 			"America/Scoresbysund|EGT EGST|10 0|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|452",
 			"America/St_Johns|NST NDT|3u 2u|01010101010101010101010|1BQPv 1zb0 Op0 1zcX Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|11e4",
+<<<<<<< HEAD
 			"Antarctica/Casey|CAST AWST|-b0 -80|0101|1BN30 40P0 KL0|10",
 			"Antarctica/Davis|DAVT DAVT|-50 -70|0101|1BPw0 3Wn0 KN0|70",
 			"Antarctica/DumontDUrville|DDUT|-a0|0||80",
@@ -681,10 +694,36 @@
 			"Asia/Chita|YAKT YAKST YAKT IRKT|-90 -a0 -a0 -80|010230|1BWh0 1qM0 WM0 8Hz0 3re0|33e4",
 			"Asia/Choibalsan|CHOT CHOST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|38e3",
 			"Asia/Shanghai|CST|-80|0||23e6",
+=======
+			"Antarctica/Casey|+11 +08|-b0 -80|0101|1BN30 40P0 KL0|10",
+			"Antarctica/Davis|+05 +07|-50 -70|0101|1BPw0 3Wn0 KN0|70",
+			"Antarctica/DumontDUrville|+10|-a0|0||80",
+			"Antarctica/Macquarie|AEDT MIST|-b0 -b0|01|1C140|1",
+			"Asia/Tashkent|+05|-50|0||23e5",
+			"Pacific/Auckland|NZDT NZST|-d0 -c0|01010101010101010101010|1C120 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00|14e5",
+			"Antarctica/Rothera|-03|30|0||130",
+			"Antarctica/Syowa|+03|-30|0||20",
+			"Antarctica/Troll|+00 +02|0 -20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|40",
+			"Asia/Almaty|+06|-60|0||15e5",
+			"Asia/Baghdad|AST|-30|0||66e5",
+			"Asia/Amman|EET EEST|-20 -30|010101010101010101010|1BVy0 1qM0 11A0 1o00 11A0 4bX0 Dd0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0|25e5",
+			"Asia/Kamchatka|+12 +11|-c0 -b0|010|1Dp30 WM0|18e4",
+			"Asia/Baku|+04 +05|-40 -50|0101010101010|1BWo0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00|27e5",
+			"Asia/Bangkok|ICT|-70|0||15e6",
+			"Asia/Barnaul|+06 +07|-60 -70|010101|1BWk0 1qM0 WM0 8Hz0 3rd0",
+			"Asia/Beirut|EET EEST|-20 -30|01010101010101010101010|1BWm0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0|22e5",
+			"Asia/Brunei|BNT|-80|0||42e4",
+			"Asia/Kolkata|IST|-5u|0||15e6",
+			"Asia/Chita|+09 +10 +08|-90 -a0 -80|010120|1BWh0 1qM0 WM0 8Hz0 3re0|33e4",
+			"Asia/Choibalsan|CHOT CHOST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|38e3",
+			"Asia/Shanghai|CST|-80|0||23e6",
+			"Asia/Colombo|+0530|-5u|0||22e5",
+>>>>>>> origin/Country-Functionality
 			"Asia/Dhaka|BDT|-60|0||16e6",
 			"Asia/Damascus|EET EEST|-20 -30|01010101010101010101010|1C0m0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0|26e5",
 			"Asia/Dili|TLT|-90|0||19e4",
 			"Asia/Dubai|GST|-40|0||39e5",
+<<<<<<< HEAD
 			"Asia/Dushanbe|TJT|-50|0||76e4",
 			"Asia/Gaza|EET EEST|-20 -30|01010101010101010101010|1BVW1 SKX 1xd1 MKX 1AN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1ny0 1220 1qm0 1220 1ny0 1220 1ny0 1220 1ny0|18e5",
 			"Asia/Hebron|EET EEST|-20 -30|0101010101010101010101010|1BVy0 Tb0 1xd1 MKX bB0 cn0 1cN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1ny0 1220 1qm0 1220 1ny0 1220 1ny0 1220 1ny0|25e4",
@@ -692,10 +731,19 @@
 			"Asia/Hovd|HOVT HOVST|-70 -80|0101010101010|1O8H0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|81e3",
 			"Asia/Irkutsk|IRKT IRKST IRKT|-80 -90 -90|01020|1BWi0 1qM0 WM0 8Hz0|60e4",
 			"Europe/Istanbul|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 Xc0 1qo0 WM0 1qM0 11A0 1o00 1200 1nA0 11A0 1tA0 U00 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|13e6",
+=======
+			"Asia/Gaza|EET EEST|-20 -30|01010101010101010101010|1BVW1 SKX 1xd1 MKX 1AN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1qL0|18e5",
+			"Asia/Hebron|EET EEST|-20 -30|0101010101010101010101010|1BVy0 Tb0 1xd1 MKX bB0 cn0 1cN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1qL0|25e4",
+			"Asia/Hong_Kong|HKT|-80|0||73e5",
+			"Asia/Hovd|HOVT HOVST|-70 -80|0101010101010|1O8H0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|81e3",
+			"Asia/Irkutsk|+08 +09|-80 -90|01010|1BWi0 1qM0 WM0 8Hz0|60e4",
+			"Europe/Istanbul|EET EEST +03|-20 -30 -30|010101010101012|1BWp0 1qM0 Xc0 1qo0 WM0 1qM0 11A0 1o00 1200 1nA0 11A0 1tA0 U00 15w0|13e6",
+>>>>>>> origin/Country-Functionality
 			"Asia/Jakarta|WIB|-70|0||31e6",
 			"Asia/Jayapura|WIT|-90|0||26e4",
 			"Asia/Jerusalem|IST IDT|-20 -30|01010101010101010101010|1BVA0 17X0 1kp0 1dz0 1c10 1aL0 1eN0 1oL0 10N0 1oL0 10N0 1oL0 10N0 1rz0 W10 1rz0 W10 1rz0 10N0 1oL0 10N0 1oL0|81e4",
 			"Asia/Kabul|AFT|-4u|0||46e5",
+<<<<<<< HEAD
 			"Asia/Kamchatka|PETT PETST PETT|-c0 -c0 -b0|0120|1BWe0 1qN0 WM0|18e4",
 			"Asia/Karachi|PKT|-50|0||24e6",
 			"Asia/Urumqi|XJT|-60|0||32e5",
@@ -704,11 +752,21 @@
 			"Asia/Krasnoyarsk|KRAT KRAST KRAT|-70 -80 -80|01020|1BWj0 1qM0 WM0 8Hz0|10e5",
 			"Asia/Kuala_Lumpur|MYT|-80|0||71e5",
 			"Asia/Magadan|MAGT MAGST MAGT MAGT|-b0 -c0 -c0 -a0|010230|1BWf0 1qM0 WM0 8Hz0 3Cq0|95e3",
+=======
+			"Asia/Karachi|PKT|-50|0||24e6",
+			"Asia/Urumqi|XJT|-60|0||32e5",
+			"Asia/Kathmandu|NPT|-5J|0||12e5",
+			"Asia/Khandyga|+10 +11 +09|-a0 -b0 -90|010102|1BWg0 1qM0 WM0 17V0 7zD0|66e2",
+			"Asia/Krasnoyarsk|+07 +08|-70 -80|01010|1BWj0 1qM0 WM0 8Hz0|10e5",
+			"Asia/Kuala_Lumpur|MYT|-80|0||71e5",
+			"Asia/Magadan|+11 +12 +10|-b0 -c0 -a0|010120|1BWf0 1qM0 WM0 8Hz0 3Cq0|95e3",
+>>>>>>> origin/Country-Functionality
 			"Asia/Makassar|WITA|-80|0||15e5",
 			"Asia/Manila|PHT|-80|0||24e6",
 			"Europe/Athens|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|35e5",
 			"Asia/Novokuznetsk|+07 +06|-70 -60|010|1Dp80 WM0|55e4",
 			"Asia/Novosibirsk|+06 +07|-60 -70|010101|1BWk0 1qM0 WM0 8Hz0 4eN0|15e5",
+<<<<<<< HEAD
 			"Asia/Omsk|OMST OMSST OMST|-60 -70 -70|01020|1BWk0 1qM0 WM0 8Hz0|12e5",
 			"Asia/Pyongyang|KST KST|-90 -8u|01|1P4D0|29e5",
 			"Asia/Rangoon|MMT|-6u|0||48e5",
@@ -718,16 +776,34 @@
 			"Asia/Singapore|SGT|-80|0||56e5",
 			"Asia/Srednekolymsk|MAGT MAGST MAGT SRET|-b0 -c0 -c0 -b0|01023|1BWf0 1qM0 WM0 8Hz0|35e2",
 			"Asia/Tbilisi|GET|-40|0||11e5",
+=======
+			"Asia/Omsk|+06 +07|-60 -70|01010|1BWk0 1qM0 WM0 8Hz0|12e5",
+			"Asia/Pyongyang|KST KST|-90 -8u|01|1P4D0|29e5",
+			"Asia/Rangoon|MMT|-6u|0||48e5",
+			"Asia/Sakhalin|+10 +11|-a0 -b0|010101|1BWg0 1qM0 WM0 8Hz0 3rd0|58e4",
+			"Asia/Seoul|KST|-90|0||23e6",
+			"Asia/Singapore|SGT|-80|0||56e5",
+			"Asia/Srednekolymsk|+11 +12|-b0 -c0|01010|1BWf0 1qM0 WM0 8Hz0|35e2",
+			"Asia/Tbilisi|+04|-40|0||11e5",
+>>>>>>> origin/Country-Functionality
 			"Asia/Tehran|IRST IRDT|-3u -4u|01010101010101010101010|1BTUu 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0|14e6",
 			"Asia/Thimphu|BTT|-60|0||79e3",
 			"Asia/Tokyo|JST|-90|0||38e6",
 			"Asia/Tomsk|+06 +07|-60 -70|010101|1BWk0 1qM0 WM0 8Hz0 3Qp0|10e5",
 			"Asia/Ulaanbaatar|ULAT ULAST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|12e5",
+<<<<<<< HEAD
 			"Asia/Ust-Nera|MAGT MAGST MAGT VLAT VLAT|-b0 -c0 -c0 -b0 -a0|010234|1BWf0 1qM0 WM0 17V0 7zD0|65e2",
 			"Asia/Vladivostok|VLAT VLAST VLAT|-a0 -b0 -b0|01020|1BWg0 1qM0 WM0 8Hz0|60e4",
 			"Asia/Yakutsk|YAKT YAKST YAKT|-90 -a0 -a0|01020|1BWh0 1qM0 WM0 8Hz0|28e4",
 			"Asia/Yekaterinburg|YEKT YEKST YEKT|-50 -60 -60|01020|1BWl0 1qM0 WM0 8Hz0|14e5",
 			"Asia/Yerevan|AMT AMST|-40 -50|01010|1BWm0 1qM0 WM0 1qM0|13e5",
+=======
+			"Asia/Ust-Nera|+11 +12 +10|-b0 -c0 -a0|010102|1BWf0 1qM0 WM0 17V0 7zD0|65e2",
+			"Asia/Vladivostok|+10 +11|-a0 -b0|01010|1BWg0 1qM0 WM0 8Hz0|60e4",
+			"Asia/Yakutsk|+09 +10|-90 -a0|01010|1BWh0 1qM0 WM0 8Hz0|28e4",
+			"Asia/Yekaterinburg|+05 +06|-50 -60|01010|1BWl0 1qM0 WM0 8Hz0|14e5",
+			"Asia/Yerevan|+04 +05|-40 -50|01010|1BWm0 1qM0 WM0 1qM0|13e5",
+>>>>>>> origin/Country-Functionality
 			"Atlantic/Azores|AZOT AZOST|10 0|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|25e4",
 			"Europe/Lisbon|WET WEST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|27e5",
 			"Atlantic/Cape_Verde|CVT|10|0||50e4",
@@ -742,6 +818,7 @@
 			"Australia/Perth|AWST|-80|0||18e5",
 			"Pacific/Easter|EASST EAST|50 60|010101010101010101010|1C1f0 1fB0 1nX0 G10 1EL0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0|30e2",
 			"Europe/Dublin|GMT IST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|12e5",
+<<<<<<< HEAD
 			"Etc/GMT+1|GMT+1|10|0|",
 			"Etc/GMT+10|GMT+10|a0|0|",
 			"Etc/GMT+11|GMT+11|b0|0|",
@@ -768,22 +845,55 @@
 			"Etc/GMT-7|GMT-7|-70|0|",
 			"Etc/GMT-8|GMT-8|-80|0|",
 			"Etc/GMT-9|GMT-9|-90|0|",
+=======
+			"Etc/GMT+1|-01|10|0|",
+			"Etc/GMT+10|-10|a0|0|",
+			"Etc/GMT+11|-11|b0|0|",
+			"Etc/GMT+12|-12|c0|0|",
+			"Etc/GMT+2|-02|20|0|",
+			"Etc/GMT+4|-04|40|0|",
+			"Etc/GMT+5|-05|50|0|",
+			"Etc/GMT+6|-06|60|0|",
+			"Etc/GMT+7|-07|70|0|",
+			"Etc/GMT+8|-08|80|0|",
+			"Etc/GMT+9|-09|90|0|",
+			"Etc/GMT-1|+01|-10|0|",
+			"Etc/GMT-11|+11|-b0|0|",
+			"Etc/GMT-12|+12|-c0|0|",
+			"Etc/GMT-13|+13|-d0|0|",
+			"Etc/GMT-14|+14|-e0|0|",
+			"Etc/GMT-2|+02|-20|0|",
+			"Etc/GMT-7|+07|-70|0|",
+			"Etc/GMT-8|+08|-80|0|",
+			"Etc/GMT-9|+09|-90|0|",
+>>>>>>> origin/Country-Functionality
 			"Etc/UCT|UCT|0|0|",
 			"Etc/UTC|UTC|0|0|",
 			"Europe/Astrakhan|+03 +04|-30 -40|010101|1BWn0 1qM0 WM0 8Hz0 3rd0",
 			"Europe/London|GMT BST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|10e6",
 			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1BWo0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|67e4",
+<<<<<<< HEAD
 			"Europe/Kaliningrad|EET EEST FET|-20 -30 -30|01020|1BWo0 1qM0 WM0 8Hz0|44e4",
 			"Europe/Kirov|+03 +04|-30 -40|01010|1BWn0 1qM0 WM0 8Hz0|48e4",
 			"Europe/Minsk|EET EEST FET MSK|-20 -30 -30 -30|01023|1BWo0 1qM0 WM0 8Hy0|19e5",
 			"Europe/Moscow|MSK MSD MSK|-30 -40 -40|01020|1BWn0 1qM0 WM0 8Hz0|16e6",
 			"Europe/Samara|SAMT SAMST SAMT|-40 -40 -30|0120|1BWm0 1qN0 WM0|12e5",
+=======
+			"Europe/Kaliningrad|EET EEST +03|-20 -30 -30|01020|1BWo0 1qM0 WM0 8Hz0|44e4",
+			"Europe/Volgograd|+03 +04|-30 -40|01010|1BWn0 1qM0 WM0 8Hz0|10e5",
+			"Europe/Minsk|EET EEST +03|-20 -30 -30|0102|1BWo0 1qM0 WM0|19e5",
+			"Europe/Moscow|MSK MSD MSK|-30 -40 -40|01020|1BWn0 1qM0 WM0 8Hz0|16e6",
+			"Europe/Samara|+04 +03|-40 -30|010|1Dpb0 WM0|12e5",
+>>>>>>> origin/Country-Functionality
 			"Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|01010101023|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11z0 1nW0|33e4",
 			"Pacific/Honolulu|HST|a0|0||37e4",
 			"Indian/Chagos|IOT|-60|0||30e2",
 			"Indian/Christmas|CXT|-70|0||21e2",
 			"Indian/Cocos|CCT|-6u|0||596",
+<<<<<<< HEAD
 			"Indian/Kerguelen|TFT|-50|0||130",
+=======
+>>>>>>> origin/Country-Functionality
 			"Indian/Mahe|SCT|-40|0||79e3",
 			"Indian/Maldives|MVT|-50|0||35e4",
 			"Indian/Mauritius|MUT|-40|0||15e4",
@@ -1042,10 +1152,20 @@
 			"America/Santo_Domingo|America/Virgin",
 			"America/Sao_Paulo|Brazil/East",
 			"America/St_Johns|Canada/Newfoundland",
+<<<<<<< HEAD
 			"Asia/Almaty|Asia/Qyzylorda",
 			"Asia/Aqtobe|Asia/Aqtau",
 			"Asia/Aqtobe|Asia/Oral",
 			"Asia/Ashgabat|Asia/Ashkhabad",
+=======
+			"Antarctica/DumontDUrville|Etc/GMT-10",
+			"Antarctica/Rothera|Etc/GMT+3",
+			"Antarctica/Syowa|Etc/GMT-3",
+			"Asia/Almaty|Antarctica/Vostok",
+			"Asia/Almaty|Asia/Bishkek",
+			"Asia/Almaty|Asia/Qyzylorda",
+			"Asia/Almaty|Etc/GMT-6",
+>>>>>>> origin/Country-Functionality
 			"Asia/Baghdad|Asia/Aden",
 			"Asia/Baghdad|Asia/Bahrain",
 			"Asia/Baghdad|Asia/Kuwait",
@@ -1061,11 +1181,20 @@
 			"Asia/Jakarta|Asia/Pontianak",
 			"Asia/Jerusalem|Asia/Tel_Aviv",
 			"Asia/Jerusalem|Israel",
+<<<<<<< HEAD
 			"Asia/Kathmandu|Asia/Katmandu",
 			"Asia/Kolkata|Asia/Calcutta",
 			"Asia/Kolkata|Asia/Colombo",
 			"Asia/Kuala_Lumpur|Asia/Kuching",
 			"Asia/Makassar|Asia/Ujung_Pandang",
+=======
+			"Asia/Kamchatka|Asia/Anadyr",
+			"Asia/Kathmandu|Asia/Katmandu",
+			"Asia/Kolkata|Asia/Calcutta",
+			"Asia/Kuala_Lumpur|Asia/Kuching",
+			"Asia/Makassar|Asia/Ujung_Pandang",
+			"Asia/Rangoon|Asia/Yangon",
+>>>>>>> origin/Country-Functionality
 			"Asia/Seoul|ROK",
 			"Asia/Shanghai|Asia/Chongqing",
 			"Asia/Shanghai|Asia/Chungking",
@@ -1076,7 +1205,21 @@
 			"Asia/Shanghai|PRC",
 			"Asia/Shanghai|ROC",
 			"Asia/Singapore|Singapore",
+<<<<<<< HEAD
 			"Asia/Tashkent|Asia/Samarkand",
+=======
+			"Asia/Tashkent|Antarctica/Mawson",
+			"Asia/Tashkent|Asia/Aqtau",
+			"Asia/Tashkent|Asia/Aqtobe",
+			"Asia/Tashkent|Asia/Ashgabat",
+			"Asia/Tashkent|Asia/Ashkhabad",
+			"Asia/Tashkent|Asia/Dushanbe",
+			"Asia/Tashkent|Asia/Oral",
+			"Asia/Tashkent|Asia/Samarkand",
+			"Asia/Tashkent|Etc/GMT-5",
+			"Asia/Tashkent|Indian/Kerguelen",
+			"Asia/Tbilisi|Etc/GMT-4",
+>>>>>>> origin/Country-Functionality
 			"Asia/Tehran|Iran",
 			"Asia/Thimphu|Asia/Thimbu",
 			"Asia/Tokyo|Japan",
@@ -1134,7 +1277,10 @@
 			"Europe/London|Europe/Jersey",
 			"Europe/London|GB",
 			"Europe/London|GB-Eire",
+<<<<<<< HEAD
 			"Europe/Moscow|Europe/Volgograd",
+=======
+>>>>>>> origin/Country-Functionality
 			"Europe/Moscow|W-SU",
 			"Europe/Paris|Africa/Ceuta",
 			"Europe/Paris|Arctic/Longyearbyen",
@@ -1171,6 +1317,10 @@
 			"Europe/Paris|Europe/Zagreb",
 			"Europe/Paris|Europe/Zurich",
 			"Europe/Paris|Poland",
+<<<<<<< HEAD
+=======
+			"Europe/Volgograd|Europe/Kirov",
+>>>>>>> origin/Country-Functionality
 			"Pacific/Auckland|Antarctica/McMurdo",
 			"Pacific/Auckland|Antarctica/South_Pole",
 			"Pacific/Auckland|NZ",

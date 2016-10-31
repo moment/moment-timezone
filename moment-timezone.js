@@ -1,5 +1,9 @@
 //! moment-timezone.js
+<<<<<<< HEAD
 //! version : 0.5.5
+=======
+//! version : 0.5.7
+>>>>>>> origin/Country-Functionality
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,11 +28,19 @@
 		return moment;
 	}
 
+<<<<<<< HEAD
 	var VERSION = "0.5.5",
 		zones = {},
 		links = {},
 		names = {},
 		countries = {},
+=======
+	var VERSION = "0.5.7",
+		zones = {},
+		links = {},
+		countries = {},
+		names = {},
+>>>>>>> origin/Country-Functionality
 		guesses = {},
 		cachedGuess,
 
@@ -115,11 +127,16 @@
 			offsets = data[2].split(' '),
 			indices = data[3].split(''),
 			untils  = data[4].split(' '),
+<<<<<<< HEAD
 			countries = [];
 
 		if (typeof data[6] != "undefined") {
 			countries  = data[6].split(' ');
 		}
+=======
+			population = data[5],
+			countries = data[6];
+>>>>>>> origin/Country-Functionality
 
 		arrayToInt(offsets);
 		arrayToInt(indices);
@@ -127,23 +144,42 @@
 
 		intToUntil(untils, indices.length);
 
+<<<<<<< HEAD
+=======
+		if (countries) {countries = countries.split(' ');}
+		if (population == ' ') {population = 0;}
+
+>>>>>>> origin/Country-Functionality
 		return {
 			name       : data[0],
 			abbrs      : mapIndices(data[1].split(' '), indices),
 			offsets    : mapIndices(offsets, indices),
 			untils     : untils,
+<<<<<<< HEAD
 			population : data[5] | 0,
+=======
+			population : population,
+>>>>>>> origin/Country-Functionality
 			countries  : countries
 		};
 	}
 
 	function unpackCountry (string) {
+<<<<<<< HEAD
 		var data = string.split('|');
 
 		return {
 			name     : data[1],
 			abbr     : data[0],
 			zones    : data[2].split(' ')
+=======
+		var data = string.split('|'),
+			zones = data[1].split(' ');
+
+		return {
+			name 	: data[0],
+			zones 	: zones
+>>>>>>> origin/Country-Functionality
 		};
 	}
 
@@ -164,7 +200,11 @@
 			this.untils     = unpacked.untils;
 			this.offsets    = unpacked.offsets;
 			this.population = unpacked.population;
+<<<<<<< HEAD
 			this.countries  = unpacked.countries;
+=======
+			this.countries	= unpacked.countries;
+>>>>>>> origin/Country-Functionality
 		},
 
 		_index : function (timestamp) {
@@ -214,11 +254,17 @@
 		}
 	};
 
+<<<<<<< HEAD
 
 	/************************************
 	 Country object
 	 ************************************/
 
+=======
+	/************************************
+		Country object
+	************************************/
+>>>>>>> origin/Country-Functionality
 
 	function Country (packedString) {
 		if (packedString) {
@@ -229,12 +275,19 @@
 	Country.prototype = {
 		_set : function (unpacked) {
 			this.name       = unpacked.name;
+<<<<<<< HEAD
 			this.abbr       = unpacked.abbr;
 			this.zones     	= unpacked.zones;
 		}
 	};
 
 
+=======
+			this.zones      = unpacked.zones;
+		}
+	};
+
+>>>>>>> origin/Country-Functionality
 	/************************************
 		Current Timezone
 	************************************/
@@ -410,7 +463,11 @@
 	}
 
 	function addZone (packed) {
+<<<<<<< HEAD
 		var i, name, split, normalized, zone_countries, country;
+=======
+		var i, name, split, normalized;
+>>>>>>> origin/Country-Functionality
 
 		if (typeof packed === "string") {
 			packed = [packed];
@@ -425,6 +482,7 @@
 			if (split[5]) {
 				addToGuesses(normalized, split[2].split(' '));
 			}
+<<<<<<< HEAD
 			if (split[6]) {
 				zone_countries = split[6].split(' ');
 				for (var x in zone_countries) {
@@ -460,6 +518,8 @@
 		} else {
 			output.push(getZone(name));
 			return {"type": "Zone", "data" : output};
+=======
+>>>>>>> origin/Country-Functionality
 		}
 	}
 
@@ -490,6 +550,7 @@
 		return null;
 	}
 
+<<<<<<< HEAD
 	function getCountryZones (name) {
 		var country = getCountry(name);
 		if (typeof country != "undefined"){
@@ -514,6 +575,8 @@
 		return null;
 	}
 
+=======
+>>>>>>> origin/Country-Functionality
 	function getNames () {
 		var i, out = [];
 
@@ -547,12 +610,17 @@
 		}
 	}
 
+<<<<<<< HEAD
 	function addCountry (data, notCheckZones) {
 		var i, j, name, split, zones, zoneName, zone;
 
 		if (typeof data == "undefined") {
 			return;
 		}
+=======
+	function addCountry (data) {
+		var i, name, split, normalized;
+>>>>>>> origin/Country-Functionality
 
 		if (typeof data === "string") {
 			data = [data];
@@ -560,6 +628,7 @@
 
 		for (i = 0; i < data.length; i++) {
 			split = data[i].split('|');
+<<<<<<< HEAD
 			name = normalizeName(split[0]);
 			if (!notCheckZones) {
 				zones = split[2].split(' ');
@@ -638,6 +707,40 @@
 		}
 	}
 
+=======
+			name = split[0];
+			normalized = normalizeName(name);
+			countries[normalized] = data[i];
+		}
+	}
+
+	function getCountry (name, caller) {
+		name = normalizeName(name);
+
+		var country = countries[name];
+		var link;
+
+		if (country instanceof Country) {
+			return country;
+		}
+
+		if (typeof country === 'string') {
+			country = new Country(country);
+			countries[name] = country;
+			return country;
+		}
+
+		return null;
+	}
+
+	function loadData (data) {
+		addZone(data.zones);
+		addLink(data.links);
+		addCountry(data.countries);
+		tz.dataVersion = data.version;
+	}
+
+>>>>>>> origin/Country-Functionality
 	function zoneExists (name) {
 		if (!zoneExists.didShowError) {
 			zoneExists.didShowError = true;
@@ -656,11 +759,25 @@
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	function zonesForCountry(country) {
+		country = getCountry(country);
+		
+		if (country) {
+			return country.zones;
+		}
+
+		return null;
+	}
+
+>>>>>>> origin/Country-Functionality
 	/************************************
 		moment.tz namespace
 	************************************/
 
 	function tz (input) {
+<<<<<<< HEAD
 		var args = Array.prototype.slice.call(arguments, 0, -1), 
 			name = arguments[arguments.length - 1],
 			zoneOrCountry = getZoneOrCountry(name),
@@ -719,6 +836,42 @@
 	tz.needsOffset  			= needsOffset;
 	tz.moveInvalidForward   	= true;
 	tz.moveAmbiguousForward 	= false;
+=======
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone && !moment.isMoment(input) && needsOffset(out)) {
+			out.add(zone.parse(out), 'minutes');
+		}
+
+		out.tz(name);
+
+		return out;
+	}
+
+	tz.version      = VERSION;
+	tz.dataVersion  = '';
+	tz._zones       = zones;
+	tz._countries   = countries;
+	tz._links       = links;
+	tz._names       = names;
+	tz.add          = addZone;
+	tz.link         = addLink;
+	tz.load         = loadData;
+	tz.zone         = getZone;
+	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
+	tz.guess        = guess;
+	tz.names        = getNames;
+	tz.Zone         = Zone;
+	tz.unpack       = unpack;
+	tz.unpackBase60 = unpackBase60;
+	tz.needsOffset  = needsOffset;
+	tz.moveInvalidForward   = true;
+	tz.moveAmbiguousForward = false;
+	tz.zonesForCountry = zonesForCountry;
+>>>>>>> origin/Country-Functionality
 
 	/************************************
 		Interface with Moment.js
@@ -805,5 +958,9 @@
 	}
 
 	// INJECT DATA
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Country-Functionality
 	return moment;
 }));

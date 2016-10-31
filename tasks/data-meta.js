@@ -76,7 +76,11 @@ function filterCountries (allCountries) {
 }
 
 module.exports = function (grunt) {
+<<<<<<< HEAD
 	grunt.registerTask('data-meta', '5. Parse metadata from zone1970.tab', function (version) {
+=======
+	grunt.registerTask('data-meta', '4. Parse metadata from zone1970.tab', function (version) {
+>>>>>>> origin/Country-Functionality
 		version = version || 'latest';
 		var countries = parseCountries(grunt, version);
 		var zones = parseZones(grunt, version, countries);

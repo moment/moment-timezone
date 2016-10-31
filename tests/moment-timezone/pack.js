@@ -24,7 +24,11 @@ exports.pack = {
 					Infinity
 				]
 			},
+<<<<<<< HEAD
 			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X||"
+=======
+			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X| | "
+>>>>>>> origin/Country-Functionality
 		);
 	},
 
@@ -44,6 +48,7 @@ exports.pack = {
 				],
 				population : 1234567
 			},
+<<<<<<< HEAD
 			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|12e5|"
 		);
 	},
@@ -66,6 +71,9 @@ exports.pack = {
 				countries  : ["VU", "KI"]
 			},
 			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|12e5|VU KI"
+=======
+			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|12e5| "
+>>>>>>> origin/Country-Functionality
 		);
 	},
 
@@ -78,7 +86,11 @@ exports.pack = {
 				untils  : [Infinity],
 				population : 999
 			},
+<<<<<<< HEAD
 			"Some/Zone_Name|ABC|10|0||999|"
+=======
+			"Some/Zone_Name|ABC|10|0||999| "
+>>>>>>> origin/Country-Functionality
 		);
 	},
 
@@ -91,7 +103,11 @@ exports.pack = {
 				untils  : [Infinity],
 				population : 455000001
 			},
+<<<<<<< HEAD
 			"Some/Zone_Name|ABC|10|0||46e7|"
+=======
+			"Some/Zone_Name|ABC|10|0||46e7| "
+>>>>>>> origin/Country-Functionality
 		);
 	},
 

@@ -102,6 +102,10 @@ module.exports = function (grunt) {
 			grunt.verbose.ok("Created " + zone.name + " tests.");
 		});
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Country-Functionality
 		grunt.log.ok('Created tests');
 	});
 };
@@ -128,4 +132,8 @@ module.exports = function (grunt) {
 // 		["1919-10-26T08:59:59+00:00", "01:59:59", "PDT", 420],
 // 		["1919-10-26T09:00:00+00:00", "01:00:00", "PST", 480]
 // 	])
+<<<<<<< HEAD
 // };
+=======
+// };
+>>>>>>> origin/Country-Functionality

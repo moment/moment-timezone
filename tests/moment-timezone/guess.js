@@ -95,7 +95,11 @@ exports.guess = {
 		console.error = function (message) {
 			errors += message;
 		};
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin/Country-Functionality
 		mockIntlTimeZone(undefined);
 		mockTimezoneOffset(tz.zone('Europe/London'));
 		test.equal(tz.guess(true), 'Europe/London');
@@ -116,4 +120,8 @@ exports.guess = {
 		}
 		test.done();
 	}
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> origin/Country-Functionality

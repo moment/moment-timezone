@@ -31,6 +31,7 @@ exports.unpack = {
 				]
 			}
 		);
+<<<<<<< HEAD
 	},
 	"unpack with country" : function (t) {
 		t.deepEqual(
@@ -90,5 +91,7 @@ exports.unpack = {
 			"Should unpack country strings"
 		);
 		t.done();
+=======
+>>>>>>> origin/Country-Functionality
 	}
 };

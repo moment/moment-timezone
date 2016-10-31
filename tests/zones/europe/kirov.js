@@ -4,8 +4,13 @@ var helpers = require("../../helpers/helpers");
 
 exports["Europe/Kirov"] = {
 	"1919" : helpers.makeTestYear("Europe/Kirov", [
+<<<<<<< HEAD
 		["1919-06-30T22:41:11+00:00", "01:59:59", "LMT", -11928 / 60],
 		["1919-06-30T22:41:12+00:00", "01:41:12", "+03", -180]
+=======
+		["1919-06-30T23:59:59+00:00", "03:18:47", "LMT", -11928 / 60],
+		["1919-07-01T00:00:00+00:00", "03:00:00", "+03", -180]
+>>>>>>> origin/Country-Functionality
 	]),
 
 	"1930" : helpers.makeTestYear("Europe/Kirov", [

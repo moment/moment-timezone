@@ -1,5 +1,9 @@
 //! moment-timezone-utils.js
+<<<<<<< HEAD
 //! version : 0.5.5
+=======
+//! version : 0.5.7
+>>>>>>> origin/Country-Functionality
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -119,7 +123,11 @@
 
 	function packPopulation (number) {
 		if (!number) {
+<<<<<<< HEAD
 			return '';
+=======
+			return ' ';
+>>>>>>> origin/Country-Functionality
 		}
 		if (number < 1000) {
 			return number;
@@ -129,9 +137,15 @@
 		return precision + 'e' + exponent;
 	}
 
+<<<<<<< HEAD
 	function packCountry (countries) {
 		if (typeof countries == "undefined") {
 			return '';
+=======
+	function packCountries (countries) {
+		if (!countries) {
+			return ' ';
+>>>>>>> origin/Country-Functionality
 		}
 		return countries.join(' ');
 	}
@@ -156,7 +170,18 @@
 			packAbbrsAndOffsets(source),
 			packUntils(source.untils),
 			packPopulation(source.population),
+<<<<<<< HEAD
 			packCountry(source.countries)
+=======
+			packCountries(source.countries)
+		].join('|');
+	}
+
+	function packCountry (source) {
+		return [
+			source.name,
+			source.zones.join(' '),
+>>>>>>> origin/Country-Functionality
 		].join('|');
 	}
 
@@ -214,6 +239,7 @@
 			}
 		}
 	}
+<<<<<<< HEAD
 	
 	function packCountryString (country) {
 		return country.abbr + '|' + country.name + '|' + country.zones.join(' ');
@@ -237,6 +263,12 @@
 		var zones = [],
 			links = [],
 			countries = [];
+=======
+
+	function createLinks (source) {
+		var zones = [],
+			links = [];
+>>>>>>> origin/Country-Functionality
 
 		if (source.links) {
 			links = source.links.slice();
@@ -245,6 +277,7 @@
 		findAndCreateLinks(source.zones, zones, links);
 
 		return {
+<<<<<<< HEAD
 			version : source.version,
 			zones   : zones,
 			links   : links.sort(),
@@ -376,6 +409,12 @@
 			zones   : zones,
 			links   : source.links,
 			countries: countries
+=======
+			version 	: source.version,
+			zones   	: zones,
+			links   	: links.sort(),
+			countries 	: source.countries
+>>>>>>> origin/Country-Functionality
 		};
 	}
 
@@ -427,8 +466,12 @@
 			abbrs      : slice.apply(source.abbrs, indices),
 			untils     : untils,
 			offsets    : slice.apply(source.offsets, indices),
+<<<<<<< HEAD
 			population : source.population,
 			countries  : source.countries
+=======
+			population : source.population
+>>>>>>> origin/Country-Functionality
 		};
 	}
 
@@ -450,7 +493,11 @@
 			zones : outputZones,
 			links : input.links.slice(),
 			version : input.version,
+<<<<<<< HEAD
 			countries : input.countries
+=======
+			countries : []
+>>>>>>> origin/Country-Functionality
 		});
 
 		for (i = 0; i < output.zones.length; i++) {
@@ -465,6 +512,7 @@
 	************************************/
 
 	moment.tz.pack           = pack;
+<<<<<<< HEAD
 	moment.tz.packCountryString  = packCountryString;
 	moment.tz.packBase60     = packBase60;
 	moment.tz.createLinks    = createLinks;
@@ -473,6 +521,13 @@
 	moment.tz.createCountriesList = createCountriesList;
 	moment.tz.filterYears    = filterYears;
 	moment.tz.filterLinkPack = filterLinkPack;
+=======
+	moment.tz.packBase60     = packBase60;
+	moment.tz.createLinks    = createLinks;
+	moment.tz.filterYears    = filterYears;
+	moment.tz.filterLinkPack = filterLinkPack;
+	moment.tz.packCountry	 = packCountry;
+>>>>>>> origin/Country-Functionality
 
 	return moment;
 }));
