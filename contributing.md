@@ -6,6 +6,7 @@ demonstrating the issue before opening a ticket on GitHub.
 ## Contributing
 
 Fork the library, install grunt, and install dependencies.
+Note that all pull requests will require a CLA.
 
 ```
 npm install -g grunt-cli
