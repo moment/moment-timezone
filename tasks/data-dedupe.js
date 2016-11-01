@@ -21,7 +21,8 @@ function dedupe(zone) {
 		abbrs      : abbrs,
 		untils     : untils,
 		offsets    : offsets,
-		population : zone.population
+		population : zone.population,
+		countries  : zone.countries
 	};
 }
 
@@ -34,15 +35,30 @@ function findVersion (source) {
 	throw new Error("Could not find version from temp/download/latest/NEWS.");
 }
 
+function addCountries(countries) {
+	var result = [];
+
+	for (var country in countries) {
+		result.push({
+			name : countries[country].abbr,
+			zones : countries[country].zones
+		});
+	}
+
+	return result;
+}
+
 module.exports = function (grunt) {
-	grunt.registerTask('data-dedupe', '5. Remove duplicate entries from data-collect.', function (version) {
+	grunt.registerTask('data-dedupe', '6. Remove duplicate entries from data-collect.', function (version) {
 		version = version || 'latest';
 
 		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
+			meta = grunt.file.readJSON('data/meta/' + version + '.json'),
 			output = {
 				version : version,
 				zones : zones.map(dedupe),
-				links : []
+				links : [],
+				countries : addCountries(meta.countries)
 			};
 
 		if (version === 'latest') {

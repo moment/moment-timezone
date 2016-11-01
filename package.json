@@ -1,50 +1,50 @@
 {
-	"name": "moment-timezone",
-	"version": "0.5.10",
-	"description": "Parse and display moments in any timezone.",
-	"homepage": "http://momentjs.com/timezone/",
-	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
-	"keywords": [
-		"moment",
-		"date",
-		"time",
-		"timezone",
-		"olson",
-		"iana",
-		"zone",
-		"tz"
-	],
-	"main": "./index.js",
-	"engines": {
-		"node": "*"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/moment/moment-timezone.git"
-	},
-	"bugs": {
-		"url": "https://github.com/moment/moment-timezone/issues"
-	},
-	"license" : "MIT",
-	"dependencies" : {
-		"moment" : ">= 2.6.0"
-	},
-	"devDependencies" : {
-		"grunt"                  : "0.4.5",
-		"grunt-contrib-clean"    : "0.6.0",
-		"grunt-contrib-nodeunit" : "0.4.1",
-		"grunt-contrib-jshint"   : "0.11.2",
-		"grunt-contrib-uglify"   : "0.9.1"
-	},
-	"jspm" : {
-		"main": "builds/moment-timezone-with-data",
-		"shim": {
-			"moment-timezone": {
-				"deps": ["moment"]
-			}
-		}
-	},
-	"scripts": {
-		"test": "grunt"
-	}
+  "name": "moment-timezone",
+  "version": "0.5.10",
+  "description": "Parse and display moments in any timezone.",
+  "homepage": "http://momentjs.com/timezone/",
+  "author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
+  "keywords": [
+    "moment",
+    "date",
+    "time",
+    "timezone",
+    "olson",
+    "iana",
+    "zone",
+    "tz"
+  ],
+  "main": "./index.js",
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moment/moment-timezone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moment/moment-timezone/issues"
+  },
+  "license" : "MIT",
+  "dependencies" : {
+    "moment" : ">= 2.6.0"
+  },
+  "devDependencies" : {
+    "grunt"                  : "0.4.5",
+    "grunt-contrib-clean"    : "0.6.0",
+    "grunt-contrib-nodeunit" : "0.4.1",
+    "grunt-contrib-jshint"   : "0.11.2",
+    "grunt-contrib-uglify"   : "0.9.1"
+  },
+  "jspm" : {
+    "main": "builds/moment-timezone-with-data",
+    "shim": {
+      "moment-timezone": {
+        "deps": ["moment"]
+      }
+    }
+  },
+  "scripts": {
+    "test": "grunt"
+  }
 }

@@ -102,7 +102,6 @@ module.exports = function (grunt) {
 			grunt.verbose.ok("Created " + zone.name + " tests.");
 		});
 
-
 		grunt.log.ok('Created tests');
 	});
 };

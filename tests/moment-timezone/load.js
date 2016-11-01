@@ -11,7 +11,8 @@ var DATA = {
 	links : [
 		"SomeZone/Los_Angles|SomeZone/Pacific",
 		"SomeZone/New_York|SomeZone/Eastern"
-	]
+	],
+	countries: []
 };
 
 exports.load = {

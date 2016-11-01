@@ -27,6 +27,7 @@
 	var VERSION = "0.5.10",
 		zones = {},
 		links = {},
+		countries = {},
 		names = {},
 		guesses = {},
 		cachedGuess,
@@ -113,7 +114,8 @@
 		var data = string.split('|'),
 			offsets = data[2].split(' '),
 			indices = data[3].split(''),
-			untils  = data[4].split(' ');
+			untils  = data[4].split(' '),
+			countries = data[6];
 
 		arrayToInt(offsets);
 		arrayToInt(indices);
@@ -121,12 +123,27 @@
 
 		intToUntil(untils, indices.length);
 
+		if (countries) {
+			countries = countries.split(' ');
+		} else {countries = '';}
+
 		return {
 			name       : data[0],
 			abbrs      : mapIndices(data[1].split(' '), indices),
 			offsets    : mapIndices(offsets, indices),
 			untils     : untils,
-			population : data[5] | 0
+			population : data[5] | 0,
+			countries  : countries
+		};
+	}
+
+	function unpackCountry (string) {
+		var data = string.split('|'),
+			zones = data[1].split(' ');
+
+		return {
+			name 	: data[0],
+			zones 	: zones
 		};
 	}
 
@@ -147,6 +164,7 @@
 			this.untils     = unpacked.untils;
 			this.offsets    = unpacked.offsets;
 			this.population = unpacked.population;
+			this.countries	= unpacked.countries;
 		},
 
 		_index : function (timestamp) {
@@ -195,6 +213,24 @@
 			return this.offsets[this._index(mom)];
 		}
 	};
+
+	/************************************
+		Country object
+	************************************/
+
+	function Country (packedString) {
+		if (packedString) {
+			this._set(unpackCountry(packedString));
+		}
+	}
+
+	Country.prototype = {
+		_set : function (unpacked) {
+			this.name       = unpacked.name;
+			this.zones      = unpacked.zones;
+		}
+	};
+
 
 	/************************************
 		Current Timezone
@@ -449,9 +485,56 @@
 		}
 	}
 
+	function addCountry (data) {
+		var i, name, split, normalized;
+		//check required because data could be undefined.
+		if (data) {
+			if (typeof data === "string") {
+			data = [data];
+			}
+
+			for (i = 0; i < data.length; i++) {
+				split = data[i].split('|');
+				name = split[0];
+				normalized = normalizeName(name);
+				countries[normalized] = data[i];
+			}
+		}
+	}
+
+	function getCountry (name, caller) {
+		name = normalizeName(name);
+
+		var country = countries[name];
+		var link;
+
+		if (country instanceof Country) {
+			return country;
+		}
+
+		if (typeof country === 'string') {
+			country = new Country(country);
+			countries[name] = country;
+			return country;
+		}
+
+		return null;
+	}
+
+	function zonesForCountry(country) {
+		country = getCountry(country);
+		
+		if (country) {
+			return country.zones;
+		}
+
+		return null;
+	}
+
 	function loadData (data) {
 		addZone(data.zones);
 		addLink(data.links);
+		addCountry(data.countries);
 		tz.dataVersion = data.version;
 	}
 
@@ -497,6 +580,7 @@
 	tz._zones       = zones;
 	tz._links       = links;
 	tz._names       = names;
+	tz._countries	= countries;
 	tz.add          = addZone;
 	tz.link         = addLink;
 	tz.load         = loadData;
@@ -510,6 +594,7 @@
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
+	tz.zonesForCountry = zonesForCountry;
 
 	/************************************
 		Interface with Moment.js

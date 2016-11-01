@@ -7,13 +7,13 @@ module.exports = function (grunt) {
 		grunt.task.run('clean:data');
 
 		grunt.task.run([
-			'data-download:' + version,
-			'data-zic:'      + version,
-			'data-zdump:'    + version,
-			'data-collect:'  + version,
-			'data-dedupe:'   + version,
-			'data-pack:'     + version,
-			'data-meta:'     + version
+			'data-download:' 	+ version,
+			'data-zic:'      	+ version,
+			'data-zdump:'    	+ version,
+			'data-meta:'     	+ version,
+			'data-collect:'  	+ version,
+			'data-dedupe:'   	+ version,
+			'data-pack:'     	+ version
 		]);
 
 		if (version === 'latest') {

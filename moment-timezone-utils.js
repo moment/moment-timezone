@@ -122,11 +122,18 @@
 			return '';
 		}
 		if (number < 1000) {
-			return '|' + number;
+			return number;
 		}
 		var exponent = String(number | 0).length - 2;
 		var precision = Math.round(number / Math.pow(10, exponent));
-		return '|' + precision + 'e' + exponent;
+		return precision + 'e' + exponent;
+	}
+
+	function packCountries (countries) {
+		if (!countries) {
+			return '';
+		}
+		return countries.join(' ');
 	}
 
 	function validatePackData (source) {
@@ -147,7 +154,16 @@
 		return [
 			source.name,
 			packAbbrsAndOffsets(source),
-			packUntils(source.untils) + packPopulation(source.population)
+			packUntils(source.untils),
+			packPopulation(source.population),
+			packCountries(source.countries)
+		].join('|');
+	}
+
+	function packCountry (source) {
+		return [
+			source.name,
+			source.zones.join(' '),
 		].join('|');
 	}
 
@@ -217,9 +233,10 @@
 		findAndCreateLinks(source.zones, zones, links);
 
 		return {
-			version : source.version,
-			zones   : zones,
-			links   : links.sort()
+			version 	: source.version,
+			zones   	: zones,
+			links   	: links.sort(),
+			countries 	: source.countries
 		};
 	}
 
@@ -292,7 +309,8 @@
 		output = createLinks({
 			zones : outputZones,
 			links : input.links.slice(),
-			version : input.version
+			version : input.version,
+			countries : []
 		});
 
 		for (i = 0; i < output.zones.length; i++) {
@@ -311,6 +329,7 @@
 	moment.tz.createLinks    = createLinks;
 	moment.tz.filterYears    = filterYears;
 	moment.tz.filterLinkPack = filterLinkPack;
+	moment.tz.packCountry	 = packCountry;
 
 	return moment;
 }));
