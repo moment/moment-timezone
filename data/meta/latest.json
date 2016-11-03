@@ -452,7 +452,8 @@
 			"name": "Cyprus",
 			"abbr": "CY",
 			"zones": [
-				"Asia/Nicosia"
+				"Asia/Nicosia",
+				"Asia/Famagusta"
 			]
 		},
 		"CZ": {
@@ -2930,7 +2931,16 @@
 			"countries": [
 				"CY"
 			],
-			"comments": ""
+			"comments": "Cyprus (most areas)"
+		},
+		"Asia/Famagusta": {
+			"name": "Asia/Famagusta",
+			"lat": 35.1167,
+			"long": 33.95,
+			"countries": [
+				"CY"
+			],
+			"comments": "Northern Cyprus"
 		},
 		"Europe/Prague": {
 			"name": "Europe/Prague",
