@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.7
+//! version : 0.5.8
 //! author : Tim Wood
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -596,7 +596,7 @@
 	}
 
 	loadData({
-		"version": "2016h",
+		"version": "2016i",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Khartoum|EAT|-30|0||51e5",
@@ -655,7 +655,7 @@
 			"America/Sao_Paulo|BRST BRT|20 30|01010101010101010101010|1BIq0 1zd0 On0 1zd0 Rb0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1C10 Lz0 1C10 Lz0 1C10|20e6",
 			"America/Scoresbysund|EGT EGST|10 0|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|452",
 			"America/St_Johns|NST NDT|3u 2u|01010101010101010101010|1BQPv 1zb0 Op0 1zcX Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|11e4",
-			"Antarctica/Casey|+11 +08|-b0 -80|0101|1BN30 40P0 KL0|10",
+			"Antarctica/Casey|+11 +08|-b0 -80|01010|1BN30 40P0 KL0 blz0|10",
 			"Antarctica/Davis|+05 +07|-50 -70|0101|1BPw0 3Wn0 KN0|70",
 			"Antarctica/DumontDUrville|+10|-a0|0||80",
 			"Antarctica/Macquarie|AEDT MIST|-b0 -b0|01|1C140|1",
@@ -682,6 +682,7 @@
 			"Asia/Damascus|EET EEST|-20 -30|01010101010101010101010|1C0m0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0|26e5",
 			"Asia/Dili|TLT|-90|0||19e4",
 			"Asia/Dubai|GST|-40|0||39e5",
+			"Asia/Famagusta|EET EEST +03|-20 -30 -30|010101010101012|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 15U0",
 			"Asia/Gaza|EET EEST|-20 -30|01010101010101010101010|1BVW1 SKX 1xd1 MKX 1AN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1qL0|18e5",
 			"Asia/Hebron|EET EEST|-20 -30|0101010101010101010101010|1BVy0 Tb0 1xd1 MKX bB0 cn0 1cN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1qL0|25e4",
 			"Asia/Hong_Kong|HKT|-80|0||73e5",
@@ -805,7 +806,7 @@
 			"Pacific/Rarotonga|CKT|a0|0||13e3",
 			"Pacific/Tahiti|TAHT|a0|0||18e4",
 			"Pacific/Tarawa|GILT|-c0|0||29e3",
-			"Pacific/Tongatapu|TOT|-d0|0||75e3",
+			"Pacific/Tongatapu|+13 +14|-d0 -e0|0101010101|1S4d0 s00 1VA0 uM0 1SM0 uM0 1SM0 uM0 1SM0|75e3",
 			"Pacific/Wake|WAKT|-c0|0||16e3",
 			"Pacific/Wallis|WFT|-c0|0||94"
 		],
