@@ -166,7 +166,7 @@
 			  toIndex = this._index(to),
 				changes = [],
 				i;
-			for (i = fromIndex; i < toIndex; i++) changes.push(untils[i]);
+			for (i = fromIndex; i < toIndex; i++) changes.push(this.untils[i]);
 			return changes;
 		},
 
