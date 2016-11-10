@@ -161,6 +161,15 @@
 			}
 		},
 
+		offsetChanges: function (from, to) {
+			var fromIndex = this._index(from),
+			  toIndex = this._index(to),
+				changes = [],
+				i;
+			for (i = fromIndex; i < toIndex; i++) changes.push(untils[i]);
+			return changes;
+		},
+
 		parse : function (timestamp) {
 			var target  = +timestamp,
 				offsets = this.offsets,
