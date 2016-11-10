@@ -38,6 +38,21 @@ exports.zone = {
 		test.done();
 	},
 
+	offsetChanges: function(test) {
+		var zone = new tz.Zone(PACKED),
+		  from = 1200 * 60000,
+		  to =  1400 * 60000,
+		  expected = [ 1240 * 60000, 1340 * 60000 ];
+		test.deepEqual(zone.offsetChanges(from, to), expected, "The offsetChanges from " + from + "to" + to + "  should be " + expected);
+		from = 0
+		expected = [ 1000 * 60000, 1100 * 60000, 1240 * 60000, 1340 * 60000 ];
+		test.deepEqual(zone.offsetChanges(from, to), expected, "The offsetChanges from " + from + "to" + to + "  should be " + expected);
+		to = 1500 * 60000;
+		expected = [ 1000 * 60000, 1100 * 60000, 1240 * 60000, 1340 * 60000, 1480 * 60000 ];
+		test.deepEqual(zone.offsetChanges(from, to), expected, "The offsetChanges from " + from + "to" + to + "  should be " + expected);
+		test.done();
+	},
+
 	abbr : function (test) {
 		var zone = new tz.Zone(PACKED),
 			tests = [
