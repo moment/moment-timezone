@@ -44,12 +44,34 @@ exports.zone = {
 		  to =  1400 * 60000,
 		  expected = [ 1240 * 60000, 1340 * 60000 ];
 		test.deepEqual(zone.offsetChanges(from, to), expected, "The offsetChanges from " + from + "to" + to + "  should be " + expected);
-		from = 0
+		from = 0;
 		expected = [ 1000 * 60000, 1100 * 60000, 1240 * 60000, 1340 * 60000 ];
 		test.deepEqual(zone.offsetChanges(from, to), expected, "The offsetChanges from " + from + "to" + to + "  should be " + expected);
 		to = 1500 * 60000;
 		expected = [ 1000 * 60000, 1100 * 60000, 1240 * 60000, 1340 * 60000, 1480 * 60000 ];
 		test.deepEqual(zone.offsetChanges(from, to), expected, "The offsetChanges from " + from + "to" + to + "  should be " + expected);
+		test.done();
+	},
+
+	offsetNext: function(test) {
+		var zone = new tz.Zone(PACKED),
+		  timestamp = 1050 * 60000,
+		  expected = 1100 * 60000;
+		test.equal(zone.offsetNext(timestamp), expected, "The offsetNext of " + timestamp + " should be " + expected);
+		timestamp = 1150 * 60000;
+		expected = 1240 * 60000;
+		test.equal(zone.offsetNext(timestamp), expected, "The offsetNext of " + timestamp + " should be " + expected);
+		test.done();
+	},
+
+	offsetPrevious: function(test) {
+		var zone = new tz.Zone(PACKED),
+		  timestamp = 1050 * 60000,
+		  expected = 1000 * 60000;
+		test.equal(zone.offsetPrevious(timestamp), expected, "The offsetNext of " + timestamp + " should be " + expected);
+		timestamp = 1150 * 60000;
+		expected = 1100 * 60000;
+		test.equal(zone.offsetPrevious(timestamp), expected, "The offsetNext of " + timestamp + " should be " + expected);
 		test.done();
 	},
 

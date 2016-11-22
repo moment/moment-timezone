@@ -170,6 +170,25 @@
 			return changes;
 		},
 
+		offsetNext: function (timestamp) {
+			var index = this._index(timestamp);
+			if (index === undefined) {
+				return undefined;
+			}
+			return this.untils[index];
+		},
+
+		offsetPrevious: function (timestamp) {
+			var index = this._index(timestamp);
+			if (index === undefined) {
+				return undefined;
+			}
+			if (index < 1) {
+				return undefined;
+			}
+			return this.untils[index-1];
+		},
+
 		parse : function (timestamp) {
 			var target  = +timestamp,
 				offsets = this.offsets,
