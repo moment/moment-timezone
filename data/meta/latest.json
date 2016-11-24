@@ -435,7 +435,7 @@
 			]
 		},
 		"CW": {
-			"name": "Curacao",
+			"name": "Curaçao",
 			"abbr": "CW",
 			"zones": [
 				"America/Curacao"
@@ -954,6 +954,7 @@
 				"Asia/Qyzylorda",
 				"Asia/Aqtobe",
 				"Asia/Aqtau",
+				"Asia/Atyrau",
 				"Asia/Oral"
 			]
 		},
@@ -1443,8 +1444,9 @@
 				"Europe/Volgograd",
 				"Europe/Kirov",
 				"Europe/Astrakhan",
-				"Europe/Samara",
+				"Europe/Saratov",
 				"Europe/Ulyanovsk",
+				"Europe/Samara",
 				"Asia/Yekaterinburg",
 				"Asia/Omsk",
 				"Asia/Novosibirsk",
@@ -3542,7 +3544,7 @@
 			"countries": [
 				"KZ"
 			],
-			"comments": "Aqtobe/Aktobe"
+			"comments": "Aqtöbe/Aktobe"
 		},
 		"Asia/Aqtau": {
 			"name": "Asia/Aqtau",
@@ -3551,7 +3553,16 @@
 			"countries": [
 				"KZ"
 			],
-			"comments": "Atyrau/Atirau/Gur'yev, Mangghystau/Mankistau"
+			"comments": "Mangghystaū/Mankistau"
+		},
+		"Asia/Atyrau": {
+			"name": "Asia/Atyrau",
+			"lat": 47.1167,
+			"long": 51.9333,
+			"countries": [
+				"KZ"
+			],
+			"comments": "Atyraū/Atirau/Gur'yev"
 		},
 		"Asia/Oral": {
 			"name": "Asia/Oral",
@@ -4261,7 +4272,7 @@
 			"countries": [
 				"RU"
 			],
-			"comments": "MSK+00 - Volgograd, Saratov"
+			"comments": "MSK+00 - Volgograd"
 		},
 		"Europe/Kirov": {
 			"name": "Europe/Kirov",
@@ -4281,14 +4292,14 @@
 			],
 			"comments": "MSK+01 - Astrakhan"
 		},
-		"Europe/Samara": {
-			"name": "Europe/Samara",
-			"lat": 53.2,
-			"long": 50.15,
+		"Europe/Saratov": {
+			"name": "Europe/Saratov",
+			"lat": 51.5667,
+			"long": 46.0333,
 			"countries": [
 				"RU"
 			],
-			"comments": "MSK+01 - Samara, Udmurtia"
+			"comments": "MSK+01 - Saratov"
 		},
 		"Europe/Ulyanovsk": {
 			"name": "Europe/Ulyanovsk",
@@ -4298,6 +4309,15 @@
 				"RU"
 			],
 			"comments": "MSK+01 - Ulyanovsk"
+		},
+		"Europe/Samara": {
+			"name": "Europe/Samara",
+			"lat": 53.2,
+			"long": 50.15,
+			"countries": [
+				"RU"
+			],
+			"comments": "MSK+01 - Samara, Udmurtia"
 		},
 		"Asia/Yekaterinburg": {
 			"name": "Asia/Yekaterinburg",
@@ -4324,7 +4344,7 @@
 			"countries": [
 				"RU"
 			],
-			"comments": "MSK+03 - Novosibirsk"
+			"comments": "MSK+04 - Novosibirsk"
 		},
 		"Asia/Barnaul": {
 			"name": "Asia/Barnaul",
