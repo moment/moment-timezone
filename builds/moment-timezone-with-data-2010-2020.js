@@ -1,6 +1,6 @@
 //! moment-timezone.js
-//! version : 0.5.9
-//! author : Tim Wood
+//! version : 0.5.10
+//! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
 
@@ -24,7 +24,7 @@
 		return moment;
 	}
 
-	var VERSION = "0.5.9",
+	var VERSION = "0.5.10",
 		zones = {},
 		links = {},
 		names = {},
@@ -596,7 +596,7 @@
 	}
 
 	loadData({
-		"version": "2016i",
+		"version": "2016j",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Khartoum|EAT|-30|0||51e5",
@@ -767,6 +767,7 @@
 			"Europe/Minsk|EET EEST +03|-20 -30 -30|0102|1BWo0 1qM0 WM0|19e5",
 			"Europe/Moscow|MSK MSD MSK|-30 -40 -40|01020|1BWn0 1qM0 WM0 8Hz0|16e6",
 			"Europe/Samara|+04 +03|-40 -30|010|1Dpb0 WM0|12e5",
+			"Europe/Saratov|+03 +04|-30 -40|010101|1BWn0 1qM0 WM0 8Hz0 5810",
 			"Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|01010101023|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11z0 1nW0|33e4",
 			"Pacific/Honolulu|HST|a0|0||37e4",
 			"Indian/Chagos|IOT|-60|0||30e2",
@@ -1073,6 +1074,7 @@
 			"Asia/Tashkent|Asia/Aqtobe",
 			"Asia/Tashkent|Asia/Ashgabat",
 			"Asia/Tashkent|Asia/Ashkhabad",
+			"Asia/Tashkent|Asia/Atyrau",
 			"Asia/Tashkent|Asia/Dushanbe",
 			"Asia/Tashkent|Asia/Oral",
 			"Asia/Tashkent|Asia/Samarkand",
