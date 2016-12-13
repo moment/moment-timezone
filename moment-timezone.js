@@ -161,6 +161,10 @@
 			}
 		},
 
+		getNextTransition : getNextTransition,
+
+		getPreviousTransition : getPreviousTransition,
+
 		parse : function (timestamp) {
 			var target  = +timestamp,
 				offsets = this.offsets,
@@ -362,6 +366,34 @@
 		return cachedGuess;
 	}
 
+	function getNextTransition (dateObject) {
+		var currentTimezone = guess(),
+			time = dateObject ? dateObject.valueOf() : Date.now(),
+			untils = getZone(currentTimezone).untils;
+
+		for(var i = 0; i < untils.length; i++) {
+			if (untils[i] > time) {
+				return new moment(untils[i]);
+			}
+		}
+	}
+
+	function getPreviousTransition (dateObject) {
+		var currentTimezone = guess(),
+			time = dateObject ? dateObject.valueOf() : Date.now(),
+			untils = getZone(currentTimezone).untils,
+			nextDSTIndex;
+
+		for(var i = 0; i < untils.length; i++) {
+			if (untils[i] > time) {
+				nextDSTIndex = i;
+				break;
+			}
+		}
+
+		return new moment(untils[nextDSTIndex - 1]);
+	}
+
 	/************************************
 		Global Methods
 	************************************/
@@ -510,6 +542,8 @@
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
+	tz.getNextTransition   = getNextTransition;
+	tz.getPreviousTransition   = getPreviousTransition;
 
 	/************************************
 		Interface with Moment.js
