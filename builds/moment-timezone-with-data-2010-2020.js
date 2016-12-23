@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.10
+//! version : 0.5.11
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -19,12 +19,12 @@
 	"use strict";
 
 	// Do not load moment-timezone a second time.
-	if (moment.tz !== undefined) {
-		logError('Moment Timezone ' + moment.tz.version + ' was already loaded ' + (moment.tz.dataVersion ? 'with data from ' : 'without any data') + moment.tz.dataVersion);
-		return moment;
-	}
+	// if (moment.tz !== undefined) {
+	// 	logError('Moment Timezone ' + moment.tz.version + ' was already loaded ' + (moment.tz.dataVersion ? 'with data from ' : 'without any data') + moment.tz.dataVersion);
+	// 	return moment;
+	// }
 
-	var VERSION = "0.5.10",
+	var VERSION = "0.5.11",
 		zones = {},
 		links = {},
 		names = {},

@@ -1,3 +1,6 @@
+### `0.5.11` _2016-12-23_
+* Remove log statement when data is loaded twice. [#352](https://github.com/moment/moment-timezone/pull/352)
+
 ### `0.5.10` _2016-11-27_
 * Updated data to IANA TZDB `2016j`. [#422](https://github.com/moment/moment-timezone/pull/422)
 
