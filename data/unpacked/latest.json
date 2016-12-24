@@ -52008,16 +52008,8 @@
         "EEST",
         "EET",
         "EEST",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         "EET",
         "EEST",
->>>>>>> 7f17dbc... removed moments from the source
-=======
-        "EET",
-        "EEST",
->>>>>>> 14de1c7... resolving conflicts
         "+03"
       ],
       "untils": [
@@ -52196,20 +52188,10 @@
         -180,
         -180
       ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "population": 0
-=======
-=======
->>>>>>> 14de1c7... resolving conflicts
       "population": 0,
       "countries": [
         "CY"
       ]
-<<<<<<< HEAD
->>>>>>> 7f17dbc... removed moments from the source
-=======
->>>>>>> 14de1c7... resolving conflicts
     },
     {
       "name": "Asia/Gaza",
@@ -102777,20 +102759,10 @@
         -180,
         -240
       ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "population": 0
-=======
-=======
->>>>>>> 14de1c7... resolving conflicts
       "population": 0,
       "countries": [
         "RU"
       ]
-<<<<<<< HEAD
->>>>>>> 7f17dbc... removed moments from the source
-=======
->>>>>>> 14de1c7... resolving conflicts
     },
     {
       "name": "Europe/Simferopol",
