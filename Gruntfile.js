@@ -48,5 +48,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('release', ['jshint', 'data', 'nodeunit', 'build', 'uglify']);
 
+	grunt.registerTask('releaseNoData', ['jshint', 'nodeunit', 'build', 'uglify']);
+
 	grunt.registerTask('default', ['jshint', 'nodeunit']);
 };
