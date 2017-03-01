@@ -6,7 +6,7 @@ exports["Africa/Windhoek"] = {
 	"guess" : helpers.makeTestGuess("Africa/Windhoek", { offset: true, abbr: true }),
 
 	"1903" : helpers.makeTestYear("Africa/Windhoek", [
-		["1903-02-28T22:29:59+00:00", "23:59:59", "SWAT", -90],
+		["1903-02-28T22:29:59+00:00", "23:59:59", "+0130", -90],
 		["1903-02-28T22:30:00+00:00", "00:30:00", "SAST", -120]
 	]),
 
