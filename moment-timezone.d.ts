@@ -6,11 +6,11 @@
 /// <reference path="../moment/moment.d.ts" />
 
 declare namespace moment {
-  interface MomentBuiltinFormat {
-    __momentBuiltinFormatBrand: any;
-  }
+    interface MomentBuiltinFormat {
+        __momentBuiltinFormatBrand: any;
+    }
 
-  type MomentFormatSpecification = string | MomentBuiltinFormat | (string | MomentBuiltinFormat)[];
+    type MomentFormatSpecification = string | MomentBuiltinFormat | (string | MomentBuiltinFormat)[];
 
     interface Moment {
         tz(): string;
