@@ -3,14 +3,15 @@
 // Definitions by: Michel Salib <https://github.com/michelsalib>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-/// <reference path="../moment/moment.d.ts" />
+import * as moment from 'moment';
 
-declare namespace moment {
+// require("moment-timezone") === require("moment")
+export = moment;
+
+declare module "moment" {
     interface MomentBuiltinFormat {
         __momentBuiltinFormatBrand: any;
     }
-
-    type MomentFormatSpecification = string | MomentBuiltinFormat | (string | MomentBuiltinFormat)[];
 
     interface Moment {
         tz(): string;
