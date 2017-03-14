@@ -388,6 +388,7 @@
 			"abbr": "CL",
 			"zones": [
 				"America/Santiago",
+				"America/Punta_Arenas",
 				"Pacific/Easter"
 			]
 		},
@@ -2841,6 +2842,15 @@
 				"CL"
 			],
 			"comments": "Chile (most areas)"
+		},
+		"America/Punta_Arenas": {
+			"name": "America/Punta_Arenas",
+			"lat": -52.85,
+			"long": -69.0833,
+			"countries": [
+				"CL"
+			],
+			"comments": "Region of Magallanes"
 		},
 		"Pacific/Easter": {
 			"name": "Pacific/Easter",
