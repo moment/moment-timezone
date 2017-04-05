@@ -1,7 +1,7 @@
 {
   "name": "moment/moment-timezone",
   "description": "Parse and display dates in any timezone",
-  "version": "0.5.8",
+  "version": "0.5.13",
   "keywords": [
     "moment",
     "date",
@@ -28,7 +28,7 @@
   "type": "component",
   "require": {
     "robloach/component-installer": "*",
-    "moment/moment": ">=2.6.0"
+    "moment/moment": ">=2.9.0"
   },
   "extra": {
     "component": {
