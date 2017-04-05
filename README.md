@@ -7,6 +7,9 @@
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
 ```js
+import moment from 'moment'
+import 'moment-timezone';
+
 var june = moment("2014-06-01T12:00:00Z");
 june.tz('America/Los_Angeles').format('ha z'); // 5am PDT
 june.tz('America/New_York').format('ha z');    // 8am EDT
