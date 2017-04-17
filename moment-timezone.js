@@ -553,9 +553,8 @@
 			} else {
 				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}
-			return this;
 		}
-		if (this._z) { return this._z.name; }
+		return this;
 	};
 
 	function abbrWrap (old) {
