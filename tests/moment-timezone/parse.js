@@ -251,6 +251,23 @@ exports.parse = {
 		t.done();
 	},
 
+    "check that moment(date).tz(timezone) and moment.tz(date, timezone) behave the same way" : function (t) {
+        var sourceTimeZone = 'America/Los_Angeles';
+        var targetTimeZone = 'America/New_York';
+        var timestamp1 = moment.tz('2017-06-27 18:00', sourceTimeZone).unix();
+        var timestamp2 = moment('2017-06-27 18:00').tz(sourceTimeZone).unix();
+
+        var formatTime = function(timestamp, timezone) {
+            return moment.unix(timestamp).tz(timezone).format('h:mma');
+        };
+
+        t.equal(
+            formatTime(timestamp1, targetTimeZone), // should be 3:00am
+            formatTime(timestamp2, targetTimeZone)
+        );
+        t.done();
+    },
+
 	"parse in default zone" : function (t) {
 		moment.tz.setDefault("America/New_York");
 
