@@ -9,7 +9,7 @@ var oldIntl = parent.Intl;
 
 function mockTimezoneOffset (zone, format) {
 	Date.prototype.getTimezoneOffset = function () {
-		return zone.offset(+this);
+		return zone.utcOffset(+this);
 	};
 	Date.prototype.toTimeString = function () {
 		return tz(+this, zone.name).format(format || 'HH:mm:ss [GMT]ZZ');
