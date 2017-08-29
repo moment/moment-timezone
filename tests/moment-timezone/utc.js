@@ -42,6 +42,11 @@ exports.utc = {
 		test.equal(helpers.getUTCOffset(m), localOffset, "Should reset the offset to local time when using moment.fn.local");
 		test.equal(m.format(), localFormat, "Should reset the offset to local time when using moment.fn.local");
 
+		m = moment('2017-01-01T00:00:00');
+		var utcWallTimeFormat = m.clone().utcOffset('-05:00', true).format();
+		m.tz('America/New_York', true);
+		test.equal(m.format(), utcWallTimeFormat, "Should change the offset while keeping wall time when passing an optional parameter to moment.fn.tz");
+		
 		test.done();
 	}
 };

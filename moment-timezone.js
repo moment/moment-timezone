@@ -550,11 +550,11 @@
 		}
 	};
 
-	fn.tz = function (name) {
+	fn.tz = function (name, keepTime) {
 		if (name) {
 			this._z = getZone(name);
 			if (this._z) {
-				moment.updateOffset(this);
+				moment.updateOffset(this, keepTime);
 			} else {
 				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}
