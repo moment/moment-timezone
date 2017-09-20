@@ -106,7 +106,7 @@ moment.tz.setDefault();
 
 moment.tz.guess(); // America/Chicago
 
-const unpackedZone: moment.tz.UnpackedZone = {
+const unpackedZone: moment.UnpackedZone = {
     name    : 'America/Los_Angeles',          // the unique identifier
     abbrs   : ['PDT', 'PST'],                 // the abbreviations
     untils  : [1414918800000, 1425808800000], // the timestamps in milliseconds
@@ -126,7 +126,7 @@ var zone = moment.tz.zone('America/New_York');
 zone.parse(Date.UTC(2012, 2, 11, 1, 59)); // 300
 zone.parse(Date.UTC(2012, 2, 11, 2, 0)); // 240
 
-const unpackedZone2: moment.tz.UnpackedZone = {
+const unpackedZone2: moment.UnpackedZone = {
     name    : 'America/Los_Angeles',
     abbrs   : ['PST', 'PDT','PST', 'PDT', 'PST', 'PDT', 'PST', 'PDT', 'PST', 'PDT', 'PST'],
     untils  : [1394359200000, 1414918800000, 1425808800000, 1446368400000, 1457863200000, 1478422800000, 1489312800000, 1509872400000, 1520762400000, 1541322000000, null],
@@ -154,7 +154,7 @@ moment.tz.link([
     'America/New_York|US/Eastern'
 ]);
 
-const packedZoneBundle: moment.tz.PackedZoneBundle = {
+const packedZoneBundle: moment.PackedZoneBundle = {
     version : '2014e',
     zones : [
         'America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0',
@@ -229,7 +229,7 @@ moment.tz.unpackBase60('mh');    // 1337
 moment.tz.unpackBase60('1.9');   // 1.15
 moment.tz.unpackBase60('k.7op'); // 20.123449074074074
 
-var unlinked: moment.tz.UnpackedZoneBundle = {
+var unlinked: moment.UnpackedZoneBundle = {
     zones : [
         {name:"Zone/One",abbrs:["OST","ODT"],offsets:[60,120],untils:[403041600000,417034800000]},
         {name:"Zone/Two",abbrs:["OST","ODT"],offsets:[60,120],untils:[403041600000,417034800000]}

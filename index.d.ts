@@ -56,24 +56,6 @@ declare module 'moment' {
          */
         function guess(): string;
 
-        /** Return a timezone by name or null if timezone by that name is not loaded. */
-        function zone(name: string): Zone | null;
-
-        /** Parsed / unpacked zone data. */
-        interface UnpackedZone {
-            /** The uniquely identifying name of the time zone. */
-            name: string;
-
-            /** zone abbreviations */
-            abbrs: Array<string>;
-            
-            /** (measured in milliseconds) */
-            untils: Array<number | null>;
-
-            /** (measured in minutes) */
-            offsets: Array<number>;
-        }
-
         interface Zone extends UnpackedZone {}
         class Zone {
             /** Get the abbreviation for a given timestamp from a Zone. */
@@ -85,6 +67,9 @@ declare module 'moment' {
             /** Parse an offset for a timestamp constructed from Date.UTC in that zone. */
             parse(timestamp: number): number;
         }
+
+        /** Return a timezone by name or null if timezone by that name is not loaded. */
+        function zone(name: string): Zone | null;
 
         /** Add zone data for a timezone. */
         function add(packedZone: string): void;
@@ -99,20 +84,6 @@ declare module 'moment' {
         /** load a bundle of zone data and links */
         function load(bundle: PackedZoneBundle): void;
 
-        /** Bundle of zone data and links for multiple timezones */
-        interface PackedZoneBundle {
-            version: string;
-            zones: Array<string>;
-            links: Array<string>;
-        }
-
-        /** Bundle of zone data and links for multiple timezones */
-        interface UnpackedZoneBundle {
-            version: string;
-            zones: Array<UnpackedZone>;
-            links: Array<string>;
-        }
-
         /** get a list of all available time zone names */
         function names(): Array<string>;
 
@@ -120,6 +91,37 @@ declare module 'moment' {
         function unpack(packedZone: string): UnpackedZone;
         /** Convert a base 60 string to a base 10 number. */
         function unpackBase60(base60String: string): number;
+    }
+
+    type Zone = tz.Zone;
+
+    /** Parsed / unpacked zone data. */
+    interface UnpackedZone {
+        /** The uniquely identifying name of the time zone. */
+        name: string;
+
+        /** zone abbreviations */
+        abbrs: Array<string>;
+        
+        /** (measured in milliseconds) */
+        untils: Array<number | null>;
+
+        /** (measured in minutes) */
+        offsets: Array<number>;
+    }
+
+    /** Bundle of zone data and links for multiple timezones */
+    interface PackedZoneBundle {
+        version: string;
+        zones: Array<string>;
+        links: Array<string>;
+    }
+
+    /** Bundle of zone data and links for multiple timezones */
+    interface UnpackedZoneBundle {
+        version: string;
+        zones: Array<UnpackedZone>;
+        links: Array<string>;
     }
 
 }
