@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 		},
 
 		exec: {
-			'typing-tests': 'tsc --project ./typing-tests'
+			'typing-tests': './node_modules/.bin/tsc --project ./typing-tests'
 		}
 	});
 
