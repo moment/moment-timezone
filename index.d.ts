@@ -25,17 +25,17 @@ declare module 'moment' {
     // Should be sorted from tightest to loosest.  TypeScript picks the first signature that matches, going top to bottom.
 
     /** create a moment with a time zone */
-    function tz(inp: moment.MomentInput, format: moment.MomentFormatSpecification, language: string, strict: boolean, zone: string): moment.Moment;
+    function tz(inp: MomentInput, format: MomentFormatSpecification, language: string, strict: boolean, zone: string): Moment;
     /** create a moment with a time zone */
-    function tz(inp: moment.MomentInput, format: moment.MomentFormatSpecification, language: string, zone: string): moment.Moment;
+    function tz(inp: MomentInput, format: MomentFormatSpecification, language: string, zone: string): Moment;
     /** create a moment with a time zone */
-    function tz(inp: moment.MomentInput, format: moment.MomentFormatSpecification, strict: boolean, zone: string): moment.Moment;
+    function tz(inp: MomentInput, format: MomentFormatSpecification, strict: boolean, zone: string): Moment;
     /** create a moment with a time zone */
-    function tz(inp: moment.MomentInput, format: moment.MomentFormatSpecification, zone: string): moment.Moment;
+    function tz(inp: MomentInput, format: MomentFormatSpecification, zone: string): Moment;
     /** create a moment with a time zone */
-    function tz(inp: moment.MomentInput, zone: string): moment.Moment;
+    function tz(inp: MomentInput, zone: string): Moment;
     /** create a moment with a time zone */
-    function tz(zone?: string): moment.Moment;
+    function tz(zone?: string): Moment;
 
     namespace tz {
         /** Version of moment-timezone */
