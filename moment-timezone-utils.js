@@ -6,12 +6,16 @@
 
 (function (root, factory) {
 	"use strict";
+	
+	function interop (exports) {
+		return exports && expoerts.default || exports;
+	}
 
 	/*global define*/
 	if (typeof define === 'function' && define.amd) {
 		define(['moment'], factory);                 // AMD
 	} else if (typeof module === 'object' && module.exports) {
-		module.exports = factory(require('./'));     // Node
+		module.exports = factory(interop(require('./')));     // Node
 	} else {
 		factory(root.moment);                        // Browser
 	}
