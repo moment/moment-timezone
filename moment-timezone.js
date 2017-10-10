@@ -8,7 +8,7 @@
 	"use strict";
 
 	function interop (exports) {
-		return exports && expoerts.default || exports;
+		return exports && exports.default || exports;
 	}
 
 	/*global define*/
