@@ -18,6 +18,8 @@
 }(this, function (moment) {
 	"use strict";
 
+	moment = moment && moment.hasOwnProperty('default') ? moment['default'] : moment;
+
 	// Do not load moment-timezone a second time.
 	// if (moment.tz !== undefined) {
 	// 	logError('Moment Timezone ' + moment.tz.version + ' was already loaded ' + (moment.tz.dataVersion ? 'with data from ' : 'without any data') + moment.tz.dataVersion);
