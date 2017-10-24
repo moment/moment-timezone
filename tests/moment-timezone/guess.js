@@ -77,9 +77,11 @@ exports.guess = {
 
 	"When Intl is available, it is used" : function (test) {
 		mockIntlTimeZone('Europe/London');
+		mockTimezoneOffset(tz.zone('Europe/London'));
 		test.equal(tz.guess(true), 'Europe/London');
 
 		mockIntlTimeZone('America/New_York');
+		mockTimezoneOffset(tz.zone('America/New_York'));
 		test.equal(tz.guess(true), 'America/New_York');
 
 		mockIntlTimeZone('America/Some_Missing_Zone');
@@ -95,7 +97,7 @@ exports.guess = {
 		console.error = function (message) {
 			errors += message;
 		};
-		
+
 		mockIntlTimeZone(undefined);
 		mockTimezoneOffset(tz.zone('Europe/London'));
 		test.equal(tz.guess(true), 'Europe/London');
@@ -114,6 +116,18 @@ exports.guess = {
 			mockTimezoneOffset(zone);
 			test.ok(tz.guess(true), "Should have a guess for " + zone.name + ")");
 		}
+		test.done();
+	},
+
+	"check Intl.DateTimeFormat().resolvedOptions().timeZone is credible" : function (test) {
+		mockTimezoneOffset(tz.zone('Asia/Shanghai'));
+		mockIntlTimeZone('America/Chicago');
+		var guessedName = tz.guess(true);
+		test.equal(
+			tz.zone(guessedName).offset(Date.now()),
+			tz.zone('Asia/Shanghai').offset(Date.now()),
+			"Should have a guess like Asia/Shanghai)"
+		);
 		test.done();
 	}
 };

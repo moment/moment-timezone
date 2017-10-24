@@ -330,7 +330,7 @@
 		// use Intl API when available and returning valid time zone
 		try {
 			var intlName = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			if (intlName){
+			if (isIntlNameCredible(intlName)){
 				var name = names[normalizeName(intlName)];
 				if (name) {
 					return name;
@@ -358,6 +358,27 @@
 		zoneScores.sort(sortZoneScores);
 
 		return zoneScores.length > 0 ? zoneScores[0].zone.name : undefined;
+	}
+
+	// for issue: https://github.com/moment/moment-timezone/issues/517
+	function isIntlNameCredible (intlName) {
+		if (!intlName) {
+			return false;
+		}
+
+		var zone = getZone(intlName),
+			browserOffset = new Date().getTimezoneOffset(),
+			i,
+			validOffset;
+		if (zone) {
+			for (i = 0; i < zone.offsets.length && !validOffset; i++) {
+				if (zone.offsets[i].offset === browserOffset) {
+					validOffset = zone.offsets[i].offset;
+				}
+			}
+		}
+
+		return !!validOffset;
 	}
 
 	function guess (ignoreCache) {
