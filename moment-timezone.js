@@ -330,7 +330,7 @@
 		// use Intl API when available and returning valid time zone
 		try {
 			var intlName = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			if (intlName){
+			if (intlName && intlName.length > 3) {
 				var name = names[normalizeName(intlName)];
 				if (name) {
 					return name;
