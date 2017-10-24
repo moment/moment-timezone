@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/moment/moment-timezone](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/moment/moment-timezone?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![jsDelivr Hits][jsdelivr-image]][jsdelivr-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
 
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
@@ -34,3 +34,6 @@ dec.tz('Australia/Sydney').format('ha z');     // 11pm EST
 
 [travis-url]: http://travis-ci.org/moment/moment-timezone
 [travis-image]: http://img.shields.io/travis/moment/moment-timezone/develop.svg?style=flat
+
+[jsdelivr-image]: https://data.jsdelivr.com/v1/package/npm/moment-timezone/badge?style=rounded
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/moment-timezone
