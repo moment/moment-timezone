@@ -34,6 +34,12 @@ module.exports = function(grunt) {
 			all: 'moment-timezone.js'
 		},
 
+		exec: {
+			'typescript-test': {
+				command: 'node_modules/.bin/ntsc --project typing-tests'
+			}
+		},
+
 		clean: {
 			data: ['temp']
 		}
@@ -45,10 +51,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-exec');
+
+	grunt.registerTask('test:typescript', ['exec:typescript-test']);
+	grunt.registerTask('test', ['test:typescript']);
 
 	grunt.registerTask('release', ['jshint', 'data', 'nodeunit', 'build', 'uglify']);
 
 	grunt.registerTask('releaseNoData', ['jshint', 'nodeunit', 'build', 'uglify']);
 
-	grunt.registerTask('default', ['jshint', 'nodeunit']);
+	grunt.registerTask('default', ['jshint', 'nodeunit', 'test']);
 };
