@@ -1,3 +1,8 @@
+### `0.5.14` _2017-10-30_
+* Updated data to IANA TZDB `2017c`. [#552](https://github.com/moment/moment-timezone/pull/552)
+* Ensure Intl response is valid when guessing time zone. [#553](https://github.com/moment/moment-timezone/pull/553)
+* Make all time zones available for guessing. [#483](https://github.com/moment/moment-timezone/pull/483)
+
 ### `0.5.13` _2017-04-04_
 * Bumped version to address Bower cache issues with last release.  [#474](https://github.com/moment/moment-timezone/issues/474)
 * (No actual changes otherwise)
