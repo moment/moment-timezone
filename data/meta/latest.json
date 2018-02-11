@@ -1591,7 +1591,7 @@
 			"name": "Sao Tome & Principe",
 			"abbr": "ST",
 			"zones": [
-				"Africa/Abidjan"
+				"Africa/Sao_Tome"
 			]
 		},
 		"SV": {
@@ -2820,7 +2820,6 @@
 				"SH",
 				"SL",
 				"SN",
-				"ST",
 				"TG"
 			],
 			"comments": ""
@@ -4562,6 +4561,15 @@
 			"long": 31.6167,
 			"countries": [
 				"SS"
+			],
+			"comments": ""
+		},
+		"Africa/Sao_Tome": {
+			"name": "Africa/Sao_Tome",
+			"lat": 0.3333,
+			"long": 6.7333,
+			"countries": [
+				"ST"
 			],
 			"comments": ""
 		},
