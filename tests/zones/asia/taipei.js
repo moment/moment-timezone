@@ -4,7 +4,7 @@ var helpers = require("../../helpers/helpers");
 
 exports["Asia/Taipei"] = {
 	"1937" : helpers.makeTestYear("Asia/Taipei", [
-		["1937-09-30T15:59:59+00:00", "23:59:59", "JWST", -480],
+		["1937-09-30T15:59:59+00:00", "23:59:59", "CST", -480],
 		["1937-09-30T16:00:00+00:00", "01:00:00", "JST", -540]
 	]),
 

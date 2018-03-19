@@ -4,8 +4,8 @@ var helpers = require("../../helpers/helpers");
 
 exports["Africa/Juba"] = {
 	"1930" : helpers.makeTestYear("Africa/Juba", [
-		["1930-12-31T21:49:51+00:00", "23:59:59", "LMT", -7808 / 60],
-		["1930-12-31T21:49:52+00:00", "23:49:52", "CAT", -120]
+		["1930-12-31T21:53:31+00:00", "23:59:59", "LMT", -7588 / 60],
+		["1930-12-31T21:53:32+00:00", "23:53:32", "CAT", -120]
 	]),
 
 	"1970" : helpers.makeTestYear("Africa/Juba", [
