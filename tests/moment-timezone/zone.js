@@ -84,7 +84,7 @@ exports.zone = {
 		for (i = 0; i < tests.length; i++) {
 			source = tests[i][0];
 			expected = tests[i][1];
-			test.equal(zone.offset(source), expected, "The offset for " + source + " should be " + expected);
+			test.equal(zone.utcOffset(source), expected, "The offset for " + source + " should be " + expected);
 		}
 
 		test.done();

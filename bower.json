@@ -2,9 +2,9 @@
   "name": "moment-timezone",
   "description" : "Parse and display moments in any timezone.",
   "license" : "MIT",
-  "main": "builds/moment-timezone-with-data-2010-2020.js",
+  "main": "builds/moment-timezone-with-data-2012-2022.js",
   "dependencies" : {
-    "moment" : ">= 2.6.0"
+    "moment" : ">= 2.9.0"
   },
   "ignore": [
     "**/.*",

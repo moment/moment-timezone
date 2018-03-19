@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.11
+//! version : 0.5.14
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,7 +24,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.11",
+	var VERSION = "0.5.14",
 		zones = {},
 		links = {},
 		countries = {},
@@ -210,6 +210,11 @@
 		},
 
 		offset : function (mom) {
+			logError("zone.offset has been deprecated in favor of zone.utcOffset");
+			return this.offsets[this._index(mom)];
+		},
+
+		utcOffset : function (mom) {
 			return this.offsets[this._index(mom)];
 		}
 	};
@@ -267,7 +272,7 @@
 	}
 
 	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
-		this.offsetScore += Math.abs(this.zone.offset(offsetAt.at) - offsetAt.offset);
+		this.offsetScore += Math.abs(this.zone.utcOffset(offsetAt.at) - offsetAt.offset);
 		if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, '') !== offsetAt.abbr) {
 			this.abbrScore++;
 		}
@@ -361,7 +366,7 @@
 		// use Intl API when available and returning valid time zone
 		try {
 			var intlName = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			if (intlName){
+			if (intlName && intlName.length > 3) {
 				var name = names[normalizeName(intlName)];
 				if (name) {
 					return name;
@@ -419,9 +424,7 @@
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
-			if (split[5]) {
-				addToGuesses(normalized, split[2].split(' '));
-			}
+			addToGuesses(normalized, split[2].split(' '));
 		}
 	}
 
@@ -547,7 +550,8 @@
 	}
 
 	function needsOffset (m) {
-		return !!(m._a && (m._tzm === undefined));
+		var isUnixTimestamp = (m._f === 'X' || m._f === 'x');
+		return !!(m._a && (m._tzm === undefined) && !isUnixTimestamp);
 	}
 
 	function logError (message) {
@@ -618,7 +622,7 @@
 			mom._z = zone;
 		}
 		if (mom._z) {
-			offset = mom._z.offset(mom);
+			offset = mom._z.utcOffset(mom);
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
@@ -630,11 +634,11 @@
 		}
 	};
 
-	fn.tz = function (name) {
+	fn.tz = function (name, keepTime) {
 		if (name) {
 			this._z = getZone(name);
 			if (this._z) {
-				moment.updateOffset(this);
+				moment.updateOffset(this, keepTime);
 			} else {
 				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}

@@ -38,7 +38,7 @@ function testYear(test, name, expected) {
 function mockTimezoneOffset(name) {
 	var zone = moment.tz.zone(name);
 	Date.prototype.getTimezoneOffset = function () {
-		return zone.offset(+this);
+		return zone.utcOffset(+this);
 	};
 }
 

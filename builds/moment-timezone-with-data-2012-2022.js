@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.11
+//! version : 0.5.14
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,7 +24,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.11",
+	var VERSION = "0.5.14",
 		zones = {},
 		links = {},
 		countries = {},
@@ -210,6 +210,11 @@
 		},
 
 		offset : function (mom) {
+			logError("zone.offset has been deprecated in favor of zone.utcOffset");
+			return this.offsets[this._index(mom)];
+		},
+
+		utcOffset : function (mom) {
 			return this.offsets[this._index(mom)];
 		}
 	};
@@ -267,7 +272,7 @@
 	}
 
 	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
-		this.offsetScore += Math.abs(this.zone.offset(offsetAt.at) - offsetAt.offset);
+		this.offsetScore += Math.abs(this.zone.utcOffset(offsetAt.at) - offsetAt.offset);
 		if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, '') !== offsetAt.abbr) {
 			this.abbrScore++;
 		}
@@ -361,7 +366,7 @@
 		// use Intl API when available and returning valid time zone
 		try {
 			var intlName = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			if (intlName){
+			if (intlName && intlName.length > 3) {
 				var name = names[normalizeName(intlName)];
 				if (name) {
 					return name;
@@ -419,9 +424,7 @@
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
-			if (split[5]) {
-				addToGuesses(normalized, split[2].split(' '));
-			}
+			addToGuesses(normalized, split[2].split(' '));
 		}
 	}
 
@@ -547,7 +550,8 @@
 	}
 
 	function needsOffset (m) {
-		return !!(m._a && (m._tzm === undefined));
+		var isUnixTimestamp = (m._f === 'X' || m._f === 'x');
+		return !!(m._a && (m._tzm === undefined) && !isUnixTimestamp);
 	}
 
 	function logError (message) {
@@ -618,7 +622,7 @@
 			mom._z = zone;
 		}
 		if (mom._z) {
-			offset = mom._z.offset(mom);
+			offset = mom._z.utcOffset(mom);
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
@@ -630,11 +634,11 @@
 		}
 	};
 
-	fn.tz = function (name) {
+	fn.tz = function (name, keepTime) {
 		if (name) {
 			this._z = getZone(name);
 			if (this._z) {
-				moment.updateOffset(this);
+				moment.updateOffset(this, keepTime);
 			} else {
 				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}
@@ -681,8 +685,9 @@
 	}
 
 	loadData({
-		"version": "2016j",
+		"version": "2017c",
 		"zones": [
+<<<<<<< HEAD:builds/moment-timezone-with-data-2010-2020.js
 			"Africa/Abidjan|GMT|0|0||48e5|",
 			"Africa/Khartoum|EAT|-30|0||51e5|",
 			"Africa/Algiers|CET|-10|0||26e5|",
@@ -895,6 +900,153 @@
 			"Pacific/Tongatapu|+13 +14|-d0 -e0|0101010101|1S4d0 s00 1VA0 uM0 1SM0 uM0 1SM0 uM0 1SM0|75e3|",
 			"Pacific/Wake|WAKT|-c0|0||16e3|",
 			"Pacific/Wallis|WFT|-c0|0||94|"
+=======
+			"Africa/Abidjan|GMT|0|0||48e5",
+			"Africa/Nairobi|EAT|-30|0||47e5",
+			"Africa/Algiers|CET|-10|0||26e5",
+			"Africa/Lagos|WAT|-10|0||17e6",
+			"Africa/Maputo|CAT|-20|0||26e5",
+			"Africa/Cairo|EET EEST|-20 -30|01010|1M2m0 gL0 e10 mn0|15e6",
+			"Africa/Casablanca|WET WEST|0 -10|0101010101010101010101010101010101010101010|1H3C0 wM0 co0 go0 1o00 s00 dA0 vc0 11A0 A00 e00 y00 11A0 uM0 e00 Dc0 11A0 s00 e00 IM0 WM0 mo0 gM0 LA0 WM0 jA0 e00 Rc0 11A0 e00 e00 U00 11A0 8o0 e00 11A0 11A0 5A0 e00 17c0 1fA0 1a00|32e5",
+			"Europe/Paris|CET CEST|-10 -20|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|11e6",
+			"Africa/Johannesburg|SAST|-20|0||84e5",
+			"Africa/Khartoum|EAT CAT|-30 -20|01|1Usl0|51e5",
+			"Africa/Tripoli|EET CET CEST|-20 -10 -20|0120|1IlA0 TA0 1o00|11e5",
+			"Africa/Windhoek|WAST WAT CAT|-20 -10 -20|0101010101012|1GQo0 11B0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0|32e4",
+			"America/Adak|HST HDT|a0 90|01010101010101010101010|1GIc0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|326",
+			"America/Anchorage|AKST AKDT|90 80|01010101010101010101010|1GIb0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|30e4",
+			"America/Santo_Domingo|AST|40|0||29e5",
+			"America/Araguaina|-03 -02|30 20|010|1IdD0 Lz0|14e4",
+			"America/Fortaleza|-03|30|0||34e5",
+			"America/Asuncion|-03 -04|30 40|01010101010101010101010|1GTf0 1cN0 17b0 1ip0 17b0 1ip0 17b0 1ip0 19X0 1fB0 19X0 1fB0 19X0 1ip0 17b0 1ip0 17b0 1ip0 19X0 1fB0 19X0 1fB0|28e5",
+			"America/Panama|EST|50|0||15e5",
+			"America/Bahia|-02 -03|20 30|01|1GCq0|27e5",
+			"America/Mexico_City|CST CDT|60 50|01010101010101010101010|1GQw0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0|20e6",
+			"America/Managua|CST|60|0||22e5",
+			"America/La_Paz|-04|40|0||19e5",
+			"America/Lima|-05|50|0||11e6",
+			"America/Denver|MST MDT|70 60|01010101010101010101010|1GI90 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|26e5",
+			"America/Campo_Grande|-03 -04|30 40|01010101010101010101010|1GCr0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1C10 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0|77e4",
+			"America/Cancun|CST CDT EST|60 50 50|01010102|1GQw0 1nX0 14p0 1lb0 14p0 1lb0 Dd0|63e4",
+			"America/Caracas|-0430 -04|4u 40|01|1QMT0|29e5",
+			"America/Chicago|CST CDT|60 50|01010101010101010101010|1GI80 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|92e5",
+			"America/Chihuahua|MST MDT|70 60|01010101010101010101010|1GQx0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0|81e4",
+			"America/Phoenix|MST|70|0||42e5",
+			"America/Los_Angeles|PST PDT|80 70|01010101010101010101010|1GIa0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|15e6",
+			"America/New_York|EST EDT|50 40|01010101010101010101010|1GI70 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|21e6",
+			"America/Rio_Branco|-04 -05|40 50|01|1KLE0|31e4",
+			"America/Fort_Nelson|PST PDT MST|80 70 70|01010102|1GIa0 1zb0 Op0 1zb0 Op0 1zb0 Op0|39e2",
+			"America/Halifax|AST ADT|40 30|01010101010101010101010|1GI60 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|39e4",
+			"America/Godthab|-03 -02|30 20|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|17e3",
+			"America/Grand_Turk|EST EDT AST|50 40 40|0101010121010101010|1GI70 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 5Ip0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|37e2",
+			"America/Havana|CST CDT|50 40|01010101010101010101010|1GQt0 1qM0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Rc0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Rc0 1zc0 Oo0 1zc0|21e5",
+			"America/Metlakatla|PST AKST AKDT|80 90 80|0121212121212121|1PAa0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|14e2",
+			"America/Miquelon|-03 -02|30 20|01010101010101010101010|1GI50 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|61e2",
+			"America/Montevideo|-02 -03|20 30|01010101|1GI40 1o10 11z0 1o10 11z0 1o10 11z0|17e5",
+			"America/Noronha|-02|20|0||30e2",
+			"America/Port-au-Prince|EST EDT|50 40|010101010101010101010|1GI70 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 3iN0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|23e5",
+			"Antarctica/Palmer|-03 -04|30 40|010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0|40",
+			"America/Santiago|-03 -04|30 40|010101010101010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Dd0 1Nb0 Ap0|62e5",
+			"America/Sao_Paulo|-02 -03|20 30|01010101010101010101010|1GCq0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1C10 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0|20e6",
+			"Atlantic/Azores|-01 +00|10 0|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|25e4",
+			"America/St_Johns|NST NDT|3u 2u|01010101010101010101010|1GI5u 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|11e4",
+			"Antarctica/Casey|+11 +08|-b0 -80|010|1GAF0 blz0|10",
+			"Antarctica/Davis|+05 +07|-50 -70|01|1GAI0|70",
+			"Pacific/Port_Moresby|+10|-a0|0||25e4",
+			"Pacific/Guadalcanal|+11|-b0|0||11e4",
+			"Asia/Tashkent|+05|-50|0||23e5",
+			"Pacific/Auckland|NZDT NZST|-d0 -c0|01010101010101010101010|1GQe0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00|14e5",
+			"Asia/Baghdad|+03|-30|0||66e5",
+			"Antarctica/Troll|+00 +02|0 -20|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|40",
+			"Asia/Dhaka|+06|-60|0||16e6",
+			"Asia/Amman|EET EEST|-20 -30|010101010101010101010|1GPy0 4bX0 Dd0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 11A0 1o00|25e5",
+			"Asia/Kamchatka|+12|-c0|0||18e4",
+			"Asia/Baku|+04 +05|-40 -50|010101010|1GNA0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00|27e5",
+			"Asia/Bangkok|+07|-70|0||15e6",
+			"Asia/Barnaul|+07 +06|-70 -60|010|1N7v0 3rd0",
+			"Asia/Beirut|EET EEST|-20 -30|01010101010101010101010|1GNy0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0|22e5",
+			"Asia/Manila|+08|-80|0||24e6",
+			"Asia/Kolkata|IST|-5u|0||15e6",
+			"Asia/Chita|+10 +08 +09|-a0 -80 -90|012|1N7s0 3re0|33e4",
+			"Asia/Ulaanbaatar|+08 +09|-80 -90|01010|1O8G0 1cJ0 1cP0 1cJ0|12e5",
+			"Asia/Shanghai|CST|-80|0||23e6",
+			"Asia/Colombo|+0530|-5u|0||22e5",
+			"Asia/Damascus|EET EEST|-20 -30|01010101010101010101010|1GPy0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0|26e5",
+			"Asia/Dili|+09|-90|0||19e4",
+			"Asia/Dubai|+04|-40|0||39e5",
+			"Asia/Famagusta|EET EEST +03|-20 -30 -30|0101010101201010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 15U0 2Ks0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0",
+			"Asia/Gaza|EET EEST|-20 -30|01010101010101010101010|1GPy0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0|18e5",
+			"Asia/Hong_Kong|HKT|-80|0||73e5",
+			"Asia/Hovd|+07 +08|-70 -80|01010|1O8H0 1cJ0 1cP0 1cJ0|81e3",
+			"Asia/Irkutsk|+09 +08|-90 -80|01|1N7t0|60e4",
+			"Europe/Istanbul|EET EEST +03|-20 -30 -30|01010101012|1GNB0 1qM0 11A0 1o00 1200 1nA0 11A0 1tA0 U00 15w0|13e6",
+			"Asia/Jakarta|WIB|-70|0||31e6",
+			"Asia/Jayapura|WIT|-90|0||26e4",
+			"Asia/Jerusalem|IST IDT|-20 -30|01010101010101010101010|1GPA0 1aL0 1eN0 1oL0 10N0 1oL0 10N0 1oL0 10N0 1rz0 W10 1rz0 W10 1rz0 10N0 1oL0 10N0 1oL0 10N0 1rz0 W10 1rz0|81e4",
+			"Asia/Kabul|+0430|-4u|0||46e5",
+			"Asia/Karachi|PKT|-50|0||24e6",
+			"Asia/Kathmandu|+0545|-5J|0||12e5",
+			"Asia/Yakutsk|+10 +09|-a0 -90|01|1N7s0|28e4",
+			"Asia/Krasnoyarsk|+08 +07|-80 -70|01|1N7u0|10e5",
+			"Asia/Magadan|+12 +10 +11|-c0 -a0 -b0|012|1N7q0 3Cq0|95e3",
+			"Asia/Makassar|WITA|-80|0||15e5",
+			"Europe/Athens|EET EEST|-20 -30|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|35e5",
+			"Asia/Novosibirsk|+07 +06|-70 -60|010|1N7v0 4eN0|15e5",
+			"Asia/Omsk|+07 +06|-70 -60|01|1N7v0|12e5",
+			"Asia/Pyongyang|KST KST|-90 -8u|01|1P4D0|29e5",
+			"Asia/Rangoon|+0630|-6u|0||48e5",
+			"Asia/Sakhalin|+11 +10|-b0 -a0|010|1N7r0 3rd0|58e4",
+			"Asia/Seoul|KST|-90|0||23e6",
+			"Asia/Srednekolymsk|+12 +11|-c0 -b0|01|1N7q0|35e2",
+			"Asia/Tehran|+0330 +0430|-3u -4u|01010101010101010101010|1GLUu 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0|14e6",
+			"Asia/Tokyo|JST|-90|0||38e6",
+			"Asia/Tomsk|+07 +06|-70 -60|010|1N7v0 3Qp0|10e5",
+			"Asia/Vladivostok|+11 +10|-b0 -a0|01|1N7r0|60e4",
+			"Asia/Yekaterinburg|+06 +05|-60 -50|01|1N7w0|14e5",
+			"Europe/Lisbon|WET WEST|0 -10|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|27e5",
+			"Atlantic/Cape_Verde|-01|10|0||50e4",
+			"Australia/Sydney|AEDT AEST|-b0 -a0|01010101010101010101010|1GQg0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0|40e5",
+			"Australia/Adelaide|ACDT ACST|-au -9u|01010101010101010101010|1GQgu 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0|11e5",
+			"Australia/Brisbane|AEST|-a0|0||20e5",
+			"Australia/Darwin|ACST|-9u|0||12e4",
+			"Australia/Eucla|+0845|-8J|0||368",
+			"Australia/Lord_Howe|+11 +1030|-b0 -au|01010101010101010101010|1GQf0 1fAu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1fAu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu|347",
+			"Australia/Perth|AWST|-80|0||18e5",
+			"Pacific/Easter|-05 -06|50 60|010101010101010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Dd0 1Nb0 Ap0|30e2",
+			"Europe/Dublin|GMT IST|0 -10|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|12e5",
+			"Pacific/Tahiti|-10|a0|0||18e4",
+			"Pacific/Niue|-11|b0|0||12e2",
+			"Etc/GMT+12|-12|c0|0|",
+			"Pacific/Galapagos|-06|60|0||25e3",
+			"Etc/GMT+7|-07|70|0|",
+			"Pacific/Pitcairn|-08|80|0||56",
+			"Pacific/Gambier|-09|90|0||125",
+			"Etc/GMT-1|+01|-10|0|",
+			"Pacific/Fakaofo|+13|-d0|0||483",
+			"Pacific/Kiritimati|+14|-e0|0||51e2",
+			"Etc/GMT-2|+02|-20|0|",
+			"Etc/UCT|UCT|0|0|",
+			"Etc/UTC|UTC|0|0|",
+			"Europe/Astrakhan|+04 +03|-40 -30|010|1N7y0 3rd0",
+			"Europe/London|GMT BST|0 -10|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|10e6",
+			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1GNA0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|67e4",
+			"Europe/Kaliningrad|+03 EET|-30 -20|01|1N7z0|44e4",
+			"Europe/Volgograd|+04 +03|-40 -30|01|1N7y0|10e5",
+			"Europe/Moscow|MSK MSK|-40 -30|01|1N7y0|16e6",
+			"Europe/Saratov|+04 +03|-40 -30|010|1N7y0 5810",
+			"Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|0101023|1GNB0 1qM0 11A0 1o00 11z0 1nW0|33e4",
+			"Pacific/Honolulu|HST|a0|0||37e4",
+			"MET|MET MEST|-10 -20|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0",
+			"Pacific/Chatham|+1345 +1245|-dJ -cJ|01010101010101010101010|1GQe0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00|600",
+			"Pacific/Apia|+14 +13|-e0 -d0|01010101010101010101010|1GQe0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00|37e3",
+			"Pacific/Bougainville|+10 +11|-a0 -b0|01|1NwE0|18e4",
+			"Pacific/Fiji|+13 +12|-d0 -c0|01010101010101010101010|1Goe0 1Nc0 Ao0 1Q00 xz0 1SN0 uM0 1SM0 uM0 1VA0 s00 1VA0 s00 1VA0 uM0 1SM0 uM0 1SM0 uM0 1VA0 s00 1VA0|88e4",
+			"Pacific/Guam|ChST|-a0|0||17e4",
+			"Pacific/Marquesas|-0930|9u|0||86e2",
+			"Pacific/Pago_Pago|SST|b0|0||37e2",
+			"Pacific/Norfolk|+1130 +11|-bu -b0|01|1PoCu|25e4",
+			"Pacific/Tongatapu|+13 +14|-d0 -e0|010|1S4d0 s00|75e3"
+>>>>>>> 9b6555c5e884430c8d39d8b0112bedf4a8ccfda4:builds/moment-timezone-with-data-2012-2022.js
 		],
 		"links": [
 			"Africa/Abidjan|Africa/Accra",
@@ -929,18 +1081,6 @@
 			"Africa/Casablanca|Africa/El_Aaiun",
 			"Africa/Johannesburg|Africa/Maseru",
 			"Africa/Johannesburg|Africa/Mbabane",
-			"Africa/Khartoum|Africa/Addis_Ababa",
-			"Africa/Khartoum|Africa/Asmara",
-			"Africa/Khartoum|Africa/Asmera",
-			"Africa/Khartoum|Africa/Dar_es_Salaam",
-			"Africa/Khartoum|Africa/Djibouti",
-			"Africa/Khartoum|Africa/Juba",
-			"Africa/Khartoum|Africa/Kampala",
-			"Africa/Khartoum|Africa/Mogadishu",
-			"Africa/Khartoum|Africa/Nairobi",
-			"Africa/Khartoum|Indian/Antananarivo",
-			"Africa/Khartoum|Indian/Comoro",
-			"Africa/Khartoum|Indian/Mayotte",
 			"Africa/Lagos|Africa/Bangui",
 			"Africa/Lagos|Africa/Brazzaville",
 			"Africa/Lagos|Africa/Douala",
@@ -958,6 +1098,17 @@
 			"Africa/Maputo|Africa/Kigali",
 			"Africa/Maputo|Africa/Lubumbashi",
 			"Africa/Maputo|Africa/Lusaka",
+			"Africa/Nairobi|Africa/Addis_Ababa",
+			"Africa/Nairobi|Africa/Asmara",
+			"Africa/Nairobi|Africa/Asmera",
+			"Africa/Nairobi|Africa/Dar_es_Salaam",
+			"Africa/Nairobi|Africa/Djibouti",
+			"Africa/Nairobi|Africa/Juba",
+			"Africa/Nairobi|Africa/Kampala",
+			"Africa/Nairobi|Africa/Mogadishu",
+			"Africa/Nairobi|Indian/Antananarivo",
+			"Africa/Nairobi|Indian/Comoro",
+			"Africa/Nairobi|Indian/Mayotte",
 			"Africa/Tripoli|Libya",
 			"America/Adak|America/Atka",
 			"America/Adak|US/Aleutian",
@@ -966,30 +1117,13 @@
 			"America/Anchorage|America/Sitka",
 			"America/Anchorage|America/Yakutat",
 			"America/Anchorage|US/Alaska",
-			"America/Argentina/Buenos_Aires|America/Argentina/Catamarca",
-			"America/Argentina/Buenos_Aires|America/Argentina/ComodRivadavia",
-			"America/Argentina/Buenos_Aires|America/Argentina/Cordoba",
-			"America/Argentina/Buenos_Aires|America/Argentina/Jujuy",
-			"America/Argentina/Buenos_Aires|America/Argentina/La_Rioja",
-			"America/Argentina/Buenos_Aires|America/Argentina/Mendoza",
-			"America/Argentina/Buenos_Aires|America/Argentina/Rio_Gallegos",
-			"America/Argentina/Buenos_Aires|America/Argentina/Salta",
-			"America/Argentina/Buenos_Aires|America/Argentina/San_Juan",
-			"America/Argentina/Buenos_Aires|America/Argentina/San_Luis",
-			"America/Argentina/Buenos_Aires|America/Argentina/Tucuman",
-			"America/Argentina/Buenos_Aires|America/Argentina/Ushuaia",
-			"America/Argentina/Buenos_Aires|America/Buenos_Aires",
-			"America/Argentina/Buenos_Aires|America/Catamarca",
-			"America/Argentina/Buenos_Aires|America/Cordoba",
-			"America/Argentina/Buenos_Aires|America/Jujuy",
-			"America/Argentina/Buenos_Aires|America/Mendoza",
-			"America/Argentina/Buenos_Aires|America/Rosario",
 			"America/Campo_Grande|America/Cuiaba",
 			"America/Chicago|America/Indiana/Knox",
 			"America/Chicago|America/Indiana/Tell_City",
 			"America/Chicago|America/Knox_IN",
 			"America/Chicago|America/Matamoros",
 			"America/Chicago|America/Menominee",
+			"America/Chicago|America/North_Dakota/Beulah",
 			"America/Chicago|America/North_Dakota/Center",
 			"America/Chicago|America/North_Dakota/New_Salem",
 			"America/Chicago|America/Rainy_River",
@@ -1013,16 +1147,50 @@
 			"America/Denver|MST7MDT",
 			"America/Denver|Navajo",
 			"America/Denver|US/Mountain",
+			"America/Fortaleza|America/Argentina/Buenos_Aires",
+			"America/Fortaleza|America/Argentina/Catamarca",
+			"America/Fortaleza|America/Argentina/ComodRivadavia",
+			"America/Fortaleza|America/Argentina/Cordoba",
+			"America/Fortaleza|America/Argentina/Jujuy",
+			"America/Fortaleza|America/Argentina/La_Rioja",
+			"America/Fortaleza|America/Argentina/Mendoza",
+			"America/Fortaleza|America/Argentina/Rio_Gallegos",
+			"America/Fortaleza|America/Argentina/Salta",
+			"America/Fortaleza|America/Argentina/San_Juan",
+			"America/Fortaleza|America/Argentina/San_Luis",
+			"America/Fortaleza|America/Argentina/Tucuman",
+			"America/Fortaleza|America/Argentina/Ushuaia",
 			"America/Fortaleza|America/Belem",
+			"America/Fortaleza|America/Buenos_Aires",
+			"America/Fortaleza|America/Catamarca",
+			"America/Fortaleza|America/Cayenne",
+			"America/Fortaleza|America/Cordoba",
+			"America/Fortaleza|America/Jujuy",
 			"America/Fortaleza|America/Maceio",
+			"America/Fortaleza|America/Mendoza",
+			"America/Fortaleza|America/Paramaribo",
 			"America/Fortaleza|America/Recife",
+			"America/Fortaleza|America/Rosario",
 			"America/Fortaleza|America/Santarem",
+			"America/Fortaleza|Antarctica/Rothera",
+			"America/Fortaleza|Atlantic/Stanley",
+			"America/Fortaleza|Etc/GMT+3",
 			"America/Halifax|America/Glace_Bay",
+			"America/Halifax|America/Goose_Bay",
 			"America/Halifax|America/Moncton",
 			"America/Halifax|America/Thule",
 			"America/Halifax|Atlantic/Bermuda",
 			"America/Halifax|Canada/Atlantic",
 			"America/Havana|Cuba",
+			"America/La_Paz|America/Boa_Vista",
+			"America/La_Paz|America/Guyana",
+			"America/La_Paz|America/Manaus",
+			"America/La_Paz|America/Porto_Velho",
+			"America/La_Paz|Brazil/West",
+			"America/La_Paz|Etc/GMT+4",
+			"America/Lima|America/Bogota",
+			"America/Lima|America/Guayaquil",
+			"America/Lima|Etc/GMT+5",
 			"America/Los_Angeles|America/Dawson",
 			"America/Los_Angeles|America/Ensenada",
 			"America/Los_Angeles|America/Santa_Isabel",
@@ -1042,11 +1210,8 @@
 			"America/Managua|America/Regina",
 			"America/Managua|America/Swift_Current",
 			"America/Managua|America/Tegucigalpa",
-			"America/Managua|Canada/East-Saskatchewan",
 			"America/Managua|Canada/Saskatchewan",
-			"America/Manaus|America/Boa_Vista",
-			"America/Manaus|America/Porto_Velho",
-			"America/Manaus|Brazil/West",
+			"America/Mexico_City|America/Bahia_Banderas",
 			"America/Mexico_City|America/Merida",
 			"America/Mexico_City|America/Monterrey",
 			"America/Mexico_City|Mexico/General",
@@ -1074,7 +1239,9 @@
 			"America/New_York|US/East-Indiana",
 			"America/New_York|US/Eastern",
 			"America/New_York|US/Michigan",
+			"America/Noronha|Atlantic/South_Georgia",
 			"America/Noronha|Brazil/DeNoronha",
+			"America/Noronha|Etc/GMT+2",
 			"America/Panama|America/Atikokan",
 			"America/Panama|America/Cayman",
 			"America/Panama|America/Coral_Harbour",
@@ -1089,7 +1256,6 @@
 			"America/Rio_Branco|America/Eirunepe",
 			"America/Rio_Branco|America/Porto_Acre",
 			"America/Rio_Branco|Brazil/Acre",
-			"America/Santiago|Antarctica/Palmer",
 			"America/Santiago|Chile/Continental",
 			"America/Santo_Domingo|America/Anguilla",
 			"America/Santo_Domingo|America/Antigua",
@@ -1116,34 +1282,69 @@
 			"America/Santo_Domingo|America/Virgin",
 			"America/Sao_Paulo|Brazil/East",
 			"America/St_Johns|Canada/Newfoundland",
-			"Antarctica/DumontDUrville|Etc/GMT-10",
-			"Antarctica/Rothera|Etc/GMT+3",
-			"Antarctica/Syowa|Etc/GMT-3",
-			"Asia/Almaty|Antarctica/Vostok",
-			"Asia/Almaty|Asia/Bishkek",
-			"Asia/Almaty|Asia/Qyzylorda",
-			"Asia/Almaty|Etc/GMT-6",
+			"Antarctica/Palmer|America/Punta_Arenas",
+			"Asia/Baghdad|Antarctica/Syowa",
 			"Asia/Baghdad|Asia/Aden",
 			"Asia/Baghdad|Asia/Bahrain",
 			"Asia/Baghdad|Asia/Kuwait",
 			"Asia/Baghdad|Asia/Qatar",
 			"Asia/Baghdad|Asia/Riyadh",
+			"Asia/Baghdad|Etc/GMT-3",
+			"Asia/Baghdad|Europe/Minsk",
 			"Asia/Bangkok|Asia/Ho_Chi_Minh",
+			"Asia/Bangkok|Asia/Novokuznetsk",
 			"Asia/Bangkok|Asia/Phnom_Penh",
 			"Asia/Bangkok|Asia/Saigon",
 			"Asia/Bangkok|Asia/Vientiane",
+			"Asia/Bangkok|Etc/GMT-7",
+			"Asia/Bangkok|Indian/Christmas",
+			"Asia/Dhaka|Antarctica/Vostok",
+			"Asia/Dhaka|Asia/Almaty",
+			"Asia/Dhaka|Asia/Bishkek",
 			"Asia/Dhaka|Asia/Dacca",
+			"Asia/Dhaka|Asia/Kashgar",
+			"Asia/Dhaka|Asia/Qyzylorda",
+			"Asia/Dhaka|Asia/Thimbu",
+			"Asia/Dhaka|Asia/Thimphu",
+			"Asia/Dhaka|Asia/Urumqi",
+			"Asia/Dhaka|Etc/GMT-6",
+			"Asia/Dhaka|Indian/Chagos",
+			"Asia/Dili|Etc/GMT-9",
+			"Asia/Dili|Pacific/Palau",
 			"Asia/Dubai|Asia/Muscat",
+			"Asia/Dubai|Asia/Tbilisi",
+			"Asia/Dubai|Asia/Yerevan",
+			"Asia/Dubai|Etc/GMT-4",
+			"Asia/Dubai|Europe/Samara",
+			"Asia/Dubai|Indian/Mahe",
+			"Asia/Dubai|Indian/Mauritius",
+			"Asia/Dubai|Indian/Reunion",
+			"Asia/Gaza|Asia/Hebron",
 			"Asia/Hong_Kong|Hongkong",
 			"Asia/Jakarta|Asia/Pontianak",
 			"Asia/Jerusalem|Asia/Tel_Aviv",
 			"Asia/Jerusalem|Israel",
 			"Asia/Kamchatka|Asia/Anadyr",
+			"Asia/Kamchatka|Etc/GMT-12",
+			"Asia/Kamchatka|Kwajalein",
+			"Asia/Kamchatka|Pacific/Funafuti",
+			"Asia/Kamchatka|Pacific/Kwajalein",
+			"Asia/Kamchatka|Pacific/Majuro",
+			"Asia/Kamchatka|Pacific/Nauru",
+			"Asia/Kamchatka|Pacific/Tarawa",
+			"Asia/Kamchatka|Pacific/Wake",
+			"Asia/Kamchatka|Pacific/Wallis",
 			"Asia/Kathmandu|Asia/Katmandu",
 			"Asia/Kolkata|Asia/Calcutta",
-			"Asia/Kuala_Lumpur|Asia/Kuching",
 			"Asia/Makassar|Asia/Ujung_Pandang",
+			"Asia/Manila|Asia/Brunei",
+			"Asia/Manila|Asia/Kuala_Lumpur",
+			"Asia/Manila|Asia/Kuching",
+			"Asia/Manila|Asia/Singapore",
+			"Asia/Manila|Etc/GMT-8",
+			"Asia/Manila|Singapore",
 			"Asia/Rangoon|Asia/Yangon",
+			"Asia/Rangoon|Indian/Cocos",
 			"Asia/Seoul|ROK",
 			"Asia/Shanghai|Asia/Chongqing",
 			"Asia/Shanghai|Asia/Chungking",
@@ -1153,7 +1354,6 @@
 			"Asia/Shanghai|Asia/Taipei",
 			"Asia/Shanghai|PRC",
 			"Asia/Shanghai|ROC",
-			"Asia/Singapore|Singapore",
 			"Asia/Tashkent|Antarctica/Mawson",
 			"Asia/Tashkent|Asia/Aqtau",
 			"Asia/Tashkent|Asia/Aqtobe",
@@ -1165,12 +1365,15 @@
 			"Asia/Tashkent|Asia/Samarkand",
 			"Asia/Tashkent|Etc/GMT-5",
 			"Asia/Tashkent|Indian/Kerguelen",
-			"Asia/Tbilisi|Etc/GMT-4",
+			"Asia/Tashkent|Indian/Maldives",
 			"Asia/Tehran|Iran",
-			"Asia/Thimphu|Asia/Thimbu",
 			"Asia/Tokyo|Japan",
+			"Asia/Ulaanbaatar|Asia/Choibalsan",
 			"Asia/Ulaanbaatar|Asia/Ulan_Bator",
-			"Asia/Urumqi|Asia/Kashgar",
+			"Asia/Vladivostok|Asia/Ust-Nera",
+			"Asia/Yakutsk|Asia/Khandyga",
+			"Atlantic/Azores|America/Scoresbysund",
+			"Atlantic/Cape_Verde|Etc/GMT+1",
 			"Australia/Adelaide|Australia/Broken_Hill",
 			"Australia/Adelaide|Australia/South",
 			"Australia/Adelaide|Australia/Yancowinna",
@@ -1264,21 +1467,42 @@
 			"Pacific/Auckland|Antarctica/South_Pole",
 			"Pacific/Auckland|NZ",
 			"Pacific/Chatham|NZ-CHAT",
-			"Pacific/Chuuk|Pacific/Truk",
-			"Pacific/Chuuk|Pacific/Yap",
 			"Pacific/Easter|Chile/EasterIsland",
+			"Pacific/Fakaofo|Etc/GMT-13",
+			"Pacific/Fakaofo|Pacific/Enderbury",
+			"Pacific/Galapagos|Etc/GMT+6",
+			"Pacific/Gambier|Etc/GMT+9",
+			"Pacific/Guadalcanal|Antarctica/Macquarie",
+			"Pacific/Guadalcanal|Etc/GMT-11",
+			"Pacific/Guadalcanal|Pacific/Efate",
+			"Pacific/Guadalcanal|Pacific/Kosrae",
+			"Pacific/Guadalcanal|Pacific/Noumea",
+			"Pacific/Guadalcanal|Pacific/Pohnpei",
+			"Pacific/Guadalcanal|Pacific/Ponape",
 			"Pacific/Guam|Pacific/Saipan",
 			"Pacific/Honolulu|HST",
 			"Pacific/Honolulu|Pacific/Johnston",
 			"Pacific/Honolulu|US/Hawaii",
-			"Pacific/Majuro|Kwajalein",
-			"Pacific/Majuro|Pacific/Kwajalein",
+			"Pacific/Kiritimati|Etc/GMT-14",
+			"Pacific/Niue|Etc/GMT+11",
 			"Pacific/Pago_Pago|Pacific/Midway",
 			"Pacific/Pago_Pago|Pacific/Samoa",
 			"Pacific/Pago_Pago|US/Samoa",
+<<<<<<< HEAD:builds/moment-timezone-with-data-2010-2020.js
 			"Pacific/Pohnpei|Pacific/Ponape"
 		],
 		"countries": []
+=======
+			"Pacific/Pitcairn|Etc/GMT+8",
+			"Pacific/Port_Moresby|Antarctica/DumontDUrville",
+			"Pacific/Port_Moresby|Etc/GMT-10",
+			"Pacific/Port_Moresby|Pacific/Chuuk",
+			"Pacific/Port_Moresby|Pacific/Truk",
+			"Pacific/Port_Moresby|Pacific/Yap",
+			"Pacific/Tahiti|Etc/GMT+10",
+			"Pacific/Tahiti|Pacific/Rarotonga"
+		]
+>>>>>>> 9b6555c5e884430c8d39d8b0112bedf4a8ccfda4:builds/moment-timezone-with-data-2012-2022.js
 	});
 
 
