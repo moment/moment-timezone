@@ -3,9 +3,12 @@
 var helpers = require("../helpers/helpers");
 
 exports["Portugal"] = {
+	"1911" : helpers.makeTestYear("Portugal", [
+		["1911-12-31T23:59:59+00:00", "23:23:14", "LMT", 2205 / 60]
+	]),
+
 	"1912" : helpers.makeTestYear("Portugal", [
-		["1912-01-01T00:36:44+00:00", "23:59:59", "LMT", 2205 / 60],
-		["1912-01-01T00:36:45+00:00", "00:36:45", "WET", 0]
+		["1912-01-01T00:00:00+00:00", "00:00:00", "WET", 0]
 	]),
 
 	"1916" : helpers.makeTestYear("Portugal", [
