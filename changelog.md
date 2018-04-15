@@ -1,3 +1,6 @@
+### `0.5.15` _2018-04-17_
+* Updated data to IANA TZDB `2018d`. [#596](https://github.com/moment/moment-timezone/pull/596)
+
 ### `0.5.14` _2017-10-30_
 * Ensure Intl response is valid when guessing time zone. [#553](https://github.com/moment/moment-timezone/pull/553)
 * Updated data to IANA TZDB `2017c`. [#552](https://github.com/moment/moment-timezone/pull/552)
