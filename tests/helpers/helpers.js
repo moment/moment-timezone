@@ -48,19 +48,19 @@ function mockToTimeString(name, format) {
 	};
 }
 
-function testGuess(test, name, mostPopulatedFor) {
+function testGuess(test, name, guessTestSettings) {
 	parent.Intl = undefined;
 
-	if (mostPopulatedFor.offset) {
+	if (guessTestSettings.offset) {
 		mockTimezoneOffset(name);
 		mockToTimeString(name);
-		test.equal(moment.tz.guess(true), name);
+		test.equal(moment.tz.guess(true), guessTestSettings.expect || name);
 	}
 
-	if (mostPopulatedFor.abbr) {
+	if (guessTestSettings.abbr) {
 		mockTimezoneOffset(name);
 		mockToTimeString(name, 'HH:mm:ss [GMT]ZZ (z)');
-		test.equal(moment.tz.guess(true), name);
+		test.equal(moment.tz.guess(true), guessTestSettings.expect || name);
 	}
 
 	Date.prototype.getTimezoneOffset = getTimezoneOffset;
@@ -76,9 +76,9 @@ module.exports = {
 		};
 	},
 
-	makeTestGuess : function (name, mostPopulatedFor) {
+	makeTestGuess : function (name, guessTestSettings) {
 		return function (test) {
-			testGuess(test, name, mostPopulatedFor);
+			testGuess(test, name, guessTestSettings);
 		};
 	},
 
