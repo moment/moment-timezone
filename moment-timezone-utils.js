@@ -1,5 +1,5 @@
 //! moment-timezone-utils.js
-//! version : 0.5.15
+//! version : 0.5.16
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -172,7 +172,7 @@
 		return arraysAreEqual(a.offsets, b.offsets) && arraysAreEqual(a.abbrs, b.abbrs) && arraysAreEqual(a.untils, b.untils);
 	}
 
-	function findAndCreateLinks (input, output, links) {
+	function findAndCreateLinks (input, output, links, groupLeaders) {
 		var i, j, a, b, group, foundGroup, groups = [];
 
 		for (i = 0; i < input.length; i++) {
@@ -185,7 +185,9 @@
 				if (zonesAreEqual(a, b)) {
 					if (a.population > b.population) {
 						group.unshift(a);
-					} else {
+					} else if (a.population === b.population && groupLeaders && groupLeaders[a.name]) {
+                        group.unshift(a);
+                    } else {
 						group.push(a);
 					}
 					foundGroup = true;
@@ -206,7 +208,7 @@
 		}
 	}
 
-	function createLinks (source) {
+	function createLinks (source, groupLeaders) {
 		var zones = [],
 			links = [];
 
@@ -214,7 +216,7 @@
 			links = source.links.slice();
 		}
 
-		findAndCreateLinks(source.zones, zones, links);
+		findAndCreateLinks(source.zones, zones, links, groupLeaders);
 
 		return {
 			version : source.version,
@@ -279,7 +281,7 @@
 		Filter, Link, and Pack
 	************************************/
 
-	function filterLinkPack (input, start, end) {
+	function filterLinkPack (input, start, end, groupLeaders) {
 		var i,
 			inputZones = input.zones,
 			outputZones = [],
@@ -293,7 +295,7 @@
 			zones : outputZones,
 			links : input.links.slice(),
 			version : input.version
-		});
+		}, groupLeaders);
 
 		for (i = 0; i < output.zones.length; i++) {
 			output.zones[i] = pack(output.zones[i]);

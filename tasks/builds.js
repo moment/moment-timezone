@@ -1,6 +1,7 @@
 "use strict";
 
-var tz = require('../moment-timezone-utils').tz;
+var tz = require('../moment-timezone-utils').tz,
+    groupLeaders = require('./group-leaders.json');
 
 module.exports = function (grunt) {
 	grunt.registerMultiTask('build', 'Build minified versions with data included.', function () {
@@ -18,7 +19,7 @@ module.exports = function (grunt) {
 			end = this.data[1];
 		}
 
-		data = tz.filterLinkPack(data, start, end);
+		data = tz.filterLinkPack(data, start, end, groupLeaders);
 		data = JSON.stringify(data, null, '\t');
 		data = data.split('\n').join('\n\t');
 		data = 'loadData(' + data + ');\n';

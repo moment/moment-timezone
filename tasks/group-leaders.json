@@ -1,0 +1,545 @@
+{
+  "Africa/Abidjan": [
+    "Africa/Abidjan",
+    "Africa/Bamako",
+    "Africa/Banjul",
+    "Africa/Conakry",
+    "Africa/Dakar",
+    "Africa/Freetown",
+    "Africa/Lome",
+    "Africa/Nouakchott",
+    "Africa/Ouagadougou",
+    "Africa/Timbuktu",
+    "Atlantic/St_Helena"
+  ],
+  "Africa/Nairobi": [
+    "Africa/Nairobi",
+    "Africa/Addis_Ababa",
+    "Africa/Asmara",
+    "Africa/Asmera",
+    "Africa/Dar_es_Salaam",
+    "Africa/Djibouti",
+    "Africa/Kampala",
+    "Africa/Mogadishu",
+    "Indian/Antananarivo",
+    "Indian/Comoro",
+    "Indian/Mayotte"
+  ],
+  "Africa/Lagos": [
+    "Africa/Lagos",
+    "Africa/Bangui",
+    "Africa/Brazzaville",
+    "Africa/Douala",
+    "Africa/Kinshasa",
+    "Africa/Libreville",
+    "Africa/Luanda",
+    "Africa/Malabo",
+    "Africa/Niamey",
+    "Africa/Porto-Novo"
+  ],
+  "Africa/Maputo": [
+    "Africa/Maputo",
+    "Africa/Blantyre",
+    "Africa/Bujumbura",
+    "Africa/Gaborone",
+    "Africa/Harare",
+    "Africa/Kigali",
+    "Africa/Lubumbashi",
+    "Africa/Lusaka"
+  ],
+  "Africa/Cairo": [
+    "Africa/Cairo",
+    "Egypt"
+  ],
+  "Africa/Johannesburg": [
+    "Africa/Johannesburg",
+    "Africa/Maseru",
+    "Africa/Mbabane"
+  ],
+  "Africa/Tripoli": [
+    "Africa/Tripoli",
+    "Libya"
+  ],
+  "America/Adak": [
+    "America/Adak",
+    "America/Atka",
+    "US/Aleutian"
+  ],
+  "America/Anchorage": [
+    "America/Anchorage",
+    "US/Alaska"
+  ],
+  "America/Port_of_Spain": [
+    "America/Port_of_Spain",
+    "America/Anguilla",
+    "America/Antigua",
+    "America/Dominica",
+    "America/Grenada",
+    "America/Guadeloupe",
+    "America/Marigot",
+    "America/Montserrat",
+    "America/St_Barthelemy",
+    "America/St_Kitts",
+    "America/St_Lucia",
+    "America/St_Thomas",
+    "America/St_Vincent",
+    "America/Tortola",
+    "America/Virgin"
+  ],
+  "America/Argentina/Buenos_Aires": [
+    "America/Argentina/Buenos_Aires",
+    "America/Buenos_Aires"
+  ],
+  "America/Argentina/Catamarca": [
+    "America/Argentina/Catamarca",
+    "America/Argentina/ComodRivadavia",
+    "America/Catamarca"
+  ],
+  "America/Argentina/Cordoba": [
+    "America/Argentina/Cordoba",
+    "America/Cordoba",
+    "America/Rosario"
+  ],
+  "America/Argentina/Jujuy": [
+    "America/Argentina/Jujuy",
+    "America/Jujuy"
+  ],
+  "America/Argentina/Mendoza": [
+    "America/Argentina/Mendoza",
+    "America/Mendoza"
+  ],
+  "America/Curacao": [
+    "America/Curacao",
+    "America/Aruba",
+    "America/Kralendijk",
+    "America/Lower_Princes"
+  ],
+  "America/Atikokan": [
+    "America/Atikokan",
+    "America/Coral_Harbour"
+  ],
+  "America/Panama": [
+    "America/Panama",
+    "America/Cayman"
+  ],
+  "America/Chicago": [
+    "America/Chicago",
+    "US/Central"
+  ],
+  "America/Denver": [
+    "America/Denver",
+    "America/Shiprock",
+    "Navajo",
+    "US/Mountain"
+  ],
+  "America/Detroit": [
+    "America/Detroit",
+    "US/Michigan"
+  ],
+  "America/Edmonton": [
+    "America/Edmonton",
+    "Canada/Mountain"
+  ],
+  "America/Tijuana": [
+    "America/Tijuana",
+    "America/Santa_Isabel",
+    "America/Ensenada",
+    "Mexico/BajaNorte"
+  ],
+  "America/Fort_Wayne": [
+    "America/Fort_Wayne",
+    "America/Indiana/Indianapolis",
+    "America/Indianapolis",
+    "US/East-Indiana"
+  ],
+  "America/Halifax": [
+    "America/Halifax",
+    "Canada/Atlantic"
+  ],
+  "America/Havana": [
+    "America/Havana",
+    "Cuba"
+  ],
+  "America/Indiana/Knox": [
+    "America/Indiana/Knox",
+    "America/Knox_IN",
+    "US/Indiana-Starke"
+  ],
+  "America/Jamaica": [
+    "America/Jamaica",
+    "Jamaica"
+  ],
+  "America/Kentucky/Louisville": [
+    "America/Kentucky/Louisville",
+    "America/Louisville"
+  ],
+  "America/Los_Angeles": [
+    "America/Los_Angeles",
+    "US/Pacific-New",
+    "US/Pacific"
+  ],
+  "America/Manaus": [
+    "America/Manaus",
+    "Brazil/West"
+  ],
+  "America/Mazatlan": [
+    "America/Mazatlan",
+    "Mexico/BajaSur"
+  ],
+  "America/Mexico_City": [
+    "America/Mexico_City",
+    "Mexico/General"
+  ],
+  "America/Toronto": [
+    "America/Toronto",
+    "America/Montreal",
+    "Canada/Eastern"
+  ],
+  "America/New_York": [
+    "America/New_York",
+    "US/Eastern"
+  ],
+  "America/Noronha": [
+    "America/Noronha",
+    "Brazil/DeNoronha"
+  ],
+  "America/Phoenix": [
+    "America/Phoenix",
+    "US/Arizona"
+  ],
+  "America/Rio_Branco": [
+    "America/Rio_Branco",
+    "America/Porto_Acre",
+    "Brazil/Acre"
+  ],
+  "America/Regina": [
+    "America/Regina",
+    "Canada/Saskatchewan"
+  ],
+  "America/Santiago": [
+    "America/Santiago",
+    "Chile/Continental"
+  ],
+  "America/Sao_Paulo": [
+    "America/Sao_Paulo",
+    "Brazil/East"
+  ],
+  "America/St_Johns": [
+    "America/St_Johns",
+    "Canada/Newfoundland"
+  ],
+  "America/Vancouver": [
+    "America/Vancouver",
+    "Canada/Pacific"
+  ],
+  "America/Whitehorse": [
+    "America/Whitehorse",
+    "Canada/Yukon"
+  ],
+  "America/Winnipeg": [
+    "America/Winnipeg",
+    "Canada/Central"
+  ],
+  "Pacific/Auckland": [
+    "Pacific/Auckland",
+    "Antarctica/McMurdo",
+    "Antarctica/South_Pole",
+    "NZ"
+  ],
+  "Europe/Oslo": [
+    "Europe/Oslo",
+    "Arctic/Longyearbyen",
+    "Atlantic/Jan_Mayen"
+  ],
+  "Asia/Riyadh": [
+    "Asia/Riyadh",
+    "Asia/Aden",
+    "Asia/Kuwait"
+  ],
+  "Asia/Ashgabat": [
+    "Asia/Ashgabat",
+    "Asia/Ashkhabad"
+  ],
+  "Asia/Qatar": [
+    "Asia/Qatar",
+    "Asia/Bahrain"
+  ],
+  "Asia/Bangkok": [
+    "Asia/Bangkok",
+    "Asia/Phnom_Penh",
+    "Asia/Vientiane"
+  ],
+  "Asia/Kolkata": [
+    "Asia/Kolkata",
+    "Asia/Calcutta"
+  ],
+  "Asia/Shanghai": [
+    "Asia/Shanghai",
+    "Asia/Chongqing",
+    "Asia/Chungking",
+    "Asia/Harbin",
+    "PRC"
+  ],
+  "Asia/Dhaka": [
+    "Asia/Dhaka",
+    "Asia/Dacca"
+  ],
+  "Asia/Dubai": [
+    "Asia/Dubai",
+    "Asia/Muscat"
+  ],
+  "Asia/Ho_Chi_Minh": [
+    "Asia/Ho_Chi_Minh",
+    "Asia/Saigon"
+  ],
+  "Asia/Hong_Kong": [
+    "Asia/Hong_Kong",
+    "Hongkong"
+  ],
+  "Europe/Istanbul": [
+    "Europe/Istanbul",
+    "Asia/Istanbul",
+    "Turkey"
+  ],
+  "Asia/Jerusalem": [
+    "Asia/Jerusalem",
+    "Asia/Tel_Aviv",
+    "Israel"
+  ],
+  "Asia/Urumqi": [
+    "Asia/Urumqi",
+    "Asia/Kashgar"
+  ],
+  "Asia/Kathmandu": [
+    "Asia/Kathmandu",
+    "Asia/Katmandu"
+  ],
+  "Asia/Kuala_Lumpur": [
+    "Asia/Kuala_Lumpur",
+    "Asia/Singapore",
+    "Singapore"
+  ],
+  "Asia/Macau": [
+    "Asia/Macau",
+    "Asia/Macao"
+  ],
+  "Asia/Makassar": [
+    "Asia/Makassar",
+    "Asia/Ujung_Pandang"
+  ],
+  "Asia/Nicosia": [
+    "Asia/Nicosia",
+    "Europe/Nicosia"
+  ],
+  "Asia/Rangoon": [
+    "Asia/Rangoon",
+    "Asia/Yangon"
+  ],
+  "Asia/Seoul": [
+    "Asia/Seoul",
+    "ROK"
+  ],
+  "Asia/Taipei": [
+    "Asia/Taipei",
+    "ROC"
+  ],
+  "Asia/Tehran": [
+    "Asia/Tehran",
+    "Iran"
+  ],
+  "Asia/Thimphu": [
+    "Asia/Thimphu",
+    "Asia/Thimbu"
+  ],
+  "Asia/Tokyo": [
+    "Asia/Tokyo",
+    "Japan"
+  ],
+  "Asia/Ulaanbaatar": [
+    "Asia/Ulaanbaatar",
+    "Asia/Ulan_Bator"
+  ],
+  "Atlantic/Faroe": [
+    "Atlantic/Faroe",
+    "Atlantic/Faeroe"
+  ],
+  "Atlantic/Reykjavik": [
+    "Atlantic/Reykjavik",
+    "Iceland"
+  ],
+  "Atlantic/South_Georgia": [
+    "Atlantic/South_Georgia",
+    "Etc/GMT+2"
+  ],
+  "Australia/Sydney": [
+    "Australia/Sydney",
+    "Australia/ACT",
+    "Australia/Canberra",
+    "Australia/NSW"
+  ],
+  "Australia/Adelaide": [
+    "Australia/Adelaide",
+    "Australia/South"
+  ],
+  "Australia/Brisbane": [
+    "Australia/Brisbane",
+    "Australia/Queensland"
+  ],
+  "Australia/Broken_Hill": [
+    "Australia/Broken_Hill",
+    "Australia/Yancowinna"
+  ],
+  "Australia/Darwin": [
+    "Australia/Darwin",
+    "Australia/North"
+  ],
+  "Australia/Hobart": [
+    "Australia/Hobart",
+    "Australia/Tasmania"
+  ],
+  "Australia/Lord_Howe": [
+    "Australia/Lord_Howe",
+    "Australia/LHI"
+  ],
+  "Australia/Melbourne": [
+    "Australia/Melbourne",
+    "Australia/Victoria"
+  ],
+  "Australia/Perth": [
+    "Australia/Perth",
+    "Australia/West"
+  ],
+  "Pacific/Easter": [
+    "Pacific/Easter",
+    "Chile/EasterIsland"
+  ],
+  "Europe/Dublin": [
+    "Europe/Dublin",
+    "Eire"
+  ],
+  "Etc/GMT-0": [
+    "Etc/GMT-0",
+    "Etc/GMT",
+    "Etc/GMT+0",
+    "Etc/GMT0",
+    "Etc/Greenwich",
+    "GMT-0",
+    "GMT",
+    "GMT+0",
+    "GMT0",
+    "Greenwich"
+  ],
+  "Pacific/Port_Moresby": [
+    "Pacific/Port_Moresby",
+    "Pacific/Chuuk",
+    "Etc/GMT-10",
+    "Pacific/Truk",
+    "Pacific/Yap"
+  ],
+  "Pacific/Pohnpei": [
+    "Pacific/Pohnpei",
+    "Etc/GMT-11",
+    "Pacific/Ponape"
+  ],
+  "Pacific/Tarawa": [
+    "Pacific/Tarawa",
+    "Pacific/Funafuti",
+    "Etc/GMT-12",
+    "Pacific/Wake",
+    "Pacific/Wallis"
+  ],
+  "Indian/Christmas": [
+    "Indian/Christmas",
+    "Etc/GMT-7"
+  ],
+  "Pacific/Palau": [
+    "Pacific/Palau",
+    "Etc/GMT-9"
+  ],
+  "Etc/UCT": [
+    "Etc/UCT",
+    "UCT"
+  ],
+  "Etc/UTC": [
+    "Etc/Universal",
+    "Etc/UTC",
+    "Etc/Zulu",
+    "Universal",
+    "UTC",
+    "Zulu"
+  ],
+  "Europe/London": [
+    "Europe/London",
+    "Europe/Belfast",
+    "Europe/Guernsey",
+    "Europe/Isle_of_Man",
+    "Europe/Jersey",
+    "GB-Eire",
+    "GB"
+  ],
+  "Europe/Belgrade": [
+    "Europe/Belgrade",
+    "Europe/Ljubljana",
+    "Europe/Podgorica",
+    "Europe/Sarajevo",
+    "Europe/Skopje",
+    "Europe/Zagreb"
+  ],
+  "Europe/Prague": [
+    "Europe/Prague",
+    "Europe/Bratislava"
+  ],
+  "Europe/Zurich": [
+    "Europe/Zurich",
+    "Europe/Busingen",
+    "Europe/Vaduz"
+  ],
+  "Europe/Chisinau": [
+    "Europe/Chisinau",
+    "Europe/Tiraspol"
+  ],
+  "Europe/Helsinki": [
+    "Europe/Helsinki",
+    "Europe/Mariehamn"
+  ],
+  "Europe/Lisbon": [
+    "Europe/Lisbon",
+    "Portugal"
+  ],
+  "Europe/Moscow": [
+    "Europe/Moscow",
+    "W-SU"
+  ],
+  "Europe/Rome": [
+    "Europe/Rome",
+    "Europe/San_Marino",
+    "Europe/Vatican"
+  ],
+  "Europe/Warsaw": [
+    "Europe/Warsaw",
+    "Poland"
+  ],
+  "Pacific/Kwajalein": [
+    "Pacific/Kwajalein",
+    "Kwajalein"
+  ],
+  "Pacific/Chatham": [
+    "Pacific/Chatham",
+    "NZ-CHAT"
+  ],
+  "Pacific/Guam": [
+    "Pacific/Guam",
+    "Pacific/Saipan"
+  ],
+  "Pacific/Honolulu": [
+    "Pacific/Honolulu",
+    "Pacific/Johnston",
+    "US/Hawaii"
+  ],
+  "Pacific/Pago_Pago": [
+    "Pacific/Pago_Pago",
+    "Pacific/Midway",
+    "Pacific/Samoa",
+    "US/Samoa"
+  ]
+}
