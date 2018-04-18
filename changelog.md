@@ -1,5 +1,6 @@
 ### `0.5.16` _2018-04-18_
 * Fixed Etc/UTC timezone recognition, updated tests. [#599](https://github.com/moment/moment-timezone/pull/599)
+* Updated minified files to contain IANA TZDB `2018d` data
 
 ### `0.5.15` _2018-04-17_
 * Updated data to IANA TZDB `2018d`. [#596](https://github.com/moment/moment-timezone/pull/596)
