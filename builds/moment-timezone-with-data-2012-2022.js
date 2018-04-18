@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.15
+//! version : 0.5.16
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,7 +24,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.15",
+	var VERSION = "0.5.16",
 		zones = {},
 		links = {},
 		names = {},
@@ -728,7 +728,7 @@
 			"Pacific/Pitcairn|-08|80|0||56",
 			"Pacific/Gambier|-09|90|0||125",
 			"Etc/UCT|UCT|0|0|",
-			"Etc/Universal|UTC|0|0|",
+			"Etc/UTC|UTC|0|0|",
 			"Europe/Astrakhan|+04 +03|-40 -30|010|1N7y0 3rd0",
 			"Europe/London|GMT BST|0 -10|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|10e6",
 			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1GNA0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|67e4",
@@ -1091,11 +1091,11 @@
 			"Australia/Sydney|Australia/Tasmania",
 			"Australia/Sydney|Australia/Victoria",
 			"Etc/UCT|UCT",
-			"Etc/Universal|Etc/UTC",
-			"Etc/Universal|Etc/Zulu",
-			"Etc/Universal|UTC",
-			"Etc/Universal|Universal",
-			"Etc/Universal|Zulu",
+			"Etc/UTC|Etc/Universal",
+			"Etc/UTC|Etc/Zulu",
+			"Etc/UTC|UTC",
+			"Etc/UTC|Universal",
+			"Etc/UTC|Zulu",
 			"Europe/Astrakhan|Europe/Ulyanovsk",
 			"Europe/Athens|Asia/Nicosia",
 			"Europe/Athens|EET",
