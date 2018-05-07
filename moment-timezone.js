@@ -29,9 +29,13 @@
 		links = {},
 		names = {},
 		guesses = {},
-		cachedGuess,
+		cachedGuess;
 
-		momentVersion = moment.version.split('.'),
+	if (!moment || typeof moment.version !== 'string') {
+		logError('Moment Timezone requires Moment.js. See https://momentjs.com/timezone/docs/#/use-it/browser/');
+	}
+
+	var momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
 		minor = +momentVersion[1];
 
@@ -394,7 +398,7 @@
 
 	function getZone (name, caller) {
 		if (typeof name !== 'string') {
-			throw new Error('Timezone name must be a string, not ' + name.toString() + ' (' + typeof name + ')');
+			throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
 		}
 
 		name = normalizeName(name);
@@ -555,9 +559,6 @@
 
 	fn.tz = function (name, keepTime) {
 		if (name) {
-			if (typeof name !== 'string'){
-				throw new Error('First parameter must be a timezone name, got ' + name.toString() + ' (' + typeof name + ')');
-			}
 			this._z = getZone(name);
 			if (this._z) {
 				moment.updateOffset(this, keepTime);
