@@ -393,6 +393,10 @@
 	}
 
 	function getZone (name, caller) {
+		if (typeof name !== 'string') {
+			throw new Error('Timezone name must be a string, not ' + name.toString() + ' (' + typeof name + ')');
+		}
+
 		name = normalizeName(name);
 
 		var zone = zones[name];
@@ -551,6 +555,9 @@
 
 	fn.tz = function (name, keepTime) {
 		if (name) {
+			if (typeof name !== 'string'){
+				throw new Error('First parameter must be a timezone name, got ' + name.toString() + ' (' + typeof name + ')');
+			}
 			this._z = getZone(name);
 			if (this._z) {
 				moment.updateOffset(this, keepTime);
