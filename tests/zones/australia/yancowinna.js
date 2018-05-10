@@ -3,6 +3,11 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Australia/Yancowinna"] = {
+
+	"guess:by:offset" : helpers.makeTestGuess("Australia/Yancowinna", { offset: true, expect: "Australia/Adelaide" }),
+
+	"guess:by:abbr" : helpers.makeTestGuess("Australia/Yancowinna", { abbr: true, expect: "Australia/Adelaide" }),
+
 	"1916" : helpers.makeTestYear("Australia/Yancowinna", [
 		["1916-12-31T14:30:59+00:00", "00:00:59", "ACST", -570],
 		["1916-12-31T14:31:00+00:00", "01:01:00", "ACDT", -630]
