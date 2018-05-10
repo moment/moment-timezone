@@ -2,8 +2,12 @@
 
 var path = require('path'),
 	moment = require('moment'),
-	tz = require('../').tz;
+	tz = require('../').tz,
+	helpers = require('../tests/helpers/helpers');
 
+/**
+ * Creates a test for a provided time change (zone.untils[i])
+ */
 function changeTest (zone, i) {
 	var until         = moment.utc(zone.untils[i]),
 		minutesOffset = zone.offsets[i],
@@ -19,82 +23,63 @@ function changeTest (zone, i) {
 	return '["' + dateTime + '", "' + hours + '", "' + abbr + '", ' + minutesOffset + ']';
 }
 
-function yearTest (year, changes, name) {
-	return '\t"' + year + '" : helpers.makeTestYear("' + name + '", [\n\t\t' + changes.join(',\n\t\t') + '\n\t])';
+/**
+ * Creates a test for provided year
+ */
+function yearTest (year, changeTests, name) {
+	return '\t"' + year + '" : helpers.makeTestYear("' + name + '", [\n\t\t' + changeTests.join(',\n\t\t') + '\n\t])';
 }
 
-function tests (zone) {
-	var years = {};
+/**
+ * Creates tests for all time changes in a timezone
+ */
+function yearTests (zone) {
+	var changeTests = {};
 
 	zone.untils.forEach(function (until, i) {
 		if (i < 2 || i >= zone.untils.length - 2) { return; }
 		var year = moment.utc(until).year();
-		years[year] = years[year] || [];
-		years[year].push(changeTest(zone, i));
+		changeTests[year] = changeTests[year] || [];
+		changeTests[year].push(changeTest(zone, i));
 	});
 
-	return Object.keys(years).map(function (year) {
-		return yearTest(year, years[year], zone.name);
+	return Object.keys(changeTests).map(function (year) {
+		return yearTest(year, changeTests[year], zone.name);
 	}).join(',\n\n');
 }
 
 function intro (name) {
 	var helpers = path.relative(path.dirname('zones/' + name), 'helpers/helpers');
-	return '"use strict";\n\nvar helpers = require("' + helpers + '");\n\nexports["' + name + '"] = {\n';
+	return '"use strict";\n\nvar helpers = require("' + helpers + '");\n\nexports["' + name + '"] = {\n\n';
 }
 
-function formatForMonth (name, month, format) {
-	return tz([2015, month, 1], name).format(format);
-}
-
-function untilForMonth (name, month) {
-	var zone = tz.zone(name),
-		index = zone._index(new Date(2015, month, 1)),
-		until = zone.untils[Math.min(zone.untils.length - 1, index)];
-	return tz(until === Infinity ? [2015, month, 1] : until, name).format('YYYY-MM-DD HH:mm');
-}
-
-function dataToOffsetAndAbbr (zoneData) {
-	var name = zoneData.name;
-	return {
-		name: name,
-		population: zoneData.population,
-		offsets: formatForMonth(name, 0, 'Z') + ' ' + formatForMonth(name, 6, 'Z'),
-		untils: untilForMonth(name, 0) + ' ' + untilForMonth(name, 6),
-		abbrs: formatForMonth(name, 0, 'z') + ' ' + formatForMonth(name, 6, 'z')
-	};
-}
-
-function population (data, grouped) {
-	var current = dataToOffsetAndAbbr(data);
-	var isMostPopulatedInOffset = current.population > 0;
-	var isMostPopulatedInAbbr = current.population > 0;
-	grouped.forEach(function (other) {
-		if (current.population > other.population || current.name === other.name) {
-			return;
-		}
-		if (other.offsets === current.offsets) {
-			isMostPopulatedInOffset = false;
-			if (other.abbrs === current.abbrs) {
-				isMostPopulatedInAbbr = false;
-			}
-		}
-	});
-
-	if (!/[A-Z]/.test(current.abbrs) || (!isMostPopulatedInAbbr && !isMostPopulatedInOffset)) {
-		return '';
+/**
+ * Creates two guess tests for a timezone, guess:by:offset and guess:by:abbr
+ */
+function guessTests (zone) {
+	var mostPopulatedInOffset = helpers.getGuessResult(zone.name, { offset: true });
+	var mostPopulatedInAbbr = helpers.getGuessResult(zone.name, { abbr: true });
+	var tests = '';
+	if (mostPopulatedInOffset === zone.name) {
+		tests += '\t"guess:by:offset" : helpers.makeTestGuess("' + zone.name + '", { offset: true }),\n\n';
+	} else if (mostPopulatedInOffset) {
+		tests += '\t"guess:by:offset" : helpers.makeTestGuess("' + zone.name + '", { offset: true, expect: "' + mostPopulatedInOffset + '" }),\n\n';
 	}
-	return '\t"guess" : helpers.makeTestGuess("' + data.name + '", { offset: ' + isMostPopulatedInOffset + ', abbr: ' + isMostPopulatedInAbbr + ' }),\n\n';
+	if (mostPopulatedInAbbr === zone.name) {
+		tests += '\t"guess:by:abbr" : helpers.makeTestGuess("' + zone.name + '", { abbr: true }),\n\n';
+	} else if (mostPopulatedInAbbr) {
+		tests += '\t"guess:by:abbr" : helpers.makeTestGuess("' + zone.name + '", { abbr: true, expect: "' + mostPopulatedInAbbr + '" }),\n\n';
+	}
+	return tests;
 }
 
 module.exports = function (grunt) {
 	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', function () {
 		tz.load(grunt.file.readJSON('data/packed/latest.json'));
-		var zones = grunt.file.readJSON('temp/collect/latest.json'),
-			grouped = zones.map(dataToOffsetAndAbbr);
+		var zones = grunt.file.readJSON('temp/collect/latest.json');
 
 		zones.forEach(function (zone) {
-			var data = intro(zone.name) + population(zone, grouped) + tests(zone) + '\n};',
+			var data = intro(zone.name) + guessTests(zone) + yearTests(zone) + '\n};',
 				dest = path.join('tests/zones', zone.name.toLowerCase() + '.js');
 
 			grunt.file.mkdir(path.dirname(dest));
@@ -114,7 +99,9 @@ module.exports = function (grunt) {
 // var helpers = require("../../helpers/helpers");
 //
 // exports["America/Los_Angeles"] = {
-// 	"guess" : helpers.makeTestGuess("America/Los_Angeles", { offset: true, abbr: true }),
+// 	"guess:by:offset" : helpers.makeTestGuess("America/Los_Angeles", { offset: true, expect: "America/Los_Angeles" }),
+//
+// 	"guess:by:abbr" : helpers.makeTestGuess("America/Los_Angeles", { abbr: true }),
 //
 // 	"1918" : helpers.makeTestYear("America/Los_Angeles", [
 // 		["1918-03-31T09:59:59+00:00", "01:59:59", "PST", 480],
