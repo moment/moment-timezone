@@ -3,5 +3,10 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Etc/UTC"] = {
-    "guess" : helpers.makeTestGuess("Etc/UTC", { offset: false, abbr: true }),
+
+	"guess:by:offset" : helpers.makeTestGuess("Etc/UTC", { offset: true, expect: "Africa/Abidjan" }),
+
+	"guess:by:abbr" : helpers.makeTestGuess("Etc/UTC", { abbr: true }),
+
+
 };

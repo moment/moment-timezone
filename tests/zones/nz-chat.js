@@ -3,6 +3,11 @@
 var helpers = require("../helpers/helpers");
 
 exports["NZ-CHAT"] = {
+
+	"guess:by:offset" : helpers.makeTestGuess("NZ-CHAT", { offset: true, expect: "Pacific/Chatham" }),
+
+	"guess:by:abbr" : helpers.makeTestGuess("NZ-CHAT", { abbr: true, expect: "Pacific/Chatham" }),
+
 	"1945" : helpers.makeTestYear("NZ-CHAT", [
 		["1945-12-31T11:44:59+00:00", "23:59:59", "+1215", -735],
 		["1945-12-31T11:45:00+00:00", "00:30:00", "+1245", -765]

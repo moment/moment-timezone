@@ -3,6 +3,11 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Atlantic/Canary"] = {
+
+	"guess:by:offset" : helpers.makeTestGuess("Atlantic/Canary", { offset: true, expect: "Europe/London" }),
+
+	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Canary", { abbr: true, expect: "Europe/Lisbon" }),
+
 	"1922" : helpers.makeTestYear("Atlantic/Canary", [
 		["1922-03-01T01:01:35+00:00", "23:59:59", "LMT", 3696 / 60],
 		["1922-03-01T01:01:36+00:00", "00:01:36", "-01", 60]
