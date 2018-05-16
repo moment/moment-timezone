@@ -1,5 +1,6 @@
 temp
 tests
+.idea
 
 Gruntfile.js
 tasks
