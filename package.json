@@ -26,10 +26,11 @@
 		"url": "https://github.com/moment/moment-timezone/issues"
 	},
 	"license": "MIT",
-	"dependencies": {
+	"peerDependencies": {
 		"moment": ">= 2.9.0"
 	},
 	"devDependencies": {
+		"moment": ">= 2.9.0",
 		"grunt": "^1.0.1",
 		"grunt-contrib-clean": "^1.1.0",
 		"grunt-contrib-jshint": "^1.1.0",
