@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.19
+//! version : 0.5.20
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -11,7 +11,8 @@
 	if (typeof module === 'object' && module.exports) {
 		module.exports = factory(require('moment')); // Node
 	} else if (typeof define === 'function' && define.amd) {
-		define(['moment'], factory);                 // AMD} else {
+		define(['moment'], factory);                 // AMD
+	} else {
 		factory(root.moment);                        // Browser
 	}
 }(this, function (moment) {
@@ -23,7 +24,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.19",
+	var VERSION = "0.5.20",
 		zones = {},
 		links = {},
 		names = {},

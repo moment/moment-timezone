@@ -1,3 +1,6 @@
+### `0.5.20` _2018-06-18_
+* Bugfix: accidentally commented code
+
 ### `0.5.19` _2018-06-18_
 * Revert: moved moment to peerDependencies #628
 
