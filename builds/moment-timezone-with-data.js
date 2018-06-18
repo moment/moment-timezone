@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.17
+//! version : 0.5.18
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -8,11 +8,10 @@
 	"use strict";
 
 	/*global define*/
-	if (typeof define === 'function' && define.amd) {
-		define(['moment'], factory);                 // AMD
-	} else if (typeof module === 'object' && module.exports) {
+	if (typeof module === 'object' && module.exports) {
 		module.exports = factory(require('moment')); // Node
-	} else {
+	} else if (typeof define === 'function' && define.amd) {
+		define(['moment'], factory);                 // AMD} else {
 		factory(root.moment);                        // Browser
 	}
 }(this, function (moment) {
@@ -24,14 +23,18 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.17",
+	var VERSION = "0.5.18",
 		zones = {},
 		links = {},
 		names = {},
 		guesses = {},
-		cachedGuess,
+		cachedGuess;
 
-		momentVersion = moment.version.split('.'),
+	if (!moment || typeof moment.version !== 'string') {
+		logError('Moment Timezone requires Moment.js. See https://momentjs.com/timezone/docs/#/use-it/browser/');
+	}
+
+	var momentVersion = moment.version.split('.'),
 		major = +momentVersion[0],
 		minor = +momentVersion[1];
 
@@ -393,6 +396,10 @@
 	}
 
 	function getZone (name, caller) {
+		if (typeof name !== 'string') {
+			throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
+		}
+
 		name = normalizeName(name);
 
 		var zone = zones[name];
