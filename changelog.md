@@ -1,3 +1,8 @@
+### `0.5.18` _2018-06-18_
+* Return error when timezone name is not a string. #616
+* Moved moment to peerDependencies #628
+* Prefer nodejs to amd declaration #573
+
 ### `0.5.17` _2018-05-12_
 * Updated data to IANA TZDB `2018d`. #616
 
