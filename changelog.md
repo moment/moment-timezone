@@ -1,3 +1,6 @@
+### `0.5.19` _2018-06-18_
+* Revert: moved moment to peerDependencies #628
+
 ### `0.5.18` _2018-06-18_
 * Return error when timezone name is not a string. #616
 * Moved moment to peerDependencies #628
