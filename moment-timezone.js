@@ -397,10 +397,6 @@
 	}
 
 	function getZone (name, caller) {
-		if (typeof name !== 'string') {
-			throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
-		}
-
 		name = normalizeName(name);
 
 		var zone = zones[name];
