@@ -1,3 +1,6 @@
+### `0.5.21` _2018-06-23_
+* Bugfix: revert breaking change introduced in 0.5.18
+
 ### `0.5.20` _2018-06-18_
 * Bugfix: accidentally commented code
 
