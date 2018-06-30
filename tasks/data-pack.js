@@ -1,14 +1,13 @@
 "use strict";
 
-var tz = require('../moment-timezone-utils').tz,
-    groupLeaders = require('./group-leaders.json');
+var tz = require('../moment-timezone-utils').tz;
 
 module.exports = function (grunt) {
 	grunt.registerTask('data-pack', '6. Pack data from data-dedupe.', function (version) {
 		version = version || 'latest';
 
 		var unpacked = grunt.file.readJSON('data/unpacked/' + version + '.json'),
-			output = tz.createLinks(unpacked, groupLeaders);
+			output = tz.createLinks(unpacked);
 
 		output.zones = output.zones.map(function (unpacked) {
 			return tz.pack(unpacked);

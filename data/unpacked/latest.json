@@ -15,7 +15,8 @@
         16.1333,
         0
       ],
-      "population": 4800000
+      "population": 4800000,
+      "weight": 1
     },
     {
       "name": "Africa/Accra",
@@ -862,7 +863,8 @@
         -180,
         -120
       ],
-      "population": 15071000
+      "population": 15071000,
+      "weight": 1
     },
     {
       "name": "Africa/Casablanca",
@@ -2011,7 +2013,8 @@
         -180,
         -120
       ],
-      "population": 8432000
+      "population": 8432000,
+      "weight": 1
     },
     {
       "name": "Africa/Juba",
@@ -2317,7 +2320,8 @@
         -13.6,
         -60
       ],
-      "population": 17060307
+      "population": 17060307,
+      "weight": 1
     },
     {
       "name": "Africa/Libreville",
@@ -2429,7 +2433,8 @@
         -130.3333,
         -120
       ],
-      "population": 2615000
+      "population": 2615000,
+      "weight": 1
     },
     {
       "name": "Africa/Maseru",
@@ -2554,7 +2559,8 @@
         -165,
         -180
       ],
-      "population": 4738000
+      "population": 4738000,
+      "weight": 1
     },
     {
       "name": "Africa/Ndjamena",
@@ -2784,7 +2790,8 @@
         -120,
         -120
       ],
-      "population": 1110000
+      "population": 1110000,
+      "weight": 1
     },
     {
       "name": "Africa/Tunis",
@@ -3507,7 +3514,8 @@
         540,
         600
       ],
-      "population": 326
+      "population": 326,
+      "weight": 1
     },
     {
       "name": "America/Anchorage",
@@ -3949,7 +3957,8 @@
         480,
         540
       ],
-      "population": 300950
+      "population": 300950,
+      "weight": 1
     },
     {
       "name": "America/Anguilla",
@@ -4334,7 +4343,8 @@
         120,
         180
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Argentina/Catamarca",
@@ -4521,7 +4531,8 @@
         120,
         180
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Argentina/ComodRivadavia",
@@ -4895,7 +4906,8 @@
         120,
         180
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Argentina/Jujuy",
@@ -5076,7 +5088,8 @@
         120,
         180
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Argentina/La_Rioja",
@@ -5453,7 +5466,8 @@
         120,
         180
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Argentina/Rio_Gallegos",
@@ -7028,7 +7042,8 @@
         300,
         300
       ],
-      "population": 2787
+      "population": 2787,
+      "weight": 1
     },
     {
       "name": "America/Atka",
@@ -10974,7 +10989,8 @@
         300,
         360
       ],
-      "population": 9156000
+      "population": 9156000,
+      "weight": 1
     },
     {
       "name": "America/Chihuahua",
@@ -11944,7 +11960,8 @@
         270,
         240
       ],
-      "population": 153500
+      "population": 153500,
+      "weight": 1
     },
     {
       "name": "America/Danmarkshavn",
@@ -13118,7 +13135,8 @@
         360,
         420
       ],
-      "population": 2559000
+      "population": 2559000,
+      "weight": 1
     },
     {
       "name": "America/Detroit",
@@ -13542,7 +13560,8 @@
         240,
         300
       ],
-      "population": 3672000
+      "population": 3672000,
+      "weight": 1
     },
     {
       "name": "America/Dominica",
@@ -14033,7 +14052,8 @@
         360,
         420
       ],
-      "population": 1040000
+      "population": 1040000,
+      "weight": 1
     },
     {
       "name": "America/Eirunepe",
@@ -15379,7 +15399,8 @@
         240,
         300
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Fortaleza",
@@ -18099,7 +18120,8 @@
         180,
         240
       ],
-      "population": 390095
+      "population": 390095,
+      "weight": 1
     },
     {
       "name": "America/Havana",
@@ -18577,7 +18599,8 @@
         240,
         300
       ],
-      "population": 2130000
+      "population": 2130000,
+      "weight": 1
     },
     {
       "name": "America/Hermosillo",
@@ -19414,7 +19437,8 @@
         300,
         360
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Indiana/Marengo",
@@ -22433,7 +22457,8 @@
         240,
         300
       ],
-      "population": 937700
+      "population": 937700,
+      "weight": 1
     },
     {
       "name": "America/Jujuy",
@@ -23597,7 +23622,8 @@
         240,
         300
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "America/Kentucky/Monticello",
@@ -25187,7 +25213,8 @@
         420,
         480
       ],
-      "population": 15058000
+      "population": 15058000,
+      "weight": 1
     },
     {
       "name": "America/Louisville",
@@ -26050,7 +26077,8 @@
         180,
         240
       ],
-      "population": 1893000
+      "population": 1893000,
+      "weight": 1
     },
     {
       "name": "America/Marigot",
@@ -26654,7 +26682,8 @@
         360,
         420
       ],
-      "population": 438434
+      "population": 438434,
+      "weight": 1
     },
     {
       "name": "America/Mendoza",
@@ -28108,7 +28137,8 @@
         300,
         360
       ],
-      "population": 20063000
+      "population": 20063000,
+      "weight": 1
     },
     {
       "name": "America/Miquelon",
@@ -31512,7 +31542,8 @@
         240,
         300
       ],
-      "population": 20630000
+      "population": 20630000,
+      "weight": 1
     },
     {
       "name": "America/Nipigon",
@@ -32499,7 +32530,8 @@
         60,
         120
       ],
-      "population": 3012
+      "population": 3012,
+      "weight": 1
     },
     {
       "name": "America/North_Dakota/Beulah",
@@ -34178,7 +34210,8 @@
         319.6,
         300
       ],
-      "population": 1498000
+      "population": 1498000,
+      "weight": 1
     },
     {
       "name": "America/Pangnirtung",
@@ -34625,7 +34658,8 @@
         360,
         420
       ],
-      "population": 4194000
+      "population": 4194000,
+      "weight": 1
     },
     {
       "name": "America/Port_of_Spain",
@@ -34641,7 +34675,8 @@
         246.0667,
         240
       ],
-      "population": 43396
+      "population": 43396,
+      "weight": 1
     },
     {
       "name": "America/Port-au-Prince",
@@ -36579,7 +36614,8 @@
         420,
         360
       ],
-      "population": 193100
+      "population": 193100,
+      "weight": 1
     },
     {
       "name": "America/Resolute",
@@ -37055,7 +37091,8 @@
         240,
         300
       ],
-      "population": 308545
+      "population": 308545,
+      "weight": 1
     },
     {
       "name": "America/Rosario",
@@ -38292,7 +38329,8 @@
         240,
         180
       ],
-      "population": 6225000
+      "population": 6225000,
+      "weight": 1
     },
     {
       "name": "America/Santo_Domingo",
@@ -38750,7 +38788,8 @@
         180,
         120
       ],
-      "population": 20365000
+      "population": 20365000,
+      "weight": 1
     },
     {
       "name": "America/Scoresbysund",
@@ -40780,7 +40819,8 @@
         150,
         210
       ],
-      "population": 106172
+      "population": 106172,
+      "weight": 1
     },
     {
       "name": "America/St_Kitts",
@@ -42145,7 +42185,8 @@
         420,
         480
       ],
-      "population": 1968000
+      "population": 1968000,
+      "weight": 1
     },
     {
       "name": "America/Toronto",
@@ -42854,7 +42895,8 @@
         240,
         300
       ],
-      "population": 6456000
+      "population": 6456000,
+      "weight": 1
     },
     {
       "name": "America/Tortola",
@@ -43450,7 +43492,8 @@
         420,
         480
       ],
-      "population": 2313000
+      "population": 2313000,
+      "weight": 1
     },
     {
       "name": "America/Virgin",
@@ -43857,7 +43900,8 @@
         420,
         480
       ],
-      "population": 23276
+      "population": 23276,
+      "weight": 1
     },
     {
       "name": "America/Winnipeg",
@@ -44425,7 +44469,8 @@
         300,
         360
       ],
-      "population": 663615
+      "population": 663615,
+      "weight": 1
     },
     {
       "name": "America/Yakutat",
@@ -48671,7 +48716,8 @@
         -240,
         -300
       ],
-      "population": 407000
+      "population": 407000,
+      "weight": 1
     },
     {
       "name": "Asia/Ashkhabad",
@@ -49319,7 +49365,8 @@
         -402.0667,
         -420
       ],
-      "population": 14998000
+      "population": 14998000,
+      "weight": 1
     },
     {
       "name": "Asia/Barnaul",
@@ -51231,7 +51278,8 @@
         -420,
         -360
       ],
-      "population": 15669000
+      "population": 15669000,
+      "weight": 1
     },
     {
       "name": "Asia/Dili",
@@ -51272,7 +51320,8 @@
         -221.2,
         -240
       ],
-      "population": 3933000
+      "population": 3933000,
+      "weight": 1
     },
     {
       "name": "Asia/Dushanbe",
@@ -52736,7 +52785,8 @@
         -480,
         -420
       ],
-      "population": 8957000
+      "population": 8957000,
+      "weight": 1
     },
     {
       "name": "Asia/Hong_Kong",
@@ -52956,7 +53006,8 @@
         -540,
         -480
       ],
-      "population": 7275000
+      "population": 7275000,
+      "weight": 1
     },
     {
       "name": "Asia/Hovd",
@@ -54216,7 +54267,8 @@
         -180,
         -120
       ],
-      "population": 809112
+      "population": 809112,
+      "weight": 1
     },
     {
       "name": "Asia/Kabul",
@@ -54512,7 +54564,8 @@
         -330,
         -345
       ],
-      "population": 1180000
+      "population": 1180000,
+      "weight": 1
     },
     {
       "name": "Asia/Katmandu",
@@ -54770,7 +54823,8 @@
         -390,
         -330
       ],
-      "population": 14667000
+      "population": 14667000,
+      "weight": 1
     },
     {
       "name": "Asia/Krasnoyarsk",
@@ -55006,7 +55060,8 @@
         -450,
         -480
       ],
-      "population": 7088000
+      "population": 7088000,
+      "weight": 1
     },
     {
       "name": "Asia/Kuching",
@@ -55361,7 +55416,8 @@
         -540,
         -480
       ],
-      "population": 566375
+      "population": 566375,
+      "weight": 1
     },
     {
       "name": "Asia/Magadan",
@@ -55594,7 +55650,8 @@
         -540,
         -480
       ],
-      "population": 1484000
+      "population": 1484000,
+      "weight": 1
     },
     {
       "name": "Asia/Manila",
@@ -56041,7 +56098,8 @@
         -180,
         -120
       ],
-      "population": 321816
+      "population": 321816,
+      "weight": 1
     },
     {
       "name": "Asia/Novokuznetsk",
@@ -56907,7 +56965,8 @@
         -240,
         -180
       ],
-      "population": 956460
+      "population": 956460,
+      "weight": 1
     },
     {
       "name": "Asia/Qyzylorda",
@@ -57077,7 +57136,8 @@
         -540,
         -390
       ],
-      "population": 4800000
+      "population": 4800000,
+      "weight": 1
     },
     {
       "name": "Asia/Riyadh",
@@ -57093,7 +57153,8 @@
         -186.8667,
         -180
       ],
-      "population": 5666000
+      "population": 5666000,
+      "weight": 1
     },
     {
       "name": "Asia/Saigon",
@@ -57493,7 +57554,8 @@
         -600,
         -540
       ],
-      "population": 23480000
+      "population": 23480000,
+      "weight": 1
     },
     {
       "name": "Asia/Shanghai",
@@ -57554,7 +57616,8 @@
         -540,
         -480
       ],
-      "population": 23416000
+      "population": 23416000,
+      "weight": 1
     },
     {
       "name": "Asia/Singapore",
@@ -57923,7 +57986,8 @@
         -540,
         -480
       ],
-      "population": 7438000
+      "population": 7438000,
+      "weight": 1
     },
     {
       "name": "Asia/Tashkent",
@@ -58475,7 +58539,8 @@
         -270,
         -210
       ],
-      "population": 13532000
+      "population": 13532000,
+      "weight": 1
     },
     {
       "name": "Asia/Tel_Aviv",
@@ -58952,7 +59017,8 @@
         -330,
         -360
       ],
-      "population": 79185
+      "population": 79185,
+      "weight": 1
     },
     {
       "name": "Asia/Tokyo",
@@ -58989,7 +59055,8 @@
         -600,
         -540
       ],
-      "population": 37843000
+      "population": 37843000,
+      "weight": 1
     },
     {
       "name": "Asia/Tomsk",
@@ -59388,7 +59455,8 @@
         -540,
         -480
       ],
-      "population": 1237000
+      "population": 1237000,
+      "weight": 1
     },
     {
       "name": "Asia/Ulan_Bator",
@@ -59567,7 +59635,8 @@
         -350.3333,
         -360
       ],
-      "population": 3184000
+      "population": 3184000,
+      "weight": 1
     },
     {
       "name": "Asia/Ust-Nera",
@@ -62805,7 +62874,8 @@
         -60,
         0
       ],
-      "population": 49469
+      "population": 49469,
+      "weight": 1
     },
     {
       "name": "Atlantic/Jan_Mayen",
@@ -64128,7 +64198,8 @@
         60,
         0
       ],
-      "population": 119289
+      "population": 119289,
+      "weight": 1
     },
     {
       "name": "Atlantic/South_Georgia",
@@ -64141,7 +64212,8 @@
       "offsets": [
         120
       ],
-      "population": 30
+      "population": 30,
+      "weight": 1
     },
     {
       "name": "Atlantic/St_Helena",
@@ -65246,7 +65318,8 @@
         -570,
         -630
       ],
-      "population": 1140000
+      "population": 1140000,
+      "weight": 1
     },
     {
       "name": "Australia/Brisbane",
@@ -65307,7 +65380,8 @@
         -660,
         -600
       ],
-      "population": 1999000
+      "population": 1999000,
+      "weight": 1
     },
     {
       "name": "Australia/Broken_Hill",
@@ -65743,7 +65817,8 @@
         -570,
         -630
       ],
-      "population": 18430
+      "population": 18430,
+      "weight": 1
     },
     {
       "name": "Australia/Canberra",
@@ -66652,7 +66727,8 @@
         -630,
         -570
       ],
-      "population": 116215
+      "population": 116215,
+      "weight": 1
     },
     {
       "name": "Australia/Eucla",
@@ -67179,7 +67255,8 @@
         -600,
         -660
       ],
-      "population": 205557
+      "population": 205557,
+      "weight": 1
     },
     {
       "name": "Australia/LHI",
@@ -67962,7 +68039,8 @@
         -630,
         -660
       ],
-      "population": 347
+      "population": 347,
+      "weight": 1
     },
     {
       "name": "Australia/Melbourne",
@@ -68398,7 +68476,8 @@
         -600,
         -660
       ],
-      "population": 3906000
+      "population": 3906000,
+      "weight": 1
     },
     {
       "name": "Australia/North",
@@ -68938,7 +69017,8 @@
         -540,
         -480
       ],
-      "population": 1751000
+      "population": 1751000,
+      "weight": 1
     },
     {
       "name": "Australia/Queensland",
@@ -69871,7 +69951,8 @@
         -600,
         -660
       ],
-      "population": 4036000
+      "population": 4036000,
+      "weight": 1
     },
     {
       "name": "Australia/Tasmania",
@@ -80545,7 +80626,8 @@
       "offsets": [
         0
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "Etc/GMT-1",
@@ -80948,7 +81030,8 @@
       "offsets": [
         0
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "Etc/Universal",
@@ -80974,7 +81057,8 @@
       "offsets": [
         0
       ],
-      "population": 0
+      "population": 0,
+      "weight": 1
     },
     {
       "name": "Etc/Zulu",
@@ -83594,7 +83678,8 @@
         -120,
         -60
       ],
-      "population": 1180000
+      "population": 1180000,
+      "weight": 1
     },
     {
       "name": "Europe/Berlin",
@@ -86715,7 +86800,8 @@
         -180,
         -120
       ],
-      "population": 669694
+      "population": 669694,
+      "weight": 1
     },
     {
       "name": "Europe/Copenhagen",
@@ -87815,7 +87901,8 @@
         -60,
         0
       ],
-      "population": 1160000
+      "population": 1160000,
+      "weight": 1
     },
     {
       "name": "Europe/Gibraltar",
@@ -89516,7 +89603,8 @@
         -180,
         -120
       ],
-      "population": 1208000
+      "population": 1208000,
+      "weight": 1
     },
     {
       "name": "Europe/Isle_of_Man",
@@ -90646,7 +90734,8 @@
         -180,
         -180
       ],
-      "population": 13287000
+      "population": 13287000,
+      "weight": 1
     },
     {
       "name": "Europe/Jersey",
@@ -92871,7 +92960,8 @@
         -60,
         0
       ],
-      "population": 2666000
+      "population": 2666000,
+      "weight": 1
     },
     {
       "name": "Europe/Ljubljana",
@@ -93971,7 +94061,8 @@
         -60,
         0
       ],
-      "population": 10236000
+      "population": 10236000,
+      "weight": 1
     },
     {
       "name": "Europe/Luxembourg",
@@ -96933,7 +97024,8 @@
         -240,
         -180
       ],
-      "population": 16170000
+      "population": 16170000,
+      "weight": 1
     },
     {
       "name": "Europe/Nicosia",
@@ -97760,7 +97852,8 @@
         -120,
         -60
       ],
-      "population": 618683
+      "population": 618683,
+      "weight": 1
     },
     {
       "name": "Europe/Paris",
@@ -99128,7 +99221,8 @@
         -120,
         -60
       ],
-      "population": 1310000
+      "population": 1310000,
+      "weight": 1
     },
     {
       "name": "Europe/Riga",
@@ -100033,7 +100127,8 @@
         -120,
         -60
       ],
-      "population": 3906000
+      "population": 3906000,
+      "weight": 1
     },
     {
       "name": "Europe/Samara",
@@ -106844,7 +106939,8 @@
         -120,
         -60
       ],
-      "population": 1720000
+      "population": 1720000,
+      "weight": 1
     },
     {
       "name": "Europe/Zagreb",
@@ -107954,7 +108050,8 @@
         -120,
         -60
       ],
-      "population": 378884
+      "population": 378884,
+      "weight": 1
     },
     {
       "name": "GB-Eire",
@@ -109992,7 +110089,8 @@
       "offsets": [
         -420
       ],
-      "population": 2072
+      "population": 2072,
+      "weight": 1
     },
     {
       "name": "Indian/Cocos",
@@ -115111,7 +115209,8 @@
         -720,
         -780
       ],
-      "population": 1356000
+      "population": 1356000,
+      "weight": 1
     },
     {
       "name": "Pacific/Bougainville",
@@ -115530,7 +115629,8 @@
         -765,
         -825
       ],
-      "population": 600
+      "population": 600,
+      "weight": 1
     },
     {
       "name": "Pacific/Chuuk",
@@ -115967,7 +116067,8 @@
         360,
         300
       ],
-      "population": 3000
+      "population": 3000,
+      "weight": 1
     },
     {
       "name": "Pacific/Efate",
@@ -116366,7 +116467,8 @@
         -600,
         -600
       ],
-      "population": 165124
+      "population": 165124,
+      "weight": 1
     },
     {
       "name": "Pacific/Honolulu",
@@ -116394,7 +116496,8 @@
         630,
         600
       ],
-      "population": 374658
+      "population": 374658,
+      "weight": 1
     },
     {
       "name": "Pacific/Johnston",
@@ -116479,7 +116582,8 @@
         720,
         -720
       ],
-      "population": 13500
+      "population": 13500,
+      "weight": 1
     },
     {
       "name": "Pacific/Majuro",
@@ -116646,7 +116750,8 @@
         682.8,
         660
       ],
-      "population": 3656
+      "population": 3656,
+      "weight": 1
     },
     {
       "name": "Pacific/Palau",
@@ -116659,7 +116764,8 @@
       "offsets": [
         -540
       ],
-      "population": 20918
+      "population": 20918,
+      "weight": 1
     },
     {
       "name": "Pacific/Pitcairn",
@@ -116688,7 +116794,8 @@
       "offsets": [
         -660
       ],
-      "population": 34000
+      "population": 34000,
+      "weight": 1
     },
     {
       "name": "Pacific/Ponape",
@@ -116714,7 +116821,8 @@
       "offsets": [
         -600
       ],
-      "population": 254158
+      "population": 254158,
+      "weight": 1
     },
     {
       "name": "Pacific/Rarotonga",
@@ -116866,7 +116974,8 @@
       "offsets": [
         -720
       ],
-      "population": 28802
+      "population": 28802,
+      "weight": 1
     },
     {
       "name": "Pacific/Tongatapu",

@@ -172,7 +172,7 @@
 		return arraysAreEqual(a.offsets, b.offsets) && arraysAreEqual(a.abbrs, b.abbrs) && arraysAreEqual(a.untils, b.untils);
 	}
 
-	function findAndCreateLinks (input, output, links, groupLeaders) {
+	function findAndCreateLinks (input, output, links) {
 		var i, j, a, b, group, foundGroup, groups = [];
 
 		for (i = 0; i < input.length; i++) {
@@ -185,7 +185,7 @@
 				if (zonesAreEqual(a, b)) {
 					if (a.population > b.population) {
 						group.unshift(a);
-					} else if (a.population === b.population && groupLeaders && groupLeaders[a.name]) {
+					} else if ((a.weight || 0) > (b.weight || 0)) {
                         group.unshift(a);
                     } else {
 						group.push(a);
@@ -208,7 +208,7 @@
 		}
 	}
 
-	function createLinks (source, groupLeaders) {
+	function createLinks (source) {
 		var zones = [],
 			links = [];
 
@@ -216,7 +216,7 @@
 			links = source.links.slice();
 		}
 
-		findAndCreateLinks(source.zones, zones, links, groupLeaders);
+		findAndCreateLinks(source.zones, zones, links);
 
 		return {
 			version : source.version,
@@ -281,7 +281,7 @@
 		Filter, Link, and Pack
 	************************************/
 
-	function filterLinkPack (input, start, end, groupLeaders) {
+	function filterLinkPack (input, start, end) {
 		var i,
 			inputZones = input.zones,
 			outputZones = [],
@@ -295,7 +295,7 @@
 			zones : outputZones,
 			links : input.links.slice(),
 			version : input.version
-		}, groupLeaders);
+		});
 
 		for (i = 0; i < output.zones.length; i++) {
 			output.zones[i] = pack(output.zones[i]);
