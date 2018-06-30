@@ -202,8 +202,10 @@
 		for (i = 0; i < groups.length; i++) {
 			group = groups[i];
 			output.push(group[0]);
-			for (j = 1; j < group.length; j++) {
-				links.push(group[0].name + '|' + group[j].name);
+			if (group.length > 1) {
+                links.push(group[0].name + '|' + group.slice(1).map(function(zone){
+                    return zone.name;
+                }).join('|'));
 			}
 		}
 	}

@@ -437,24 +437,27 @@
 	}
 
 	function addLink (aliases) {
-		var i, alias, normal0, normal1;
-
 		if (typeof aliases === "string") {
-			aliases = [aliases];
+            aliases = [aliases];
 		}
 
-		for (i = 0; i < aliases.length; i++) {
-			alias = aliases[i].split('|');
-
-			normal0 = normalizeName(alias[0]);
-			normal1 = normalizeName(alias[1]);
-
-			links[normal0] = normal1;
-			names[normal0] = alias[0];
-
-			links[normal1] = normal0;
-			names[normal1] = alias[1];
+		for (var i = 0; i < aliases.length; i++) {
+            unpackLink(aliases[i]);
 		}
+	}
+	
+	function unpackLink(link) {
+        var normalizedNames = link.split('|').map(function(zoneName) {
+        	var normalized = normalizeName(zoneName);
+            names[normalized] = zoneName;
+        	return normalized;
+		});
+        for (var i = 0; i < normalizedNames.length; i++) {
+            for (var j = i + 1; j < normalizedNames.length; j++) {
+                links[normalizedNames[i]] = normalizedNames[j];
+                links[normalizedNames[j]] = normalizedNames[i];
+            }
+        }
 	}
 
 	function loadData (data) {
