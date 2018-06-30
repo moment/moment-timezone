@@ -15,6 +15,9 @@
 		"tz"
 	],
 	"main": "./index.js",
+	"bin": {
+		"moment-timezone": "./bin/moment-timezone.js"	
+	},
 	"engines": {
 		"node": "*"
 	},
