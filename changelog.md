@@ -1,3 +1,8 @@
+### `0.5.22` _2018-06-30_
+* Added bin/moment-timezone.js
+* Now you can create moment-timezone-with-data for any range of years, just run `moment-timezone build 2014-2024`
+* Improved how links are packed, it reduces size of moment-timezone-with-data
+
 ### `0.5.21` _2018-06-23_
 * Bugfix: revert breaking change introduced in 0.5.18
 

@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.21
+//! version : 0.5.22
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -24,7 +24,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.21",
+	var VERSION = "0.5.22",
 		zones = {},
 		links = {},
 		names = {},
@@ -452,11 +452,9 @@
             names[normalized] = zoneName;
         	return normalized;
 		});
-        for (var i = 0; i < normalizedNames.length; i++) {
-            for (var j = i + 1; j < normalizedNames.length; j++) {
-                links[normalizedNames[i]] = normalizedNames[j];
-                links[normalizedNames[j]] = normalizedNames[i];
-            }
+        for (var i = 1; i < normalizedNames.length; i++) {
+			links[normalizedNames[0]] = normalizedNames[i];
+            links[normalizedNames[i]] = normalizedNames[0];
         }
 	}
 
