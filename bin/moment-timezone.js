@@ -3,7 +3,7 @@
 var fs = require('fs');
 var path = require('path');
 var moment = require('../moment-timezone-utils');
-var data = require('../data/unpacked/latest.json');
+var latestData = require('../data/unpacked/latest.json');
 var MOMENT_TIMEZONE_DIR = path.join(__dirname, '..');
 
 /**
@@ -39,15 +39,21 @@ function printHelp(){
  */
 function createBuild(yearRange, destination) {
     'use strict';
+    
     if (!(yearRange && /[0-9]{4}-[0-9]{4}/.test(yearRange))) {
         return printHelp();
     }
     var fileName = 'moment-timezone-with-data-' + yearRange + '.js',
-        source = fs.readFileSync(path.join(MOMENT_TIMEZONE_DIR, 'moment-timezone.js')).toString(),
+        minifiedFileName = 'moment-timezone-with-data-' + yearRange + '.min.js',
         years = yearRange.split('-'),
         start  = years[0],
-        end    = years[1],
-        destDir;
+        end    = years[1];
+
+    console.log('Building ' + fileName);
+    
+    // define destination directory
+    
+    var destDir;
     
     if (destination) {
         destDir = path.isAbsolute(destination) ? destination : path.join(process.cwd(), destination);
@@ -59,27 +65,54 @@ function createBuild(yearRange, destination) {
         process.exit(1);
     }
     
+    // build full paths of destination files
+
     var destFile = path.join(destDir, fileName);
-    console.log('Building ' + fileName);
+    var minifiedDestFile = path.join(destDir, minifiedFileName);
     
-    data = moment.tz.filterLinkPack(data, start, end);
-    data = JSON.stringify(data, null, '\t');
-    data = data.split('\n').join('\n\t');
-    data = 'loadData(' + data + ');\n';
-    source = source.replace('// INJECT DATA', data);
+    // read source files
+    
+    var fullContent = fs.readFileSync(path.join(MOMENT_TIMEZONE_DIR, 'moment-timezone.js')).toString();
+    var minifiedContent= fs.readFileSync(path.join(MOMENT_TIMEZONE_DIR, 'builds', 'moment-timezone-with-data.min.js')).toString();
+    
+    // prepare data
+    var data = moment.tz.filterLinkPack(latestData, start, end);
     
     try {
-        fs.writeFileSync(destFile, source);
+        fs.writeFileSync(destFile, putFullData(fullContent, data));
         console.log('Successfully created ' + fileName + ' (' + getFileSize(destFile) + 'Kb)');
-        console.log('Full path: ' + destFile);
-        process.exit(0);
     } catch (err) {
         console.log(err.message);
         process.exit(1);
     }
+    
+    try {
+        fs.writeFileSync(minifiedDestFile, putMinifiedData(minifiedContent, data));
+        console.log('Successfully created ' + minifiedFileName + ' (' + getFileSize(minifiedDestFile) + 'Kb)');
+    } catch (err) {
+        console.log(err.message);
+        process.exit(1);
+    }
+    
+    console.log('Both files are in ' + destDir);
+}
+
+function putFullData(fullContent, data){
+    'use strict';
+    var newData = JSON.stringify(data, null, '\t');
+    newData = newData.split('\n').join('\n\t');
+    newData = 'loadData(' + newData + ');\n';
+    return fullContent.replace('// INJECT DATA', newData);
+}
+
+function putMinifiedData(minifiedContent, newData){
+    'use strict';
+    var oldData = minifiedContent.match(/\(\{version:.*?\}\)/)[0];
+    return minifiedContent.replace(oldData, '({' + JSON.stringify(newData) + '})');
 }
 
 function getFileSize(file){
+    'use strict';
     var stats = fs.statSync(file);
     return Math.floor(stats.size  / 1000.0);
 }
