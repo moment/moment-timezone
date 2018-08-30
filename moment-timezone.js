@@ -15,7 +15,7 @@
 	} else {
 		factory(root.moment);                        // Browser
 	}
-}(this, function (moment) {
+}(this, function (_moment) {
 	"use strict";
 
 	// Do not load moment-timezone a second time.
@@ -23,6 +23,10 @@
 	// 	logError('Moment Timezone ' + moment.tz.version + ' was already loaded ' + (moment.tz.dataVersion ? 'with data from ' : 'without any data') + moment.tz.dataVersion);
 	// 	return moment;
 	// }
+	var moment = _moment;
+	if (_moment && !_moment.version && _moment.default) {
+		moment = _moment.default;
+	}
 
 	var VERSION = "0.5.21",
 		zones = {},
