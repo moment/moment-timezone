@@ -5,15 +5,15 @@
 * Bugfix: accidentally commented code
 
 ### `0.5.19` _2018-06-18_
-* Revert: moved moment to peerDependencies #628
+* Revert: moved moment to peerDependencies [#628](https://github.com/moment/moment-timezone/pull/628)
 
 ### `0.5.18` _2018-06-18_
-* Return error when timezone name is not a string. #616
-* Moved moment to peerDependencies #628
-* Prefer nodejs to amd declaration #573
+* Return error when timezone name is not a string. [#616](https://github.com/moment/moment-timezone/pull/616)
+* Moved moment to peerDependencies [#628](https://github.com/moment/moment-timezone/pull/628)
+* Prefer nodejs to amd declaration [#573](https://github.com/moment/moment-timezone/pull/573)
 
 ### `0.5.17` _2018-05-12_
-* Updated data to IANA TZDB `2018d`. #616
+* Updated data to IANA TZDB `2018e`. [#616](https://github.com/moment/moment-timezone/pull/616)
 
 ### `0.5.16` _2018-04-18_
 * Fixed Etc/UTC timezone recognition, updated tests. [#599](https://github.com/moment/moment-timezone/pull/599)
@@ -31,7 +31,7 @@
 * Check for timestamp formats when parsing [#348](https://github.com/moment/moment-timezone/pull/348)
 
 ### `0.5.13` _2017-04-04_
-* Bumped version to address Bower cache issues with last release.  [#474](https://github.com/moment/moment-timezone/issues/474)
+* Bumped version to address Bower cache issues with last release. [#474](https://github.com/moment/moment-timezone/issues/474)
 * (No actual changes otherwise)
 
 ### `0.5.12` _2017-04-02_
