@@ -556,9 +556,9 @@
 
 	fn.tz = function (name, keepTime) {
 		if (name) {
-            if (typeof name !== 'string') {
-                throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
-            }
+			if (typeof name !== 'string') {
+				throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
+			}
 			this._z = getZone(name);
 			if (this._z) {
 				moment.updateOffset(this, keepTime);
@@ -608,7 +608,7 @@
 	}
 
 	loadData({
-		"version": "2018e",
+		"version": "2018f",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
@@ -656,7 +656,7 @@
 			"America/Noronha|-02|20|0||30e2",
 			"America/Port-au-Prince|EST EDT|50 40|010101010101010101010|1GI70 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 3iN0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|23e5",
 			"Antarctica/Palmer|-03 -04|30 40|010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0|40",
-			"America/Santiago|-03 -04|30 40|010101010101010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Dd0 1Nb0 Ap0|62e5",
+			"America/Santiago|-03 -04|30 40|010101010101010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1zb0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0|62e5",
 			"America/Sao_Paulo|-02 -03|20 30|01010101010101010101010|1GCq0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1HB0 FX0 1HB0 FX0 1HB0 IL0 1HB0 FX0 1HB0|20e6",
 			"Atlantic/Azores|-01 +00|10 0|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|25e4",
 			"America/St_Johns|NST NDT|3u 2u|01010101010101010101010|1GI5u 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0|11e4",
@@ -675,7 +675,7 @@
 			"Asia/Bangkok|+07|-70|0||15e6",
 			"Asia/Barnaul|+07 +06|-70 -60|010|1N7v0 3rd0",
 			"Asia/Beirut|EET EEST|-20 -30|01010101010101010101010|1GNy0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0|22e5",
-			"Asia/Manila|+08|-80|0||24e6",
+			"Asia/Kuala_Lumpur|+08|-80|0||71e5",
 			"Asia/Kolkata|IST|-5u|0||15e6",
 			"Asia/Chita|+10 +08 +09|-a0 -80 -90|012|1N7s0 3re0|33e4",
 			"Asia/Ulaanbaatar|+08 +09|-80 -90|01010|1O8G0 1cJ0 1cP0 1cJ0|12e5",
@@ -700,10 +700,11 @@
 			"Asia/Krasnoyarsk|+08 +07|-80 -70|01|1N7u0|10e5",
 			"Asia/Magadan|+12 +10 +11|-c0 -a0 -b0|012|1N7q0 3Cq0|95e3",
 			"Asia/Makassar|WITA|-80|0||15e5",
+			"Asia/Manila|PST|-80|0||24e6",
 			"Europe/Athens|EET EEST|-20 -30|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|35e5",
 			"Asia/Novosibirsk|+07 +06|-70 -60|010|1N7v0 4eN0|15e5",
 			"Asia/Omsk|+07 +06|-70 -60|01|1N7v0|12e5",
-			"Asia/Pyongyang|KST KST|-90 -8u|010|1P4D0 6BAu|29e5",
+			"Asia/Pyongyang|KST KST|-90 -8u|010|1P4D0 6BA0|29e5",
 			"Asia/Rangoon|+0630|-6u|0||48e5",
 			"Asia/Sakhalin|+11 +10|-b0 -a0|010|1N7r0 3rd0|58e4",
 			"Asia/Seoul|KST|-90|0||23e6",
@@ -722,7 +723,7 @@
 			"Australia/Eucla|+0845|-8J|0||368",
 			"Australia/Lord_Howe|+11 +1030|-b0 -au|01010101010101010101010|1GQf0 1fAu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1fAu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu|347",
 			"Australia/Perth|AWST|-80|0||18e5",
-			"Pacific/Easter|-05 -06|50 60|010101010101010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Dd0 1Nb0 Ap0|30e2",
+			"Pacific/Easter|-05 -06|50 60|010101010101010101010|1H3D0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1zb0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0|30e2",
 			"Europe/Dublin|GMT IST|0 -10|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|12e5",
 			"Etc/GMT-1|+01|-10|0|",
 			"Pacific/Fakaofo|+13|-d0|0||483",
@@ -741,16 +742,17 @@
 			"Europe/London|GMT BST|0 -10|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|10e6",
 			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1GNA0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|67e4",
 			"Europe/Kaliningrad|+03 EET|-30 -20|01|1N7z0|44e4",
-			"Europe/Volgograd|+04 +03|-40 -30|01|1N7y0|10e5",
+			"Europe/Kirov|+04 +03|-40 -30|01|1N7y0|48e4",
 			"Europe/Moscow|MSK MSK|-40 -30|01|1N7y0|16e6",
 			"Europe/Saratov|+04 +03|-40 -30|010|1N7y0 5810",
 			"Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|0101023|1GNB0 1qM0 11A0 1o00 11z0 1nW0|33e4",
+			"Europe/Volgograd|+04 +03|-40 -30|010|1N7y0 9Jd0|10e5",
 			"Pacific/Honolulu|HST|a0|0||37e4",
 			"MET|MET MEST|-10 -20|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0",
 			"Pacific/Chatham|+1345 +1245|-dJ -cJ|01010101010101010101010|1GQe0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00|600",
 			"Pacific/Apia|+14 +13|-e0 -d0|01010101010101010101010|1GQe0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00|37e3",
 			"Pacific/Bougainville|+10 +11|-a0 -b0|01|1NwE0|18e4",
-			"Pacific/Fiji|+13 +12|-d0 -c0|01010101010101010101010|1Goe0 1Nc0 Ao0 1Q00 xz0 1SN0 uM0 1SM0 uM0 1VA0 s00 1VA0 s00 1VA0 uM0 1SM0 uM0 1SM0 uM0 1VA0 s00 1VA0|88e4",
+			"Pacific/Fiji|+13 +12|-d0 -c0|01010101010101010101010|1Goe0 1Nc0 Ao0 1Q00 xz0 1SN0 uM0 1SM0 uM0 1VA0 s00 1VA0 s00 1VA0 s00 1VA0 uM0 1SM0 uM0 1VA0 s00 1VA0|88e4",
 			"Pacific/Guam|ChST|-a0|0||17e4",
 			"Pacific/Marquesas|-0930|9u|0||86e2",
 			"Pacific/Pago_Pago|SST|b0|0||37e2",
@@ -1044,13 +1046,12 @@
 			"Asia/Kamchatka|Pacific/Wallis",
 			"Asia/Kathmandu|Asia/Katmandu",
 			"Asia/Kolkata|Asia/Calcutta",
+			"Asia/Kuala_Lumpur|Asia/Brunei",
+			"Asia/Kuala_Lumpur|Asia/Kuching",
+			"Asia/Kuala_Lumpur|Asia/Singapore",
+			"Asia/Kuala_Lumpur|Etc/GMT-8",
+			"Asia/Kuala_Lumpur|Singapore",
 			"Asia/Makassar|Asia/Ujung_Pandang",
-			"Asia/Manila|Asia/Brunei",
-			"Asia/Manila|Asia/Kuala_Lumpur",
-			"Asia/Manila|Asia/Kuching",
-			"Asia/Manila|Asia/Singapore",
-			"Asia/Manila|Etc/GMT-8",
-			"Asia/Manila|Singapore",
 			"Asia/Rangoon|Asia/Yangon",
 			"Asia/Rangoon|Indian/Cocos",
 			"Asia/Seoul|ROK",
@@ -1170,7 +1171,6 @@
 			"Europe/Paris|Europe/Zagreb",
 			"Europe/Paris|Europe/Zurich",
 			"Europe/Paris|Poland",
-			"Europe/Volgograd|Europe/Kirov",
 			"Pacific/Auckland|Antarctica/McMurdo",
 			"Pacific/Auckland|Antarctica/South_Pole",
 			"Pacific/Auckland|NZ",
