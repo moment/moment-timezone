@@ -49,7 +49,7 @@ function yearTests (zone) {
 }
 
 function intro (name) {
-	var helpers = path.relative(path.dirname('zones/' + name), 'helpers/helpers');
+	var helpers = path.relative(path.dirname('zones/' + name), 'helpers/helpers').replace(/\\/g, '/');
 	return '"use strict";\n\nvar helpers = require("' + helpers + '");\n\nexports["' + name + '"] = {\n\n';
 }
 
