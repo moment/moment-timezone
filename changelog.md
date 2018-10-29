@@ -1,3 +1,6 @@
+### `0.5.23` _2018-10-28_
+* Fix minor issue with tz guessing in Russia [#691](https://github.com/moment/moment-timezone/pull/691)
+
 ### `0.5.22` _2018-10-28_
 * Updated data to IANA TZDB `2018g` [#689](https://github.com/moment/moment-timezone/pull/689)
 * Fix issue with missing LMT entries for some zones, and fix data builds on Linux and Windows [#308](https://github.com/moment/moment-timezone/issues/308)
