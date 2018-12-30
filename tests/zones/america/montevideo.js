@@ -8,6 +8,11 @@ exports["America/Montevideo"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Montevideo", { abbr: true, expect: "America/Fortaleza" }),
 
+	"1908" : helpers.makeTestYear("America/Montevideo", [
+		["1908-06-10T03:44:50+00:00", "23:59:59", "LMT", 13491 / 60],
+		["1908-06-10T03:44:51+00:00", "00:00:00", "MMT", 13491 / 60]
+	]),
+
 	"1920" : helpers.makeTestYear("America/Montevideo", [
 		["1920-05-01T03:44:50+00:00", "23:59:59", "MMT", 13491 / 60],
 		["1920-05-01T03:44:51+00:00", "23:44:51", "-04", 240]
@@ -315,5 +320,10 @@ exports["America/Montevideo"] = {
 		["2014-03-09T04:00:00+00:00", "01:00:00", "-03", 180],
 		["2014-10-05T04:59:59+00:00", "01:59:59", "-03", 180],
 		["2014-10-05T05:00:00+00:00", "03:00:00", "-02", 120]
+	]),
+
+	"2015" : helpers.makeTestYear("America/Montevideo", [
+		["2015-03-08T03:59:59+00:00", "01:59:59", "-02", 120],
+		["2015-03-08T04:00:00+00:00", "01:00:00", "-03", 180]
 	])
 };
