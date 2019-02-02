@@ -4,9 +4,14 @@ var helpers = require("../../helpers/helpers");
 
 exports["Asia/Choibalsan"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Asia/Choibalsan", { offset: true, expect: "Asia/Ulaanbaatar" }),
+	"guess:by:offset" : helpers.makeTestGuess("Asia/Choibalsan", { offset: true, expect: "Asia/Manila" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("Asia/Choibalsan", { abbr: true, expect: "Asia/Ulaanbaatar" }),
+	"guess:by:abbr" : helpers.makeTestGuess("Asia/Choibalsan", { abbr: true, expect: "Asia/Manila" }),
+
+	"1905" : helpers.makeTestYear("Asia/Choibalsan", [
+		["1905-07-31T16:21:59+00:00", "23:59:59", "LMT", -458],
+		["1905-07-31T16:22:00+00:00", "23:22:00", "+07", -420]
+	]),
 
 	"1977" : helpers.makeTestYear("Asia/Choibalsan", [
 		["1977-12-31T16:59:59+00:00", "23:59:59", "+07", -420],
@@ -181,6 +186,8 @@ exports["Asia/Choibalsan"] = {
 
 	"2016" : helpers.makeTestYear("Asia/Choibalsan", [
 		["2016-03-25T17:59:59+00:00", "01:59:59", "+08", -480],
-		["2016-03-25T18:00:00+00:00", "03:00:00", "+09", -540]
+		["2016-03-25T18:00:00+00:00", "03:00:00", "+09", -540],
+		["2016-09-23T14:59:59+00:00", "23:59:59", "+09", -540],
+		["2016-09-23T15:00:00+00:00", "23:00:00", "+08", -480]
 	])
 };
