@@ -14,5 +14,10 @@ exports["Africa/Sao_Tome"] = {
 
 	"1912" : helpers.makeTestYear("Africa/Sao_Tome", [
 		["1912-01-01T00:00:00+00:00", "00:00:00", "GMT", 0]
+	]),
+
+	"2018" : helpers.makeTestYear("Africa/Sao_Tome", [
+		["2018-01-01T00:59:59+00:00", "00:59:59", "GMT", 0],
+		["2018-01-01T01:00:00+00:00", "02:00:00", "WAT", -60]
 	])
 };

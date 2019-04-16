@@ -4,9 +4,9 @@ var helpers = require("../../helpers/helpers");
 
 exports["Asia/Choibalsan"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Asia/Choibalsan", { offset: true, expect: "Asia/Ulaanbaatar" }),
+	"guess:by:offset" : helpers.makeTestGuess("Asia/Choibalsan", { offset: true, expect: "Asia/Manila" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("Asia/Choibalsan", { abbr: true, expect: "Asia/Ulaanbaatar" }),
+	"guess:by:abbr" : helpers.makeTestGuess("Asia/Choibalsan", { abbr: true, expect: "Asia/Manila" }),
 
 	"1977" : helpers.makeTestYear("Asia/Choibalsan", [
 		["1977-12-31T16:59:59+00:00", "23:59:59", "+07", -420],

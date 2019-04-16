@@ -4,9 +4,9 @@ var helpers = require("../../helpers/helpers");
 
 exports["America/Metlakatla"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("America/Metlakatla", { offset: true, expect: "America/Anchorage" }),
+	"guess:by:offset" : helpers.makeTestGuess("America/Metlakatla", { offset: true }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("America/Metlakatla", { abbr: true, expect: "America/Anchorage" }),
+	"guess:by:abbr" : helpers.makeTestGuess("America/Metlakatla", { abbr: true }),
 
 	"1900" : helpers.makeTestYear("America/Metlakatla", [
 		["1900-08-20T20:46:17+00:00", "11:59:59", "LMT", 31578 / 60],
@@ -153,10 +153,12 @@ exports["America/Metlakatla"] = {
 		["2018-03-11T10:59:59+00:00", "01:59:59", "AKST", 540],
 		["2018-03-11T11:00:00+00:00", "03:00:00", "AKDT", 480],
 		["2018-11-04T09:59:59+00:00", "01:59:59", "AKDT", 480],
-		["2018-11-04T10:00:00+00:00", "01:00:00", "AKST", 540]
+		["2018-11-04T10:00:00+00:00", "02:00:00", "PST", 480]
 	]),
 
 	"2019" : helpers.makeTestYear("America/Metlakatla", [
+		["2019-01-20T09:59:59+00:00", "01:59:59", "PST", 480],
+		["2019-01-20T10:00:00+00:00", "01:00:00", "AKST", 540],
 		["2019-03-10T10:59:59+00:00", "01:59:59", "AKST", 540],
 		["2019-03-10T11:00:00+00:00", "03:00:00", "AKDT", 480],
 		["2019-11-03T09:59:59+00:00", "01:59:59", "AKDT", 480],
