@@ -1,3 +1,8 @@
+### `0.5.24` _2019-04-17_
+* Updated data to IANA TZDB `2019a` [#737](https://github.com/moment/moment-timezone/issues/737)
+* Start shipping both a 1970-1930 file and a rolling 10-year file [#614](https://github.com/moment/moment-timezone/issues/614) [#697](https://github.com/moment/moment-timezone/issues/697)
+* Fixed bug where `_z` time zone name was not cleared with `.local()` or `.utcOffset(offset)` [#738](https://github.com/moment/moment-timezone/issues/738)
+
 ### `0.5.23` _2018-10-28_
 * Fix minor issue with tz guessing in Russia [#691](https://github.com/moment/moment-timezone/pull/691)
 
