@@ -8,6 +8,11 @@ exports["Africa/Casablanca"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Casablanca", { abbr: true }),
 
+	"1913" : helpers.makeTestYear("Africa/Casablanca", [
+		["1913-10-26T00:30:19+00:00", "23:59:59", "LMT", 1820 / 60],
+		["1913-10-26T00:30:20+00:00", "00:30:20", "+00", 0]
+	]),
+
 	"1939" : helpers.makeTestYear("Africa/Casablanca", [
 		["1939-09-11T23:59:59+00:00", "23:59:59", "+00", 0],
 		["1939-09-12T00:00:00+00:00", "01:00:00", "+01", -60],
