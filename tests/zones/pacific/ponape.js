@@ -8,11 +8,6 @@ exports["Pacific/Ponape"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Ponape", { abbr: true, expect: "Asia/Sakhalin" }),
 
-	"1900" : helpers.makeTestYear("Pacific/Ponape", [
-		["1900-12-31T13:27:07+00:00", "23:59:59", "LMT", -37972 / 60],
-		["1900-12-31T13:27:08+00:00", "00:27:08", "+11", -660]
-	]),
-
 	"1914" : helpers.makeTestYear("Pacific/Ponape", [
 		["1914-09-30T12:59:59+00:00", "23:59:59", "+11", -660],
 		["1914-09-30T13:00:00+00:00", "22:00:00", "+09", -540]
@@ -31,5 +26,10 @@ exports["Pacific/Ponape"] = {
 	"1941" : helpers.makeTestYear("Pacific/Ponape", [
 		["1941-03-31T13:59:59+00:00", "23:59:59", "+10", -600],
 		["1941-03-31T14:00:00+00:00", "23:00:00", "+09", -540]
+	]),
+
+	"1945" : helpers.makeTestYear("Pacific/Ponape", [
+		["1945-07-31T14:59:59+00:00", "23:59:59", "+09", -540],
+		["1945-07-31T15:00:00+00:00", "02:00:00", "+11", -660]
 	])
 };

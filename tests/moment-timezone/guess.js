@@ -77,9 +77,11 @@ exports.guess = {
 
 	"When Intl is available, it is used" : function (test) {
 		mockIntlTimeZone('Europe/London');
+		mockTimezoneOffset(tz.zone('Europe/London'));
 		test.equal(tz.guess(true), 'Europe/London');
 
 		mockIntlTimeZone('America/New_York');
+		mockTimezoneOffset(tz.zone('America/New_York'));
 		test.equal(tz.guess(true), 'America/New_York');
 
 		mockIntlTimeZone('America/Some_Missing_Zone');
