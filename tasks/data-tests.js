@@ -75,8 +75,8 @@ function guessTests (zone) {
 
 module.exports = function (grunt) {
 	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', function () {
-		tz.load(grunt.file.readJSON('data/packed/latest.json'));
-		var zones = grunt.file.readJSON('temp/collect/latest.json');
+		tz.load(grunt.file.readJSON('data/packed/2019a.json'));
+		var zones = grunt.file.readJSON('temp/collect/2019a.json');
 
 		zones.forEach(function (zone) {
 			var data = intro(zone.name) + guessTests(zone) + yearTests(zone) + '\n};',

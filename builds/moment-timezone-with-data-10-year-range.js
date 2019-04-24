@@ -337,7 +337,16 @@
 			if (intlName && intlName.length > 3) {
 				var name = names[normalizeName(intlName)];
 				if (name) {
-					return name;
+					// Sometimes the Intl API is unreliable and returns a time zone that is
+					// inconsistent with the actual time zone offset.
+					// https://github.com/moment/moment-timezone/issues/517
+					var zone = getZone(name);
+					if (zone) {
+						var currentOffset = (new Date()).getTimezoneOffset();
+						if (zone.offsets.indexOf(currentOffset) !== -1) {
+							return name;
+						}
+					}
 				}
 				logError("Moment Timezone found " + intlName + " from the Intl api, but did not have that data loaded.");
 			}
@@ -397,7 +406,6 @@
 	}
 
 	function getZone (name, caller) {
-		
 		name = normalizeName(name);
 
 		var zone = zones[name];
@@ -598,7 +606,7 @@
 	fn.utc       = resetZoneWrap(fn.utc);
 	fn.local     = resetZoneWrap(fn.local);
 	fn.utcOffset = resetZoneWrap2(fn.utcOffset);
-	
+
 	moment.tz.setDefault = function(name) {
 		if (major < 2 || (major === 2 && minor < 9)) {
 			logError('Moment Timezone setDefault() requires Moment.js >= 2.9.0. You are using Moment.js ' + moment.version + '.');
@@ -619,7 +627,7 @@
 	}
 
 	loadData({
-		"version": "2019a",
+		"version": "2018i",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
