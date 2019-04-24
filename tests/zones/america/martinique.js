@@ -4,7 +4,7 @@ var helpers = require("../../helpers/helpers");
 
 exports["America/Martinique"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("America/Martinique", { offset: true, expect: "America/Caracas" }),
+	"guess:by:offset" : helpers.makeTestGuess("America/Martinique", { offset: true, expect: "America/Santo_Domingo" }),
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Martinique", { abbr: true, expect: "America/Santo_Domingo" }),
 
@@ -15,8 +15,6 @@ exports["America/Martinique"] = {
 
 	"1980" : helpers.makeTestYear("America/Martinique", [
 		["1980-04-06T03:59:59+00:00", "23:59:59", "AST", 240],
-		["1980-04-06T04:00:00+00:00", "01:00:00", "ADT", 180],
-		["1980-09-28T02:59:59+00:00", "23:59:59", "ADT", 180],
-		["1980-09-28T03:00:00+00:00", "23:00:00", "AST", 240]
+		["1980-04-06T04:00:00+00:00", "01:00:00", "ADT", 180]
 	])
 };
