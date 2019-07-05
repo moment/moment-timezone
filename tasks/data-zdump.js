@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 		function normalizePaths(output) {
 			var result = output.replace(zicBaseRegex, '');
 			if (path.sep !== '/') {
-				result = result.replace(pathSepRegex, '/')	
+				result = result.replace(pathSepRegex, '/')
 			}
 			return result;
 		}
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 				src  = path.join(zicBase, file),
 				dest = path.join(zdumpBase, file);
 
-			exec('zdump -V ' + src, { maxBuffer: 20*1024*1024 }, function (err, stdout) {
+			exec('zdump -v ' + src, { maxBuffer: 20*1024*1024 }, function (err, stdout) {
 				if (err) { throw err; }
 
 				grunt.file.mkdir(path.dirname(dest));
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 
 						grunt.file.write(dest + '.zdump', normalizePaths(_stdout));
 						grunt.verbose.ok('Dumped data for ' + version + ':' + file);
-		
+
 						next();
 					});
 					return;

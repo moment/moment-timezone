@@ -8,6 +8,11 @@ exports["Brazil/West"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Brazil/West", { abbr: true, expect: "America/Santo_Domingo" }),
 
+	"1914" : helpers.makeTestYear("Brazil/West", [
+		["1914-01-01T04:00:03+00:00", "23:59:59", "LMT", 14404 / 60],
+		["1914-01-01T04:00:04+00:00", "00:00:04", "-04", 240]
+	]),
+
 	"1931" : helpers.makeTestYear("Brazil/West", [
 		["1931-10-03T14:59:59+00:00", "10:59:59", "-04", 240],
 		["1931-10-03T15:00:00+00:00", "12:00:00", "-03", 180]
@@ -121,5 +126,10 @@ exports["Brazil/West"] = {
 	"1993" : helpers.makeTestYear("Brazil/West", [
 		["1993-10-17T03:59:59+00:00", "23:59:59", "-04", 240],
 		["1993-10-17T04:00:00+00:00", "01:00:00", "-03", 180]
+	]),
+
+	"1994" : helpers.makeTestYear("Brazil/West", [
+		["1994-02-20T02:59:59+00:00", "23:59:59", "-03", 180],
+		["1994-02-20T03:00:00+00:00", "23:00:00", "-04", 240]
 	])
 };
