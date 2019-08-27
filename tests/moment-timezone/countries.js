@@ -8,7 +8,7 @@ exports.countries = {
 		var zone1 = tz.zone("Africa/Abidjan");
 		var zone2 = tz.zone("Africa/Accra");
 
-		test.deepEqual(zone1.countries, ['CI', 'BF', 'GM', 'GN', 'ML', 'MR', 'SH', 'SL', 'SN', 'ST', 'TG'], "A zones countries should be correct");
+		test.deepEqual(zone1.countries, ['CI', 'BF', 'GM', 'GN', 'ML', 'MR', 'SH', 'SL', 'SN', 'TG'], "A zones countries should be correct");
 		test.deepEqual(zone2.countries, ['GH'], "A zones countries should be correct");
 
 		test.done();

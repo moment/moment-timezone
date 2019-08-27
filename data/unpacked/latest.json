@@ -8120,7 +8120,10 @@
         120,
         180
       ],
-      "population": 2675000
+      "population": 2675000,
+      "countries": [
+        "BR"
+      ]
     },
     {
       "name": "America/Barbados",
@@ -12248,7 +12251,10 @@
         420,
         420
       ],
-      "population": 11583
+      "population": 11583,
+      "countries": [
+        "CA"
+      ]
     },
     {
       "name": "America/Dawson",
@@ -34851,7 +34857,23 @@
         246.0667,
         240
       ],
-      "population": 43396
+      "population": 43396,
+      "countries": [
+        "TT",
+        "AG",
+        "AI",
+        "BL",
+        "DM",
+        "GD",
+        "GP",
+        "KN",
+        "LC",
+        "MF",
+        "MS",
+        "VC",
+        "VG",
+        "VI"
+      ]
     },
     {
       "name": "America/Port-au-Prince",
@@ -57773,7 +57795,10 @@
         -300,
         -360
       ],
-      "population": 0
+      "population": 0,
+      "countries": [
+        "KZ"
+      ]
     },
     {
       "name": "Asia/Qyzylorda",
@@ -59925,13 +59950,13 @@
       ],
       "untils": [
         -683802000000,
-        -672314400000,
+        -672310800000,
         -654771600000,
-        -640864800000,
+        -640861200000,
         -620298000000,
-        -609415200000,
+        -609411600000,
         -588848400000,
-        -577965600000,
+        -577962000000,
         null
       ],
       "offsets": [
@@ -69487,7 +69512,8 @@
         -630,
         -570
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "Australia/NSW",
@@ -77715,7 +77741,8 @@
         -120,
         -60
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "Chile/Continental",
@@ -79088,7 +79115,8 @@
         300,
         360
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "Cuba",
@@ -81044,7 +81072,8 @@
       "offsets": [
         300
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "EST5EDT",
@@ -81504,7 +81533,8 @@
         240,
         300
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "Etc/GMT-0",
@@ -83083,7 +83113,10 @@
         -180,
         -240
       ],
-      "population": 1010073
+      "population": 1010073,
+      "countries": [
+        "RU"
+      ]
     },
     {
       "name": "Europe/Athens",
@@ -102674,7 +102707,8 @@
       ],
       "population": 331936,
       "countries": [
-        "RU"
+        "RU",
+        "UA"
       ]
     },
     {
@@ -105237,7 +105271,10 @@
         -180,
         -240
       ],
-      "population": 1292799
+      "population": 1292799,
+      "countries": [
+        "RU"
+      ]
     },
     {
       "name": "Europe/Uzhgorod",
@@ -110900,7 +110937,8 @@
       "offsets": [
         600
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "Iceland",
@@ -112218,13 +112256,13 @@
       ],
       "untils": [
         -683802000000,
-        -672314400000,
+        -672310800000,
         -654771600000,
-        -640864800000,
+        -640861200000,
         -620298000000,
-        -609415200000,
+        -609411600000,
         -588848400000,
-        -577965600000,
+        -577962000000,
         null
       ],
       "offsets": [
@@ -113875,7 +113913,8 @@
       "offsets": [
         420
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "MST7MDT",
@@ -114335,7 +114374,8 @@
         360,
         420
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "Navajo",
@@ -114819,7 +114859,8 @@
         360,
         420
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "NZ-CHAT",
@@ -119814,7 +119855,8 @@
         -540,
         -480
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "PST8PDT",
@@ -120274,7 +120316,8 @@
         420,
         480
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "ROC",
@@ -120942,7 +120985,8 @@
       "offsets": [
         0
       ],
-      "population": 0
+      "population": 0,
+      "countries": []
     },
     {
       "name": "US/Alaska",
@@ -127676,6 +127720,7 @@
       "zones": [
         "Asia/Almaty",
         "Asia/Qyzylorda",
+        "Asia/Qostanay",
         "Asia/Aqtobe",
         "Asia/Aqtau",
         "Asia/Atyrau",
@@ -128099,9 +128144,9 @@
         "Europe/Kaliningrad",
         "Europe/Moscow",
         "Europe/Simferopol",
-        "Europe/Volgograd",
         "Europe/Kirov",
         "Europe/Astrakhan",
+        "Europe/Volgograd",
         "Europe/Saratov",
         "Europe/Ulyanovsk",
         "Europe/Samara",
@@ -128357,6 +128402,7 @@
     {
       "name": "UA",
       "zones": [
+        "Europe/Simferopol",
         "Europe/Kiev",
         "Europe/Uzhgorod",
         "Europe/Zaporozhye"
