@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 			dest  = path.resolve('temp/download', version);
 
 		if (version !== 'latest') {
-			src = 'http://www.iana.org/time-zones/repository/releases/tzdata' + version + '.tar.gz';
+			src = 'https://data.iana.org/time-zones/releases/tzdata' + version + '.tar.gz';
 		}
 
 		grunt.file.mkdir(path.dirname(curl));

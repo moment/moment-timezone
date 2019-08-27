@@ -1,6 +1,6 @@
 {
 	"name": "moment-timezone",
-	"version": "0.5.14",
+	"version": "0.5.26",
 	"description": "Parse and display moments in any timezone.",
 	"homepage": "http://momentjs.com/timezone/",
 	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
@@ -30,17 +30,19 @@
 		"moment": ">= 2.9.0"
 	},
 	"devDependencies": {
-		"grunt": "^1.0.1",
-		"grunt-contrib-clean": "^1.1.0",
-		"grunt-contrib-jshint": "^1.1.0",
-		"grunt-contrib-nodeunit": "^1.0.0",
-		"grunt-contrib-uglify": "^3.1.0"
+		"grunt": "^1.0.4",
+		"grunt-contrib-clean": "^2.0.0",
+		"grunt-contrib-jshint": "^2.1.0",
+		"grunt-contrib-nodeunit": "^2.0.0",
+		"grunt-contrib-uglify": "^4.0.1"
 	},
 	"jspm": {
 		"main": "builds/moment-timezone-with-data",
 		"shim": {
 			"moment-timezone": {
-				"deps": ["moment"]
+				"deps": [
+					"moment"
+				]
 			}
 		}
 	},

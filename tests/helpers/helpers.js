@@ -14,6 +14,9 @@ function getUTCOffset (m) {
 	}
 }
 
+/**
+ * Runs tests for a specific year
+ */
 function testYear(test, name, expected) {
 	var len = expected.length,
 		i,
@@ -48,24 +51,48 @@ function mockToTimeString(name, format) {
 	};
 }
 
-function testGuess(test, name, mostPopulatedFor) {
+/**
+ * Returns a guess result for a time zone {name}
+ * Is used go generate guess tests and also in guess tests
+ */
+function getGuessResult(name, mock) {
+	var result;
 	parent.Intl = undefined;
 
-	if (mostPopulatedFor.offset) {
+	if (mock.offset) {
 		mockTimezoneOffset(name);
 		mockToTimeString(name);
-		test.equal(moment.tz.guess(true), name);
+		result = moment.tz.guess(true);
 	}
-
-	if (mostPopulatedFor.abbr) {
+	else if (mock.abbr) {
 		mockTimezoneOffset(name);
 		mockToTimeString(name, 'HH:mm:ss [GMT]ZZ (z)');
-		test.equal(moment.tz.guess(true), name);
+		result = moment.tz.guess(true);
+	}
+	else {
+		throw new Error("Please specify offset or abbr");
 	}
 
 	Date.prototype.getTimezoneOffset = getTimezoneOffset;
 	Date.prototype.toTimeString = toTimeString;
 	parent.Intl = oldIntl;
+	return result;
+}
+
+/**
+ * Runs guess test:
+ * checks that guess result is equal to expectedResult
+ */
+function testGuess(test, name, testSettings) {
+	var expectedResult = testSettings.expect || name;
+	if (testSettings.offset) {
+		var offsetGuess = getGuessResult(name, { offset: true });
+		test.equal(offsetGuess, expectedResult);
+	}
+	if (testSettings.abbr) {
+		var abbrGuess = getGuessResult(name, { abbr: true });
+		test.equal(abbrGuess, expectedResult);
+	}
 	test.done();
 }
 
@@ -76,11 +103,12 @@ module.exports = {
 		};
 	},
 
-	makeTestGuess : function (name, mostPopulatedFor) {
+	makeTestGuess : function (name, guessTestSettings) {
 		return function (test) {
-			testGuess(test, name, mostPopulatedFor);
+			testGuess(test, name, guessTestSettings);
 		};
 	},
 
-	getUTCOffset : getUTCOffset
+	getUTCOffset : getUTCOffset,
+	getGuessResult: getGuessResult
 };

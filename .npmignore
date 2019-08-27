@@ -1,5 +1,6 @@
 temp
 tests
+.idea
 
 Gruntfile.js
 tasks
@@ -12,7 +13,7 @@ contributing.md
 bower.json
 
 data/unpacked/*.json
-!data/unpacked/latest.json
+data/unpacked/latest.json
 data/packed/*.json
 !data/packed/latest.json
 data/meta/*.json

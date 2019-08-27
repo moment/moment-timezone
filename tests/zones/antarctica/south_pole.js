@@ -3,6 +3,11 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Antarctica/South_Pole"] = {
+
+	"guess:by:offset" : helpers.makeTestGuess("Antarctica/South_Pole", { offset: true, expect: "Pacific/Auckland" }),
+
+	"guess:by:abbr" : helpers.makeTestGuess("Antarctica/South_Pole", { abbr: true, expect: "Pacific/Auckland" }),
+
 	"1927" : helpers.makeTestYear("Antarctica/South_Pole", [
 		["1927-11-05T14:29:59+00:00", "01:59:59", "NZMT", -690],
 		["1927-11-05T14:30:00+00:00", "03:00:00", "NZST", -750]

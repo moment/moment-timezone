@@ -3,6 +3,11 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Asia/Tel_Aviv"] = {
+
+	"guess:by:offset" : helpers.makeTestGuess("Asia/Tel_Aviv", { offset: true, expect: "Asia/Jerusalem" }),
+
+	"guess:by:abbr" : helpers.makeTestGuess("Asia/Tel_Aviv", { abbr: true, expect: "Asia/Jerusalem" }),
+
 	"1917" : helpers.makeTestYear("Asia/Tel_Aviv", [
 		["1917-12-31T21:39:19+00:00", "23:59:59", "JMT", -8440 / 60],
 		["1917-12-31T21:39:20+00:00", "23:39:20", "IST", -120]
@@ -130,6 +135,20 @@ exports["Asia/Tel_Aviv"] = {
 		["1975-04-19T22:00:00+00:00", "01:00:00", "IDT", -180],
 		["1975-08-30T20:59:59+00:00", "23:59:59", "IDT", -180],
 		["1975-08-30T21:00:00+00:00", "23:00:00", "IST", -120]
+	]),
+
+	"1980" : helpers.makeTestYear("Asia/Tel_Aviv", [
+		["1980-08-01T21:59:59+00:00", "23:59:59", "IST", -120],
+		["1980-08-01T22:00:00+00:00", "01:00:00", "IDT", -180],
+		["1980-09-12T21:59:59+00:00", "00:59:59", "IDT", -180],
+		["1980-09-12T22:00:00+00:00", "00:00:00", "IST", -120]
+	]),
+
+	"1984" : helpers.makeTestYear("Asia/Tel_Aviv", [
+		["1984-05-04T21:59:59+00:00", "23:59:59", "IST", -120],
+		["1984-05-04T22:00:00+00:00", "01:00:00", "IDT", -180],
+		["1984-08-24T21:59:59+00:00", "00:59:59", "IDT", -180],
+		["1984-08-24T22:00:00+00:00", "00:00:00", "IST", -120]
 	]),
 
 	"1985" : helpers.makeTestYear("Asia/Tel_Aviv", [

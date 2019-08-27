@@ -3,6 +3,11 @@
 var helpers = require("../../helpers/helpers");
 
 exports["Asia/Qyzylorda"] = {
+
+	"guess:by:offset" : helpers.makeTestGuess("Asia/Qyzylorda", { offset: true }),
+
+	"guess:by:abbr" : helpers.makeTestGuess("Asia/Qyzylorda", { abbr: true }),
+
 	"1924" : helpers.makeTestYear("Asia/Qyzylorda", [
 		["1924-05-01T19:38:07+00:00", "23:59:59", "LMT", -15712 / 60],
 		["1924-05-01T19:38:08+00:00", "23:38:08", "+04", -240]
@@ -181,5 +186,10 @@ exports["Asia/Qyzylorda"] = {
 		["2004-03-27T21:00:00+00:00", "03:00:00", "+06", -360],
 		["2004-10-30T20:59:59+00:00", "02:59:59", "+06", -360],
 		["2004-10-30T21:00:00+00:00", "03:00:00", "+06", -360]
+	]),
+
+	"2018" : helpers.makeTestYear("Asia/Qyzylorda", [
+		["2018-12-20T17:59:59+00:00", "23:59:59", "+06", -360],
+		["2018-12-20T18:00:00+00:00", "23:00:00", "+05", -300]
 	])
 };

@@ -1,3 +1,47 @@
+### `0.5.26` _2019-06-06_
+* Updated data to IANA TZDB `2019b`
+* Fix: stabilize Array.sort [#762](https://github.com/moment/moment-timezone/pull/762)
+
+### `0.5.25` _2019-04-17_
+* Fix `moment.tz.dataVersion` to return `2019a` [#742](https://github.com/moment/moment-timezone/issues/742)
+* Update path in bower.json
+
+### `0.5.24` _2019-04-17_
+* Updated data to IANA TZDB `2019a` [#737](https://github.com/moment/moment-timezone/issues/737)
+* Start shipping both a 1970-1930 file and a rolling 10-year file [#614](https://github.com/moment/moment-timezone/issues/614) [#697](https://github.com/moment/moment-timezone/issues/697)
+* Fixed bug where `_z` time zone name was not cleared with `.local()` or `.utcOffset(offset)` [#738](https://github.com/moment/moment-timezone/issues/738)
+
+### `0.5.23` _2018-10-28_
+* Fix minor issue with tz guessing in Russia [#691](https://github.com/moment/moment-timezone/pull/691)
+
+### `0.5.22` _2018-10-28_
+* Updated data to IANA TZDB `2018g` [#689](https://github.com/moment/moment-timezone/pull/689)
+* Fix issue with missing LMT entries for some zones, and fix data builds on Linux and Windows [#308](https://github.com/moment/moment-timezone/issues/308)
+
+### `0.5.21` _2018-06-23_
+* Bugfix: revert breaking change introduced in 0.5.18
+
+### `0.5.20` _2018-06-18_
+* Bugfix: accidentally commented code
+
+### `0.5.19` _2018-06-18_
+* Revert: moved moment to peerDependencies
+
+### `0.5.18` _2018-06-18_
+* Return error when timezone name is not a string.
+* Moved moment to peerDependencies [#628](https://github.com/moment/moment-timezone/pull/628)
+* Prefer nodejs to amd declaration [#573](https://github.com/moment/moment-timezone/pull/573)
+
+### `0.5.17` _2018-05-12_
+* Updated data to IANA TZDB `2018d`. [#616](https://github.com/moment/moment-timezone/pull/616)
+
+### `0.5.16` _2018-04-18_
+* Fixed Etc/UTC timezone recognition, updated tests. [#599](https://github.com/moment/moment-timezone/pull/599)
+* Updated minified files to contain IANA TZDB `2018d` data
+
+### `0.5.15` _2018-04-17_
+* Updated data to IANA TZDB `2018d`. [#596](https://github.com/moment/moment-timezone/pull/596)
+
 ### `0.5.14` _2017-10-30_
 * Ensure Intl response is valid when guessing time zone. [#553](https://github.com/moment/moment-timezone/pull/553)
 * Updated data to IANA TZDB `2017c`. [#552](https://github.com/moment/moment-timezone/pull/552)
