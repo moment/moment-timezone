@@ -1,4 +1,7 @@
-### `0.5.27` _2019-06-06_
+### `0.5.27` _2019-10-14_
+* Updated data to IANA TZDB `2019c`
+
+### `0.5.26` _2019-06-06_
 * Updated data to IANA TZDB `2019b`
 * Fix: stabilize Array.sort [#762](https://github.com/moment/moment-timezone/pull/762)
 
