@@ -51,6 +51,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
+	/** creates a release */
 	grunt.registerTask('release', ['jshint', 'data', 'nodeunit', 'build', 'uglify']);
 
 	grunt.registerTask('releaseNoData', ['jshint', 'nodeunit', 'build', 'uglify']);
