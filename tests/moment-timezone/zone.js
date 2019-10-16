@@ -1,6 +1,9 @@
 "use strict";
 
 var tz = require("../../").tz;
+var guess = tz.prototype.guess;
+var now = Date.prototype.now;
+var moment = require('../../index');
 
 // gE = 1000; 1E = 100; 2k = 140
 var PACKED = "SomeZone|TIM TAM IAM|60.u 50 60|012101|gE 1E 2k 1E 2k";
@@ -11,12 +14,16 @@ exports.zone = {
 	setUp : function (done) {
 		moveAmbiguousForward = tz.moveAmbiguousForward;
 		moveInvalidForward = tz.moveInvalidForward;
+    tz.prototype.guess = 'America/New_York';
+    Date.now = function() { return 82400000 };
 		done();
 	},
 
 	tearDown : function (done) {
 		tz.moveAmbiguousForward = moveAmbiguousForward;
 		tz.moveInvalidForward = moveInvalidForward;
+    tz.prototype.guess = guess;
+    Date.now = now;
 		done();
 	},
 
@@ -144,5 +151,35 @@ exports.zone = {
 		}
 
 		test.done();
-	}
+	},
+
+  getNextTransition : function (test) {
+    var zone = new tz.Zone(PACKED);
+
+    var resultWithDate = zone.getNextTransition(new Date(65000000));
+    test.equal(resultWithDate.valueOf(), 66000000);
+
+    var resultWithMoment = zone.getNextTransition(moment(65000000));
+    test.equal(resultWithMoment.valueOf(), 66000000);
+
+    var result = zone.getNextTransition();
+    test.equal(result.valueOf(), 88800000);
+
+    test.done();
+  },
+
+  getPreviousTransition : function (test) {
+    var zone = new tz.Zone(PACKED);
+
+    var resultWithDate = zone.getPreviousTransition(new Date(65000000));
+    test.equal(resultWithDate.valueOf(), 60000000);
+
+    var resultWithMoment = zone.getPreviousTransition(moment(65000000));
+    test.equal(resultWithMoment.valueOf(), 60000000);
+
+    var result = zone.getPreviousTransition();
+    test.equal(result.valueOf(), 80400000);
+
+    test.done();
+  }
 };
