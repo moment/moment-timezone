@@ -1186,6 +1186,7 @@
 			"Europe/Paris|Europe/Zurich",
 			"Europe/Paris|Poland",
 			"Europe/Ulyanovsk|Europe/Astrakhan",
+			"Europe/Moscow|Europe/Stavropol",
 			"Pacific/Auckland|Antarctica/McMurdo",
 			"Pacific/Auckland|Antarctica/South_Pole",
 			"Pacific/Auckland|NZ",
