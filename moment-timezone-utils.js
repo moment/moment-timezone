@@ -1,5 +1,5 @@
 //! moment-timezone-utils.js
-//! version : 0.5.27
+//! version : 0.5.28
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -129,6 +129,13 @@
 		return '|' + precision + 'e' + exponent;
 	}
 
+	function packCountries (countries) {
+		if (!countries) {
+			return '';
+		}
+		return countries.join(' ');
+	}
+
 	function validatePackData (source) {
 		if (!source.name)    { throw new Error("Missing name"); }
 		if (!source.abbrs)   { throw new Error("Missing abbrs"); }
@@ -147,7 +154,16 @@
 		return [
 			source.name,
 			packAbbrsAndOffsets(source),
-			packUntils(source.untils) + packPopulation(source.population)
+			packUntils(source.untils),
+			packPopulation(source.population),
+			packCountries(source.countries)
+		].join('|');
+	}
+
+	function packCountry (source) {
+		return [
+			source.name,
+			source.zones.join(' '),
 		].join('|');
 	}
 
@@ -219,9 +235,10 @@
 		findAndCreateLinks(source.zones, zones, links, groupLeaders);
 
 		return {
-			version : source.version,
-			zones   : zones,
-			links   : links.sort()
+			version 	: source.version,
+			zones   	: zones,
+			links   	: links.sort(),
+			countries 	: source.countries
 		};
 	}
 
@@ -294,7 +311,8 @@
 		output = createLinks({
 			zones : outputZones,
 			links : input.links.slice(),
-			version : input.version
+			version : input.version,
+			countries : []
 		}, groupLeaders);
 
 		for (i = 0; i < output.zones.length; i++) {
@@ -313,6 +331,7 @@
 	moment.tz.createLinks    = createLinks;
 	moment.tz.filterYears    = filterYears;
 	moment.tz.filterLinkPack = filterLinkPack;
+	moment.tz.packCountry	 = packCountry;
 
 	return moment;
 }));

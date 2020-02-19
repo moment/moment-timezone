@@ -4,9 +4,9 @@ var helpers = require("../helpers/helpers");
 
 exports["PST8PDT"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("PST8PDT", { offset: true, expect: "America/Los_Angeles" }),
+	"guess:by:offset" : helpers.makeTestGuess("PST8PDT", { offset: true }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("PST8PDT", { abbr: true, expect: "America/Los_Angeles" }),
+	"guess:by:abbr" : helpers.makeTestGuess("PST8PDT", { abbr: true }),
 
 	"1918" : helpers.makeTestYear("PST8PDT", [
 		["1918-03-31T09:59:59+00:00", "01:59:59", "PST", 480],
