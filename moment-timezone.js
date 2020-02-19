@@ -119,7 +119,7 @@
 			offsets = data[2].split(' '),
 			indices = data[3].split(''),
 			untils  = data[4].split(' '),
-			countries = data[7];
+			countries = data[6];
 
 		arrayToInt(offsets);
 		arrayToInt(indices);

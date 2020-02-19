@@ -4,7 +4,7 @@ var helpers = require("../helpers/helpers");
 
 exports["ROK"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("ROK", { offset: true, expect: "Pacific/Palau" }),
+	"guess:by:offset" : helpers.makeTestGuess("ROK", { offset: true, expect: "Asia/Tokyo" }),
 
 	"guess:by:abbr" : helpers.makeTestGuess("ROK", { abbr: true, expect: "Asia/Seoul" }),
 

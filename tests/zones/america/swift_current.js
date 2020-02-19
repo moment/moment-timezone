@@ -4,9 +4,9 @@ var helpers = require("../../helpers/helpers");
 
 exports["America/Swift_Current"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("America/Swift_Current", { offset: true, expect: "Pacific/Galapagos" }),
+	"guess:by:offset" : helpers.makeTestGuess("America/Swift_Current", { offset: true, expect: "America/Managua" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("America/Swift_Current", { abbr: true, expect: "America/Tegucigalpa" }),
+	"guess:by:abbr" : helpers.makeTestGuess("America/Swift_Current", { abbr: true, expect: "America/Managua" }),
 
 	"1905" : helpers.makeTestYear("America/Swift_Current", [
 		["1905-09-01T07:11:19+00:00", "23:59:59", "LMT", 25880 / 60],
