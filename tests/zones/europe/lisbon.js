@@ -4,9 +4,9 @@ var helpers = require("../../helpers/helpers");
 
 exports["Europe/Lisbon"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Europe/Lisbon", { offset: true, expect: "WET" }),
+	"guess:by:offset" : helpers.makeTestGuess("Europe/Lisbon", { offset: true, expect: "Europe/London" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("Europe/Lisbon", { abbr: true, expect: "WET" }),
+	"guess:by:abbr" : helpers.makeTestGuess("Europe/Lisbon", { abbr: true }),
 
 	"1911" : helpers.makeTestYear("Europe/Lisbon", [
 		["1911-12-31T23:59:59+00:00", "23:23:14", "LMT", 2205 / 60]

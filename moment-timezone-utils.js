@@ -122,11 +122,11 @@
 			return '';
 		}
 		if (number < 1000) {
-			return '|' + number;
+			return number;
 		}
 		var exponent = String(number | 0).length - 2;
 		var precision = Math.round(number / Math.pow(10, exponent));
-		return '|' + precision + 'e' + exponent;
+		return precision + 'e' + exponent;
 	}
 
 	function packCountries (countries) {
@@ -152,11 +152,11 @@
 	function pack (source) {
 		validatePackData(source);
 		return [
-			source.name,
-			packAbbrsAndOffsets(source),
-			packUntils(source.untils),
-			packPopulation(source.population),
-			packCountries(source.countries)
+			source.name, // 0 - timezone name
+			packAbbrsAndOffsets(source), // 1 - abbrs, 2 - offsets, 3 - indices
+			packUntils(source.untils), // 4 - untils
+			packPopulation(source.population), // 5 - population
+			packCountries(source.countries) // 6 - countries
 		].join('|');
 	}
 
@@ -237,8 +237,7 @@
 		return {
 			version 	: source.version,
 			zones   	: zones,
-			links   	: links.sort(),
-			countries 	: source.countries
+			links   	: links.sort()
 		};
 	}
 
@@ -290,7 +289,8 @@
 			abbrs      : slice.apply(source.abbrs, indices),
 			untils     : untils,
 			offsets    : slice.apply(source.offsets, indices),
-			population : source.population
+			population : source.population,
+			countries  : source.countries
 		};
 	}
 
@@ -311,13 +311,16 @@
 		output = createLinks({
 			zones : outputZones,
 			links : input.links.slice(),
-			version : input.version,
-			countries : []
+			version : input.version
 		}, groupLeaders);
 
 		for (i = 0; i < output.zones.length; i++) {
 			output.zones[i] = pack(output.zones[i]);
 		}
+
+		output.countries = input.countries.map(function (unpacked) {
+			return packCountry(unpacked);
+		});
 
 		return output;
 	}
