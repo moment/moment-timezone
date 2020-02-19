@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 			return tz.pack(unpacked);
 		});
 
-		output.countries = output.countries.map(function (unpacked) {
+		output.countries = unpacked.countries.map(function (unpacked) {
 			return tz.packCountry(unpacked);
 		});
 
