@@ -118,8 +118,7 @@
 		var data = string.split('|'),
 			offsets = data[2].split(' '),
 			indices = data[3].split(''),
-			untils  = data[4].split(' '),
-			countries = data[6];
+			untils  = data[4].split(' ');
 
 		arrayToInt(offsets);
 		arrayToInt(indices);
@@ -127,29 +126,12 @@
 
 		intToUntil(untils, indices.length);
 
-		if (countries) {
-			countries = countries.split(' ');
-		} else {
-			countries = [];
-		}
-
 		return {
 			name       : data[0],
 			abbrs      : mapIndices(data[1].split(' '), indices),
 			offsets    : mapIndices(offsets, indices),
 			untils     : untils,
-			population : data[5] | 0,
-			countries  : countries
-		};
-	}
-
-	function unpackCountry (string) {
-		var data = string.split('|'),
-			zones = data[1].split(' ');
-
-		return {
-			name 	: data[0],
-			zones 	: zones
+			population : data[5] | 0
 		};
 	}
 
@@ -170,7 +152,7 @@
 			this.untils     = unpacked.untils;
 			this.offsets    = unpacked.offsets;
 			this.population = unpacked.population;
-			this.countries	= unpacked.countries;
+			this.countries	= this._getCountries(this.name);
 		},
 
 		_index : function (timestamp) {
@@ -183,6 +165,13 @@
 					return i;
 				}
 			}
+		},
+
+		_getCountries : function () {
+			var zone_name = this.name;
+			return Object.keys(countries).filter(function (country_code) {
+				return countries[country_code].zones.indexOf(zone_name) !== -1;
+			});
 		},
 
 		parse : function (timestamp) {
@@ -229,19 +218,10 @@
 		Country object
 	************************************/
 
-	function Country (packedString) {
-		if (packedString) {
-			this._set(unpackCountry(packedString));
-		}
+	function Country (country_name, zone_names) {
+		this.name = country_name;
+		this.zones = zone_names;
 	}
-
-	Country.prototype = {
-		_set : function (unpacked) {
-			this.name       = unpacked.name;
-			this.zones      = unpacked.zones;
-		}
-	};
-
 
 	/************************************
 		Current Timezone
@@ -459,6 +439,7 @@
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
+			zone.countries = zone._getCountries()
 			return zone;
 		}
 
@@ -499,7 +480,7 @@
 	}
 
 	function addCountries (data) {
-		var i, name, split, normalized;
+		var i, country_code, country_zones, split, normalized_country_code;
 		//check required because data could be undefined.
 		if (data) {
 			if (typeof data === "string") {
@@ -508,26 +489,21 @@
 
 			for (i = 0; i < data.length; i++) {
 				split = data[i].split('|');
-				name = split[0];
-				normalized = normalizeName(name);
-				countries[normalized] = data[i];
+				country_code = split[0].toUpperCase();
+				country_zones = split[1].split(' ');
+				countries[country_code] = new Country(
+					country_code,
+					country_zones
+				);
 			}
 		}
 	}
 
 	function getCountry (name) {
-		name = normalizeName(name);
+		name = name.toUpperCase();
 
-		var country = countries[name];
-
-		if (country instanceof Country) {
-			return country;
-		}
-
-		if (typeof country === 'string') {
-			country = new Country(country);
-			countries[name] = country;
-			return country;
+		if (countries[name] instanceof Country) {
+			return countries[name];
 		}
 
 		return null;
@@ -537,7 +513,13 @@
 		country = getCountry(country);
 
 		if (country) {
-			return country.zones;
+			return country.zones.map(function (zone_name) {
+				var zone = getZone(zone_name);
+				return {
+					name: zone_name,
+					offset: zone.offset(new Date())
+				}
+			});
 		}
 
 		return null;
