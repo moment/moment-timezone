@@ -439,7 +439,7 @@
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
-			zone.countries = zone._getCountries()
+			zone.countries = zone._getCountries();
 			return zone;
 		}
 
@@ -456,6 +456,10 @@
 		}
 
 		return out.sort();
+	}
+
+	function getCountryNames () {
+		return Object.keys(countries);
 	}
 
 	function addLink (aliases) {
@@ -509,17 +513,21 @@
 		return null;
 	}
 
-	function zonesForCountry(country) {
+	function zonesForCountry(country, with_offset) {
 		country = getCountry(country);
 
 		if (country) {
-			return country.zones.map(function (zone_name) {
-				var zone = getZone(zone_name);
-				return {
-					name: zone_name,
-					offset: zone.offset(new Date())
-				};
-			});
+			if (with_offset) {
+				return country.zones.map(function (zone_name) {
+					var zone = getZone(zone_name);
+					return {
+						name: zone_name,
+						offset: zone.utcOffset(new Date())
+					};
+				});
+			} else {
+				return country.zones;
+			}
 		}
 
 		return null;
@@ -589,6 +597,7 @@
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
+	tz.countries    = getCountryNames;
 	tz.zonesForCountry = zonesForCountry;
 
 	/************************************

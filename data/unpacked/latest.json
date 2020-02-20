@@ -210,7 +210,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "ET"
+      ]
     },
     {
       "name": "Africa/Algiers",
@@ -351,7 +353,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "ER"
+      ]
     },
     {
       "name": "Africa/Asmera",
@@ -394,7 +398,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "ML"
+      ]
     },
     {
       "name": "Africa/Bangui",
@@ -411,7 +417,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "CF"
+      ]
     },
     {
       "name": "Africa/Banjul",
@@ -428,7 +436,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "GM"
+      ]
     },
     {
       "name": "Africa/Bissau",
@@ -467,7 +477,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "MW"
+      ]
     },
     {
       "name": "Africa/Brazzaville",
@@ -484,7 +496,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "CG"
+      ]
     },
     {
       "name": "Africa/Bujumbura",
@@ -501,7 +515,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BI"
+      ]
     },
     {
       "name": "Africa/Cairo",
@@ -1601,7 +1617,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "GN"
+      ]
     },
     {
       "name": "Africa/Dakar",
@@ -1618,7 +1636,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SN"
+      ]
     },
     {
       "name": "Africa/Dar_es_Salaam",
@@ -1644,7 +1664,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "TZ"
+      ]
     },
     {
       "name": "Africa/Djibouti",
@@ -1670,7 +1692,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "DJ"
+      ]
     },
     {
       "name": "Africa/Douala",
@@ -1687,7 +1711,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "CM"
+      ]
     },
     {
       "name": "Africa/El_Aaiun",
@@ -1969,7 +1995,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SL"
+      ]
     },
     {
       "name": "Africa/Gaborone",
@@ -1986,7 +2014,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BW"
+      ]
     },
     {
       "name": "Africa/Harare",
@@ -2003,7 +2033,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "ZW"
+      ]
     },
     {
       "name": "Africa/Johannesburg",
@@ -2180,7 +2212,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "UG"
+      ]
     },
     {
       "name": "Africa/Khartoum",
@@ -2318,7 +2352,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "RW"
+      ]
     },
     {
       "name": "Africa/Kinshasa",
@@ -2335,7 +2371,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "CD"
+      ]
     },
     {
       "name": "Africa/Lagos",
@@ -2380,7 +2418,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "GA"
+      ]
     },
     {
       "name": "Africa/Lome",
@@ -2397,7 +2437,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "TG"
+      ]
     },
     {
       "name": "Africa/Luanda",
@@ -2414,7 +2456,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "AO"
+      ]
     },
     {
       "name": "Africa/Lubumbashi",
@@ -2431,7 +2475,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "CD"
+      ]
     },
     {
       "name": "Africa/Lusaka",
@@ -2448,7 +2494,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "ZM"
+      ]
     },
     {
       "name": "Africa/Malabo",
@@ -2465,7 +2513,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "GQ"
+      ]
     },
     {
       "name": "Africa/Maputo",
@@ -2520,7 +2570,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "LS"
+      ]
     },
     {
       "name": "Africa/Mbabane",
@@ -2549,7 +2601,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SZ"
+      ]
     },
     {
       "name": "Africa/Mogadishu",
@@ -2575,7 +2629,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SO"
+      ]
     },
     {
       "name": "Africa/Monrovia",
@@ -2676,7 +2732,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "NE"
+      ]
     },
     {
       "name": "Africa/Nouakchott",
@@ -2693,7 +2751,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "MR"
+      ]
     },
     {
       "name": "Africa/Ouagadougou",
@@ -2710,7 +2770,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BF"
+      ]
     },
     {
       "name": "Africa/Porto-Novo",
@@ -2727,7 +2789,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BJ"
+      ]
     },
     {
       "name": "Africa/Sao_Tome",
@@ -4075,7 +4139,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "AI"
+      ]
     },
     {
       "name": "America/Antigua",
@@ -4092,7 +4158,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "AG"
+      ]
     },
     {
       "name": "America/Araguaina",
@@ -6752,7 +6820,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "AW"
+      ]
     },
     {
       "name": "America/Asuncion",
@@ -10349,7 +10419,9 @@
         300
       ],
       "population": 58435,
-      "countries": []
+      "countries": [
+        "KY"
+      ]
     },
     {
       "name": "America/Chicago",
@@ -13591,7 +13663,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "DM"
+      ]
     },
     {
       "name": "America/Edmonton",
@@ -17353,7 +17427,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "GD"
+      ]
     },
     {
       "name": "America/Guadeloupe",
@@ -17370,7 +17446,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "GP"
+      ]
     },
     {
       "name": "America/Guatemala",
@@ -24649,7 +24727,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BQ"
+      ]
     },
     {
       "name": "America/La_Paz",
@@ -25868,7 +25948,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SX"
+      ]
     },
     {
       "name": "America/Maceio",
@@ -26194,7 +26276,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "MF"
+      ]
     },
     {
       "name": "America/Martinique",
@@ -30501,7 +30585,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "MS"
+      ]
     },
     {
       "name": "America/Nassau",
@@ -40218,7 +40304,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BL"
+      ]
     },
     {
       "name": "America/St_Johns",
@@ -40965,7 +41053,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "KN"
+      ]
     },
     {
       "name": "America/St_Lucia",
@@ -40982,7 +41072,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "LC"
+      ]
     },
     {
       "name": "America/St_Thomas",
@@ -40999,7 +41091,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "VI"
+      ]
     },
     {
       "name": "America/St_Vincent",
@@ -41016,7 +41110,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "VC"
+      ]
     },
     {
       "name": "America/Swift_Current",
@@ -43061,7 +43157,9 @@
         240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "VG"
+      ]
     },
     {
       "name": "America/Vancouver",
@@ -46333,7 +46431,9 @@
         -780
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "AQ"
+      ]
     },
     {
       "name": "Antarctica/Palmer",
@@ -47776,7 +47876,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SJ"
+      ]
     },
     {
       "name": "Asia/Aden",
@@ -47793,7 +47895,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "YE"
+      ]
     },
     {
       "name": "Asia/Almaty",
@@ -49365,7 +49469,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BH"
+      ]
     },
     {
       "name": "Asia/Baku",
@@ -55552,7 +55658,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "KW"
+      ]
     },
     {
       "name": "Asia/Macao",
@@ -56304,7 +56412,9 @@
         -240
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "OM"
+      ]
     },
     {
       "name": "Asia/Nicosia",
@@ -57496,7 +57606,9 @@
         -420
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "KH"
+      ]
     },
     {
       "name": "Asia/Pontianak",
@@ -60763,7 +60875,9 @@
         -420
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "LA"
+      ]
     },
     {
       "name": "Asia/Vladivostok",
@@ -65171,7 +65285,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SH"
+      ]
     },
     {
       "name": "Atlantic/Stanley",
@@ -85495,7 +85611,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SK"
+      ]
     },
     {
       "name": "Europe/Brussels",
@@ -87315,7 +87433,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "DE"
+      ]
     },
     {
       "name": "Europe/Chisinau",
@@ -90198,7 +90318,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "GG"
+      ]
     },
     {
       "name": "Europe/Helsinki",
@@ -91300,7 +91422,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "IM"
+      ]
     },
     {
       "name": "Europe/Istanbul",
@@ -92392,7 +92516,9 @@
         0
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "JE"
+      ]
     },
     {
       "name": "Europe/Kaliningrad",
@@ -94267,7 +94393,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SI"
+      ]
     },
     {
       "name": "Europe/London",
@@ -96955,7 +97083,9 @@
         -120
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "AX"
+      ]
     },
     {
       "name": "Europe/Minsk",
@@ -99752,7 +99882,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "ME"
+      ]
     },
     {
       "name": "Europe/Prague",
@@ -101822,7 +101954,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "SM"
+      ]
     },
     {
       "name": "Europe/Sarajevo",
@@ -102190,7 +102324,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "BA"
+      ]
     },
     {
       "name": "Europe/Saratov",
@@ -102999,7 +103135,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "MK"
+      ]
     },
     {
       "name": "Europe/Sofia",
@@ -105937,7 +106075,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "LI"
+      ]
     },
     {
       "name": "Europe/Vatican",
@@ -106455,7 +106595,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "VA"
+      ]
     },
     {
       "name": "Europe/Vienna",
@@ -108336,7 +108478,9 @@
         -60
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "HR"
+      ]
     },
     {
       "name": "Europe/Zaporozhye",
@@ -111104,7 +111248,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "MG"
+      ]
     },
     {
       "name": "Indian/Chagos",
@@ -111184,7 +111330,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "KM"
+      ]
     },
     {
       "name": "Indian/Kerguelen",
@@ -111298,7 +111446,9 @@
         -180
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "YT"
+      ]
     },
     {
       "name": "Indian/Reunion",
@@ -117913,7 +118063,9 @@
         660
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "UM"
+      ]
     },
     {
       "name": "Pacific/Nauru",
@@ -118435,7 +118587,9 @@
         -600
       ],
       "population": 0,
-      "countries": []
+      "countries": [
+        "MP"
+      ]
     },
     {
       "name": "Pacific/Samoa",
@@ -126938,13 +127092,15 @@
     {
       "name": "AG",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Antigua"
       ]
     },
     {
       "name": "AI",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Anguilla"
       ]
     },
     {
@@ -126962,7 +127118,8 @@
     {
       "name": "AO",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Luanda"
       ]
     },
     {
@@ -126977,7 +127134,8 @@
         "Antarctica/Syowa",
         "Antarctica/Troll",
         "Antarctica/Vostok",
-        "Pacific/Auckland"
+        "Pacific/Auckland",
+        "Antarctica/McMurdo"
       ]
     },
     {
@@ -127030,13 +127188,15 @@
     {
       "name": "AW",
       "zones": [
-        "America/Curacao"
+        "America/Curacao",
+        "America/Aruba"
       ]
     },
     {
       "name": "AX",
       "zones": [
-        "Europe/Helsinki"
+        "Europe/Helsinki",
+        "Europe/Mariehamn"
       ]
     },
     {
@@ -127048,7 +127208,8 @@
     {
       "name": "BA",
       "zones": [
-        "Europe/Belgrade"
+        "Europe/Belgrade",
+        "Europe/Sarajevo"
       ]
     },
     {
@@ -127072,7 +127233,8 @@
     {
       "name": "BF",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Ouagadougou"
       ]
     },
     {
@@ -127084,25 +127246,29 @@
     {
       "name": "BH",
       "zones": [
-        "Asia/Qatar"
+        "Asia/Qatar",
+        "Asia/Bahrain"
       ]
     },
     {
       "name": "BI",
       "zones": [
-        "Africa/Maputo"
+        "Africa/Maputo",
+        "Africa/Bujumbura"
       ]
     },
     {
       "name": "BJ",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Porto-Novo"
       ]
     },
     {
       "name": "BL",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/St_Barthelemy"
       ]
     },
     {
@@ -127126,7 +127292,8 @@
     {
       "name": "BQ",
       "zones": [
-        "America/Curacao"
+        "America/Curacao",
+        "America/Kralendijk"
       ]
     },
     {
@@ -127165,7 +127332,8 @@
     {
       "name": "BW",
       "zones": [
-        "Africa/Maputo"
+        "Africa/Maputo",
+        "Africa/Gaborone"
       ]
     },
     {
@@ -127223,19 +127391,23 @@
       "name": "CD",
       "zones": [
         "Africa/Maputo",
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Kinshasa",
+        "Africa/Lubumbashi"
       ]
     },
     {
       "name": "CF",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Bangui"
       ]
     },
     {
       "name": "CG",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Brazzaville"
       ]
     },
     {
@@ -127267,7 +127439,8 @@
     {
       "name": "CM",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Douala"
       ]
     },
     {
@@ -127330,13 +127503,15 @@
       "name": "DE",
       "zones": [
         "Europe/Zurich",
-        "Europe/Berlin"
+        "Europe/Berlin",
+        "Europe/Busingen"
       ]
     },
     {
       "name": "DJ",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Africa/Djibouti"
       ]
     },
     {
@@ -127348,7 +127523,8 @@
     {
       "name": "DM",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Dominica"
       ]
     },
     {
@@ -127391,7 +127567,8 @@
     {
       "name": "ER",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Africa/Asmara"
       ]
     },
     {
@@ -127405,7 +127582,8 @@
     {
       "name": "ET",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Africa/Addis_Ababa"
       ]
     },
     {
@@ -127449,7 +127627,8 @@
     {
       "name": "GA",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Libreville"
       ]
     },
     {
@@ -127461,7 +127640,8 @@
     {
       "name": "GD",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Grenada"
       ]
     },
     {
@@ -127479,7 +127659,8 @@
     {
       "name": "GG",
       "zones": [
-        "Europe/London"
+        "Europe/London",
+        "Europe/Guernsey"
       ]
     },
     {
@@ -127506,25 +127687,29 @@
     {
       "name": "GM",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Banjul"
       ]
     },
     {
       "name": "GN",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Conakry"
       ]
     },
     {
       "name": "GP",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Guadeloupe"
       ]
     },
     {
       "name": "GQ",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Malabo"
       ]
     },
     {
@@ -127578,7 +127763,8 @@
     {
       "name": "HR",
       "zones": [
-        "Europe/Belgrade"
+        "Europe/Belgrade",
+        "Europe/Zagreb"
       ]
     },
     {
@@ -127617,7 +127803,8 @@
     {
       "name": "IM",
       "zones": [
-        "Europe/London"
+        "Europe/London",
+        "Europe/Isle_of_Man"
       ]
     },
     {
@@ -127659,7 +127846,8 @@
     {
       "name": "JE",
       "zones": [
-        "Europe/London"
+        "Europe/London",
+        "Europe/Jersey"
       ]
     },
     {
@@ -127695,7 +127883,8 @@
     {
       "name": "KH",
       "zones": [
-        "Asia/Bangkok"
+        "Asia/Bangkok",
+        "Asia/Phnom_Penh"
       ]
     },
     {
@@ -127709,13 +127898,15 @@
     {
       "name": "KM",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Indian/Comoro"
       ]
     },
     {
       "name": "KN",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/St_Kitts"
       ]
     },
     {
@@ -127733,13 +127924,15 @@
     {
       "name": "KW",
       "zones": [
-        "Asia/Riyadh"
+        "Asia/Riyadh",
+        "Asia/Kuwait"
       ]
     },
     {
       "name": "KY",
       "zones": [
-        "America/Panama"
+        "America/Panama",
+        "America/Cayman"
       ]
     },
     {
@@ -127757,7 +127950,8 @@
     {
       "name": "LA",
       "zones": [
-        "Asia/Bangkok"
+        "Asia/Bangkok",
+        "Asia/Vientiane"
       ]
     },
     {
@@ -127769,13 +127963,15 @@
     {
       "name": "LC",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/St_Lucia"
       ]
     },
     {
       "name": "LI",
       "zones": [
-        "Europe/Zurich"
+        "Europe/Zurich",
+        "Europe/Vaduz"
       ]
     },
     {
@@ -127793,7 +127989,8 @@
     {
       "name": "LS",
       "zones": [
-        "Africa/Johannesburg"
+        "Africa/Johannesburg",
+        "Africa/Maseru"
       ]
     },
     {
@@ -127841,19 +128038,22 @@
     {
       "name": "ME",
       "zones": [
-        "Europe/Belgrade"
+        "Europe/Belgrade",
+        "Europe/Podgorica"
       ]
     },
     {
       "name": "MF",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Marigot"
       ]
     },
     {
       "name": "MG",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Indian/Antananarivo"
       ]
     },
     {
@@ -127866,13 +128066,15 @@
     {
       "name": "MK",
       "zones": [
-        "Europe/Belgrade"
+        "Europe/Belgrade",
+        "Europe/Skopje"
       ]
     },
     {
       "name": "ML",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Bamako"
       ]
     },
     {
@@ -127898,7 +128100,8 @@
     {
       "name": "MP",
       "zones": [
-        "Pacific/Guam"
+        "Pacific/Guam",
+        "Pacific/Saipan"
       ]
     },
     {
@@ -127910,13 +128113,15 @@
     {
       "name": "MR",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Nouakchott"
       ]
     },
     {
       "name": "MS",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Montserrat"
       ]
     },
     {
@@ -127940,7 +128145,8 @@
     {
       "name": "MW",
       "zones": [
-        "Africa/Maputo"
+        "Africa/Maputo",
+        "Africa/Blantyre"
       ]
     },
     {
@@ -127987,7 +128193,8 @@
     {
       "name": "NE",
       "zones": [
-        "Africa/Lagos"
+        "Africa/Lagos",
+        "Africa/Niamey"
       ]
     },
     {
@@ -128048,7 +128255,8 @@
     {
       "name": "OM",
       "zones": [
-        "Asia/Dubai"
+        "Asia/Dubai",
+        "Asia/Muscat"
       ]
     },
     {
@@ -128200,7 +128408,8 @@
     {
       "name": "RW",
       "zones": [
-        "Africa/Maputo"
+        "Africa/Maputo",
+        "Africa/Kigali"
       ]
     },
     {
@@ -128242,49 +128451,57 @@
     {
       "name": "SH",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Atlantic/St_Helena"
       ]
     },
     {
       "name": "SI",
       "zones": [
-        "Europe/Belgrade"
+        "Europe/Belgrade",
+        "Europe/Ljubljana"
       ]
     },
     {
       "name": "SJ",
       "zones": [
-        "Europe/Oslo"
+        "Europe/Oslo",
+        "Arctic/Longyearbyen"
       ]
     },
     {
       "name": "SK",
       "zones": [
-        "Europe/Prague"
+        "Europe/Prague",
+        "Europe/Bratislava"
       ]
     },
     {
       "name": "SL",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Freetown"
       ]
     },
     {
       "name": "SM",
       "zones": [
-        "Europe/Rome"
+        "Europe/Rome",
+        "Europe/San_Marino"
       ]
     },
     {
       "name": "SN",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Dakar"
       ]
     },
     {
       "name": "SO",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Africa/Mogadishu"
       ]
     },
     {
@@ -128314,7 +128531,8 @@
     {
       "name": "SX",
       "zones": [
-        "America/Curacao"
+        "America/Curacao",
+        "America/Lower_Princes"
       ]
     },
     {
@@ -128326,7 +128544,8 @@
     {
       "name": "SZ",
       "zones": [
-        "Africa/Johannesburg"
+        "Africa/Johannesburg",
+        "Africa/Mbabane"
       ]
     },
     {
@@ -128351,7 +128570,8 @@
     {
       "name": "TG",
       "zones": [
-        "Africa/Abidjan"
+        "Africa/Abidjan",
+        "Africa/Lome"
       ]
     },
     {
@@ -128423,7 +128643,8 @@
     {
       "name": "TZ",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Africa/Dar_es_Salaam"
       ]
     },
     {
@@ -128438,7 +128659,8 @@
     {
       "name": "UG",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Africa/Kampala"
       ]
     },
     {
@@ -128446,7 +128668,8 @@
       "zones": [
         "Pacific/Pago_Pago",
         "Pacific/Wake",
-        "Pacific/Honolulu"
+        "Pacific/Honolulu",
+        "Pacific/Midway"
       ]
     },
     {
@@ -128499,13 +128722,15 @@
     {
       "name": "VA",
       "zones": [
-        "Europe/Rome"
+        "Europe/Rome",
+        "Europe/Vatican"
       ]
     },
     {
       "name": "VC",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/St_Vincent"
       ]
     },
     {
@@ -128517,13 +128742,15 @@
     {
       "name": "VG",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/Tortola"
       ]
     },
     {
       "name": "VI",
       "zones": [
-        "America/Port_of_Spain"
+        "America/Port_of_Spain",
+        "America/St_Thomas"
       ]
     },
     {
@@ -128554,13 +128781,15 @@
     {
       "name": "YE",
       "zones": [
-        "Asia/Riyadh"
+        "Asia/Riyadh",
+        "Asia/Aden"
       ]
     },
     {
       "name": "YT",
       "zones": [
-        "Africa/Nairobi"
+        "Africa/Nairobi",
+        "Indian/Mayotte"
       ]
     },
     {
@@ -128572,13 +128801,15 @@
     {
       "name": "ZM",
       "zones": [
-        "Africa/Maputo"
+        "Africa/Maputo",
+        "Africa/Lusaka"
       ]
     },
     {
       "name": "ZW",
       "zones": [
-        "Africa/Maputo"
+        "Africa/Maputo",
+        "Africa/Harare"
       ]
     }
   ]
