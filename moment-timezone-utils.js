@@ -318,9 +318,9 @@
 			output.zones[i] = pack(output.zones[i]);
 		}
 
-		output.countries = input.countries.map(function (unpacked) {
+		output.countries = input.countries ? input.countries.map(function (unpacked) {
 			return packCountry(unpacked);
-		});
+		}) : [];
 
 		return output;
 	}
