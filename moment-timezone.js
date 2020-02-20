@@ -507,8 +507,9 @@
 		country = getCountry(country);
 
 		if (country) {
+			var zones = country.zones.sort();
 			if (with_offset) {
-				return country.zones.map(function (zone_name) {
+				return zones.map(function (zone_name) {
 					var zone = getZone(zone_name);
 					return {
 						name: zone_name,
@@ -516,7 +517,7 @@
 					};
 				});
 			} else {
-				return country.zones;
+				return zones;
 			}
 		}
 
