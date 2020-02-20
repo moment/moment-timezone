@@ -484,13 +484,8 @@
 	}
 
 	function addCountries (data) {
-		var i, country_code, country_zones, split, normalized_country_code;
-		//check required because data could be undefined.
-		if (data) {
-			if (typeof data === "string") {
-				data = [data];
-			}
-
+		var i, country_code, country_zones, split;
+		if (data && data.length) {
 			for (i = 0; i < data.length; i++) {
 				split = data[i].split('|');
 				country_code = split[0].toUpperCase();
@@ -505,12 +500,7 @@
 
 	function getCountry (name) {
 		name = name.toUpperCase();
-
-		if (countries[name] instanceof Country) {
-			return countries[name];
-		}
-
-		return null;
+		return countries[name] || null;
 	}
 
 	function zonesForCountry(country, with_offset) {
