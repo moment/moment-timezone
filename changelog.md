@@ -1,3 +1,10 @@
+### `0.5.29` _2020-02-21_
+Merged pull request #410 from @adgrace:
+* Added a method `moment.tz.zonesForCountry(country_code)` which returns all timezones for the country
+* Added a method `moment.tz(timezone_id).countries()` to get countries for some time zone
+* Added a method `moment.tz.countries()` to get all country codes
+* And as you know `moment.tz.zones()` already exists
+
 ### `0.5.28` _2019-10-14_
 * Updated data to IANA TZDB `2019c`
 

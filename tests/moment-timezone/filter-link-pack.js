@@ -48,7 +48,7 @@ exports['filter-link-pack'] = {
 		var actual = tz.filterLinkPack(DATA, 2000, 2001),
 			expected = {
 				version : 'test-filter-link-pack',
-				zones   : ['Some/Zone_A|C D E F G H|30 40 50 60 70 80|012345|1d2M0 1io0 1800 1i00 jc0||'],
+				zones   : ['Some/Zone_A|C D E F G H|30 40 50 60 70 80|012345|1d2M0 1io0 1800 1i00 jc0|'],
 				links   : ['Some/Zone_A|Some/Zone_B', 'Some/Zone_C|Some/Zone_D' ],
 				countries: []
 			};

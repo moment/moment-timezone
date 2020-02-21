@@ -152,7 +152,6 @@
 			this.untils     = unpacked.untils;
 			this.offsets    = unpacked.offsets;
 			this.population = unpacked.population;
-			this.countries	= this._getCountries(this.name);
 		},
 
 		_index : function (timestamp) {
@@ -167,7 +166,7 @@
 			}
 		},
 
-		_getCountries : function () {
+		countries : function () {
 			var zone_name = this.name;
 			return Object.keys(countries).filter(function (country_code) {
 				return countries[country_code].zones.indexOf(zone_name) !== -1;
@@ -439,7 +438,6 @@
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
-			zone.countries = zone._getCountries();
 			return zone;
 		}
 
@@ -485,16 +483,15 @@
 
 	function addCountries (data) {
 		var i, country_code, country_zones, split;
-		if (data && data.length) {
-			for (i = 0; i < data.length; i++) {
-				split = data[i].split('|');
-				country_code = split[0].toUpperCase();
-				country_zones = split[1].split(' ');
-				countries[country_code] = new Country(
-					country_code,
-					country_zones
-				);
-			}
+		if (!data || !data.length) return;
+		for (i = 0; i < data.length; i++) {
+			split = data[i].split('|');
+			country_code = split[0].toUpperCase();
+			country_zones = split[1].split(' ');
+			countries[country_code] = new Country(
+				country_code,
+				country_zones
+			);
 		}
 	}
 
@@ -506,21 +503,21 @@
 	function zonesForCountry(country, with_offset) {
 		country = getCountry(country);
 
-		if (country) {
-			if (with_offset) {
-				return country.zones.map(function (zone_name) {
-					var zone = getZone(zone_name);
-					return {
-						name: zone_name,
-						offset: zone.utcOffset(new Date())
-					};
-				});
-			} else {
-				return country.zones;
-			}
+		if (!country) return null;
+
+		var zones = country.zones.sort();
+
+		if (with_offset) {
+			return zones.map(function (zone_name) {
+				var zone = getZone(zone_name);
+				return {
+					name: zone_name,
+					offset: zone.utcOffset(new Date())
+				};
+			});
 		}
 
-		return null;
+		return zones;
 	}
 
 	function loadData (data) {
