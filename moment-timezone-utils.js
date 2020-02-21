@@ -155,8 +155,7 @@
 			source.name, // 0 - timezone name
 			packAbbrsAndOffsets(source), // 1 - abbrs, 2 - offsets, 3 - indices
 			packUntils(source.untils), // 4 - untils
-			packPopulation(source.population), // 5 - population
-			packCountries(source.countries) // 6 - countries
+			packPopulation(source.population) // 5 - population
 		].join('|');
 	}
 

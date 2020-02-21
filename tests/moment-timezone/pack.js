@@ -24,7 +24,7 @@ exports.pack = {
 					Infinity
 				]
 			},
-			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X||"
+			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|"
 		);
 	},
 
@@ -44,7 +44,7 @@ exports.pack = {
 				],
 				population : 1234567
 			},
-			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|12e5|"
+			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|12e5"
 		);
 	},
 
@@ -57,7 +57,7 @@ exports.pack = {
 				untils  : [Infinity],
 				population : 999
 			},
-			"Some/Zone_Name|ABC|10|0||999|"
+			"Some/Zone_Name|ABC|10|0||999"
 		);
 	},
 
@@ -70,7 +70,7 @@ exports.pack = {
 				untils  : [Infinity],
 				population : 455000001
 			},
-			"Some/Zone_Name|ABC|10|0||46e7|"
+			"Some/Zone_Name|ABC|10|0||46e7"
 		);
 	},
 

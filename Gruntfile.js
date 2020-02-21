@@ -8,6 +8,9 @@ module.exports = function(grunt) {
 				"tests/zones/**/*.js",
 				"tests/countries/*.js"
 			],
+			countries: [
+				"tests/countries/*.js"
+			],
 			core : [
 				"tests/moment-timezone/*.js"
 			]
