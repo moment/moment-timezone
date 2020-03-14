@@ -208,8 +208,22 @@
 			return this.offsets[this._index(mom)];
 		},
 
-		utcOffset : function (mom) {
-			return this.offsets[this._index(mom)];
+		utcOffset : function (mom, format) {
+			var offset = this.offsets[this._index(mom)];
+			if (format) {
+                var hours = Math.abs(Math.floor(offset / 60));
+                var minutes = offset % 60;
+                var sign = offset > 0 ? '+' : '-';
+                var padStart = function(value) {
+                    return value > 10 ? value : '0' + value;
+                };
+                switch (format) {
+                    case 'Z': return sign + padStart(hours) + ':' + padStart(minutes);
+                    case 'ZZ': return sign + padStart(hours) + padStart(minutes);
+                    default: throw new Error('Unknown format for utcOffset: ' + format);
+                }
+			}
+			return offset;
 		}
 	};
 
@@ -438,6 +452,8 @@
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
+
+			console.log(zone)
 			return zone;
 		}
 
