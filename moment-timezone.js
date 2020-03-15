@@ -30,6 +30,7 @@
 		countries = {},
 		names = {},
 		guesses = {},
+        official_names = {},
 		cachedGuess;
 
 	if (!moment || typeof moment.version !== 'string') {
@@ -167,7 +168,7 @@
 		},
 
 		countries : function () {
-			var zone_name = this.name;
+			var zone_name = official_names[this.name] || this.name;
 			return Object.keys(countries).filter(function (country_code) {
 				return countries[country_code].zones.indexOf(zone_name) !== -1;
 			});
@@ -413,7 +414,7 @@
 		return (name || '').toLowerCase().replace(/\//g, '_');
 	}
 
-	function addZone (packed) {
+	function addZones (packed) {
 		var i, name, split, normalized;
 
 		if (typeof packed === "string") {
@@ -452,8 +453,6 @@
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
-
-			console.log(zone)
 			return zone;
 		}
 
@@ -476,7 +475,7 @@
 		return Object.keys(countries);
 	}
 
-	function addLink (aliases) {
+	function addLinks (aliases) {
 		var i, alias, normal0, normal1;
 
 		if (typeof aliases === "string") {
@@ -495,6 +494,19 @@
 			links[normal1] = normal0;
 			names[normal1] = alias[1];
 		}
+	}
+
+	function addOfficialNames(){
+        var zone_names = Object.values(names);
+        var regex = /(America)\/(.*)\/(.*)/;
+
+        for (var i = 0; i < zone_names.length; i++) {
+            if (!regex.test(zone_names[i])) {
+                continue;
+            }
+            var matches = zone_names[i].match(regex);
+            official_names[matches[1] + '/' + matches[3]] = zone_names[i];
+        }
 	}
 
 	function addCountries (data) {
@@ -516,14 +528,14 @@
 		return countries[name] || null;
 	}
 
-	function zonesForCountry(country, with_offset) {
+	function zonesForCountry(country, options) {
 		country = getCountry(country);
 
 		if (!country) return null;
 
 		var zones = country.zones.sort();
 
-		if (with_offset) {
+		if (options && options.offset === true) {
 			return zones.map(function (zone_name) {
 				var zone = getZone(zone_name);
 				return {
@@ -537,9 +549,10 @@
 	}
 
 	function loadData (data) {
-		addZone(data.zones);
-		addLink(data.links);
+		addZones(data.zones);
+		addLinks(data.links);
 		addCountries(data.countries);
+		addOfficialNames();
 		tz.dataVersion = data.version;
 	}
 
@@ -587,8 +600,8 @@
 	tz._links       = links;
 	tz._names       = names;
 	tz._countries	= countries;
-	tz.add          = addZone;
-	tz.link         = addLink;
+	tz.add          = addZones;
+	tz.link         = addLinks;
 	tz.load         = loadData;
 	tz.zone         = getZone;
 	tz.zoneExists   = zoneExists; // deprecated in 0.1.0
