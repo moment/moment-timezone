@@ -122,7 +122,6 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/Fort_Wayne').countries(), []);
 		test.deepEqual(tz.zone('America/Fortaleza').countries(), ["BR"]);
 		test.deepEqual(tz.zone('America/Glace_Bay').countries(), ["CA"]);
-		test.deepEqual(tz.zone('America/Godthab').countries(), ["GL"]);
 		test.deepEqual(tz.zone('America/Goose_Bay').countries(), ["CA"]);
 		test.deepEqual(tz.zone('America/Grand_Turk').countries(), ["TC"]);
 		test.deepEqual(tz.zone('America/Grenada').countries(), ["GD"]);
@@ -182,6 +181,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/North_Dakota/Beulah').countries(), ["US"]);
 		test.deepEqual(tz.zone('America/North_Dakota/Center').countries(), ["US"]);
 		test.deepEqual(tz.zone('America/North_Dakota/New_Salem').countries(), ["US"]);
+		test.deepEqual(tz.zone('America/Nuuk').countries(), ["GL"]);
 		test.deepEqual(tz.zone('America/Ojinaga').countries(), ["MX"]);
 		test.deepEqual(tz.zone('America/Panama').countries(), ["KY","PA"]);
 		test.deepEqual(tz.zone('America/Pangnirtung').countries(), ["CA"]);
@@ -688,7 +688,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("GG"), ["Europe/Guernsey","Europe/London"]);
 		test.deepEqual(tz.zonesForCountry("GH"), ["Africa/Accra"]);
 		test.deepEqual(tz.zonesForCountry("GI"), ["Europe/Gibraltar"]);
-		test.deepEqual(tz.zonesForCountry("GL"), ["America/Danmarkshavn","America/Godthab","America/Scoresbysund","America/Thule"]);
+		test.deepEqual(tz.zonesForCountry("GL"), ["America/Danmarkshavn","America/Nuuk","America/Scoresbysund","America/Thule"]);
 		test.deepEqual(tz.zonesForCountry("GM"), ["Africa/Abidjan","Africa/Banjul"]);
 		test.deepEqual(tz.zonesForCountry("GN"), ["Africa/Abidjan","Africa/Conakry"]);
 		test.deepEqual(tz.zonesForCountry("GP"), ["America/Guadeloupe","America/Port_of_Spain"]);
