@@ -217,7 +217,6 @@
     {
       "name": "Africa/Algiers",
       "abbrs": [
-        "LMT",
         "PMT",
         "WET",
         "WEST",
@@ -254,7 +253,6 @@
         "CET"
       ],
       "untils": [
-        -2486679072000,
         -1855958961000,
         -1689814800000,
         -1680397200000,
@@ -291,7 +289,6 @@
         null
       ],
       "offsets": [
-        -12.2,
         -9.35,
         0,
         -60,
@@ -525,7 +522,6 @@
     {
       "name": "Africa/Cairo",
       "abbrs": [
-        "LMT",
         "EET",
         "EEST",
         "EET",
@@ -655,7 +651,6 @@
         "EET"
       ],
       "untils": [
-        -2185409109000,
         -929844000000,
         -923108400000,
         -906170400000,
@@ -785,7 +780,6 @@
         null
       ],
       "offsets": [
-        -125.15,
         -120,
         -180,
         -120,
@@ -1526,7 +1520,6 @@
     {
       "name": "Africa/Ceuta",
       "abbrs": [
-        "LMT",
         "WET",
         "WEST",
         "WET",
@@ -1657,7 +1650,6 @@
         "CET"
       ],
       "untils": [
-        -2177452800000,
         -1630112400000,
         -1616810400000,
         -1442451600000,
@@ -1788,7 +1780,6 @@
         null
       ],
       "offsets": [
-        21.2667,
         0,
         -60,
         0,
@@ -2667,7 +2658,6 @@
     {
       "name": "Africa/Johannesburg",
       "abbrs": [
-        "LMT",
         "SAST",
         "SAST",
         "SAST",
@@ -2676,7 +2666,6 @@
         "SAST"
       ],
       "untils": [
-        -2458173120000,
         -2109288600000,
         -860976000000,
         -845254800000,
@@ -2685,7 +2674,6 @@
         null
       ],
       "offsets": [
-        -112,
         -90,
         -120,
         -180,
@@ -3176,7 +3164,6 @@
     {
       "name": "Africa/Maseru",
       "abbrs": [
-        "LMT",
         "SAST",
         "SAST",
         "SAST",
@@ -3185,7 +3172,6 @@
         "SAST"
       ],
       "untils": [
-        -2458173120000,
         -2109288600000,
         -860976000000,
         -845254800000,
@@ -3194,7 +3180,6 @@
         null
       ],
       "offsets": [
-        -112,
         -90,
         -120,
         -180,
@@ -3210,7 +3195,6 @@
     {
       "name": "Africa/Mbabane",
       "abbrs": [
-        "LMT",
         "SAST",
         "SAST",
         "SAST",
@@ -3219,7 +3203,6 @@
         "SAST"
       ],
       "untils": [
-        -2458173120000,
         -2109288600000,
         -860976000000,
         -845254800000,
@@ -3228,7 +3211,6 @@
         null
       ],
       "offsets": [
-        -112,
         -90,
         -120,
         -180,
@@ -3272,19 +3254,16 @@
     {
       "name": "Africa/Monrovia",
       "abbrs": [
-        "LMT",
         "MMT",
         "MMT",
         "GMT"
       ],
       "untils": [
-        -2776979812000,
         -1604359012000,
         63593070000,
         null
       ],
       "offsets": [
-        43.1333,
         43.1333,
         44.5,
         0
@@ -3436,20 +3415,17 @@
       "name": "Africa/Sao_Tome",
       "abbrs": [
         "LMT",
-        "LMT",
         "GMT",
         "WAT",
         "GMT"
       ],
       "untils": [
-        -2713912016000,
         -1830384000000,
         1514768400000,
         1546304400000,
         null
       ],
       "offsets": [
-        -26.9333,
         36.75,
         0,
         -60,
@@ -3592,7 +3568,6 @@
     {
       "name": "Africa/Tunis",
       "abbrs": [
-        "LMT",
         "PMT",
         "CET",
         "CEST",
@@ -3629,7 +3604,6 @@
         "CET"
       ],
       "untils": [
-        -2797202444000,
         -1855958961000,
         -969242400000,
         -950493600000,
@@ -3666,7 +3640,6 @@
         null
       ],
       "offsets": [
-        -40.7333,
         -9.35,
         -60,
         -120,
@@ -3710,7 +3683,6 @@
     {
       "name": "Africa/Windhoek",
       "abbrs": [
-        "LMT",
         "+0130",
         "SAST",
         "SAST",
@@ -3766,7 +3738,6 @@
         "CAT"
       ],
       "untils": [
-        -2458170504000,
         -2109288600000,
         -860976000000,
         -845254800000,
@@ -3822,7 +3793,6 @@
         null
       ],
       "offsets": [
-        -68.4,
         -90,
         -120,
         -180,
@@ -3885,8 +3855,6 @@
     {
       "name": "America/Adak",
       "abbrs": [
-        "LMT",
-        "LMT",
         "NST",
         "NWT",
         "NPT",
@@ -4035,8 +4003,6 @@
         "HST"
       ],
       "untils": [
-        -3225223727000,
-        -2188944802000,
         -880196400000,
         -769395600000,
         -765374400000,
@@ -4185,8 +4151,6 @@
         null
       ],
       "offsets": [
-        -733.3667,
-        706.6333,
         660,
         600,
         600,
@@ -4342,8 +4306,6 @@
     {
       "name": "America/Anchorage",
       "abbrs": [
-        "LMT",
-        "LMT",
         "AST",
         "AWT",
         "APT",
@@ -4492,8 +4454,6 @@
         "AKST"
       ],
       "untils": [
-        -3225223727000,
-        -2188951224000,
         -880200000000,
         -769395600000,
         -765378000000,
@@ -4642,8 +4602,6 @@
         null
       ],
       "offsets": [
-        -840.4,
-        599.6,
         600,
         540,
         540,
@@ -5006,7 +4964,6 @@
     {
       "name": "America/Argentina/Buenos_Aires",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -5068,7 +5025,6 @@
         "-03"
       ],
       "untils": [
-        -2372097972000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -5130,7 +5086,6 @@
         null
       ],
       "offsets": [
-        233.8,
         256.8,
         240,
         180,
@@ -5199,7 +5154,6 @@
     {
       "name": "America/Argentina/Catamarca",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -5261,7 +5215,6 @@
         "-03"
       ],
       "untils": [
-        -2372096212000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -5323,7 +5276,6 @@
         null
       ],
       "offsets": [
-        263.1333,
         256.8,
         240,
         180,
@@ -5392,7 +5344,6 @@
     {
       "name": "America/Argentina/ComodRivadavia",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -5454,7 +5405,6 @@
         "-03"
       ],
       "untils": [
-        -2372096212000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -5516,7 +5466,6 @@
         null
       ],
       "offsets": [
-        263.1333,
         256.8,
         240,
         180,
@@ -5583,7 +5532,6 @@
     {
       "name": "America/Argentina/Cordoba",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -5645,7 +5593,6 @@
         "-03"
       ],
       "untils": [
-        -2372096592000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -5707,7 +5654,6 @@
         null
       ],
       "offsets": [
-        256.8,
         256.8,
         240,
         180,
@@ -5776,7 +5722,6 @@
     {
       "name": "America/Argentina/Jujuy",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -5836,7 +5781,6 @@
         "-03"
       ],
       "untils": [
-        -2372096328000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -5896,7 +5840,6 @@
         null
       ],
       "offsets": [
-        261.2,
         256.8,
         240,
         180,
@@ -5963,7 +5906,6 @@
     {
       "name": "America/Argentina/La_Rioja",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -6026,7 +5968,6 @@
         "-03"
       ],
       "untils": [
-        -2372095956000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -6089,7 +6030,6 @@
         null
       ],
       "offsets": [
-        267.4,
         256.8,
         240,
         180,
@@ -6159,7 +6099,6 @@
     {
       "name": "America/Argentina/Mendoza",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -6221,7 +6160,6 @@
         "-03"
       ],
       "untils": [
-        -2372095484000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -6283,7 +6221,6 @@
         null
       ],
       "offsets": [
-        275.2667,
         256.8,
         240,
         180,
@@ -6352,7 +6289,6 @@
     {
       "name": "America/Argentina/Rio_Gallegos",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -6414,7 +6350,6 @@
         "-03"
       ],
       "untils": [
-        -2372095388000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -6476,7 +6411,6 @@
         null
       ],
       "offsets": [
-        276.8667,
         256.8,
         240,
         180,
@@ -6545,7 +6479,6 @@
     {
       "name": "America/Argentina/Salta",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -6605,7 +6538,6 @@
         "-03"
       ],
       "untils": [
-        -2372096300000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -6665,7 +6597,6 @@
         null
       ],
       "offsets": [
-        261.6667,
         256.8,
         240,
         180,
@@ -6732,7 +6663,6 @@
     {
       "name": "America/Argentina/San_Juan",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -6795,7 +6725,6 @@
         "-03"
       ],
       "untils": [
-        -2372095556000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -6858,7 +6787,6 @@
         null
       ],
       "offsets": [
-        274.0667,
         256.8,
         240,
         180,
@@ -6928,7 +6856,6 @@
     {
       "name": "America/Argentina/San_Luis",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -6991,7 +6918,6 @@
         "-03"
       ],
       "untils": [
-        -2372096076000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -7054,7 +6980,6 @@
         null
       ],
       "offsets": [
-        265.4,
         256.8,
         240,
         180,
@@ -7124,7 +7049,6 @@
     {
       "name": "America/Argentina/Tucuman",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -7188,7 +7112,6 @@
         "-03"
       ],
       "untils": [
-        -2372096348000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -7252,7 +7175,6 @@
         null
       ],
       "offsets": [
-        260.8667,
         256.8,
         240,
         180,
@@ -7323,7 +7245,6 @@
     {
       "name": "America/Argentina/Ushuaia",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -7385,7 +7306,6 @@
         "-03"
       ],
       "untils": [
-        -2372095608000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -7447,7 +7367,6 @@
         null
       ],
       "offsets": [
-        273.2,
         256.8,
         240,
         180,
@@ -7538,7 +7457,6 @@
     {
       "name": "America/Asuncion",
       "abbrs": [
-        "LMT",
         "AMT",
         "-04",
         "-03",
@@ -7672,7 +7590,6 @@
         "-03"
       ],
       "untils": [
-        -2524507760000,
         -1206389360000,
         86760000000,
         134017200000,
@@ -7806,7 +7723,6 @@
         null
       ],
       "offsets": [
-        230.6667,
         230.6667,
         240,
         180,
@@ -7947,7 +7863,6 @@
     {
       "name": "America/Atikokan",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -7957,7 +7872,6 @@
         "EST"
       ],
       "untils": [
-        -2366733212000,
         -1632067200000,
         -1615136400000,
         -923248800000,
@@ -7967,7 +7881,6 @@
         null
       ],
       "offsets": [
-        366.4667,
         360,
         300,
         360,
@@ -7984,8 +7897,6 @@
     {
       "name": "America/Atka",
       "abbrs": [
-        "LMT",
-        "LMT",
         "NST",
         "NWT",
         "NPT",
@@ -8134,8 +8045,6 @@
         "HST"
       ],
       "untils": [
-        -3225223727000,
-        -2188944802000,
         -880196400000,
         -769395600000,
         -765374400000,
@@ -8284,8 +8193,6 @@
         null
       ],
       "offsets": [
-        -733.3667,
-        706.6333,
         660,
         600,
         600,
@@ -9269,7 +9176,6 @@
     {
       "name": "America/Blanc-Sablon",
       "abbrs": [
-        "LMT",
         "AST",
         "ADT",
         "AST",
@@ -9278,7 +9184,6 @@
         "AST"
       ],
       "untils": [
-        -2713896692000,
         -1632074400000,
         -1615143600000,
         -880221600000,
@@ -9287,7 +9192,6 @@
         null
       ],
       "offsets": [
-        228.4667,
         240,
         180,
         240,
@@ -9418,21 +9322,18 @@
     {
       "name": "America/Bogota",
       "abbrs": [
-        "LMT",
         "BMT",
         "-05",
         "-04",
         "-05"
       ],
       "untils": [
-        -2707671824000,
         -1739041424000,
         704869200000,
         733896000000,
         null
       ],
       "offsets": [
-        296.2667,
         296.2667,
         300,
         240,
@@ -9446,7 +9347,6 @@
     {
       "name": "America/Boise",
       "abbrs": [
-        "LMT",
         "PST",
         "PDT",
         "PST",
@@ -9602,7 +9502,6 @@
         "MST"
       ],
       "untils": [
-        -2717640000000,
         -1633269600000,
         -1615129200000,
         -1601820000000,
@@ -9758,7 +9657,6 @@
         null
       ],
       "offsets": [
-        464.8167,
         480,
         420,
         480,
@@ -9921,7 +9819,6 @@
     {
       "name": "America/Buenos_Aires",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -9983,7 +9880,6 @@
         "-03"
       ],
       "untils": [
-        -2372097972000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -10045,7 +9941,6 @@
         null
       ],
       "offsets": [
-        233.8,
         256.8,
         240,
         180,
@@ -10934,7 +10829,6 @@
     {
       "name": "America/Caracas",
       "abbrs": [
-        "LMT",
         "CMT",
         "-0430",
         "-04",
@@ -10942,7 +10836,6 @@
         "-04"
       ],
       "untils": [
-        -2524505536000,
         -1826739140000,
         -157750200000,
         1197183600000,
@@ -10950,7 +10843,6 @@
         null
       ],
       "offsets": [
-        267.7333,
         267.6667,
         270,
         240,
@@ -10965,7 +10857,6 @@
     {
       "name": "America/Catamarca",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -11027,7 +10918,6 @@
         "-03"
       ],
       "untils": [
-        -2372096212000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -11089,7 +10979,6 @@
         null
       ],
       "offsets": [
-        263.1333,
         256.8,
         240,
         180,
@@ -11178,17 +11067,14 @@
     {
       "name": "America/Cayman",
       "abbrs": [
-        "LMT",
         "CMT",
         "EST"
       ],
       "untils": [
-        -2524502512000,
         -1946918424000,
         null
       ],
       "offsets": [
-        318.1333,
         319.6,
         300
       ],
@@ -11200,7 +11086,6 @@
     {
       "name": "America/Chicago",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -11441,7 +11326,6 @@
         "CST"
       ],
       "untils": [
-        -2717647200000,
         -1633276800000,
         -1615136400000,
         -1601827200000,
@@ -11682,7 +11566,6 @@
         null
       ],
       "offsets": [
-        350.6,
         360,
         300,
         360,
@@ -12222,7 +12105,6 @@
     {
       "name": "America/Coral_Harbour",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -12232,7 +12114,6 @@
         "EST"
       ],
       "untils": [
-        -2366733212000,
         -1632067200000,
         -1615136400000,
         -923248800000,
@@ -12242,7 +12123,6 @@
         null
       ],
       "offsets": [
-        366.4667,
         360,
         300,
         360,
@@ -12257,7 +12137,6 @@
     {
       "name": "America/Cordoba",
       "abbrs": [
-        "LMT",
         "CMT",
         "-04",
         "-03",
@@ -12319,7 +12198,6 @@
         "-03"
       ],
       "untils": [
-        -2372096592000,
         -1567453392000,
         -1233432000000,
         -1222981200000,
@@ -12381,7 +12259,6 @@
         null
       ],
       "offsets": [
-        256.8,
         256.8,
         240,
         180,
@@ -12448,7 +12325,6 @@
     {
       "name": "America/Costa_Rica",
       "abbrs": [
-        "LMT",
         "SJMT",
         "CST",
         "CDT",
@@ -12461,7 +12337,6 @@
         "CST"
       ],
       "untils": [
-        -2524501427000,
         -1545071027000,
         288770400000,
         297234000000,
@@ -12474,7 +12349,6 @@
         null
       ],
       "offsets": [
-        336.2167,
         336.2167,
         360,
         300,
@@ -12494,19 +12368,16 @@
     {
       "name": "America/Creston",
       "abbrs": [
-        "LMT",
         "MST",
         "PST",
         "MST"
       ],
       "untils": [
-        -2713882436000,
         -1680454800000,
         -1627833600000,
         null
       ],
       "offsets": [
-        466.0667,
         420,
         480,
         420
@@ -12945,7 +12816,6 @@
     {
       "name": "America/Dawson_Creek",
       "abbrs": [
-        "LMT",
         "PST",
         "PDT",
         "PST",
@@ -13006,7 +12876,6 @@
         "MST"
       ],
       "untils": [
-        -2713881544000,
         -1632060000000,
         -1615129200000,
         -880207200000,
@@ -13067,7 +12936,6 @@
         null
       ],
       "offsets": [
-        480.9333,
         480,
         420,
         480,
@@ -13135,7 +13003,6 @@
     {
       "name": "America/Dawson",
       "abbrs": [
-        "LMT",
         "YST",
         "YDT",
         "YST",
@@ -13230,7 +13097,6 @@
         "MST"
       ],
       "untils": [
-        -2188996940000,
         -1632056400000,
         -1615125600000,
         -1596978000000,
@@ -13325,7 +13191,6 @@
         null
       ],
       "offsets": [
-        557.6667,
         540,
         480,
         540,
@@ -13427,7 +13292,6 @@
     {
       "name": "America/Denver",
       "abbrs": [
-        "LMT",
         "MST",
         "MDT",
         "MST",
@@ -13590,7 +13454,6 @@
         "MST"
       ],
       "untils": [
-        -2717643600000,
         -1633273200000,
         -1615132800000,
         -1601823600000,
@@ -13753,7 +13616,6 @@
         null
       ],
       "offsets": [
-        419.9333,
         420,
         360,
         420,
@@ -15472,7 +15334,6 @@
     {
       "name": "America/Fort_Nelson",
       "abbrs": [
-        "LMT",
         "PST",
         "PDT",
         "PST",
@@ -15618,7 +15479,6 @@
         "MST"
       ],
       "untils": [
-        -2713880953000,
         -1632060000000,
         -1615129200000,
         -880207200000,
@@ -15764,7 +15624,6 @@
         null
       ],
       "offsets": [
-        490.7833,
         480,
         420,
         480,
@@ -15917,7 +15776,6 @@
     {
       "name": "America/Fort_Wayne",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -16021,7 +15879,6 @@
         "EST"
       ],
       "untils": [
-        -2717647200000,
         -1633276800000,
         -1615136400000,
         -1601827200000,
@@ -16125,7 +15982,6 @@
         null
       ],
       "offsets": [
-        344.6333,
         360,
         300,
         360,
@@ -17814,7 +17670,6 @@
     {
       "name": "America/Grand_Turk",
       "abbrs": [
-        "LMT",
         "KMT",
         "EST",
         "EDT",
@@ -17935,7 +17790,6 @@
         "EST"
       ],
       "untils": [
-        -2524504528000,
         -1827687170000,
         294217200000,
         309938400000,
@@ -18056,7 +17910,6 @@
         null
       ],
       "offsets": [
-        284.5333,
         307.1667,
         300,
         240,
@@ -18265,21 +18118,18 @@
     {
       "name": "America/Guayaquil",
       "abbrs": [
-        "LMT",
         "QMT",
         "-05",
         "-04",
         "-05"
       ],
       "untils": [
-        -2524502440000,
         -1230749160000,
         722926800000,
         728884800000,
         null
       ],
       "offsets": [
-        319.3333,
         314,
         300,
         240,
@@ -19024,7 +18874,6 @@
     {
       "name": "America/Havana",
       "abbrs": [
-        "LMT",
         "HMT",
         "CST",
         "CDT",
@@ -19185,7 +19034,6 @@
         "CST"
       ],
       "untils": [
-        -2524501832000,
         -1402813824000,
         -1311534000000,
         -1300996800000,
@@ -19346,7 +19194,6 @@
         null
       ],
       "offsets": [
-        329.4667,
         329.6,
         300,
         240,
@@ -19575,7 +19422,6 @@
     {
       "name": "America/Indiana/Indianapolis",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -19679,7 +19525,6 @@
         "EST"
       ],
       "untils": [
-        -2717647200000,
         -1633276800000,
         -1615136400000,
         -1601827200000,
@@ -19783,7 +19628,6 @@
         null
       ],
       "offsets": [
-        344.6333,
         360,
         300,
         360,
@@ -19894,7 +19738,6 @@
     {
       "name": "America/Indiana/Knox",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -20053,7 +19896,6 @@
         "CST"
       ],
       "untils": [
-        -2717647200000,
         -1633276800000,
         -1615136400000,
         -1601827200000,
@@ -20212,7 +20054,6 @@
         null
       ],
       "offsets": [
-        346.5,
         360,
         300,
         360,
@@ -20378,7 +20219,6 @@
     {
       "name": "America/Indiana/Marengo",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -20486,7 +20326,6 @@
         "EST"
       ],
       "untils": [
-        -2717647200000,
         -1633276800000,
         -1615136400000,
         -1601827200000,
@@ -20594,7 +20433,6 @@
         null
       ],
       "offsets": [
-        345.3833,
         360,
         300,
         360,
@@ -20709,7 +20547,6 @@
     {
       "name": "America/Indiana/Petersburg",
       "abbrs": [
-        "LMT",
         "CST",
         "CDT",
         "CST",
@@ -20830,7 +20667,6 @@
         "EST"
       ],
       "untils": [
-        -2717647200000,
         -1633276800000,
         -1615136400000,
         -1601827200000,
@@ -20951,7 +20787,6 @@
         null
       ],
       "offsets": [
-        349.1167,
         360,
         300,
         360,
@@ -83446,9 +83281,15 @@
     },
     {
       "name": "EST",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "EST"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        300
+      ],
       "population": 0,
       "countries": []
     },
@@ -83921,281 +83762,491 @@
     },
     {
       "name": "Etc/GMT-0",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-1",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+01"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -60
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-10",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+10"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -600
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-11",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+11"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -660
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-12",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+12"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -720
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-13",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+13"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -780
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-14",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+14"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -840
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-2",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+02"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -120
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-3",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+03"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -180
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-4",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+04"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -240
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-5",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+05"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -300
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-6",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+06"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -360
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-7",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+07"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -420
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-8",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+08"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -480
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT-9",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "+09"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        -540
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+0",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+1",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-01"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        60
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+10",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-10"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        600
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+11",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-11"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        660
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+12",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-12"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        720
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+2",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-02"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        120
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+3",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-03"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        180
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+4",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-04"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        240
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+5",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-05"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        300
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+6",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-06"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        360
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+7",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-07"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        420
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+8",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-08"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        480
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT+9",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "-09"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        540
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/GMT0",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/Greenwich",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/UCT",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/Universal",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/UTC",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Etc/Zulu",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
@@ -113324,41 +113375,71 @@
     },
     {
       "name": "GMT-0",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "GMT",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "GMT+0",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "GMT0",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Greenwich",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "GMT"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
@@ -113585,9 +113666,15 @@
     },
     {
       "name": "HST",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "HST"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        600
+      ],
       "population": 0,
       "countries": []
     },
@@ -116918,9 +117005,15 @@
     },
     {
       "name": "MST",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "MST"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        420
+      ],
       "population": 0,
       "countries": []
     },
@@ -124307,17 +124400,29 @@
     },
     {
       "name": "UCT",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "Universal",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
@@ -129683,16 +129788,21 @@
     },
     {
       "name": "UTC",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     },
     {
       "name": "W-SU",
       "abbrs": [
-        "LMT",
         "MMT",
         "MMT",
         "MST",
@@ -129773,7 +129883,6 @@
         "MSK"
       ],
       "untils": [
-        -2840149817000,
         -1688265017000,
         -1656819079000,
         -1641353479000,
@@ -129854,7 +129963,6 @@
         null
       ],
       "offsets": [
-        -150.2833,
         -150.2833,
         -151.3167,
         -211.3167,
