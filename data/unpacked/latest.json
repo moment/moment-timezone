@@ -130325,9 +130325,15 @@
     },
     {
       "name": "Zulu",
-      "abbrs": [],
-      "untils": [],
-      "offsets": [],
+      "abbrs": [
+        "UTC"
+      ],
+      "untils": [
+        null
+      ],
+      "offsets": [
+        0
+      ],
       "population": 0,
       "countries": []
     }
