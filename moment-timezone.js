@@ -19,7 +19,7 @@
 	"use strict";
 
 	// Resolves es6 module loading issue
-	if (moment.version === undefined) {
+	if (moment.version === undefined && moment.default) {
 		moment = moment.default;
 	}
 
