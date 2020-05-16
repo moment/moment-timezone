@@ -231,17 +231,23 @@ grunt data:2014d # run tasks 1-7 on the 2014d release
 
 
 
+### Steps to release a new version
 
+1. Create a new branch like release_0.X.X from master and do this:
 
+```grunt data```
 
+2. Change version in:
 
+- package.json
+- composer.json
+- moment-timezone.js
+- moment-timezone-utils.js
 
+3. Do this:
 
-
-
-
-
-
-
-
-
+```
+grunt build
+grunt uglify
+npm run test
+```

@@ -5,7 +5,11 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		nodeunit : {
 			zones : [
-				"tests/zones/**/*.js"
+				"tests/zones/**/*.js",
+				"tests/countries/*.js"
+			],
+			countries: [
+				"tests/countries/*.js"
 			],
 			core : [
 				"tests/moment-timezone/*.js"

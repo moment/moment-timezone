@@ -24,7 +24,7 @@ exports.pack = {
 					Infinity
 				]
 			},
-			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X"
+			"Some/Zone_Name|ABC DEF GHI|10 3X 10|010121|-1aX 20 3X 20 3X|"
 		);
 	},
 
