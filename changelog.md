@@ -1,3 +1,8 @@
+### `0.5.29` _2020-05-16_
+* Merged fix of es6 module loading issue https://github.com/moment/moment-timezone/commit/1fd42349189b24e15c60f162dc8c40b42db79dfe
+* Merged PR with typescript declarations https://github.com/moment/moment-timezone/commit/ed529ea6fbcc70315c0c3f6d7c7cb70eadf56b03
+* Merged fixes to changelog https://github.com/moment/moment-timezone/commit/adb7d7b43c7328d814311ac1355bfeef88eab6e8
+
 ### `0.5.28` _2020-02-21_
 Merged pull request #410 from @adgrace:
 * Added a method `moment.tz.zonesForCountry(country_code)` which returns all timezones for the country
