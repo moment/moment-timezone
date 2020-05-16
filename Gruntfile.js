@@ -45,6 +45,10 @@ module.exports = function(grunt) {
 
 		clean: {
 			data: ['temp']
+		},
+
+		exec: {
+			'typing-tests': './node_modules/.bin/tsc --project ./typing-tests'
 		}
 	});
 
@@ -54,11 +58,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-exec');
 
-	/** creates a release */
-	grunt.registerTask('release', ['jshint', 'data', 'nodeunit', 'build', 'uglify']);
+	grunt.registerTask('release', ['jshint', 'data', 'nodeunit', 'typing-tests', 'build', 'uglify']);
 
-	grunt.registerTask('releaseNoData', ['jshint', 'nodeunit', 'build', 'uglify']);
+	grunt.registerTask('releaseNoData', ['jshint', 'nodeunit', 'typing-tests', 'build', 'uglify']);
 
-	grunt.registerTask('default', ['jshint', 'nodeunit']);
+	grunt.registerTask('typing-tests', ['exec:typing-tests']);
+
+	grunt.registerTask('default', ['jshint', 'nodeunit', 'typing-tests']);
 };
