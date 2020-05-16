@@ -1,0 +1,14 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "types": []
+  },
+  "include": [
+    "../index.d.ts",
+    "../moment-timezone-utils.d.ts",
+    "./moment-tests.ts"
+  ]
+}
