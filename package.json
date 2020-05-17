@@ -1,6 +1,6 @@
 {
 	"name": "moment-timezone",
-	"version": "0.5.30",
+	"version": "0.5.31",
 	"description": "Parse and display moments in any timezone.",
 	"homepage": "http://momentjs.com/timezone/",
 	"author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
@@ -31,7 +31,7 @@
 		"moment": ">= 2.9.0"
 	},
 	"devDependencies": {
-		"grunt": "^1.0.4",
+		"grunt": "1.0.4",
 		"grunt-contrib-clean": "^2.0.0",
 		"grunt-contrib-jshint": "^2.1.0",
 		"grunt-contrib-nodeunit": "^2.0.0",
