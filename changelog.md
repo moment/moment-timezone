@@ -1,3 +1,6 @@
+### `0.5.31` _2020-05-16_
+* Fixed Travis builds for Node.js 4 and 6
+
 ### `0.5.30` _2020-05-16_
 * Updated data to IANA TZDB `2020a`
 * Fixed typescript definitions
