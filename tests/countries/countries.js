@@ -688,7 +688,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("GG"), ["Europe/Guernsey","Europe/London"]);
 		test.deepEqual(tz.zonesForCountry("GH"), ["Africa/Accra"]);
 		test.deepEqual(tz.zonesForCountry("GI"), ["Europe/Gibraltar"]);
-		test.deepEqual(tz.zonesForCountry("GL"), ["America/Danmarkshavn","America/Godthab","America/Scoresbysund","America/Thule"]);
+		test.deepEqual(tz.zonesForCountry("GL"), ["America/Danmarkshavn","America/Nuuk","America/Scoresbysund","America/Thule"]);
 		test.deepEqual(tz.zonesForCountry("GM"), ["Africa/Abidjan","Africa/Banjul"]);
 		test.deepEqual(tz.zonesForCountry("GN"), ["Africa/Abidjan","Africa/Conakry"]);
 		test.deepEqual(tz.zonesForCountry("GP"), ["America/Guadeloupe","America/Port_of_Spain"]);
