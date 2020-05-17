@@ -16317,7 +16317,9 @@
         180
       ],
       "population": 16583,
-      "countries": []
+      "countries": [
+        "GL"
+      ]
     },
     {
       "name": "America/Goose_Bay",
@@ -34414,9 +34416,7 @@
         180
       ],
       "population": 0,
-      "countries": [
-        "GL"
-      ]
+      "countries": []
     },
     {
       "name": "America/Ojinaga",
@@ -127758,7 +127758,7 @@
     {
       "name": "GL",
       "zones": [
-        "America/Nuuk",
+        "America/Godthab",
         "America/Danmarkshavn",
         "America/Scoresbysund",
         "America/Thule"
