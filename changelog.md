@@ -1,5 +1,6 @@
 ### `0.5.30` _2020-05-16_
 * Updated data to IANA TZDB `2020a`
+* Fixed typescript definitions
 
 ### `0.5.29` _2020-05-16_
 * Merged fix of es6 module loading issue https://github.com/moment/moment-timezone/commit/1fd42349189b24e15c60f162dc8c40b42db79dfe

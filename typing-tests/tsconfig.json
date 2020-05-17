@@ -9,6 +9,7 @@
   "include": [
     "../index.d.ts",
     "../moment-timezone-utils.d.ts",
-    "./moment-tests.ts"
+    "./moment-timezone-tests.ts",
+    "./moment-timezone-utils-tests.ts"
   ]
 }

@@ -122,7 +122,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/Fort_Wayne').countries(), []);
 		test.deepEqual(tz.zone('America/Fortaleza').countries(), ["BR"]);
 		test.deepEqual(tz.zone('America/Glace_Bay').countries(), ["CA"]);
-		test.deepEqual(tz.zone('America/Godthab').countries(), ["GL"]);
+		test.deepEqual(tz.zone('America/Godthab').countries(), []);
 		test.deepEqual(tz.zone('America/Goose_Bay').countries(), ["CA"]);
 		test.deepEqual(tz.zone('America/Grand_Turk').countries(), ["TC"]);
 		test.deepEqual(tz.zone('America/Grenada').countries(), ["GD"]);
