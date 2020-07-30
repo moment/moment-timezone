@@ -1,5 +1,5 @@
 import moment = require('moment');
-import { MomentTimezone } from "./index";
+import { MomentTimezone } from "./moment-timezone";
 
 declare module 'moment' {
 

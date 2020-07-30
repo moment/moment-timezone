@@ -1,4 +1,4 @@
-import moment = require('../index');
+import moment = require('../moment-timezone');
 
 const june = moment('2014-06-01T12:00:00Z');
 june.tz('America/Los_Angeles').format('ha z');
