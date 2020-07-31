@@ -842,7 +842,7 @@
 			"name": "India",
 			"abbr": "IN",
 			"zones": [
-				"Asia/Kolkata"
+				"Asia/Kolkata", "Asia/Calcutta"
 			]
 		},
 		"IO": {
@@ -3453,6 +3453,15 @@
 			"comments": ""
 		},
 		"Asia/Kolkata": {
+			"name": "Asia/Kolkata",
+			"lat": 22.5333,
+			"long": 88.3667,
+			"countries": [
+				"IN"
+			],
+			"comments": ""
+		},
+		"Asia/Calcutta": {
 			"name": "Asia/Kolkata",
 			"lat": 22.5333,
 			"long": 88.3667,
