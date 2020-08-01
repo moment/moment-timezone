@@ -169,6 +169,11 @@
 					return i;
 				}
 			}
+
+			var alternative = this._getAlternative(timestamp);
+			if (alternative) {
+				return this._index(alternative);
+			}
 		},
 
 		countries : function () {
@@ -200,8 +205,23 @@
 					return offsets[i];
 				}
 			}
+			
+			var alternative = this._getAlternative(timestamp);
+			if (alternative) {
+				return this.offset(alternative);
+			}
 
 			return offsets[max];
+		},
+		
+		_getAlternative: function (timestamp) {
+			var similarYear = findYearLike(new Date(timestamp).getFullYear());
+
+			if (similarYear) {
+				var result = new Date(timestamp);
+				result.setFullYear(similarYear);
+				return result.getTime();
+			}
 		},
 
 		abbr : function (mom) {
@@ -327,6 +347,16 @@
 			offset = offsets[i];
 			guesses[offset] = guesses[offset] || {};
 			guesses[offset][name] = true;
+		}
+	}
+
+	function findYearLike(year) {
+		for (var j = 2038; j > 2000; j--) {
+			if (new Date(year + '-01-01').getDay() === new Date(j + '-12-31').getDay() && 
+				new Date(year + '-01-01').getDay() === new Date(j + '-12-31').getDay()
+            ) {
+				return j;
+			}
 		}
 	}
 
