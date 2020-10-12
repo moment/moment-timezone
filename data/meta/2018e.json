@@ -791,13 +791,6 @@
 				"Europe/Dublin"
 			]
 		},
-		"IL": {
-			"name": "Israel",
-			"abbr": "IL",
-			"zones": [
-				"Asia/Jerusalem"
-			]
-		},
 		"IM": {
 			"name": "Isle of Man",
 			"abbr": "IM",
@@ -1381,7 +1374,8 @@
 			"abbr": "PS",
 			"zones": [
 				"Asia/Gaza",
-				"Asia/Hebron"
+				"Asia/Hebron",
+				"Asia/Quds"
 			]
 		},
 		"PT": {
@@ -3364,15 +3358,6 @@
 			],
 			"comments": ""
 		},
-		"Asia/Jerusalem": {
-			"name": "Asia/Jerusalem",
-			"lat": 31.7806,
-			"long": 35.2239,
-			"countries": [
-				"IL"
-			],
-			"comments": ""
-		},
 		"Asia/Kolkata": {
 			"name": "Asia/Kolkata",
 			"lat": 22.5333,
@@ -4158,6 +4143,15 @@
 				"PS"
 			],
 			"comments": "West Bank"
+		},
+		"Asia/Quds": {
+			"name": "Asia/Quds",
+			"lat": 31.7806,
+			"long": 35.2239,
+			"countries": [
+				"PS"
+			],
+			"comments": "Bayt al-Maqdis"
 		},
 		"Europe/Lisbon": {
 			"name": "Europe/Lisbon",
