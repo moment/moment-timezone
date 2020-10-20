@@ -593,7 +593,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('US/Michigan').countries(), []);
 		test.deepEqual(tz.zone('US/Mountain').countries(), []);
 		test.deepEqual(tz.zone('US/Pacific').countries(), []);
-		test.deepEqual(tz.zone('US/Pacific-New').countries(), []);
+		// test.deepEqual(tz.zone('US/Pacific-New').countries(), []);
 		test.deepEqual(tz.zone('US/Samoa').countries(), []);
 		test.deepEqual(tz.zone('UTC').countries(), []);
 		test.deepEqual(tz.zone('Universal').countries(), []);
