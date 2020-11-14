@@ -1,10 +1,29 @@
-# [Moment Timezone](http://momentjs.com/timezone)
+# [Moment Timezone](http://momentjs.com/timezone/)
 
-[![Join the chat at https://gitter.im/moment/moment-timezone](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/moment/moment-timezone?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![NPM version][npm-version-image]][npm-url]
+[![NPM downloads][npm-downloads-image]][npm-download-url]
+[![MIT License][license-image]][license-url]
+[![Build Status][travis-image]][travis-url]
+[![FOSSA Status][fossa-badge-image]][fossa-badge-url]
+[![SemVer compatibility][semver-image]][semver-url]
 
-[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
+IANA Time zone support for Moment.js
 
-IANA Time Zone Database + [Moment.js](http://momentjs.com).
+## Project Status
+
+Moment-Timezone is an add-on for Moment.js.  Both are considered legacy projects, now in maintenance mode.  In most cases, you should choose a different library.
+
+For more details and recommendations, please see [Project Status](https://momentjs.com/docs/#/-project-status/) in the Moment docs.
+
+*Thank you.*
+
+## Resources
+
+- [Documentation](https://momentjs.com/timezone/docs/)
+- [Changelog](changelog.md)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/moment-timezone)
+
+## Examples
 
 ```js
 var june = moment("2014-06-01T12:00:00Z");
@@ -20,17 +39,30 @@ dec.tz('Asia/Tokyo').format('ha z');           // 9pm JST
 dec.tz('Australia/Sydney').format('ha z');     // 11pm EST
 ```
 
-#### [Contribute code or compile time zone data](contributing.md)
+## License
 
-#### [Read the changelog](changelog.md)
+Moment-timezone is freely distributable under the terms of the [MIT license][license-url].
+
+[![FOSSA Status][fossa-large-image]][fossa-large-url]
 
 
-[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: LICENSE
 
 [npm-url]: https://npmjs.org/package/moment-timezone
-[npm-version-image]: http://img.shields.io/npm/v/moment-timezone.svg?style=flat
-[npm-downloads-image]: http://img.shields.io/npm/dm/moment-timezone.svg?style=flat
+[npm-version-image]: https://img.shields.io/npm/v/moment-timezone.svg?style=flat
 
-[travis-url]: http://travis-ci.org/moment/moment-timezone
-[travis-image]: http://img.shields.io/travis/moment/moment-timezone/develop.svg?style=flat
+[npm-downloads-image]: https://img.shields.io/npm/dm/moment-timezone.svg?style=flat
+[npm-download-url]: https://npmcharts.com/compare/moment-timezone?minimal=true
+
+[travis-url]: https://travis-ci.org/moment/moment-timezone
+[travis-image]: https://img.shields.io/travis/moment/moment-timezone/develop.svg?style=flat
+
+[fossa-badge-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone.svg?type=shield
+[fossa-badge-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone?ref=badge_shield
+
+[fossa-large-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone.svg?type=large
+[fossa-large-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone?ref=badge_large
+
+[semver-image]: https://api.dependabot.com/badges/compatibility_score?dependency-name=moment-timezone&package-manager=npm_and_yarn&version-scheme=semver
+[semver-url]: https://dependabot.com/compatibility-score.html?dependency-name=moment-timezone&package-manager=npm_and_yarn&version-scheme=semver
