@@ -9,8 +9,8 @@ exports["Europe/Paris"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Paris", { abbr: true }),
 
 	"1911" : helpers.makeTestYear("Europe/Paris", [
-		["1911-03-10T23:51:38+00:00", "00:00:59", "PMT", -561 / 60],
-		["1911-03-10T23:51:39+00:00", "23:51:39", "WET", 0]
+		["1911-03-10T23:50:38+00:00", "23:59:59", "PMT", -561 / 60],
+		["1911-03-10T23:50:39+00:00", "23:50:39", "WET", 0]
 	]),
 
 	"1916" : helpers.makeTestYear("Europe/Paris", [

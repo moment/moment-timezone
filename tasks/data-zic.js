@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 
 		var done  = this.async(),
 			dest  = path.resolve('temp/zic', version),
-			files = 'africa antarctica asia australasia etcetera europe northamerica southamerica pacificnew backward'.split(' ');
+			files = 'africa antarctica asia australasia etcetera europe northamerica southamerica backward'.split(' ');
 
 		grunt.file.mkdir(dest);
 
