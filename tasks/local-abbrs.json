@@ -1,0 +1,693 @@
+{
+  "Africa/Accra": {
+    "+0020": "GHST"
+  },
+  "Africa/Addis_Ababa": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/Asmara": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/Asmera": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/Bissau": {
+    "-01": "WAT"
+  },
+  "Africa/Casablanca": {
+    "+00": "WET",
+    "+01": "WEST"
+  },
+  "Africa/Dar_es_Salaam": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/Djibouti": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/El_Aaiun": {
+    "+00": "WET",
+    "-01": "WAT",
+    "+01": "WEST"
+  },
+  "Africa/Kampala": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/Mogadishu": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/Nairobi": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Africa/Windhoek": {
+    "+0130": "SWAT"
+  },
+  "America/Araguaina": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "America/Argentina/Buenos_Aires": {
+    "-02": "ARST",
+    "-04": "ART"
+  },
+  "America/Argentina/Catamarca": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/ComodRivadavia": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/Cordoba": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/Jujuy": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/La_Rioja": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/Mendoza": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/Rio_Gallegos": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/Salta": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/San_Juan": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/San_Luis": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/Tucuman": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Argentina/Ushuaia": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Aruba": {
+    "-0430": "ANT"
+  },
+  "America/Asuncion": {
+    "-03": "PYST",
+    "-04": "PYT"
+  },
+  "America/Bahia": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "America/Belem": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "America/Belize": {
+    "-0530": "CHDT"
+  },
+  "America/Boa_Vista": {
+    "-03": "AMST",
+    "-04": "AMT"
+  },
+  "America/Bogota": {
+    "-04": "COST",
+    "-05": "COT"
+  },
+  "America/Buenos_Aires": {
+    "-02": "ARST",
+    "-04": "ART"
+  },
+  "America/Campo_Grande": {
+    "-03": "AMST",
+    "-04": "AMT"
+  },
+  "America/Caracas": {
+    "-0430": "VET"
+  },
+  "America/Catamarca": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Cayenne": {
+    "-04": "GFT"
+  },
+  "America/Cordoba": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Cuiaba": {
+    "-03": "AMST",
+    "-04": "AMT"
+  },
+  "America/Curacao": {
+    "-0430": "ANT"
+  },
+  "America/Danmarkshavn": {
+    "-02": "WGST",
+    "-03": "WGT"
+  },
+  "America/Eirunepe": {
+    "-04": "AMT",
+    "-05": "ACT"
+  },
+  "America/Fortaleza": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "America/Godthab": {
+    "-02": "WGST",
+    "-03": "WGT"
+  },
+  "America/Guayaquil": {
+    "-05": "ECT"
+  },
+  "America/Guyana": {
+    "-04": "GYT"
+  },
+  "America/Jujuy": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Kralendijk": {
+    "-0430": "ANT"
+  },
+  "America/La_Paz": {
+    "-04": "BOT"
+  },
+  "America/Lima": {
+    "-04": "PEST",
+    "-05": "PET"
+  },
+  "America/Lower_Princes": {
+    "-0430": "ANT"
+  },
+  "America/Maceio": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "America/Manaus": {
+    "-03": "AMST",
+    "-04": "AMT"
+  },
+  "America/Mendoza": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Miquelon": {
+    "-02": "PMDT",
+    "-03": "PMST"
+  },
+  "America/Montevideo": {
+    "-02": "UYST",
+    "-0230": "UYHST",
+    "-0330": "UYT"
+  },
+  "America/Noronha": {
+    "-01": "FNST",
+    "-02": "FNT"
+  },
+  "America/Paramaribo": {
+    "-0330": "SRT"
+  },
+  "America/Porto_Acre": {
+    "-04": "AMT",
+    "-05": "ACT"
+  },
+  "America/Porto_Velho": {
+    "-03": "AMST",
+    "-04": "AMT"
+  },
+  "America/Recife": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "America/Rio_Branco": {
+    "-04": "AMT",
+    "-05": "ACT"
+  },
+  "America/Rosario": {
+    "-02": "ARST",
+    "-03": "ART",
+    "-04": "WART"
+  },
+  "America/Santarem": {
+    "-03": "BRT",
+    "-04": "AMT"
+  },
+  "America/Santiago": {
+    "-03": "CLST",
+    "-05": "CLT"
+  },
+  "America/Santo_Domingo": {
+    "-0430": "EHDT"
+  },
+  "America/Sao_Paulo": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "America/Scoresbysund": {
+    "+00": "EGST",
+    "-01": "EGT",
+    "-02": "CGT"
+  },
+  "Antarctica/Palmer": {
+    "-02": "ARST",
+    "-03": "CLST",
+    "-04": "CLT"
+  },
+  "Asia/Aden": {
+    "+03": "AST"
+  },
+  "Asia/Baghdad": {
+    "+03": "AST",
+    "+04": "ADT"
+  },
+  "Asia/Bahrain": {
+    "+04": "GST",
+    "+03": "AST"
+  },
+  "Asia/Bangkok": {
+    "+07": "ICT"
+  },
+  "Asia/Brunei": {
+    "+08": "BNT"
+  },
+  "Asia/Calcutta": {
+    "+0630": "IST"
+  },
+  "Asia/Choibalsan": {
+    "+07": "ULAT",
+    "+08": "CHOT",
+    "+09": "CHOST"
+  },
+  "Asia/Dacca": {
+    "+0630": "BURT",
+    "+0530": "IST",
+    "+06": "BDT",
+    "+07": "BDST"
+  },
+  "Asia/Dhaka": {
+    "+0630": "BURT",
+    "+0530": "IST",
+    "+06": "BDT",
+    "+07": "BDST"
+  },
+  "Asia/Dili": {
+    "+08": "WITA",
+    "+09": "TLT"
+  },
+  "Asia/Dubai": {
+    "+04": "GST"
+  },
+  "Asia/Ho_Chi_Minh": {
+    "+07": "ICT",
+    "+08": "IDT",
+    "+09": "JST"
+  },
+  "Asia/Hovd": {
+    "+07": "HOVT",
+    "+08": "HOVST"
+  },
+  "Asia/Jakarta": {
+    "+0720": "JAVT",
+    "+08": "WIB",
+    "+09": "JST"
+  },
+  "Asia/Jayapura": {
+    "+0930": "ACST"
+  },
+  "Asia/Kabul": {
+    "+0430": "AFT"
+  },
+  "Asia/Karachi": {
+    "+0630": "IST"
+  },
+  "Asia/Kashgar": {
+    "+06": "XJT"
+  },
+  "Asia/Kathmandu": {
+    "+0530": "IST",
+    "+0545": "NPT"
+  },
+  "Asia/Katmandu": {
+    "+0530": "IST",
+    "+0545": "NPT"
+  },
+  "Asia/Kolkata": {
+    "+0630": "IST"
+  },
+  "Asia/Kuala_Lumpur": {
+    "+0730": "MALT",
+    "+09": "JST",
+    "+08": "MYT"
+  },
+  "Asia/Kuching": {
+    "+0730": "BORT",
+    "+08": "MYT",
+    "+0820": "BORTST",
+    "+09": "JST"
+  },
+  "Asia/Kuwait": {
+    "+03": "AST"
+  },
+  "Asia/Makassar": {
+    "+09": "JST"
+  },
+  "Asia/Muscat": {
+    "+04": "GST"
+  },
+  "Asia/Phnom_Penh": {
+    "+07": "ICT"
+  },
+  "Asia/Pontianak": {
+    "+0730": "WIB",
+    "+09": "JST"
+  },
+  "Asia/Qatar": {
+    "+04": "GST",
+    "+03": "AST"
+  },
+  "Asia/Rangoon": {
+    "+0630": "MMT",
+    "+09": "JST"
+  },
+  "Asia/Riyadh": {
+    "+03": "AST"
+  },
+  "Asia/Saigon": {
+    "+07": "ICT",
+    "+08": "IDT",
+    "+09": "JST"
+  },
+  "Asia/Singapore": {
+    "+0720": "MALT",
+    "+08": "SGT",
+    "+09": "JST"
+  },
+  "Asia/Tehran": {
+    "+04": "IRST",
+    "+0430": "IRDT"
+  },
+  "Asia/Thimbu": {
+    "+0530": "IST",
+    "+06": "BTT"
+  },
+  "Asia/Thimphu": {
+    "+0530": "IST",
+    "+06": "BTT"
+  },
+  "Asia/Ujung_Pandang": {
+    "+09": "JST"
+  },
+  "Asia/Ulaanbaatar": {
+    "+08": "ULAT",
+    "+09": "ULAST"
+  },
+  "Asia/Ulan_Bator": {
+    "+08": "ULAT",
+    "+09": "ULAST"
+  },
+  "Asia/Urumqi": {
+    "+06": "XJT"
+  },
+  "Asia/Vientiane": {
+    "+07": "ICT"
+  },
+  "Asia/Yangon": {
+    "+0630": "MMT",
+    "+09": "JST"
+  },
+  "Atlantic/Azores": {
+    "+00": "AZOST",
+    "-02": "AZOT"
+  },
+  "Atlantic/Canary": {
+    "-01": "CANT"
+  },
+  "Atlantic/Cape_Verde": {
+    "-02": "CVT"
+  },
+  "Atlantic/Madeira": {
+    "-01": "MADT"
+  },
+  "Atlantic/Reykjavik": {
+    "-01": "IST"
+  },
+  "Atlantic/South_Georgia": {
+    "-02": "GST"
+  },
+  "Atlantic/Stanley": {
+    "-03": "FKST",
+    "-04": "FKT"
+  },
+  "Australia/Eucla": {
+    "+0845": "ACWST",
+    "+0945": "ACWDT"
+  },
+  "Australia/LHI": {
+    "+1030": "LHST",
+    "+11": "LHDT"
+  },
+  "Australia/Lord_Howe": {
+    "+1030": "LHST",
+    "+11": "LHDT"
+  },
+  "Brazil/Acre": {
+    "-04": "AMT",
+    "-05": "ACT"
+  },
+  "Brazil/DeNoronha": {
+    "-01": "FNST",
+    "-02": "FNT"
+  },
+  "Brazil/East": {
+    "-02": "BRST",
+    "-03": "BRT"
+  },
+  "Brazil/West": {
+    "-03": "AMST",
+    "-04": "AMT"
+  },
+  "Chile/Continental": {
+    "-03": "CLST",
+    "-05": "CLT"
+  },
+  "Chile/EasterIsland": {
+    "-05": "EASST",
+    "-07": "EAST"
+  },
+  "Europe/Amsterdam": {
+    "+0120": "NEST",
+    "+0020": "NET"
+  },
+  "Europe/Zaporozhye": {
+    "+0220": "CUT"
+  },
+  "Iceland": {
+    "-01": "IST"
+  },
+  "Indian/Antananarivo": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Indian/Chagos": {
+    "+06": "IOT"
+  },
+  "Indian/Christmas": {
+    "+07": "CXT"
+  },
+  "Indian/Cocos": {
+    "+0630": "CCT"
+  },
+  "Indian/Comoro": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Indian/Mahe": {
+    "+04": "SCT"
+  },
+  "Indian/Maldives": {
+    "+05": "MVT"
+  },
+  "Indian/Mauritius": {
+    "+04": "MUT",
+    "+05": "MUST"
+  },
+  "Indian/Mayotte": {
+    "+0230": "BEAT",
+    "+0245": "BEAUT"
+  },
+  "Indian/Reunion": {
+    "+04": "RET"
+  },
+  "Iran": {
+    "+04": "IRST",
+    "+0430": "IRDT"
+  },
+  "Kwajalein": {
+    "-12": "KWAT",
+    "+12": "MHT"
+  },
+  "NZ-CHAT": {
+    "+1245": "CHAST",
+    "+1345": "CHADT"
+  },
+  "Pacific/Apia": {
+    "-10": "SDT",
+    "-11": "SST",
+    "+13": "WSST",
+    "+14": "WSDT"
+  },
+  "Pacific/Bougainville": {
+    "+10": "PGT",
+    "+09": "JST",
+    "+11": "BST"
+  },
+  "Pacific/Chatham": {
+    "+1245": "CHAST",
+    "+1345": "CHADT"
+  },
+  "Pacific/Chuuk": {
+    "+10": "CHUT"
+  },
+  "Pacific/Easter": {
+    "-05": "EASST",
+    "-07": "EAST"
+  },
+  "Pacific/Efate": {
+    "+11": "VUT",
+    "+12": "VUST"
+  },
+  "Pacific/Enderbury": {
+    "+13": "PHOT"
+  },
+  "Pacific/Fakaofo": {
+    "+13": "TKT"
+  },
+  "Pacific/Fiji": {
+    "+12": "FJT",
+    "+13": "FJST"
+  },
+  "Pacific/Funafuti": {
+    "+12": "TVT"
+  },
+  "Pacific/Galapagos": {
+    "-05": "ECT",
+    "-06": "GALT"
+  },
+  "Pacific/Gambier": {
+    "-09": "GAMT"
+  },
+  "Pacific/Guadalcanal": {
+    "+11": "SBT"
+  },
+  "Pacific/Kiritimati": {
+    "+14": "LINT"
+  },
+  "Pacific/Kosrae": {
+    "+12": "KOST"
+  },
+  "Pacific/Kwajalein": {
+    "-12": "KWAT",
+    "+12": "MHT"
+  },
+  "Pacific/Majuro": {
+    "+12": "MHT"
+  },
+  "Pacific/Marquesas": {
+    "-0930": "MART"
+  },
+  "Pacific/Nauru": {
+    "+12": "NRT",
+    "+09": "JST"
+  },
+  "Pacific/Niue": {
+    "-1130": "NUT"
+  },
+  "Pacific/Norfolk": {
+    "+1112": "NMT",
+    "+11": "NFT",
+    "+1230": "NFST"
+  },
+  "Pacific/Noumea": {
+    "+11": "NCT",
+    "+12": "NCST"
+  },
+  "Pacific/Palau": {
+    "+09": "PWT"
+  },
+  "Pacific/Pitcairn": {
+    "-08": "PST",
+    "-0830": "PNT"
+  },
+  "Pacific/Pohnpei": {
+    "+11": "PONT"
+  },
+  "Pacific/Ponape": {
+    "+11": "PONT"
+  },
+  "Pacific/Port_Moresby": {
+    "+10": "PGT"
+  },
+  "Pacific/Rarotonga": {
+    "-0930": "CKHST",
+    "-1030": "CKT"
+  },
+  "Pacific/Tahiti": {
+    "-10": "TAHT"
+  },
+  "Pacific/Tarawa": {
+    "+12": "GILT"
+  },
+  "Pacific/Truk": {
+    "+10": "CHUT"
+  },
+  "Pacific/Wake": {
+    "+12": "WAKT"
+  },
+  "Pacific/Wallis": {
+    "+12": "WFT"
+  },
+  "Pacific/Yap": {
+    "+10": "CHUT"
+  },
+  "Singapore": {
+    "+0720": "MALT",
+    "+08": "SGT",
+    "+09": "JST"
+  }
+}

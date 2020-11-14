@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.32
+//! version : 0.5.33
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,7 +29,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.32",
+	var VERSION = "0.5.33",
 		zones = {},
 		links = {},
 		countries = {},
@@ -131,13 +131,24 @@
 
 		intToUntil(untils, indices.length);
 
+		var abbrs = mapIndices(data[1].split(' '), indices);
+
 		return {
-			name       : data[0],
-			abbrs      : mapIndices(data[1].split(' '), indices),
-			offsets    : mapIndices(offsets, indices),
-			untils     : untils,
-			population : data[5] | 0
+			name        : data[0],
+			abbrs       : abbrs.map(unpackAbbr.bind(null, 'default')),
+			local_abbrs : abbrs.map(unpackAbbr.bind(null, 'local')),
+			offsets     : mapIndices(offsets, indices),
+			untils      : untils,
+			population  : data[5] | 0
 		};
+	}
+
+	function unpackAbbr(format, abbr) {
+		var matches = abbr.match(/(.*?)\((.*?)\)/);
+		if (matches && matches.length === 3) {
+			return format === 'local' ? matches[2] : matches[1];
+		}
+		return abbr;
 	}
 
 	/************************************
@@ -152,11 +163,12 @@
 
 	Zone.prototype = {
 		_set : function (unpacked) {
-			this.name       = unpacked.name;
-			this.abbrs      = unpacked.abbrs;
-			this.untils     = unpacked.untils;
-			this.offsets    = unpacked.offsets;
-			this.population = unpacked.population;
+			this.name         = unpacked.name;
+			this.abbrs        = unpacked.abbrs;
+			this.local_abbrs  = unpacked.local_abbrs;
+			this.untils       = unpacked.untils;
+			this.offsets      = unpacked.offsets;
+			this.population   = unpacked.population;
 		},
 
 		_index : function (timestamp) {
@@ -205,6 +217,9 @@
 		},
 
 		abbr : function (mom) {
+			if (moment.tz.useLocalAbbrs === true) {
+				return this.local_abbrs[this._index(mom)];
+			}
 			return this.abbrs[this._index(mom)];
 		},
 
@@ -589,6 +604,7 @@
 	tz.needsOffset  = needsOffset;
 	tz.moveInvalidForward   = true;
 	tz.moveAmbiguousForward = false;
+    tz.useLocalAbbrs = false;
 	tz.countries    = getCountryNames;
 	tz.zonesForCountry = zonesForCountry;
 

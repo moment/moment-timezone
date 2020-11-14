@@ -64,6 +64,45 @@ exports.zone = {
 		test.done();
 	},
 
+	localAbbrs : function (test) {
+		var zone = new tz.Zone(
+				"SomeZone|+01(TIM) +02(TAM) +03(IAM)|60.u 50 60|012101|gE 1E 2k 1E 2k"
+			),
+			tests = [
+				[-999 * 60000, "TIM", "+01"],
+				[ 999 * 60000, "TIM", "+01"],
+				[1000 * 60000, "TAM", "+02"],
+				[1099 * 60000, "TAM", "+02"],
+				[1100 * 60000, "IAM", "+03"],
+				[1239 * 60000, "IAM", "+03"],
+				[1240 * 60000, "TAM", "+02"],
+				[1339 * 60000, "TAM", "+02"],
+				[1340 * 60000, "TIM", "+01"],
+				[1479 * 60000, "TIM", "+01"],
+				[1480 * 60000, "TAM", "+02"],
+				[3000 * 60000, "TAM", "+02"]
+			], i, source, expected;
+
+		tz.useLocalAbbrs = true;
+
+		for (i = 0; i < tests.length; i++) {
+			source = tests[i][0];
+			expected = tests[i][1];
+			test.equal(zone.abbr(source), expected, "The abbr for " + source + " should be " + expected);
+		}
+
+		tz.useLocalAbbrs = false;
+
+		for (i = 0; i < tests.length; i++) {
+			source = tests[i][0];
+			expected = tests[i][2];
+			test.equal(zone.abbr(source), expected, "The abbr for " + source + " should be " + expected);
+		}
+
+
+		test.done();
+	},
+
 	offset : function (test) {
 		var zone = new tz.Zone(PACKED),
 			tests = [
