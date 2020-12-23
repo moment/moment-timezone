@@ -8,11 +8,6 @@ exports["Atlantic/Reykjavik"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Reykjavik", { abbr: true, expect: "Africa/Abidjan" }),
 
-	"1908" : helpers.makeTestYear("Atlantic/Reykjavik", [
-		["1908-01-01T01:27:59+00:00", "23:59:59", "LMT", 88],
-		["1908-01-01T01:28:00+00:00", "00:28:00", "-01", 60]
-	]),
-
 	"1917" : helpers.makeTestYear("Atlantic/Reykjavik", [
 		["1917-02-19T23:59:59+00:00", "22:59:59", "-01", 60],
 		["1917-02-20T00:00:00+00:00", "00:00:00", "+00", 0],
@@ -242,10 +237,5 @@ exports["Atlantic/Reykjavik"] = {
 		["1967-04-02T02:00:00+00:00", "02:00:00", "+00", 0],
 		["1967-10-29T01:59:59+00:00", "01:59:59", "+00", 0],
 		["1967-10-29T02:00:00+00:00", "01:00:00", "-01", 60]
-	]),
-
-	"1968" : helpers.makeTestYear("Atlantic/Reykjavik", [
-		["1968-04-07T01:59:59+00:00", "00:59:59", "-01", 60],
-		["1968-04-07T02:00:00+00:00", "02:00:00", "GMT", 0]
 	])
 };
