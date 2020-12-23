@@ -1,3 +1,6 @@
+### `0.5.33` _2020-12-23_
+* Re-built 0.5.33 on linux to have TZ data beyond 2038. IANA TZDB remains `2020d`
+
 ### `0.5.32` _2020-05-16_
 * Updated data to IANA TZDB `2020d`
 
