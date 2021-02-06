@@ -14,8 +14,8 @@ exports["Antarctica/Macquarie"] = {
 	]),
 
 	"1917" : helpers.makeTestYear("Antarctica/Macquarie", [
-		["1917-03-24T14:59:59+00:00", "01:59:59", "AEDT", -660],
-		["1917-03-24T15:00:00+00:00", "01:00:00", "AEST", -600]
+		["1917-03-24T15:59:59+00:00", "02:59:59", "AEDT", -660],
+		["1917-03-24T16:00:00+00:00", "02:00:00", "AEST", -600]
 	]),
 
 	"1919" : helpers.makeTestYear("Antarctica/Macquarie", [
