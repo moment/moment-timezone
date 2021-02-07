@@ -150,6 +150,27 @@
 		}
 	}
 
+	function closest(num, arr) {
+		if (num < arr[0]) {
+			return 0;
+		} else if (num >= arr[arr.length-1]) {
+			return -1;
+		}
+	
+		var mid;
+		var lo = 0;
+		var hi = arr.length - 1;  
+		while (hi - lo > 1) {
+			mid = Math.floor((lo + hi) / 2);
+			if (arr[mid] <= num) {
+				lo = mid;
+			} else {
+				hi = mid;
+			}
+		}
+		return hi;
+	}
+	
 	Zone.prototype = {
 		_set : function (unpacked) {
 			this.name       = unpacked.name;
@@ -164,10 +185,9 @@
 				untils = this.untils,
 				i;
 
-			for (i = 0; i < untils.length; i++) {
-				if (target < untils[i]) {
-					return i;
-				}
+			i = closest(target,untils);
+			if (i >= 0) {
+				return i;
 			}
 		},
 
