@@ -628,14 +628,88 @@
 		}
 	};
 
+	function isRepeatedTime(mom) {
+		if (mom._UTC) {
+			return false;
+		}
+
+		var zone = mom._z || moment.defaultZone || getZone(guess());
+
+		if (!zone) {
+			return false;
+		}
+
+		var timestamp = mom.valueOf();
+		var index = zone._index(timestamp);
+
+		// There are no transitions before this one, so it cannot have been repeated.
+		if (index === 0) {
+			return false;
+		}
+
+		var offset = zone.offsets[index];
+		var previousOffset = zone.offsets[index - 1];
+		var msChange = (previousOffset - offset) * 60000;
+
+		var potentialPreviousTimestamp = timestamp + msChange;
+		return potentialPreviousTimestamp < zone.untils[index - 1];
+	}
+
+	function adjustToRepeatedTime(mom) {
+		if (mom._UTC) {
+			return;
+		}
+
+		var zone = mom._z || moment.defaultZone || getZone(guess());
+
+		if (!zone) {
+			return;
+		}
+
+		var timestamp = mom.valueOf();
+		var index = zone._index(timestamp);
+
+		// There are no transitions after this one, so it is not repeatable.
+		if (index === zone.offsets.length - 1) {
+			return;
+		}
+
+		var offset = zone.offsets[index];
+		var nextOffset = zone.offsets[index + 1];
+		var msChange = (nextOffset - offset) * 60000;
+
+		var potentialNextTimestamp = timestamp + msChange;
+		if (potentialNextTimestamp > zone.untils[index]) {
+			mom.add(msChange, 'milliseconds');
+		}
+	}
+
 	fn.tz = function (name, keepTime) {
 		if (name) {
 			if (typeof name !== 'string') {
 				throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
 			}
+
+			if (keepTime) {
+				// If the original time was a repeat of a local time (after a DST shift), and the new zone has the same shift,
+				// the new time should also be the repeat.
+				var wasRepeated = isRepeatedTime(this);
+
+				var adjusted = moment.tz(this.toArray(), name);
+				this._z = adjusted._z;
+				this._offset = adjusted._offset;
+				this._isUTC = adjusted._isUTC;
+				this._d = adjusted._d;
+
+				if (wasRepeated) {
+					adjustToRepeatedTime(this);
+				}
+
+				return this;
+			}
 			this._z = getZone(name);
 			if (this._z) {
-				moment.updateOffset(this, keepTime);
+				moment.updateOffset(this);
 			} else {
 				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}
