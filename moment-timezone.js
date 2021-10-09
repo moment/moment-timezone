@@ -158,6 +158,7 @@
 			this.untils     = unpacked.untils;
 			this.offsets    = unpacked.offsets;
 			this.population = unpacked.population;
+			this.packed     = unpacked.packed;
 		},
 
 		_index : function (timestamp) {
