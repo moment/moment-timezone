@@ -136,7 +136,8 @@
 			abbrs      : mapIndices(data[1].split(' '), indices),
 			offsets    : mapIndices(offsets, indices),
 			untils     : untils,
-			population : data[5] | 0
+			population : data[5] | 0,
+			packed     : string
 		};
 	}
 
