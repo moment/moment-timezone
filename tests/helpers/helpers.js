@@ -20,19 +20,21 @@ function getUTCOffset (m) {
 function testYear(test, name, expected) {
 	var len = expected.length,
 		i,
-		date, time, abbr, offset, m;
+		date, time, abbr, offset, m, isdst;
 
-	test.expect(len * 3);
+	test.expect(len * 4);
 
 	for (i = 0; i < len; i++) {
 		date   = expected[i][0];
 		time   = expected[i][1];
 		abbr   = expected[i][2];
 		offset = expected[i][3];
+		isdst  = expected[i][4];
 		m      = moment(date).tz(name);
 		test.equal(m.format("HH:mm:ss"), time, date + ' should be ' + time + ' ' + abbr);
 		test.equal(getUTCOffset(m), -offset, date + ' should be ' + offset + ' minutes offset in ' + abbr);
 		test.equal(m.zoneAbbr(), abbr, date + ' should be ' + abbr);
+		test.equal(m.isDST(), isdst == 1, date + ' dst is ' + m.isDST() + '. should be ' + isdst);
 	}
 
 	test.done();

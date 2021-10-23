@@ -20,7 +20,8 @@ module.exports = function (grunt) {
 				abbrs   = [],
 				untils  = [],
 				offsets = [],
-				countries = [];
+				countries = [],
+				isdst = [];
 
 			lines.forEach(function (line) {
 				var parts  = line.split(/\s+/),
@@ -32,6 +33,7 @@ module.exports = function (grunt) {
 				offsets.push(+utc.diff(local, 'minutes', true).toFixed(4));
 				untils.push(+utc);
 				abbrs.push(parts[13]);
+				isdst.push(parts[14].split('=')[1]);
 			});
 
 			if (offsets.length === 0 && lines.length === 3 && lines[2].length === 0) {
@@ -45,6 +47,7 @@ module.exports = function (grunt) {
 				offsets.push(+utc.diff(local, 'minutes', true).toFixed(4));
 				untils.push(null);
 				abbrs.push(localParts[6]);
+				isdst.push(localParts[7]); //TODO: is this correct??
 			}
 
 			if (meta.zones[name]) {
@@ -57,7 +60,8 @@ module.exports = function (grunt) {
 				untils     : untils,
 				offsets    : offsets,
 				population : populations[name] | 0,
-				countries  : countries
+				countries  : countries,
+				isdst      : isdst
 			});
 		});
 

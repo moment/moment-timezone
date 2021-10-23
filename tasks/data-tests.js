@@ -13,6 +13,7 @@ function changeTest (zone, i) {
 		minutesOffset = zone.offsets[i],
 		secondsOffset = Math.round(minutesOffset * 60),
 		abbr          = zone.abbrs[i],
+		isdst         = zone.isdst[i],
 		dateTime      = until.format('YYYY-MM-DDTHH:mm:ssZ'),
 		hours         = until.clone().subtract(secondsOffset, 'seconds').format('HH:mm:ss');
 
@@ -20,7 +21,8 @@ function changeTest (zone, i) {
 		minutesOffset = secondsOffset + ' / 60';
 	}
 
-	return '["' + dateTime + '", "' + hours + '", "' + abbr + '", ' + minutesOffset + ']';
+	// return '["' + dateTime + '", "' + hours + '", "' + abbr + '", ' + minutesOffset + ']';
+	return '["' + dateTime + '", "' + hours + '", "' + abbr + '", ' + minutesOffset + ', ' + isdst +']';
 }
 
 /**
