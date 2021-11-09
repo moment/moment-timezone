@@ -356,7 +356,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Australia/Brisbane').countries(), ["AU"]);
 		test.deepEqual(tz.zone('Australia/Broken_Hill').countries(), ["AU"]);
 		test.deepEqual(tz.zone('Australia/Canberra').countries(), []);
-		test.deepEqual(tz.zone('Australia/Currie').countries(), ["AU"]);
+		test.deepEqual(tz.zone('Australia/Currie').countries(), []);
 		test.deepEqual(tz.zone('Australia/Darwin').countries(), ["AU"]);
 		test.deepEqual(tz.zone('Australia/Eucla').countries(), ["AU"]);
 		test.deepEqual(tz.zone('Australia/Hobart').countries(), ["AU"]);
@@ -617,7 +617,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("AR"), ["America/Argentina/Buenos_Aires","America/Argentina/Catamarca","America/Argentina/Cordoba","America/Argentina/Jujuy","America/Argentina/La_Rioja","America/Argentina/Mendoza","America/Argentina/Rio_Gallegos","America/Argentina/Salta","America/Argentina/San_Juan","America/Argentina/San_Luis","America/Argentina/Tucuman","America/Argentina/Ushuaia"]);
 		test.deepEqual(tz.zonesForCountry("AS"), ["Pacific/Pago_Pago"]);
 		test.deepEqual(tz.zonesForCountry("AT"), ["Europe/Vienna"]);
-		test.deepEqual(tz.zonesForCountry("AU"), ["Antarctica/Macquarie","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Currie","Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne","Australia/Perth","Australia/Sydney"]);
+		test.deepEqual(tz.zonesForCountry("AU"), ["Antarctica/Macquarie","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne","Australia/Perth","Australia/Sydney"]);
 		test.deepEqual(tz.zonesForCountry("AW"), ["America/Aruba","America/Curacao"]);
 		test.deepEqual(tz.zonesForCountry("AX"), ["Europe/Helsinki","Europe/Mariehamn"]);
 		test.deepEqual(tz.zonesForCountry("AZ"), ["Asia/Baku"]);
