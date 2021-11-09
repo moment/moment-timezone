@@ -8,6 +8,11 @@ exports["Pacific/Rarotonga"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Rarotonga", { abbr: true, expect: "Pacific/Honolulu" }),
 
+	"1952" : helpers.makeTestYear("Pacific/Rarotonga", [
+		["1952-10-16T10:39:03+00:00", "23:59:59", "LMT", 38344 / 60],
+		["1952-10-16T10:39:04+00:00", "00:09:04", "-1030", 630]
+	]),
+
 	"1978" : helpers.makeTestYear("Pacific/Rarotonga", [
 		["1978-11-12T10:29:59+00:00", "23:59:59", "-1030", 630],
 		["1978-11-12T10:30:00+00:00", "01:00:00", "-0930", 570]

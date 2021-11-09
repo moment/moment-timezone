@@ -8,16 +8,9 @@ exports["America/Blanc-Sablon"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Blanc-Sablon", { abbr: true, expect: "America/Santo_Domingo" }),
 
-	"1918" : helpers.makeTestYear("America/Blanc-Sablon", [
-		["1918-04-14T05:59:59+00:00", "01:59:59", "AST", 240],
-		["1918-04-14T06:00:00+00:00", "03:00:00", "ADT", 180],
-		["1918-10-27T04:59:59+00:00", "01:59:59", "ADT", 180],
-		["1918-10-27T05:00:00+00:00", "01:00:00", "AST", 240]
-	]),
-
 	"1942" : helpers.makeTestYear("America/Blanc-Sablon", [
-		["1942-02-09T05:59:59+00:00", "01:59:59", "AST", 240],
-		["1942-02-09T06:00:00+00:00", "03:00:00", "AWT", 180]
+		["1942-05-03T03:59:59+00:00", "23:59:59", "AST", 240],
+		["1942-05-03T04:00:00+00:00", "01:00:00", "AWT", 180]
 	]),
 
 	"1945" : helpers.makeTestYear("America/Blanc-Sablon", [
