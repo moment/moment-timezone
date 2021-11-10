@@ -251,3 +251,13 @@ grunt build
 grunt uglify
 npm run test
 ```
+
+4. Open pull request from your branch into develop
+5. Merge changes from your branch into develop branch
+6. Merge changes from develop into master branch
+7. Create a new release here https://github.com/moment/moment-timezone/releases
+8. Do npm publish to publish changes to NPM
+9. Also, you should update version of moment-timezone in package.json file of
+this repository https://github.com/moment/momentjs.com to the latest version.
+It will change version on the website https://momentjs.com/timezone/
+
