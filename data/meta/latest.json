@@ -25,7 +25,7 @@
 			"name": "Antigua & Barbuda",
 			"abbr": "AG",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Antigua"
 			]
 		},
@@ -33,7 +33,7 @@
 			"name": "Anguilla",
 			"abbr": "AI",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Anguilla"
 			]
 		},
@@ -65,15 +65,17 @@
 			"zones": [
 				"Antarctica/Casey",
 				"Antarctica/Davis",
-				"Antarctica/DumontDUrville",
 				"Antarctica/Mawson",
 				"Antarctica/Palmer",
 				"Antarctica/Rothera",
-				"Antarctica/Syowa",
 				"Antarctica/Troll",
 				"Antarctica/Vostok",
 				"Pacific/Auckland",
-				"Antarctica/McMurdo"
+				"Pacific/Port_Moresby",
+				"Asia/Riyadh",
+				"Antarctica/McMurdo",
+				"Antarctica/DumontDUrville",
+				"Antarctica/Syowa"
 			]
 		},
 		"AR": {
@@ -130,7 +132,7 @@
 			"name": "Aruba",
 			"abbr": "AW",
 			"zones": [
-				"America/Curacao",
+				"America/Puerto_Rico",
 				"America/Aruba"
 			]
 		},
@@ -221,7 +223,7 @@
 			"name": "St Barthelemy",
 			"abbr": "BL",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/St_Barthelemy"
 			]
 		},
@@ -250,7 +252,7 @@
 			"name": "Caribbean NL",
 			"abbr": "BQ",
 			"zones": [
-				"America/Curacao",
+				"America/Puerto_Rico",
 				"America/Kralendijk"
 			]
 		},
@@ -280,6 +282,7 @@
 			"name": "Bahamas",
 			"abbr": "BS",
 			"zones": [
+				"America/Toronto",
 				"America/Nassau"
 			]
 		},
@@ -321,13 +324,11 @@
 				"America/Glace_Bay",
 				"America/Moncton",
 				"America/Goose_Bay",
-				"America/Blanc-Sablon",
 				"America/Toronto",
 				"America/Nipigon",
 				"America/Thunder_Bay",
 				"America/Iqaluit",
 				"America/Pangnirtung",
-				"America/Atikokan",
 				"America/Winnipeg",
 				"America/Rainy_River",
 				"America/Resolute",
@@ -338,12 +339,17 @@
 				"America/Cambridge_Bay",
 				"America/Yellowknife",
 				"America/Inuvik",
-				"America/Creston",
 				"America/Dawson_Creek",
 				"America/Fort_Nelson",
 				"America/Whitehorse",
 				"America/Dawson",
-				"America/Vancouver"
+				"America/Vancouver",
+				"America/Panama",
+				"America/Puerto_Rico",
+				"America/Phoenix",
+				"America/Blanc-Sablon",
+				"America/Atikokan",
+				"America/Creston"
 			]
 		},
 		"CC": {
@@ -457,6 +463,7 @@
 			"name": "Curaçao",
 			"abbr": "CW",
 			"zones": [
+				"America/Puerto_Rico",
 				"America/Curacao"
 			]
 		},
@@ -510,7 +517,7 @@
 			"name": "Dominica",
 			"abbr": "DM",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Dominica"
 			]
 		},
@@ -645,7 +652,7 @@
 			"name": "Grenada",
 			"abbr": "GD",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Grenada"
 			]
 		},
@@ -675,6 +682,7 @@
 			"name": "Ghana",
 			"abbr": "GH",
 			"zones": [
+				"Africa/Abidjan",
 				"Africa/Accra"
 			]
 		},
@@ -715,7 +723,7 @@
 			"name": "Guadeloupe",
 			"abbr": "GP",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Guadeloupe"
 			]
 		},
@@ -935,7 +943,7 @@
 			"abbr": "KI",
 			"zones": [
 				"Pacific/Tarawa",
-				"Pacific/Enderbury",
+				"Pacific/Kanton",
 				"Pacific/Kiritimati"
 			]
 		},
@@ -951,7 +959,7 @@
 			"name": "St Kitts & Nevis",
 			"abbr": "KN",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/St_Kitts"
 			]
 		},
@@ -1017,7 +1025,7 @@
 			"name": "St Lucia",
 			"abbr": "LC",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/St_Lucia"
 			]
 		},
@@ -1112,7 +1120,7 @@
 			"name": "St Martin (French)",
 			"abbr": "MF",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Marigot"
 			]
 		},
@@ -1198,7 +1206,7 @@
 			"name": "Montserrat",
 			"abbr": "MS",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Montserrat"
 			]
 		},
@@ -1253,7 +1261,8 @@
 			"abbr": "MY",
 			"zones": [
 				"Asia/Kuala_Lumpur",
-				"Asia/Kuching"
+				"Asia/Kuching",
+				"Asia/Singapore"
 			]
 		},
 		"MZ": {
@@ -1668,7 +1677,7 @@
 			"name": "St Maarten (Dutch)",
 			"abbr": "SX",
 			"zones": [
-				"America/Curacao",
+				"America/Puerto_Rico",
 				"America/Lower_Princes"
 			]
 		},
@@ -1777,6 +1786,7 @@
 			"name": "Trinidad & Tobago",
 			"abbr": "TT",
 			"zones": [
+				"America/Puerto_Rico",
 				"America/Port_of_Spain"
 			]
 		},
@@ -1892,7 +1902,7 @@
 			"name": "St Vincent",
 			"abbr": "VC",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/St_Vincent"
 			]
 		},
@@ -1907,7 +1917,7 @@
 			"name": "Virgin Islands (UK)",
 			"abbr": "VG",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/Tortola"
 			]
 		},
@@ -1915,7 +1925,7 @@
 			"name": "Virgin Islands (US)",
 			"abbr": "VI",
 			"zones": [
-				"America/Port_of_Spain",
+				"America/Puerto_Rico",
 				"America/St_Thomas"
 			]
 		},
@@ -2053,15 +2063,6 @@
 			],
 			"comments": "Davis"
 		},
-		"Antarctica/DumontDUrville": {
-			"name": "Antarctica/DumontDUrville",
-			"lat": -65.3333,
-			"long": 140.0167,
-			"countries": [
-				"AQ"
-			],
-			"comments": "Dumont-d'Urville"
-		},
 		"Antarctica/Mawson": {
 			"name": "Antarctica/Mawson",
 			"lat": -66.4,
@@ -2088,15 +2089,6 @@
 				"AQ"
 			],
 			"comments": "Rothera"
-		},
-		"Antarctica/Syowa": {
-			"name": "Antarctica/Syowa",
-			"lat": -68.9939,
-			"long": 39.59,
-			"countries": [
-				"AQ"
-			],
-			"comments": "Syowa"
 		},
 		"Antarctica/Troll": {
 			"name": "Antarctica/Troll",
@@ -2567,15 +2559,6 @@
 			],
 			"comments": "Acre"
 		},
-		"America/Nassau": {
-			"name": "America/Nassau",
-			"lat": 25.0833,
-			"long": -76.65,
-			"countries": [
-				"BS"
-			],
-			"comments": ""
-		},
 		"Asia/Thimphu": {
 			"name": "Asia/Thimphu",
 			"lat": 27.4667,
@@ -2648,23 +2631,15 @@
 			],
 			"comments": "Atlantic - Labrador (most areas)"
 		},
-		"America/Blanc-Sablon": {
-			"name": "America/Blanc-Sablon",
-			"lat": 51.4167,
-			"long": -56.8833,
-			"countries": [
-				"CA"
-			],
-			"comments": "AST - QC (Lower North Shore)"
-		},
 		"America/Toronto": {
 			"name": "America/Toronto",
 			"lat": 43.65,
 			"long": -78.6167,
 			"countries": [
-				"CA"
+				"CA",
+				"BS"
 			],
-			"comments": "Eastern - ON, QC (most areas)"
+			"comments": "Eastern - ON, QC (most areas), Bahamas"
 		},
 		"America/Nipigon": {
 			"name": "America/Nipigon",
@@ -2701,15 +2676,6 @@
 				"CA"
 			],
 			"comments": "Eastern - NU (Pangnirtung)"
-		},
-		"America/Atikokan": {
-			"name": "America/Atikokan",
-			"lat": 48.7586,
-			"long": -90.3783,
-			"countries": [
-				"CA"
-			],
-			"comments": "EST - ON (Atikokan); NU (Coral H)"
 		},
 		"America/Winnipeg": {
 			"name": "America/Winnipeg",
@@ -2801,15 +2767,6 @@
 			],
 			"comments": "Mountain - NT (west)"
 		},
-		"America/Creston": {
-			"name": "America/Creston",
-			"lat": 49.1,
-			"long": -115.4833,
-			"countries": [
-				"CA"
-			],
-			"comments": "MST - BC (Creston)"
-		},
 		"America/Dawson_Creek": {
 			"name": "America/Dawson_Creek",
 			"lat": 59.7667,
@@ -2882,6 +2839,7 @@
 			"countries": [
 				"CI",
 				"BF",
+				"GH",
 				"GM",
 				"GN",
 				"ML",
@@ -2980,18 +2938,6 @@
 			"long": -22.4833,
 			"countries": [
 				"CV"
-			],
-			"comments": ""
-		},
-		"America/Curacao": {
-			"name": "America/Curacao",
-			"lat": 12.1833,
-			"long": -69,
-			"countries": [
-				"CW",
-				"AW",
-				"BQ",
-				"SX"
 			],
 			"comments": ""
 		},
@@ -3240,15 +3186,6 @@
 			"long": -51.6667,
 			"countries": [
 				"GF"
-			],
-			"comments": ""
-		},
-		"Africa/Accra": {
-			"name": "Africa/Accra",
-			"lat": 5.55,
-			"long": 0.2167,
-			"countries": [
-				"GH"
 			],
 			"comments": ""
 		},
@@ -3561,10 +3498,10 @@
 			],
 			"comments": "Gilbert Islands"
 		},
-		"Pacific/Enderbury": {
-			"name": "Pacific/Enderbury",
-			"lat": -2.8667,
-			"long": -170.9167,
+		"Pacific/Kanton": {
+			"name": "Pacific/Kanton",
+			"lat": -1.2167,
+			"long": -170.2833,
 			"countries": [
 				"KI"
 			],
@@ -4107,9 +4044,10 @@
 			"long": -78.4667,
 			"countries": [
 				"PA",
+				"CA",
 				"KY"
 			],
-			"comments": ""
+			"comments": "EST - Panama, Cayman, ON (Atikokan), NU (Coral H)"
 		},
 		"America/Lima": {
 			"name": "America/Lima",
@@ -4152,9 +4090,10 @@
 			"lat": -8.5,
 			"long": 147.1667,
 			"countries": [
-				"PG"
+				"PG",
+				"AQ"
 			],
-			"comments": "Papua New Guinea (most areas)"
+			"comments": "Papua New Guinea (most areas), Dumont d'Urville"
 		},
 		"Pacific/Bougainville": {
 			"name": "Pacific/Bougainville",
@@ -4215,9 +4154,28 @@
 			"lat": 18.4683,
 			"long": -65.8939,
 			"countries": [
-				"PR"
+				"PR",
+				"AG",
+				"CA",
+				"AI",
+				"AW",
+				"BL",
+				"BQ",
+				"CW",
+				"DM",
+				"GD",
+				"GP",
+				"KN",
+				"LC",
+				"MF",
+				"MS",
+				"SX",
+				"TT",
+				"VC",
+				"VG",
+				"VI"
 			],
-			"comments": ""
+			"comments": "AST"
 		},
 		"Asia/Gaza": {
 			"name": "Asia/Gaza",
@@ -4575,10 +4533,11 @@
 			"long": 46.7167,
 			"countries": [
 				"SA",
+				"AQ",
 				"KW",
 				"YE"
 			],
-			"comments": ""
+			"comments": "Arabia, Syowa"
 		},
 		"Pacific/Guadalcanal": {
 			"name": "Pacific/Guadalcanal",
@@ -4621,9 +4580,10 @@
 			"lat": 1.2833,
 			"long": 103.85,
 			"countries": [
-				"SG"
+				"SG",
+				"MY"
 			],
-			"comments": ""
+			"comments": "Singapore, peninsular Malaysia"
 		},
 		"America/Paramaribo": {
 			"name": "America/Paramaribo",
@@ -4756,8 +4716,8 @@
 		},
 		"Pacific/Tongatapu": {
 			"name": "Pacific/Tongatapu",
-			"lat": -20.8333,
-			"long": -174.8333,
+			"lat": -20.8667,
+			"long": -174.8,
 			"countries": [
 				"TO"
 			],
@@ -4769,28 +4729,6 @@
 			"long": 28.9667,
 			"countries": [
 				"TR"
-			],
-			"comments": ""
-		},
-		"America/Port_of_Spain": {
-			"name": "America/Port_of_Spain",
-			"lat": 10.65,
-			"long": -60.4833,
-			"countries": [
-				"TT",
-				"AG",
-				"AI",
-				"BL",
-				"DM",
-				"GD",
-				"GP",
-				"KN",
-				"LC",
-				"MF",
-				"MS",
-				"VC",
-				"VG",
-				"VI"
 			],
 			"comments": ""
 		},
@@ -5024,9 +4962,10 @@
 			"lat": 33.4483,
 			"long": -111.9267,
 			"countries": [
-				"US"
+				"US",
+				"CA"
 			],
-			"comments": "MST - Arizona (except Navajo)"
+			"comments": "MST - Arizona (except Navajo), Creston BC"
 		},
 		"America/Los_Angeles": {
 			"name": "America/Los_Angeles",
@@ -5229,6 +5168,24 @@
 			],
 			"comments": "New Zealand time - McMurdo, South Pole"
 		},
+		"Antarctica/DumontDUrville": {
+			"name": "Antarctica/DumontDUrville",
+			"lat": -65.3333,
+			"long": 140.0167,
+			"countries": [
+				"AQ"
+			],
+			"comments": "Dumont-d'Urville"
+		},
+		"Antarctica/Syowa": {
+			"name": "Antarctica/Syowa",
+			"lat": -68.9939,
+			"long": 39.59,
+			"countries": [
+				"AQ"
+			],
+			"comments": "Syowa"
+		},
 		"America/Aruba": {
 			"name": "America/Aruba",
 			"lat": 12.5,
@@ -5310,6 +5267,15 @@
 			],
 			"comments": ""
 		},
+		"America/Nassau": {
+			"name": "America/Nassau",
+			"lat": 25.0833,
+			"long": -76.65,
+			"countries": [
+				"BS"
+			],
+			"comments": ""
+		},
 		"Africa/Gaborone": {
 			"name": "Africa/Gaborone",
 			"lat": -23.35,
@@ -5318,6 +5284,33 @@
 				"BW"
 			],
 			"comments": ""
+		},
+		"America/Blanc-Sablon": {
+			"name": "America/Blanc-Sablon",
+			"lat": 51.4167,
+			"long": -56.8833,
+			"countries": [
+				"CA"
+			],
+			"comments": "AST - QC (Lower North Shore)"
+		},
+		"America/Atikokan": {
+			"name": "America/Atikokan",
+			"lat": 48.7586,
+			"long": -90.3783,
+			"countries": [
+				"CA"
+			],
+			"comments": "EST - ON (Atikokan); NU (Coral H)"
+		},
+		"America/Creston": {
+			"name": "America/Creston",
+			"lat": 49.1,
+			"long": -115.4833,
+			"countries": [
+				"CA"
+			],
+			"comments": "MST - BC (Creston)"
 		},
 		"Africa/Kinshasa": {
 			"name": "Africa/Kinshasa",
@@ -5361,6 +5354,15 @@
 			"long": 9.7,
 			"countries": [
 				"CM"
+			],
+			"comments": ""
+		},
+		"America/Curacao": {
+			"name": "America/Curacao",
+			"lat": 12.1833,
+			"long": -69,
+			"countries": [
+				"CW"
 			],
 			"comments": ""
 		},
@@ -5433,6 +5435,15 @@
 			"long": -1.4639,
 			"countries": [
 				"GG"
+			],
+			"comments": ""
+		},
+		"Africa/Accra": {
+			"name": "Africa/Accra",
+			"lat": 5.55,
+			"long": 0.2167,
+			"countries": [
+				"GH"
 			],
 			"comments": ""
 		},
@@ -5784,6 +5795,15 @@
 			"long": 1.2167,
 			"countries": [
 				"TG"
+			],
+			"comments": ""
+		},
+		"America/Port_of_Spain": {
+			"name": "America/Port_of_Spain",
+			"lat": 10.65,
+			"long": -60.4833,
+			"countries": [
+				"TT"
 			],
 			"comments": ""
 		},
