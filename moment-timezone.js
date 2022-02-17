@@ -608,8 +608,10 @@
 
 		if (mom._z === undefined) {
 			if (zone && needsOffset(mom) && !mom._isUTC) {
-				mom._d = moment.utc(mom._a)._d;
-				mom.utc().add(zone.parse(mom), 'minutes');
+				if(mom.isValid()){
+					mom._d = moment.utc(mom._a)._d;
+					mom.utc().add(zone.parse(mom), 'minutes');
+				}
 			}
 			mom._z = zone;
 		}
