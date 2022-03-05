@@ -28,6 +28,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
+		"adjust-timezone": "^1.0.2",
 		"moment": ">= 2.9.0"
 	},
 	"devDependencies": {
