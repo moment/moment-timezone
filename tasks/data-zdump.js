@@ -1,13 +1,11 @@
 "use strict";
 
 var path = require('path'),
-	exec = require('child_process').exec;
+	execFile = require('child_process').execFile;
 
 module.exports = function (grunt) {
 	grunt.registerTask('data-zdump', '3. Dump data with zdump(8).', function (version) {
 		version = version || 'latest';
-
-		console.log(path.resolve('zdump'));
 
 		var done      = this.async(),
 			zicBase   = path.resolve('temp/zic', version),
@@ -34,7 +32,7 @@ module.exports = function (grunt) {
 				src  = path.join(zicBase, file),
 				dest = path.join(zdumpBase, file);
 
-			exec('zdump -v ' + src, { maxBuffer: 20*1024*1024 }, function (err, stdout) {
+			execFile('zdump', ['-v', src], { maxBuffer: 20*1024*1024 }, function (err, stdout) {
 				if (err) { throw err; }
 
 				grunt.file.mkdir(path.dirname(dest));
@@ -42,7 +40,7 @@ module.exports = function (grunt) {
 				if (stdout.length === 0) {
 					// on some systems, when there are no transitions then we have
 					// to get creative to learn the offset and abbreviation
-					exec('zdump UTC ' + src, { maxBuffer: 20*1024*1024 }, function (_err, _stdout) {
+					execFile('zdump', ['UTC', src], { maxBuffer: 20*1024*1024 }, function (_err, _stdout) {
 						if (_err) { throw _err; }
 
 						grunt.file.write(dest + '.zdump', normalizePaths(_stdout));

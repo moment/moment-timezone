@@ -1,7 +1,7 @@
 "use strict";
 
 var path = require('path'),
-	exec = require('child_process').exec;
+	execFile = require('child_process').execFile;
 
 module.exports = function (grunt) {
 	grunt.registerTask('data-zic', '2. Compile data sources with zic(8).', function (version) {
@@ -22,7 +22,10 @@ module.exports = function (grunt) {
 			var file = files.shift(),
 				src = path.resolve('temp/download', version, file);
 
-			exec('zic -d ' + dest + ' ' + src, function (err) {
+			if (!grunt.file.exists(src)) {
+				throw new Error("Can't process " + src + " with zic. File doesn't exist");
+			}
+			execFile('zic', ['-d', dest, src], function (err) {
 				if (err) { throw err; }
 
 				grunt.verbose.ok('Compiled zic ' + version + ':' + file);
