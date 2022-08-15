@@ -8,11 +8,6 @@ exports["Australia/Darwin"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Australia/Darwin", { abbr: true }),
 
-	"1899" : helpers.makeTestYear("Australia/Darwin", [
-		["1899-04-30T14:59:59+00:00", "23:59:59", "ACST", -540],
-		["1899-04-30T15:00:00+00:00", "00:30:00", "ACST", -570]
-	]),
-
 	"1916" : helpers.makeTestYear("Australia/Darwin", [
 		["1916-12-31T16:29:59+00:00", "01:59:59", "ACST", -570],
 		["1916-12-31T16:30:00+00:00", "03:00:00", "ACDT", -630]
@@ -40,5 +35,10 @@ exports["Australia/Darwin"] = {
 		["1943-03-27T16:30:00+00:00", "02:00:00", "ACST", -570],
 		["1943-10-02T16:29:59+00:00", "01:59:59", "ACST", -570],
 		["1943-10-02T16:30:00+00:00", "03:00:00", "ACDT", -630]
+	]),
+
+	"1944" : helpers.makeTestYear("Australia/Darwin", [
+		["1944-03-25T16:29:59+00:00", "02:59:59", "ACDT", -630],
+		["1944-03-25T16:30:00+00:00", "02:00:00", "ACST", -570]
 	])
 };

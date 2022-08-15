@@ -46,7 +46,7 @@ module.exports = function (grunt) {
                 
 				grunt.file.mkdir(path.dirname(dest));
 
-				if (!validOutput) {
+                if (stdout.length === 0) {
 					// on some systems, when there are no transitions then we have
 					// to get creative to learn the offset and abbreviation
 					exec('zdump UTC ' + src, { maxBuffer: 20*1024*1024 }, function (_err, _stdout) {

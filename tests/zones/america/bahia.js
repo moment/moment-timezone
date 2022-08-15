@@ -8,6 +8,11 @@ exports["America/Bahia"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Bahia", { abbr: true, expect: "America/Sao_Paulo" }),
 
+	"1914" : helpers.makeTestYear("America/Bahia", [
+		["1914-01-01T02:34:03+00:00", "23:59:59", "LMT", 9244 / 60],
+		["1914-01-01T02:34:04+00:00", "23:34:04", "-03", 180]
+	]),
+
 	"1931" : helpers.makeTestYear("America/Bahia", [
 		["1931-10-03T13:59:59+00:00", "10:59:59", "-03", 180],
 		["1931-10-03T14:00:00+00:00", "12:00:00", "-02", 120]
@@ -226,5 +231,10 @@ exports["America/Bahia"] = {
 	"2011" : helpers.makeTestYear("America/Bahia", [
 		["2011-10-16T02:59:59+00:00", "23:59:59", "-03", 180],
 		["2011-10-16T03:00:00+00:00", "01:00:00", "-02", 120]
+	]),
+
+	"2012" : helpers.makeTestYear("America/Bahia", [
+		["2012-02-26T01:59:59+00:00", "23:59:59", "-02", 120],
+		["2012-02-26T02:00:00+00:00", "23:00:00", "-03", 180]
 	])
 };
