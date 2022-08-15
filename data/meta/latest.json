@@ -69,13 +69,14 @@
 				"Antarctica/Palmer",
 				"Antarctica/Rothera",
 				"Antarctica/Troll",
-				"Antarctica/Vostok",
+				"Asia/Urumqi",
 				"Pacific/Auckland",
 				"Pacific/Port_Moresby",
 				"Asia/Riyadh",
 				"Antarctica/McMurdo",
 				"Antarctica/DumontDUrville",
-				"Antarctica/Syowa"
+				"Antarctica/Syowa",
+				"Antarctica/Vostok"
 			]
 		},
 		"AR": {
@@ -238,6 +239,7 @@
 			"name": "Brunei",
 			"abbr": "BN",
 			"zones": [
+				"Asia/Kuching",
 				"Asia/Brunei"
 			]
 		},
@@ -356,6 +358,7 @@
 			"name": "Cocos (Keeling) Islands",
 			"abbr": "CC",
 			"zones": [
+				"Asia/Yangon",
 				"Indian/Cocos"
 			]
 		},
@@ -471,6 +474,7 @@
 			"name": "Christmas Island",
 			"abbr": "CX",
 			"zones": [
+				"Asia/Bangkok",
 				"Indian/Christmas"
 			]
 		},
@@ -510,6 +514,7 @@
 			"name": "Denmark",
 			"abbr": "DK",
 			"zones": [
+				"Europe/Berlin",
 				"Europe/Copenhagen"
 			]
 		},
@@ -614,9 +619,11 @@
 			"name": "Micronesia",
 			"abbr": "FM",
 			"zones": [
+				"Pacific/Kosrae",
+				"Pacific/Port_Moresby",
+				"Pacific/Guadalcanal",
 				"Pacific/Chuuk",
-				"Pacific/Pohnpei",
-				"Pacific/Kosrae"
+				"Pacific/Pohnpei"
 			]
 		},
 		"FO": {
@@ -877,6 +884,7 @@
 			"name": "Iceland",
 			"abbr": "IS",
 			"zones": [
+				"Africa/Abidjan",
 				"Atlantic/Reykjavik"
 			]
 		},
@@ -1070,6 +1078,7 @@
 			"name": "Luxembourg",
 			"abbr": "LU",
 			"zones": [
+				"Europe/Brussels",
 				"Europe/Luxembourg"
 			]
 		},
@@ -1098,6 +1107,7 @@
 			"name": "Monaco",
 			"abbr": "MC",
 			"zones": [
+				"Europe/Paris",
 				"Europe/Monaco"
 			]
 		},
@@ -1136,8 +1146,9 @@
 			"name": "Marshall Islands",
 			"abbr": "MH",
 			"zones": [
-				"Pacific/Majuro",
-				"Pacific/Kwajalein"
+				"Pacific/Tarawa",
+				"Pacific/Kwajalein",
+				"Pacific/Majuro"
 			]
 		},
 		"MK": {
@@ -1260,9 +1271,9 @@
 			"name": "Malaysia",
 			"abbr": "MY",
 			"zones": [
-				"Asia/Kuala_Lumpur",
 				"Asia/Kuching",
-				"Asia/Singapore"
+				"Asia/Singapore",
+				"Asia/Kuala_Lumpur"
 			]
 		},
 		"MZ": {
@@ -1319,6 +1330,7 @@
 			"name": "Netherlands",
 			"abbr": "NL",
 			"zones": [
+				"Europe/Brussels",
 				"Europe/Amsterdam"
 			]
 		},
@@ -1326,6 +1338,7 @@
 			"name": "Norway",
 			"abbr": "NO",
 			"zones": [
+				"Europe/Berlin",
 				"Europe/Oslo"
 			]
 		},
@@ -1481,6 +1494,7 @@
 			"name": "Réunion",
 			"abbr": "RE",
 			"zones": [
+				"Asia/Dubai",
 				"Indian/Reunion"
 			]
 		},
@@ -1557,6 +1571,7 @@
 			"name": "Seychelles",
 			"abbr": "SC",
 			"zones": [
+				"Asia/Dubai",
 				"Indian/Mahe"
 			]
 		},
@@ -1571,6 +1586,7 @@
 			"name": "Sweden",
 			"abbr": "SE",
 			"zones": [
+				"Europe/Berlin",
 				"Europe/Stockholm"
 			]
 		},
@@ -1601,7 +1617,7 @@
 			"name": "Svalbard & Jan Mayen",
 			"abbr": "SJ",
 			"zones": [
-				"Europe/Oslo",
+				"Europe/Berlin",
 				"Arctic/Longyearbyen"
 			]
 		},
@@ -1714,7 +1730,8 @@
 			"name": "French Southern & Antarctic Lands",
 			"abbr": "TF",
 			"zones": [
-				"Indian/Reunion",
+				"Asia/Dubai",
+				"Indian/Maldives",
 				"Indian/Kerguelen"
 			]
 		},
@@ -1794,6 +1811,7 @@
 			"name": "Tuvalu",
 			"abbr": "TV",
 			"zones": [
+				"Pacific/Tarawa",
 				"Pacific/Funafuti"
 			]
 		},
@@ -1817,7 +1835,7 @@
 			"abbr": "UA",
 			"zones": [
 				"Europe/Simferopol",
-				"Europe/Kiev",
+				"Europe/Kyiv",
 				"Europe/Uzhgorod",
 				"Europe/Zaporozhye"
 			]
@@ -1835,9 +1853,10 @@
 			"abbr": "UM",
 			"zones": [
 				"Pacific/Pago_Pago",
-				"Pacific/Wake",
+				"Pacific/Tarawa",
 				"Pacific/Honolulu",
-				"Pacific/Midway"
+				"Pacific/Midway",
+				"Pacific/Wake"
 			]
 		},
 		"US": {
@@ -1948,6 +1967,7 @@
 			"name": "Wallis & Futuna",
 			"abbr": "WF",
 			"zones": [
+				"Pacific/Tarawa",
 				"Pacific/Wallis"
 			]
 		},
@@ -2014,9 +2034,12 @@
 			"long": 55.3,
 			"countries": [
 				"AE",
-				"OM"
+				"OM",
+				"RE",
+				"SC",
+				"TF"
 			],
-			"comments": ""
+			"comments": "UAE, Oman, Réunion, Seychelles, Crozet, Scattered Is"
 		},
 		"Asia/Kabul": {
 			"name": "Asia/Kabul",
@@ -2098,15 +2121,6 @@
 				"AQ"
 			],
 			"comments": "Troll"
-		},
-		"Antarctica/Vostok": {
-			"name": "Antarctica/Vostok",
-			"lat": -77.6,
-			"long": 106.9,
-			"countries": [
-				"AQ"
-			],
-			"comments": "Vostok"
 		},
 		"America/Argentina/Buenos_Aires": {
 			"name": "America/Argentina/Buenos_Aires",
@@ -2375,7 +2389,9 @@
 			"lat": 50.8333,
 			"long": 4.3333,
 			"countries": [
-				"BE"
+				"BE",
+				"LU",
+				"NL"
 			],
 			"comments": ""
 		},
@@ -2394,15 +2410,6 @@
 			"long": -63.2333,
 			"countries": [
 				"BM"
-			],
-			"comments": ""
-		},
-		"Asia/Brunei": {
-			"name": "Asia/Brunei",
-			"lat": 4.9333,
-			"long": 114.9167,
-			"countries": [
-				"BN"
 			],
 			"comments": ""
 		},
@@ -2769,7 +2776,7 @@
 		},
 		"America/Dawson_Creek": {
 			"name": "America/Dawson_Creek",
-			"lat": 59.7667,
+			"lat": 55.7667,
 			"long": -119.7667,
 			"countries": [
 				"CA"
@@ -2812,15 +2819,6 @@
 			],
 			"comments": "Pacific - BC (most areas)"
 		},
-		"Indian/Cocos": {
-			"name": "Indian/Cocos",
-			"lat": -11.8333,
-			"long": 96.9167,
-			"countries": [
-				"CC"
-			],
-			"comments": ""
-		},
 		"Europe/Zurich": {
 			"name": "Europe/Zurich",
 			"lat": 47.3833,
@@ -2842,6 +2840,7 @@
 				"GH",
 				"GM",
 				"GN",
+				"IS",
 				"ML",
 				"MR",
 				"SH",
@@ -2901,9 +2900,10 @@
 			"lat": 43.8,
 			"long": 87.5833,
 			"countries": [
-				"CN"
+				"CN",
+				"AQ"
 			],
-			"comments": "Xinjiang Time"
+			"comments": "Xinjiang Time, Vostok"
 		},
 		"America/Bogota": {
 			"name": "America/Bogota",
@@ -2941,15 +2941,6 @@
 			],
 			"comments": ""
 		},
-		"Indian/Christmas": {
-			"name": "Indian/Christmas",
-			"lat": -9.5833,
-			"long": 105.7167,
-			"countries": [
-				"CX"
-			],
-			"comments": ""
-		},
 		"Asia/Nicosia": {
 			"name": "Asia/Nicosia",
 			"lat": 35.1667,
@@ -2983,18 +2974,13 @@
 			"lat": 52.5,
 			"long": 13.3667,
 			"countries": [
-				"DE"
+				"DE",
+				"DK",
+				"NO",
+				"SE",
+				"SJ"
 			],
-			"comments": "Germany (most areas)"
-		},
-		"Europe/Copenhagen": {
-			"name": "Europe/Copenhagen",
-			"lat": 55.6667,
-			"long": 12.5833,
-			"countries": [
-				"DK"
-			],
-			"comments": ""
+			"comments": "Germany (most areas), Scandinavia"
 		},
 		"America/Santo_Domingo": {
 			"name": "America/Santo_Domingo",
@@ -3114,24 +3100,6 @@
 			],
 			"comments": ""
 		},
-		"Pacific/Chuuk": {
-			"name": "Pacific/Chuuk",
-			"lat": 7.4167,
-			"long": 151.7833,
-			"countries": [
-				"FM"
-			],
-			"comments": "Chuuk/Truk, Yap"
-		},
-		"Pacific/Pohnpei": {
-			"name": "Pacific/Pohnpei",
-			"lat": 6.9667,
-			"long": 158.2167,
-			"countries": [
-				"FM"
-			],
-			"comments": "Pohnpei/Ponape"
-		},
 		"Pacific/Kosrae": {
 			"name": "Pacific/Kosrae",
 			"lat": 5.3167,
@@ -3155,7 +3123,8 @@
 			"lat": 48.8667,
 			"long": 2.3333,
 			"countries": [
-				"FR"
+				"FR",
+				"MC"
 			],
 			"comments": ""
 		},
@@ -3415,15 +3384,6 @@
 			],
 			"comments": ""
 		},
-		"Atlantic/Reykjavik": {
-			"name": "Atlantic/Reykjavik",
-			"lat": 64.15,
-			"long": -20.15,
-			"countries": [
-				"IS"
-			],
-			"comments": ""
-		},
 		"Europe/Rome": {
 			"name": "Europe/Rome",
 			"lat": 41.9,
@@ -3494,9 +3454,13 @@
 			"lat": 1.4167,
 			"long": 173,
 			"countries": [
-				"KI"
+				"KI",
+				"MH",
+				"TV",
+				"UM",
+				"WF"
 			],
-			"comments": "Gilbert Islands"
+			"comments": "Gilberts, Marshalls, Tuvalu, Wallis & Futuna, Wake"
 		},
 		"Pacific/Kanton": {
 			"name": "Pacific/Kanton",
@@ -3633,15 +3597,6 @@
 			],
 			"comments": ""
 		},
-		"Europe/Luxembourg": {
-			"name": "Europe/Luxembourg",
-			"lat": 49.6,
-			"long": 6.15,
-			"countries": [
-				"LU"
-			],
-			"comments": ""
-		},
 		"Europe/Riga": {
 			"name": "Europe/Riga",
 			"lat": 56.95,
@@ -3669,15 +3624,6 @@
 			],
 			"comments": ""
 		},
-		"Europe/Monaco": {
-			"name": "Europe/Monaco",
-			"lat": 43.7,
-			"long": 7.3833,
-			"countries": [
-				"MC"
-			],
-			"comments": ""
-		},
 		"Europe/Chisinau": {
 			"name": "Europe/Chisinau",
 			"lat": 47,
@@ -3686,15 +3632,6 @@
 				"MD"
 			],
 			"comments": ""
-		},
-		"Pacific/Majuro": {
-			"name": "Pacific/Majuro",
-			"lat": 7.15,
-			"long": 171.2,
-			"countries": [
-				"MH"
-			],
-			"comments": "Marshall Islands (most areas)"
 		},
 		"Pacific/Kwajalein": {
 			"name": "Pacific/Kwajalein",
@@ -3710,7 +3647,8 @@
 			"lat": 16.7833,
 			"long": 96.1667,
 			"countries": [
-				"MM"
+				"MM",
+				"CC"
 			],
 			"comments": ""
 		},
@@ -3782,9 +3720,10 @@
 			"lat": 4.1667,
 			"long": 73.5,
 			"countries": [
-				"MV"
+				"MV",
+				"TF"
 			],
-			"comments": ""
+			"comments": "Maldives, Kerguelen, St Paul I, Amsterdam I"
 		},
 		"America/Mexico_City": {
 			"name": "America/Mexico_City",
@@ -3885,23 +3824,15 @@
 			],
 			"comments": "Central Time - Bahía de Banderas"
 		},
-		"Asia/Kuala_Lumpur": {
-			"name": "Asia/Kuala_Lumpur",
-			"lat": 3.1667,
-			"long": 101.7,
-			"countries": [
-				"MY"
-			],
-			"comments": "Malaysia (peninsula)"
-		},
 		"Asia/Kuching": {
 			"name": "Asia/Kuching",
 			"lat": 1.55,
 			"long": 110.3333,
 			"countries": [
-				"MY"
+				"MY",
+				"BN"
 			],
-			"comments": "Sabah, Sarawak"
+			"comments": "Sabah, Sarawak, Brunei"
 		},
 		"Africa/Maputo": {
 			"name": "Africa/Maputo",
@@ -3970,25 +3901,6 @@
 			"long": -85.7167,
 			"countries": [
 				"NI"
-			],
-			"comments": ""
-		},
-		"Europe/Amsterdam": {
-			"name": "Europe/Amsterdam",
-			"lat": 52.3667,
-			"long": 4.9,
-			"countries": [
-				"NL"
-			],
-			"comments": ""
-		},
-		"Europe/Oslo": {
-			"name": "Europe/Oslo",
-			"lat": 59.9167,
-			"long": 10.75,
-			"countries": [
-				"NO",
-				"SJ"
 			],
 			"comments": ""
 		},
@@ -4091,9 +4003,10 @@
 			"long": 147.1667,
 			"countries": [
 				"PG",
-				"AQ"
+				"AQ",
+				"FM"
 			],
-			"comments": "Papua New Guinea (most areas), Dumont d'Urville"
+			"comments": "Papua New Guinea (most areas), Chuuk, Yap, Dumont d'Urville"
 		},
 		"Pacific/Bougainville": {
 			"name": "Pacific/Bougainville",
@@ -4249,16 +4162,6 @@
 				"BH"
 			],
 			"comments": ""
-		},
-		"Indian/Reunion": {
-			"name": "Indian/Reunion",
-			"lat": -19.1333,
-			"long": 55.4667,
-			"countries": [
-				"RE",
-				"TF"
-			],
-			"comments": "Réunion, Crozet, Scattered Islands"
 		},
 		"Europe/Bucharest": {
 			"name": "Europe/Bucharest",
@@ -4544,18 +4447,10 @@
 			"lat": -8.4667,
 			"long": 160.2,
 			"countries": [
-				"SB"
+				"SB",
+				"FM"
 			],
-			"comments": ""
-		},
-		"Indian/Mahe": {
-			"name": "Indian/Mahe",
-			"lat": -3.3333,
-			"long": 55.4667,
-			"countries": [
-				"SC"
-			],
-			"comments": ""
+			"comments": "Solomons, Pohnpei"
 		},
 		"Africa/Khartoum": {
 			"name": "Africa/Khartoum",
@@ -4563,15 +4458,6 @@
 			"long": 32.5333,
 			"countries": [
 				"SD"
-			],
-			"comments": ""
-		},
-		"Europe/Stockholm": {
-			"name": "Europe/Stockholm",
-			"lat": 59.3333,
-			"long": 18.05,
-			"countries": [
-				"SE"
 			],
 			"comments": ""
 		},
@@ -4648,21 +4534,13 @@
 			],
 			"comments": ""
 		},
-		"Indian/Kerguelen": {
-			"name": "Indian/Kerguelen",
-			"lat": -48.6472,
-			"long": 70.2175,
-			"countries": [
-				"TF"
-			],
-			"comments": "Kerguelen, St Paul Island, Amsterdam Island"
-		},
 		"Asia/Bangkok": {
 			"name": "Asia/Bangkok",
 			"lat": 13.75,
 			"long": 100.5167,
 			"countries": [
 				"TH",
+				"CX",
 				"KH",
 				"LA",
 				"VN"
@@ -4732,15 +4610,6 @@
 			],
 			"comments": ""
 		},
-		"Pacific/Funafuti": {
-			"name": "Pacific/Funafuti",
-			"lat": -7.4833,
-			"long": 179.2167,
-			"countries": [
-				"TV"
-			],
-			"comments": ""
-		},
 		"Asia/Taipei": {
 			"name": "Asia/Taipei",
 			"lat": 25.05,
@@ -4750,8 +4619,8 @@
 			],
 			"comments": ""
 		},
-		"Europe/Kiev": {
-			"name": "Europe/Kiev",
+		"Europe/Kyiv": {
+			"name": "Europe/Kyiv",
 			"lat": 50.4333,
 			"long": 30.5167,
 			"countries": [
@@ -4776,15 +4645,6 @@
 				"UA"
 			],
 			"comments": "Zaporozhye and east Lugansk"
-		},
-		"Pacific/Wake": {
-			"name": "Pacific/Wake",
-			"lat": 19.2833,
-			"long": 166.6167,
-			"countries": [
-				"UM"
-			],
-			"comments": "Wake Island"
 		},
 		"America/New_York": {
 			"name": "America/New_York",
@@ -5103,15 +4963,6 @@
 			],
 			"comments": ""
 		},
-		"Pacific/Wallis": {
-			"name": "Pacific/Wallis",
-			"lat": -12.7,
-			"long": -175.8333,
-			"countries": [
-				"WF"
-			],
-			"comments": ""
-		},
 		"Pacific/Apia": {
 			"name": "Pacific/Apia",
 			"lat": -12.1667,
@@ -5186,6 +5037,15 @@
 			],
 			"comments": "Syowa"
 		},
+		"Antarctica/Vostok": {
+			"name": "Antarctica/Vostok",
+			"lat": -77.6,
+			"long": 106.9,
+			"countries": [
+				"AQ"
+			],
+			"comments": "Vostok"
+		},
 		"America/Aruba": {
 			"name": "America/Aruba",
 			"lat": 12.5,
@@ -5258,6 +5118,15 @@
 			],
 			"comments": ""
 		},
+		"Asia/Brunei": {
+			"name": "Asia/Brunei",
+			"lat": 4.9333,
+			"long": 114.9167,
+			"countries": [
+				"BN"
+			],
+			"comments": ""
+		},
 		"America/Kralendijk": {
 			"name": "America/Kralendijk",
 			"lat": 12.1508,
@@ -5311,6 +5180,15 @@
 				"CA"
 			],
 			"comments": "MST - BC (Creston)"
+		},
+		"Indian/Cocos": {
+			"name": "Indian/Cocos",
+			"lat": -11.8333,
+			"long": 96.9167,
+			"countries": [
+				"CC"
+			],
+			"comments": ""
 		},
 		"Africa/Kinshasa": {
 			"name": "Africa/Kinshasa",
@@ -5366,6 +5244,15 @@
 			],
 			"comments": ""
 		},
+		"Indian/Christmas": {
+			"name": "Indian/Christmas",
+			"lat": -9.5833,
+			"long": 105.7167,
+			"countries": [
+				"CX"
+			],
+			"comments": ""
+		},
 		"Europe/Busingen": {
 			"name": "Europe/Busingen",
 			"lat": 47.7,
@@ -5381,6 +5268,15 @@
 			"long": 43.15,
 			"countries": [
 				"DJ"
+			],
+			"comments": ""
+		},
+		"Europe/Copenhagen": {
+			"name": "Europe/Copenhagen",
+			"lat": 55.6667,
+			"long": 12.5833,
+			"countries": [
+				"DK"
 			],
 			"comments": ""
 		},
@@ -5410,6 +5306,24 @@
 				"ET"
 			],
 			"comments": ""
+		},
+		"Pacific/Chuuk": {
+			"name": "Pacific/Chuuk",
+			"lat": 7.4167,
+			"long": 151.7833,
+			"countries": [
+				"FM"
+			],
+			"comments": "Chuuk/Truk, Yap"
+		},
+		"Pacific/Pohnpei": {
+			"name": "Pacific/Pohnpei",
+			"lat": 6.9667,
+			"long": 158.2167,
+			"countries": [
+				"FM"
+			],
+			"comments": "Pohnpei/Ponape"
 		},
 		"Africa/Libreville": {
 			"name": "Africa/Libreville",
@@ -5498,6 +5412,15 @@
 			"long": -3.5333,
 			"countries": [
 				"IM"
+			],
+			"comments": ""
+		},
+		"Atlantic/Reykjavik": {
+			"name": "Atlantic/Reykjavik",
+			"lat": 64.15,
+			"long": -20.15,
+			"countries": [
+				"IS"
 			],
 			"comments": ""
 		},
@@ -5591,6 +5514,24 @@
 			],
 			"comments": ""
 		},
+		"Europe/Luxembourg": {
+			"name": "Europe/Luxembourg",
+			"lat": 49.6,
+			"long": 6.15,
+			"countries": [
+				"LU"
+			],
+			"comments": ""
+		},
+		"Europe/Monaco": {
+			"name": "Europe/Monaco",
+			"lat": 43.7,
+			"long": 7.3833,
+			"countries": [
+				"MC"
+			],
+			"comments": ""
+		},
 		"Europe/Podgorica": {
 			"name": "Europe/Podgorica",
 			"lat": 42.4333,
@@ -5617,6 +5558,15 @@
 				"MG"
 			],
 			"comments": ""
+		},
+		"Pacific/Majuro": {
+			"name": "Pacific/Majuro",
+			"lat": 7.15,
+			"long": 171.2,
+			"countries": [
+				"MH"
+			],
+			"comments": "Marshall Islands (most areas)"
 		},
 		"Europe/Skopje": {
 			"name": "Europe/Skopje",
@@ -5672,12 +5622,39 @@
 			],
 			"comments": ""
 		},
+		"Asia/Kuala_Lumpur": {
+			"name": "Asia/Kuala_Lumpur",
+			"lat": 3.1667,
+			"long": 101.7,
+			"countries": [
+				"MY"
+			],
+			"comments": "Malaysia (peninsula)"
+		},
 		"Africa/Niamey": {
 			"name": "Africa/Niamey",
 			"lat": 13.5167,
 			"long": 2.1167,
 			"countries": [
 				"NE"
+			],
+			"comments": ""
+		},
+		"Europe/Amsterdam": {
+			"name": "Europe/Amsterdam",
+			"lat": 52.3667,
+			"long": 4.9,
+			"countries": [
+				"NL"
+			],
+			"comments": ""
+		},
+		"Europe/Oslo": {
+			"name": "Europe/Oslo",
+			"lat": 59.9167,
+			"long": 10.75,
+			"countries": [
+				"NO"
 			],
 			"comments": ""
 		},
@@ -5690,12 +5667,39 @@
 			],
 			"comments": ""
 		},
+		"Indian/Reunion": {
+			"name": "Indian/Reunion",
+			"lat": -19.1333,
+			"long": 55.4667,
+			"countries": [
+				"RE"
+			],
+			"comments": ""
+		},
 		"Africa/Kigali": {
 			"name": "Africa/Kigali",
 			"lat": -0.05,
 			"long": 30.0667,
 			"countries": [
 				"RW"
+			],
+			"comments": ""
+		},
+		"Indian/Mahe": {
+			"name": "Indian/Mahe",
+			"lat": -3.3333,
+			"long": 55.4667,
+			"countries": [
+				"SC"
+			],
+			"comments": ""
+		},
+		"Europe/Stockholm": {
+			"name": "Europe/Stockholm",
+			"lat": 59.3333,
+			"long": 18.05,
+			"countries": [
+				"SE"
 			],
 			"comments": ""
 		},
@@ -5789,6 +5793,15 @@
 			],
 			"comments": ""
 		},
+		"Indian/Kerguelen": {
+			"name": "Indian/Kerguelen",
+			"lat": -48.6472,
+			"long": 70.2175,
+			"countries": [
+				"TF"
+			],
+			"comments": ""
+		},
 		"Africa/Lome": {
 			"name": "Africa/Lome",
 			"lat": 6.1333,
@@ -5804,6 +5817,15 @@
 			"long": -60.4833,
 			"countries": [
 				"TT"
+			],
+			"comments": ""
+		},
+		"Pacific/Funafuti": {
+			"name": "Pacific/Funafuti",
+			"lat": -7.4833,
+			"long": 179.2167,
+			"countries": [
+				"TV"
 			],
 			"comments": ""
 		},
@@ -5833,6 +5855,15 @@
 				"UM"
 			],
 			"comments": "Midway Islands"
+		},
+		"Pacific/Wake": {
+			"name": "Pacific/Wake",
+			"lat": 19.2833,
+			"long": 166.6167,
+			"countries": [
+				"UM"
+			],
+			"comments": "Wake Island"
 		},
 		"Europe/Vatican": {
 			"name": "Europe/Vatican",
@@ -5867,6 +5898,15 @@
 			"long": -63.0667,
 			"countries": [
 				"VI"
+			],
+			"comments": ""
+		},
+		"Pacific/Wallis": {
+			"name": "Pacific/Wallis",
+			"lat": -12.7,
+			"long": -175.8333,
+			"countries": [
+				"WF"
 			],
 			"comments": ""
 		},

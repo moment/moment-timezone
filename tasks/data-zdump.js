@@ -36,10 +36,17 @@ module.exports = function (grunt) {
 
 			exec('zdump -v ' + src, { maxBuffer: 20*1024*1024 }, function (err, stdout) {
 				if (err) { throw err; }
-
+                
+                let output = normalizePaths(stdout);
+				let lines = output.split('\n');
+				let validOutput = lines.some(function (line) {
+					var parts = line.split(/\s+/);
+					return parts.length > 13;
+				});
+                
 				grunt.file.mkdir(path.dirname(dest));
 
-				if (stdout.length === 0) {
+				if (!validOutput) {
 					// on some systems, when there are no transitions then we have
 					// to get creative to learn the offset and abbreviation
 					exec('zdump UTC ' + src, { maxBuffer: 20*1024*1024 }, function (_err, _stdout) {

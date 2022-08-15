@@ -4,16 +4,11 @@ var helpers = require("../../helpers/helpers");
 
 exports["Antarctica/Palmer"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Antarctica/Palmer", { offset: true, expect: "America/Fortaleza" }),
+	"guess:by:offset" : helpers.makeTestGuess("Antarctica/Palmer", { offset: true, expect: "America/Sao_Paulo" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("Antarctica/Palmer", { abbr: true, expect: "America/Fortaleza" }),
-
-	"1964" : helpers.makeTestYear("Antarctica/Palmer", [
-		["1964-12-31T23:59:59+00:00", "23:59:59", "-00", 0]
-	]),
+	"guess:by:abbr" : helpers.makeTestGuess("Antarctica/Palmer", { abbr: true, expect: "America/Sao_Paulo" }),
 
 	"1965" : helpers.makeTestYear("Antarctica/Palmer", [
-		["1965-01-01T00:00:00+00:00", "21:00:00", "-03", 180],
 		["1965-03-01T02:59:59+00:00", "23:59:59", "-03", 180],
 		["1965-03-01T03:00:00+00:00", "23:00:00", "-04", 240],
 		["1965-10-15T03:59:59+00:00", "23:59:59", "-04", 240],
@@ -290,8 +285,6 @@ exports["Antarctica/Palmer"] = {
 		["2016-05-15T02:59:59+00:00", "23:59:59", "-03", 180],
 		["2016-05-15T03:00:00+00:00", "23:00:00", "-04", 240],
 		["2016-08-14T03:59:59+00:00", "23:59:59", "-04", 240],
-		["2016-08-14T04:00:00+00:00", "01:00:00", "-03", 180],
-		["2016-12-04T02:59:59+00:00", "23:59:59", "-03", 180],
-		["2016-12-04T03:00:00+00:00", "00:00:00", "-03", 180]
+		["2016-08-14T04:00:00+00:00", "01:00:00", "-03", 180]
 	])
 };

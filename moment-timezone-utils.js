@@ -1,5 +1,5 @@
 //! moment-timezone-utils.js
-//! version : 0.5.34
+//! version : 0.5.35
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
