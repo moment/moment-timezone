@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 
 		var done  = this.async(),
 			src   = (version === 'latest' ?
-				'ftp://ftp.iana.org/tz/tzdata-latest.tar.gz' :
+				'https://data.iana.org/time-zones/tzdata-latest.tar.gz' :
 				'https://data.iana.org/time-zones/releases/tzdata' + version + '.tar.gz'),
 			curl  = path.resolve('temp/curl', version, 'data.tar.gz'),
 			dest  = path.resolve('temp/download', version);
