@@ -2,6 +2,8 @@
 * Fix command injection in data pipeline https://github.com/moment/moment-timezone/security/advisories/GHSA-56x4-j7p9-fcf9
 * Fix cleartext transmission of sensitive information https://github.com/moment/moment-timezone/security/advisories/GHSA-v78c-4p63-2j6c
 
+Thanks to the OpenSSF Alpha-Omega project for reporting these!
+
 ### `0.5.34` _2020-11-10_
 * Updated data to IANA TZDB `2021e`
 
