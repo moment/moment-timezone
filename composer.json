@@ -1,7 +1,7 @@
 {
   "name": "moment/moment-timezone",
   "description": "Parse and display dates in any timezone",
-  "version": "0.5.35",
+  "version": "0.5.36",
   "keywords": [
     "moment",
     "date",
