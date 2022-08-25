@@ -1,3 +1,7 @@
+### `0.5.37` _2022.08-25_
+* Re-publish npm package, because of extra folder present in 0.5.36, check
+  https://github.com/moment/moment-timezone/issues/999
+
 ### `0.5.36` _2022.08-25_
 * IANA TZDB 2022c
 * improvements/fixes to data pipeline
