@@ -8,6 +8,15 @@ exports["Pacific/Kosrae"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Kosrae", { abbr: true, expect: "Asia/Sakhalin" }),
 
+	"1844" : helpers.makeTestYear("Pacific/Kosrae", [
+		["1844-12-31T13:08:04+00:00", "00:00:00", "LMT", -39116 / 60]
+	]),
+
+	"1900" : helpers.makeTestYear("Pacific/Kosrae", [
+		["1900-12-31T13:08:03+00:00", "23:59:59", "LMT", -39116 / 60],
+		["1900-12-31T13:08:04+00:00", "00:08:04", "+11", -660]
+	]),
+
 	"1914" : helpers.makeTestYear("Pacific/Kosrae", [
 		["1914-09-30T12:59:59+00:00", "23:59:59", "+11", -660],
 		["1914-09-30T13:00:00+00:00", "22:00:00", "+09", -540]
@@ -39,7 +48,6 @@ exports["Pacific/Kosrae"] = {
 	]),
 
 	"1998" : helpers.makeTestYear("Pacific/Kosrae", [
-		["1998-12-31T11:59:59+00:00", "23:59:59", "+12", -720],
-		["1998-12-31T12:00:00+00:00", "23:00:00", "+11", -660]
+		["1998-12-31T11:59:59+00:00", "23:59:59", "+12", -720]
 	])
 };

@@ -9,7 +9,6 @@ exports["Brazil/Acre"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Brazil/Acre", { abbr: true, expect: "America/Lima" }),
 
 	"1914" : helpers.makeTestYear("Brazil/Acre", [
-		["1914-01-01T04:31:11+00:00", "23:59:59", "LMT", 16272 / 60],
 		["1914-01-01T04:31:12+00:00", "23:31:12", "-05", 300]
 	]),
 
@@ -129,7 +128,6 @@ exports["Brazil/Acre"] = {
 	]),
 
 	"2013" : helpers.makeTestYear("Brazil/Acre", [
-		["2013-11-10T03:59:59+00:00", "23:59:59", "-04", 240],
-		["2013-11-10T04:00:00+00:00", "23:00:00", "-05", 300]
+		["2013-11-10T03:59:59+00:00", "23:59:59", "-04", 240]
 	])
 };

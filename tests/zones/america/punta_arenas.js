@@ -4,33 +4,37 @@ var helpers = require("../../helpers/helpers");
 
 exports["America/Punta_Arenas"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("America/Punta_Arenas", { offset: true, expect: "America/Fortaleza" }),
+	"guess:by:offset" : helpers.makeTestGuess("America/Punta_Arenas", { offset: true, expect: "America/Sao_Paulo" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("America/Punta_Arenas", { abbr: true, expect: "America/Fortaleza" }),
+	"guess:by:abbr" : helpers.makeTestGuess("America/Punta_Arenas", { abbr: true, expect: "America/Sao_Paulo" }),
+
+	"1890" : helpers.makeTestYear("America/Punta_Arenas", [
+		["1890-01-01T04:43:40+00:00", "00:00:55", "SMT", 16965 / 60]
+	]),
 
 	"1910" : helpers.makeTestYear("America/Punta_Arenas", [
-		["1910-01-10T04:42:45+00:00", "23:59:59", "SMT", 16966 / 60],
-		["1910-01-10T04:42:46+00:00", "23:42:46", "-05", 300]
+		["1910-01-10T04:42:44+00:00", "23:59:59", "SMT", 16965 / 60],
+		["1910-01-10T04:42:45+00:00", "23:42:45", "-05", 300]
 	]),
 
 	"1916" : helpers.makeTestYear("America/Punta_Arenas", [
 		["1916-07-01T04:59:59+00:00", "23:59:59", "-05", 300],
-		["1916-07-01T05:00:00+00:00", "00:17:14", "SMT", 16966 / 60]
+		["1916-07-01T05:00:00+00:00", "00:17:15", "SMT", 16965 / 60]
 	]),
 
 	"1918" : helpers.makeTestYear("America/Punta_Arenas", [
-		["1918-09-10T04:42:45+00:00", "23:59:59", "SMT", 16966 / 60],
-		["1918-09-10T04:42:46+00:00", "00:42:46", "-04", 240]
+		["1918-09-10T04:42:44+00:00", "23:59:59", "SMT", 16965 / 60],
+		["1918-09-10T04:42:45+00:00", "00:42:45", "-04", 240]
 	]),
 
 	"1919" : helpers.makeTestYear("America/Punta_Arenas", [
 		["1919-07-01T03:59:59+00:00", "23:59:59", "-04", 240],
-		["1919-07-01T04:00:00+00:00", "23:17:14", "SMT", 16966 / 60]
+		["1919-07-01T04:00:00+00:00", "23:17:15", "SMT", 16965 / 60]
 	]),
 
 	"1927" : helpers.makeTestYear("America/Punta_Arenas", [
-		["1927-09-01T04:42:45+00:00", "23:59:59", "SMT", 16966 / 60],
-		["1927-09-01T04:42:46+00:00", "00:42:46", "-04", 240]
+		["1927-09-01T04:42:44+00:00", "23:59:59", "SMT", 16965 / 60],
+		["1927-09-01T04:42:45+00:00", "00:42:45", "-04", 240]
 	]),
 
 	"1928" : helpers.makeTestYear("America/Punta_Arenas", [
@@ -73,6 +77,11 @@ exports["America/Punta_Arenas"] = {
 		["1942-06-01T04:00:00+00:00", "23:00:00", "-05", 300],
 		["1942-08-01T04:59:59+00:00", "23:59:59", "-05", 300],
 		["1942-08-01T05:00:00+00:00", "01:00:00", "-04", 240]
+	]),
+
+	"1946" : helpers.makeTestYear("America/Punta_Arenas", [
+		["1946-08-29T03:59:59+00:00", "23:59:59", "-04", 240],
+		["1946-08-29T04:00:00+00:00", "00:00:00", "-04", 240]
 	]),
 
 	"1947" : helpers.makeTestYear("America/Punta_Arenas", [
@@ -414,7 +423,6 @@ exports["America/Punta_Arenas"] = {
 		["2016-05-15T03:00:00+00:00", "23:00:00", "-04", 240],
 		["2016-08-14T03:59:59+00:00", "23:59:59", "-04", 240],
 		["2016-08-14T04:00:00+00:00", "01:00:00", "-03", 180],
-		["2016-12-04T02:59:59+00:00", "23:59:59", "-03", 180],
-		["2016-12-04T03:00:00+00:00", "00:00:00", "-03", 180]
+		["2016-12-04T02:59:59+00:00", "23:59:59", "-03", 180]
 	])
 };

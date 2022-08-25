@@ -8,6 +8,10 @@ exports["Canada/Yukon"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Canada/Yukon", { abbr: true, expect: "America/Whitehorse" }),
 
+	"1900" : helpers.makeTestYear("Canada/Yukon", [
+		["1900-08-20T09:00:12+00:00", "00:00:12", "YST", 540]
+	]),
+
 	"1918" : helpers.makeTestYear("Canada/Yukon", [
 		["1918-04-14T10:59:59+00:00", "01:59:59", "YST", 540],
 		["1918-04-14T11:00:00+00:00", "03:00:00", "YDT", 480],
@@ -329,7 +333,6 @@ exports["Canada/Yukon"] = {
 	"2020" : helpers.makeTestYear("Canada/Yukon", [
 		["2020-03-08T09:59:59+00:00", "01:59:59", "PST", 480],
 		["2020-03-08T10:00:00+00:00", "03:00:00", "PDT", 420],
-		["2020-11-01T06:59:59+00:00", "23:59:59", "PDT", 420],
-		["2020-11-01T07:00:00+00:00", "00:00:00", "MST", 420]
+		["2020-11-01T06:59:59+00:00", "23:59:59", "PDT", 420]
 	])
 };

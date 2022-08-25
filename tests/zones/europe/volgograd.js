@@ -9,7 +9,6 @@ exports["Europe/Volgograd"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Volgograd", { abbr: true }),
 
 	"1920" : helpers.makeTestYear("Europe/Volgograd", [
-		["1920-01-02T21:02:19+00:00", "23:59:59", "LMT", -10660 / 60],
 		["1920-01-02T21:02:20+00:00", "00:02:20", "+03", -180]
 	]),
 
@@ -242,7 +241,6 @@ exports["Europe/Volgograd"] = {
 	]),
 
 	"2020" : helpers.makeTestYear("Europe/Volgograd", [
-		["2020-12-26T21:59:59+00:00", "01:59:59", "+04", -240],
-		["2020-12-26T22:00:00+00:00", "01:00:00", "+03", -180]
+		["2020-12-26T21:59:59+00:00", "01:59:59", "+04", -240]
 	])
 };

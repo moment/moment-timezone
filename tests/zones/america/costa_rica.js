@@ -8,6 +8,10 @@ exports["America/Costa_Rica"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Costa_Rica", { abbr: true, expect: "America/Managua" }),
 
+	"1890" : helpers.makeTestYear("America/Costa_Rica", [
+		["1890-01-01T05:36:13+00:00", "00:00:00", "SJMT", 20173 / 60]
+	]),
+
 	"1921" : helpers.makeTestYear("America/Costa_Rica", [
 		["1921-01-15T05:36:12+00:00", "23:59:59", "SJMT", 20173 / 60],
 		["1921-01-15T05:36:13+00:00", "23:36:13", "CST", 360]
@@ -37,7 +41,6 @@ exports["America/Costa_Rica"] = {
 	"1992" : helpers.makeTestYear("America/Costa_Rica", [
 		["1992-01-18T05:59:59+00:00", "23:59:59", "CST", 360],
 		["1992-01-18T06:00:00+00:00", "01:00:00", "CDT", 300],
-		["1992-03-15T04:59:59+00:00", "23:59:59", "CDT", 300],
-		["1992-03-15T05:00:00+00:00", "23:00:00", "CST", 360]
+		["1992-03-15T04:59:59+00:00", "23:59:59", "CDT", 300]
 	])
 };

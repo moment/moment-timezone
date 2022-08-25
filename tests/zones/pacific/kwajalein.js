@@ -8,6 +8,10 @@ exports["Pacific/Kwajalein"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Kwajalein", { abbr: true, expect: "Asia/Kamchatka" }),
 
+	"1900" : helpers.makeTestYear("Pacific/Kwajalein", [
+		["1900-12-31T12:50:40+00:00", "23:50:40", "+11", -660]
+	]),
+
 	"1936" : helpers.makeTestYear("Pacific/Kwajalein", [
 		["1936-12-31T12:59:59+00:00", "23:59:59", "+11", -660],
 		["1936-12-31T13:00:00+00:00", "23:00:00", "+10", -600]
@@ -29,7 +33,6 @@ exports["Pacific/Kwajalein"] = {
 	]),
 
 	"1993" : helpers.makeTestYear("Pacific/Kwajalein", [
-		["1993-08-21T11:59:59+00:00", "23:59:59", "-12", 720],
-		["1993-08-21T12:00:00+00:00", "00:00:00", "+12", -720]
+		["1993-08-21T11:59:59+00:00", "23:59:59", "-12", 720]
 	])
 };

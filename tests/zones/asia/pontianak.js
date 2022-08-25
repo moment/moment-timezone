@@ -9,7 +9,6 @@ exports["Asia/Pontianak"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Pontianak", { abbr: true, expect: "Asia/Jakarta" }),
 
 	"1908" : helpers.makeTestYear("Asia/Pontianak", [
-		["1908-04-30T16:42:39+00:00", "23:59:59", "LMT", -26240 / 60],
 		["1908-04-30T16:42:40+00:00", "00:00:00", "PMT", -26240 / 60]
 	]),
 
@@ -44,7 +43,6 @@ exports["Asia/Pontianak"] = {
 	]),
 
 	"1987" : helpers.makeTestYear("Asia/Pontianak", [
-		["1987-12-31T15:59:59+00:00", "23:59:59", "WITA", -480],
-		["1987-12-31T16:00:00+00:00", "23:00:00", "WIB", -420]
+		["1987-12-31T15:59:59+00:00", "23:59:59", "WITA", -480]
 	])
 };

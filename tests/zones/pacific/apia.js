@@ -8,6 +8,10 @@ exports["Pacific/Apia"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Apia", { abbr: true }),
 
+	"1892" : helpers.makeTestYear("Pacific/Apia", [
+		["1892-07-04T11:26:56+00:00", "00:00:00", "LMT", 41216 / 60]
+	]),
+
 	"1911" : helpers.makeTestYear("Pacific/Apia", [
 		["1911-01-01T11:26:55+00:00", "23:59:59", "LMT", 41216 / 60],
 		["1911-01-01T11:26:56+00:00", "23:56:56", "-1130", 690]
@@ -96,7 +100,6 @@ exports["Pacific/Apia"] = {
 	]),
 
 	"2021" : helpers.makeTestYear("Pacific/Apia", [
-		["2021-04-03T13:59:59+00:00", "03:59:59", "+14", -840],
-		["2021-04-03T14:00:00+00:00", "03:00:00", "+13", -780]
+		["2021-04-03T13:59:59+00:00", "03:59:59", "+14", -840]
 	])
 };

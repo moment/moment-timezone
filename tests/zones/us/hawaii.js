@@ -8,6 +8,10 @@ exports["US/Hawaii"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("US/Hawaii", { abbr: true, expect: "Pacific/Honolulu" }),
 
+	"1896" : helpers.makeTestYear("US/Hawaii", [
+		["1896-01-13T22:31:26+00:00", "12:01:26", "HST", 630]
+	]),
+
 	"1933" : helpers.makeTestYear("US/Hawaii", [
 		["1933-04-30T12:29:59+00:00", "01:59:59", "HST", 630],
 		["1933-04-30T12:30:00+00:00", "03:00:00", "HDT", 570],
@@ -28,7 +32,6 @@ exports["US/Hawaii"] = {
 	]),
 
 	"1947" : helpers.makeTestYear("US/Hawaii", [
-		["1947-06-08T12:29:59+00:00", "01:59:59", "HST", 630],
-		["1947-06-08T12:30:00+00:00", "02:30:00", "HST", 600]
+		["1947-06-08T12:29:59+00:00", "01:59:59", "HST", 630]
 	])
 };

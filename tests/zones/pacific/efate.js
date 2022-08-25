@@ -9,7 +9,6 @@ exports["Pacific/Efate"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Efate", { abbr: true, expect: "Asia/Sakhalin" }),
 
 	"1912" : helpers.makeTestYear("Pacific/Efate", [
-		["1912-01-12T12:46:43+00:00", "23:59:59", "LMT", -40396 / 60],
 		["1912-01-12T12:46:44+00:00", "23:46:44", "+11", -660]
 	]),
 
@@ -92,7 +91,6 @@ exports["Pacific/Efate"] = {
 	]),
 
 	"1993" : helpers.makeTestYear("Pacific/Efate", [
-		["1993-01-23T11:59:59+00:00", "23:59:59", "+12", -720],
-		["1993-01-23T12:00:00+00:00", "23:00:00", "+11", -660]
+		["1993-01-23T11:59:59+00:00", "23:59:59", "+12", -720]
 	])
 };

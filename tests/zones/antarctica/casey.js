@@ -8,10 +8,6 @@ exports["Antarctica/Casey"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Antarctica/Casey", { abbr: true }),
 
-	"1968" : helpers.makeTestYear("Antarctica/Casey", [
-		["1968-12-31T23:59:59+00:00", "23:59:59", "-00", 0]
-	]),
-
 	"1969" : helpers.makeTestYear("Antarctica/Casey", [
 		["1969-01-01T00:00:00+00:00", "08:00:00", "+08", -480]
 	]),
@@ -58,7 +54,6 @@ exports["Antarctica/Casey"] = {
 	"2020" : helpers.makeTestYear("Antarctica/Casey", [
 		["2020-03-07T15:59:59+00:00", "02:59:59", "+11", -660],
 		["2020-03-07T16:00:00+00:00", "00:00:00", "+08", -480],
-		["2020-10-03T16:00:59+00:00", "00:00:59", "+08", -480],
-		["2020-10-03T16:01:00+00:00", "03:01:00", "+11", -660]
+		["2020-10-03T16:00:59+00:00", "00:00:59", "+08", -480]
 	])
 };

@@ -4,12 +4,11 @@ var helpers = require("../../helpers/helpers");
 
 exports["America/Fortaleza"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("America/Fortaleza", { offset: true }),
+	"guess:by:offset" : helpers.makeTestGuess("America/Fortaleza", { offset: true, expect: "America/Sao_Paulo" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("America/Fortaleza", { abbr: true }),
+	"guess:by:abbr" : helpers.makeTestGuess("America/Fortaleza", { abbr: true, expect: "America/Sao_Paulo" }),
 
 	"1914" : helpers.makeTestYear("America/Fortaleza", [
-		["1914-01-01T02:33:59+00:00", "23:59:59", "LMT", 154],
 		["1914-01-01T02:34:00+00:00", "23:34:00", "-03", 180]
 	]),
 
@@ -157,7 +156,6 @@ exports["America/Fortaleza"] = {
 	]),
 
 	"2002" : helpers.makeTestYear("America/Fortaleza", [
-		["2002-02-17T01:59:59+00:00", "23:59:59", "-02", 120],
-		["2002-02-17T02:00:00+00:00", "23:00:00", "-03", 180]
+		["2002-02-17T01:59:59+00:00", "23:59:59", "-02", 120]
 	])
 };

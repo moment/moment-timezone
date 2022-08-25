@@ -8,6 +8,10 @@ exports["Australia/Eucla"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Australia/Eucla", { abbr: true }),
 
+	"1895" : helpers.makeTestYear("Australia/Eucla", [
+		["1895-11-30T15:24:32+00:00", "00:09:32", "+0845", -525]
+	]),
+
 	"1916" : helpers.makeTestYear("Australia/Eucla", [
 		["1916-12-31T17:14:59+00:00", "01:59:59", "+0845", -525],
 		["1916-12-31T17:15:00+00:00", "03:00:00", "+0945", -585]
@@ -85,7 +89,6 @@ exports["Australia/Eucla"] = {
 	]),
 
 	"2009" : helpers.makeTestYear("Australia/Eucla", [
-		["2009-03-28T17:14:59+00:00", "02:59:59", "+0945", -585],
-		["2009-03-28T17:15:00+00:00", "02:00:00", "+0845", -525]
+		["2009-03-28T17:14:59+00:00", "02:59:59", "+0945", -585]
 	])
 };

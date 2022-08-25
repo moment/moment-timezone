@@ -4,9 +4,13 @@ var helpers = require("../../../helpers/helpers");
 
 exports["America/Argentina/La_Rioja"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("America/Argentina/La_Rioja", { offset: true, expect: "America/Fortaleza" }),
+	"guess:by:offset" : helpers.makeTestGuess("America/Argentina/La_Rioja", { offset: true, expect: "America/Sao_Paulo" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("America/Argentina/La_Rioja", { abbr: true, expect: "America/Fortaleza" }),
+	"guess:by:abbr" : helpers.makeTestGuess("America/Argentina/La_Rioja", { abbr: true, expect: "America/Sao_Paulo" }),
+
+	"1894" : helpers.makeTestYear("America/Argentina/La_Rioja", [
+		["1894-10-31T04:27:24+00:00", "00:10:36", "CMT", 15408 / 60]
+	]),
 
 	"1920" : helpers.makeTestYear("America/Argentina/La_Rioja", [
 		["1920-05-01T04:16:47+00:00", "23:59:59", "CMT", 15408 / 60],
@@ -228,7 +232,6 @@ exports["America/Argentina/La_Rioja"] = {
 	]),
 
 	"2008" : helpers.makeTestYear("America/Argentina/La_Rioja", [
-		["2008-03-16T01:59:59+00:00", "23:59:59", "-02", 120],
-		["2008-03-16T02:00:00+00:00", "23:00:00", "-03", 180]
+		["2008-03-16T01:59:59+00:00", "23:59:59", "-02", 120]
 	])
 };

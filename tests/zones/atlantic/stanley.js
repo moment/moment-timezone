@@ -4,9 +4,13 @@ var helpers = require("../../helpers/helpers");
 
 exports["Atlantic/Stanley"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Atlantic/Stanley", { offset: true, expect: "America/Fortaleza" }),
+	"guess:by:offset" : helpers.makeTestGuess("Atlantic/Stanley", { offset: true, expect: "America/Sao_Paulo" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Stanley", { abbr: true, expect: "America/Fortaleza" }),
+	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Stanley", { abbr: true, expect: "America/Sao_Paulo" }),
+
+	"1890" : helpers.makeTestYear("Atlantic/Stanley", [
+		["1890-01-01T03:51:24+00:00", "00:00:00", "SMT", 13884 / 60]
+	]),
 
 	"1912" : helpers.makeTestYear("Atlantic/Stanley", [
 		["1912-03-12T03:51:23+00:00", "23:59:59", "SMT", 13884 / 60],
@@ -250,7 +254,6 @@ exports["Atlantic/Stanley"] = {
 	"2010" : helpers.makeTestYear("Atlantic/Stanley", [
 		["2010-04-18T04:59:59+00:00", "01:59:59", "-03", 180],
 		["2010-04-18T05:00:00+00:00", "01:00:00", "-04", 240],
-		["2010-09-05T05:59:59+00:00", "01:59:59", "-04", 240],
-		["2010-09-05T06:00:00+00:00", "03:00:00", "-03", 180]
+		["2010-09-05T05:59:59+00:00", "01:59:59", "-04", 240]
 	])
 };

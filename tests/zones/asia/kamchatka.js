@@ -9,7 +9,6 @@ exports["Asia/Kamchatka"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Kamchatka", { abbr: true }),
 
 	"1922" : helpers.makeTestYear("Asia/Kamchatka", [
-		["1922-11-09T13:25:23+00:00", "23:59:59", "LMT", -38076 / 60],
 		["1922-11-09T13:25:24+00:00", "00:25:24", "+11", -660]
 	]),
 
@@ -231,7 +230,6 @@ exports["Asia/Kamchatka"] = {
 	]),
 
 	"2011" : helpers.makeTestYear("Asia/Kamchatka", [
-		["2011-03-26T14:59:59+00:00", "01:59:59", "+11", -660],
-		["2011-03-26T15:00:00+00:00", "03:00:00", "+12", -720]
+		["2011-03-26T14:59:59+00:00", "01:59:59", "+11", -660]
 	])
 };

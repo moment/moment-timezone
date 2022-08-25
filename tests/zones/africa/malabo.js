@@ -9,7 +9,6 @@ exports["Africa/Malabo"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Malabo", { abbr: true, expect: "Africa/Lagos" }),
 
 	"1905" : helpers.makeTestYear("Africa/Malabo", [
-		["1905-06-30T23:46:24+00:00", "23:59:59", "LMT", -815 / 60],
 		["1905-06-30T23:46:25+00:00", "23:46:25", "GMT", 0]
 	]),
 
@@ -24,7 +23,6 @@ exports["Africa/Malabo"] = {
 	]),
 
 	"1919" : helpers.makeTestYear("Africa/Malabo", [
-		["1919-08-31T23:29:59+00:00", "23:59:59", "+0030", -30],
-		["1919-08-31T23:30:00+00:00", "00:30:00", "WAT", -60]
+		["1919-08-31T23:29:59+00:00", "23:59:59", "+0030", -30]
 	])
 };
