@@ -55,15 +55,12 @@ module.exports = function (grunt) {
 		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
 			meta = grunt.file.readJSON('data/meta/' + version + '.json'),
 			output = {
-				version : version,
+				version : version === 'latest' ?
+					findVersion(grunt.file.read('temp/download/latest/NEWS')) : version,
 				zones : zones.map(dedupe),
 				links : [],
 				countries : addCountries(meta.countries)
 			};
-
-		if (version === 'latest') {
-			output.version = findVersion(grunt.file.read('temp/download/latest/NEWS'));
-		}
 
 		grunt.file.mkdir('data/unpacked');
 		grunt.file.write('data/unpacked/' + version + '.json', JSON.stringify(output, null, 2));
