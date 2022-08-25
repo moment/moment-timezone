@@ -18,7 +18,6 @@ module.exports = function (grunt) {
 			return tz.packCountry(unpacked);
 		});
 
-		grunt.file.mkdir('data/packed');
 		grunt.file.write('data/packed/' + version + '.json', JSON.stringify(output, null, '\t'));
 
 		grunt.log.ok('Packed data for ' + version);

@@ -62,7 +62,6 @@ module.exports = function (grunt) {
 			});
 		});
 
-		grunt.file.mkdir('temp/collect');
 		grunt.file.write('temp/collect/' + version + '.json', JSON.stringify(data, null, 2));
 
 		grunt.log.ok('Collected data for ' + version);

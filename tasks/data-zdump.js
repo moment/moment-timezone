@@ -35,8 +35,6 @@ module.exports = function (grunt) {
 			execFile('zdump', ['-v', src], { maxBuffer: 20*1024*1024 }, function (err, stdout) {
 				if (err) { throw err; }
 
-				grunt.file.mkdir(path.dirname(dest));
-
 				if (stdout.length === 0) {
 					// on some systems, when there are no transitions then we have
 					// to get creative to learn the offset and abbreviation

@@ -62,7 +62,6 @@ module.exports = function (grunt) {
 				countries : addCountries(meta.countries)
 			};
 
-		grunt.file.mkdir('data/unpacked');
 		grunt.file.write('data/unpacked/' + version + '.json', JSON.stringify(output, null, 2));
 
 		grunt.log.ok('Deduped data for ' + version);

@@ -131,7 +131,6 @@ module.exports = function (grunt) {
 			zones: zones
 		};
 
-		grunt.file.mkdir('data/meta');
 		grunt.file.write('data/meta/' + version + '.json', JSON.stringify(output, null, '\t'));
 
 		grunt.log.ok('Added metadata for ' + version);

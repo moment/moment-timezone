@@ -82,7 +82,6 @@ module.exports = function (grunt) {
 			var data = intro(zone.name) + guessTests(zone) + yearTests(zone) + '\n};',
 				dest = path.join('tests/zones', zone.name.toLowerCase() + '.js');
 
-			grunt.file.mkdir(path.dirname(dest));
 			grunt.file.write(dest, data);
 			grunt.verbose.ok("Created " + zone.name + " tests.");
 		});
