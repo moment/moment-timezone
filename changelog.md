@@ -1,3 +1,7 @@
+### `0.5.36` _2022.08-25_
+* IANA TZDB 2022c
+* improvements/fixes to data pipeline
+
 ### `0.5.35` _2022-08-23_
 * Fix command injection in data pipeline https://github.com/moment/moment-timezone/security/advisories/GHSA-56x4-j7p9-fcf9
 * Fix cleartext transmission of sensitive information https://github.com/moment/moment-timezone/security/advisories/GHSA-v78c-4p63-2j6c
