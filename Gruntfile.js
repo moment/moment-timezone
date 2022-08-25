@@ -43,7 +43,8 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			data: ['temp']
+			data: ['temp'],
+			tests: ['tests/zones'],
 		},
 
 		exec: {

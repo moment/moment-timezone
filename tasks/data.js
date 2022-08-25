@@ -6,6 +6,9 @@ module.exports = function (grunt) {
 
 		if (!grunt.option('dirty-run')) {
 			grunt.task.run('clean:data');
+			if (version === 'latest') {
+				grunt.task.run('clean:tests');
+			}
 		}
 
 		grunt.task.run([
