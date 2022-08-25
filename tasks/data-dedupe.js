@@ -26,15 +26,6 @@ function dedupe(zone) {
 	};
 }
 
-function findVersion (source) {
-	var matches = source.match(/\nRelease (\d{4}[a-z]) /);
-
-	if (matches && matches[1]) {
-		return matches[1];
-	}
-	throw new Error("Could not find version from temp/download/latest/NEWS.");
-}
-
 function addCountries(countries) {
 	var result = [];
 
@@ -55,14 +46,16 @@ module.exports = function (grunt) {
 		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
 			meta = grunt.file.readJSON('data/meta/' + version + '.json'),
 			output = {
-				version : version === 'latest' ?
-					findVersion(grunt.file.read('temp/download/latest/NEWS')) : version,
+				version : meta.version,
 				zones : zones.map(dedupe),
 				links : [],
 				countries : addCountries(meta.countries)
 			};
 
 		grunt.file.write('data/unpacked/' + version + '.json', JSON.stringify(output, null, 2));
+		if (version === 'latest') {
+			grunt.file.copy('data/unpacked/' + version + '.json', 'data/unpacked/' + output.version + '.json');
+		}
 
 		grunt.log.ok('Deduped data for ' + version);
 	});

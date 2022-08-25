@@ -19,6 +19,9 @@ module.exports = function (grunt) {
 		});
 
 		grunt.file.write('data/packed/' + version + '.json', JSON.stringify(output, null, '\t'));
+		if (version === 'latest') {
+			grunt.file.copy('data/packed/latest.json', 'data/packed/' + unpacked.version + '.json');
+		}
 
 		grunt.log.ok('Packed data for ' + version);
 	});

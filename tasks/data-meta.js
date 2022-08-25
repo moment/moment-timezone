@@ -1,5 +1,22 @@
 "use strict";
 
+var path = require('path');
+
+function parseVersion (grunt, version) {
+	var newsPath = path.join('temp/download', version, 'NEWS'),
+		input = grunt.file.read(newsPath),
+		matches = input.match(/\nRelease (\d{4}[a-z]) /);
+
+	if (matches && matches[1]) {
+		if (version !== 'latest' && version !== matches[1]) {
+			throw new Error("Parsed version " + matches[1] +
+				" differs from specified version " + version)
+		}
+		return matches[1];
+	}
+	throw new Error("Could not find version from " + newsPath);
+}
+
 function parseLatLong (input, isLong) {
 	var sign = input[0] === '+' ? 1 : -1,
 		deg = ~~input.substr(1, 2 + isLong) * sign,
@@ -127,12 +144,16 @@ module.exports = function (grunt) {
 		var validCountries = filterCountries(countries);
 
 		var output = {
+			version: parseVersion(grunt, version),
 			countries: validCountries,
 			zones: zones
 		};
 
 		grunt.file.write('data/meta/' + version + '.json', JSON.stringify(output, null, '\t'));
+		if (version === 'latest') {
+			grunt.file.copy('data/meta/latest.json', 'data/meta/' + output.version + '.json');
+		}
 
-		grunt.log.ok('Added metadata for ' + version);
+		grunt.log.ok('Added metadata for ' + version + (version === 'latest' ? ': ' + output.version : ''));
 	});
 };
