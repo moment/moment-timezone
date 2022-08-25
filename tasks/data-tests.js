@@ -74,18 +74,32 @@ function guessTests (zone) {
 }
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', function () {
-		tz.load(grunt.file.readJSON('data/packed/latest.json'));
-		var zones = grunt.file.readJSON('temp/collect/latest.json');
+	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', function (version) {
+		version = version || 'latest';
+		tz.load(grunt.file.readJSON('data/packed/' + version + '.json'));
+		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
+			testBase = version === 'latest' ? 'tests' : path.join('temp/tests', version)
 
 		zones.forEach(function (zone) {
 			var data = intro(zone.name) + guessTests(zone) + yearTests(zone) + '\n};',
-				dest = path.join('tests/zones', zone.name.toLowerCase() + '.js');
+				dest = path.join(testBase, 'zones', zone.name.toLowerCase() + '.js');
 
 			grunt.file.write(dest, data);
 			grunt.verbose.ok("Created " + zone.name + " tests.");
 		});
 
+		if (version !== 'latest') {
+			grunt.file.copy('tests/helpers/helpers.js',
+					path.join(testBase, 'helpers/helpers.js'),
+					{process: function (helperCode) {
+				return helperCode.replace(
+						"var moment = require('../../index')",
+						"var moment = require('../index')");
+			}});
+			grunt.file.write(path.join(testBase, 'index.js'),
+				'(module.exports = require("../../../moment-timezone"))' +
+				'.tz.load(require("../../../data/packed/' + version + '.json"));');
+		}
 
 		grunt.log.ok('Created tests');
 	});
