@@ -7,6 +7,7 @@ import moment = require('../');
 // copy(include.filter(v => !exclude.some(v2 => v2 === v)).map(v => v.innerText).join('\n\n'));
 
 moment().tz("America/Los_Angeles").format();
+moment.tz.dataVersion; // 2022c
 
 var a = moment.tz("2013-11-18 11:55", "America/Toronto");
 var b = moment.tz("May 12th 2014 8PM", "MMM Do YYYY hA", "America/Toronto");
