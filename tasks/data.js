@@ -8,12 +8,12 @@ module.exports = function (grunt) {
 
 		grunt.task.run([
 			'data-download:' + version,
+			'data-meta:'     + version,
 			'data-zic:'      + version,
 			'data-zdump:'    + version,
 			'data-collect:'  + version,
 			'data-dedupe:'   + version,
 			'data-pack:'     + version,
-			'data-meta:'     + version
 		]);
 
 		if (version === 'latest') {
