@@ -27,6 +27,7 @@ module.exports = function (grunt) {
 					utc    = moment.utc(parts.slice(2, 6).join(' '), format),
 					local  = moment.utc(parts.slice(9, 13).join(' '), format);
 
+				if (line.search('failed') !== -1) { return; }
 				if (parts.length < 13) { return; }
 
 				offsets.push(+utc.diff(local, 'minutes', true).toFixed(4));
