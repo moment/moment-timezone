@@ -14,10 +14,7 @@ module.exports = function (grunt) {
 			'data-collect:'  + version,
 			'data-dedupe:'   + version,
 			'data-pack:'     + version,
+			'data-tests:'    + version,
 		]);
-
-		if (version === 'latest') {
-			grunt.task.run('data-tests');
-		}
 	});
 };
