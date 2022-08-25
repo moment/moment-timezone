@@ -6,7 +6,6 @@ module.exports = function(grunt) {
 		nodeunit : {
 			zones : [
 				"tests/zones/**/*.js",
-				"tests/countries/*.js"
 			],
 			countries: [
 				"tests/countries/*.js"
