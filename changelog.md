@@ -28,6 +28,9 @@ Thanks to the OpenSSF Alpha-Omega project for reporting these!
 * Updated data to IANA TZDB `2020a`
 * Fixed typescript definitions
 
+NOTE: You might need to un-install @types/moment-timezone. Check
+https://github.com/moment/moment-timezone/issues/858 for more info
+
 ### `0.5.29` _2020-05-16_
 * Merged fix of es6 module loading issue https://github.com/moment/moment-timezone/commit/1fd42349189b24e15c60f162dc8c40b42db79dfe
 * Merged PR with typescript declarations https://github.com/moment/moment-timezone/commit/ed529ea6fbcc70315c0c3f6d7c7cb70eadf56b03
