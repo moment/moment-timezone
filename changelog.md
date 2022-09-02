@@ -1,8 +1,8 @@
-### `0.5.37` _2022.08-25_
+### `0.5.37` _2022-08-25_
 * Re-publish npm package, because of extra folder present in 0.5.36, check
   https://github.com/moment/moment-timezone/issues/999
 
-### `0.5.36` _2022.08-25_
+### `0.5.36` _2022-08-25_
 * IANA TZDB 2022c
 * improvements/fixes to data pipeline
 
@@ -12,10 +12,10 @@
 
 Thanks to the OpenSSF Alpha-Omega project for reporting these!
 
-### `0.5.34` _2020-11-10_
+### `0.5.34` _2021-11-10_
 * Updated data to IANA TZDB `2021e`
 
-### `0.5.33` _2020-11-15_
+### `0.5.33` _2021-02-06_
 * Updated data to IANA TZDB `2021a`
 
 ### `0.5.32` _2020-11-14_
