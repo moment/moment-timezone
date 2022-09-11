@@ -2,6 +2,10 @@ name: CI tests
 
 on:
   push:
+    branches:
+      - master
+      - develop
+      - release*
   pull_request:
 
 jobs:
