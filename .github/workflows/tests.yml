@@ -1,0 +1,37 @@
+name: CI tests
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - release*
+  pull_request:
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Use the latest version of Node.js, plus the 3 most recent LTS lines
+        node-version:
+          - latest
+          - lts/*
+          - lts/-1
+          - lts/-2 # Probably EOL depending on release schedules, but still good to test
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
