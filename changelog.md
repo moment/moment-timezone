@@ -1,3 +1,8 @@
+### `0.5.38` _2022-10-15_
+* Updated data to IANA TZDB `2022e`
+* Added `moment.tz.dataVersion` property to TypeScript definitions [#930](https://github.com/moment/moment-timezone/issues/930)
+* Removed temporary `.tar.gz` files from npm releases [#1000](https://github.com/moment/moment-timezone/pull/1000)
+
 ### `0.5.37` _2022-08-25_
 * Re-publish npm package, because of extra folder present in 0.5.36, check
   https://github.com/moment/moment-timezone/issues/999
