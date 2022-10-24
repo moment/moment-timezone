@@ -9,7 +9,7 @@ exports["America/Santa_Isabel"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Santa_Isabel", { abbr: true, expect: "America/Los_Angeles" }),
 
 	"1922" : helpers.makeTestYear("America/Santa_Isabel", [
-		["1922-01-01T08:00:00+00:00", "01:00:00", "MST", 420]
+		["1922-01-01T07:00:00+00:00", "00:00:00", "MST", 420]
 	]),
 
 	"1924" : helpers.makeTestYear("America/Santa_Isabel", [

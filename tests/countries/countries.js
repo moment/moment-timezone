@@ -485,7 +485,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Europe/Tirane').countries(), ["AL"]);
 		test.deepEqual(tz.zone('Europe/Tiraspol').countries(), []);
 		test.deepEqual(tz.zone('Europe/Ulyanovsk').countries(), ["RU"]);
-		test.deepEqual(tz.zone('Europe/Uzhgorod').countries(), ["UA"]);
+		test.deepEqual(tz.zone('Europe/Uzhgorod').countries(), []);
 		test.deepEqual(tz.zone('Europe/Vaduz').countries(), ["LI"]);
 		test.deepEqual(tz.zone('Europe/Vatican').countries(), ["VA"]);
 		test.deepEqual(tz.zone('Europe/Vienna').countries(), ["AT"]);
@@ -493,7 +493,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Europe/Volgograd').countries(), ["RU"]);
 		test.deepEqual(tz.zone('Europe/Warsaw').countries(), ["PL"]);
 		test.deepEqual(tz.zone('Europe/Zagreb').countries(), ["HR"]);
-		test.deepEqual(tz.zone('Europe/Zaporozhye').countries(), ["UA"]);
+		test.deepEqual(tz.zone('Europe/Zaporozhye').countries(), []);
 		test.deepEqual(tz.zone('Europe/Zurich').countries(), ["CH","DE","LI"]);
 		test.deepEqual(tz.zone('GB').countries(), []);
 		test.deepEqual(tz.zone('GB-Eire').countries(), []);
@@ -833,7 +833,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("TV"), ["Pacific/Funafuti","Pacific/Tarawa"]);
 		test.deepEqual(tz.zonesForCountry("TW"), ["Asia/Taipei"]);
 		test.deepEqual(tz.zonesForCountry("TZ"), ["Africa/Dar_es_Salaam","Africa/Nairobi"]);
-		test.deepEqual(tz.zonesForCountry("UA"), ["Europe/Kyiv","Europe/Simferopol","Europe/Uzhgorod","Europe/Zaporozhye"]);
+		test.deepEqual(tz.zonesForCountry("UA"), ["Europe/Kyiv","Europe/Simferopol"]);
 		test.deepEqual(tz.zonesForCountry("UG"), ["Africa/Kampala","Africa/Nairobi"]);
 		test.deepEqual(tz.zonesForCountry("UM"), ["Pacific/Honolulu","Pacific/Midway","Pacific/Pago_Pago","Pacific/Tarawa","Pacific/Wake"]);
 		test.deepEqual(tz.zonesForCountry("US"), ["America/Adak","America/Anchorage","America/Boise","America/Chicago","America/Denver","America/Detroit","America/Indiana/Indianapolis","America/Indiana/Knox","America/Indiana/Marengo","America/Indiana/Petersburg","America/Indiana/Tell_City","America/Indiana/Vevay","America/Indiana/Vincennes","America/Indiana/Winamac","America/Juneau","America/Kentucky/Louisville","America/Kentucky/Monticello","America/Los_Angeles","America/Menominee","America/Metlakatla","America/New_York","America/Nome","America/North_Dakota/Beulah","America/North_Dakota/Center","America/North_Dakota/New_Salem","America/Phoenix","America/Sitka","America/Yakutat","Pacific/Honolulu"]);

@@ -1,3 +1,4 @@
+*.tar.gz
 temp
 tests
 typing-tests
