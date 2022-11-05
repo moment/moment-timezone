@@ -176,7 +176,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/Montserrat').countries(), ["MS"]);
 		test.deepEqual(tz.zone('America/Nassau').countries(), ["BS"]);
 		test.deepEqual(tz.zone('America/New_York').countries(), ["US"]);
-		test.deepEqual(tz.zone('America/Nipigon').countries(), ["CA"]);
+		test.deepEqual(tz.zone('America/Nipigon').countries(), []);
 		test.deepEqual(tz.zone('America/Nome').countries(), ["US"]);
 		test.deepEqual(tz.zone('America/Noronha').countries(), ["BR"]);
 		test.deepEqual(tz.zone('America/North_Dakota/Beulah').countries(), ["US"]);
@@ -193,7 +193,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/Porto_Velho').countries(), ["BR"]);
 		test.deepEqual(tz.zone("America/Puerto_Rico").countries(), ["AG","AI","AW","BL","BQ","CA","CW","DM","GD","GP","KN","LC","MF","MS","PR","SX","TT","VC","VG","VI"]);
 		test.deepEqual(tz.zone('America/Punta_Arenas').countries(), ["CL"]);
-		test.deepEqual(tz.zone('America/Rainy_River').countries(), ["CA"]);
+		test.deepEqual(tz.zone('America/Rainy_River').countries(), []);
 		test.deepEqual(tz.zone('America/Rankin_Inlet').countries(), ["CA"]);
 		test.deepEqual(tz.zone('America/Recife').countries(), ["BR"]);
 		test.deepEqual(tz.zone('America/Regina').countries(), ["CA"]);
@@ -217,7 +217,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/Swift_Current').countries(), ["CA"]);
 		test.deepEqual(tz.zone('America/Tegucigalpa').countries(), ["HN"]);
 		test.deepEqual(tz.zone('America/Thule').countries(), ["GL"]);
-		test.deepEqual(tz.zone('America/Thunder_Bay').countries(), ["CA"]);
+		test.deepEqual(tz.zone('America/Thunder_Bay').countries(), []);
 		test.deepEqual(tz.zone('America/Tijuana').countries(), ["MX"]);
 		test.deepEqual(tz.zone('America/Toronto').countries(), ["BS","CA"]);
 		test.deepEqual(tz.zone('America/Tortola').countries(), ["VG"]);
@@ -642,7 +642,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("BW"), ["Africa/Gaborone","Africa/Maputo"]);
 		test.deepEqual(tz.zonesForCountry("BY"), ["Europe/Minsk"]);
 		test.deepEqual(tz.zonesForCountry("BZ"), ["America/Belize"]);
-		test.deepEqual(tz.zonesForCountry("CA"), ["America/Atikokan","America/Blanc-Sablon","America/Cambridge_Bay","America/Creston","America/Dawson","America/Dawson_Creek","America/Edmonton","America/Fort_Nelson","America/Glace_Bay","America/Goose_Bay","America/Halifax","America/Inuvik","America/Iqaluit","America/Moncton","America/Nipigon","America/Panama","America/Pangnirtung","America/Phoenix","America/Puerto_Rico","America/Rainy_River","America/Rankin_Inlet","America/Regina","America/Resolute","America/St_Johns","America/Swift_Current","America/Thunder_Bay","America/Toronto","America/Vancouver","America/Whitehorse","America/Winnipeg","America/Yellowknife"]);
+		test.deepEqual(tz.zonesForCountry("CA"), ["America/Atikokan","America/Blanc-Sablon","America/Cambridge_Bay","America/Creston","America/Dawson","America/Dawson_Creek","America/Edmonton","America/Fort_Nelson","America/Glace_Bay","America/Goose_Bay","America/Halifax","America/Inuvik","America/Iqaluit","America/Moncton","America/Panama","America/Pangnirtung","America/Phoenix","America/Puerto_Rico","America/Rankin_Inlet","America/Regina","America/Resolute","America/St_Johns","America/Swift_Current","America/Toronto","America/Vancouver","America/Whitehorse","America/Winnipeg","America/Yellowknife"]);
 		test.deepEqual(tz.zonesForCountry("CC"), ["Asia/Yangon","Indian/Cocos"]);
 		test.deepEqual(tz.zonesForCountry("CD"), ["Africa/Kinshasa","Africa/Lagos","Africa/Lubumbashi","Africa/Maputo"]);
 		test.deepEqual(tz.zonesForCountry("CF"), ["Africa/Bangui","Africa/Lagos"]);
