@@ -1,3 +1,6 @@
+### `0.5.39` _2022-11-13_
+* Updated data to IANA TZDB `2022f`
+
 ### `0.5.38` _2022-10-15_
 * Updated data to IANA TZDB `2022e`
 * Added `moment.tz.dataVersion` property to TypeScript definitions [#930](https://github.com/moment/moment-timezone/issues/930)
