@@ -8,10 +8,6 @@ exports["Asia/Manila"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Manila", { abbr: true }),
 
-	"1844" : helpers.makeTestYear("Asia/Manila", [
-		["1844-12-31T15:56:00+00:00", "00:00:00", "LMT", -484]
-	]),
-
 	"1899" : helpers.makeTestYear("Asia/Manila", [
 		["1899-05-10T15:55:59+00:00", "23:59:59", "LMT", -484],
 		["1899-05-10T15:56:00+00:00", "23:56:00", "PST", -480]
@@ -46,7 +42,6 @@ exports["Asia/Manila"] = {
 
 	"1978" : helpers.makeTestYear("Asia/Manila", [
 		["1978-03-21T15:59:59+00:00", "23:59:59", "PST", -480],
-		["1978-03-21T16:00:00+00:00", "01:00:00", "PDT", -540],
-		["1978-09-20T14:59:59+00:00", "23:59:59", "PDT", -540]
+		["1978-03-21T16:00:00+00:00", "01:00:00", "PDT", -540]
 	])
 };

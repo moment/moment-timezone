@@ -8,10 +8,6 @@ exports["Canada/Atlantic"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Canada/Atlantic", { abbr: true, expect: "America/Halifax" }),
 
-	"1902" : helpers.makeTestYear("Canada/Atlantic", [
-		["1902-06-15T04:14:24+00:00", "00:14:24", "AST", 240]
-	]),
-
 	"1916" : helpers.makeTestYear("Canada/Atlantic", [
 		["1916-04-01T03:59:59+00:00", "23:59:59", "AST", 240],
 		["1916-04-01T04:00:00+00:00", "01:00:00", "ADT", 180],
@@ -4037,7 +4033,6 @@ exports["Canada/Atlantic"] = {
 
 	"2499" : helpers.makeTestYear("Canada/Atlantic", [
 		["2499-03-08T05:59:59+00:00", "01:59:59", "AST", 240],
-		["2499-03-08T06:00:00+00:00", "03:00:00", "ADT", 180],
-		["2499-11-01T04:59:59+00:00", "01:59:59", "ADT", 180]
+		["2499-03-08T06:00:00+00:00", "03:00:00", "ADT", 180]
 	])
 };

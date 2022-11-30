@@ -8,10 +8,6 @@ exports["America/Merida"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Merida", { abbr: true, expect: "America/Mexico_City" }),
 
-	"1922" : helpers.makeTestYear("America/Merida", [
-		["1922-01-01T06:00:00+00:00", "00:00:00", "CST", 360]
-	]),
-
 	"1981" : helpers.makeTestYear("America/Merida", [
 		["1981-12-23T05:59:59+00:00", "23:59:59", "CST", 360],
 		["1981-12-23T06:00:00+00:00", "01:00:00", "EST", 300]
@@ -206,7 +202,6 @@ exports["America/Merida"] = {
 
 	"2022" : helpers.makeTestYear("America/Merida", [
 		["2022-04-03T07:59:59+00:00", "01:59:59", "CST", 360],
-		["2022-04-03T08:00:00+00:00", "03:00:00", "CDT", 300],
-		["2022-10-30T06:59:59+00:00", "01:59:59", "CDT", 300]
+		["2022-04-03T08:00:00+00:00", "03:00:00", "CDT", 300]
 	])
 };

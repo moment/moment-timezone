@@ -8,10 +8,6 @@ exports["Asia/Amman"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Amman", { abbr: true }),
 
-	"1930" : helpers.makeTestYear("Asia/Amman", [
-		["1930-12-31T21:36:16+00:00", "23:36:16", "EET", -120]
-	]),
-
 	"1973" : helpers.makeTestYear("Asia/Amman", [
 		["1973-06-05T21:59:59+00:00", "23:59:59", "EET", -120],
 		["1973-06-05T22:00:00+00:00", "01:00:00", "EEST", -180],
@@ -311,7 +307,6 @@ exports["Asia/Amman"] = {
 
 	"2022" : helpers.makeTestYear("Asia/Amman", [
 		["2022-02-24T21:59:59+00:00", "23:59:59", "EET", -120],
-		["2022-02-24T22:00:00+00:00", "01:00:00", "EEST", -180],
-		["2022-10-27T21:59:59+00:00", "00:59:59", "EEST", -180]
+		["2022-02-24T22:00:00+00:00", "01:00:00", "EEST", -180]
 	])
 };

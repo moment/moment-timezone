@@ -8,10 +8,6 @@ exports["US/Arizona"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("US/Arizona", { abbr: true, expect: "America/Phoenix" }),
 
-	"1883" : helpers.makeTestYear("US/Arizona", [
-		["1883-11-18T19:00:00+00:00", "12:00:00", "MST", 420]
-	]),
-
 	"1918" : helpers.makeTestYear("US/Arizona", [
 		["1918-03-31T08:59:59+00:00", "01:59:59", "MST", 420],
 		["1918-03-31T09:00:00+00:00", "03:00:00", "MDT", 360],
@@ -42,7 +38,6 @@ exports["US/Arizona"] = {
 
 	"1967" : helpers.makeTestYear("US/Arizona", [
 		["1967-04-30T08:59:59+00:00", "01:59:59", "MST", 420],
-		["1967-04-30T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["1967-10-29T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["1967-04-30T09:00:00+00:00", "03:00:00", "MDT", 360]
 	])
 };

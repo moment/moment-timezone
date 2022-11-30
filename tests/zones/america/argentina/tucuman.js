@@ -8,10 +8,6 @@ exports["America/Argentina/Tucuman"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Argentina/Tucuman", { abbr: true, expect: "America/Sao_Paulo" }),
 
-	"1894" : helpers.makeTestYear("America/Argentina/Tucuman", [
-		["1894-10-31T04:20:52+00:00", "00:04:04", "CMT", 15408 / 60]
-	]),
-
 	"1920" : helpers.makeTestYear("America/Argentina/Tucuman", [
 		["1920-05-01T04:16:47+00:00", "23:59:59", "CMT", 15408 / 60],
 		["1920-05-01T04:16:48+00:00", "00:16:48", "-04", 240]
@@ -234,9 +230,5 @@ exports["America/Argentina/Tucuman"] = {
 		["2008-03-16T02:00:00+00:00", "23:00:00", "-03", 180],
 		["2008-10-19T02:59:59+00:00", "23:59:59", "-03", 180],
 		["2008-10-19T03:00:00+00:00", "01:00:00", "-02", 120]
-	]),
-
-	"2009" : helpers.makeTestYear("America/Argentina/Tucuman", [
-		["2009-03-15T01:59:59+00:00", "23:59:59", "-02", 120]
 	])
 };

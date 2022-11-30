@@ -8,10 +8,6 @@ exports["America/Asuncion"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Asuncion", { abbr: true }),
 
-	"1890" : helpers.makeTestYear("America/Asuncion", [
-		["1890-01-01T03:50:40+00:00", "00:00:00", "AMT", 13840 / 60]
-	]),
-
 	"1931" : helpers.makeTestYear("America/Asuncion", [
 		["1931-10-10T03:50:39+00:00", "23:59:59", "AMT", 13840 / 60],
 		["1931-10-10T03:50:40+00:00", "23:50:40", "-04", 240]
@@ -3695,7 +3691,6 @@ exports["America/Asuncion"] = {
 
 	"2499" : helpers.makeTestYear("America/Asuncion", [
 		["2499-03-22T02:59:59+00:00", "23:59:59", "-03", 180],
-		["2499-03-22T03:00:00+00:00", "23:00:00", "-04", 240],
-		["2499-10-04T03:59:59+00:00", "23:59:59", "-04", 240]
+		["2499-03-22T03:00:00+00:00", "23:00:00", "-04", 240]
 	])
 };

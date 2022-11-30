@@ -8,10 +8,6 @@ exports["Australia/Lindeman"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Australia/Lindeman", { abbr: true, expect: "Australia/Brisbane" }),
 
-	"1894" : helpers.makeTestYear("Australia/Lindeman", [
-		["1894-12-31T14:04:04+00:00", "00:04:04", "AEST", -600]
-	]),
-
 	"1916" : helpers.makeTestYear("Australia/Lindeman", [
 		["1916-12-31T15:59:59+00:00", "01:59:59", "AEST", -600],
 		["1916-12-31T16:00:00+00:00", "03:00:00", "AEDT", -660]
@@ -87,9 +83,5 @@ exports["Australia/Lindeman"] = {
 		["1993-03-06T16:00:00+00:00", "02:00:00", "AEST", -600],
 		["1993-10-30T15:59:59+00:00", "01:59:59", "AEST", -600],
 		["1993-10-30T16:00:00+00:00", "03:00:00", "AEDT", -660]
-	]),
-
-	"1994" : helpers.makeTestYear("Australia/Lindeman", [
-		["1994-03-05T15:59:59+00:00", "02:59:59", "AEDT", -660]
 	])
 };

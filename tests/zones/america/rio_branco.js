@@ -8,10 +8,6 @@ exports["America/Rio_Branco"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Rio_Branco", { abbr: true, expect: "America/Lima" }),
 
-	"1914" : helpers.makeTestYear("America/Rio_Branco", [
-		["1914-01-01T04:31:12+00:00", "23:31:12", "-05", 300]
-	]),
-
 	"1931" : helpers.makeTestYear("America/Rio_Branco", [
 		["1931-10-03T15:59:59+00:00", "10:59:59", "-05", 300],
 		["1931-10-03T16:00:00+00:00", "12:00:00", "-04", 240]
@@ -125,9 +121,5 @@ exports["America/Rio_Branco"] = {
 	"2008" : helpers.makeTestYear("America/Rio_Branco", [
 		["2008-06-24T04:59:59+00:00", "23:59:59", "-05", 300],
 		["2008-06-24T05:00:00+00:00", "01:00:00", "-04", 240]
-	]),
-
-	"2013" : helpers.makeTestYear("America/Rio_Branco", [
-		["2013-11-10T03:59:59+00:00", "23:59:59", "-04", 240]
 	])
 };

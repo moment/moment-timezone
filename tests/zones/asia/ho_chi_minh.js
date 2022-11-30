@@ -8,10 +8,6 @@ exports["Asia/Ho_Chi_Minh"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Ho_Chi_Minh", { abbr: true, expect: "Asia/Jakarta" }),
 
-	"1906" : helpers.makeTestYear("Asia/Ho_Chi_Minh", [
-		["1906-06-30T16:53:30+00:00", "00:00:00", "PLMT", -25590 / 60]
-	]),
-
 	"1911" : helpers.makeTestYear("Asia/Ho_Chi_Minh", [
 		["1911-04-30T16:53:29+00:00", "23:59:59", "PLMT", -25590 / 60],
 		["1911-04-30T16:53:30+00:00", "23:53:30", "+07", -420]
@@ -42,9 +38,5 @@ exports["Asia/Ho_Chi_Minh"] = {
 	"1959" : helpers.makeTestYear("Asia/Ho_Chi_Minh", [
 		["1959-12-31T15:59:59+00:00", "22:59:59", "+07", -420],
 		["1959-12-31T16:00:00+00:00", "00:00:00", "+08", -480]
-	]),
-
-	"1975" : helpers.makeTestYear("Asia/Ho_Chi_Minh", [
-		["1975-06-12T15:59:59+00:00", "23:59:59", "+08", -480]
 	])
 };

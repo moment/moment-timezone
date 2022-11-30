@@ -8,10 +8,6 @@ exports["Atlantic/Azores"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Azores", { abbr: true }),
 
-	"1884" : helpers.makeTestYear("Atlantic/Azores", [
-		["1884-01-01T01:42:40+00:00", "23:48:08", "HMT", 6872 / 60]
-	]),
-
 	"1912" : helpers.makeTestYear("Atlantic/Azores", [
 		["1912-01-01T01:59:59+00:00", "00:05:27", "HMT", 6872 / 60],
 		["1912-01-01T02:00:00+00:00", "00:00:00", "-02", 120]
@@ -4009,7 +4005,6 @@ exports["Atlantic/Azores"] = {
 
 	"2499" : helpers.makeTestYear("Atlantic/Azores", [
 		["2499-03-29T00:59:59+00:00", "23:59:59", "-01", 60],
-		["2499-03-29T01:00:00+00:00", "01:00:00", "+00", 0],
-		["2499-10-25T00:59:59+00:00", "00:59:59", "+00", 0]
+		["2499-03-29T01:00:00+00:00", "01:00:00", "+00", 0]
 	])
 };

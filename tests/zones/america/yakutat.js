@@ -8,10 +8,6 @@ exports["America/Yakutat"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Yakutat", { abbr: true, expect: "America/Anchorage" }),
 
-	"1867" : helpers.makeTestYear("America/Yakutat", [
-		["1867-10-19T00:31:13+00:00", "15:12:18", "LMT", 33535 / 60]
-	]),
-
 	"1900" : helpers.makeTestYear("America/Yakutat", [
 		["1900-08-20T21:18:54+00:00", "11:59:59", "LMT", 33535 / 60],
 		["1900-08-20T21:18:55+00:00", "12:18:55", "YST", 540]
@@ -3743,7 +3739,6 @@ exports["America/Yakutat"] = {
 
 	"2499" : helpers.makeTestYear("America/Yakutat", [
 		["2499-03-08T10:59:59+00:00", "01:59:59", "AKST", 540],
-		["2499-03-08T11:00:00+00:00", "03:00:00", "AKDT", 480],
-		["2499-11-01T09:59:59+00:00", "01:59:59", "AKDT", 480]
+		["2499-03-08T11:00:00+00:00", "03:00:00", "AKDT", 480]
 	])
 };

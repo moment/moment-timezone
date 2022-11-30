@@ -8,10 +8,6 @@ exports["Asia/Jakarta"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Jakarta", { abbr: true }),
 
-	"1867" : helpers.makeTestYear("Asia/Jakarta", [
-		["1867-08-09T16:52:48+00:00", "00:00:00", "BMT", -25632 / 60]
-	]),
-
 	"1923" : helpers.makeTestYear("Asia/Jakarta", [
 		["1923-12-31T16:39:59+00:00", "23:47:11", "BMT", -25632 / 60],
 		["1923-12-31T16:40:00+00:00", "00:00:00", "+0720", -440]
@@ -40,9 +36,5 @@ exports["Asia/Jakarta"] = {
 	"1950" : helpers.makeTestYear("Asia/Jakarta", [
 		["1950-04-30T15:59:59+00:00", "23:59:59", "+08", -480],
 		["1950-04-30T16:00:00+00:00", "23:30:00", "+0730", -450]
-	]),
-
-	"1963" : helpers.makeTestYear("Asia/Jakarta", [
-		["1963-12-31T16:29:59+00:00", "23:59:59", "+0730", -450]
 	])
 };

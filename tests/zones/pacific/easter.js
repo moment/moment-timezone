@@ -8,10 +8,6 @@ exports["Pacific/Easter"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Easter", { abbr: true }),
 
-	"1890" : helpers.makeTestYear("Pacific/Easter", [
-		["1890-01-01T07:17:28+00:00", "00:00:00", "EMT", 26248 / 60]
-	]),
-
 	"1932" : helpers.makeTestYear("Pacific/Easter", [
 		["1932-09-01T07:17:27+00:00", "23:59:59", "EMT", 26248 / 60],
 		["1932-09-01T07:17:28+00:00", "00:17:28", "-07", 420]
@@ -3727,7 +3723,6 @@ exports["Pacific/Easter"] = {
 
 	"2499" : helpers.makeTestYear("Pacific/Easter", [
 		["2499-04-05T02:59:59+00:00", "21:59:59", "-05", 300],
-		["2499-04-05T03:00:00+00:00", "21:00:00", "-06", 360],
-		["2499-09-06T03:59:59+00:00", "21:59:59", "-06", 360]
+		["2499-04-05T03:00:00+00:00", "21:00:00", "-06", 360]
 	])
 };

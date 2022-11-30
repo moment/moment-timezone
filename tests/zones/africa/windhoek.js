@@ -8,10 +8,6 @@ exports["Africa/Windhoek"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Windhoek", { abbr: true, expect: "Africa/Khartoum" }),
 
-	"1892" : helpers.makeTestYear("Africa/Windhoek", [
-		["1892-02-07T22:51:36+00:00", "00:21:36", "+0130", -90]
-	]),
-
 	"1903" : helpers.makeTestYear("Africa/Windhoek", [
 		["1903-02-28T22:29:59+00:00", "23:59:59", "+0130", -90],
 		["1903-02-28T22:30:00+00:00", "00:30:00", "SAST", -120]
@@ -195,7 +191,6 @@ exports["Africa/Windhoek"] = {
 
 	"2017" : helpers.makeTestYear("Africa/Windhoek", [
 		["2017-04-01T23:59:59+00:00", "01:59:59", "CAT", -120],
-		["2017-04-02T00:00:00+00:00", "01:00:00", "WAT", -60],
-		["2017-09-03T00:59:59+00:00", "01:59:59", "WAT", -60]
+		["2017-04-02T00:00:00+00:00", "01:00:00", "WAT", -60]
 	])
 };

@@ -8,10 +8,6 @@ exports["Africa/El_Aaiun"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/El_Aaiun", { abbr: true, expect: "Africa/Casablanca" }),
 
-	"1934" : helpers.makeTestYear("Africa/El_Aaiun", [
-		["1934-01-01T00:52:48+00:00", "23:52:48", "-01", 60]
-	]),
-
 	"1976" : helpers.makeTestYear("Africa/El_Aaiun", [
 		["1976-04-14T00:59:59+00:00", "23:59:59", "-01", 60],
 		["1976-04-14T01:00:00+00:00", "01:00:00", "+00", 0],
@@ -626,7 +622,6 @@ exports["Africa/El_Aaiun"] = {
 
 	"2087" : helpers.makeTestYear("Africa/El_Aaiun", [
 		["2087-03-30T01:59:59+00:00", "02:59:59", "+01", -60],
-		["2087-03-30T02:00:00+00:00", "02:00:00", "+00", 0],
-		["2087-05-11T01:59:59+00:00", "01:59:59", "+00", 0]
+		["2087-03-30T02:00:00+00:00", "02:00:00", "+00", 0]
 	])
 };

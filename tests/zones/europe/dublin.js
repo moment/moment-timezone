@@ -4,13 +4,9 @@ var helpers = require("../../helpers/helpers");
 
 exports["Europe/Dublin"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Europe/Dublin", { offset: true, expect: "Europe/London" }),
+	"guess:by:offset" : helpers.makeTestGuess("Europe/Dublin", { offset: true }),
 
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Dublin", { abbr: true }),
-
-	"1880" : helpers.makeTestYear("Europe/Dublin", [
-		["1880-08-02T00:25:21+00:00", "00:00:00", "DMT", 1521 / 60]
-	]),
 
 	"1916" : helpers.makeTestYear("Europe/Dublin", [
 		["1916-05-21T02:25:20+00:00", "01:59:59", "DMT", 1521 / 60],
@@ -4040,7 +4036,6 @@ exports["Europe/Dublin"] = {
 
 	"2499" : helpers.makeTestYear("Europe/Dublin", [
 		["2499-03-29T00:59:59+00:00", "00:59:59", "GMT", 0],
-		["2499-03-29T01:00:00+00:00", "02:00:00", "IST", -60],
-		["2499-10-25T00:59:59+00:00", "01:59:59", "IST", -60]
+		["2499-03-29T01:00:00+00:00", "02:00:00", "IST", -60]
 	])
 };

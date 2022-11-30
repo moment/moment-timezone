@@ -8,10 +8,6 @@ exports["Africa/Algiers"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Algiers", { abbr: true }),
 
-	"1891" : helpers.makeTestYear("Africa/Algiers", [
-		["1891-03-15T23:47:48+00:00", "23:57:09", "PMT", -561 / 60]
-	]),
-
 	"1911" : helpers.makeTestYear("Africa/Algiers", [
 		["1911-03-10T23:50:38+00:00", "23:59:59", "PMT", -561 / 60],
 		["1911-03-10T23:50:39+00:00", "23:50:39", "WET", 0]
@@ -131,9 +127,5 @@ exports["Africa/Algiers"] = {
 		["1980-04-25T00:00:00+00:00", "01:00:00", "WEST", -60],
 		["1980-10-31T00:59:59+00:00", "01:59:59", "WEST", -60],
 		["1980-10-31T01:00:00+00:00", "01:00:00", "WET", 0]
-	]),
-
-	"1981" : helpers.makeTestYear("Africa/Algiers", [
-		["1981-04-30T23:59:59+00:00", "23:59:59", "WET", 0]
 	])
 };

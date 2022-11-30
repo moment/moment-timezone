@@ -8,10 +8,6 @@ exports["America/Adak"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Adak", { abbr: true }),
 
-	"1867" : helpers.makeTestYear("America/Adak", [
-		["1867-10-19T00:31:13+00:00", "12:44:35", "LMT", 42398 / 60]
-	]),
-
 	"1900" : helpers.makeTestYear("America/Adak", [
 		["1900-08-20T23:46:37+00:00", "11:59:59", "LMT", 42398 / 60],
 		["1900-08-20T23:46:38+00:00", "12:46:38", "NST", 660]
@@ -3748,7 +3744,6 @@ exports["America/Adak"] = {
 
 	"2499" : helpers.makeTestYear("America/Adak", [
 		["2499-03-08T11:59:59+00:00", "01:59:59", "HST", 600],
-		["2499-03-08T12:00:00+00:00", "03:00:00", "HDT", 540],
-		["2499-11-01T10:59:59+00:00", "01:59:59", "HDT", 540]
+		["2499-03-08T12:00:00+00:00", "03:00:00", "HDT", 540]
 	])
 };

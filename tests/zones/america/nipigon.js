@@ -8,10 +8,6 @@ exports["America/Nipigon"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Nipigon", { abbr: true, expect: "America/New_York" }),
 
-	"1895" : helpers.makeTestYear("America/Nipigon", [
-		["1895-01-01T05:17:32+00:00", "00:17:32", "EST", 300]
-	]),
-
 	"1918" : helpers.makeTestYear("America/Nipigon", [
 		["1918-04-14T06:59:59+00:00", "01:59:59", "EST", 300],
 		["1918-04-14T07:00:00+00:00", "03:00:00", "EDT", 240],
@@ -4056,7 +4052,6 @@ exports["America/Nipigon"] = {
 
 	"2499" : helpers.makeTestYear("America/Nipigon", [
 		["2499-03-08T06:59:59+00:00", "01:59:59", "EST", 300],
-		["2499-03-08T07:00:00+00:00", "03:00:00", "EDT", 240],
-		["2499-11-01T05:59:59+00:00", "01:59:59", "EDT", 240]
+		["2499-03-08T07:00:00+00:00", "03:00:00", "EDT", 240]
 	])
 };

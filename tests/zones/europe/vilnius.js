@@ -8,10 +8,6 @@ exports["Europe/Vilnius"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Vilnius", { abbr: true, expect: "Europe/Athens" }),
 
-	"1879" : helpers.makeTestYear("Europe/Vilnius", [
-		["1879-12-31T22:18:44+00:00", "23:42:44", "WMT", -84]
-	]),
-
 	"1916" : helpers.makeTestYear("Europe/Vilnius", [
 		["1916-12-31T22:35:59+00:00", "23:59:59", "WMT", -84],
 		["1916-12-31T22:36:00+00:00", "00:11:36", "KMT", -5736 / 60]
@@ -3665,7 +3661,6 @@ exports["Europe/Vilnius"] = {
 
 	"2499" : helpers.makeTestYear("Europe/Vilnius", [
 		["2499-03-29T00:59:59+00:00", "02:59:59", "EET", -120],
-		["2499-03-29T01:00:00+00:00", "04:00:00", "EEST", -180],
-		["2499-10-25T00:59:59+00:00", "03:59:59", "EEST", -180]
+		["2499-03-29T01:00:00+00:00", "04:00:00", "EEST", -180]
 	])
 };

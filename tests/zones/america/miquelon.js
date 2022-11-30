@@ -8,10 +8,6 @@ exports["America/Miquelon"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Miquelon", { abbr: true }),
 
-	"1911" : helpers.makeTestYear("America/Miquelon", [
-		["1911-05-15T03:44:40+00:00", "23:44:40", "AST", 240]
-	]),
-
 	"1980" : helpers.makeTestYear("America/Miquelon", [
 		["1980-05-01T03:59:59+00:00", "23:59:59", "AST", 240],
 		["1980-05-01T04:00:00+00:00", "01:00:00", "-03", 180]
@@ -3603,7 +3599,6 @@ exports["America/Miquelon"] = {
 
 	"2499" : helpers.makeTestYear("America/Miquelon", [
 		["2499-03-08T04:59:59+00:00", "01:59:59", "-03", 180],
-		["2499-03-08T05:00:00+00:00", "03:00:00", "-02", 120],
-		["2499-11-01T03:59:59+00:00", "01:59:59", "-02", 120]
+		["2499-03-08T05:00:00+00:00", "03:00:00", "-02", 120]
 	])
 };

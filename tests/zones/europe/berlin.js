@@ -8,10 +8,6 @@ exports["Europe/Berlin"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Berlin", { abbr: true, expect: "Europe/Paris" }),
 
-	"1893" : helpers.makeTestYear("Europe/Berlin", [
-		["1893-03-31T23:06:32+00:00", "00:06:32", "CET", -60]
-	]),
-
 	"1916" : helpers.makeTestYear("Europe/Berlin", [
 		["1916-04-30T21:59:59+00:00", "22:59:59", "CET", -60],
 		["1916-04-30T22:00:00+00:00", "00:00:00", "CEST", -120],
@@ -3735,7 +3731,6 @@ exports["Europe/Berlin"] = {
 
 	"2499" : helpers.makeTestYear("Europe/Berlin", [
 		["2499-03-29T00:59:59+00:00", "01:59:59", "CET", -60],
-		["2499-03-29T01:00:00+00:00", "03:00:00", "CEST", -120],
-		["2499-10-25T00:59:59+00:00", "02:59:59", "CEST", -120]
+		["2499-03-29T01:00:00+00:00", "03:00:00", "CEST", -120]
 	])
 };

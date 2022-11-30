@@ -8,10 +8,6 @@ exports["America/Havana"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Havana", { abbr: true }),
 
-	"1890" : helpers.makeTestYear("America/Havana", [
-		["1890-01-01T05:29:28+00:00", "23:59:52", "HMT", 19776 / 60]
-	]),
-
 	"1925" : helpers.makeTestYear("America/Havana", [
 		["1925-07-19T17:29:35+00:00", "11:59:59", "HMT", 19776 / 60],
 		["1925-07-19T17:29:36+00:00", "12:29:36", "CST", 300]
@@ -3788,7 +3784,6 @@ exports["America/Havana"] = {
 
 	"2499" : helpers.makeTestYear("America/Havana", [
 		["2499-03-08T04:59:59+00:00", "23:59:59", "CST", 300],
-		["2499-03-08T05:00:00+00:00", "01:00:00", "CDT", 240],
-		["2499-11-01T04:59:59+00:00", "00:59:59", "CDT", 240]
+		["2499-03-08T05:00:00+00:00", "01:00:00", "CDT", 240]
 	])
 };

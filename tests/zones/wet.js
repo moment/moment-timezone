@@ -4,12 +4,11 @@ var helpers = require("../helpers/helpers");
 
 exports["WET"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("WET", { offset: true, expect: "Europe/London" }),
+	"guess:by:offset" : helpers.makeTestGuess("WET", { offset: true, expect: "Europe/Dublin" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("WET", { abbr: true, expect: "Europe/Lisbon" }),
+	"guess:by:abbr" : helpers.makeTestGuess("WET", { abbr: true, expect: "Atlantic/Canary" }),
 
 	"1977" : helpers.makeTestYear("WET", [
-		["1977-04-03T01:00:00+00:00", "02:00:00", "WEST", -60],
 		["1977-09-25T00:59:59+00:00", "01:59:59", "WEST", -60],
 		["1977-09-25T01:00:00+00:00", "01:00:00", "WET", 0]
 	]),
@@ -3663,7 +3662,6 @@ exports["WET"] = {
 
 	"2499" : helpers.makeTestYear("WET", [
 		["2499-03-29T00:59:59+00:00", "00:59:59", "WET", 0],
-		["2499-03-29T01:00:00+00:00", "02:00:00", "WEST", -60],
-		["2499-10-25T00:59:59+00:00", "01:59:59", "WEST", -60]
+		["2499-03-29T01:00:00+00:00", "02:00:00", "WEST", -60]
 	])
 };

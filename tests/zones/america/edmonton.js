@@ -8,10 +8,6 @@ exports["America/Edmonton"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Edmonton", { abbr: true, expect: "America/Denver" }),
 
-	"1906" : helpers.makeTestYear("America/Edmonton", [
-		["1906-09-01T07:33:52+00:00", "00:33:52", "MST", 420]
-	]),
-
 	"1918" : helpers.makeTestYear("America/Edmonton", [
 		["1918-04-14T08:59:59+00:00", "01:59:59", "MST", 420],
 		["1918-04-14T09:00:00+00:00", "03:00:00", "MDT", 360],
@@ -3764,7 +3760,6 @@ exports["America/Edmonton"] = {
 
 	"2499" : helpers.makeTestYear("America/Edmonton", [
 		["2499-03-08T08:59:59+00:00", "01:59:59", "MST", 420],
-		["2499-03-08T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["2499-11-01T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["2499-03-08T09:00:00+00:00", "03:00:00", "MDT", 360]
 	])
 };

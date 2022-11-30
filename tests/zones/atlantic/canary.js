@@ -4,13 +4,9 @@ var helpers = require("../../helpers/helpers");
 
 exports["Atlantic/Canary"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Atlantic/Canary", { offset: true, expect: "Europe/London" }),
+	"guess:by:offset" : helpers.makeTestGuess("Atlantic/Canary", { offset: true, expect: "Europe/Dublin" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Canary", { abbr: true, expect: "Europe/Lisbon" }),
-
-	"1922" : helpers.makeTestYear("Atlantic/Canary", [
-		["1922-03-01T01:01:36+00:00", "00:01:36", "-01", 60]
-	]),
+	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Canary", { abbr: true }),
 
 	"1946" : helpers.makeTestYear("Atlantic/Canary", [
 		["1946-09-30T01:59:59+00:00", "00:59:59", "-01", 60],
@@ -3652,7 +3648,6 @@ exports["Atlantic/Canary"] = {
 
 	"2499" : helpers.makeTestYear("Atlantic/Canary", [
 		["2499-03-29T00:59:59+00:00", "00:59:59", "WET", 0],
-		["2499-03-29T01:00:00+00:00", "02:00:00", "WEST", -60],
-		["2499-10-25T00:59:59+00:00", "01:59:59", "WEST", -60]
+		["2499-03-29T01:00:00+00:00", "02:00:00", "WEST", -60]
 	])
 };

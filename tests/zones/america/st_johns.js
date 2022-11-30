@@ -8,10 +8,6 @@ exports["America/St_Johns"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/St_Johns", { abbr: true }),
 
-	"1884" : helpers.makeTestYear("America/St_Johns", [
-		["1884-01-01T03:30:52+00:00", "00:00:00", "NST", 12652 / 60]
-	]),
-
 	"1917" : helpers.makeTestYear("America/St_Johns", [
 		["1917-04-08T05:30:51+00:00", "01:59:59", "NST", 12652 / 60],
 		["1917-04-08T05:30:52+00:00", "03:00:00", "NDT", 9052 / 60],
@@ -4074,7 +4070,6 @@ exports["America/St_Johns"] = {
 
 	"2499" : helpers.makeTestYear("America/St_Johns", [
 		["2499-03-08T05:29:59+00:00", "01:59:59", "NST", 210],
-		["2499-03-08T05:30:00+00:00", "03:00:00", "NDT", 150],
-		["2499-11-01T04:29:59+00:00", "01:59:59", "NDT", 150]
+		["2499-03-08T05:30:00+00:00", "03:00:00", "NDT", 150]
 	])
 };

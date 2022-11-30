@@ -8,10 +8,6 @@ exports["Europe/Minsk"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Minsk", { abbr: true, expect: "Europe/Moscow" }),
 
-	"1879" : helpers.makeTestYear("Europe/Minsk", [
-		["1879-12-31T22:09:44+00:00", "23:59:44", "MMT", -110]
-	]),
-
 	"1924" : helpers.makeTestYear("Europe/Minsk", [
 		["1924-05-01T22:09:59+00:00", "23:59:59", "MMT", -110],
 		["1924-05-01T22:10:00+00:00", "00:10:00", "EET", -120]
@@ -247,9 +243,5 @@ exports["Europe/Minsk"] = {
 		["2010-03-28T00:00:00+00:00", "03:00:00", "EEST", -180],
 		["2010-10-30T23:59:59+00:00", "02:59:59", "EEST", -180],
 		["2010-10-31T00:00:00+00:00", "02:00:00", "EET", -120]
-	]),
-
-	"2011" : helpers.makeTestYear("Europe/Minsk", [
-		["2011-03-26T23:59:59+00:00", "01:59:59", "EET", -120]
 	])
 };

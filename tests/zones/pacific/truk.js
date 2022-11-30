@@ -8,11 +8,5 @@ exports["Pacific/Truk"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Truk", { abbr: true, expect: "Australia/Brisbane" }),
 
-	"1879" : helpers.makeTestYear("Pacific/Truk", [
-		["1879-12-31T14:11:20+00:00", "23:59:52", "PMMT", -35312 / 60]
-	]),
 
-	"1894" : helpers.makeTestYear("Pacific/Truk", [
-		["1894-12-31T14:11:27+00:00", "23:59:59", "PMMT", -35312 / 60]
-	])
 };

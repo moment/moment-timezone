@@ -8,10 +8,6 @@ exports["Pacific/Auckland"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Auckland", { abbr: true }),
 
-	"1868" : helpers.makeTestYear("Pacific/Auckland", [
-		["1868-11-01T12:20:56+00:00", "23:50:56", "NZMT", -690]
-	]),
-
 	"1927" : helpers.makeTestYear("Pacific/Auckland", [
 		["1927-11-05T14:29:59+00:00", "01:59:59", "NZMT", -690],
 		["1927-11-05T14:30:00+00:00", "03:00:00", "NZST", -750]
@@ -3788,7 +3784,6 @@ exports["Pacific/Auckland"] = {
 
 	"2499" : helpers.makeTestYear("Pacific/Auckland", [
 		["2499-04-04T13:59:59+00:00", "02:59:59", "NZDT", -780],
-		["2499-04-04T14:00:00+00:00", "02:00:00", "NZST", -720],
-		["2499-09-26T13:59:59+00:00", "01:59:59", "NZST", -720]
+		["2499-04-04T14:00:00+00:00", "02:00:00", "NZST", -720]
 	])
 };

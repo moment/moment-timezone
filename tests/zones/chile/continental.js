@@ -8,10 +8,6 @@ exports["Chile/Continental"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Chile/Continental", { abbr: true, expect: "America/Santiago" }),
 
-	"1890" : helpers.makeTestYear("Chile/Continental", [
-		["1890-01-01T04:42:45+00:00", "00:00:00", "SMT", 16965 / 60]
-	]),
-
 	"1910" : helpers.makeTestYear("Chile/Continental", [
 		["1910-01-10T04:42:44+00:00", "23:59:59", "SMT", 16965 / 60],
 		["1910-01-10T04:42:45+00:00", "23:42:45", "-05", 300]
@@ -3803,7 +3799,6 @@ exports["Chile/Continental"] = {
 
 	"2499" : helpers.makeTestYear("Chile/Continental", [
 		["2499-04-05T02:59:59+00:00", "23:59:59", "-03", 180],
-		["2499-04-05T03:00:00+00:00", "23:00:00", "-04", 240],
-		["2499-09-06T03:59:59+00:00", "23:59:59", "-04", 240]
+		["2499-04-05T03:00:00+00:00", "23:00:00", "-04", 240]
 	])
 };

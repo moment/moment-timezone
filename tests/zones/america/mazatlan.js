@@ -8,10 +8,6 @@ exports["America/Mazatlan"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Mazatlan", { abbr: true }),
 
-	"1922" : helpers.makeTestYear("America/Mazatlan", [
-		["1922-01-01T07:00:00+00:00", "00:00:00", "MST", 420]
-	]),
-
 	"1927" : helpers.makeTestYear("America/Mazatlan", [
 		["1927-06-11T05:59:59+00:00", "22:59:59", "MST", 420],
 		["1927-06-11T06:00:00+00:00", "00:00:00", "CST", 360]
@@ -233,7 +229,6 @@ exports["America/Mazatlan"] = {
 
 	"2022" : helpers.makeTestYear("America/Mazatlan", [
 		["2022-04-03T08:59:59+00:00", "01:59:59", "MST", 420],
-		["2022-04-03T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["2022-10-30T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["2022-04-03T09:00:00+00:00", "03:00:00", "MDT", 360]
 	])
 };

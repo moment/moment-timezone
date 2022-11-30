@@ -8,10 +8,6 @@ exports["Pacific/Saipan"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Saipan", { abbr: true, expect: "Pacific/Guam" }),
 
-	"1844" : helpers.makeTestYear("Pacific/Saipan", [
-		["1844-12-31T14:21:00+00:00", "00:00:00", "LMT", -579]
-	]),
-
 	"1900" : helpers.makeTestYear("Pacific/Saipan", [
 		["1900-12-31T14:20:59+00:00", "23:59:59", "LMT", -579],
 		["1900-12-31T14:21:00+00:00", "00:21:00", "GST", -600]
@@ -87,9 +83,5 @@ exports["Pacific/Saipan"] = {
 		["1977-04-23T16:00:00+00:00", "03:00:00", "GDT", -660],
 		["1977-08-27T14:59:59+00:00", "01:59:59", "GDT", -660],
 		["1977-08-27T15:00:00+00:00", "01:00:00", "GST", -600]
-	]),
-
-	"2000" : helpers.makeTestYear("Pacific/Saipan", [
-		["2000-12-22T13:59:59+00:00", "23:59:59", "GST", -600]
 	])
 };

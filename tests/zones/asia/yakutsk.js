@@ -8,10 +8,6 @@ exports["Asia/Yakutsk"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Yakutsk", { abbr: true, expect: "Asia/Tokyo" }),
 
-	"1919" : helpers.makeTestYear("Asia/Yakutsk", [
-		["1919-12-14T15:21:02+00:00", "23:21:02", "+08", -480]
-	]),
-
 	"1930" : helpers.makeTestYear("Asia/Yakutsk", [
 		["1930-06-20T15:59:59+00:00", "23:59:59", "+08", -480],
 		["1930-06-20T16:00:00+00:00", "01:00:00", "+09", -540]
@@ -232,9 +228,5 @@ exports["Asia/Yakutsk"] = {
 	"2011" : helpers.makeTestYear("Asia/Yakutsk", [
 		["2011-03-26T16:59:59+00:00", "01:59:59", "+09", -540],
 		["2011-03-26T17:00:00+00:00", "03:00:00", "+10", -600]
-	]),
-
-	"2014" : helpers.makeTestYear("Asia/Yakutsk", [
-		["2014-10-25T15:59:59+00:00", "01:59:59", "+10", -600]
 	])
 };

@@ -8,10 +8,6 @@ exports["America/Port-au-Prince"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Port-au-Prince", { abbr: true, expect: "America/New_York" }),
 
-	"1890" : helpers.makeTestYear("America/Port-au-Prince", [
-		["1890-01-01T04:49:20+00:00", "00:00:20", "PPMT", 289]
-	]),
-
 	"1917" : helpers.makeTestYear("America/Port-au-Prince", [
 		["1917-01-24T16:48:59+00:00", "11:59:59", "PPMT", 289],
 		["1917-01-24T16:49:00+00:00", "11:49:00", "EST", 300]
@@ -3540,7 +3536,6 @@ exports["America/Port-au-Prince"] = {
 
 	"2499" : helpers.makeTestYear("America/Port-au-Prince", [
 		["2499-03-08T06:59:59+00:00", "01:59:59", "EST", 300],
-		["2499-03-08T07:00:00+00:00", "03:00:00", "EDT", 240],
-		["2499-11-01T05:59:59+00:00", "01:59:59", "EDT", 240]
+		["2499-03-08T07:00:00+00:00", "03:00:00", "EDT", 240]
 	])
 };

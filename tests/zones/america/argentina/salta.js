@@ -8,10 +8,6 @@ exports["America/Argentina/Salta"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Argentina/Salta", { abbr: true, expect: "America/Sao_Paulo" }),
 
-	"1894" : helpers.makeTestYear("America/Argentina/Salta", [
-		["1894-10-31T04:21:40+00:00", "00:04:52", "CMT", 15408 / 60]
-	]),
-
 	"1920" : helpers.makeTestYear("America/Argentina/Salta", [
 		["1920-05-01T04:16:47+00:00", "23:59:59", "CMT", 15408 / 60],
 		["1920-05-01T04:16:48+00:00", "00:16:48", "-04", 240]
@@ -220,9 +216,5 @@ exports["America/Argentina/Salta"] = {
 	"2007" : helpers.makeTestYear("America/Argentina/Salta", [
 		["2007-12-30T02:59:59+00:00", "23:59:59", "-03", 180],
 		["2007-12-30T03:00:00+00:00", "01:00:00", "-02", 120]
-	]),
-
-	"2008" : helpers.makeTestYear("America/Argentina/Salta", [
-		["2008-03-16T01:59:59+00:00", "23:59:59", "-02", 120]
 	])
 };

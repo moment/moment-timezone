@@ -8,10 +8,6 @@ exports["America/Matamoros"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Matamoros", { abbr: true, expect: "America/Chicago" }),
 
-	"1922" : helpers.makeTestYear("America/Matamoros", [
-		["1922-01-01T06:00:00+00:00", "00:00:00", "CST", 360]
-	]),
-
 	"1988" : helpers.makeTestYear("America/Matamoros", [
 		["1988-04-03T07:59:59+00:00", "01:59:59", "CST", 360],
 		["1988-04-03T08:00:00+00:00", "03:00:00", "CDT", 300],
@@ -3542,7 +3538,6 @@ exports["America/Matamoros"] = {
 
 	"2499" : helpers.makeTestYear("America/Matamoros", [
 		["2499-03-08T07:59:59+00:00", "01:59:59", "CST", 360],
-		["2499-03-08T08:00:00+00:00", "03:00:00", "CDT", 300],
-		["2499-11-01T06:59:59+00:00", "01:59:59", "CDT", 300]
+		["2499-03-08T08:00:00+00:00", "03:00:00", "CDT", 300]
 	])
 };

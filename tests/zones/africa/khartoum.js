@@ -8,10 +8,6 @@ exports["Africa/Khartoum"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Khartoum", { abbr: true }),
 
-	"1930" : helpers.makeTestYear("Africa/Khartoum", [
-		["1930-12-31T21:49:52+00:00", "23:49:52", "CAT", -120]
-	]),
-
 	"1970" : helpers.makeTestYear("Africa/Khartoum", [
 		["1970-04-30T21:59:59+00:00", "23:59:59", "CAT", -120],
 		["1970-04-30T22:00:00+00:00", "01:00:00", "CAST", -180],
@@ -127,9 +123,5 @@ exports["Africa/Khartoum"] = {
 	"2000" : helpers.makeTestYear("Africa/Khartoum", [
 		["2000-01-15T09:59:59+00:00", "11:59:59", "CAT", -120],
 		["2000-01-15T10:00:00+00:00", "13:00:00", "EAT", -180]
-	]),
-
-	"2017" : helpers.makeTestYear("Africa/Khartoum", [
-		["2017-10-31T20:59:59+00:00", "23:59:59", "EAT", -180]
 	])
 };

@@ -8,10 +8,6 @@ exports["Asia/Hong_Kong"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Hong_Kong", { abbr: true }),
 
-	"1904" : helpers.makeTestYear("Asia/Hong_Kong", [
-		["1904-10-29T17:00:00+00:00", "01:00:00", "HKT", -480]
-	]),
-
 	"1941" : helpers.makeTestYear("Asia/Hong_Kong", [
 		["1941-06-14T18:59:59+00:00", "02:59:59", "HKT", -480],
 		["1941-06-14T19:00:00+00:00", "04:00:00", "HKST", -540],
@@ -245,7 +241,6 @@ exports["Asia/Hong_Kong"] = {
 
 	"1979" : helpers.makeTestYear("Asia/Hong_Kong", [
 		["1979-05-12T19:29:59+00:00", "03:29:59", "HKT", -480],
-		["1979-05-12T19:30:00+00:00", "04:30:00", "HKST", -540],
-		["1979-10-20T18:29:59+00:00", "03:29:59", "HKST", -540]
+		["1979-05-12T19:30:00+00:00", "04:30:00", "HKST", -540]
 	])
 };

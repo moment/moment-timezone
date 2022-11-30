@@ -8,10 +8,6 @@ exports["America/Scoresbysund"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Scoresbysund", { abbr: true, expect: "Atlantic/Azores" }),
 
-	"1916" : helpers.makeTestYear("America/Scoresbysund", [
-		["1916-07-28T01:27:52+00:00", "23:27:52", "-02", 120]
-	]),
-
 	"1980" : helpers.makeTestYear("America/Scoresbysund", [
 		["1980-04-06T03:59:59+00:00", "01:59:59", "-02", 120],
 		["1980-04-06T04:00:00+00:00", "03:00:00", "-01", 60],
@@ -3647,7 +3643,6 @@ exports["America/Scoresbysund"] = {
 
 	"2499" : helpers.makeTestYear("America/Scoresbysund", [
 		["2499-03-29T00:59:59+00:00", "23:59:59", "-01", 60],
-		["2499-03-29T01:00:00+00:00", "01:00:00", "+00", 0],
-		["2499-10-25T00:59:59+00:00", "00:59:59", "+00", 0]
+		["2499-03-29T01:00:00+00:00", "01:00:00", "+00", 0]
 	])
 };

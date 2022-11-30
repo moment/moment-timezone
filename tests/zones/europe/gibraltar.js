@@ -8,10 +8,6 @@ exports["Europe/Gibraltar"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Gibraltar", { abbr: true, expect: "Europe/Paris" }),
 
-	"1880" : helpers.makeTestYear("Europe/Gibraltar", [
-		["1880-08-02T00:21:24+00:00", "00:21:24", "GMT", 0]
-	]),
-
 	"1916" : helpers.makeTestYear("Europe/Gibraltar", [
 		["1916-05-21T01:59:59+00:00", "01:59:59", "GMT", 0],
 		["1916-05-21T02:00:00+00:00", "03:00:00", "BST", -60],
@@ -3929,7 +3925,6 @@ exports["Europe/Gibraltar"] = {
 
 	"2499" : helpers.makeTestYear("Europe/Gibraltar", [
 		["2499-03-29T00:59:59+00:00", "01:59:59", "CET", -60],
-		["2499-03-29T01:00:00+00:00", "03:00:00", "CEST", -120],
-		["2499-10-25T00:59:59+00:00", "02:59:59", "CEST", -120]
+		["2499-03-29T01:00:00+00:00", "03:00:00", "CEST", -120]
 	])
 };

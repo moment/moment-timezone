@@ -8,10 +8,6 @@ exports["Australia/Lord_Howe"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Australia/Lord_Howe", { abbr: true }),
 
-	"1895" : helpers.makeTestYear("Australia/Lord_Howe", [
-		["1895-01-31T13:23:40+00:00", "23:23:40", "AEST", -600]
-	]),
-
 	"1981" : helpers.makeTestYear("Australia/Lord_Howe", [
 		["1981-02-28T13:59:59+00:00", "23:59:59", "AEST", -600],
 		["1981-02-28T14:00:00+00:00", "00:30:00", "+1030", -630],
@@ -3640,7 +3636,6 @@ exports["Australia/Lord_Howe"] = {
 
 	"2499" : helpers.makeTestYear("Australia/Lord_Howe", [
 		["2499-04-04T14:59:59+00:00", "01:59:59", "+11", -660],
-		["2499-04-04T15:00:00+00:00", "01:30:00", "+1030", -630],
-		["2499-10-03T15:29:59+00:00", "01:59:59", "+1030", -630]
+		["2499-04-04T15:00:00+00:00", "01:30:00", "+1030", -630]
 	])
 };

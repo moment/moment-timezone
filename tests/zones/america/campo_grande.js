@@ -8,10 +8,6 @@ exports["America/Campo_Grande"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Campo_Grande", { abbr: true, expect: "America/Santo_Domingo" }),
 
-	"1914" : helpers.makeTestYear("America/Campo_Grande", [
-		["1914-01-01T03:38:28+00:00", "23:38:28", "-04", 240]
-	]),
-
 	"1931" : helpers.makeTestYear("America/Campo_Grande", [
 		["1931-10-03T14:59:59+00:00", "10:59:59", "-04", 240],
 		["1931-10-03T15:00:00+00:00", "12:00:00", "-03", 180]
@@ -332,9 +328,5 @@ exports["America/Campo_Grande"] = {
 		["2018-02-18T03:00:00+00:00", "23:00:00", "-04", 240],
 		["2018-11-04T03:59:59+00:00", "23:59:59", "-04", 240],
 		["2018-11-04T04:00:00+00:00", "01:00:00", "-03", 180]
-	]),
-
-	"2019" : helpers.makeTestYear("America/Campo_Grande", [
-		["2019-02-17T02:59:59+00:00", "23:59:59", "-03", 180]
 	])
 };

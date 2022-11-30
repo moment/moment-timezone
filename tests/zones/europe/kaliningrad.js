@@ -8,10 +8,6 @@ exports["Europe/Kaliningrad"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Kaliningrad", { abbr: true, expect: "Africa/Cairo" }),
 
-	"1893" : helpers.makeTestYear("Europe/Kaliningrad", [
-		["1893-03-31T22:38:00+00:00", "23:38:00", "CET", -60]
-	]),
-
 	"1916" : helpers.makeTestYear("Europe/Kaliningrad", [
 		["1916-04-30T21:59:59+00:00", "22:59:59", "CET", -60],
 		["1916-04-30T22:00:00+00:00", "00:00:00", "CEST", -120],
@@ -286,9 +282,5 @@ exports["Europe/Kaliningrad"] = {
 	"2011" : helpers.makeTestYear("Europe/Kaliningrad", [
 		["2011-03-26T23:59:59+00:00", "01:59:59", "EET", -120],
 		["2011-03-27T00:00:00+00:00", "03:00:00", "+03", -180]
-	]),
-
-	"2014" : helpers.makeTestYear("Europe/Kaliningrad", [
-		["2014-10-25T22:59:59+00:00", "01:59:59", "+03", -180]
 	])
 };
