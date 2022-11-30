@@ -9,6 +9,7 @@ exports["Pacific/Tongatapu"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Tongatapu", { abbr: true }),
 
 	"1945" : helpers.makeTestYear("Pacific/Tongatapu", [
+		["1945-09-09T11:40:47+00:00", "23:59:59", "LMT", -44352 / 60],
 		["1945-09-09T11:40:48+00:00", "00:00:48", "+1220", -740]
 	]),
 
@@ -47,6 +48,7 @@ exports["Pacific/Tongatapu"] = {
 	]),
 
 	"2017" : helpers.makeTestYear("Pacific/Tongatapu", [
-		["2017-01-14T12:59:59+00:00", "02:59:59", "+14", -840]
+		["2017-01-14T12:59:59+00:00", "02:59:59", "+14", -840],
+		["2017-01-14T13:00:00+00:00", "02:00:00", "+13", -780]
 	])
 };

@@ -8,10 +8,6 @@ exports["America/Managua"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Managua", { abbr: true }),
 
-	"1890" : helpers.makeTestYear("America/Managua", [
-		["1890-01-01T05:45:08+00:00", "23:59:56", "MMT", 20712 / 60]
-	]),
-
 	"1934" : helpers.makeTestYear("America/Managua", [
 		["1934-06-23T05:45:11+00:00", "23:59:59", "MMT", 20712 / 60],
 		["1934-06-23T05:45:12+00:00", "23:45:12", "CST", 360]
@@ -68,6 +64,7 @@ exports["America/Managua"] = {
 	"2006" : helpers.makeTestYear("America/Managua", [
 		["2006-04-30T07:59:59+00:00", "01:59:59", "CST", 360],
 		["2006-04-30T08:00:00+00:00", "03:00:00", "CDT", 300],
-		["2006-10-01T05:59:59+00:00", "00:59:59", "CDT", 300]
+		["2006-10-01T05:59:59+00:00", "00:59:59", "CDT", 300],
+		["2006-10-01T06:00:00+00:00", "00:00:00", "CST", 360]
 	])
 };

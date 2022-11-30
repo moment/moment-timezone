@@ -9,6 +9,7 @@ exports["Pacific/Fiji"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Fiji", { abbr: true }),
 
 	"1915" : helpers.makeTestYear("Pacific/Fiji", [
+		["1915-10-25T12:04:15+00:00", "23:59:59", "LMT", -42944 / 60],
 		["1915-10-25T12:04:16+00:00", "00:04:16", "+12", -720]
 	]),
 
@@ -112,6 +113,7 @@ exports["Pacific/Fiji"] = {
 	]),
 
 	"2021" : helpers.makeTestYear("Pacific/Fiji", [
-		["2021-01-16T13:59:59+00:00", "02:59:59", "+13", -780]
+		["2021-01-16T13:59:59+00:00", "02:59:59", "+13", -780],
+		["2021-01-16T14:00:00+00:00", "02:00:00", "+12", -720]
 	])
 };

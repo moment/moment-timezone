@@ -184,7 +184,6 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/North_Dakota/New_Salem').countries(), ["US"]);
 		test.deepEqual(tz.zone('America/Ojinaga').countries(), ["MX"]);
 		test.deepEqual(tz.zone('America/Panama').countries(), ["CA","KY","PA"]);
-		test.deepEqual(tz.zone('America/Pangnirtung').countries(), ["CA"]);
 		test.deepEqual(tz.zone('America/Paramaribo').countries(), ["SR"]);
 		test.deepEqual(tz.zone('America/Phoenix').countries(), ["CA","US"]);
 		test.deepEqual(tz.zone('America/Port-au-Prince').countries(), ["HT"]);
@@ -642,7 +641,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("BW"), ["Africa/Gaborone","Africa/Maputo"]);
 		test.deepEqual(tz.zonesForCountry("BY"), ["Europe/Minsk"]);
 		test.deepEqual(tz.zonesForCountry("BZ"), ["America/Belize"]);
-		test.deepEqual(tz.zonesForCountry("CA"), ["America/Atikokan","America/Blanc-Sablon","America/Cambridge_Bay","America/Creston","America/Dawson","America/Dawson_Creek","America/Edmonton","America/Fort_Nelson","America/Glace_Bay","America/Goose_Bay","America/Halifax","America/Inuvik","America/Iqaluit","America/Moncton","America/Panama","America/Pangnirtung","America/Phoenix","America/Puerto_Rico","America/Rankin_Inlet","America/Regina","America/Resolute","America/St_Johns","America/Swift_Current","America/Toronto","America/Vancouver","America/Whitehorse","America/Winnipeg","America/Yellowknife"]);
+		test.deepEqual(tz.zonesForCountry("CA"), ["America/Atikokan","America/Blanc-Sablon","America/Cambridge_Bay","America/Creston","America/Dawson","America/Dawson_Creek","America/Edmonton","America/Fort_Nelson","America/Glace_Bay","America/Goose_Bay","America/Halifax","America/Inuvik","America/Iqaluit","America/Moncton","America/Panama","America/Phoenix","America/Puerto_Rico","America/Rankin_Inlet","America/Regina","America/Resolute","America/St_Johns","America/Swift_Current","America/Toronto","America/Vancouver","America/Whitehorse","America/Winnipeg","America/Yellowknife"]);
 		test.deepEqual(tz.zonesForCountry("CC"), ["Asia/Yangon","Indian/Cocos"]);
 		test.deepEqual(tz.zonesForCountry("CD"), ["Africa/Kinshasa","Africa/Lagos","Africa/Lubumbashi","Africa/Maputo"]);
 		test.deepEqual(tz.zonesForCountry("CF"), ["Africa/Bangui","Africa/Lagos"]);
@@ -760,7 +759,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("MU"), ["Indian/Mauritius"]);
 		test.deepEqual(tz.zonesForCountry("MV"), ["Indian/Maldives"]);
 		test.deepEqual(tz.zonesForCountry("MW"), ["Africa/Blantyre","Africa/Maputo"]);
-		test.deepEqual(tz.zonesForCountry("MX"), ["America/Bahia_Banderas","America/Cancun","America/Chihuahua","America/Hermosillo","America/Matamoros","America/Mazatlan","America/Merida","America/Mexico_City","America/Monterrey","America/Ojinaga","America/Tijuana"]);
+		test.deepEqual(tz.zonesForCountry("MX"), ["America/Bahia_Banderas","America/Cancun","America/Chihuahua","America/Ciudad_Juarez","America/Hermosillo","America/Matamoros","America/Mazatlan","America/Merida","America/Mexico_City","America/Monterrey","America/Ojinaga","America/Tijuana"]);
 		test.deepEqual(tz.zonesForCountry("MY"), ["Asia/Kuala_Lumpur","Asia/Kuching","Asia/Singapore"]);
 		test.deepEqual(tz.zonesForCountry("MZ"), ["Africa/Maputo"]);
 		test.deepEqual(tz.zonesForCountry("NA"), ["Africa/Windhoek"]);
