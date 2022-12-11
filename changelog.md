@@ -1,3 +1,6 @@
+### `0.5.40` _2022-12-11_
+* Updated data to IANA TZDB `2022g`
+
 ### `0.5.39` _2022-11-13_
 * Updated data to IANA TZDB `2022f`
 
