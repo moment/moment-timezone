@@ -45,9 +45,9 @@ exports["America/Whitehorse"] = {
 		["1965-10-31T09:00:00+00:00", "00:00:00", "YST", 540]
 	]),
 
-	"1967" : helpers.makeTestYear("America/Whitehorse", [
-		["1967-05-28T08:59:59+00:00", "23:59:59", "YST", 540],
-		["1967-05-28T09:00:00+00:00", "01:00:00", "PST", 480]
+	"1966" : helpers.makeTestYear("America/Whitehorse", [
+		["1966-02-27T08:59:59+00:00", "23:59:59", "YST", 540],
+		["1966-02-27T09:00:00+00:00", "01:00:00", "PST", 480]
 	]),
 
 	"1980" : helpers.makeTestYear("America/Whitehorse", [

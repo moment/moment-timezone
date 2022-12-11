@@ -1,5 +1,5 @@
 {
-	"version": "2022f",
+	"version": "2022g",
 	"countries": {
 		"AD": {
 			"name": "Andorra",
@@ -329,7 +329,6 @@
 				"America/Goose_Bay",
 				"America/Toronto",
 				"America/Iqaluit",
-				"America/Pangnirtung",
 				"America/Winnipeg",
 				"America/Resolute",
 				"America/Rankin_Inlet",
@@ -1257,12 +1256,13 @@
 				"America/Merida",
 				"America/Monterrey",
 				"America/Matamoros",
-				"America/Mazatlan",
 				"America/Chihuahua",
+				"America/Ciudad_Juarez",
 				"America/Ojinaga",
+				"America/Mazatlan",
+				"America/Bahia_Banderas",
 				"America/Hermosillo",
-				"America/Tijuana",
-				"America/Bahia_Banderas"
+				"America/Tijuana"
 			]
 		},
 		"MY": {
@@ -1725,7 +1725,7 @@
 			]
 		},
 		"TF": {
-			"name": "French Southern & Antarctic Lands",
+			"name": "French Southern Territories",
 			"abbr": "TF",
 			"zones": [
 				"Asia/Dubai",
@@ -2651,16 +2651,7 @@
 			"countries": [
 				"CA"
 			],
-			"comments": "Eastern - NU (most east areas)"
-		},
-		"America/Pangnirtung": {
-			"name": "America/Pangnirtung",
-			"lat": 66.1333,
-			"long": -64.2667,
-			"countries": [
-				"CA"
-			],
-			"comments": "Eastern - NU (Pangnirtung)"
+			"comments": "Eastern - NU (most areas)"
 		},
 		"America/Winnipeg": {
 			"name": "America/Winnipeg",
@@ -3701,7 +3692,7 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Central Time"
+			"comments": "Central Mexico"
 		},
 		"America/Cancun": {
 			"name": "America/Cancun",
@@ -3710,7 +3701,7 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Eastern Standard Time - Quintana Roo"
+			"comments": "Quintana Roo"
 		},
 		"America/Merida": {
 			"name": "America/Merida",
@@ -3719,7 +3710,7 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Central Time - Campeche, Yucatán"
+			"comments": "Campeche, Yucatán"
 		},
 		"America/Monterrey": {
 			"name": "America/Monterrey",
@@ -3728,7 +3719,7 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Central Time - Durango; Coahuila, Nuevo León, Tamaulipas (most areas)"
+			"comments": "Durango; Coahuila, Nuevo León, Tamaulipas (most areas)"
 		},
 		"America/Matamoros": {
 			"name": "America/Matamoros",
@@ -3737,16 +3728,7 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Central Time US - Coahuila, Nuevo León, Tamaulipas (US border)"
-		},
-		"America/Mazatlan": {
-			"name": "America/Mazatlan",
-			"lat": 23.2167,
-			"long": -105.5833,
-			"countries": [
-				"MX"
-			],
-			"comments": "Mountain Time - Baja California Sur, Nayarit, Sinaloa"
+			"comments": "Coahuila, Nuevo León, Tamaulipas (US border)"
 		},
 		"America/Chihuahua": {
 			"name": "America/Chihuahua",
@@ -3755,7 +3737,16 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Mountain Time - Chihuahua (most areas)"
+			"comments": "Chihuahua (most areas)"
+		},
+		"America/Ciudad_Juarez": {
+			"name": "America/Ciudad_Juarez",
+			"lat": 31.7333,
+			"long": -105.5167,
+			"countries": [
+				"MX"
+			],
+			"comments": "Chihuahua (US border - west)"
 		},
 		"America/Ojinaga": {
 			"name": "America/Ojinaga",
@@ -3764,25 +3755,16 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Mountain Time US - Chihuahua (US border)"
+			"comments": "Chihuahua (US border - east)"
 		},
-		"America/Hermosillo": {
-			"name": "America/Hermosillo",
-			"lat": 29.0667,
-			"long": -109.0333,
+		"America/Mazatlan": {
+			"name": "America/Mazatlan",
+			"lat": 23.2167,
+			"long": -105.5833,
 			"countries": [
 				"MX"
 			],
-			"comments": "Mountain Standard Time - Sonora"
-		},
-		"America/Tijuana": {
-			"name": "America/Tijuana",
-			"lat": 32.5333,
-			"long": -116.9833,
-			"countries": [
-				"MX"
-			],
-			"comments": "Pacific Time US - Baja California"
+			"comments": "Baja California Sur, Nayarit (most areas), Sinaloa"
 		},
 		"America/Bahia_Banderas": {
 			"name": "America/Bahia_Banderas",
@@ -3791,7 +3773,25 @@
 			"countries": [
 				"MX"
 			],
-			"comments": "Central Time - Bahía de Banderas"
+			"comments": "Bahía de Banderas"
+		},
+		"America/Hermosillo": {
+			"name": "America/Hermosillo",
+			"lat": 29.0667,
+			"long": -109.0333,
+			"countries": [
+				"MX"
+			],
+			"comments": "Sonora"
+		},
+		"America/Tijuana": {
+			"name": "America/Tijuana",
+			"lat": 32.5333,
+			"long": -116.9833,
+			"countries": [
+				"MX"
+			],
+			"comments": "Baja California"
 		},
 		"Asia/Kuching": {
 			"name": "Asia/Kuching",
