@@ -12,6 +12,7 @@ contributing.md
 
 .travis.yml
 .jshintrc
+.github
 
 bower.json
 
