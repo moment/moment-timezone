@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 		build : {
 			'moment-timezone-with-data'               : true,
 			'moment-timezone-with-data-1970-2030'     : [1970, 2030],
-			'moment-timezone-with-data-2012-2022'     : [2012, 2022],
+			'moment-timezone-with-data-2012-2022'     : [2012, 2022, 'warn'],
 			'moment-timezone-with-data-10-year-range' : [currentYear - 5, currentYear + 5]
 		},
 
