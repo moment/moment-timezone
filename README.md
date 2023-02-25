@@ -3,9 +3,8 @@
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-download-url]
 [![MIT License][license-image]][license-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][ci-image]][ci-url]
 [![FOSSA Status][fossa-badge-image]][fossa-badge-url]
-[![SemVer compatibility][semver-image]][semver-url]
 
 IANA Time zone support for Moment.js
 
@@ -55,14 +54,11 @@ Moment-timezone is freely distributable under the terms of the [MIT license][lic
 [npm-downloads-image]: https://img.shields.io/npm/dm/moment-timezone.svg?style=flat
 [npm-download-url]: https://npmcharts.com/compare/moment-timezone?minimal=true
 
-[travis-url]: https://travis-ci.org/moment/moment-timezone
-[travis-image]: https://img.shields.io/travis/moment/moment-timezone/develop.svg?style=flat
+[ci-url]: https://github.com/moment/moment-timezone/actions/workflows/tests.yml?query=branch%253Adevelop
+[ci-image]: https://github.com/moment/moment-timezone/actions/workflows/tests.yml/badge.svg?query=branch%253Adevelop
 
 [fossa-badge-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone.svg?type=shield
 [fossa-badge-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone?ref=badge_shield
 
 [fossa-large-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone.svg?type=large
 [fossa-large-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone?ref=badge_large
-
-[semver-image]: https://api.dependabot.com/badges/compatibility_score?dependency-name=moment-timezone&package-manager=npm_and_yarn&version-scheme=semver
-[semver-url]: https://dependabot.com/compatibility-score.html?dependency-name=moment-timezone&package-manager=npm_and_yarn&version-scheme=semver
