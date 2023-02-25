@@ -1,3 +1,10 @@
+### `0.5.41` _2023-02-25_
+* Updated `moment` npm dependency to `2.29.4` to remove automated warnings about insecure dependencies.
+  Moment Timezone still works with core Moment `2.9.0` and higher.
+* Updated all dev dependencies including UglifyJS, which produces the minified builds.
+* Added deprecation warning to the pre-built `moment-timezone-with-data-2012-2022` bundles [#1035](https://github.com/moment/moment-timezone/issues/1035).
+  Use the rolling `moment-timezone-with-data-10-year-range` files instead.
+
 ### `0.5.40` _2022-12-11_
 * Updated data to IANA TZDB `2022g`
 
