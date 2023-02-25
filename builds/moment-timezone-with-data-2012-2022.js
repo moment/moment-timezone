@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.40
+//! version : 0.5.41
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,7 +29,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.40",
+	var VERSION = "0.5.41",
 		zones = {},
 		links = {},
 		countries = {},
@@ -1543,6 +1543,18 @@
 		]
 	});
 
+	function staleDataWarning() {
+		if (moment.suppressDeprecationWarnings === false &&
+				(typeof console !==  'undefined') && console.warn) {
+			console.warn(
+				'Deprecation warning: ' +
+				'Moment Timezone has been loaded from a file containing data from 2012 to 2022 only. ' +
+				'This file is out of date and may be removed in a future release. ' +
+				'Dates and times for the current year might be incorrect.'
+			);
+		}
+	}
+	staleDataWarning();
 
 	return moment;
 }));
