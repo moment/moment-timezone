@@ -4,7 +4,7 @@ var path = require('path'),
 	execFile = require('child_process').execFile;
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-zic', '2. Compile data sources with zic(8).', function (version) {
+	grunt.registerTask('data-zic', '3. Compile data sources with zic(8).', function (version) {
 		version = version || 'latest';
 
 		var done  = this.async(),

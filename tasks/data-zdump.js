@@ -4,7 +4,7 @@ var path = require('path'),
 	execFile = require('child_process').execFile;
 
 module.exports = function (grunt) {
-	grunt.registerTask('data-zdump', '3. Dump data with zdump(8).', function (version) {
+	grunt.registerTask('data-zdump', '4. Dump data with zdump(8).', function (version) {
 		version = version || 'latest';
 
 		var done      = this.async(),
