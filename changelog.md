@@ -1,3 +1,6 @@
+### `0.5.42` _2023-03-24_
+* Updated data to IANA TZDB `2023b`
+
 ### `0.5.41` _2023-02-25_
 * Updated `moment` npm dependency to `2.29.4` to remove automated warnings about insecure dependencies.
   Moment Timezone still works with core Moment `2.9.0` and higher.
