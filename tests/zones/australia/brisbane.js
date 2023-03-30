@@ -8,10 +8,6 @@ exports["Australia/Brisbane"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Australia/Brisbane", { abbr: true }),
 
-	"1894" : helpers.makeTestYear("Australia/Brisbane", [
-		["1894-12-31T13:47:52+00:00", "23:47:52", "AEST", -600]
-	]),
-
 	"1916" : helpers.makeTestYear("Australia/Brisbane", [
 		["1916-12-31T15:59:59+00:00", "01:59:59", "AEST", -600],
 		["1916-12-31T16:00:00+00:00", "03:00:00", "AEDT", -660]
@@ -76,6 +72,7 @@ exports["Australia/Brisbane"] = {
 	]),
 
 	"1992" : helpers.makeTestYear("Australia/Brisbane", [
-		["1992-02-29T15:59:59+00:00", "02:59:59", "AEDT", -660]
+		["1992-02-29T15:59:59+00:00", "02:59:59", "AEDT", -660],
+		["1992-02-29T16:00:00+00:00", "02:00:00", "AEST", -600]
 	])
 };

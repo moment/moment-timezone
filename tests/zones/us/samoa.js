@@ -8,11 +8,8 @@ exports["US/Samoa"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("US/Samoa", { abbr: true, expect: "Pacific/Pago_Pago" }),
 
-	"1892" : helpers.makeTestYear("US/Samoa", [
-		["1892-07-04T11:22:48+00:00", "00:00:00", "LMT", 40968 / 60]
-	]),
-
 	"1911" : helpers.makeTestYear("US/Samoa", [
-		["1911-01-01T11:22:47+00:00", "23:59:59", "LMT", 40968 / 60]
+		["1911-01-01T11:22:47+00:00", "23:59:59", "LMT", 40968 / 60],
+		["1911-01-01T11:22:48+00:00", "00:22:48", "SST", 660]
 	])
 };

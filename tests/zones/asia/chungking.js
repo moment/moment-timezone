@@ -8,10 +8,6 @@ exports["Asia/Chungking"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Chungking", { abbr: true, expect: "Asia/Shanghai" }),
 
-	"1900" : helpers.makeTestYear("Asia/Chungking", [
-		["1900-12-31T15:54:17+00:00", "23:54:17", "CST", -480]
-	]),
-
 	"1919" : helpers.makeTestYear("Asia/Chungking", [
 		["1919-04-12T15:59:59+00:00", "23:59:59", "CST", -480],
 		["1919-04-12T16:00:00+00:00", "01:00:00", "CDT", -540],
@@ -109,6 +105,7 @@ exports["Asia/Chungking"] = {
 	"1991" : helpers.makeTestYear("Asia/Chungking", [
 		["1991-04-13T17:59:59+00:00", "01:59:59", "CST", -480],
 		["1991-04-13T18:00:00+00:00", "03:00:00", "CDT", -540],
-		["1991-09-14T16:59:59+00:00", "01:59:59", "CDT", -540]
+		["1991-09-14T16:59:59+00:00", "01:59:59", "CDT", -540],
+		["1991-09-14T17:00:00+00:00", "01:00:00", "CST", -480]
 	])
 };

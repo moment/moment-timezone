@@ -8,10 +8,6 @@ exports["America/Dawson"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Dawson", { abbr: true, expect: "America/Phoenix" }),
 
-	"1900" : helpers.makeTestYear("America/Dawson", [
-		["1900-08-20T09:17:40+00:00", "00:17:40", "YST", 540]
-	]),
-
 	"1918" : helpers.makeTestYear("America/Dawson", [
 		["1918-04-14T10:59:59+00:00", "01:59:59", "YST", 540],
 		["1918-04-14T11:00:00+00:00", "03:00:00", "YDT", 480],
@@ -333,6 +329,7 @@ exports["America/Dawson"] = {
 	"2020" : helpers.makeTestYear("America/Dawson", [
 		["2020-03-08T09:59:59+00:00", "01:59:59", "PST", 480],
 		["2020-03-08T10:00:00+00:00", "03:00:00", "PDT", 420],
-		["2020-11-01T06:59:59+00:00", "23:59:59", "PDT", 420]
+		["2020-11-01T06:59:59+00:00", "23:59:59", "PDT", 420],
+		["2020-11-01T07:00:00+00:00", "00:00:00", "MST", 420]
 	])
 };
