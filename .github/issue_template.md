@@ -9,7 +9,7 @@
 
 For bug reports, please run the following code in your environment and include the output:
 
-```
+```js
 console.log({
   moment: moment.version,
   momentTz: moment.tz.version,
