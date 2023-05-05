@@ -22,6 +22,24 @@ module.exports = function (grunt) {
 			return result;
 		}
 
+		var zdumpVerboseArg = '-V';
+		// Do a test of `zdump` to make sure it can provide the format we want.
+		// The `-V` flag (different from `-v`) was introduced in tzcode version 2013d,
+		// but still isn't available on macOS.
+		execFile('zdump', ['-V', 'UTC'], { maxBuffer: 20*1024*1024 }, function (err, stdout, stderr) {
+			if (stdout === '' && stderr.includes('illegal option')) {
+				zdumpVerboseArg = '-v';
+				grunt.log.warn('WARNING: The version of `zdump` on this machine is very old and might produce incorrect values');
+
+			// Do a separate test to make sure 64-bit data is returned.
+			// 32-bit `zdump` returns 1901 & 2038 boundaries even for the UTC zone.
+			} else if (stdout.includes('1901') && stdout.includes('2038')) {
+				grunt.log.warn("WARNING: The version of `zdump` on this machine can't handle 64-bit data and will produce incorrect values");
+			}
+
+			next();
+		});
+
 		function next () {
 			if (!files.length) {
 				grunt.log.ok('Dumped data for ' + version);
@@ -32,7 +50,7 @@ module.exports = function (grunt) {
 				src  = path.join(zicBase, file),
 				dest = path.join(zdumpBase, file);
 
-			execFile('zdump', ['-v', src], { maxBuffer: 20*1024*1024 }, function (err, stdout) {
+			execFile('zdump', [zdumpVerboseArg, src], { maxBuffer: 20*1024*1024 }, function (err, stdout) {
 				if (err) { throw err; }
 
 				if (stdout.length === 0) {
@@ -55,7 +73,5 @@ module.exports = function (grunt) {
 				next();
 			});
 		}
-
-		next();
 	});
 };

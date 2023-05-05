@@ -13,6 +13,17 @@ module.exports = function (grunt) {
 
 		grunt.file.mkdir(dest);
 
+		// Do a test of `zic` to make sure it can provide the data we want.
+		// The presence of the `-b` argument (introduced in tzcode 2019b) is a good test, as its
+		// purpose is to help work around year-2038 bugs.
+		execFile('zic', ['--help'], function (err, stdout) {
+			if (!stdout.includes('[ -b ')) {
+				grunt.log.warn('WARNING: The version of `zic` on this machine is old and might produce incorrect values');
+			}
+
+			next();
+		});
+
 		function next () {
 			if (!files.length) {
 				grunt.log.ok('Compiled zic for ' + version);
@@ -33,7 +44,5 @@ module.exports = function (grunt) {
 				next();
 			});
 		}
-
-		next();
 	});
 };
