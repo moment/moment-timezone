@@ -9,6 +9,7 @@ exports["Africa/Dar_es_Salaam"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Dar_es_Salaam", { abbr: true, expect: "Africa/Nairobi" }),
 
 	"1908" : helpers.makeTestYear("Africa/Dar_es_Salaam", [
+		["1908-04-30T21:32:43+00:00", "23:59:59", "LMT", -8836 / 60],
 		["1908-04-30T21:32:44+00:00", "00:02:44", "+0230", -150]
 	]),
 
@@ -28,6 +29,7 @@ exports["Africa/Dar_es_Salaam"] = {
 	]),
 
 	"1942" : helpers.makeTestYear("Africa/Dar_es_Salaam", [
-		["1942-07-31T21:14:59+00:00", "23:59:59", "+0245", -165]
+		["1942-07-31T21:14:59+00:00", "23:59:59", "+0245", -165],
+		["1942-07-31T21:15:00+00:00", "00:15:00", "EAT", -180]
 	])
 };

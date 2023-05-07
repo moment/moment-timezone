@@ -9,6 +9,7 @@ exports["Australia/North"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Australia/North", { abbr: true, expect: "Australia/Darwin" }),
 
 	"1895" : helpers.makeTestYear("Australia/North", [
+		["1895-01-31T15:16:39+00:00", "23:59:59", "LMT", -31400 / 60],
 		["1895-01-31T15:16:40+00:00", "00:16:40", "ACST", -540]
 	]),
 
@@ -47,6 +48,7 @@ exports["Australia/North"] = {
 	]),
 
 	"1944" : helpers.makeTestYear("Australia/North", [
-		["1944-03-25T16:29:59+00:00", "02:59:59", "ACDT", -630]
+		["1944-03-25T16:29:59+00:00", "02:59:59", "ACDT", -630],
+		["1944-03-25T16:30:00+00:00", "02:00:00", "ACST", -570]
 	])
 };

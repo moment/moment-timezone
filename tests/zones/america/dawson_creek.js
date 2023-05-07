@@ -9,6 +9,7 @@ exports["America/Dawson_Creek"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Dawson_Creek", { abbr: true, expect: "America/Phoenix" }),
 
 	"1884" : helpers.makeTestYear("America/Dawson_Creek", [
+		["1884-01-01T08:00:55+00:00", "23:59:59", "LMT", 28856 / 60],
 		["1884-01-01T08:00:56+00:00", "00:00:56", "PST", 480]
 	]),
 
@@ -209,6 +210,7 @@ exports["America/Dawson_Creek"] = {
 	"1972" : helpers.makeTestYear("America/Dawson_Creek", [
 		["1972-04-30T09:59:59+00:00", "01:59:59", "PST", 480],
 		["1972-04-30T10:00:00+00:00", "03:00:00", "PDT", 420],
-		["1972-08-30T08:59:59+00:00", "01:59:59", "PDT", 420]
+		["1972-08-30T08:59:59+00:00", "01:59:59", "PDT", 420],
+		["1972-08-30T09:00:00+00:00", "02:00:00", "MST", 420]
 	])
 };

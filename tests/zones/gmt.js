@@ -8,5 +8,7 @@ exports["GMT"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("GMT", { abbr: true, expect: "Africa/Abidjan" }),
 
-
+	"1970" : helpers.makeTestYear("GMT", [
+		["1970-01-01T00:00:00+00:00", "00:00:00", "GMT", 0]
+	])
 };

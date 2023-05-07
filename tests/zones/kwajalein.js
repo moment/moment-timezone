@@ -9,6 +9,7 @@ exports["Kwajalein"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Kwajalein", { abbr: true, expect: "Asia/Kamchatka" }),
 
 	"1900" : helpers.makeTestYear("Kwajalein", [
+		["1900-12-31T12:50:39+00:00", "23:59:59", "LMT", -40160 / 60],
 		["1900-12-31T12:50:40+00:00", "23:50:40", "+11", -660]
 	]),
 
@@ -33,6 +34,7 @@ exports["Kwajalein"] = {
 	]),
 
 	"1993" : helpers.makeTestYear("Kwajalein", [
-		["1993-08-21T11:59:59+00:00", "23:59:59", "-12", 720]
+		["1993-08-21T11:59:59+00:00", "23:59:59", "-12", 720],
+		["1993-08-21T12:00:00+00:00", "00:00:00", "+12", -720]
 	])
 };

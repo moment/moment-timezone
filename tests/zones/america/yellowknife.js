@@ -9,6 +9,7 @@ exports["America/Yellowknife"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Yellowknife", { abbr: true, expect: "America/Denver" }),
 
 	"1906" : helpers.makeTestYear("America/Yellowknife", [
+		["1906-09-01T07:33:51+00:00", "23:59:59", "LMT", 27232 / 60],
 		["1906-09-01T07:33:52+00:00", "00:33:52", "MST", 420]
 	]),
 
@@ -3765,6 +3766,7 @@ exports["America/Yellowknife"] = {
 	"2499" : helpers.makeTestYear("America/Yellowknife", [
 		["2499-03-08T08:59:59+00:00", "01:59:59", "MST", 420],
 		["2499-03-08T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["2499-11-01T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["2499-11-01T07:59:59+00:00", "01:59:59", "MDT", 360],
+		["2499-11-01T08:00:00+00:00", "01:00:00", "MST", 420]
 	])
 };

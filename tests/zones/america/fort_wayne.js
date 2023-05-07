@@ -9,6 +9,7 @@ exports["America/Fort_Wayne"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Fort_Wayne", { abbr: true, expect: "America/New_York" }),
 
 	"1883" : helpers.makeTestYear("America/Fort_Wayne", [
+		["1883-11-18T17:59:59+00:00", "12:15:21", "LMT", 20678 / 60],
 		["1883-11-18T18:00:00+00:00", "12:00:00", "CST", 360]
 	]),
 
@@ -3591,6 +3592,7 @@ exports["America/Fort_Wayne"] = {
 	"2499" : helpers.makeTestYear("America/Fort_Wayne", [
 		["2499-03-08T06:59:59+00:00", "01:59:59", "EST", 300],
 		["2499-03-08T07:00:00+00:00", "03:00:00", "EDT", 240],
-		["2499-11-01T05:59:59+00:00", "01:59:59", "EDT", 240]
+		["2499-11-01T05:59:59+00:00", "01:59:59", "EDT", 240],
+		["2499-11-01T06:00:00+00:00", "01:00:00", "EST", 300]
 	])
 };

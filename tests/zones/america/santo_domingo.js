@@ -9,6 +9,7 @@ exports["America/Santo_Domingo"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Santo_Domingo", { abbr: true }),
 
 	"1890" : helpers.makeTestYear("America/Santo_Domingo", [
+		["1890-01-01T04:39:35+00:00", "23:59:59", "LMT", 16776 / 60],
 		["1890-01-01T04:39:36+00:00", "23:59:36", "SDMT", 280]
 	]),
 
@@ -70,6 +71,7 @@ exports["America/Santo_Domingo"] = {
 	"2000" : helpers.makeTestYear("America/Santo_Domingo", [
 		["2000-10-29T05:59:59+00:00", "01:59:59", "AST", 240],
 		["2000-10-29T06:00:00+00:00", "01:00:00", "EST", 300],
-		["2000-12-03T05:59:59+00:00", "00:59:59", "EST", 300]
+		["2000-12-03T05:59:59+00:00", "00:59:59", "EST", 300],
+		["2000-12-03T06:00:00+00:00", "02:00:00", "AST", 240]
 	])
 };

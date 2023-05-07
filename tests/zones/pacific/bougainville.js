@@ -9,6 +9,7 @@ exports["Pacific/Bougainville"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Bougainville", { abbr: true, expect: "Asia/Sakhalin" }),
 
 	"1879" : helpers.makeTestYear("Pacific/Bougainville", [
+		["1879-12-31T13:37:43+00:00", "23:59:59", "LMT", -37336 / 60],
 		["1879-12-31T13:37:44+00:00", "23:26:16", "PMMT", -35312 / 60]
 	]),
 
@@ -28,6 +29,7 @@ exports["Pacific/Bougainville"] = {
 	]),
 
 	"2014" : helpers.makeTestYear("Pacific/Bougainville", [
-		["2014-12-27T15:59:59+00:00", "01:59:59", "+10", -600]
+		["2014-12-27T15:59:59+00:00", "01:59:59", "+10", -600],
+		["2014-12-27T16:00:00+00:00", "03:00:00", "+11", -660]
 	])
 };

@@ -9,6 +9,7 @@ exports["Africa/Sao_Tome"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Sao_Tome", { abbr: true, expect: "Africa/Abidjan" }),
 
 	"1883" : helpers.makeTestYear("Africa/Sao_Tome", [
+		["1883-12-31T23:33:03+00:00", "23:59:59", "LMT", -1616 / 60],
 		["1883-12-31T23:33:04+00:00", "22:56:19", "LMT", 2205 / 60]
 	]),
 
@@ -26,6 +27,7 @@ exports["Africa/Sao_Tome"] = {
 	]),
 
 	"2019" : helpers.makeTestYear("Africa/Sao_Tome", [
-		["2019-01-01T00:59:59+00:00", "01:59:59", "WAT", -60]
+		["2019-01-01T00:59:59+00:00", "01:59:59", "WAT", -60],
+		["2019-01-01T01:00:00+00:00", "01:00:00", "GMT", 0]
 	])
 };

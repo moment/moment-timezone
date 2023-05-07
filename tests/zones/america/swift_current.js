@@ -9,6 +9,7 @@ exports["America/Swift_Current"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Swift_Current", { abbr: true, expect: "America/Managua" }),
 
 	"1905" : helpers.makeTestYear("America/Swift_Current", [
+		["1905-09-01T07:11:19+00:00", "23:59:59", "LMT", 25880 / 60],
 		["1905-09-01T07:11:20+00:00", "00:11:20", "MST", 420]
 	]),
 
@@ -88,6 +89,7 @@ exports["America/Swift_Current"] = {
 	]),
 
 	"1972" : helpers.makeTestYear("America/Swift_Current", [
-		["1972-04-30T08:59:59+00:00", "01:59:59", "MST", 420]
+		["1972-04-30T08:59:59+00:00", "01:59:59", "MST", 420],
+		["1972-04-30T09:00:00+00:00", "03:00:00", "CST", 360]
 	])
 };

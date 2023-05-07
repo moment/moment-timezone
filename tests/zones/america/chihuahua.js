@@ -9,6 +9,7 @@ exports["America/Chihuahua"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Chihuahua", { abbr: true }),
 
 	"1922" : helpers.makeTestYear("America/Chihuahua", [
+		["1922-01-01T06:59:59+00:00", "23:55:39", "LMT", 25460 / 60],
 		["1922-01-01T07:00:00+00:00", "00:00:00", "MST", 420]
 	]),
 
@@ -219,6 +220,7 @@ exports["America/Chihuahua"] = {
 	"2022" : helpers.makeTestYear("America/Chihuahua", [
 		["2022-04-03T08:59:59+00:00", "01:59:59", "MST", 420],
 		["2022-04-03T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["2022-10-30T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["2022-10-30T07:59:59+00:00", "01:59:59", "MDT", 360],
+		["2022-10-30T08:00:00+00:00", "02:00:00", "CST", 360]
 	])
 };

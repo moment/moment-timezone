@@ -8,5 +8,7 @@ exports["Etc/UTC"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Etc/UTC", { abbr: true }),
 
-
+	"1970" : helpers.makeTestYear("Etc/UTC", [
+		["1970-01-01T00:00:00+00:00", "00:00:00", "UTC", 0]
+	])
 };

@@ -9,6 +9,7 @@ exports["America/Bahia_Banderas"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Bahia_Banderas", { abbr: true, expect: "America/Mexico_City" }),
 
 	"1922" : helpers.makeTestYear("America/Bahia_Banderas", [
+		["1922-01-01T06:59:59+00:00", "23:58:59", "LMT", 421],
 		["1922-01-01T07:00:00+00:00", "00:00:00", "MST", 420]
 	]),
 
@@ -234,6 +235,7 @@ exports["America/Bahia_Banderas"] = {
 	"2022" : helpers.makeTestYear("America/Bahia_Banderas", [
 		["2022-04-03T07:59:59+00:00", "01:59:59", "CST", 360],
 		["2022-04-03T08:00:00+00:00", "03:00:00", "CDT", 300],
-		["2022-10-30T06:59:59+00:00", "01:59:59", "CDT", 300]
+		["2022-10-30T06:59:59+00:00", "01:59:59", "CDT", 300],
+		["2022-10-30T07:00:00+00:00", "01:00:00", "CST", 360]
 	])
 };

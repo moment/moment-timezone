@@ -8,6 +8,10 @@ exports["America/Cambridge_Bay"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Cambridge_Bay", { abbr: true, expect: "America/Denver" }),
 
+	"1919" : helpers.makeTestYear("America/Cambridge_Bay", [
+		["1919-12-31T23:59:59+00:00", "23:59:59", "-00", 0]
+	]),
+
 	"1920" : helpers.makeTestYear("America/Cambridge_Bay", [
 		["1920-01-01T00:00:00+00:00", "17:00:00", "MST", 420]
 	]),
@@ -3718,6 +3722,7 @@ exports["America/Cambridge_Bay"] = {
 	"2499" : helpers.makeTestYear("America/Cambridge_Bay", [
 		["2499-03-08T08:59:59+00:00", "01:59:59", "MST", 420],
 		["2499-03-08T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["2499-11-01T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["2499-11-01T07:59:59+00:00", "01:59:59", "MDT", 360],
+		["2499-11-01T08:00:00+00:00", "01:00:00", "MST", 420]
 	])
 };

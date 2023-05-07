@@ -9,6 +9,7 @@ exports["America/North_Dakota/Beulah"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/North_Dakota/Beulah", { abbr: true, expect: "America/Chicago" }),
 
 	"1883" : helpers.makeTestYear("America/North_Dakota/Beulah", [
+		["1883-11-18T18:59:59+00:00", "12:12:52", "LMT", 24427 / 60],
 		["1883-11-18T19:00:00+00:00", "12:00:00", "MST", 420]
 	]),
 
@@ -3142,6 +3143,7 @@ exports["America/North_Dakota/Beulah"] = {
 	"2410" : helpers.makeTestYear("America/North_Dakota/Beulah", [
 		["2410-03-14T07:59:59+00:00", "01:59:59", "CST", 360],
 		["2410-03-14T08:00:00+00:00", "03:00:00", "CDT", 300],
-		["2410-11-07T06:59:59+00:00", "01:59:59", "CDT", 300]
+		["2410-11-07T06:59:59+00:00", "01:59:59", "CDT", 300],
+		["2410-11-07T07:00:00+00:00", "01:00:00", "CST", 360]
 	])
 };

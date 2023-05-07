@@ -9,6 +9,7 @@ exports["America/Guayaquil"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Guayaquil", { abbr: true, expect: "America/Lima" }),
 
 	"1890" : helpers.makeTestYear("America/Guayaquil", [
+		["1890-01-01T05:19:19+00:00", "23:59:59", "LMT", 19160 / 60],
 		["1890-01-01T05:19:20+00:00", "00:05:20", "QMT", 314]
 	]),
 
@@ -23,6 +24,7 @@ exports["America/Guayaquil"] = {
 	]),
 
 	"1993" : helpers.makeTestYear("America/Guayaquil", [
-		["1993-02-05T03:59:59+00:00", "23:59:59", "-04", 240]
+		["1993-02-05T03:59:59+00:00", "23:59:59", "-04", 240],
+		["1993-02-05T04:00:00+00:00", "23:00:00", "-05", 300]
 	])
 };

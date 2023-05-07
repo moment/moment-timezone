@@ -8,6 +8,10 @@ exports["America/Rankin_Inlet"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Rankin_Inlet", { abbr: true, expect: "America/Chicago" }),
 
+	"1956" : helpers.makeTestYear("America/Rankin_Inlet", [
+		["1956-12-31T23:59:59+00:00", "23:59:59", "-00", 0]
+	]),
+
 	"1957" : helpers.makeTestYear("America/Rankin_Inlet", [
 		["1957-01-01T00:00:00+00:00", "18:00:00", "CST", 360]
 	]),
@@ -3704,6 +3708,7 @@ exports["America/Rankin_Inlet"] = {
 	"2499" : helpers.makeTestYear("America/Rankin_Inlet", [
 		["2499-03-08T07:59:59+00:00", "01:59:59", "CST", 360],
 		["2499-03-08T08:00:00+00:00", "03:00:00", "CDT", 300],
-		["2499-11-01T06:59:59+00:00", "01:59:59", "CDT", 300]
+		["2499-11-01T06:59:59+00:00", "01:59:59", "CDT", 300],
+		["2499-11-01T07:00:00+00:00", "01:00:00", "CST", 360]
 	])
 };

@@ -9,6 +9,7 @@ exports["America/Indiana/Winamac"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Indiana/Winamac", { abbr: true, expect: "America/New_York" }),
 
 	"1883" : helpers.makeTestYear("America/Indiana/Winamac", [
+		["1883-11-18T17:59:59+00:00", "12:13:34", "LMT", 20785 / 60],
 		["1883-11-18T18:00:00+00:00", "12:00:00", "CST", 360]
 	]),
 
@@ -3616,6 +3617,7 @@ exports["America/Indiana/Winamac"] = {
 	"2499" : helpers.makeTestYear("America/Indiana/Winamac", [
 		["2499-03-08T06:59:59+00:00", "01:59:59", "EST", 300],
 		["2499-03-08T07:00:00+00:00", "03:00:00", "EDT", 240],
-		["2499-11-01T05:59:59+00:00", "01:59:59", "EDT", 240]
+		["2499-11-01T05:59:59+00:00", "01:59:59", "EDT", 240],
+		["2499-11-01T06:00:00+00:00", "01:00:00", "EST", 300]
 	])
 };

@@ -9,6 +9,7 @@ exports["Asia/Kolkata"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Asia/Kolkata", { abbr: true }),
 
 	"1854" : helpers.makeTestYear("Asia/Kolkata", [
+		["1854-06-27T18:06:31+00:00", "23:59:59", "LMT", -21208 / 60],
 		["1854-06-27T18:06:32+00:00", "23:59:52", "HMT", -21200 / 60]
 	]),
 
@@ -35,6 +36,7 @@ exports["Asia/Kolkata"] = {
 	]),
 
 	"1945" : helpers.makeTestYear("Asia/Kolkata", [
-		["1945-10-14T17:29:59+00:00", "23:59:59", "+0630", -390]
+		["1945-10-14T17:29:59+00:00", "23:59:59", "+0630", -390],
+		["1945-10-14T17:30:00+00:00", "23:00:00", "IST", -330]
 	])
 };

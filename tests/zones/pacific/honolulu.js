@@ -9,6 +9,7 @@ exports["Pacific/Honolulu"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Honolulu", { abbr: true }),
 
 	"1896" : helpers.makeTestYear("Pacific/Honolulu", [
+		["1896-01-13T22:31:25+00:00", "11:59:59", "LMT", 37886 / 60],
 		["1896-01-13T22:31:26+00:00", "12:01:26", "HST", 630]
 	]),
 
@@ -32,6 +33,7 @@ exports["Pacific/Honolulu"] = {
 	]),
 
 	"1947" : helpers.makeTestYear("Pacific/Honolulu", [
-		["1947-06-08T12:29:59+00:00", "01:59:59", "HST", 630]
+		["1947-06-08T12:29:59+00:00", "01:59:59", "HST", 630],
+		["1947-06-08T12:30:00+00:00", "02:30:00", "HST", 600]
 	])
 };

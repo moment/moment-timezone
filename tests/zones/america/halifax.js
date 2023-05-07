@@ -9,6 +9,7 @@ exports["America/Halifax"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Halifax", { abbr: true }),
 
 	"1902" : helpers.makeTestYear("America/Halifax", [
+		["1902-06-15T04:14:23+00:00", "23:59:59", "LMT", 15264 / 60],
 		["1902-06-15T04:14:24+00:00", "00:14:24", "AST", 240]
 	]),
 
@@ -4038,6 +4039,7 @@ exports["America/Halifax"] = {
 	"2499" : helpers.makeTestYear("America/Halifax", [
 		["2499-03-08T05:59:59+00:00", "01:59:59", "AST", 240],
 		["2499-03-08T06:00:00+00:00", "03:00:00", "ADT", 180],
-		["2499-11-01T04:59:59+00:00", "01:59:59", "ADT", 180]
+		["2499-11-01T04:59:59+00:00", "01:59:59", "ADT", 180],
+		["2499-11-01T05:00:00+00:00", "01:00:00", "AST", 240]
 	])
 };
