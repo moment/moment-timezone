@@ -7,7 +7,7 @@ exports.countries = {
 
 	zone_countries : function (test) {
 
-		test.deepEqual(tz.zone("Africa/Abidjan").countries(), ["BF","CI","GH","GM","GN","IS","ML","MR","SH","SL","SN","TG"]);
+		test.deepEqual(tz.zone('Africa/Abidjan').countries(), ["BF","CI","GH","GM","GN","IS","ML","MR","SH","SL","SN","TG"]);
 		test.deepEqual(tz.zone('Africa/Accra').countries(), ["GH"]);
 		test.deepEqual(tz.zone('Africa/Addis_Ababa').countries(), ["ET"]);
 		test.deepEqual(tz.zone('Africa/Algiers').countries(), ["DZ"]);
@@ -183,6 +183,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/North_Dakota/Beulah').countries(), ["US"]);
 		test.deepEqual(tz.zone('America/North_Dakota/Center').countries(), ["US"]);
 		test.deepEqual(tz.zone('America/North_Dakota/New_Salem').countries(), ["US"]);
+		test.deepEqual(tz.zone('America/Nuuk').countries(), ["GL"]);
 		test.deepEqual(tz.zone('America/Ojinaga').countries(), ["MX"]);
 		test.deepEqual(tz.zone('America/Panama').countries(), ["CA","KY","PA"]);
 		test.deepEqual(tz.zone('America/Pangnirtung').countries(), []);
@@ -192,7 +193,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('America/Port_of_Spain').countries(), ["TT"]);
 		test.deepEqual(tz.zone('America/Porto_Acre').countries(), []);
 		test.deepEqual(tz.zone('America/Porto_Velho').countries(), ["BR"]);
-		test.deepEqual(tz.zone("America/Puerto_Rico").countries(), ["AG","AI","AW","BL","BQ","CA","CW","DM","GD","GP","KN","LC","MF","MS","PR","SX","TT","VC","VG","VI"]);
+		test.deepEqual(tz.zone('America/Puerto_Rico').countries(), ["AG","AI","AW","BL","BQ","CA","CW","DM","GD","GP","KN","LC","MF","MS","PR","SX","TT","VC","VG","VI"]);
 		test.deepEqual(tz.zone('America/Punta_Arenas').countries(), ["CL"]);
 		test.deepEqual(tz.zone('America/Rainy_River').countries(), []);
 		test.deepEqual(tz.zone('America/Rankin_Inlet').countries(), ["CA"]);
@@ -455,8 +456,8 @@ exports.countries = {
 		test.deepEqual(tz.zone('Europe/Jersey').countries(), ["JE"]);
 		test.deepEqual(tz.zone('Europe/Kaliningrad').countries(), ["RU"]);
 		test.deepEqual(tz.zone('Europe/Kiev').countries(), []);
-		test.deepEqual(tz.zone('Europe/Kyiv').countries(), ["UA"]);
 		test.deepEqual(tz.zone('Europe/Kirov').countries(), ["RU"]);
+		test.deepEqual(tz.zone('Europe/Kyiv').countries(), ["UA"]);
 		test.deepEqual(tz.zone('Europe/Lisbon').countries(), ["PT"]);
 		test.deepEqual(tz.zone('Europe/Ljubljana').countries(), ["SI"]);
 		test.deepEqual(tz.zone('Europe/London').countries(), ["GB","GG","IM","JE"]);
@@ -551,6 +552,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Pacific/Guam').countries(), ["GU","MP"]);
 		test.deepEqual(tz.zone('Pacific/Honolulu').countries(), ["US"]);
 		test.deepEqual(tz.zone('Pacific/Johnston').countries(), []);
+		test.deepEqual(tz.zone('Pacific/Kanton').countries(), ["KI"]);
 		test.deepEqual(tz.zone('Pacific/Kiritimati').countries(), ["KI"]);
 		test.deepEqual(tz.zone('Pacific/Kosrae').countries(), ["FM"]);
 		test.deepEqual(tz.zone('Pacific/Kwajalein').countries(), ["MH"]);

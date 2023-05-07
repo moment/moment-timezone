@@ -79,21 +79,75 @@ function guessTests (zone) {
 	return tests;
 }
 
+/**
+ * Creates a test for a zone's `.countries()` output
+ */
+function zoneCountriesTest (zone) {
+	var countries = zone.countries.slice().sort();
+	return "\t\ttest.deepEqual(tz.zone('" + zone.name + "').countries(), [" +
+		countries.map(function (code) { return '"' + code + '"' }).join(',') +
+		"]);\n";
+}
+
+/**
+ * Creates a test for a country -> zones mapping
+ */
+function countryZonesTest (country) {
+	var zones = country.zones.slice().sort();
+	return '\t\ttest.deepEqual(tz.zonesForCountry("' + country.abbr + '"), [' +
+		zones.map(function (zone) { return '"' + zone + '"' }).join(',') +
+		']);\n';
+}
+
+/**
+ * Creates all tests for countries.js
+ */
+function allCountriesTests (zoneTests, countryTests) {
+	var intro = '"use strict";\n\nvar moment = require("../../");\nvar tz = moment.tz;\n\nexports.countries = {',
+		outro = '\n};\n',
+		tests = [
+			{ name: 'zone_countries', tests: zoneTests },
+			{ name: 'country_zones', tests: countryTests },
+		],
+		testStrings = tests.map(function (data) {
+			return '\n\n\t' + data.name + ' : function (test) {\n\n' +
+				data.tests.sort().join('') +
+				'\n\t\ttest.done();\n\t}';
+		});
+
+	return intro + testStrings.join(',') + outro;
+}
+
 module.exports = function (grunt) {
 	grunt.registerTask('data-tests', '8. Create unit tests from data-collect.', function (version) {
 		version = version || 'latest';
 		tz.load(grunt.file.readJSON('data/packed/' + version + '.json'));
 		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
-			testBase = version === 'latest' ? 'tests' : path.join('temp/tests', version);
+			meta = grunt.file.readJSON('data/meta/' + version + '.json'),
+			testBase = version === 'latest' ? 'tests' : path.join('temp/tests', version),
+			zoneCountriesTests = [];
 
+		// Generate unit tests for each zone
 		zones.forEach(function (zone) {
 			var data = intro(zone.name) + guessTests(zone) + yearTests(zone) + '\n};',
 				dest = path.join(testBase, 'zones', zone.name.toLowerCase() + '.js');
 
 			grunt.file.write(dest, data);
+			zoneCountriesTests.push(zoneCountriesTest(zone));
 			grunt.verbose.ok("Created " + zone.name + " tests.");
 		});
 
+		// Generate unit tests for countries
+		if (meta.countries) {
+			var countryZonesTests = Object.values(meta.countries).map(countryZonesTest);
+			grunt.file.write(
+				path.join(testBase, 'countries', 'countries.js'),
+				allCountriesTests(zoneCountriesTests, countryZonesTests)
+			);
+			grunt.verbose.ok("Created country tests.");
+		}
+
+		// Copy helpers and rewrite paths when generating for a specific version
 		if (version !== 'latest') {
 			grunt.file.copy('tests/helpers/helpers.js',
 					path.join(testBase, 'helpers/helpers.js'),
@@ -111,7 +165,7 @@ module.exports = function (grunt) {
 	});
 };
 
-// Tests should look something like this.
+// Zone tests should look something like this.
 //
 // "use strict";
 //
@@ -135,4 +189,34 @@ module.exports = function (grunt) {
 // 		["1919-10-26T08:59:59+00:00", "01:59:59", "PDT", 420],
 // 		["1919-10-26T09:00:00+00:00", "01:00:00", "PST", 480]
 // 	])
+// };
+
+// Country tests should look something like this.
+//
+// "use strict";
+//
+// var moment = require("../../");
+// var tz = moment.tz;
+//
+// exports.countries = {
+//
+// 	zone_countries : function (test) {
+//
+// 		test.deepEqual(tz.zone('Africa/Abidjan').countries(), ["BF","CI","GH","GM","GN","IS","ML","MR","SH","SL","SN","TG"]);
+// 		test.deepEqual(tz.zone('Africa/Accra').countries(), ["GH"]);
+//		...
+//
+// 		test.done();
+// 	},
+//
+// 	country_zones : function (test) {
+//
+// 		test.deepEqual(tz.zonesForCountry("AD"), ["Europe/Andorra"]);
+// 		test.deepEqual(tz.zonesForCountry("AE"), ["Asia/Dubai"]);
+// 		test.deepEqual(tz.zonesForCountry("AF"), ["Asia/Kabul"]);
+// 		test.deepEqual(tz.zonesForCountry("AG"), ["America/Antigua","America/Puerto_Rico"]);
+// 		...
+//
+// 		test.done();
+// 	}
 // };
