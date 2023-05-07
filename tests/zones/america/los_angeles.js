@@ -9,6 +9,7 @@ exports["America/Los_Angeles"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Los_Angeles", { abbr: true }),
 
 	"1883" : helpers.makeTestYear("America/Los_Angeles", [
+		["1883-11-18T19:59:59+00:00", "12:07:01", "LMT", 28378 / 60],
 		["1883-11-18T20:00:00+00:00", "12:00:00", "PST", 480]
 	]),
 
@@ -3894,6 +3895,7 @@ exports["America/Los_Angeles"] = {
 	"2499" : helpers.makeTestYear("America/Los_Angeles", [
 		["2499-03-08T09:59:59+00:00", "01:59:59", "PST", 480],
 		["2499-03-08T10:00:00+00:00", "03:00:00", "PDT", 420],
-		["2499-11-01T08:59:59+00:00", "01:59:59", "PDT", 420]
+		["2499-11-01T08:59:59+00:00", "01:59:59", "PDT", 420],
+		["2499-11-01T09:00:00+00:00", "01:00:00", "PST", 480]
 	])
 };

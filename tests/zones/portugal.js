@@ -8,6 +8,10 @@ exports["Portugal"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Portugal", { abbr: true, expect: "Europe/Lisbon" }),
 
+	"1911" : helpers.makeTestYear("Portugal", [
+		["1911-12-31T23:59:59+00:00", "23:23:14", "LMT", 2205 / 60]
+	]),
+
 	"1912" : helpers.makeTestYear("Portugal", [
 		["1912-01-01T00:00:00+00:00", "00:00:00", "WET", 0]
 	]),
@@ -4010,6 +4014,7 @@ exports["Portugal"] = {
 	"2499" : helpers.makeTestYear("Portugal", [
 		["2499-03-29T00:59:59+00:00", "00:59:59", "WET", 0],
 		["2499-03-29T01:00:00+00:00", "02:00:00", "WEST", -60],
-		["2499-10-25T00:59:59+00:00", "01:59:59", "WEST", -60]
+		["2499-10-25T00:59:59+00:00", "01:59:59", "WEST", -60],
+		["2499-10-25T01:00:00+00:00", "01:00:00", "WET", 0]
 	])
 };

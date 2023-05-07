@@ -8,6 +8,10 @@ exports["Africa/Ceuta"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("Africa/Ceuta", { abbr: true, expect: "Europe/Paris" }),
 
+	"1900" : helpers.makeTestYear("Africa/Ceuta", [
+		["1900-12-31T23:59:59+00:00", "23:38:43", "LMT", 1276 / 60]
+	]),
+
 	"1901" : helpers.makeTestYear("Africa/Ceuta", [
 		["1901-01-01T00:00:00+00:00", "00:00:00", "WET", 0]
 	]),
@@ -3681,6 +3685,7 @@ exports["Africa/Ceuta"] = {
 	"2499" : helpers.makeTestYear("Africa/Ceuta", [
 		["2499-03-29T00:59:59+00:00", "01:59:59", "CET", -60],
 		["2499-03-29T01:00:00+00:00", "03:00:00", "CEST", -120],
-		["2499-10-25T00:59:59+00:00", "02:59:59", "CEST", -120]
+		["2499-10-25T00:59:59+00:00", "02:59:59", "CEST", -120],
+		["2499-10-25T01:00:00+00:00", "02:00:00", "CET", -60]
 	])
 };

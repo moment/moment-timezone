@@ -9,6 +9,7 @@ exports["Atlantic/Bermuda"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Atlantic/Bermuda", { abbr: true, expect: "America/Halifax" }),
 
 	"1890" : helpers.makeTestYear("Atlantic/Bermuda", [
+		["1890-01-01T04:19:17+00:00", "23:59:59", "LMT", 15558 / 60],
 		["1890-01-01T04:19:18+00:00", "00:00:00", "BMT", 15558 / 60]
 	]),
 
@@ -3786,6 +3787,7 @@ exports["Atlantic/Bermuda"] = {
 	"2499" : helpers.makeTestYear("Atlantic/Bermuda", [
 		["2499-03-08T05:59:59+00:00", "01:59:59", "AST", 240],
 		["2499-03-08T06:00:00+00:00", "03:00:00", "ADT", 180],
-		["2499-11-01T04:59:59+00:00", "01:59:59", "ADT", 180]
+		["2499-11-01T04:59:59+00:00", "01:59:59", "ADT", 180],
+		["2499-11-01T05:00:00+00:00", "01:00:00", "AST", 240]
 	])
 };

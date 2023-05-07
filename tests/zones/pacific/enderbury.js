@@ -9,6 +9,7 @@ exports["Pacific/Enderbury"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Pacific/Enderbury", { abbr: true, expect: "Pacific/Tongatapu" }),
 
 	"1937" : helpers.makeTestYear("Pacific/Enderbury", [
+		["1937-08-30T23:59:59+00:00", "23:59:59", "-00", 0],
 		["1937-08-31T00:00:00+00:00", "12:00:00", "-12", 720]
 	]),
 
@@ -18,6 +19,7 @@ exports["Pacific/Enderbury"] = {
 	]),
 
 	"1994" : helpers.makeTestYear("Pacific/Enderbury", [
-		["1994-12-31T10:59:59+00:00", "23:59:59", "-11", 660]
+		["1994-12-31T10:59:59+00:00", "23:59:59", "-11", 660],
+		["1994-12-31T11:00:00+00:00", "00:00:00", "+13", -780]
 	])
 };

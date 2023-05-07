@@ -9,6 +9,7 @@ exports["Europe/Helsinki"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Helsinki", { abbr: true, expect: "Europe/Athens" }),
 
 	"1878" : helpers.makeTestYear("Europe/Helsinki", [
+		["1878-05-30T22:20:10+00:00", "23:59:59", "LMT", -5989 / 60],
 		["1878-05-30T22:20:11+00:00", "00:00:00", "HMT", -5989 / 60]
 	]),
 
@@ -3653,6 +3654,7 @@ exports["Europe/Helsinki"] = {
 	"2499" : helpers.makeTestYear("Europe/Helsinki", [
 		["2499-03-29T00:59:59+00:00", "02:59:59", "EET", -120],
 		["2499-03-29T01:00:00+00:00", "04:00:00", "EEST", -180],
-		["2499-10-25T00:59:59+00:00", "03:59:59", "EEST", -180]
+		["2499-10-25T00:59:59+00:00", "03:59:59", "EEST", -180],
+		["2499-10-25T01:00:00+00:00", "03:00:00", "EET", -120]
 	])
 };

@@ -9,6 +9,7 @@ exports["America/Ciudad_Juarez"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Ciudad_Juarez", { abbr: true }),
 
 	"1922" : helpers.makeTestYear("America/Ciudad_Juarez", [
+		["1922-01-01T06:59:59+00:00", "23:54:03", "LMT", 25556 / 60],
 		["1922-01-01T07:00:00+00:00", "00:00:00", "MST", 420]
 	]),
 
@@ -3021,6 +3022,7 @@ exports["America/Ciudad_Juarez"] = {
 	"2422" : helpers.makeTestYear("America/Ciudad_Juarez", [
 		["2422-03-13T08:59:59+00:00", "01:59:59", "MST", 420],
 		["2422-03-13T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["2422-11-06T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["2422-11-06T07:59:59+00:00", "01:59:59", "MDT", 360],
+		["2422-11-06T08:00:00+00:00", "01:00:00", "MST", 420]
 	])
 };

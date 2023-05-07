@@ -36,12 +36,18 @@ function yearTest (year, changeTests, name) {
 function yearTests (zone) {
 	var changeTests = {};
 
-	zone.untils.forEach(function (until, i) {
-		if (i < 2 || i >= zone.untils.length - 2) { return; }
-		var year = moment.utc(until).year();
-		changeTests[year] = changeTests[year] || [];
-		changeTests[year].push(changeTest(zone, i));
-	});
+	// Fixed-offset zones (like `Etc/GMT-2`) only have a single `null` until value.
+	// We pick a fixed timestamp for those cases, using the Unix epoch.
+	if (zone.untils.length === 1 && zone.untils[0] === null) {
+		var fixedUntil = Object.assign({}, zone, { untils: [0] })
+		changeTests[1970] = [changeTest(fixedUntil, 0)];
+	} else {
+		zone.untils.forEach(function (until, i) {
+			var year = moment.utc(until).year();
+			changeTests[year] = changeTests[year] || [];
+			changeTests[year].push(changeTest(zone, i));
+		});
+	}
 
 	return Object.keys(changeTests).map(function (year) {
 		return yearTest(year, changeTests[year], zone.name);
@@ -78,7 +84,7 @@ module.exports = function (grunt) {
 		version = version || 'latest';
 		tz.load(grunt.file.readJSON('data/packed/' + version + '.json'));
 		var zones = grunt.file.readJSON('temp/collect/' + version + '.json'),
-			testBase = version === 'latest' ? 'tests' : path.join('temp/tests', version)
+			testBase = version === 'latest' ? 'tests' : path.join('temp/tests', version);
 
 		zones.forEach(function (zone) {
 			var data = intro(zone.name) + guessTests(zone) + yearTests(zone) + '\n};',

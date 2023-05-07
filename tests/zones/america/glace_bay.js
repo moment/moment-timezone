@@ -9,6 +9,7 @@ exports["America/Glace_Bay"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Glace_Bay", { abbr: true, expect: "America/Halifax" }),
 
 	"1902" : helpers.makeTestYear("America/Glace_Bay", [
+		["1902-06-15T03:59:47+00:00", "23:59:59", "LMT", 14388 / 60],
 		["1902-06-15T03:59:48+00:00", "23:59:48", "AST", 240]
 	]),
 
@@ -3730,6 +3731,7 @@ exports["America/Glace_Bay"] = {
 	"2499" : helpers.makeTestYear("America/Glace_Bay", [
 		["2499-03-08T05:59:59+00:00", "01:59:59", "AST", 240],
 		["2499-03-08T06:00:00+00:00", "03:00:00", "ADT", 180],
-		["2499-11-01T04:59:59+00:00", "01:59:59", "ADT", 180]
+		["2499-11-01T04:59:59+00:00", "01:59:59", "ADT", 180],
+		["2499-11-01T05:00:00+00:00", "01:00:00", "AST", 240]
 	])
 };

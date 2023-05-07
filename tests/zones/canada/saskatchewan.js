@@ -9,6 +9,7 @@ exports["Canada/Saskatchewan"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Canada/Saskatchewan", { abbr: true, expect: "America/Managua" }),
 
 	"1905" : helpers.makeTestYear("Canada/Saskatchewan", [
+		["1905-09-01T06:58:35+00:00", "23:59:59", "LMT", 25116 / 60],
 		["1905-09-01T06:58:36+00:00", "23:58:36", "MST", 420]
 	]),
 
@@ -193,6 +194,7 @@ exports["Canada/Saskatchewan"] = {
 	]),
 
 	"1960" : helpers.makeTestYear("Canada/Saskatchewan", [
-		["1960-04-24T08:59:59+00:00", "01:59:59", "MST", 420]
+		["1960-04-24T08:59:59+00:00", "01:59:59", "MST", 420],
+		["1960-04-24T09:00:00+00:00", "03:00:00", "CST", 360]
 	])
 };

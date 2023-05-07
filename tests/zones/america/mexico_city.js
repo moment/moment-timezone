@@ -9,6 +9,7 @@ exports["America/Mexico_City"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Mexico_City", { abbr: true }),
 
 	"1922" : helpers.makeTestYear("America/Mexico_City", [
+		["1922-01-01T06:59:59+00:00", "00:23:23", "LMT", 23796 / 60],
 		["1922-01-01T07:00:00+00:00", "00:00:00", "MST", 420]
 	]),
 
@@ -253,6 +254,7 @@ exports["America/Mexico_City"] = {
 	"2022" : helpers.makeTestYear("America/Mexico_City", [
 		["2022-04-03T07:59:59+00:00", "01:59:59", "CST", 360],
 		["2022-04-03T08:00:00+00:00", "03:00:00", "CDT", 300],
-		["2022-10-30T06:59:59+00:00", "01:59:59", "CDT", 300]
+		["2022-10-30T06:59:59+00:00", "01:59:59", "CDT", 300],
+		["2022-10-30T07:00:00+00:00", "01:00:00", "CST", 360]
 	])
 };

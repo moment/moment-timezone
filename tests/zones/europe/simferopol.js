@@ -9,6 +9,7 @@ exports["Europe/Simferopol"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("Europe/Simferopol", { abbr: true, expect: "Europe/Moscow" }),
 
 	"1879" : helpers.makeTestYear("Europe/Simferopol", [
+		["1879-12-31T21:43:35+00:00", "23:59:59", "LMT", -8184 / 60],
 		["1879-12-31T21:43:36+00:00", "23:59:36", "SMT", -136]
 	]),
 
@@ -273,6 +274,7 @@ exports["Europe/Simferopol"] = {
 	"2014" : helpers.makeTestYear("Europe/Simferopol", [
 		["2014-03-29T23:59:59+00:00", "01:59:59", "EET", -120],
 		["2014-03-30T00:00:00+00:00", "04:00:00", "MSK", -240],
-		["2014-10-25T21:59:59+00:00", "01:59:59", "MSK", -240]
+		["2014-10-25T21:59:59+00:00", "01:59:59", "MSK", -240],
+		["2014-10-25T22:00:00+00:00", "01:00:00", "MSK", -180]
 	])
 };

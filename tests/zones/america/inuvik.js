@@ -8,6 +8,10 @@ exports["America/Inuvik"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("America/Inuvik", { abbr: true, expect: "America/Denver" }),
 
+	"1952" : helpers.makeTestYear("America/Inuvik", [
+		["1952-12-31T23:59:59+00:00", "23:59:59", "-00", 0]
+	]),
+
 	"1953" : helpers.makeTestYear("America/Inuvik", [
 		["1953-01-01T00:00:00+00:00", "16:00:00", "PST", 480]
 	]),
@@ -3704,6 +3708,7 @@ exports["America/Inuvik"] = {
 	"2499" : helpers.makeTestYear("America/Inuvik", [
 		["2499-03-08T08:59:59+00:00", "01:59:59", "MST", 420],
 		["2499-03-08T09:00:00+00:00", "03:00:00", "MDT", 360],
-		["2499-11-01T07:59:59+00:00", "01:59:59", "MDT", 360]
+		["2499-11-01T07:59:59+00:00", "01:59:59", "MDT", 360],
+		["2499-11-01T08:00:00+00:00", "01:00:00", "MST", 420]
 	])
 };

@@ -8,5 +8,7 @@ exports["HST"] = {
 
 	"guess:by:abbr" : helpers.makeTestGuess("HST", { abbr: true, expect: "Pacific/Honolulu" }),
 
-
+	"1970" : helpers.makeTestYear("HST", [
+		["1970-01-01T00:00:00+00:00", "14:00:00", "HST", 600]
+	])
 };

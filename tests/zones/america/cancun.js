@@ -9,6 +9,7 @@ exports["America/Cancun"] = {
 	"guess:by:abbr" : helpers.makeTestGuess("America/Cancun", { abbr: true, expect: "America/Panama" }),
 
 	"1922" : helpers.makeTestYear("America/Cancun", [
+		["1922-01-01T05:59:59+00:00", "00:12:55", "LMT", 20824 / 60],
 		["1922-01-01T06:00:00+00:00", "00:00:00", "CST", 360]
 	]),
 
@@ -153,6 +154,7 @@ exports["America/Cancun"] = {
 	]),
 
 	"2015" : helpers.makeTestYear("America/Cancun", [
-		["2015-02-01T07:59:59+00:00", "01:59:59", "CST", 360]
+		["2015-02-01T07:59:59+00:00", "01:59:59", "CST", 360],
+		["2015-02-01T08:00:00+00:00", "03:00:00", "EST", 300]
 	])
 };
