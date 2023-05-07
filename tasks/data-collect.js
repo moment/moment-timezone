@@ -12,7 +12,8 @@ module.exports = function (grunt) {
 			meta 	= grunt.file.readJSON('data/meta/' + version + '.json'),
 			data  = [];
 
-		var format = "MMM D HH:mm:ss YYYY";
+		var format = "MMM D HH:mm:ss YYYY",
+			invalidLine = /failed|-2147481748|2147485547/;
 
 		files.forEach(function (file) {
 			var lines   = grunt.file.read(path.join('temp/zdump/' + version, file)).split('\n'),
@@ -23,12 +24,20 @@ module.exports = function (grunt) {
 				countries = [];
 
 			lines.forEach(function (line) {
-				var parts  = line.split(/\s+/),
-					utc    = moment.utc(parts.slice(2, 6).join(' '), format),
-					local  = moment.utc(parts.slice(9, 13).join(' '), format);
+				// Skip any lines that don't match the expected format.
+				// 64-bit `zdump` with the `-v` flag can produce lines outside Moment's parseable date range:
+				//
+				// Etc/GMT-2  -9223372036854775808 = NULL
+				// Etc/GMT-2  -67768040609748001 (gmtime failed) = -67768040609748001 (localtime failed)
+				// Etc/GMT-2  -67768040609748000 (gmtime failed) = Thu Jan  1 00:00:00 -2147481748 +02 isdst=0 gmtoff=7200
+				// Etc/GMT-2  Thu Jan  1 00:00:00 -2147481748 UT = Thu Jan  1 02:00:00 -2147481748 +02 isdst=0 gmtoff=7200
+				var parts  = line.split(/\s+/);
+				if (invalidLine.test(line) || parts.length < 13) {
+					return;
+				}
 
-				if (line.search('failed') !== -1) { return; }
-				if (parts.length < 13) { return; }
+				var utc    = moment.utc(parts.slice(2, 6).join(' '), format),
+					local  = moment.utc(parts.slice(9, 13).join(' '), format);
 
 				offsets.push(+utc.diff(local, 'minutes', true).toFixed(4));
 				untils.push(+utc);
@@ -36,7 +45,12 @@ module.exports = function (grunt) {
 			});
 
 			if (offsets.length === 0 && lines.length === 3 && lines[2].length === 0) {
-				// use alternate zdump format
+				// Use alternate `zdump` format when a fixed-offset zone has no transitions.
+				// The data-zdump task will instead generate the current timestamp for UTC and the zone,
+				// with the difference between them being used as the offset:
+				//
+				// UTC        Sun May  7 06:17:50 2023 UTC
+				// Etc/GMT-2  Sun May  7 08:17:50 2023 +02
 				var utcParts   = lines[0].split(/\s+/),
 				    localParts = lines[1].split(/\s+/);
 
