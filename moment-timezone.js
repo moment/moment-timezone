@@ -150,16 +150,19 @@
 		}
 	}
 
-	function closest(num, arr) {
+	function closest (num, arr) {
+		var len = arr.length;
 		if (num < arr[0]) {
 			return 0;
-		} else if (num >= arr[arr.length-1]) {
+		} else if (len > 1 && arr[len - 1] === Infinity && num >= arr[len - 2]) {
+			return len - 1;
+		} else if (num >= arr[len - 1]) {
 			return -1;
 		}
 	
 		var mid;
 		var lo = 0;
-		var hi = arr.length - 1;  
+		var hi = len - 1;  
 		while (hi - lo > 1) {
 			mid = Math.floor((lo + hi) / 2);
 			if (arr[mid] <= num) {
@@ -185,7 +188,7 @@
 				untils = this.untils,
 				i;
 
-			i = closest(target,untils);
+			i = closest(target, untils);
 			if (i >= 0) {
 				return i;
 			}
