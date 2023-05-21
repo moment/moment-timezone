@@ -3,7 +3,17 @@
 If you are submitting a bug, please create a [jsfiddle](http://jsfiddle.net/)
 demonstrating the issue before opening a ticket on GitHub.
 
-## Contributing
+## Contributing code
+
+:warning: Before you begin, note that Moment Timezone is in [maintenance-only mode](https://momentjs.com/docs/#/-project-status/).
+Bug fixes and performance improvements will still be accepted, and IANA data updates
+will continue to be released.
+
+However, new features or API changes are **unlikely to be accepted** as pull requests.
+
+For other types of code improvements, the process below should be followed.
+
+---
 
 Fork the library, install grunt, and install dependencies.
 Note that all pull requests will require a signed [CLA (Contributor License Agreement)](https://openjsf.org/about/the-openjs-foundation-cla/).
