@@ -591,10 +591,10 @@
 	function tz (input) {
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
-			zone = getZone(name),
-			out  = moment.utc.apply(null, args);
+			out  = moment.utc.apply(null, args),
+			zone;
 
-		if (zone && !moment.isMoment(input) && needsOffset(out)) {
+		if (!moment.isMoment(input) && needsOffset(out) && (zone = getZone(name))) {
 			out.add(zone.parse(out), 'minutes');
 		}
 
