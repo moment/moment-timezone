@@ -4,9 +4,9 @@ var helpers = require("../../helpers/helpers");
 
 exports["Antarctica/Casey"] = {
 
-	"guess:by:offset" : helpers.makeTestGuess("Antarctica/Casey", { offset: true, expect: "Asia/Sakhalin" }),
+	"guess:by:offset" : helpers.makeTestGuess("Antarctica/Casey", { offset: true }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("Antarctica/Casey", { abbr: true, expect: "Asia/Sakhalin" }),
+	"guess:by:abbr" : helpers.makeTestGuess("Antarctica/Casey", { abbr: true }),
 
 	"1968" : helpers.makeTestYear("Antarctica/Casey", [
 		["1968-12-31T23:59:59+00:00", "23:59:59", "-00", 0]
@@ -60,5 +60,24 @@ exports["Antarctica/Casey"] = {
 		["2020-03-07T16:00:00+00:00", "00:00:00", "+08", -480],
 		["2020-10-03T16:00:59+00:00", "00:00:59", "+08", -480],
 		["2020-10-03T16:01:00+00:00", "03:01:00", "+11", -660]
+	]),
+
+	"2021" : helpers.makeTestYear("Antarctica/Casey", [
+		["2021-03-13T12:59:59+00:00", "23:59:59", "+11", -660],
+		["2021-03-13T13:00:00+00:00", "21:00:00", "+08", -480],
+		["2021-10-02T16:00:59+00:00", "00:00:59", "+08", -480],
+		["2021-10-02T16:01:00+00:00", "03:01:00", "+11", -660]
+	]),
+
+	"2022" : helpers.makeTestYear("Antarctica/Casey", [
+		["2022-03-12T12:59:59+00:00", "23:59:59", "+11", -660],
+		["2022-03-12T13:00:00+00:00", "21:00:00", "+08", -480],
+		["2022-10-01T16:00:59+00:00", "00:00:59", "+08", -480],
+		["2022-10-01T16:01:00+00:00", "03:01:00", "+11", -660]
+	]),
+
+	"2023" : helpers.makeTestYear("Antarctica/Casey", [
+		["2023-03-08T15:59:59+00:00", "02:59:59", "+11", -660],
+		["2023-03-08T16:00:00+00:00", "00:00:00", "+08", -480]
 	])
 };
