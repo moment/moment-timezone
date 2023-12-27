@@ -32,7 +32,7 @@ module.exports = function (grunt) {
 		var zdumpVerboseArg = '-V';
 		// Do a test of `zdump` to make sure it can provide the format we want.
 		// The `-V` flag (different from `-v`) was introduced in tzcode version 2013d,
-		// but still isn't available on macOS.
+		// but still wasn't available on macOS until 14.0 (Sonoma).
 		execFile(zdumpBinary, ['-V', 'UTC'], { maxBuffer: 20*1024*1024 }, function (err, stdout, stderr) {
 			if (stdout === '' && stderr.includes('illegal option')) {
 				zdumpVerboseArg = '-v';
