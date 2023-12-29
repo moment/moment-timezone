@@ -333,7 +333,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Asia/Ujung_Pandang').countries(), []);
 		test.deepEqual(tz.zone('Asia/Ulaanbaatar').countries(), ["MN"]);
 		test.deepEqual(tz.zone('Asia/Ulan_Bator').countries(), []);
-		test.deepEqual(tz.zone('Asia/Urumqi').countries(), ["AQ","CN"]);
+		test.deepEqual(tz.zone('Asia/Urumqi').countries(), ["CN"]);
 		test.deepEqual(tz.zone('Asia/Ust-Nera').countries(), ["RU"]);
 		test.deepEqual(tz.zone('Asia/Vientiane').countries(), ["LA"]);
 		test.deepEqual(tz.zone('Asia/Vladivostok').countries(), ["RU"]);
@@ -617,7 +617,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("AL"), ["Europe/Tirane"]);
 		test.deepEqual(tz.zonesForCountry("AM"), ["Asia/Yerevan"]);
 		test.deepEqual(tz.zonesForCountry("AO"), ["Africa/Lagos","Africa/Luanda"]);
-		test.deepEqual(tz.zonesForCountry("AQ"), ["Antarctica/Casey","Antarctica/Davis","Antarctica/DumontDUrville","Antarctica/Mawson","Antarctica/McMurdo","Antarctica/Palmer","Antarctica/Rothera","Antarctica/Syowa","Antarctica/Troll","Antarctica/Vostok","Asia/Riyadh","Asia/Urumqi","Pacific/Auckland","Pacific/Port_Moresby"]);
+		test.deepEqual(tz.zonesForCountry("AQ"), ["Antarctica/Casey","Antarctica/Davis","Antarctica/DumontDUrville","Antarctica/Mawson","Antarctica/McMurdo","Antarctica/Palmer","Antarctica/Rothera","Antarctica/Syowa","Antarctica/Troll","Antarctica/Vostok","Asia/Riyadh","Pacific/Auckland","Pacific/Port_Moresby"]);
 		test.deepEqual(tz.zonesForCountry("AR"), ["America/Argentina/Buenos_Aires","America/Argentina/Catamarca","America/Argentina/Cordoba","America/Argentina/Jujuy","America/Argentina/La_Rioja","America/Argentina/Mendoza","America/Argentina/Rio_Gallegos","America/Argentina/Salta","America/Argentina/San_Juan","America/Argentina/San_Luis","America/Argentina/Tucuman","America/Argentina/Ushuaia"]);
 		test.deepEqual(tz.zonesForCountry("AS"), ["Pacific/Pago_Pago"]);
 		test.deepEqual(tz.zonesForCountry("AT"), ["Europe/Vienna"]);
