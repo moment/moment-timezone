@@ -1,3 +1,11 @@
+### `0.5.44` _2023-12-29_
+* Updated data to IANA TZDB `2023d`.
+* Fixed `.valueOf()` to return `NaN` for invalid zoned objects (matching default `moment`) [#1082](https://github.com/moment/moment-timezone/pull/1082).
+* Performance improvements:
+  * Use binary search when looking up zone information [#720](https://github.com/moment/moment-timezone/pull/720).
+  * Avoid redundant checks in `tz.guess()`.
+  * Avoid redundant `getZone()` calls in `.tz()`.
+
 ### `0.5.43` _2023-03-31_
 * Updated data to IANA TZDB `2023c`
 
