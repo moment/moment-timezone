@@ -72,5 +72,19 @@ exports.default = {
 			'resetting default timezone should not affect existing moments'
 		);
 		t.done();
+	},
+	valueOf : function (t) {
+		moment.tz.setDefault();
+		t.ok(
+			Number.isNaN(moment('2023/10/06', ['H', 'HH', 'HH:mm'], true).valueOf()),
+			'invalid moment should return NaN for .valueOf()'
+		);
+		// https://github.com/moment/moment-timezone/issues/1075
+		moment.tz.setDefault('America/New_York');
+		t.ok(
+			Number.isNaN(moment('2023/10/06', ['H', 'HH', 'HH:mm'], true).valueOf()),
+			'invalid moment with default zone should return NaN for .valueOf()'
+		);
+		t.done();
 	}
 };
