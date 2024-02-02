@@ -724,7 +724,7 @@
 	}
 
 	loadData({
-		"version": "2023d",
+		"version": "2024a",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
