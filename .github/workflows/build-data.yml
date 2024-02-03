@@ -44,6 +44,11 @@ jobs:
             data-pack \
             data-tests
 
+      # The PR-specific workflow doesn't seem to run for PRs created by other workflows,
+      # so we run the tests manually here just in case
+      - name: Run tests
+        run: npm test
+
       # Prepare version metadata for use in PR creation
       - name: Prepare metadata
         id: meta
