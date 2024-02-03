@@ -1,0 +1,68 @@
+name: Build latest IANA data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-data:
+    name: Fetch and build latest data from IANA
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # This differs slightly from the default `grunt data` flow. We want to explicitly compile
+      # `zic` and `zdump` to avoid relying on whatever version is on the action runners.
+      - name: Download tzdata and tzcode
+        run: |
+          npx grunt --verbose clean data-download
+          npx grunt --verbose data-download --fetch-tzcode
+
+      - name: Build zic and zdump
+        run: |
+          pushd temp/download/latest
+          make clean
+          make
+          popd
+
+      - name: Generate new data
+        run: |
+          npx grunt --verbose data-meta \
+            data-zic --zic-path=./temp/download/latest/zic \
+            data-zdump --zdump-path=./temp/download/latest/zdump \
+            data-collect \
+            data-dedupe \
+            data-pack \
+            data-tests
+
+      # Prepare version metadata for use in PR creation
+      - name: Prepare metadata
+        id: meta
+        run: |
+          echo "TZDATA_VERSION=$(cat temp/download/latest/version)" >> "$GITHUB_OUTPUT"
+          echo -e "This contains the following changes from tzdb (edit this to remove details irrelevant to this project):\n\n\`\`\`" > temp/pr-body.txt
+          awk '/^Release [[:digit:]]{4}/ {\
+              if (used != 1) { used = 1; active = 1 }\
+              else { active = 0 }\
+            } { if (active == 1) print }' \
+            temp/download/latest/NEWS >> temp/pr-body.txt
+          echo "\`\`\`" >> temp/pr-body.txt
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          author: 'GitHub Actions <noreply@github.com>'
+          branch: automated/data-update
+          commit-message: 'data: Add ${{ steps.meta.outputs.TZDATA_VERSION }}'
+          title: 'data: Add ${{ steps.meta.outputs.TZDATA_VERSION }}'
+          body-path: temp/pr-body.txt
+          reviewers: ${{ github.actor }}
