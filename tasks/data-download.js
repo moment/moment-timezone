@@ -8,10 +8,12 @@ module.exports = function (grunt) {
 		version = version || 'latest';
 
 		var done  = this.async(),
+			fetchCode = grunt.option('fetch-tzcode'),
+			type = fetchCode ? 'code' : 'data',
 			src   = (version === 'latest' ?
-				'https://data.iana.org/time-zones/tzdata-latest.tar.gz' :
-				'https://data.iana.org/time-zones/releases/tzdata' + version + '.tar.gz'),
-			curl  = path.resolve('temp/curl', version, 'data.tar.gz'),
+				'https://data.iana.org/time-zones/tz' + type + '-latest.tar.gz' :
+				'https://data.iana.org/time-zones/releases/tz' + type + version + '.tar.gz'),
+			curl  = path.resolve('temp/curl', version, type + '.tar.gz'),
 			dest  = path.resolve('temp/download', version);
 
 		grunt.file.mkdir(path.dirname(curl));
