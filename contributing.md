@@ -7,7 +7,7 @@ demonstrating the issue before opening a ticket on GitHub.
 
 :warning: Before you begin, note that Moment Timezone is in [maintenance-only mode](https://momentjs.com/docs/#/-project-status/).
 Bug fixes and performance improvements will still be accepted, and IANA data updates
-will continue to be released.
+will continue to be released via a semi-automated process.
 
 However, new features or API changes are **unlikely to be accepted** as pull requests.
 
@@ -39,8 +39,17 @@ If all the tests are passing, submit a pull request.
 
 ## Compiling data
 
+:warning: **NOTE:** These instructions are for anyone who wants to create a custom
+data build for their own purposes. Official data updates are created by an
+[automated workflow](./.github/workflows/build-data.yml) to ensure consistency
+(the behaviour of tools like `zdump` can vary wildly across platforms).
+
+Therefore, **contributor pull requests for data updates will not be accepted**.
+
+---
+
 There are several steps to compiling the timezone data. These have all been
-bundled into one grunt task to make releases easy.
+bundled into one grunt task to make updates easy.
 
 Besides the `node`, `npm`, and `grunt` dependencies, there are also a few unix
 dependencies.
