@@ -8,9 +8,9 @@
 	"use strict";
 
 	/*global define*/
-    if (typeof module === 'object' && module.exports) {
-        module.exports = factory(require('./'));     // Node
-    } else if (typeof define === 'function' && define.amd) {
+	if (typeof module === 'object' && module.exports) {
+		module.exports = factory(require('./'));     // Node
+	} else if (typeof define === 'function' && define.amd) {
 		define(['moment'], factory);                 // AMD
 	} else {
 		factory(root.moment);                        // Browser
@@ -201,8 +201,8 @@
 					if (a.population > b.population) {
 						group.unshift(a);
 					} else if (a.population === b.population && groupLeaders && groupLeaders[a.name]) {
-                        group.unshift(a);
-                    } else {
+						group.unshift(a);
+					} else {
 						group.push(a);
 					}
 					foundGroup = true;

@@ -159,10 +159,10 @@
 		} else if (num >= arr[len - 1]) {
 			return -1;
 		}
-	
+
 		var mid;
 		var lo = 0;
-		var hi = len - 1;  
+		var hi = len - 1;
 		while (hi - lo > 1) {
 			mid = Math.floor((lo + hi) / 2);
 			if (arr[mid] <= num) {
@@ -173,7 +173,7 @@
 		}
 		return hi;
 	}
-	
+
 	Zone.prototype = {
 		_set : function (unpacked) {
 			this.name       = unpacked.name;
