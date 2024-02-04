@@ -1,3 +1,6 @@
+### `0.5.45` _2024-02-04_
+* Updated data to IANA TZDB `2024a`.
+
 ### `0.5.44` _2023-12-29_
 * Updated data to IANA TZDB `2023d`.
 * Fixed `.valueOf()` to return `NaN` for invalid zoned objects (matching default `moment`) [#1082](https://github.com/moment/moment-timezone/pull/1082).
