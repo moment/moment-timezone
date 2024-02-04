@@ -21,6 +21,7 @@ module.exports = function (grunt) {
 				abbrs   = [],
 				untils  = [],
 				offsets = [],
+				isdsts = [],
 				countries = [];
 
 			lines.forEach(function (line) {
@@ -42,6 +43,11 @@ module.exports = function (grunt) {
 				offsets.push(+utc.diff(local, 'minutes', true).toFixed(4));
 				untils.push(+utc);
 				abbrs.push(parts[13]);
+
+				const index = parts.findIndex(element => element.includes("isdst"));
+				if (index !== -1) {
+					isdsts.push(parseInt(parts[index].split("=")[1]));
+				}
 			});
 
 			if (offsets.length === 0 && lines.length === 3 && lines[2].length === 0) {
@@ -72,7 +78,8 @@ module.exports = function (grunt) {
 				untils     : untils,
 				offsets    : offsets,
 				population : populations[name] | 0,
-				countries  : countries
+				countries  : countries,
+				isdsts: isdsts
 			});
 		});
 
