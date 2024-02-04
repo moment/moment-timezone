@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: npm
@@ -63,9 +63,9 @@ jobs:
           echo "\`\`\`" >> temp/pr-body.txt
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
-          author: 'GitHub Actions <noreply@github.com>'
+          author: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
           branch: automated/data-update
           commit-message: 'data: Add ${{ steps.meta.outputs.TZDATA_VERSION }}'
           title: 'data: Add ${{ steps.meta.outputs.TZDATA_VERSION }}'
