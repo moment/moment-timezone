@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.5.44
+//! version : 0.5.45
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,7 +29,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.44",
+	var VERSION = "0.5.45",
 		zones = {},
 		links = {},
 		countries = {},
@@ -159,10 +159,10 @@
 		} else if (num >= arr[len - 1]) {
 			return -1;
 		}
-	
+
 		var mid;
 		var lo = 0;
-		var hi = len - 1;  
+		var hi = len - 1;
 		while (hi - lo > 1) {
 			mid = Math.floor((lo + hi) / 2);
 			if (arr[mid] <= num) {
@@ -173,7 +173,7 @@
 		}
 		return hi;
 	}
-	
+
 	Zone.prototype = {
 		_set : function (unpacked) {
 			this.name       = unpacked.name;
@@ -724,7 +724,7 @@
 	}
 
 	loadData({
-		"version": "2023d",
+		"version": "2024a",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
