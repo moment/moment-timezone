@@ -19,6 +19,16 @@ exports.default = {
 			null,
 			'calling moment.tz.setDefault with a falsey argument should unset defaultZone'
 		);
+		t.equal(
+			moment.tz("Europe/Berlin").tz(null)._z,
+			null,
+			'calling moment.tz with null should reset to original defaultZone'
+		);
+		t.equal(
+			moment.tz("Europe/Berlin").tz(null).tz(),
+			undefined,
+			'calling moment.tz with null should reset tz() response to undefined'
+		);
 		t.done();
 	},
 	normal: function (t) {

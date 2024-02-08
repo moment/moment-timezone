@@ -598,7 +598,7 @@
 			out.add(zone.parse(out), 'minutes');
 		}
 
-		out.tz(name);
+		out.tz(name ?? undefined);
 
 		return out;
 	}
@@ -662,19 +662,22 @@
 	};
 
 	fn.tz = function (name, keepTime) {
-		if (name) {
-			if (typeof name !== 'string') {
-				throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
-			}
+		if (name === undefined) {
+			return this._z?.name;
+		} else if (name === null) {
+			this._z = null;
+			moment.updateOffset(this, keepTime);
+		} else if (typeof name !== 'string') {
+			throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
+		} else {
 			this._z = getZone(name);
 			if (this._z) {
 				moment.updateOffset(this, keepTime);
 			} else {
 				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}
-			return this;
 		}
-		if (this._z) { return this._z.name; }
+		return this;
 	};
 
 	function abbrWrap (old) {
