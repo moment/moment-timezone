@@ -662,19 +662,24 @@
 	};
 
 	fn.tz = function (name, keepTime) {
-		if (name) {
-			if (typeof name !== 'string') {
-				throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
+		try {
+			if (name) {
+				if (typeof name !== 'string') {
+					throw new Error('Time zone name must be a string, got ' + name + ' [' + typeof name + ']');
+				}
+				this._z = getZone(name);
+				if (this._z) {
+					moment.updateOffset(this, keepTime);
+				} else {
+					logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
+					throw new Error('Moment Timezone has no data for ' + name);
+				}
+				return this;
 			}
-			this._z = getZone(name);
-			if (this._z) {
-				moment.updateOffset(this, keepTime);
-			} else {
-				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
-			}
-			return this;
+			if (this._z) { return this._z.name; }
+		} catch (err) {
+			console.error(err.stack);
 		}
-		if (this._z) { return this._z.name; }
 	};
 
 	function abbrWrap (old) {
