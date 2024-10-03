@@ -724,7 +724,7 @@
 	}
 
 	loadData({
-		"version": "2024a",
+		"version": "2024b",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
@@ -868,7 +868,6 @@
 			"Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|0101023|1GNB0 1qM0 11A0 1o00 11z0 1nW0|33e4",
 			"Europe/Volgograd|MSK MSK +04|-40 -30 -40|0121|1N7y0 9Jd0 5gn0|10e5",
 			"Pacific/Honolulu|HST|a0|0||37e4",
-			"MET|MET MEST|-10 -20|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|",
 			"Pacific/Chatham|+1345 +1245|-dJ -cJ|01010101010101010101010|1GQe0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00|600",
 			"Pacific/Apia|+14 +13|-e0 -d0|01010101010101010101|1GQe0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0|37e3",
 			"Pacific/Bougainville|+10 +11|-a0 -b0|01|1NwE0|18e4",
@@ -1289,6 +1288,7 @@
 			"Europe/Paris|Europe/Warsaw",
 			"Europe/Paris|Europe/Zagreb",
 			"Europe/Paris|Europe/Zurich",
+			"Europe/Paris|MET",
 			"Europe/Paris|Poland",
 			"Europe/Ulyanovsk|Europe/Astrakhan",
 			"Pacific/Auckland|Antarctica/McMurdo",
@@ -1470,7 +1470,7 @@
 			"MK|Europe/Belgrade Europe/Skopje",
 			"ML|Africa/Abidjan Africa/Bamako",
 			"MM|Asia/Yangon",
-			"MN|Asia/Ulaanbaatar Asia/Hovd Asia/Choibalsan",
+			"MN|Asia/Ulaanbaatar Asia/Hovd",
 			"MO|Asia/Macau",
 			"MP|Pacific/Guam Pacific/Saipan",
 			"MQ|America/Martinique",

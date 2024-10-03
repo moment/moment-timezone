@@ -21,7 +21,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/moment/moment-timezone.git"
+		"url": "git+https://github.com/moment/moment-timezone.git"
 	},
 	"bugs": {
 		"url": "https://github.com/moment/moment-timezone/issues"
@@ -31,7 +31,7 @@
 		"moment": "^2.29.4"
 	},
 	"devDependencies": {
-		"grunt": "^1.5.3",
+		"grunt": "^1.6.1",
 		"grunt-contrib-clean": "^2.0.1",
 		"grunt-contrib-jshint": "^3.2.0",
 		"grunt-contrib-nodeunit": "^5.0.0",
@@ -51,5 +51,8 @@
 	},
 	"scripts": {
 		"test": "grunt"
+	},
+	"directories": {
+		"test": "tests"
 	}
 }

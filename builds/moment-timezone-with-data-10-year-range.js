@@ -724,7 +724,7 @@
 	}
 
 	loadData({
-		"version": "2024a",
+		"version": "2024b",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
@@ -758,7 +758,7 @@
 			"America/New_York|EST EDT|50 40|01010101010101010101010|1XK70 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0|21e6",
 			"America/Los_Angeles|PST PDT|80 70|01010101010101010101010|1XKa0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0|15e6",
 			"America/Halifax|AST ADT|40 30|01010101010101010101010|1XK60 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0|39e4",
-			"America/Godthab|-03 -02 -01|30 20 10|0101010101212121212121|1XSp0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 2so0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0|17e3",
+			"America/Godthab|-03 -02|30 20|0101010101|1XSp0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0|17e3",
 			"America/Havana|CST CDT|50 40|01010101010101010101010|1XK50 1zc0 Oo0 1zc0 Rc0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Rc0 1zc0 Oo0 1zc0 Oo0 1zc0|21e5",
 			"America/Mazatlan|MST MDT|70 60|010101010|1XVl0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0|44e4",
 			"America/Metlakatla|PST AKST AKDT|80 90 80|012121212121212121212121|1Xqy0 jB0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0|14e2",
@@ -767,7 +767,7 @@
 			"America/Ojinaga|MST MDT CST CDT|70 60 60 50|01010101232323232323232|1XK90 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1wn0 Rc0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0|23e3",
 			"America/Santiago|-03 -04|30 40|01010101010101010101010|1XVf0 11B0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 11B0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0|62e5",
 			"America/Sao_Paulo|-02 -03|20 30|01|1XBC0|20e6",
-			"America/Scoresbysund|-01 +00 -02|10 0 20|0101010101020202020202|1XSp0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 2pA0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0|452",
+			"America/Scoresbysund|-01 +00|10 0|01010101010|1XSp0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0|452",
 			"America/St_Johns|NST NDT|3u 2u|01010101010101010101010|1XK5u 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0|11e4",
 			"Antarctica/Casey|+11 +08|-b0 -80|0101010101|1XME0 1kr0 12l0 1o01 14kX 1lf1 14kX 1lf1 13bX|10",
 			"Asia/Bangkok|+07|-70|0||15e6",
@@ -834,7 +834,6 @@
 			"Europe/Moscow|MSK|-30|0||16e6",
 			"Europe/Volgograd|+04 MSK|-40 -30|01|249a0|10e5",
 			"Pacific/Honolulu|HST|a0|0||37e4",
-			"MET|MET MEST|-10 -20|01010101010101010101010|1XSp0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0|",
 			"Pacific/Chatham|+1345 +1245|-dJ -cJ|01010101010101010101010|1XV20 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1io0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0|600",
 			"Pacific/Apia|+14 +13|-e0 -d0|010101|1XV20 1a00 1fA0 1a00 1fA0|37e3",
 			"Pacific/Fiji|+13 +12|-d0 -c0|010101|1Xnq0 20o0 pc0 2hc0 bc0|88e4",
@@ -1300,6 +1299,7 @@
 			"Europe/Paris|Europe/Warsaw",
 			"Europe/Paris|Europe/Zagreb",
 			"Europe/Paris|Europe/Zurich",
+			"Europe/Paris|MET",
 			"Europe/Paris|Poland",
 			"Pacific/Auckland|Antarctica/McMurdo",
 			"Pacific/Auckland|Antarctica/South_Pole",
@@ -1470,7 +1470,7 @@
 			"MK|Europe/Belgrade Europe/Skopje",
 			"ML|Africa/Abidjan Africa/Bamako",
 			"MM|Asia/Yangon",
-			"MN|Asia/Ulaanbaatar Asia/Hovd Asia/Choibalsan",
+			"MN|Asia/Ulaanbaatar Asia/Hovd",
 			"MO|Asia/Macau",
 			"MP|Pacific/Guam Pacific/Saipan",
 			"MQ|America/Martinique",
