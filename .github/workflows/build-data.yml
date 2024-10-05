@@ -48,6 +48,8 @@ jobs:
       # so we run the tests manually here just in case
       - name: Run tests
         run: npm test
+        # Create a PR even if tests fail, so the branch can be pulled down locally to debug errors
+        continue-on-error: true
 
       # Prepare version metadata for use in PR creation
       - name: Prepare metadata
