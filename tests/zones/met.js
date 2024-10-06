@@ -6,7 +6,7 @@ exports["MET"] = {
 
 	"guess:by:offset" : helpers.makeTestGuess("MET", { offset: true, expect: "Europe/Paris" }),
 
-	"guess:by:abbr" : helpers.makeTestGuess("MET", { abbr: true }),
+	"guess:by:abbr" : helpers.makeTestGuess("MET", { abbr: true, expect: "Europe/Paris" }),
 
 	"1879" : helpers.makeTestYear("MET", [
 		["1879-12-31T23:42:29+00:00", "23:59:59", "LMT", -1050 / 60],
