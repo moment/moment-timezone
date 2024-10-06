@@ -1,3 +1,6 @@
+### `0.5.46` _2024-10-06_
+* Updated data to IANA TZDB `2024b`. This only affects historical timestamps; no future timestamps have changed.
+
 ### `0.5.45` _2024-02-04_
 * Updated data to IANA TZDB `2024a`.
 
