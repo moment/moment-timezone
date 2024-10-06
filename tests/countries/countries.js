@@ -261,7 +261,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Asia/Brunei').countries(), ["BN"]);
 		test.deepEqual(tz.zone('Asia/Calcutta').countries(), []);
 		test.deepEqual(tz.zone('Asia/Chita').countries(), ["RU"]);
-		test.deepEqual(tz.zone('Asia/Choibalsan').countries(), ["MN"]);
+		test.deepEqual(tz.zone('Asia/Choibalsan').countries(), []);
 		test.deepEqual(tz.zone('Asia/Chongqing').countries(), []);
 		test.deepEqual(tz.zone('Asia/Chungking').countries(), []);
 		test.deepEqual(tz.zone('Asia/Colombo').countries(), ["LK"]);
@@ -753,7 +753,7 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("MK"), ["Europe/Belgrade","Europe/Skopje"]);
 		test.deepEqual(tz.zonesForCountry("ML"), ["Africa/Abidjan","Africa/Bamako"]);
 		test.deepEqual(tz.zonesForCountry("MM"), ["Asia/Yangon"]);
-		test.deepEqual(tz.zonesForCountry("MN"), ["Asia/Choibalsan","Asia/Hovd","Asia/Ulaanbaatar"]);
+		test.deepEqual(tz.zonesForCountry("MN"), ["Asia/Hovd","Asia/Ulaanbaatar"]);
 		test.deepEqual(tz.zonesForCountry("MO"), ["Asia/Macau"]);
 		test.deepEqual(tz.zonesForCountry("MP"), ["Pacific/Guam","Pacific/Saipan"]);
 		test.deepEqual(tz.zonesForCountry("MQ"), ["America/Martinique"]);
