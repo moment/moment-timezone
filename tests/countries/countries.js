@@ -319,7 +319,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Asia/Samarkand').countries(), ["UZ"]);
 		test.deepEqual(tz.zone('Asia/Seoul').countries(), ["KR"]);
 		test.deepEqual(tz.zone('Asia/Shanghai').countries(), ["CN"]);
-		test.deepEqual(tz.zone('Asia/Singapore').countries(), ["MY","SG"]);
+		test.deepEqual(tz.zone('Asia/Singapore').countries(), ["AQ","MY","SG"]);
 		test.deepEqual(tz.zone('Asia/Srednekolymsk').countries(), ["RU"]);
 		test.deepEqual(tz.zone('Asia/Taipei').countries(), ["TW"]);
 		test.deepEqual(tz.zone('Asia/Tashkent').countries(), ["UZ"]);
@@ -328,7 +328,7 @@ exports.countries = {
 		test.deepEqual(tz.zone('Asia/Tel_Aviv').countries(), []);
 		test.deepEqual(tz.zone('Asia/Thimbu').countries(), []);
 		test.deepEqual(tz.zone('Asia/Thimphu').countries(), ["BT"]);
-		test.deepEqual(tz.zone('Asia/Tokyo').countries(), ["JP"]);
+		test.deepEqual(tz.zone('Asia/Tokyo').countries(), ["AU","JP"]);
 		test.deepEqual(tz.zone('Asia/Tomsk').countries(), ["RU"]);
 		test.deepEqual(tz.zone('Asia/Ujung_Pandang').countries(), []);
 		test.deepEqual(tz.zone('Asia/Ulaanbaatar').countries(), ["MN"]);
@@ -617,11 +617,11 @@ exports.countries = {
 		test.deepEqual(tz.zonesForCountry("AL"), ["Europe/Tirane"]);
 		test.deepEqual(tz.zonesForCountry("AM"), ["Asia/Yerevan"]);
 		test.deepEqual(tz.zonesForCountry("AO"), ["Africa/Lagos","Africa/Luanda"]);
-		test.deepEqual(tz.zonesForCountry("AQ"), ["Antarctica/Casey","Antarctica/Davis","Antarctica/DumontDUrville","Antarctica/Mawson","Antarctica/McMurdo","Antarctica/Palmer","Antarctica/Rothera","Antarctica/Syowa","Antarctica/Troll","Antarctica/Vostok","Asia/Riyadh","Pacific/Auckland","Pacific/Port_Moresby"]);
+		test.deepEqual(tz.zonesForCountry("AQ"), ["Antarctica/Casey","Antarctica/Davis","Antarctica/DumontDUrville","Antarctica/Mawson","Antarctica/McMurdo","Antarctica/Palmer","Antarctica/Rothera","Antarctica/Syowa","Antarctica/Troll","Antarctica/Vostok","Asia/Riyadh","Asia/Singapore","Pacific/Auckland","Pacific/Port_Moresby"]);
 		test.deepEqual(tz.zonesForCountry("AR"), ["America/Argentina/Buenos_Aires","America/Argentina/Catamarca","America/Argentina/Cordoba","America/Argentina/Jujuy","America/Argentina/La_Rioja","America/Argentina/Mendoza","America/Argentina/Rio_Gallegos","America/Argentina/Salta","America/Argentina/San_Juan","America/Argentina/San_Luis","America/Argentina/Tucuman","America/Argentina/Ushuaia"]);
 		test.deepEqual(tz.zonesForCountry("AS"), ["Pacific/Pago_Pago"]);
 		test.deepEqual(tz.zonesForCountry("AT"), ["Europe/Vienna"]);
-		test.deepEqual(tz.zonesForCountry("AU"), ["Antarctica/Macquarie","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne","Australia/Perth","Australia/Sydney"]);
+		test.deepEqual(tz.zonesForCountry("AU"), ["Antarctica/Macquarie","Asia/Tokyo","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne","Australia/Perth","Australia/Sydney"]);
 		test.deepEqual(tz.zonesForCountry("AW"), ["America/Aruba","America/Puerto_Rico"]);
 		test.deepEqual(tz.zonesForCountry("AX"), ["Europe/Helsinki","Europe/Mariehamn"]);
 		test.deepEqual(tz.zonesForCountry("AZ"), ["Asia/Baku"]);
