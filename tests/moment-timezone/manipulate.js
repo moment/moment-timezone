@@ -16,6 +16,26 @@ exports.manipulate = {
 
 	add : function (t) {
 		t.equal(
+			moment('2024-09-07T00:00:00-04:00').tz('America/Santiago').add(1, 'days').format(),
+			'2024-09-08T01:00:00-03:00',
+			"adding 1 day while crossing a DST boundary should not affect time."
+		);
+		t.equal(
+			moment('2024-09-07T04:00:00-04:00').tz('America/Santiago').add(1, 'days').format(),
+			'2024-09-08T04:00:00-03:00',
+			"adding 1 day while crossing a DST boundary should not affect time."
+		);
+		t.equal(
+			moment('2024-08-08T00:00:00-04:00').tz('America/Santiago').add(1, 'months').format(),
+			'2024-09-08T01:00:00-03:00',
+			"adding 1 day while crossing a DST boundary should not affect time."
+		);
+		t.equal(
+			moment('2024-08-08T04:00:00-04:00').tz('America/Santiago').add(1, 'months').format(),
+			'2024-09-08T04:00:00-03:00',
+			"adding 1 day while crossing a DST boundary should not affect time."
+		);
+		t.equal(
 			moment('2012-10-28 00:00:00+01:00').tz('Europe/London').add(1, 'days').format(),
 			'2012-10-29T00:00:00Z',
 			"adding 1 day while crossing a DST boundary should not affect time (BST -> GMT)."
