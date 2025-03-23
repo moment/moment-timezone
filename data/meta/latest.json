@@ -1,5 +1,5 @@
 {
-	"version": "2025a",
+	"version": "2025b",
 	"countries": {
 		"AD": {
 			"name": "Andorra",
@@ -411,6 +411,7 @@
 			"abbr": "CL",
 			"zones": [
 				"America/Santiago",
+				"America/Coyhaique",
 				"America/Punta_Arenas",
 				"Pacific/Easter"
 			]
@@ -2826,6 +2827,15 @@
 			],
 			"comments": "most of Chile"
 		},
+		"America/Coyhaique": {
+			"name": "America/Coyhaique",
+			"lat": -44.4333,
+			"long": -71.9333,
+			"countries": [
+				"CL"
+			],
+			"comments": "Aysén Region"
+		},
 		"America/Punta_Arenas": {
 			"name": "America/Punta_Arenas",
 			"lat": -52.85,
@@ -2833,7 +2843,7 @@
 			"countries": [
 				"CL"
 			],
-			"comments": "Region of Magallanes"
+			"comments": "Magallanes Region"
 		},
 		"Pacific/Easter": {
 			"name": "Pacific/Easter",
