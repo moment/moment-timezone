@@ -1,3 +1,6 @@
+### `0.5.48` _2025-03-23_
+* Updated data to IANA TZDB `2025b`.
+
 ### `0.5.47` _2025-01-28_
 * Updated data to IANA TZDB `2025a`.
 
