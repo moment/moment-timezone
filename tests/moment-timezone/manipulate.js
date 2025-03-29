@@ -32,6 +32,7 @@ exports.manipulate = {
 		);
 		t.done();
 	},
+
 	subtract : function (t) {
 		t.equal(
 			moment('2012-10-29T00:00:00+00:00').tz('Europe/London').subtract(1, 'days').format(),
@@ -50,6 +51,7 @@ exports.manipulate = {
 		);
 		t.done();
 	},
+
 	month : function (t) {
 		t.equal(
 			moment("2014-03-09T00:00:00-08:00").tz('America/Los_Angeles').add(1, 'month').format(),
@@ -60,6 +62,215 @@ exports.manipulate = {
 			moment("2014-03-09T00:00:00-08:00").tz('America/Los_Angeles').month(3).format(),
 			"2014-04-09T00:00:00-07:00",
 			"setting month across a DST boundary should not affect time (PST -> PDT)."
+		);
+
+		t.done();
+	},
+
+	tz : function (t) {
+		t.equal(
+			moment.tz("2014-03-09T01:59:59.999", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-03-09T01:59:59.999-05:00',
+			'keeping times between zones with DST before springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-03-09T03:00:00", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-03-09T03:00:00.000-04:00',
+			'keeping times between zones with DST after springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:59:59.999-04:00',
+			'keeping times between zones with DST before falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:00:00-07:00", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:00:00.000-04:00',
+			'keeping times between zones with DST at start of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999-07:00", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:59:59.999-04:00',
+			'keeping times between zones with DST at end of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:00:00-08:00", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:00:00.000-04:00',
+			'keeping times between zones with DST at start of second repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999-08:00", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:59:59.999-05:00',
+			'keeping times between zones with DST at end of second repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T02:00:00", 'America/Los_Angeles').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T02:00:00.000-05:00',
+			'keeping times between zones with DST after falling back should work'
+		);
+
+		t.equal(
+			moment.utc("2014-03-09T01:59:59.999").tz('America/New_York', true).toISOString(true),
+			'2014-03-09T01:59:59.999-05:00',
+			'keeping times from UTC to a zone with DST before springing forward should work'
+		);
+		t.equal(
+			moment.utc("2014-03-09T02:00:00").tz('America/New_York', true).toISOString(true),
+			'2014-03-09T03:00:00.000-04:00',
+			'keeping times from UTC to a zone with DST at the start of springing forward should jump by an hour'
+		);
+		t.equal(
+			moment.utc("2014-03-09T02:59:59.999").tz('America/New_York', true).toISOString(true),
+			'2014-03-09T03:59:59.999-04:00',
+			'keeping times from UTC to a zone with DST at the end of springing forward should jump by an hour'
+		);
+		t.equal(
+			moment.utc("2014-03-09T03:00:00").tz('America/New_York', true).toISOString(true),
+			'2014-03-09T03:00:00.000-04:00',
+			'keeping times from UTC to a zone with DST after springing forward should work'
+		);
+		t.equal(
+			moment.utc("2014-11-02T01:59:59.999").tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:59:59.999-04:00',
+			'keeping times from UTC to a zone with DST before falling back should work'
+		);
+		t.equal(
+			moment.utc("2014-11-02T01:00:00").tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:00:00.000-04:00',
+			'keeping times from UTC to a zone with DST at start of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.utc("2014-11-02T01:59:59.999").tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:59:59.999-04:00',
+			'keeping times from UTC to a zone with DST at end of repeated section falling back should use first section'
+		);
+		t.equal(
+			moment.utc("2014-11-02T02:00:00").tz('America/New_York', true).toISOString(true),
+			'2014-11-02T02:00:00.000-05:00',
+			'keeping times from UTC to a zone with DST after falling back should work'
+		);
+
+		t.equal(
+			moment.tz("2014-03-09T01:59:59.999", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-03-09T01:59:59.999+00:00',
+			'keeping times from a zone with DST to UTC before springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-03-09T03:00:00", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-03-09T03:00:00.000+00:00',
+			'keeping times from a zone with DST to UTC after springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-11-02T01:59:59.999+00:00',
+			'keeping times from a zone with DST to UTC before falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:00:00-07:00", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-11-02T01:00:00.000+00:00',
+			'keeping times from a zone with DST to UTC at start of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999-07:00", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-11-02T01:59:59.999+00:00',
+			'keeping times from a zone with DST to UTC at end of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:00:00-08:00", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-11-02T01:00:00.000+00:00',
+			'keeping times from a zone with DST to UTC at start of second repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999-08:00", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-11-02T01:59:59.999+00:00',
+			'keeping times from a zone with DST to UTC at end of second repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T02:00:00", 'America/Los_Angeles').tz('UTC', true).toISOString(true),
+			'2014-11-02T02:00:00.000+00:00',
+			'keeping times from a zone with DST to UTC after falling back should work'
+		);
+
+		t.equal(
+			moment.tz("2014-03-09T01:59:59.999", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-03-09T01:59:59.999-07:00',
+			'keeping times from a zone with DST to one without before springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-03-09T03:00:00", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-03-09T03:00:00.000-07:00',
+			'keeping times from a zone with DST to one without after springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-11-02T01:59:59.999-07:00',
+			'keeping times from a zone with DST to one without before falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:00:00-04:00", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-11-02T01:00:00.000-07:00',
+			'keeping times from a zone with DST to one without at start of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999-04:00", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-11-02T01:59:59.999-07:00',
+			'keeping times from a zone with DST to one without at end of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:00:00-05:00", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-11-02T01:00:00.000-07:00',
+			'keeping times from a zone with DST to one without at start of second repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999-05:00", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-11-02T01:59:59.999-07:00',
+			'keeping times from a zone with DST to one without at end of second repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T02:00:00", 'America/New_York').tz('America/Phoenix', true).toISOString(true),
+			'2014-11-02T02:00:00.000-07:00',
+			'keeping times from a zone with DST to one without after falling back should work'
+		);
+
+		t.equal(
+			moment.tz("2014-03-09T01:59:59.999", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-03-09T01:59:59.999-05:00',
+			'keeping times from a zone without DST to one with before springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-03-09T02:00:00", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-03-09T03:00:00.000-04:00',
+			'keeping times from a zone without DST to one with at the start of springing forward should jump by an hour'
+		);
+		t.equal(
+			moment.tz("2014-03-09T02:59:59.999", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-03-09T03:59:59.999-04:00',
+			'keeping times from a zone without DST to one with at the end of springing forward should jump by an hour'
+		);
+		t.equal(
+			moment.tz("2014-03-09T03:00:00", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-03-09T03:00:00.000-04:00',
+			'keeping times from a zone without DST to one with after springing forward should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:59:59.999-04:00',
+			'keeping times from a zone without DST to one with before falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:00:00", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:00:00.000-04:00',
+			'keeping times from a zone without DST to one with at start of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T01:59:59.999", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T01:59:59.999-04:00',
+			'keeping times from a zone without DST to one with at end of first repeated section falling back should work'
+		);
+		t.equal(
+			moment.tz("2014-11-02T02:00:00", 'America/Phoenix').tz('America/New_York', true).toISOString(true),
+			'2014-11-02T02:00:00.000-05:00',
+			'keeping times from a zone without DST to one with after falling back should work'
 		);
 
 		t.done();
