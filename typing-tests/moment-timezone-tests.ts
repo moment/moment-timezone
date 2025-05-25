@@ -1,4 +1,5 @@
 import moment = require('../index');
+import { UnpackedZone } from '../moment-timezone-utils';
 
 const june = moment('2014-06-01T12:00:00Z');
 june.tz('America/Los_Angeles').format('ha z');
@@ -9,6 +10,10 @@ const c = moment.tz(1403454068850, 'America/Toronto');
 const d = moment.tz('May 12th 2014 8PM', 'MMM Do YYYY hA', true, 'America/Toronto');
 
 a.tz();
+
+const name: string = moment().tz();
+const converted: moment.Moment = moment().tz('America/Los_Angeles');
+moment().tz('America/Los_Angeles', true);
 
 const num = 1367337600000;
 const arr = [2013, 5, 1];
@@ -51,14 +56,18 @@ moment.tz(obj, 'America/Los_Angeles');
 
 const zone1: moment.MomentZone | null = moment.tz.zone('America/Los_Angeles');
 if (zone1 != null) {
-    zone1.abbr(1403465838805);
-    zone1.utcOffset(1403465838805);
+    zone1.abbr(1403465838805) === 'PDT';
+    zone1.offset(1403465838805) === 420; // deprecated
+    zone1.utcOffset(1403465838805) === 420;
 }
-
 const zone2: moment.MomentZone | null = moment.tz.zone('America/New_York');
 if (zone2 != null) {
-    zone2.parse(Date.UTC(2012, 2, 19, 8, 30)); // 240
+    zone2.parse(Date.UTC(2012, 2, 19, 8, 30)) === 240;
+    const zoneCountries: string[] = zone2.countries();
 }
+
+moment.tz.Zone();
+const zone3: moment.MomentZone = moment.tz.Zone('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
 
 moment.tz.add('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
 moment.tz.add([
@@ -78,26 +87,26 @@ moment.tz.load({
     version : '2014e'
 });
 
-moment.tz.names();
+const unpacked: UnpackedZone = moment.tz.unpack('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
+const unpacked2: number = moment.tz.unpackBase60('1Lzm0');
 
-moment.tz.setDefault('America/Los_Angeles');
+const v1: string = moment.tz.version;
+const v2: string = moment.tz.dataVersion;
 
-moment.tz.setDefault();
+const names: string[] = moment.tz.names();
 
-moment.tz.guess();
+const def1: typeof moment = moment.tz.setDefault('America/Los_Angeles');
+const def2: typeof moment = moment.tz.setDefault();
 
-moment.tz.guess(true);
+const guess1: string = moment.tz.guess();
+const guess2: string = moment.tz.guess(true);
 
 const zoneAbbr: string = moment.tz('America/Los_Angeles').zoneAbbr();
-
 const zoneName: string = moment.tz('America/Los_Angeles').zoneName();
-
-const zoneType: string | undefined = moment.tz('2013-11-18 11:55').tz();
+const zoneId: string | undefined = moment.tz('2013-11-18 11:55').tz();
 
 const zones1: string[] = moment.tz.zonesForCountry('US');
-
 const zones2: moment.MomentZoneOffset[] = moment.tz.zonesForCountry('CN', true);
-
 const zones3: string[] = moment.tz.zonesForCountry('GB', false);
 
 const countries: string[] = moment.tz.countries();
