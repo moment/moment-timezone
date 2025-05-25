@@ -46,16 +46,11 @@ declare module 'moment' {
     interface MomentTimezone {
         (): moment.Moment;
         (timezone: string): moment.Moment;
-        (date: number, timezone: string): moment.Moment;
-        (date: number[], timezone: string): moment.Moment;
-        (date: string, timezone: string): moment.Moment;
+        (date: moment.MomentInput, timezone: string): moment.Moment;
         (date: string, format: moment.MomentFormatSpecification, timezone: string): moment.Moment;
         (date: string, format: moment.MomentFormatSpecification, strict: boolean, timezone: string): moment.Moment;
         (date: string, format: moment.MomentFormatSpecification, language: string, timezone: string): moment.Moment;
         (date: string, format: moment.MomentFormatSpecification, language: string, strict: boolean, timezone: string): moment.Moment;
-        (date: Date, timezone: string): moment.Moment;
-        (date: moment.Moment, timezone: string): moment.Moment;
-        (date: any, timezone: string): moment.Moment;
 
         version: string;
         dataVersion: string;
