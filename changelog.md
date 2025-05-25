@@ -1,3 +1,13 @@
+### `0.6.0` _2025-05-25_
+* Fixed and updated TypeScript definitions. [#1132](https://github.com/moment/moment-timezone/pull/1132)
+  * Updated types to more accurately match the code implementation.
+  * Added definitions for pre-built files (e.g. `moment-timezone-with-data.js`).
+
+This release is a **potential breaking change** for TypeScript projects only.
+The types are now more accurate, but consumers might hit errors if they were relying on the more relaxed types.
+
+No implementation code has changed in this release.
+
 ### `0.5.48` _2025-03-23_
 * Updated data to IANA TZDB `2025b`. [#1130](https://github.com/moment/moment-timezone/pull/1130)
 
