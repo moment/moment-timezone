@@ -18,11 +18,13 @@ function staleDataWarning() {
 
 module.exports = function (grunt) {
 	grunt.registerMultiTask('build', 'Build minified versions with data included.', function () {
-		var dest   = 'builds/' + this.target + '.js',
-			data   = require('../data/unpacked/latest.json'),
-			source = grunt.file.read('moment-timezone.js'),
-			start  = 0,
-			end    = 9999;
+		var dest      = 'builds/' + this.target + '.js',
+			typesDest = 'builds/' + this.target + '.d.ts',
+			data      = require('../data/unpacked/latest.json'),
+			source    = grunt.file.read('moment-timezone.js'),
+			typesSrc  = grunt.file.read('moment-timezone.d.ts'),
+			start     = 0,
+			end       = 9999;
 
 		if (this.data && this.data[0]) {
 			start = this.data[0];
@@ -45,5 +47,8 @@ module.exports = function (grunt) {
 		source = source.replace('// INJECT DATA', data);
 
 		grunt.file.write(dest, source);
+
+		typesSrc = typesSrc.replace("'./index'", "'../index'");
+		grunt.file.write(typesDest, typesSrc);
 	});
 };
