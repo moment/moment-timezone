@@ -1,97 +1,97 @@
 ### `0.5.48` _2025-03-23_
-* Updated data to IANA TZDB `2025b`.
+* Updated data to IANA TZDB `2025b`. [#1130](https://github.com/moment/moment-timezone/pull/1130)
 
 ### `0.5.47` _2025-01-28_
-* Updated data to IANA TZDB `2025a`.
+* Updated data to IANA TZDB `2025a`. [#1125](https://github.com/moment/moment-timezone/pull/1125)
 
 ### `0.5.46` _2024-10-06_
-* Updated data to IANA TZDB `2024b`. This only affects historical timestamps; no future timestamps have changed.
+* Updated data to IANA TZDB `2024b`. [#1121](https://github.com/moment/moment-timezone/pull/1121)
+  This only affects historical timestamps; no future timestamps have changed.
 
 ### `0.5.45` _2024-02-04_
-* Updated data to IANA TZDB `2024a`.
+* Updated data to IANA TZDB `2024a`. [#1095](https://github.com/moment/moment-timezone/pull/1095)
 
 ### `0.5.44` _2023-12-29_
-* Updated data to IANA TZDB `2023d`.
-* Fixed `.valueOf()` to return `NaN` for invalid zoned objects (matching default `moment`) [#1082](https://github.com/moment/moment-timezone/pull/1082).
+* Updated data to IANA TZDB `2023d`. [#1085](https://github.com/moment/moment-timezone/pull/1085)
+* Fixed `.valueOf()` to return `NaN` for invalid zoned objects (matching default `moment`). [#1082](https://github.com/moment/moment-timezone/pull/1082)
 * Performance improvements:
-  * Use binary search when looking up zone information [#720](https://github.com/moment/moment-timezone/pull/720).
+  * Use binary search when looking up zone information. [#720](https://github.com/moment/moment-timezone/pull/720)
   * Avoid redundant checks in `tz.guess()`.
   * Avoid redundant `getZone()` calls in `.tz()`.
 
 ### `0.5.43` _2023-03-31_
-* Updated data to IANA TZDB `2023c`
+* Updated data to IANA TZDB `2023c`. [#1053](https://github.com/moment/moment-timezone/pull/1053)
 
 ### `0.5.42` _2023-03-24_
-* Updated data to IANA TZDB `2023b`
+* Updated data to IANA TZDB `2023b`. [#1047](https://github.com/moment/moment-timezone/pull/1047)
 
 ### `0.5.41` _2023-02-25_
 * Updated `moment` npm dependency to `2.29.4` to remove automated warnings about insecure dependencies.
   Moment Timezone still works with core Moment `2.9.0` and higher.
 * Updated all dev dependencies including UglifyJS, which produces the minified builds.
-* Added deprecation warning to the pre-built `moment-timezone-with-data-2012-2022` bundles [#1035](https://github.com/moment/moment-timezone/issues/1035).
+* Added deprecation warning to the pre-built `moment-timezone-with-data-2012-2022` bundles. [#1035](https://github.com/moment/moment-timezone/issues/1035).
   Use the rolling `moment-timezone-with-data-10-year-range` files instead.
 
 ### `0.5.40` _2022-12-11_
-* Updated data to IANA TZDB `2022g`
+* Updated data to IANA TZDB `2022g`. [#1022](https://github.com/moment/moment-timezone/pull/1022)
 
 ### `0.5.39` _2022-11-13_
-* Updated data to IANA TZDB `2022f`
+* Updated data to IANA TZDB `2022f`. [#1014](https://github.com/moment/moment-timezone/pull/1014)
 
 ### `0.5.38` _2022-10-15_
-* Updated data to IANA TZDB `2022e`
-* Added `moment.tz.dataVersion` property to TypeScript definitions [#930](https://github.com/moment/moment-timezone/issues/930)
-* Removed temporary `.tar.gz` files from npm releases [#1000](https://github.com/moment/moment-timezone/pull/1000)
+* Updated data to IANA TZDB `2022e`. [#1009](https://github.com/moment/moment-timezone/pull/1009)
+* Added `moment.tz.dataVersion` property to TypeScript definitions. [#930](https://github.com/moment/moment-timezone/issues/930)
+* Removed temporary `.tar.gz` files from npm releases. [#1000](https://github.com/moment/moment-timezone/pull/1000)
 
 ### `0.5.37` _2022-08-25_
-* Re-publish npm package, because of extra folder present in 0.5.36, check
-  https://github.com/moment/moment-timezone/issues/999
+* Re-publish npm package, because of extra folder present in `0.5.36`. [#999](https://github.com/moment/moment-timezone/issues/999)
 
 ### `0.5.36` _2022-08-25_
-* IANA TZDB 2022c
-* improvements/fixes to data pipeline
+* Updated data to IANA TZDB `2022c`.
+* improvements/fixes to data pipeline.
 
 ### `0.5.35` _2022-08-23_
-* Fix command injection in data pipeline https://github.com/moment/moment-timezone/security/advisories/GHSA-56x4-j7p9-fcf9
-* Fix cleartext transmission of sensitive information https://github.com/moment/moment-timezone/security/advisories/GHSA-v78c-4p63-2j6c
+* Fix command injection in data pipeline. https://github.com/moment/moment-timezone/security/advisories/GHSA-56x4-j7p9-fcf9
+* Fix cleartext transmission of sensitive information. https://github.com/moment/moment-timezone/security/advisories/GHSA-v78c-4p63-2j6c
 
 Thanks to the OpenSSF Alpha-Omega project for reporting these!
 
 ### `0.5.34` _2021-11-10_
-* Updated data to IANA TZDB `2021e`
+* Updated data to IANA TZDB `2021e`. [#962](https://github.com/moment/moment-timezone/pull/962)
 
 ### `0.5.33` _2021-02-06_
-* Updated data to IANA TZDB `2021a`
+* Updated data to IANA TZDB `2021a`. [#927](https://github.com/moment/moment-timezone/pull/927)
 
 ### `0.5.32` _2020-11-14_
-* Updated data to IANA TZDB `2020d`
+* Updated data to IANA TZDB `2020d`. [#910](https://github.com/moment/moment-timezone/pull/910)
 
 ### `0.5.31` _2020-05-16_
-* Fixed Travis builds for Node.js 4 and 6
+* Fixed Travis builds for Node.js 4 and 6.
 
 ### `0.5.30` _2020-05-16_
-* Updated data to IANA TZDB `2020a`
-* Fixed typescript definitions
+* Updated data to IANA TZDB `2020a`. [#852](https://github.com/moment/moment-timezone/pull/852)
+* Fixed TypeScript definitions.
 
-NOTE: You might need to un-install @types/moment-timezone. Check
-https://github.com/moment/moment-timezone/issues/858 for more info
+NOTE: You might need to un-install `@types/moment-timezone`. Check
+[#858](https://github.com/moment/moment-timezone/issues/858) for more info.
 
 ### `0.5.29` _2020-05-16_
 * Merged fix of es6 module loading issue https://github.com/moment/moment-timezone/commit/1fd42349189b24e15c60f162dc8c40b42db79dfe
-* Merged PR with typescript declarations https://github.com/moment/moment-timezone/commit/ed529ea6fbcc70315c0c3f6d7c7cb70eadf56b03
+* Merged PR with TypeScript declarations https://github.com/moment/moment-timezone/commit/ed529ea6fbcc70315c0c3f6d7c7cb70eadf56b03
 * Merged fixes to changelog https://github.com/moment/moment-timezone/commit/adb7d7b43c7328d814311ac1355bfeef88eab6e8
 
 ### `0.5.28` _2020-02-21_
-Merged pull request #410 from @adgrace:
+Merged pull request [#410](https://github.com/moment/moment-timezone/pull/410) from @adgrace:
 * Added a method `moment.tz.zonesForCountry(country_code)` which returns all timezones for the country
 * Added a method `moment.tz(timezone_id).countries()` to get countries for some time zone
 * Added a method `moment.tz.countries()` to get all country codes
 * And as you know `moment.tz.zones()` already exists
 
 ### `0.5.27` _2019-10-14_
-* Updated data to IANA TZDB `2019c`
+* Updated data to IANA TZDB `2019c`.
 
 ### `0.5.26` _2019-06-06_
-* Updated data to IANA TZDB `2019b`
+* Updated data to IANA TZDB `2019b`.
 * Fix: stabilize Array.sort [#762](https://github.com/moment/moment-timezone/pull/762)
 
 ### `0.5.25` _2019-04-17_
