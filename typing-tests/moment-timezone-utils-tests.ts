@@ -4,14 +4,16 @@ const ZONE_A: moment.UnpackedZone = {
     name : "Test/A",
     abbrs   : ["ABC", "DEF", "GHI"],
     offsets : [10, 20, 30],
-    untils  : [-1000, 100, 200]
+    untils  : [-1000, 100, 200],
+    population : 2000
 };
 
 const ZONE_B = {
     name : "Test/B",
     abbrs   : ["ABC", "DEF", "GHI"],
     offsets : [10, 20, 30],
-    untils  : [-1000, 100, 200]
+    untils  : [-1000, 100, 200],
+    population : 0
 };
 
 const ZONE_C = {

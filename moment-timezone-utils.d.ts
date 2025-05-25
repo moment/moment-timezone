@@ -1,34 +1,27 @@
-import moment = require('moment');
-import { MomentTimezone } from "./index";
+import moment = require('./index');
 
 declare module 'moment' {
 
-    /** Parsed / unpacked zone data. */
-    interface UnpackedZone {
-        /** The uniquely identifying name of the time zone. */
-        name: string;
-        /** zone abbreviations */
-        abbrs: Array<string>;
-        /** (measured in milliseconds) */
-        untils: Array<number | null>;
-        /** (measured in minutes) */
-        offsets: Array<number>;
-    }
-
-    /** Bundle of zone data and links for multiple timezones */
+    /** Bundle of packed zone data and links for multiple timezones */
     interface PackedZoneBundle {
         version: string;
-        zones: Array<string>;
-        links: Array<string>;
+        zones: string[];
+        links: string[];
     }
 
-    /** Bundle of zone data and links for multiple timezones */
+    /** Bundle of raw zone data and links for multiple timezones */
     interface UnpackedZoneBundle {
         version: string;
-        zones: Array<UnpackedZone>;
-        links: Array<string>;
+        zones: UnpackedZone[];
+        links: string[];
     }
-    
+
+    /** Bundle of timezones for a single country */
+    interface UnpackedCountryData {
+        name: string;
+        zones: string[];
+    }
+
     /** extends MomentTimezone declared in index */
     interface MomentTimezone {
         /** Converts zone data in the unpacked format to the packed format. */
@@ -37,7 +30,11 @@ declare module 'moment' {
         /** Convert a base 10 number to a base 60 string. */
         packBase60(input: number, precision?: number): string;
 
-        /** Create links out of two zones that share data.
+        /** Converts country data in the unpacked format to a packed format. */
+        packCountry(unpacked: UnpackedCountryData): string;
+
+        /**
+         * Create links out of two or more zones that share data.
          * @returns A new ZoneBundle with duplicate zone data replaced by links
          */
         createLinks(unlinked: UnpackedZoneBundle): PackedZoneBundle;

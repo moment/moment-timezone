@@ -1,5 +1,4 @@
 import moment = require('../index');
-import { UnpackedZone } from '../moment-timezone-utils';
 
 const june = moment('2014-06-01T12:00:00Z');
 june.tz('America/Los_Angeles').format('ha z');
@@ -87,7 +86,7 @@ moment.tz.load({
     version : '2014e'
 });
 
-const unpacked: UnpackedZone = moment.tz.unpack('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
+const unpacked: moment.UnpackedZone = moment.tz.unpack('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
 const unpacked2: number = moment.tz.unpackBase60('1Lzm0');
 
 const v1: string = moment.tz.version;
