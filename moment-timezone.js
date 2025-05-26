@@ -652,7 +652,15 @@
 				offset = offset / 60;
 			}
 			if (mom.utcOffset !== undefined) {
+				var _offset = mom._offset;
 				var z = mom._z;
+				if (keepTime && typeof keepTime === 'number' && _offset && -offset > _offset) {
+					var preMom = moment(mom.valueOf() - (-offset - _offset) * 60 * 1000);
+					var preOffset = mom._z.utcOffset(preMom);
+					if (offset !== preOffset) {
+						keepTime = false;
+					}
+				}
 				mom.utcOffset(-offset, keepTime);
 				mom._z = z;
 			} else {
