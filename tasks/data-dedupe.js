@@ -22,7 +22,8 @@ function dedupe(zone) {
 		untils     : untils,
 		offsets    : offsets,
 		population : zone.population,
-		countries  : zone.countries
+		countries  : zone.countries,
+		isdsts  : zone.isdsts
 	};
 }
 
