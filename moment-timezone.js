@@ -588,7 +588,7 @@
 		moment.tz namespace
 	************************************/
 	    var originalTzFn = moment.tz;
-  function tz(input) {
+  	function tz(input) {
         var args = Array.prototype.slice.call(arguments, 0, -1),
             name = arguments[arguments.length - 1],
             zone = getZone(name),
