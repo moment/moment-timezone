@@ -587,21 +587,30 @@
 	/************************************
 		moment.tz namespace
 	************************************/
+	    var originalTzFn = moment.tz;
+  function tz(input) {
+        var args = Array.prototype.slice.call(arguments, 0, -1),
+            name = arguments[arguments.length - 1],
+            zone = getZone(name),
+            out;
 
-	function tz (input) {
-		var args = Array.prototype.slice.call(arguments, 0, -1),
-			name = arguments[arguments.length - 1],
-			out  = moment.utc.apply(null, args),
-			zone;
+        if (typeof input === 'string' && moment.tz.guess && name && originalTzFn) {
+            out = originalTzFn.apply(null, args.concat(name));
+        } else {
+            out = moment.utc.apply(null, args);
+        }
 
-		if (!moment.isMoment(input) && needsOffset(out) && (zone = getZone(name))) {
-			out.add(zone.parse(out), 'minutes');
-		}
+        if (!moment.isMoment(input) && needsOffset(out) && zone) {
+            out.add(zone.parse(out), 'minutes');
+        }
 
-		out.tz(name);
+        out.tz(name);
+        return out;
+    }
 
-		return out;
-	}
+    // 🔁 Patch the exported tz function
+    moment.tz = tz;
+
 
 	tz.version      = VERSION;
 	tz.dataVersion  = '';

@@ -293,6 +293,13 @@ exports.parse = {
 		}
 
 		t.done();
-	}
+	},
+	"bug #874 - parsing time string should respect default timezone": function (test) {
+    moment.tz.setDefault("Asia/Kolkata");
+    var m = moment("T22:00", "THH:mm");
+    test.equal(m.format(), "2025-06-27T22:00:00+05:30", "Should keep same date in default zone");
+    test.done();
+}
+
 
 };
