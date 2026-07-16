@@ -698,11 +698,28 @@
 		};
 	}
 
+	function cloneWrap (old) {
+		return function () {
+			var m = old.apply(this, arguments);
+			if (this._z) {
+				// The Moment constructor re-derives the offset from
+				// scratch via moment.updateOffset, which can disagree
+				// with the source moment when it sits exactly on a DST
+				// transition boundary. Force the clone to match instead.
+				m._d = new Date(this._d.getTime());
+				m._offset = this._offset;
+				m._z = this._z;
+			}
+			return m;
+		};
+	}
+
 	fn.zoneName  = abbrWrap(fn.zoneName);
 	fn.zoneAbbr  = abbrWrap(fn.zoneAbbr);
 	fn.utc       = resetZoneWrap(fn.utc);
 	fn.local     = resetZoneWrap(fn.local);
 	fn.utcOffset = resetZoneWrap2(fn.utcOffset);
+	fn.clone     = cloneWrap(fn.clone);
 
 	moment.tz.setDefault = function(name) {
 		if (major < 2 || (major === 2 && minor < 9)) {
