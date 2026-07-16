@@ -588,6 +588,26 @@
 		moment.tz namespace
 	************************************/
 
+	// Re-parse args with moment.now() shifted to the zone's current wall
+	// time, so that any omitted date fields default to "today" in that
+	// zone instead of "today" in UTC. If the input fully specifies its
+	// date fields, this has no effect since the shifted "now" is unused.
+	function todayIn (zone, args) {
+		var realNow  = moment.now(),
+			zoneNow  = realNow - (zone.utcOffset(realNow) * 60000),
+			savedNow = moment.now,
+			out;
+
+		moment.now = function () { return zoneNow; };
+		try {
+			out = moment.utc.apply(null, args);
+		} finally {
+			moment.now = savedNow;
+		}
+
+		return out;
+	}
+
 	function tz (input) {
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
@@ -595,6 +615,7 @@
 			zone;
 
 		if (!moment.isMoment(input) && needsOffset(out) && (zone = getZone(name))) {
+			out = todayIn(zone, args);
 			out.add(zone.parse(out), 'minutes');
 		}
 
