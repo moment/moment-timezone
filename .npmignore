@@ -13,6 +13,7 @@ contributing.md
 .travis.yml
 .jshintrc
 .github
+.editorconfig
 
 bower.json
 
