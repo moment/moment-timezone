@@ -206,17 +206,16 @@
 				offsets = this.offsets,
 				untils  = this.untils,
 				max     = untils.length - 1,
-				offset, offsetNext, offsetPrev, i;
+				offset, offsetNext, i;
 
 			for (i = 0; i < max; i++) {
 				offset     = offsets[i];
 				offsetNext = offsets[i + 1];
-				offsetPrev = offsets[i ? i - 1 : i];
 
 				if (offset < offsetNext && tz.moveAmbiguousForward) {
 					offset = offsetNext;
-				} else if (offset > offsetPrev && tz.moveInvalidForward) {
-					offset = offsetPrev;
+				} else if (offset > offsetNext && tz.moveInvalidForward) {
+					offset = offsetNext;
 				}
 
 				if (target < untils[i] - (offset * 60000)) {
@@ -637,7 +636,9 @@
 
 	moment.updateOffset = function (mom, keepTime) {
 		var zone = moment.defaultZone,
-			offset;
+			offset,
+			localTimestamp,
+			normalizedTimestamp;
 
 		if (mom._z === undefined) {
 			if (zone && needsOffset(mom) && !mom._isUTC && mom.isValid()) {
@@ -648,6 +649,20 @@
 		}
 		if (mom._z) {
 			offset = mom._z.utcOffset(mom);
+			if (keepTime) {
+				// Resolve local times inside a forward gap using the configured
+				// invalid-input policy before applying the new offset.
+				localTimestamp = mom._d.valueOf();
+				if (!mom._isUTC) {
+					localTimestamp -= mom._d.getTimezoneOffset() * 60000;
+				}
+				if (mom._z.utcOffset(localTimestamp + offset * 60000) !== offset) {
+					offset = mom._z.parse(localTimestamp);
+					localTimestamp += offset * 60000;
+					offset = mom._z.utcOffset(localTimestamp);
+					normalizedTimestamp = localTimestamp - offset * 60000;
+				}
+			}
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
@@ -657,6 +672,9 @@
 				mom._z = z;
 			} else {
 				mom.zone(offset, keepTime);
+			}
+			if (normalizedTimestamp != null) {
+				mom._d.setTime(normalizedTimestamp);
 			}
 		}
 	};
