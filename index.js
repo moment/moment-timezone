@@ -1,2 +1,4 @@
-var moment = module.exports = require("./moment-timezone");
-moment.tz.load(require('./data/packed/latest.json'));
+import moment from './builds/moment-timezone-with-data.js';
+
+export default moment;
+

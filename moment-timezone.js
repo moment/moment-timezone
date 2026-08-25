@@ -4,24 +4,9 @@
 //! license : MIT
 //! github.com/moment/moment-timezone
 
-(function (root, factory) {
-	"use strict";
+import moment from '@nuxeo/moment';
 
-	/*global define*/
-	if (typeof module === 'object' && module.exports) {
-		module.exports = factory(require('moment')); // Node
-	} else if (typeof define === 'function' && define.amd) {
-		define(['moment'], factory);                 // AMD
-	} else {
-		factory(root.moment);                        // Browser
-	}
-}(this, function (moment) {
 	"use strict";
-
-	// Resolves es6 module loading issue
-	if (moment.version === undefined && moment.default) {
-		moment = moment.default;
-	}
 
 	// Do not load moment-timezone a second time.
 	// if (moment.tz !== undefined) {
@@ -725,5 +710,4 @@
 
 	// INJECT DATA
 
-	return moment;
-}));
+export default moment;
