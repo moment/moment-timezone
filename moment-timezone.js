@@ -577,6 +577,41 @@
 		return !!(m._a && (m._tzm === undefined) && !isUnixTimestamp);
 	}
 
+	function isObjectInput (input) {
+		var prop;
+
+		if (moment.isMoment(input) || input === null || Object.prototype.toString.call(input) !== '[object Object]') {
+			return false;
+		}
+		if (Object.getOwnPropertyNames) {
+			return Object.getOwnPropertyNames(input).length > 0;
+		}
+		for (prop in input) {
+			if (Object.prototype.hasOwnProperty.call(input, prop)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function parseWithZoneNow (args, name) {
+		var savedNow = moment.now,
+			zonedNow = moment.tz(savedNow.call(moment), name),
+			wallNow = zonedNow.valueOf() + zonedNow.utcOffset() * 60000,
+			out;
+
+		moment.now = function () {
+			return wallNow;
+		};
+		try {
+			out = moment.utc.apply(null, args);
+		} finally {
+			moment.now = savedNow;
+		}
+
+		return out;
+	}
+
 	function logError (message) {
 		if (typeof console !== 'undefined' && typeof console.error === 'function') {
 			console.error(message);
@@ -590,10 +625,11 @@
 	function tz (input) {
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
-			out  = moment.utc.apply(null, args),
-			zone;
+			objectInput = isObjectInput(input),
+			zone = objectInput ? getZone(name) : null,
+			out = objectInput && zone ? parseWithZoneNow(args, name) : moment.utc.apply(null, args);
 
-		if (!moment.isMoment(input) && needsOffset(out) && (zone = getZone(name))) {
+		if (!moment.isMoment(input) && needsOffset(out) && (zone || (!objectInput && (zone = getZone(name))))) {
 			out.add(zone.parse(out), 'minutes');
 		}
 
