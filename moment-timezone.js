@@ -240,6 +240,15 @@
 		}
 	};
 
+	var utcDefaultZone = new Zone();
+	utcDefaultZone._set({
+		name : 'UTC',
+		abbrs : ['UTC'],
+		untils : [Infinity],
+		offsets : [0],
+		population : 0
+	});
+
 	/************************************
 		Country object
 	************************************/
@@ -594,19 +603,43 @@
 		return false;
 	}
 
-	function parseWithZoneNow (args, name) {
+	function parseWithZoneNow (args, name, stringInput) {
 		var savedNow = moment.now,
-			zonedNow = moment.tz(savedNow.call(moment), name),
-			wallNow = zonedNow.valueOf() + zonedNow.utcOffset() * 60000,
+			savedDefaultZone = moment.defaultZone,
+			now,
+			hasNow = false,
+			utcNow,
+			zonedNow,
+			wallNow,
 			out;
 
 		moment.now = function () {
+			if (!hasNow) {
+				now = savedNow.call(moment);
+				hasNow = true;
+				zonedNow = moment.tz(now, name);
+				wallNow = zonedNow.valueOf() + zonedNow.utcOffset() * 60000;
+			}
 			return wallNow;
 		};
+		if (stringInput) {
+			moment.defaultZone = utcDefaultZone;
+		}
 		try {
 			out = moment.utc.apply(null, args);
+			if (stringInput && hasNow && out._a && out._tzm !== undefined) {
+				utcNow = moment.utc(now);
+				if (utcNow.year() !== zonedNow.year() || utcNow.month() !== zonedNow.month() || utcNow.date() !== zonedNow.date()) {
+					moment.now = function () {
+						return now;
+					};
+					moment.defaultZone = savedDefaultZone;
+					out = moment.utc.apply(null, args);
+				}
+			}
 		} finally {
 			moment.now = savedNow;
+			moment.defaultZone = savedDefaultZone;
 		}
 
 		return out;
@@ -626,8 +659,10 @@
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
 			objectInput = isObjectInput(input),
-			zone = objectInput ? getZone(name) : null,
-			out = objectInput && zone ? parseWithZoneNow(args, name) : moment.utc.apply(null, args);
+			stringInput = args.length > 0 && typeof input === 'string',
+			zone = objectInput || stringInput ? getZone(name) : null,
+			out = objectInput && zone ? parseWithZoneNow(args, name) :
+				stringInput && zone ? parseWithZoneNow(args, name, true) : moment.utc.apply(null, args);
 
 		if (!moment.isMoment(input) && needsOffset(out) && (zone || (!objectInput && (zone = getZone(name))))) {
 			out.add(zone.parse(out), 'minutes');
