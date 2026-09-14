@@ -130,6 +130,32 @@ exports.issue119 = {
 		t.done();
 	},
 
+	"nested zoned parsing shares the current instant" : function (t) {
+		var calls = 0,
+			nested,
+			outer;
+		moment.now = function () {
+			calls++;
+			return Date.parse("2025-01-01T20:00:00Z");
+		};
+		moment.defineLocale("issue-119-nested", {
+			parentLocale : "en",
+			preparse : function (input) {
+				nested = moment.tz("01:00", "HH:mm", "en", "America/New_York");
+				return input;
+			}
+		});
+
+		outer = moment.tz("01:00", "HH:mm", "issue-119-nested", "Asia/Tokyo");
+
+		t.equal(outer.format("YYYY-MM-DD"), "2025-01-02");
+		t.equal(nested.format("YYYY-MM-DD"), "2025-01-01");
+		t.equal(calls, 1, "nested parses use one coherent current instant");
+		moment.locale("en");
+		moment.defineLocale("issue-119-nested", null);
+		t.done();
+	},
+
 	"locale week defaults use the target zone independently of the host zone" : function (t) {
 		var savedUTC = moment.tz._zones.etc_utc,
 			savedTZ = process.env.TZ,
@@ -176,7 +202,7 @@ exports.issue119 = {
 		moment.now = function () {
 			return Date.parse("2025-01-05T04:00:00Z");
 		};
-		process.env.TZ = "UTC";
+		process.env.TZ = "America/Denver";
 		try {
 			actual = moment.tz("2025-6 12:00 -08:00", "YYYY-e HH:mm Z", "America/New_York");
 			expected = moment.utc("2025-6 12:00 -08:00", "YYYY-e HH:mm Z").tz("America/New_York");

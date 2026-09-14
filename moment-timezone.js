@@ -35,6 +35,12 @@
 		countries = {},
 		names = {},
 		guesses = {},
+		parsingInZone = false,
+		parsingNow,
+		parsingNowFunction,
+		hasParsingNow = false,
+		ignoreDefaultZoneForInput,
+		hasIgnoredDefaultZoneInput = false,
 		cachedGuess;
 
 	if (!moment || typeof moment.version !== 'string') {
@@ -606,16 +612,30 @@
 	function parseWithZoneNow (args, name, stringInput) {
 		var savedNow = moment.now,
 			savedDefaultZone = moment.defaultZone,
+			savedParsingInZone = parsingInZone,
+			savedParsingNow = parsingNow,
+			savedParsingNowFunction = parsingNowFunction,
+			savedHasParsingNow = hasParsingNow,
 			now,
 			hasNow = false,
-			utcNow,
 			zonedNow,
 			wallNow,
+			parsedDateParts,
 			out;
 
+		if (!parsingInZone) {
+			parsingNow = undefined;
+			parsingNowFunction = savedNow;
+			hasParsingNow = false;
+		}
+		parsingInZone = true;
 		moment.now = function () {
 			if (!hasNow) {
-				now = savedNow.call(moment);
+				if (!hasParsingNow) {
+					parsingNow = parsingNowFunction.call(moment);
+					hasParsingNow = true;
+				}
+				now = parsingNow;
 				hasNow = true;
 				zonedNow = moment.tz(now, name);
 				wallNow = zonedNow.valueOf() + zonedNow.utcOffset() * 60000;
@@ -628,8 +648,8 @@
 		try {
 			out = moment.utc.apply(null, args);
 			if (stringInput && hasNow && out._a && out._tzm !== undefined) {
-				utcNow = moment.utc(now);
-				if (utcNow.year() !== zonedNow.year() || utcNow.month() !== zonedNow.month() || utcNow.date() !== zonedNow.date()) {
+				parsedDateParts = out.parsingFlags().parsedDateParts;
+				if (!parsedDateParts || parsedDateParts[0] == null || parsedDateParts[1] == null || parsedDateParts[2] == null) {
 					moment.now = function () {
 						return now;
 					};
@@ -640,6 +660,12 @@
 		} finally {
 			moment.now = savedNow;
 			moment.defaultZone = savedDefaultZone;
+			parsingInZone = savedParsingInZone;
+			if (!savedParsingInZone) {
+				parsingNow = savedParsingNow;
+				parsingNowFunction = savedParsingNowFunction;
+				hasParsingNow = savedHasParsingNow;
+			}
 		}
 
 		return out;
@@ -704,9 +730,46 @@
 	moment.tz = tz;
 
 	moment.defaultZone = null;
+	var momentGetDefaultDateParts = moment._getDefaultDateParts;
+	if (momentGetDefaultDateParts) {
+		moment._getDefaultDateParts = function (config, now, forWeek) {
+			var zone = moment.defaultZone,
+				zonedNow,
+				dateParts,
+				savedIgnoredInput,
+				savedHasIgnoredInput;
+			forWeek = forWeek || config._isDefaultDatePartsForWeek;
+
+			if (parsingInZone && config._tzm === undefined) {
+				zonedNow = new Date(now);
+				return [zonedNow.getUTCFullYear(), zonedNow.getUTCMonth(), zonedNow.getUTCDate()];
+			}
+
+			if (zone && !config._useUTC && config._tzm === undefined) {
+				zonedNow = new Date(now - zone.utcOffset(now) * 60000);
+				return [zonedNow.getUTCFullYear(), zonedNow.getUTCMonth(), zonedNow.getUTCDate()];
+			}
+
+			if (forWeek && (config._useUTC || config._tzm !== undefined)) {
+				savedIgnoredInput = ignoreDefaultZoneForInput;
+				savedHasIgnoredInput = hasIgnoredDefaultZoneInput;
+				ignoreDefaultZoneForInput = now;
+				hasIgnoredDefaultZoneInput = true;
+				try {
+					dateParts = momentGetDefaultDateParts.call(this, config, now, forWeek);
+				} finally {
+					ignoreDefaultZoneForInput = savedIgnoredInput;
+					hasIgnoredDefaultZoneInput = savedHasIgnoredInput;
+				}
+				return dateParts;
+			}
+
+			return momentGetDefaultDateParts.call(this, config, now, forWeek);
+		};
+	}
 
 	moment.updateOffset = function (mom, keepTime) {
-		var zone = moment.defaultZone,
+		var zone = hasIgnoredDefaultZoneInput && ignoreDefaultZoneForInput === mom._i ? null : moment.defaultZone,
 			offset,
 			localTimestamp,
 			normalizedTimestamp;
