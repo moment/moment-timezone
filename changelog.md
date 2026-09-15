@@ -1,3 +1,13 @@
+### `0.6.4` _2026-09-15_
+* Updated data to IANA TZDB `2026d`. [#1157](https://github.com/moment/moment-timezone/pull/1157)
+* Fixed calendar arithmetic around time zone gaps. [#1151](https://github.com/moment/moment-timezone/pull/1151)
+* Fixed default date selection when creating a zoned Moment with only time fields.
+  * Object inputs (e.g. `moment.tz({ hour: 9 }, zoneName)`). [#1156](https://github.com/moment/moment-timezone/pull/1156)
+  * String inputs (e.g. `moment.tz('09:00', 'HH:mm', zoneName)`). [#1159](https://github.com/moment/moment-timezone/pull/1159)
+  * Using un-zoned `moment()` when there is also a zone set with `moment.tz.setDefault(zoneName)`. [#1161](https://github.com/moment/moment-timezone/pull/1161)
+    * NOTE: This specific fix only works when also using core `moment` version `2.31.0` or higher.
+      All other fixes in this release work with all supported versions of `moment`.
+
 ### `0.6.3` _2026-07-19_
 * Updated data to IANA TZDB `2026c`. [#1148](https://github.com/moment/moment-timezone/pull/1148)
 

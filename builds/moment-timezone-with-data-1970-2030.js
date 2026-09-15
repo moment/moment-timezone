@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.6.3
+//! version : 0.6.4
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,12 +29,18 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.6.3",
+	var VERSION = "0.6.4",
 		zones = {},
 		links = {},
 		countries = {},
 		names = {},
 		guesses = {},
+		parsingInZone = false,
+		parsingNow,
+		parsingNowFunction,
+		hasParsingNow = false,
+		ignoreDefaultZoneForInput,
+		hasIgnoredDefaultZoneInput = false,
 		cachedGuess;
 
 	if (!moment || typeof moment.version !== 'string') {
@@ -206,17 +212,16 @@
 				offsets = this.offsets,
 				untils  = this.untils,
 				max     = untils.length - 1,
-				offset, offsetNext, offsetPrev, i;
+				offset, offsetNext, i;
 
 			for (i = 0; i < max; i++) {
 				offset     = offsets[i];
 				offsetNext = offsets[i + 1];
-				offsetPrev = offsets[i ? i - 1 : i];
 
 				if (offset < offsetNext && tz.moveAmbiguousForward) {
 					offset = offsetNext;
-				} else if (offset > offsetPrev && tz.moveInvalidForward) {
-					offset = offsetPrev;
+				} else if (offset > offsetNext && tz.moveInvalidForward) {
+					offset = offsetNext;
 				}
 
 				if (target < untils[i] - (offset * 60000)) {
@@ -240,6 +245,15 @@
 			return this.offsets[this._index(mom)];
 		}
 	};
+
+	var utcDefaultZone = new Zone();
+	utcDefaultZone._set({
+		name : 'UTC',
+		abbrs : ['UTC'],
+		untils : [Infinity],
+		offsets : [0],
+		population : 0
+	});
 
 	/************************************
 		Country object
@@ -578,6 +592,85 @@
 		return !!(m._a && (m._tzm === undefined) && !isUnixTimestamp);
 	}
 
+	function isObjectInput (input) {
+		var prop;
+
+		if (moment.isMoment(input) || input === null || Object.prototype.toString.call(input) !== '[object Object]') {
+			return false;
+		}
+		if (Object.getOwnPropertyNames) {
+			return Object.getOwnPropertyNames(input).length > 0;
+		}
+		for (prop in input) {
+			if (Object.prototype.hasOwnProperty.call(input, prop)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function parseWithZoneNow (args, name, stringInput) {
+		var savedNow = moment.now,
+			savedDefaultZone = moment.defaultZone,
+			savedParsingInZone = parsingInZone,
+			savedParsingNow = parsingNow,
+			savedParsingNowFunction = parsingNowFunction,
+			savedHasParsingNow = hasParsingNow,
+			now,
+			hasNow = false,
+			zonedNow,
+			wallNow,
+			parsedDateParts,
+			out;
+
+		if (!parsingInZone) {
+			parsingNow = undefined;
+			parsingNowFunction = savedNow;
+			hasParsingNow = false;
+		}
+		parsingInZone = true;
+		moment.now = function () {
+			if (!hasNow) {
+				if (!hasParsingNow) {
+					parsingNow = parsingNowFunction.call(moment);
+					hasParsingNow = true;
+				}
+				now = parsingNow;
+				hasNow = true;
+				zonedNow = moment.tz(now, name);
+				wallNow = zonedNow.valueOf() + zonedNow.utcOffset() * 60000;
+			}
+			return wallNow;
+		};
+		if (stringInput) {
+			moment.defaultZone = utcDefaultZone;
+		}
+		try {
+			out = moment.utc.apply(null, args);
+			if (stringInput && hasNow && out._a && out._tzm !== undefined) {
+				parsedDateParts = out.parsingFlags().parsedDateParts;
+				if (!parsedDateParts || parsedDateParts[0] == null || parsedDateParts[1] == null || parsedDateParts[2] == null) {
+					moment.now = function () {
+						return now;
+					};
+					moment.defaultZone = savedDefaultZone;
+					out = moment.utc.apply(null, args);
+				}
+			}
+		} finally {
+			moment.now = savedNow;
+			moment.defaultZone = savedDefaultZone;
+			parsingInZone = savedParsingInZone;
+			if (!savedParsingInZone) {
+				parsingNow = savedParsingNow;
+				parsingNowFunction = savedParsingNowFunction;
+				hasParsingNow = savedHasParsingNow;
+			}
+		}
+
+		return out;
+	}
+
 	function logError (message) {
 		if (typeof console !== 'undefined' && typeof console.error === 'function') {
 			console.error(message);
@@ -591,10 +684,13 @@
 	function tz (input) {
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
-			out  = moment.utc.apply(null, args),
-			zone;
+			objectInput = isObjectInput(input),
+			stringInput = args.length > 0 && typeof input === 'string',
+			zone = objectInput || stringInput ? getZone(name) : null,
+			out = objectInput && zone ? parseWithZoneNow(args, name) :
+				stringInput && zone ? parseWithZoneNow(args, name, true) : moment.utc.apply(null, args);
 
-		if (!moment.isMoment(input) && needsOffset(out) && (zone = getZone(name))) {
+		if (!moment.isMoment(input) && needsOffset(out) && (zone || (!objectInput && (zone = getZone(name))))) {
 			out.add(zone.parse(out), 'minutes');
 		}
 
@@ -634,10 +730,49 @@
 	moment.tz = tz;
 
 	moment.defaultZone = null;
+	var momentGetDefaultDateParts = moment._getDefaultDateParts;
+	if (momentGetDefaultDateParts) {
+		moment._getDefaultDateParts = function (config, now, forWeek) {
+			var zone = moment.defaultZone,
+				zonedNow,
+				dateParts,
+				savedIgnoredInput,
+				savedHasIgnoredInput;
+			forWeek = forWeek || config._isDefaultDatePartsForWeek;
+
+			if (parsingInZone && config._tzm === undefined) {
+				zonedNow = new Date(now);
+				return [zonedNow.getUTCFullYear(), zonedNow.getUTCMonth(), zonedNow.getUTCDate()];
+			}
+
+			if (zone && !config._useUTC && config._tzm === undefined) {
+				zonedNow = new Date(now - zone.utcOffset(now) * 60000);
+				return [zonedNow.getUTCFullYear(), zonedNow.getUTCMonth(), zonedNow.getUTCDate()];
+			}
+
+			if (forWeek && (config._useUTC || config._tzm !== undefined)) {
+				savedIgnoredInput = ignoreDefaultZoneForInput;
+				savedHasIgnoredInput = hasIgnoredDefaultZoneInput;
+				ignoreDefaultZoneForInput = now;
+				hasIgnoredDefaultZoneInput = true;
+				try {
+					dateParts = momentGetDefaultDateParts.call(this, config, now, forWeek);
+				} finally {
+					ignoreDefaultZoneForInput = savedIgnoredInput;
+					hasIgnoredDefaultZoneInput = savedHasIgnoredInput;
+				}
+				return dateParts;
+			}
+
+			return momentGetDefaultDateParts.call(this, config, now, forWeek);
+		};
+	}
 
 	moment.updateOffset = function (mom, keepTime) {
-		var zone = moment.defaultZone,
-			offset;
+		var zone = hasIgnoredDefaultZoneInput && ignoreDefaultZoneForInput === mom._i ? null : moment.defaultZone,
+			offset,
+			localTimestamp,
+			normalizedTimestamp;
 
 		if (mom._z === undefined) {
 			if (zone && needsOffset(mom) && !mom._isUTC && mom.isValid()) {
@@ -648,6 +783,20 @@
 		}
 		if (mom._z) {
 			offset = mom._z.utcOffset(mom);
+			if (keepTime) {
+				// Resolve local times inside a forward gap using the configured
+				// invalid-input policy before applying the new offset.
+				localTimestamp = mom._d.valueOf();
+				if (!mom._isUTC) {
+					localTimestamp -= mom._d.getTimezoneOffset() * 60000;
+				}
+				if (mom._z.utcOffset(localTimestamp + offset * 60000) !== offset) {
+					offset = mom._z.parse(localTimestamp);
+					localTimestamp += offset * 60000;
+					offset = mom._z.utcOffset(localTimestamp);
+					normalizedTimestamp = localTimestamp - offset * 60000;
+				}
+			}
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
@@ -657,6 +806,9 @@
 				mom._z = z;
 			} else {
 				mom.zone(offset, keepTime);
+			}
+			if (normalizedTimestamp != null) {
+				mom._d.setTime(normalizedTimestamp);
 			}
 		}
 	};
@@ -724,7 +876,7 @@
 	}
 
 	loadData({
-		"version": "2026c",
+		"version": "2026d",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
@@ -769,7 +921,7 @@
 			"America/Belem|-03 -02|30 20|0101010|CxD0 Rb0 1tB0 IL0 1Fd0 FX0|20e5",
 			"America/Belize|CST CDT|60 50|01010|9xG0 qn0 lxB0 mn0|57e3",
 			"America/Boa_Vista|-04 -03|40 30|01010101010|CxE0 Rb0 1tB0 IL0 1Fd0 FX0 smp0 WL0 1tB0 2L0|62e2",
-			"America/Bogota|-05 -04|50 40|010|Snh0 1PX0|90e5",
+			"America/Bogota|-05 -04|50 40|010|SmR0 1Qn0|90e5",
 			"America/Boise|MST MDT|70 60|010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|K90 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 Dd0 1Kn0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|21e4",
 			"America/Cambridge_Bay|MST MDT CST CDT EST|70 60 60 50 50|010101010101010101010101010101010101010101010101010101012342101010101010101010101010101010101010101010101010101010101010|5E90 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11A0 1nX0 2K0 WQ0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|15e2",
 			"America/Campo_Grande|-04 -03|40 30|010101010101010101010101010101010101010101010101010101010101010101010|CxE0 Rb0 1tB0 IL0 1Fd0 FX0 1EN0 FX0 1HB0 Lz0 1EN0 Lz0 1C10 IL0 1HB0 Db0 1HB0 On0 1zd0 On0 1zd0 Lz0 1zd0 Rb0 1wN0 Wn0 1tB0 Rb0 1tB0 WL0 1tB0 Rb0 1zd0 On0 1HB0 FX0 1C10 Lz0 1Ip0 HX0 1zd0 On0 1HB0 IL0 1wp0 On0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 Rb0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1HB0 FX0|77e4",
@@ -812,7 +964,7 @@
 			"America/Indiana/Vevay|EST EDT|50 40|010101010101010101010101010101010101010101010101010101010|K70 1cL0 1cN0 1fz0 1cN0 1cL0 1lnd0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|",
 			"America/Indiana/Vincennes|EST EDT CDT CST|50 40 50 60|01023201010101010101010101010101010101010101010101010|K70 1cL0 1qhd0 1o00 Rd0 1zb0 Oo0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|",
 			"America/Indiana/Winamac|EST EDT CDT CST|50 40 50 60|01023101010101010101010101010101010101010101010101010|K70 1cL0 1qhd0 1o00 Rd0 1za0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|",
-			"America/Inuvik|PST PDT MDT MST|80 70 60 70|01010101010101023232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323|5Ea0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cK0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|35e2",
+			"America/Inuvik|PST PDT MDT MST CST|80 70 60 70 60|010101010101010232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232324|5Ea0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cK0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|35e2",
 			"America/Iqaluit|EST EDT CST CDT|50 40 60 50|01010101010101010101010101010101010101010101010101010101230101010101010101010101010101010101010101010101010101010101010|5E70 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11C0 1nX0 11A0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|67e2",
 			"America/Jamaica|EST EDT|50 40|010101010101010101010|9Kv0 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0|94e4",
 			"America/Juneau|PST PDT YDT YST AKST AKDT|80 70 80 90 90 80|0101010101010101010102010101345454545454545454545454545454545454545454545454545454545454545454545454545454545454545454545454|Ka0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cM0 1cM0 1cL0 1cN0 1fz0 1a10 1fz0 co0 10q0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|33e3",
@@ -943,7 +1095,7 @@
 			"Asia/Taipei|CST CDT|-80 -90|0101010|akg0 1db0 1cN0 1db0 97B0 AL0|74e5",
 			"Asia/Tashkent|+06 +07 +05|-60 -70 -50|0101010101010101010102|rn60 1db0 1cN0 1db0 1cN0 1db0 1dd0 1cO0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 2pB0|23e5",
 			"Asia/Tbilisi|+04 +05 +03|-40 -50 -30|01010101010101010101020202010101010101010101020|rn80 1db0 1cN0 1db0 1cN0 1db0 1dd0 1cO0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 2pB0 1cK0 1cL0 1cN0 1cL0 1cN0 2pz0 1cL0 1fB0 3Nz0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 An0 Os0 WM0|11e5",
-			"Asia/Tehran|+0330 +0430 +04 +05|-3u -4u -40 -50|0123201010101010101010101010101010101010101010101010101010101010101010|hyHu 1pc0 120u Rc0 Dc0 1iMu JX0 1dB0 1en0 pNB0 UL0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 64p0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0|14e6",
+			"Asia/Tehran|+0330 +0430 +04 +05|-3u -4u -40 -50|0123201010101010101010101010101010101010101010101010101010101010101010|hyHu 1pc0 120u Rc0 Dc0 1iou Kn0 1dB0 1en0 pNB0 UL0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 64p0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0|14e6",
 			"Asia/Thimphu|+0530 +06|-5u -60|01|HcGu|79e3",
 			"Asia/Tokyo|JST|-90|0||38e6",
 			"Asia/Tomsk|+07 +08 +06|-70 -80 -60|01010101010101010101020101010101010101010101020202020202020202020|rn50 1db0 1cN0 1db0 1cN0 1db0 1dd0 1cO0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 2pB0 IM0 rX0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 co0 1bB0 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 8Hz0 3Qp0|10e5",

@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.6.3
+//! version : 0.6.4
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,12 +29,18 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.6.3",
+	var VERSION = "0.6.4",
 		zones = {},
 		links = {},
 		countries = {},
 		names = {},
 		guesses = {},
+		parsingInZone = false,
+		parsingNow,
+		parsingNowFunction,
+		hasParsingNow = false,
+		ignoreDefaultZoneForInput,
+		hasIgnoredDefaultZoneInput = false,
 		cachedGuess;
 
 	if (!moment || typeof moment.version !== 'string') {
@@ -206,17 +212,16 @@
 				offsets = this.offsets,
 				untils  = this.untils,
 				max     = untils.length - 1,
-				offset, offsetNext, offsetPrev, i;
+				offset, offsetNext, i;
 
 			for (i = 0; i < max; i++) {
 				offset     = offsets[i];
 				offsetNext = offsets[i + 1];
-				offsetPrev = offsets[i ? i - 1 : i];
 
 				if (offset < offsetNext && tz.moveAmbiguousForward) {
 					offset = offsetNext;
-				} else if (offset > offsetPrev && tz.moveInvalidForward) {
-					offset = offsetPrev;
+				} else if (offset > offsetNext && tz.moveInvalidForward) {
+					offset = offsetNext;
 				}
 
 				if (target < untils[i] - (offset * 60000)) {
@@ -240,6 +245,15 @@
 			return this.offsets[this._index(mom)];
 		}
 	};
+
+	var utcDefaultZone = new Zone();
+	utcDefaultZone._set({
+		name : 'UTC',
+		abbrs : ['UTC'],
+		untils : [Infinity],
+		offsets : [0],
+		population : 0
+	});
 
 	/************************************
 		Country object
@@ -578,6 +592,85 @@
 		return !!(m._a && (m._tzm === undefined) && !isUnixTimestamp);
 	}
 
+	function isObjectInput (input) {
+		var prop;
+
+		if (moment.isMoment(input) || input === null || Object.prototype.toString.call(input) !== '[object Object]') {
+			return false;
+		}
+		if (Object.getOwnPropertyNames) {
+			return Object.getOwnPropertyNames(input).length > 0;
+		}
+		for (prop in input) {
+			if (Object.prototype.hasOwnProperty.call(input, prop)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function parseWithZoneNow (args, name, stringInput) {
+		var savedNow = moment.now,
+			savedDefaultZone = moment.defaultZone,
+			savedParsingInZone = parsingInZone,
+			savedParsingNow = parsingNow,
+			savedParsingNowFunction = parsingNowFunction,
+			savedHasParsingNow = hasParsingNow,
+			now,
+			hasNow = false,
+			zonedNow,
+			wallNow,
+			parsedDateParts,
+			out;
+
+		if (!parsingInZone) {
+			parsingNow = undefined;
+			parsingNowFunction = savedNow;
+			hasParsingNow = false;
+		}
+		parsingInZone = true;
+		moment.now = function () {
+			if (!hasNow) {
+				if (!hasParsingNow) {
+					parsingNow = parsingNowFunction.call(moment);
+					hasParsingNow = true;
+				}
+				now = parsingNow;
+				hasNow = true;
+				zonedNow = moment.tz(now, name);
+				wallNow = zonedNow.valueOf() + zonedNow.utcOffset() * 60000;
+			}
+			return wallNow;
+		};
+		if (stringInput) {
+			moment.defaultZone = utcDefaultZone;
+		}
+		try {
+			out = moment.utc.apply(null, args);
+			if (stringInput && hasNow && out._a && out._tzm !== undefined) {
+				parsedDateParts = out.parsingFlags().parsedDateParts;
+				if (!parsedDateParts || parsedDateParts[0] == null || parsedDateParts[1] == null || parsedDateParts[2] == null) {
+					moment.now = function () {
+						return now;
+					};
+					moment.defaultZone = savedDefaultZone;
+					out = moment.utc.apply(null, args);
+				}
+			}
+		} finally {
+			moment.now = savedNow;
+			moment.defaultZone = savedDefaultZone;
+			parsingInZone = savedParsingInZone;
+			if (!savedParsingInZone) {
+				parsingNow = savedParsingNow;
+				parsingNowFunction = savedParsingNowFunction;
+				hasParsingNow = savedHasParsingNow;
+			}
+		}
+
+		return out;
+	}
+
 	function logError (message) {
 		if (typeof console !== 'undefined' && typeof console.error === 'function') {
 			console.error(message);
@@ -591,10 +684,13 @@
 	function tz (input) {
 		var args = Array.prototype.slice.call(arguments, 0, -1),
 			name = arguments[arguments.length - 1],
-			out  = moment.utc.apply(null, args),
-			zone;
+			objectInput = isObjectInput(input),
+			stringInput = args.length > 0 && typeof input === 'string',
+			zone = objectInput || stringInput ? getZone(name) : null,
+			out = objectInput && zone ? parseWithZoneNow(args, name) :
+				stringInput && zone ? parseWithZoneNow(args, name, true) : moment.utc.apply(null, args);
 
-		if (!moment.isMoment(input) && needsOffset(out) && (zone = getZone(name))) {
+		if (!moment.isMoment(input) && needsOffset(out) && (zone || (!objectInput && (zone = getZone(name))))) {
 			out.add(zone.parse(out), 'minutes');
 		}
 
@@ -634,10 +730,49 @@
 	moment.tz = tz;
 
 	moment.defaultZone = null;
+	var momentGetDefaultDateParts = moment._getDefaultDateParts;
+	if (momentGetDefaultDateParts) {
+		moment._getDefaultDateParts = function (config, now, forWeek) {
+			var zone = moment.defaultZone,
+				zonedNow,
+				dateParts,
+				savedIgnoredInput,
+				savedHasIgnoredInput;
+			forWeek = forWeek || config._isDefaultDatePartsForWeek;
+
+			if (parsingInZone && config._tzm === undefined) {
+				zonedNow = new Date(now);
+				return [zonedNow.getUTCFullYear(), zonedNow.getUTCMonth(), zonedNow.getUTCDate()];
+			}
+
+			if (zone && !config._useUTC && config._tzm === undefined) {
+				zonedNow = new Date(now - zone.utcOffset(now) * 60000);
+				return [zonedNow.getUTCFullYear(), zonedNow.getUTCMonth(), zonedNow.getUTCDate()];
+			}
+
+			if (forWeek && (config._useUTC || config._tzm !== undefined)) {
+				savedIgnoredInput = ignoreDefaultZoneForInput;
+				savedHasIgnoredInput = hasIgnoredDefaultZoneInput;
+				ignoreDefaultZoneForInput = now;
+				hasIgnoredDefaultZoneInput = true;
+				try {
+					dateParts = momentGetDefaultDateParts.call(this, config, now, forWeek);
+				} finally {
+					ignoreDefaultZoneForInput = savedIgnoredInput;
+					hasIgnoredDefaultZoneInput = savedHasIgnoredInput;
+				}
+				return dateParts;
+			}
+
+			return momentGetDefaultDateParts.call(this, config, now, forWeek);
+		};
+	}
 
 	moment.updateOffset = function (mom, keepTime) {
-		var zone = moment.defaultZone,
-			offset;
+		var zone = hasIgnoredDefaultZoneInput && ignoreDefaultZoneForInput === mom._i ? null : moment.defaultZone,
+			offset,
+			localTimestamp,
+			normalizedTimestamp;
 
 		if (mom._z === undefined) {
 			if (zone && needsOffset(mom) && !mom._isUTC && mom.isValid()) {
@@ -648,6 +783,20 @@
 		}
 		if (mom._z) {
 			offset = mom._z.utcOffset(mom);
+			if (keepTime) {
+				// Resolve local times inside a forward gap using the configured
+				// invalid-input policy before applying the new offset.
+				localTimestamp = mom._d.valueOf();
+				if (!mom._isUTC) {
+					localTimestamp -= mom._d.getTimezoneOffset() * 60000;
+				}
+				if (mom._z.utcOffset(localTimestamp + offset * 60000) !== offset) {
+					offset = mom._z.parse(localTimestamp);
+					localTimestamp += offset * 60000;
+					offset = mom._z.utcOffset(localTimestamp);
+					normalizedTimestamp = localTimestamp - offset * 60000;
+				}
+			}
 			if (Math.abs(offset) < 16) {
 				offset = offset / 60;
 			}
@@ -657,6 +806,9 @@
 				mom._z = z;
 			} else {
 				mom.zone(offset, keepTime);
+			}
+			if (normalizedTimestamp != null) {
+				mom._d.setTime(normalizedTimestamp);
 			}
 		}
 	};
@@ -724,7 +876,7 @@
 	}
 
 	loadData({
-		"version": "2026c",
+		"version": "2026d",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
