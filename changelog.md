@@ -1,3 +1,6 @@
+### `0.6.5` _2026-10-02_
+* Updated data to IANA TZDB `2026e`. [#1165](https://github.com/moment/moment-timezone/pull/1165)
+
 ### `0.6.4` _2026-09-15_
 * Updated data to IANA TZDB `2026d`. [#1157](https://github.com/moment/moment-timezone/pull/1157)
 * Fixed calendar arithmetic around time zone gaps. [#1151](https://github.com/moment/moment-timezone/pull/1151)

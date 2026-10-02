@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.6.4
+//! version : 0.6.5
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,7 +29,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.6.4",
+	var VERSION = "0.6.5",
 		zones = {},
 		links = {},
 		countries = {},
@@ -876,7 +876,7 @@
 	}
 
 	loadData({
-		"version": "2026d",
+		"version": "2026e",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
@@ -915,6 +915,7 @@
 			"America/Miquelon|-03 -02|30 20|01010101010101010101010|24E50 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|61e2",
 			"America/Noronha|-02|20|0||30e2",
 			"America/Ojinaga|MST MDT CST CDT|70 60 60 50|01012323232323232323232|24E90 1zb0 Op0 1wn0 Rc0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|23e3",
+			"America/Winnipeg|CST CDT EST|60 50 50|0101010101012|24E80 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|66e4",
 			"America/Santiago|-03 -04|30 40|01010101010101010101010|24Mr0 11B0 1nX0 14p0 1lb0 11B0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 11B0 1nX0 11B0|62e5",
 			"America/Scoresbysund|-01 +00 -02|10 0 20|0101010202020202020202|24JB0 1qM0 WM0 1qM0 WM0 1qM0 2pA0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|452",
 			"America/St_Johns|NST NDT|3u 2u|01010101010101010101010|24E5u 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|11e4",
@@ -1080,12 +1081,9 @@
 			"America/Chicago|America/North_Dakota/Beulah",
 			"America/Chicago|America/North_Dakota/Center",
 			"America/Chicago|America/North_Dakota/New_Salem",
-			"America/Chicago|America/Rainy_River",
 			"America/Chicago|America/Rankin_Inlet",
 			"America/Chicago|America/Resolute",
-			"America/Chicago|America/Winnipeg",
 			"America/Chicago|CST6CDT",
-			"America/Chicago|Canada/Central",
 			"America/Chicago|US/Central",
 			"America/Chicago|US/Indiana-Starke",
 			"America/Denver|America/Boise",
@@ -1237,6 +1235,8 @@
 			"America/Sao_Paulo|Etc/GMT+3",
 			"America/St_Johns|Canada/Newfoundland",
 			"America/Vancouver|Canada/Pacific",
+			"America/Winnipeg|America/Rainy_River",
+			"America/Winnipeg|Canada/Central",
 			"Asia/Almaty|Asia/Qostanay",
 			"Asia/Bangkok|Antarctica/Davis",
 			"Asia/Bangkok|Asia/Barnaul",
