@@ -268,6 +268,10 @@
 		Current Timezone
 	************************************/
 
+	function hasOwnProp(a, b) {
+		return Object.prototype.hasOwnProperty.call(a, b);
+	}
+
 	function OffsetAt(at) {
 		var timeString = at.toTimeString();
 		var abbr = timeString.match(/\([a-z ]+\)/i);
@@ -380,12 +384,12 @@
 
 		for (i = 0; i < offsetsLength; i++) {
 			offset = offsets[i].offset;
-			if (checkedOffsets.hasOwnProperty(offset)) {
+			if (hasOwnProp(checkedOffsets, offset)) {
 				continue;
 			}
 			guessesOffset = guesses[offset] || {};
 			for (j in guessesOffset) {
-				if (guessesOffset.hasOwnProperty(j)) {
+				if (hasOwnProp(guessesOffset, j)) {
 					filteredGuesses[j] = true;
 				}
 			}
@@ -393,7 +397,7 @@
 		}
 
 		for (i in filteredGuesses) {
-			if (filteredGuesses.hasOwnProperty(i)) {
+			if (hasOwnProp(filteredGuesses, i)) {
 				out.push(names[i]);
 			}
 		}
@@ -448,7 +452,7 @@
 	************************************/
 
 	function normalizeName (name) {
-		return (name || '').toLowerCase().replace(/\//g, '_');
+		return (typeof name === 'string' ? name : '').toLowerCase().replace(/\//g, '_');
 	}
 
 	function addZone (packed) {
@@ -472,7 +476,7 @@
 
 		name = normalizeName(name);
 
-		var zone = zones[name];
+		var zone = hasOwnProp(zones, name) ? zones[name] : undefined;
 		var link;
 
 		if (zone instanceof Zone) {
@@ -486,7 +490,7 @@
 		}
 
 		// Pass getZone to prevent recursion more than 1 level deep
-		if (links[name] && caller !== getZone && (link = getZone(links[name], getZone))) {
+		if (hasOwnProp(links, name) && caller !== getZone && (link = getZone(links[name], getZone))) {
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
@@ -500,7 +504,7 @@
 		var i, out = [];
 
 		for (i in names) {
-			if (names.hasOwnProperty(i) && (zones[i] || zones[links[i]]) && names[i]) {
+			if (hasOwnProp(names, i) && (zones[i] || zones[links[i]]) && names[i]) {
 				out.push(names[i]);
 			}
 		}
@@ -548,8 +552,9 @@
 	}
 
 	function getCountry (name) {
+		if (typeof name !== 'string') return null;
 		name = name.toUpperCase();
-		return countries[name] || null;
+		return hasOwnProp(countries, name) ? countries[name] : null;
 	}
 
 	function zonesForCountry(country, with_offset) {
@@ -602,7 +607,7 @@
 			return Object.getOwnPropertyNames(input).length > 0;
 		}
 		for (prop in input) {
-			if (Object.prototype.hasOwnProperty.call(input, prop)) {
+			if (hasOwnProp(input, prop)) {
 				return true;
 			}
 		}
