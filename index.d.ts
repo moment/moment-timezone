@@ -73,7 +73,7 @@ declare module 'moment' {
         zonesForCountry<T extends false>(country: string, with_offset?: T): T extends false ? string[] : never;
         zonesForCountry(country: string, with_offset?: boolean): MomentZoneOffset[] | string[];
         countries(): string[];
-        guess(ignoreCache?: boolean): string;
+        guess(ignoreCache?: boolean): string | undefined;
 
         setDefault(timezone?: string): typeof moment;
 
