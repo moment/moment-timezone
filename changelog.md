@@ -1,3 +1,7 @@
+### `0.6.6` _2026-10-29_
+* Updated data to IANA TZDB `2026f`. [#1169](https://github.com/moment/moment-timezone/pull/1169)
+* Fixed several functions to prevent accidental object prototype lookups. [#1168](https://github.com/moment/moment-timezone/pull/1168)
+
 ### `0.6.5` _2026-10-02_
 * Updated data to IANA TZDB `2026e`. [#1165](https://github.com/moment/moment-timezone/pull/1165)
 

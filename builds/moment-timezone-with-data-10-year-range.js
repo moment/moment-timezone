@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.6.5
+//! version : 0.6.6
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,7 +29,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.6.5",
+	var VERSION = "0.6.6",
 		zones = {},
 		links = {},
 		countries = {},
@@ -268,6 +268,10 @@
 		Current Timezone
 	************************************/
 
+	function hasOwnProp(a, b) {
+		return Object.prototype.hasOwnProperty.call(a, b);
+	}
+
 	function OffsetAt(at) {
 		var timeString = at.toTimeString();
 		var abbr = timeString.match(/\([a-z ]+\)/i);
@@ -380,12 +384,12 @@
 
 		for (i = 0; i < offsetsLength; i++) {
 			offset = offsets[i].offset;
-			if (checkedOffsets.hasOwnProperty(offset)) {
+			if (hasOwnProp(checkedOffsets, offset)) {
 				continue;
 			}
 			guessesOffset = guesses[offset] || {};
 			for (j in guessesOffset) {
-				if (guessesOffset.hasOwnProperty(j)) {
+				if (hasOwnProp(guessesOffset, j)) {
 					filteredGuesses[j] = true;
 				}
 			}
@@ -393,7 +397,7 @@
 		}
 
 		for (i in filteredGuesses) {
-			if (filteredGuesses.hasOwnProperty(i)) {
+			if (hasOwnProp(filteredGuesses, i)) {
 				out.push(names[i]);
 			}
 		}
@@ -448,7 +452,7 @@
 	************************************/
 
 	function normalizeName (name) {
-		return (name || '').toLowerCase().replace(/\//g, '_');
+		return (typeof name === 'string' ? name : '').toLowerCase().replace(/\//g, '_');
 	}
 
 	function addZone (packed) {
@@ -472,7 +476,7 @@
 
 		name = normalizeName(name);
 
-		var zone = zones[name];
+		var zone = hasOwnProp(zones, name) ? zones[name] : undefined;
 		var link;
 
 		if (zone instanceof Zone) {
@@ -486,7 +490,7 @@
 		}
 
 		// Pass getZone to prevent recursion more than 1 level deep
-		if (links[name] && caller !== getZone && (link = getZone(links[name], getZone))) {
+		if (hasOwnProp(links, name) && caller !== getZone && (link = getZone(links[name], getZone))) {
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
@@ -500,7 +504,7 @@
 		var i, out = [];
 
 		for (i in names) {
-			if (names.hasOwnProperty(i) && (zones[i] || zones[links[i]]) && names[i]) {
+			if (hasOwnProp(names, i) && (zones[i] || zones[links[i]]) && names[i]) {
 				out.push(names[i]);
 			}
 		}
@@ -548,8 +552,9 @@
 	}
 
 	function getCountry (name) {
+		if (typeof name !== 'string') return null;
 		name = name.toUpperCase();
-		return countries[name] || null;
+		return hasOwnProp(countries, name) ? countries[name] : null;
 	}
 
 	function zonesForCountry(country, with_offset) {
@@ -602,7 +607,7 @@
 			return Object.getOwnPropertyNames(input).length > 0;
 		}
 		for (prop in input) {
-			if (Object.prototype.hasOwnProperty.call(input, prop)) {
+			if (hasOwnProp(input, prop)) {
 				return true;
 			}
 		}
@@ -876,7 +881,7 @@
 	}
 
 	loadData({
-		"version": "2026e",
+		"version": "2026f",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
@@ -910,7 +915,7 @@
 			"America/Los_Angeles|PST PDT|80 70|01010101010101010101010|24Ea0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|15e6",
 			"America/Halifax|AST ADT|40 30|01010101010101010101010|24E60 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|39e4",
 			"America/Godthab|-03 -02 -01|30 20 10|0101012121212121212121|24JB0 1qM0 WM0 1qM0 WM0 2so0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|17e3",
-			"America/Havana|CST CDT|50 40|01010101010101010101010|24E50 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Rc0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0|21e5",
+			"America/Havana|CST CDT|50 40|010101010101010101010|24E50 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 43A0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0|21e5",
 			"America/Mazatlan|MST MDT|70 60|01010|24Mx0 1nX0 11B0 1nX0|44e4",
 			"America/Miquelon|-03 -02|30 20|01010101010101010101010|24E50 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|61e2",
 			"America/Noronha|-02|20|0||30e2",
