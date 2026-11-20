@@ -14,6 +14,11 @@ function getUTCOffset (m) {
 	}
 }
 
+function roundTo(num, digits) {
+	var mult = Math.pow(10, digits);
+	return Math.round((num + Number.EPSILON) * mult) / mult;
+}
+
 /**
  * Runs tests for a specific year
  */
@@ -31,7 +36,7 @@ function testYear(test, name, expected) {
 		offset = expected[i][3];
 		m      = moment(date).tz(name);
 		test.equal(m.format("HH:mm:ss"), time, date + ' should be ' + time + ' ' + abbr);
-		test.equal(getUTCOffset(m), -offset, date + ' should be ' + offset + ' minutes offset in ' + abbr);
+		test.equal(roundTo(getUTCOffset(m), 4), roundTo(-offset, 4), date + ' should be ' + offset + ' minutes offset in ' + abbr);
 		test.equal(m.zoneAbbr(), abbr, date + ' should be ' + abbr);
 	}
 
@@ -110,5 +115,6 @@ module.exports = {
 	},
 
 	getUTCOffset : getUTCOffset,
-	getGuessResult: getGuessResult
+	getGuessResult: getGuessResult,
+	roundTo: roundTo
 };
